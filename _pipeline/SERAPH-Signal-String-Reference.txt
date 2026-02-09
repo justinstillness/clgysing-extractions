@@ -1,0 +1,238 @@
+================================================================================
+SERAPH SIGNAL STRING — QUICK REFERENCE
+================================================================================
+Project:        NLMINTA / CLGYSING (SeraphRecorder Pipeline)
+Version:        v1.0
+File Class:     REF
+Created:        2026-02-09
+Session:        019/020 (SSH Recovery + Signal String Implementation)
+
+PURPOSE:
+The SERAPH signal string is a metadata tag embedded in NotebookLM queries
+that enables the SeraphRecorder pipeline (extract.py v5+) to automatically
+classify, route, and label extracted content.
+
+When Claude sends a notebook_query via Majeston with a SERAPH tag, the
+pipeline parses the tag fields and uses them to:
+  1. Generate semantic filenames
+  2. Route files to project-specific directories
+  3. Populate extraction metadata headers
+
+Without a SERAPH tag, extractions land in _untagged/ with timestamp-only
+filenames (Tier 3 fallback).
+
+================================================================================
+SIGNAL STRING FORMAT
+================================================================================
+
+[SERAPH: PROJECT=value, SP=value, PASS=XX, NUM=value, THEME=value, SESSION=value]
+
+The tag is placed at the BEGINNING of the query text, before the actual
+query content. extract.py strips it from the clean query display.
+
+EXAMPLE:
+  [SERAPH: PROJECT=clgysing, SP=03, PASS=VX, NUM=01, THEME=identity-mechanics, SESSION=013]
+  Identify and extract all significant specialized vocabulary terms...
+
+================================================================================
+FIELD REFERENCE
+================================================================================
+
+REQUIRED FIELDS (extraction fails to Tier 3 without these):
+
+  PROJECT     Project identifier (lowercase)
+              Examples: clgysing, nlminta
+              Used in: filename, directory routing
+
+  PASS        Pass type code (2-letter uppercase)
+              Must match codebook below
+              Used in: filename, directory routing, header metadata
+
+  NUM         Pass sequence number (zero-padded recommended)
+              Examples: 01, 02, 15
+              Used in: filename, header metadata
+
+OPTIONAL FIELDS:
+
+  SP          Source Package number (digits only, no "SP" prefix)
+              Examples: 03, 14
+              Displayed as: SP03, SP14
+              Used in: filename (when present), header metadata
+
+  THEME       Thematic focus descriptor (hyphen-separated)
+              Examples: identity-mechanics, four-intimacies, bite-model
+              Used in: header metadata
+
+  SESSION     Session number reference
+              Examples: 013, 019
+              Used in: header metadata
+
+  CONFIG      Chat configuration state
+              Examples: default, custom-depth
+              Used in: header metadata
+              Default: "default" if omitted
+
+  THREAD      Conversation threading indicator
+              Examples: new, continue
+              Used in: header metadata
+
+  NOTES       Freeform notes
+              Examples: first-pass, retest-after-config-change
+              Used in: header metadata
+
+================================================================================
+PASS TYPE CODEBOOK
+================================================================================
+
+VALIDATED EXTRACTION PASSES:
+  TM    Theme Mapping
+  TX    Thematic Extraction
+  VX    Vocabulary Extraction
+  TS    Thesis String Extraction
+  EV    Evaluation Pass
+  GD    Gap Detection
+  GX    Gap Extraction
+  CL    Classification
+  TL    Thesis-Lens Extraction
+
+ADMINISTRATIVE / NON-EXTRACTION PASSES:
+  PE    Pre-Extraction Evaluation
+  QC    Query Context
+  NB    Notebook Administration
+  GL    Glossary Generation
+  CR    Cross-Reference Mapping
+
+LEGACY CODES (backward compatibility):
+  CE    Concept Extraction (deprecated — use TX)
+  FP    Full Pass (legacy)
+
+NEW CODES:
+When a new pass type is needed, add it to PASS_TYPE_NAMES in extract.py
+and update this document. Unknown codes route to _review/ (Tier 2) rather
+than failing, so new codes work immediately — they just need registration
+for Tier 1 routing.
+
+================================================================================
+3-TIER ROUTING LOGIC
+================================================================================
+
+extract.py v5 routes extracted files based on signal string presence and
+pass type recognition:
+
+TIER 1 — TAGGED + KNOWN
+  Condition:  SERAPH tag present AND PASS code in codebook
+  Route:      extracted/{PROJECT}/phase2/{PASS}/
+  Filename:   {DATE}_{TIME}_{PROJECT}_SP{SP}_{PASS}-{NUM}_notebook-query.txt
+  Example:    extracted/clgysing/phase2/VX/2026-02-09_053056_clgysing_SP03_VX-01_notebook-query.txt
+
+TIER 2 — TAGGED + UNKNOWN
+  Condition:  SERAPH tag present BUT PASS code NOT in codebook
+  Route:      extracted/_review/
+  Filename:   Same as Tier 1
+  Purpose:    Holds extractions with unrecognized pass types for review
+
+TIER 3 — UNTAGGED
+  Condition:  No SERAPH tag (and no legacy META tag)
+  Route:      extracted/_untagged/
+  Filename:   {DATE}_{TIME}_notebook-query.txt
+  Purpose:    Catches all untagged queries (ad-hoc, testing, etc.)
+
+LEGACY META:
+  Condition:  Old [META:SP##|TYPE|SEQ|Descriptor] format detected
+  Route:      extracted/_untagged/ (no project routing)
+  Purpose:    Backward compatibility with pre-v5 extractions
+
+================================================================================
+EXTRACTION FILE HEADER FORMAT
+================================================================================
+
+Files produced by extract.py v5 include this metadata header:
+
+  ================================================================================
+  EXTRACTION: {filename without .txt}
+  ================================================================================
+  Source Package:  SP{nn} or N/A
+  Pass Type:       {CODE} ({Full Name})
+  Pass Number:     {nn}
+  Theme/Focus:     {theme} or N/A
+  Project:         {project}
+  Session:         {session} or N/A
+  Routing:         Tier {N} ({description})
+  Query:           {clean query text, SERAPH tag stripped}
+  Timestamp:       {ISO 8601}
+  Notebook ID:     {UUID}
+  Source IDs:      {list or "all"}
+  Conversation ID: {UUID or N/A}
+  Chat Configure:  {config state}
+  Thread:          {thread or N/A}
+  Notes:           {notes or N/A}
+  Response Chars:  {count}
+  Duration:        {ms}ms
+  ================================================================================
+
+================================================================================
+USAGE EXAMPLES
+================================================================================
+
+BASIC (required fields only):
+  [SERAPH: PROJECT=clgysing, PASS=TX, NUM=01]
+  Extract all concepts related to identity formation...
+
+FULL (all fields):
+  [SERAPH: PROJECT=clgysing, SP=03, PASS=VX, NUM=05, THEME=four-intimacies, SESSION=020, CONFIG=custom-depth, THREAD=continue, NOTES=second-iteration]
+  Identify specialized vocabulary related to the Four Intimacies framework...
+
+ADMINISTRATIVE QUERY:
+  [SERAPH: PROJECT=clgysing, PASS=PE, NUM=01, THEME=corpus-overview]
+  Provide a high-level summary of the topics covered in this notebook...
+
+================================================================================
+PIPELINE ARCHITECTURE
+================================================================================
+
+Flow: Claude -> Majeston (MCP) -> NotebookLM -> socat capture -> extract.py
+
+  1. Claude includes [SERAPH: ...] at start of notebook_query
+  2. Majeston sends query to NotebookLM API
+  3. socat captures full request/response traffic to daily log
+  4. extract.py parses traffic log:
+     a. Extracts JSON-RPC tool calls
+     b. Correlates requests with responses
+     c. For notebook_query results:
+        - Parses SERAPH tag from query text
+        - Strips socat artifacts from answer (D-024 fix)
+        - Routes file to appropriate directory
+        - Writes extraction with full metadata header
+  5. push-to-github.sh pushes new extractions to repo (manual step)
+
+FILES:
+  extract.py location:     /home/ubuntu/mcp-logger/extract.py
+  Traffic logs:            /home/ubuntu/mcp-logs/traffic/{YYYY-MM-DD}.log
+  JSONL output (Stream 1): /home/ubuntu/mcp-logs/raw/{YYYY-MM-DD}.jsonl
+  Extracted files:         /home/ubuntu/mcp-logs/extracted/{routing path}/
+
+GITHUB REPO:
+  Repository:  justinstillness/clgysing-extractions (private)
+  Pipeline:    _pipeline/extract.py (v4), _pipeline/extract_v5.py (current)
+
+================================================================================
+MAINTENANCE
+================================================================================
+
+ADDING NEW PASS TYPES:
+  1. Add code and name to PASS_TYPE_NAMES dict in extract.py
+  2. Update this document's codebook section
+  3. New code works immediately (Tier 2) even before registration
+
+MODIFYING ROUTING:
+  Routing logic is in write_extracted_files() in extract.py.
+  Directory structure pattern: {PROJECT}/phase2/{PASS}/
+
+VERSION HISTORY:
+  v5 (2026-02-09): Initial SERAPH implementation
+  v4 (2026-02-08): Raw fallback extraction, multi-block assembly
+  v2 (2026-02-06): Rewritten socat parsing
+
+================================================================================
+END OF SERAPH SIGNAL STRING QUICK REFERENCE
+================================================================================
