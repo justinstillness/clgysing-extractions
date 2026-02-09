@@ -1,0 +1,220 @@
+================================================================================
+CALIPER — TOOL REFERENCE
+================================================================================
+Suite:          Havona Anvil Suite (HA Suite)
+Component:      Caliper (Document Analysis MCP)
+Version:        v1.0
+File Class:     REF
+Created:        2026-02-09
+Session:        021
+
+PURPOSE:
+Per-tool reference for Caliper, the document analysis MCP. Caliper provides
+batch file inventory and metrics for text files stored in GitHub repositories,
+supporting material inventory and segmentation planning for LibForge workflows.
+
+For system-level context, see: v4.0_SPEC_HA-Suite-Architecture-Reference.txt
+For recent changes, see: CHANGELOG.txt
+
+================================================================================
+1. OVERVIEW
+================================================================================
+
+Caliper solves the "blind metrics" problem: before Caliper, assessing the
+size, complexity, and segmentation needs of research materials required
+loading each file into Claude's context window. Caliper provides file-level
+metrics without consuming context tokens.
+
+Named using the "craft/forge" naming convention — a caliper is a precision
+measurement instrument.
+
+WHAT IT DOES:
+  - Analyzes text files in any GitHub folder (public or private)
+  - Returns per-file metrics: word count, character count, lines, sentences,
+    estimated tokens
+  - Flags files exceeding segmentation threshold (5,000 words)
+  - Provides summary statistics across all files in folder
+
+TOOLS:
+  1. analyze_github_folder — Batch analysis of files in a GitHub folder
+  2. server_status — Health check and configuration info
+
+================================================================================
+2. TOOL REFERENCE
+================================================================================
+
+2.1 ANALYZE_GITHUB_FOLDER
+--------------------------
+
+Fetches a GitHub folder listing, downloads each text file, and returns
+structured inventory data.
+
+Parameters:
+  folder_url   (str, required)   GitHub folder URL
+               Format: https://github.com/owner/repo/tree/main/folder
+  file_types   (list, optional)  File extensions to include
+               Example: [".txt", ".md"]
+               Default: all text files
+
+Returns per file:
+  - File name and type (extension)
+  - Size (KB)
+  - Word count
+  - Character count
+  - Line count
+  - Sentence count (approximation based on punctuation)
+  - Estimated tokens (character count / 4)
+  - Segmentation recommendation (flagged if words > 5,000)
+
+Returns summary:
+  - Total files processed
+  - Aggregate word/character/token counts
+  - Files requiring segmentation
+
+Example call:
+  Caliper:analyze_github_folder(
+    folder_url="https://github.com/justinstillness/clgysing-extractions/tree/main/_untagged",
+    file_types=[".txt"]
+  )
+
+
+2.2 SERVER_STATUS
+-----------------
+
+Returns server health and configuration.
+
+Parameters: none
+
+Returns:
+  - Server version
+  - Auth status (GitHub token configured)
+  - Configuration details
+
+================================================================================
+3. TECHNICAL DETAILS
+================================================================================
+
+SCRIPT:
+  /home/ubuntu/document-analysis-mcp/document-analysis-mcp.py
+
+FRAMEWORK:
+  FastMCP v2.14.5 (Python)
+  Transport: Streamable HTTP
+  HTTP client: httpx (async)
+
+KEY CONSTANTS:
+  SEGMENTATION_THRESHOLD = 5,000 words
+  Token estimation: 1 token ≈ 4 characters
+
+INTERNAL FUNCTIONS:
+  _github_headers()   Constructs auth headers from GITHUB_TOKEN env var
+  _estimate_tokens()  character_count / 4
+  _analyze_text()     Performs word/char/line/sentence counting
+
+FILE TYPES SUPPORTED:
+  Text-based files: .txt, .md, .csv, .json, .py, .sh, .yaml, .yml, etc.
+  Binary files (PDF, images) are skipped.
+
+================================================================================
+4. DEPLOYMENT
+================================================================================
+
+PORT: 8001 (internal only)
+CADDY ROUTE: /tools/* → strip /tools → localhost:8001
+CONNECTOR URL: https://mcp.justinstillness.com/tools/mcp
+CONNECTOR NAME: "Caliper" in Claude Custom Connectors
+
+SYSTEMD SERVICE:
+  Name: document-analysis-mcp
+  File: /etc/systemd/system/document-analysis-mcp.service
+
+  [Unit]
+  Description=Document Analysis MCP Server
+  After=network.target
+
+  [Service]
+  Type=simple
+  User=ubuntu
+  Environment=HOME=/home/ubuntu
+  EnvironmentFile=/home/ubuntu/document-analysis-mcp/.env
+  ExecStart=/home/ubuntu/.local/bin/uv run --with fastmcp --with httpx \
+    /home/ubuntu/document-analysis-mcp/document-analysis-mcp.py \
+    --transport http --port 8001
+  Restart=always
+  RestartSec=10
+  MemoryMax=256M
+  CPUQuota=50%
+
+  [Install]
+  WantedBy=multi-user.target
+
+AUTHENTICATION:
+  GitHub PAT in /home/ubuntu/document-analysis-mcp/.env
+  Format: GITHUB_TOKEN=ghp_xxxxxxxxxxxxx
+  Scope: repo (full control private repos)
+  Rate limit: 5,000 requests/hour (authenticated)
+  Shared PAT with Chronicler
+
+================================================================================
+5. COMMON OPERATIONS
+================================================================================
+
+CHECK SERVICE STATUS:
+  sudo systemctl status document-analysis-mcp --no-pager
+
+RESTART SERVICE:
+  sudo systemctl restart document-analysis-mcp
+
+VIEW LOGS:
+  sudo journalctl -u document-analysis-mcp -n 20 --no-pager
+
+UPDATE GITHUB TOKEN:
+  1. Edit /home/ubuntu/document-analysis-mcp/.env
+  2. sudo systemctl restart document-analysis-mcp
+
+================================================================================
+6. KNOWN ISSUES & LIMITATIONS
+================================================================================
+
+FASTMCP COMPATIBILITY:
+  Built with FastMCP v2.14.5. The description= constructor parameter was
+  removed to avoid TypeError. FastMCP 3.0 may require additional changes.
+
+TOOL DISCOVERY:
+  Claude UI may not show Caliper tools in auto-discovery list.
+  Tools work when called directly by name: Caliper:analyze_github_folder
+
+BINARY FILES:
+  PDFs, images, and other binary files are skipped. Only text-based files
+  are analyzed. No OCR or PDF text extraction capability.
+
+LARGE FOLDERS:
+  GitHub API returns max 1,000 items per directory. Folders exceeding this
+  would need pagination (not currently implemented, but unlikely to be hit
+  with current repository sizes).
+
+RATE LIMITING:
+  5,000 GitHub API requests/hour shared with Chronicler. Each file in a
+  folder requires one API call to fetch content. A folder with 300 files
+  uses 301 API calls (1 listing + 300 fetches).
+
+================================================================================
+7. BUILD HISTORY
+================================================================================
+
+Session 010 (2026-02-05): Designed and coded
+  - Architected to fill "blind metrics" gap in research pipeline
+  - Named "Caliper" per craft/forge naming convention (D-012)
+  - Code generated via Claude Code on EC2
+
+Session 011 (2026-02-05): Deployed and validated
+  - Fixed FastMCP description= TypeError (removed parameter)
+  - Fixed Caddy routing (handle → handle_path for prefix stripping)
+  - Added Custom Connector to Claude
+  - Verified analysis of private GitHub repositories
+
+No changes since Session 011 — stable component.
+
+================================================================================
+END OF CALIPER TOOL REFERENCE
+================================================================================
