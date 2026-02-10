@@ -1,0 +1,533 @@
+================================================================================
+SPECIFICATION — INDEXER: FILE ORGANIZATION SYSTEM
+================================================================================
+Project:        AWSNBLM (Havona Anvil Suite)
+Version:        v0.1 (Provisional — pending alpha/beta validation)
+File Class:     SPEC
+Created:        2026-02-09
+Session:        022
+
+PURPOSE:
+The Indexer is the organizational protocol layer for the HA Suite extraction
+pipeline. It governs how extraction outputs are named, classified, stored,
+tracked, and retrieved across projects, phases, and refinement stages.
+
+Currently a protocol (Claude-side behavior governed by this document).
+Will be evaluated for promotion to a dedicated tool if workflow patterns
+stabilize and automation warrants it.
+
+STATUS: PROVISIONAL. This specification encodes working principles validated
+through design discussion. It awaits alpha/beta testing to confirm structural
+decisions. Expect v1.0 after initial production use.
+
+================================================================================
+TABLE OF CONTENTS
+================================================================================
+
+1. DESIGN PRINCIPLES
+2. DEGREE CLASSIFICATION (Artifact Refinement Levels)
+3. PASS TYPE REGISTRY
+4. FILENAME CONVENTION
+5. FOLDER STRUCTURE
+6. QUERY MANIFEST (Master Index)
+7. NLM NOTEBOOK SYNC PROTOCOL
+8. SERAPH ROUTING (Automated Classification)
+9. EVOLUTIONARY ROADMAP
+10. OPEN QUESTIONS (Alpha/Beta Resolution)
+
+================================================================================
+1. DESIGN PRINCIPLES
+================================================================================
+
+Six foundational principles govern the Indexer system:
+
+P-1: FILENAME MUST BE SELF-IDENTIFYING
+
+A file's name carries enough metadata to identify it without needing to
+check folder location or manifest. The filename is the primary identification
+mechanism. A file displaced from its folder should still be identifiable.
+
+P-2: MASTER QUERY MANIFEST
+
+A rolling document logs every extraction query — what was asked, of what
+sources, in what session, for what phase/purpose, what it produced, and
+where the output lives. This is the authoritative cross-reference index.
+The file system is ONE access path; the manifest is the COMPREHENSIVE index.
+
+P-3: DEGREE CLASSIFICATION
+
+Artifacts have a refinement level (D1 through DM). These are finite classes
+embedded in filenames and tracked in the manifest. Degree indicates how far
+an artifact has progressed through the refinement pipeline.
+
+P-4: FOLDER STRUCTURE SERVES BROWSING, MANIFEST SERVES FINDING
+
+Folders organized by the most common access pattern (project > phase > pass
+type). The manifest compensates for the inherent limitations of any single
+hierarchy. You don't need to find everything by browsing — the manifest
+tells you where things are.
+
+P-5: SESSION FOLDERS ARE COMPLEMENTARY, NOT PRIMARY
+
+Session provenance lives in the filename and manifest. The primary repo
+organization is project/phase/type. If a session-centric view is ever
+needed, the manifest can generate it.
+
+P-6: SOURCE SCOPE IS FLEXIBLE, NOT FOLDER-LEVEL
+
+Queries may target individual source packages, pairs, or entire notebooks.
+Source scope is a filename and manifest attribute, NOT a folder level.
+This avoids combinatorial explosion of folders.
+
+DESIGN PHILOSOPHY:
+
+The system draws from established approaches in:
+- Faceted classification (library science) — multiple independent facets
+  per item, accessible via any facet
+- Digital asset management (DAM) — metadata-rich manifests plus convention-
+  based filenames for multi-stage production pipelines
+- Laboratory information management (LIMS) — unique IDs, transformation
+  logging, provenance chains
+- Software build systems — stage identification, build manifests, artifact
+  progression through pipelines
+
+The biological analogy: enzymes are classified by function (reaction type)
+and numbered by the EC system (class > subclass > sub-subclass > serial).
+We need a similar finite typology with systematic numbering.
+
+================================================================================
+2. DEGREE CLASSIFICATION (Artifact Refinement Levels)
+================================================================================
+
+Every extraction artifact has a refinement degree indicating its position
+in the processing pipeline:
+
+DEGREE    LABEL              DESCRIPTION
+------    -----              -----------
+D1        First Degree       Raw extraction output, direct from query.
+                             Unedited, unorganized. The "ore."
+
+D2        Second Degree      Organized, numbered, cleaned within pass type.
+                             Duplicate removal, ID assignment, formatting
+                             standardized. The "refined material."
+
+D3        Third Degree       Consolidated across source packages.
+                             Cross-package merging, gap identification,
+                             thematic integration. The "alloy."
+
+DM        Master Degree      Final production artifact. Validated, complete,
+                             ready for downstream use (thesis architecture,
+                             drafting, etc.). The "finished product."
+
+DEGREE PROGRESSION RULES:
+
+- D1 > D2: Within a single pass type and source scope. Cleaning and numbering.
+- D2 > D3: Across source packages within a pass type. Consolidation.
+- D3 > DM: Final validation and production-readiness check.
+- Not all artifacts progress to DM. Some D1 outputs may be exploratory only.
+- Degree progression is LOGGED in the manifest (which D1 files fed into D2, etc.).
+
+DEGREE IN FILENAMES: Embedded as D1, D2, D3, or DM (see Section 4).
+
+================================================================================
+3. PASS TYPE REGISTRY
+================================================================================
+
+Pass types define WHAT kind of extraction was performed. This is a controlled
+vocabulary — new types are added deliberately, not ad hoc.
+
+ESTABLISHED PASS TYPES (from Sessions 007-011 testing):
+
+CODE    FULL NAME                 DESCRIPTION
+----    ---------                 -----------
+PE      Pre-Extraction            Source evaluation, quality assessment,
+                                  readiness check before extraction begins
+
+CE      Concept Extraction        Core concept packets — ideas, frameworks,
+                                  arguments from source material
+
+VX      Vocabulary Extraction     Term-centric glossary entries — definitions,
+                                  usage context, related terms
+
+TS      Thesis Strings            Declarative claims, argumentative architecture,
+                                  evidence chains, logical relationships
+
+TM      Thematic Mapping          Theme identification and clustering across
+                                  source material — landscape survey
+
+GL      Glossary                  Consolidated terminology reference
+                                  (often a D2/D3 product of VX passes)
+
+EV      Evaluation                Critical analysis — contradictions, gaps,
+                                  factual issues, quality assessment
+
+TX      Thematic Extraction       Dedicated extraction by theme (deeper than TM,
+                                  produces concept packets organized by theme)
+
+INFRASTRUCTURE PASS TYPES (non-extraction):
+
+CODE    FULL NAME                 DESCRIPTION
+----    ---------                 -----------
+INF     Infrastructure Query      Pipeline status, configuration queries,
+                                  system context gathering
+
+DOC     Documentation Query       Querying session transcripts for historical
+                                  context, decision recovery, findings inventory
+
+NEW PASS TYPE PROTOCOL:
+
+When a query type doesn't match existing passes:
+1. AI proposes new code (2-3 letter uppercase, semantically clear)
+2. AI states: "This query type doesn't match existing passes. I propose:
+   [CODE] for [purpose]. Add to registry?"
+3. User confirms or suggests alternative
+4. AI adds to this registry and notes in session log
+
+================================================================================
+4. FILENAME CONVENTION
+================================================================================
+
+PRIMARY FORMAT (extraction artifacts):
+
+{PassType}-{SourceScope}-{Degree}-S{Session}.txt
+
+COMPONENTS:
+
+PassType:     2-3 letter code from Pass Type Registry (Section 3)
+SourceScope:  Identifies what was queried (see rules below)
+Degree:       D1, D2, D3, or DM
+Session:      S### (3-digit, zero-padded session number)
+
+SOURCE SCOPE ENCODING:
+
+Single source package:       SP03
+Multiple specific packages:  SP03+SP07
+All packages in notebook:    ALL
+Specific notebook:           NB.{shortname}
+                             (e.g., NB.CULT for Cultology Series,
+                              NB.HASSAN for Hassan notebook)
+Cross-notebook:              XNB.{descriptor}
+
+EXAMPLES:
+
+VX-SP03-D1-S025.txt
+  Vocabulary extraction, Source Package 03, raw output, session 25
+
+CE-SP03+SP07-D1-S026.txt
+  Concept extraction, two packages combined, raw output, session 26
+
+TM-ALL-D1-S024.txt
+  Thematic mapping, all source packages, raw output, session 24
+
+VX-ALL-D3-S030.txt
+  Vocabulary consolidated across all packages, third degree, session 30
+
+TS-NB.CULT-D1-S027.txt
+  Thesis strings, queried Cultology Series notebook, raw, session 27
+
+CE-MASTER-DM-S040.txt
+  Master concept repository, final production artifact, session 40
+
+GL-SP03-D2-S025.txt
+  Glossary from SP03, organized and numbered, session 25
+
+PE-SP03-D1-S024.txt
+  Pre-extraction evaluation of SP03, raw output, session 24
+
+INF-NB.SESSIONS-D1-S022.txt
+  Infrastructure query against sessions notebook, raw, session 22
+
+FILENAME RULES:
+
+- All uppercase for pass type and source scope
+- Hyphens separate components (never underscores in primary format)
+- Session number always 3 digits (S001, S022, S100)
+- .txt extension (plain text, per project convention)
+- No spaces in filenames
+- Degree is ALWAYS present
+
+SUPPLEMENTAL SUFFIX (optional, for disambiguation):
+
+When multiple files share the same primary name (e.g., two VX passes on
+SP03 in the same session), append a sequential letter:
+
+VX-SP03-D1-S025a.txt
+VX-SP03-D1-S025b.txt
+
+Or a thematic tag:
+
+VX-SP03-D1-S025-identity.txt
+VX-SP03-D1-S025-epistemology.txt
+
+The manifest resolves any remaining ambiguity.
+
+================================================================================
+5. FOLDER STRUCTURE
+================================================================================
+
+REPOSITORY ROOT STRUCTURE:
+
+clgysing-extractions/
+  _docs/                    Documentation home (existing)
+    CHANGELOG.txt
+    NLM-MANIFEST.json
+    [tool references, architecture spec]
+
+  _pipeline/                Pipeline code (existing)
+    extract.py
+    SERAPH-Signal-String-Reference.txt
+
+  _untagged/                Landing zone for SeraphRecorder (existing)
+    [timestamped raw captures]
+
+  concept-counter.json      Sequential ID tracking (existing)
+
+  query-manifest.json       Master query index (NEW — see Section 6)
+
+  clgysing/                 Project folder (NEW — built incrementally)
+    phase2/                 Phase folder
+      PE/                   Pre-Extraction evaluations
+      CE/                   Concept Extractions
+      VX/                   Vocabulary Extractions
+      TS/                   Thesis Strings
+      TM/                   Thematic Mapping
+      TX/                   Thematic Extractions
+      GL/                   Glossary
+      EV/                   Evaluations
+
+FOLDER CREATION RULES:
+
+- Project folders created when project work begins (not preemptively)
+- Phase folders created at phase entry
+- Pass type folders created on first use
+- Infrastructure/documentation queries stay in _untagged/ or get
+  moved to a project-specific _context/ folder if worth preserving
+
+FUTURE PROJECT EXAMPLE:
+
+a47/                          Agenda 47 project
+  phase2/
+    CE/
+    VX/
+
+CROSS-PROJECT ARTIFACTS:
+
+If an artifact spans projects (rare), it lives in the primary project's
+tree and the manifest cross-references it.
+
+================================================================================
+6. QUERY MANIFEST (Master Index)
+================================================================================
+
+The query manifest is the authoritative tracking document for all extraction
+queries and their outputs. It is the "finding" mechanism that compensates
+for the inherent limits of folder-based browsing.
+
+FORMAT: JSON (machine-readable, queryable, updatable via Chronicler)
+
+LOCATION: /query-manifest.json (repository root)
+
+ENTRY STRUCTURE (per query):
+
+  id:                Sequential query ID (Q001, Q002, etc.)
+  timestamp:         When the query was executed
+  session:           Which session produced it (S###)
+  phase:             LibForge phase context
+  project:           Which project this serves
+  pass_type:         Pass type code (from registry)
+  source_scope:      What was queried (SP03, ALL, NB.CULT, etc.)
+  notebook_id:       NLM notebook UUID
+  notebook_name:     Human-readable notebook name
+  source_ids:        Specific source IDs or "all"
+  query_text:        Full query text (or close paraphrase)
+  chat_configure:    NLM chat configuration state
+  conversation_id:   Threading ID if used
+  degree:            Artifact degree (D1, D2, D3, DM)
+  output_file:       Path to output file in repo
+  output_chars:      Size of output
+  item_count:        Number of items extracted
+  quality_notes:     Brief quality/completeness assessment
+  parent_queries:    IDs of queries this builds on (for D2+)
+  child_queries:     IDs of queries that build on this
+  status:            active | superseded | archived
+
+MANIFEST METADATA:
+
+  last_updated:          Date of last update
+  last_updated_session:  Session number
+  total_queries:         Running count
+  schema_version:        For future format migrations
+
+MANIFEST MAINTENANCE:
+
+- Updated every time a query is executed and output is organized
+- Updated when degree progression occurs (parent/child links)
+- Updated when files are moved or reorganized
+- The manifest is the SINGLE SOURCE OF TRUTH for "what do we have"
+
+MANIFEST QUERY PATTERNS (how Claude uses it):
+
+- "What VX passes have been done on SP03?" > filter by pass_type + source_scope
+- "What D1 artifacts are ready for D2 consolidation?" > filter by degree
+- "What was queried in session 025?" > filter by session
+- "Show me the refinement chain for the master glossary" > follow parent/child
+
+================================================================================
+7. NLM NOTEBOOK SYNC PROTOCOL
+================================================================================
+
+The Havona Anvil Suite NLM notebook (430df618-e337-4971-abaa-6528e96bb1c4)
+contains living documentation. When docs change, the notebook must be synced.
+
+SYNC MANIFEST: _docs/NLM-MANIFEST.json (created S022)
+
+SYNC WORKFLOW (when a _docs/ file is updated):
+
+1. COMMIT new version to GitHub via Chronicler:write_file
+2. DELETE old source from NLM notebook via Majeston:source_delete
+3. ADD updated file to NLM notebook via Majeston:source_add
+4. UPDATE NLM-MANIFEST.json with new source_id and session number
+5. NOTE sync in session log
+
+SYNC TRIGGERS:
+
+- Any modification to files in _docs/
+- Addition of new documentation files
+- Version increments on existing docs
+
+BOOTSTRAP ENCODING:
+
+Every bootstrap must include:
+- Current NLM-MANIFEST.json state (or pointer to check it)
+- Reminder of sync duty when _docs/ files are modified
+
+================================================================================
+8. SERAPH ROUTING (Automated Classification)
+================================================================================
+
+STATUS: Conceptual. To be developed as pipeline matures.
+
+CURRENT STATE:
+SeraphRecorder captures Majeston traffic and deposits timestamped files
+in _untagged/. Files contain metadata headers (query text, notebook ID,
+timestamp, etc.) but are NOT automatically classified by pass type,
+source scope, or degree.
+
+TARGET STATE (incremental):
+
+Phase 1 — Signal String Enhancement:
+  SERAPH signal strings already carry some metadata. Extend to include:
+  - Pass type code (VX, CE, TS, etc.)
+  - Source scope identifier
+  - Project context
+  This enables approximately 90% automated routing.
+
+Phase 2 — Automated Filing:
+  extract.py (or successor) reads enhanced signal strings and:
+  - Generates filename per convention (Section 4)
+  - Routes to correct project/phase/pass folder
+  - Creates manifest entry
+
+Phase 3 — Claude-Assisted Classification:
+  For queries that can't be auto-classified (multi-source, cross-phase,
+  exploratory), Claude reviews and classifies manually, updating manifest.
+
+TIMELINE: Develops alongside production use. Not blocking current work.
+
+================================================================================
+9. EVOLUTIONARY ROADMAP
+================================================================================
+
+CURRENT (v0.1 — Protocol):
+  - Indexer is a documented protocol
+  - Claude follows conventions manually
+  - Manifest updated by Claude via Chronicler
+  - Folder structure built incrementally
+
+NEAR-TERM (v0.2 — Tested Protocol):
+  - Alpha/beta testing with real CLGYSING extraction work
+  - Conventions validated or refined based on actual usage
+  - Volume reality check (50 files? 500?)
+  - Manifest format confirmed
+
+MID-TERM (v1.0 — Mature Protocol):
+  - Conventions stabilized
+  - SERAPH routing partially automated
+  - Manifest maintenance semi-automated
+  - Pass type registry comprehensive
+
+LONG-TERM (v2.0 — Dedicated Tool):
+  - If workflow patterns stabilize and automation warrants it
+  - Indexer becomes a 5th HA Suite tool
+  - Orchestration layer: receive extraction > classify > name > route >
+    update manifest > update counter
+  - Reduces Claude-side behavioral burden to tool calls
+
+PROMOTION CRITERIA (Protocol to Tool):
+
+The Indexer should become a dedicated tool when:
+  - The classification logic is stable (no more ad hoc decisions)
+  - The same multi-step workflow is executed >20 times manually
+  - The manifest update pattern is fully predictable
+  - The value of automation exceeds the cost of building/maintaining the tool
+
+================================================================================
+10. OPEN QUESTIONS (Alpha/Beta Resolution)
+================================================================================
+
+These questions cannot be answered by design alone. They require production
+experience to resolve.
+
+Q1: FOLDER DEPTH
+    Is project/phase/pass-type enough, or do we need deeper nesting?
+    Resolution: Observe during first 50 files organized.
+
+Q2: MANIFEST FORMAT
+    Is JSON the right format? Should it be a flat log, structured JSON,
+    or something queryable (SQLite)?
+    Resolution: Evaluate after manifest reaches approximately 100 entries.
+
+Q3: VOLUME REALITY
+    Are we dealing with 50 files per project phase, or 500?
+    Resolution: Measure during CLGYSING Phase 2 extraction.
+
+Q4: CONSOLIDATION WORKFLOW
+    How does D1 to D2 to D3 actually feel in practice? Are the degree
+    boundaries clear, or do we need intermediate steps?
+    Resolution: Execute at least one full consolidation chain.
+
+Q5: CROSS-PHASE REUSE
+    How often do pass types repeat across phases (e.g., VX in Phase 2
+    and again in Phase 5 drafting)?
+    Resolution: Track during multi-phase work.
+
+Q6: SESSION-CENTRIC VIEW
+    Is the manifest sufficient for session-based retrieval, or do we
+    need explicit session folders in the repo?
+    Resolution: Evaluate based on actual retrieval patterns.
+
+Q7: SERAPH SIGNAL COMPLETENESS
+    Does the current signal string format carry enough metadata for
+    90% automated routing, or does it need extension?
+    Resolution: Audit signal strings against classification needs.
+
+Q8: UNTAGGED TRIAGE CADENCE
+    How often should _untagged/ be triaged — every session, weekly,
+    or at phase boundaries?
+    Resolution: Observe accumulation rate and urgency.
+
+================================================================================
+DOCUMENT HISTORY
+================================================================================
+
+Version  Date        Session  Description
+-------  ----------  -------  ------------------------------------------------
+v0.1     2026-02-09  S022     Initial provisional specification. Six design
+                              principles, degree classification, pass type
+                              registry, filename convention, folder structure,
+                              query manifest schema, NLM sync protocol, SERAPH
+                              routing roadmap, and open questions for alpha/beta.
+
+================================================================================
+END OF SPECIFICATION
+================================================================================
