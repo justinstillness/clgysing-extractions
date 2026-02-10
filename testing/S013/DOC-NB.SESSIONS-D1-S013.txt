@@ -1,0 +1,90 @@
+================================================================================
+EXTRACTION: 2026-02-08_221052_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Query:           What is the Signal String Format? What conventions have been discussed for query tagging, file naming, pass type identifiers, and metadata tags? Include any specifications, nomenclature decisions, and how Signal Strings relate to the extraction pipeline and file routing.
+Timestamp:       2026-02-08T22:10:52.000586+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 80902cd9-bcc1-418e-b95f-5ba835dd619f
+Chat Configure:  default
+Response Chars:  5314
+Duration:        35999ms
+================================================================================
+
+Based on the **Signal String Format Considerations** specification and associated findings from the NLMINTA sessions, here is the breakdown of the Signal String Format, its conventions, and its role in the extraction pipeline.\
+\
+### 1. What is the Signal String Format?\
+A **Signal String** is a structured metadata block embedded by Claude at the very **end** of a `notebook_query` text. It acts as a \"shipping label\" for the query, allowing downstream automation tools to identify, tag, and route the resulting information without influencing NotebookLM's actual response to the question [1].\
+\
+*   **Syntax:** `[SERAPH: FIELD1=value1, FIELD2=value2, ...]`\
+*   **Placement:** Appended to the end of the query text (to ensure NotebookLM treats it as formatting noise and ignores it) [2].\
+*   **Format Rules:** Comma-separated key=value pairs, keys in ALL CAPS, values in lowercase/mixed (using hyphens for spaces), all on a single line [3].\
+\
+**Example:**\
+> \"Extract all discrete concepts from the theme 'four intimacies'...\
+> `[SERAPH: PROJECT=clgysing, SP=03, PASS=CE, NUM=02, THEME=four-intimacies, SESSION=019]`\" [4]\
+\
+### 2. Metadata Tags and Field Definitions\
+The specification defines specific fields required to track provenance and context [5].\
+\
+| Field | Requirement | Description | Example |\
+| :--- | :--- | :--- | :--- |\
+| **PROJECT** | Required | Project identifier | `clgysing`, `a47` |\
+| **SP** | Required | Source Package number (2 digits) | `03` |\
+| **PASS** | Required | Pass Type code (see below) | `VX`, `TM` |\
+| **NUM** | Required | Sequential run number for this pass | `01`, `02` |\
+| **THEME** | Optional | Thematic focus of the query | `identity-mechanics` |\
+| **SESSION** | Optional | Claude session number for provenance | `017` |\
+| **NOTEBOOK** | Optional | Specific notebook identifier | `sp03-repo` |\
+| **NOTES** | Optional | Brief free-text annotation | `refined-query-v2` |\
+\
+### 3. Pass Type Identifiers (Vocabulary)\
+Pass types are 2-character, all-caps codes identifying the specific extraction or analysis process being performed. A reconciliation is currently needed between the *Signal String Specification* and the *NLMINTA Validation Findings* [6][7].\
+\
+**Current Signal String Candidates [8]:**\
+*   **PE:** Pre-Extraction Evaluation (Scan for coherence/factuality)\
+*   **TM:** Thematic Mapping (Identify major themes)\
+*   **CE:** Concept Extraction (Extract discrete concepts) *Note: NLMINTA findings refer to this as **TX** (Thematic Extraction)*.\
+*   **VX:** Vocabulary Extraction (Extract specialized terms/glo< 2026/02/08 22:11:28.000302869  length=2772 from=8693 to=11464
+ssary)\
+*   **TS:** Thesis String Extraction (Extract arguments/claims)\
+*   **GL:** Glossary Generation (Consolidate extracted vocab)\
+*   **CR:** Cross-Reference Mapping\
+*   **EV:** Evaluation Pass (Quality assessment/meta-eval)\
+*   **GD:** Gap Detection (Identify missing concepts...validated in NLMINTA) [9].\
+*   **CL:** Classification (Apply taxonomy/domains...validated in NLMINTA) [9].\
+\
+### 4. File Naming and Routing Conventions\
+The Signal String enables the `extract.py` script and the `Chronicler` tool to automate file management, moving away from manual tagging.\
+\
+*   **Automated Header Population:** `extract.py` parses the Signal String to populate the file header (e.g., \"Source Package: SP-03\", \"Pass Type: VX\") [10].\
+*   **File Naming:** The metadata generates standardized filenames automatically:\
+    *   Format: `{Date}_{Time}_{Project}_{SP}_{PassType}-{Num}_notebook-query.txt`\
+    *   Example: `2026-02-07_143022_clgysing_SP03_VX-01_notebook-query.txt` [11].\
+*   **Routing (Chronicler):** Using the parsed metadata, the `Chronicler` tool can automatically move files from an `_untagged/` holding directory to the correct architectural hierarchy (e.g., `/clgysing/phase2/VX/`) [12].\
+\
+### 5. Concept ID Numbering Design\
+The Signal String acts as the root for generating unique, traceable Concept IDs throughout the project.\
+\
+*   **ID Format:** `{SP}-{PASS}-{NNN}`\
+*   **Examples:**\
+    *   `SP03-VX-001` (Source Package 03, Vocabulary Extraction, Item 1)\
+    *   `SP07-TS-003` (Source Package 07, Thesis String, Item 3)\
+*   **Implementation:** Numbering is a post-extraction process. Claude reads the extraction file, calls a central `concept-counter.json` to get the next available number for that specific SP/PASS combination, assigns the IDs, and increments the counter to prevent collisions [13].\
+\
+### 6. Relation to Extraction Pipeline\
+The Signal String is the \"middleware\" link between the **NotebookLM Extraction** (Phase 2) and the **LibForge Repository** (Phase 3).\
+\
+1.  **Query:** Claude sends a query with the `[SERAPH:...]` signal.\
+2.  **Capture:** The `SeraphRecorder` (running on the MCP server) captures the traffic.\
+3.  **Parse:** `extract.py` detects the signal, strips it from the text, and uses the key/value pairs to tag the output file.\
+4.  **Organize:** `Chronicler` routes the file to the correct directory based on the `PASS` tag (e.g., routing `VX` files to the glossary folder).\
+5.  **Refine:** When Claude performs post-extraction work (like assigning IDs), it uses the `SP` and `PASS` tags to request the correct counter, ensuring global uniqueness for every extracted concept [14].
+
+================================================================================
+END OF EXTRACTION
+================================================================================
