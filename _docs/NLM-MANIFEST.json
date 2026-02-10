@@ -2,7 +2,7 @@
   "notebook_name": "Havona Anvil Suite",
   "notebook_id": "430df618-e337-4971-abaa-6528e96bb1c4",
   "last_synced": "2026-02-09",
-  "last_synced_session": "021",
+  "last_synced_session": "022",
   "sources": {
     "CHANGELOG.txt": {
       "version": "v1.0",
@@ -33,6 +33,14 @@
       "repo_path": "_docs/v1.0_REF_Majeston-Tool-Reference.txt",
       "nlm_source_id": "78cf949f-1393-4d72-a989-27c936b8e560",
       "last_updated_session": "021"
+    },
+    "v0.1_SPEC_Indexer-File-Organization-System.txt": {
+      "version": "v0.1",
+      "repo_path": "_docs/v0.1_SPEC_Indexer-File-Organization-System.txt",
+      "nlm_source_id": "7c22d3a3-3de8-4fe0-a498-01cf03c223f7",
+      "nlm_source_type": "text_summary",
+      "note": "Added as text summary due to file upload path limitation. Full spec in GitHub repo.",
+      "last_updated_session": "022"
     }
   },
   "maintenance_note": "When any _docs/ file is updated: (1) commit new version via Chronicler, (2) delete old source from NLM notebook via Majeston:source_delete, (3) add updated file via Majeston:source_add, (4) update this manifest with new source_id and session number."
