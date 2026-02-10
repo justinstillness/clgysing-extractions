@@ -5,6 +5,7 @@ Source Package:  N/A
 Pass Type:       N/A (N/A)
 Pass Number:     N/A
 Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           Summarize the key methodology decisions and findings from Sessions 007 through 011 that are load-bearing for extraction pipeline design. Include: the recommended extraction sequence, chat_configure findings, template-as-source results, combined vs separated pass decisions, and any decisions about query design best practices. Focus on what's operationally relevant for running extraction passes today.
 Timestamp:       2026-02-08T22:26:42.000953+00:00
 Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d

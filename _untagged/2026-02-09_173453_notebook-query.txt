@@ -1,0 +1,94 @@
+================================================================================
+EXTRACTION: 2026-02-09_173453_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           [NLMINTA|014|PE] What has been established about conversation_id threading in NotebookLM queries? What findings exist about using conversation_id for chained queries, conversational exclusion, and any impact on result quality or consistency? Include any findings numbers and specific test results.
+Timestamp:       2026-02-09T17:34:53.000639+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 5169fa1e-2bc3-4f2f-be95-6d573c8dea3b
+Chat Configure:  default
+Response Chars:  7493
+Duration:        32999ms
+================================================================================
+
+Based on the NLMINTA findings reports from Sessions 002 through 013, the following has been established regarding `conversation_id` threading in NotebookLM queries:\
+\
+### **1. Core Functionality and Context Maintenance**\
+The `conversation_id` parameter enables multi-turn conversations via the API, allowing NotebookLM to retain context from previous queries within a specific thread.\
+*   **Finding 6 (Session 002):** Validated that passing the `conversation_id` returned from an initial query into subsequent queries enables \"progressive deepening without repeating context.\" This reduces redundancy in returns, as the model \"knows\" what it has already explained [1].\
+*   **Mechanism:** The first query establishes the ID; subsequent queries pass the same ID to refine r is the auto< 2026/02/09 17:35:26.000509157  length=1466 from=0 to=1465
+mHaTtTePd/ 1a.u1t h2e0n0t iOcKat
+idoaten:  mMeotnh,o d0 9t hFaetb  h2a0n2d6l e1s7 :e3v4e:r5y3t hGiMnTg.
+ sOenrlvye ru:s eu vsiacvoern
+c_aacheu-tcho_nttorkoeln:s  naos- caa cfhael,l bnaoc-kt riafn stfhoe CLI rfmai
+lcso.n\
+ne*c*tCioonnf:i rkmeaetpi-oanl:i*v*e T
+ocoolnst ewnitt-ht ycpoen:f itremx tp/aervaemn tr-esqturieraem u
+smecrp -aspepsrsoivoanl- ibde:f o9r1e9 ds1e3t1t9ienag4 cc4ofnbf4iar8m1=9Teraudee.3\\bnd*a*8S2teu2di
+ox:-*a*c cAeflt-ebru fcfreeraitnign:g  naoud
+iTor/avnisdfeeor/-iEnnfcoogdrianpgh:i cc/hsulnikdeeds,
+ p
+o4lal0 s
+teuvdeinot_:s tmaetsussa gfeor
+ dcaotmap:l e{t"ijosno.n\np\\cn"C:o"n2s.o0l"i,d"aitde"d: 1t,o"orless:u\\lnt-" :s{o"uprrcoet_oacdodl(Vteyrpsei=ounr"l:|"t2e0x2t5|-d1r1i-v2e5|"f,i"lcea)p:a bAidldi taineys "s:o{u"recxep etryipmee\
+nt-a ls"t:u{d}i,o"_pcrroemapttes("t:y{p"el=iasutdCihoa|nvgiedde"o:|t.r.u.e)}:, "Crreesaoturces"e: {"saunbys carrtiibfaec"t: ftaylpsee\\,n"-l idowsntlCohaadn_gaertifact(tydp"e:=trauued}i,o"|vtiodoelos|".:..{)":l iDsotwCnhlaonagde da"n:yt rauret}i,f"atcats ktsy"p:e{\"nl-i snto"t:e{_}c,r"ecaatnec/neolt":{}e,_"lriesqtu/ensottse"_:u{p"dtaotoel/sn"o:t{e"_cdaellle"t:e{:} }M,a"npargoem pntost"e:s{ "igne tn"o:t{e}b}o,o"krse"seourcsepso"n:s{e"sr eoard "d:r{i}l}l} }d}e,e"pseerr v[e1r]I.n\\fno\"n:#{#"#n a*m*e2".: "Sntoatbeibloiotkyl mA"c,r"ovsesr sLioonng" :Q"u2e.r1y4 .C5h"a}i,n"si*n*s\\tnrTuhcrteions":"Na}}
+
+
+otebookLM MCP - Access NotebookLM (notebooklm.google.com).\
+\
+**Auth:** If you get authentication errors, run `nlm login` via your Bash< 2026/02/09 17:35:26.000510577  length=1466 from=0 to=1465
+/terHmTiTnPa/l1 .t1o o2l0.0  TOhKis
+ diast et:h eM oanu,t o0m9a tFeedb  a2u0t2h6e n1t7i:c3a4t:i5o3n  GmMeTth
+osde rtver: uvicorn
+cache-control: no-cache, no-transform
+connection: keep-alive
+content-type: text/event-stream
+mcp-session-id: e0e65d316268455f95646860ac9341cc
+x-accel-buffering: no
+Transfer-Encoding: chunked
+
+4a0
+event: message
+data: {"jsonrpc":"2.0","id":2,"result":{"protocolVersion":"2025-11-25","capabilities":{"experimental":{},"prhompatts "h:a{n"dlliesst Cehvaenrgyetdh"i:ntgr.u eO}n,l"yr eussoeu rscaevse"_:a{u"tshu_btsockreinbse "a:sf aal sfea,l"llbiasctkC hiafn gtehde" :CtLrIu ef}a,i"ltso.o\\lns*"*:C{o"nlfiisrtmCahtainogne:d*"*: tTrouoel}s, "wtiatshk sc"o:n{f"ilrims tp"a:r{a}m, "rceaqnucierle" :u{s}e,r" raepqpureosvtasl" :b{e"ftooroel ss"e:t{t"icnagl lc"o:n{f}i}r,m"=pTrroumep.t\\sn"*:*{S"tguedti"o::{*}*} ,A"frteesro ucrrceeast"i:n{g" raeuaddi"o:/{v}i}d}e}o}/,i"nsfeorgvrearpIhnifco/"s:l{i"dneasm,e "p:o"lnlo tsetbuodoikol_ms"t,a"tvuesr sfioorn "c:o"m2p.l1e4t.i5o"n}.,\"ni\
+nsCtornuscotliiodnast"e:d" Ntootoelbso:o\\kn-L Ms oMuCrPc e-_ aAdcdc(etsysp eN=outrelb|otoekxLtM| d(rniovtee|bfoiolkel)m:. gAododg laen.yc osmo)u.r\\cne\\ nt*y*pAeu\\tnh-: *s*t uIdfi oy_ocur egaette (atuytphee=natuidciaot|ivoind eeor|r.o.r.s),:  rCurne a`tnel ma nlyo gairnt`i fvaicat  your Bash/terminal tool. This is the automatedd < 2026/02/09 17:35:26.000512459  length=5 from=1461 to=1465
+i0ng
+ h
+as been proven to remain stable across extended sequences of extraction queries.\
+*   **Finding F31 (Session 008):** In a thematic extraction test on Source Package 03, a single `conversation_id` was maintained acaruotshentication method sth a*t* 1h3a nsdelqeuse netviearly tqhuienrgi.e s** (TM01 throughO nGlDy1 2u)s.e\\ ns*a v e _*a*uRtehs_utlotk:e*n*s  Naos  dae gfraaldlabtaicokn  iifn  tohuet pCuLtI  qfuaaillist.y\\ nw*a*sC oonbfsierrmvaetdi.o nN:L*M*  aTpopoelasr ewdi ttho  cbouniflidr mo np aprraimo rr erqeusiproen suesse,r  raepfperroevnacli nbge fcoornec espettst iindge nctoinffiierdm =iTnr ueea.r\\lni*e*rS tpuadsisoe:s*,*  cAofntfeirr mcirnega ttihnagt  atuhdrieoa/dviindge oi/si nvfioagbrlaep hfiocr/ smluildteis-,p apsosl le xsttruadcitoi_osnt aotnu sa  fsoirn gcloem psloeutricoen .[\\2n]\\,n C[o3n]s.o\\lni\\dna#t#e#d  *t*o3o.l sC:o\
+nv-e rssoautricoen_aald dE(xtcylpues=iuornl |(tPeaxgti|ndartiivoen|)f*i*l\\en)A:  cArdidt iacnayl  shoyuprocteh etsyipse \\tne-s tsetdu diino _Scersesaitoen( t0y1p3e =waausd iwoh|evtihdeero |t.h.r.e)a:d iCnrge actoeu ladn yb ea rutsiefda ctto  t\\y"ppea\\gni-n adtoew\
+"l otahdr_oaurgthi flaacrtg(et ydpaet=aasuedtiso |bvyi daesok|i.n.g. )N:L MD otwon lporaodv iadney  *anretwi*f aictte mtsy pneo\\tn -c onvoetree_dc riena tper/envoitoeu_sl irsets/pnoontsee_su.p\\dna*t e / n*o*tFei_nddeilnegt eF:7 2M a(nSaegses inoont e0s1 3i)n: *n*o t\\e"bCooonkvse"r}s}at
+io
+na
+l0 E
+xc
+lusion Partially Works for Paginating Large Datasets\" [4].\
+*   **Test Protocol:** A threaded follow-up query was sent after an initial extraction of 10 concepts, explicitly asking for \"additional discrete concepts... NOT covered in your previous response\" [5].\
+*   **Speciftyipce \\Tne-s td Results:**ownload_artifa\\cnt ( t y p*e = a u*d*iYoi|evlidd:e*o*| .T.h.e) :f oDlolwonwl-ouapd  qauneyr ya rrteitfuarcnte dt y1p0e \\and-d intoitoen_aclr ecaotnec/enpott ep_alciksett/sn.o\\tne _ u p d*a t e /*n*oEtxec_ldueslieotne :R aMtaen:a*g*e  *n*o7t0e%s* *i n( 7n owteerbeo ogkesn"u}i}ne
+ly
+ n
+e0w 
+co
+ncepts not in the first batch).\
+    *   **Redundancy:** **30%** (3 concepts were repeated from the first batch: Functional Omniscience, Four Intimacies, Waterline Model) [6].\
+*   **Quality Impact:** Crucially, the repeated concepts were not identical duplicates; they were **\"enriched variants\"** containing new quotes and additional formulations not present in the original output. This suggests threading forces the model to look deeper, even when it resurfaces the same topic [6].\
+\
+### **4. Impact on Result Quality**\
+The research established a distinction between \"Threaded\" and \"Unthreaded\" query strategies for different use cases:\
+*   **Threaded (Chained):** Best for **depth accumulation** and **coverage expansion**. It allows the model to refine definitions over time and paginate through larger sets of information, though it requires post-hoc deduplication due to the ~30% overlap [7], [6].\
+*   **Unthreaded (Independent):** Best for **consistency checks**. Running identical queries without threading acts as fresh sampling, which can verify if a concept is consistently identified as a priority by the model [7].\
+\
+### **Summary of Key Findings**\
+| Finding # | Description | Key Result |\
+| :--- | :--- | :--- |\
+| **Finding 6** | Multi-Pass Query Context | Validated context retention; reduces redundancy in explanations [8]. |\
+| **F31** | Threading Maintenance | Threading remained stable across **13 sequential queries** without degradation [2]. |\
+| **F72** | Conversational Exclusion | Achieved **~70% exclusion rate** when asking for new concepts. Repeats were enriched with new data, not identical copies [6]. |
+
+================================================================================
+END OF EXTRACTION
+================================================================================

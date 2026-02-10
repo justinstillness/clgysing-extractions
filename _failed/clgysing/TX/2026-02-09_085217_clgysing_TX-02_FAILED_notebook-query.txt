@@ -1,0 +1,29 @@
+================================================================================
+EXTRACTION: 2026-02-09_085217_clgysing_TX-02_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          NO_RESPONSE
+Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Source Package:  N/A
+Pass Type:       TX (Thematic Extraction)
+Pass Number:     02
+Theme/Focus:     four-intimacies-contractual-formalism
+Project:         clgysing
+Session:         013
+Would-Be Route:  Tier 1 (Tagged + Known)
+Query:           \nExtract all discrete concepts from the theme of the Four Intimacies and Contractual Formalism as structured concept packets. This includes the Four Intimacies model, contract formalism, intimacy hijacks, trust as confidence, honorable vs dishonorable contracts, and all related sub-concepts. For each concept provide: a descriptive title, a thorough definition, source attribution, any direct quotes, related concepts, and notes on how the concept has evolved across the sources if variants exist.
+Timestamp:       2026-02-09T08:52:17.000008+00:00
+Notebook ID:     05dbf2cc-4060-42d0-97f1-65d38ea90204
+Source IDs:      all
+Conversation ID: N/A
+Response Chars:  0
+Duration:        1988000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"prompts": []}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

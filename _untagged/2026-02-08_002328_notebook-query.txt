@@ -5,6 +5,7 @@ Source Package:  N/A
 Pass Type:       N/A (N/A)
 Pass Number:     N/A
 Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           What are the planned future goals, the Layer 4 build plan phases, and the broader vision for how this infrastructure connects to the CLGYSING content production workflow?
 Timestamp:       2026-02-08T00:23:28.000538+00:00
 Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59

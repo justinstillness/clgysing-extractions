@@ -5,6 +5,7 @@ Source Package:  N/A
 Pass Type:       N/A (N/A)
 Pass Number:     N/A
 Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           Using the master thesis and sub-theses provided in the notebook notes as an extraction lens, extract all concepts from the source documents that are relevant to or support the thesis architecture. For each concept provide: (1) a descriptive title, (2) the core content capturing the full substance with no loss of meaning, (3) the thematic category, (4) relationships to other concepts, and (5) which specific sub-thesis or theses this concept supports. Prioritize concepts that directly illuminate the epistemic dichotomy, the Four Intimacies corruption mechanism, and the parasitic-symbiotic dynamic. Include concepts that challenge or complicate the thesis as well.
 Timestamp:       2026-02-07T23:14:29.000250+00:00
 Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9

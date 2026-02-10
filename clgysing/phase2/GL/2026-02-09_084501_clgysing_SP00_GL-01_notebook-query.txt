@@ -1,0 +1,111 @@
+================================================================================
+EXTRACTION: 2026-02-09_084501_clgysing_SP00_GL-01_notebook-query
+================================================================================
+Source Package:  SP00
+Pass Type:       GL (Glossary Generation)
+Pass Number:     01
+Theme/Focus:     batch-test
+Project:         clgysing
+Session:         020
+Routing:         Tier 1 (Tagged + Known)
+Query:           List 5 key technical terms used in this notebook with brief definitions.
+Timestamp:       2026-02-09T08:45:01.000551+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: f13bb06b-366b-41bd-a5a4-c04fa1c2abf6
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  11635
+Duration:        803000ms
+================================================================================
+
+Based on the provided sources, here are the discrete concepts regarding the Four Intimacies model, structured by title, definition, source attribution, and direct quotes.\
+\
+### 1. The Four Intimacies (General Framework)\
+**Definition:** A taxonomy of relational exchange that acts as the \"lifeblood\" or \"currency\" of human connection. These four dimensions...Physical, Emotional, Intellectual, and Spiritual...are not separate compartments but interdependent features of being that constitute the infrastructure of all relationships, from romantic dyads to civilizations. They function as an economy where energy, information, and value are exchanged.\
+**Source:** *W 4 Intimacies and Civilization* [1], [2]; *1 Parasitic & Symbiotic Eco (Evaluation)* [3]\
+**Direct Quote:**\
+> \"The four intimacies are physical, emotional, intellectual, and spiritual. Together, they make up the lifeblood of human life. ... The mechanics of contracts... can be studied in detail, but for now it...s enough to see that every relationship runs on them. To understand whether these contracts are healthy or compromised, we can look at four key lenses: the intimacies.\" [4] [5]\
+\
+### 2. Intellectual Intimacy ( The Keystone / Informational Substrate)\
+**Definition:** The exchange of information, truth, and meaning to achieve \"on-the-same-page status.\" It acts as the circulatory system for the other intimacies, allowing for the negotiation of reality and the construction of shared epistemic frameworks. It is considered the foundational or \"keystone\" intimacy because without the shared meaning it provides, the other intimacies cannot be coherently sustained or renegotiated.\
+**Source:** *1 Parasitic & Symbiotic Eco (Evaluation)* [3]; *W 4 Intimacies and Civilization* [6]\
+**Direct Quote:**\
+> \"Intellectual intimacy... kind of act as the informational substrate from which all other intimacies respond to and operate within... It is the circulatory system of truth and honesty, where information, integrity, and good faith flow, allowing all the others to thrive. It is the bedrock of trust.\" [3] [7]\
+> \"Intellectual intimacy is the keystone for reversing the pattern [of parasitism]. When people can safely question, disclose, and renegotiate, the whole system can move from parasitic extraction toward symbiotic growth.\" [8]\
+\
+### 3. Emotional Intimacy (Shared Resonance / Spectacle)\
+**Definition:** The shared experience of affect, care, and vulnerability. It involves a \"shared vantage point\" where individuals can engage in a common spectacle of feeling. It functions as the climate of a relationship, allowing for resilience, the metabolism of grief/joy, and the regulation of internal states through external validation.\
+**Source:** *1 Parasitic & Symbiotic Eco (Evaluation)* [3]; *W 4 Intimacies and Civilization* [9]\
+**Direct Quote:**\
+> \"[E]motional intimacy flows from [intellectual intimacy] meaning that when two people are experiencing a shared vantage point on an idea... they experience intellectual intimacy... emotional intimacy, where individuals can share in some common sense as a result of a common spectacle emotions that reverberate between the two of them...\" [3]\
+> \"Emotional intimacy is the shared economy of care, expression, and resilience. It is the atmosphere of trust and compassion that allows feelings to flow safely between people and through communities.\" [10]\
+\
+### 4. Physical Intimacy (Economy of Space and Safety)\
+**Definition:** Beyond mere touch or sexuality, this intimacy encompasses the management of shared territory, resources, safety, and infrastructure. It is the grounding of the relationship in the material world, dealing with the logistics of co-habitation, the distribution of resources (like food or money), and the establishment of physical peace.\
+**Source:** *1 Parasitic & Symbiotic Eco (Evaluation)* [3]; *W 4 Intimacies and Civilization* [11]\
+**Direct Quote:**\
+> \"Physical intimacy is what you might think of as physical intimacy, which is physical touching, but it...s also the relationship dynamics that operate in the physical realm for example when you...re living with another person and you learn how to manage the resources of the refrigerator... this is all falling in the category of physical intimacy...\" [3]\
+> \"The economy of phys< 2026/02/09 08:58:24.000834203  length=7348 from=16885 to=24232
+ical intimacy is the way individuals and groups organize the territory they inhabit... Material resources also fall into this domain... When managed well, these are distributed so that all honest participants have at least their fair share, creating both security and freedom.\" [11]\
+\
+### 5. Spiritual Intimacy (Value Orientation / Characterological Growth)\
+**Definition:** The alignment and expansion of value systems, ideals, and character. It is the \"vertical\" dimension of intimacy that orients the participants toward a higher order (God, Truth, or the Good). It integrates the experiences of the other three intimacies into characterological development and shared purpose.\
+**Source:** *1 Parasitic & Symbiotic Eco (Evaluation)* [3]; *BH Essay 2: Trinity as Perfect Marriage* [12]\
+**Direct Quote:**\
+> \"[S]oul intimacy [spiritual intimacy]... is the layer of intimacy that operates between human beings... that has specifically do with values... This is where our souls grow together as a result of achieving quality states of intimacy, measured by on the same page status. Here, the values we discover as individuals can be shared with others, allowing us to expand our value system and harmonize it...\" [3] [12]\
+\
+### 6. Intimacy as Potential vs. Kinetic Energy\
+**Definition:** A physics-based analogy where \"Potential Intimacy\" is the capacity for connection created by information exchange or mutual recognition, and \"Kinetic Intimacy\" is the actualized state achieved when the will aligns with that potential.\
+**Source:** *chatgpt.com-Civ Contract Formalism - Intimacy and contract economy.pdf* [13]\
+**Direct Quote:**\
+> \"Potential intimacy: the capacity that exists once information is exchanged or mutual recognition achieved. Kinetic intimacy: the actualized state once will aligns with the potential. This gives us a formalism: intimacy ... (informational overlap .. will orientation).\" [13]\
+\
+### 7. Parasitic Hijacking: Block vs. Counterfeit\
+**Definition:** The two primary mechanisms by which parasitic systems distort intimacy.\
+*   **Block:** Preventing the conversion of potential intimacy into kinetic intimacy (e.g., withholding information, emotional stonewalling).\
+*   **Counterfeit:** Providing a shallow simulation of intimacy that satisfies the immediate hunger but provides no nutritional value, preventing deep connection (e.g., love-bombing, porn, spectacle).\
+**Source:** *W 4 Intimacies and Civilization* [14], [15]\
+**Direct Quote:**\
+> \"In the parasitic mode, intimacy is either *blocked* (never allowed to flow) or *counterfeited* (simulated in shallow, manipulative ways). ... The result is parasitism...relationships and institutions that feed on their members rather than serving them.\" [16] [17]\
+\
+### 8. Intimacy Cross-Effects (The Cascade)\
+**Definition:** The principle that a distortion or health in one intimacy domain inevitably ripples into the others. A physical hijack (e.g., sleep deprivation) will degrade intellectual clarity; healthy emotional intimacy will bolster spiritual confidence. This establishes the system as an interdependent circuit rather than isolated silos.\
+**Source:** *W 4 Intimacies and Civilization* [18], [9]\
+**Direct Quote:**\
+> \"No intimacy is isolated. If parasitism hijacks one (say, emotional intimacy in family through conditional love), the other three are destabilized (intellectual confusion, physical stress, spiritual unworthiness scripts). Each cell tracks these 'cross-effects' to help diagnose the root problem in complex systems.\" [18]\
+\
+### 9. The Spectacle-Substance Spectrum\
+**Definition:** A diagnostic tool used to identify parasitic vs. symbiotic intimacy. Parasitism tends to inflate \"spectacle\" (surface signals, pageantry, emotional highs) to mask a lack of substance. Symbiosis grounds spectacle in reality, where the external display matches the internal truth.\
+**Source:** *chatgpt.com-Civ Contract Formalism - Intimacy and contract economy.pdf* [19]\
+**Direct Quote:**\
+> \"Parasitic spectacle = surface activation that mimics intimacy but blocks optimization (nutritional 'junk food'). Symbiotic substance = spectacle plus substance...spectacle becomes the signal of real substance underneath.\" [19]\
+\
+### 10. Cryptographic Calibration (Intimacy as Language)\
+**Definition:** Intimacy viewed as a process of \"key exchange\" or calibration between two disparate \"conceptual universes.\" Initial contact involves \"overflow\" (misunderstanding/error), and intimacy is the iterative process of reducing that error to achieve intelligibility and trust.\
+**Source:** *chatgpt.com-Civ Contract Formalism - Intimacy and contract economy.pdf* [20]\
+**Direct Quote:**\
+> \"Intimacy is cryptographic in precisely this sense: physical, emotional, intellectual, spiritual 'keys' must be aligned for information to transmit without distortion. ... Intimacy = a recursive loop of misfire ... disclosure ... adjustment ... re-try.\" [21] [22]\
+\
+### 11. The Sigmoid Growth Curve of Intimacy\
+**Definition:** A model describing the temporal development of intimacy. It begins with an \"Initiation Lag\" (flat zone of calibration), moves to \"Acceleration\" (steep rise as shared language is established), and reaches a \"Plateau\" (saturation). Continued growth requires expanding the domain of the relationship to reset the curve.\
+**Source:** *chatgpt.com-Civ Contract Formalism - Intimacy and contract economy.pdf* [23]\
+**Direct Quote:**\
+> \"Intimacy is a sigmoid function of calibration...accelerated by trust, limited by domain exhaustion, renewed by domain expansion.\" [24]\
+\
+### 12. The Tetrahedral Model\
+**Definition:** A geometric visualization where the four intimacies form the vertices of a tetrahedron. This shape illustrates that every intimacy touches every other, and the volume of the tetrahedron represents the total \"intimacy field.\" The stability of this structure is pressurized by the surrounding field of \"Truth Orientation.\"\
+**Source:** *chatgpt.com-Civ Contract Formalism - Intimacy and contract economy.pdf* [25]\
+**Direct Quote:**\
+> \"Why tetrahedron? It's the simplest 3D solid...stable, irreducible, and fully reciprocal (every vertex touches every other). It visually shows that no intimacy stands alone... The field that encloses the tetrahedron = truth-orientation, which 'pressurizes' the structure...\" [26] [27]\
+\
+### 13. Intimacy as Civilizational Organs\
+**Definition:** The application of the intimacy model to macro-social structures. Governance, Economy, Knowledge, and Social Structure are analyzed as systems that must facilitate the flow of the four intimacies. Parasitic civilizations hijack these organs by distorting the specific intimacy they are meant to steward (e.g., Governance hijacking Spiritual Intimacy via idolatry of the state).\
+**Source:** *W 4 Intimacies and Civilization* [28]\
+**Direct Quote:**\
+> \"Each organ of civilization can be parasitized in a way that not only undermines its own function but spills into all four intimacies, distorting the social contract. ... Governance hijacks intellectual/spiritual intimacy most (laws and sacred authority). Economy hijacks physical/emotional intimacy most (labor, consumption desire).\" [28] [29]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,27 @@
+================================================================================
+EXTRACTION: 2026-02-09_083541_clgysing_TX-03_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       TX (Thematic Extraction)
+Pass Number:     03
+Theme/Focus:     parasitic-vs-symbiotic-framework
+Project:         clgysing
+Session:         013
+Routing:         Tier 1 (Tagged + Known)
+Query:           \n\nExtract all discrete concepts from the theme of 'The Symbiotic vs. Parasitic Civilizational Framework' as structured concept packets. For each concept provide: a descriptive title, a detailed definition, direct quotes from the source material, which sources contribute, relationships to other concepts, and any observable evolution across different sources.
+Timestamp:       2026-02-09T08:35:41.000581+00:00
+Notebook ID:     05dbf2cc-4060-42d0-97f1-65d38ea90204
+Source IDs:      all
+Conversation ID: 2b69a64b-a9a6-4aec-a88e-03e3869b48f3
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  1068
+Duration:        527999ms
+================================================================================
+
+The primary infrastructure described in this notebook is the "MCP Workshop Suite," hosted on an AWS EC2 `t3.micro` instance running Ubuntu, which deploys three distinct Model Context Protocol (MCP) services: **Majeston** (for querying NotebookLM via the `jacob-bd` package), **Caliper** (for document analysis), and **Chronicler** (for GitHub repository interaction) [1, 2]. These services function as systemd units and are exposed via **Caddy**, which acts as a reverse proxy handling HTTPS termination and routing requests to their respective internal ports [3, 4]. Supporting this architecture is **SeraphRecorder**, a custom data pipeline that transparently captures Majeston traffic using `socat`, extracts structured data via Python scripts, and archives results to a private GitHub repository [5-7]. The environment is hardened using AWS Systems Manager (SSM) for server access (allowing SSH ports to be closed) and **iptables** for rate limiting, while authentication is managed through periodic Google token refreshes and GitHub Personal Access Tokens [8-10].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,29 @@
+================================================================================
+EXTRACTION: 2026-02-09_092305_clgysing_TX-04_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          NO_RESPONSE
+Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Source Package:  N/A
+Pass Type:       TX (Thematic Extraction)
+Pass Number:     04
+Theme/Focus:     functional-omniscience-variants
+Project:         clgysing
+Session:         013
+Would-Be Route:  Tier 1 (Tagged + Known)
+Query:           \nTrace the concept of 'Functional Omniscience' across all sources in this notebook. I want to see every variant, formulation, and evolution of this concept. For each variant, provide: the specific formulation or definition used, which source it appears in, the context in which it is discussed, any direct quotes, and how this variant differs from or builds upon earlier formulations. Organize chronologically or by developmental progression if possible, showing how the concept has matured, branched, or been refined over time. Include any related concepts that emerged from or fed into the development of Functional Omniscience.
+Timestamp:       2026-02-09T09:23:05.000285+00:00
+Notebook ID:     05dbf2cc-4060-42d0-97f1-65d38ea90204
+Source IDs:      all
+Conversation ID: N/A
+Response Chars:  0
+Duration:        469000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"prompts": []}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

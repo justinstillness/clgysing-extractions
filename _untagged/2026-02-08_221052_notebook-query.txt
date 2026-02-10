@@ -5,6 +5,7 @@ Source Package:  N/A
 Pass Type:       N/A (N/A)
 Pass Number:     N/A
 Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           What is the Signal String Format? What conventions have been discussed for query tagging, file naming, pass type identifiers, and metadata tags? Include any specifications, nomenclature decisions, and how Signal Strings relate to the extraction pipeline and file routing.
 Timestamp:       2026-02-08T22:10:52.000586+00:00
 Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d

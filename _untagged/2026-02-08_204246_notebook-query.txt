@@ -5,6 +5,7 @@ Source Package:  N/A
 Pass Type:       N/A (N/A)
 Pass Number:     N/A
 Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           Identify and map all major themes and conceptual clusters present across all source materials in this notebook. For each theme, provide: the theme name, a brief description of what it covers, which source packages contain significant content on this theme, an estimate of how extensively it appears across the corpus, and which specific sub-themes or topics fall under it. Be comprehensive ... this is a large corpus with 15 source packages covering diverse topics. Organize hierarchically from broadest to most specific.
 Timestamp:       2026-02-08T20:42:46.000161+00:00
 Notebook ID:     cce3b796-03b4-4282-98ac-e572cf820c02

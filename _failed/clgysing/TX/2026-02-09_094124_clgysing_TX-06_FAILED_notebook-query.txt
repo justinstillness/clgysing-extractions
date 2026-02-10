@@ -1,0 +1,29 @@
+================================================================================
+EXTRACTION: 2026-02-09_094124_clgysing_TX-06_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          NO_RESPONSE
+Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Source Package:  N/A
+Pass Type:       TX (Thematic Extraction)
+Pass Number:     06
+Theme/Focus:     contractual-formalism
+Project:         clgysing
+Session:         013
+Would-Be Route:  Tier 1 (Tagged + Known)
+Query:           \nExtract all discrete concepts specifically about Contractual Formalism ... including honorable vs dishonorable contracts, the contract web, implied contracts, consent mechanics, meeting of the minds, and any related sub-concepts. For each concept provide: title, definition, source attribution, direct quotes, related concepts, and evolution notes.
+Timestamp:       2026-02-09T09:41:24.000899+00:00
+Notebook ID:     05dbf2cc-4060-42d0-97f1-65d38ea90204
+Source IDs:      all
+Conversation ID: N/A
+Response Chars:  0
+Duration:        512000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"prompts": []}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

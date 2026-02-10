@@ -5,6 +5,7 @@ Source Package:  N/A
 Pass Type:       N/A (N/A)
 Pass Number:     N/A
 Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           Identify and map all major themes and conceptual clusters present across the source material. For each theme, provide: the theme name, a brief description of what it covers, an estimate of how extensively it appears in the sources, and which specific topics or sub-themes fall under it. Organize hierarchically from broadest to most specific.
 Timestamp:       2026-02-08T05:42:16.000808+00:00
 Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9

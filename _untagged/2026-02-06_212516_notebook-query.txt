@@ -5,6 +5,7 @@ Source Package:  N/A
 Pass Type:       N/A (N/A)
 Pass Number:     N/A
 Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           What is the current GitHub PAT status on EC2? Is git configured? What is the PAT token or credential helper setup?
 Timestamp:       2026-02-06T21:25:16.000460+00:00
 Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59

@@ -5,6 +5,7 @@ Source Package:  N/A
 Pass Type:       N/A (N/A)
 Pass Number:     N/A
 Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           Based on all source material in this notebook, generate a master thesis statement and 5-8 supporting sub-theses that articulate the relationship between: (1) parasitic and symbiotic social systems, (2) intrinsic and extrinsic knowledge paths, (3) how these epistemic modes affect human relationships, and (4) the role of the Four Intimacies (physical, emotional, intellectual, spiritual) in this dynamic. The master thesis should be a single declarative claim. Each sub-thesis should be a specific supporting argument with clear logical dependency on the master thesis.
 Timestamp:       2026-02-07T23:13:36.000126+00:00
 Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9

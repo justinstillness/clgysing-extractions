@@ -1,0 +1,27 @@
+================================================================================
+EXTRACTION: 2026-02-09_084049_clgysing_TX-04_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       TX (Thematic Extraction)
+Pass Number:     04
+Theme/Focus:     parasitic-vs-symbiotic-core
+Project:         clgysing
+Session:         013
+Routing:         Tier 1 (Tagged + Known)
+Query:           \n\nExtract the key concepts related to the parasitic versus symbiotic civilizational framework. For each concept provide a title, definition, and source attribution.
+Timestamp:       2026-02-09T08:40:49.000715+00:00
+Notebook ID:     05dbf2cc-4060-42d0-97f1-65d38ea90204
+Source IDs:      all
+Conversation ID: 81041f10-16b2-4723-a284-f0096e58fc5b
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  947
+Duration:        246000ms
+================================================================================
+
+The **SeraphRecorder** pipeline architecture was shaped by the strategic decision to implement a **transparent middleware capture system** rather than modifying the core Majeston MCP code, ultimately utilizing **`socat` for raw TCP proxying** to handle the complex Streamable HTTP and SSE protocols that standard Python wrappers failed to manage reliability [1-3]. This architecture relies on a **dual-stream data model** that simultaneously archives full raw traffic logs (JSONL) for auditing while generating curated, human-readable text extractions for immediate research use [4, 5]. Furthermore, the system was designed around **GitHub as the central delivery mechanism** to ensure version-controlled access and integration with the broader LibForge toolset [6, 7], utilizing embedded **"Signal Strings"** within query text to drive automated file tagging, routing, and metadata generation without altering the underlying API structure [8, 9].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

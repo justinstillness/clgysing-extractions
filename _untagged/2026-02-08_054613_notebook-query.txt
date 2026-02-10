@@ -5,6 +5,7 @@ Source Package:  N/A
 Pass Type:       N/A (N/A)
 Pass Number:     N/A
 Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           Beyond the themes of Omniology/Epistemology, Research Methodology, Cultology Framework, Civilizational Pathology, and Agenda 47, are there any remaining concepts in the source material that have NOT been covered? Look specifically for: operational/meta concepts about publishing, subscriber relations, content strategy, personal biographical details, or any other ideas that fall outside these five major themes. List each with its concept title and which source(s) it appears in.
 Timestamp:       2026-02-08T05:46:13.000765+00:00
 Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9

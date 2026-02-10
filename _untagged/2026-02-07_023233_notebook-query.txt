@@ -5,6 +5,7 @@ Source Package:  N/A
 Pass Type:       N/A (N/A)
 Pass Number:     N/A
 Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           Extract all significant concepts from the source documents. For each concept provide: (1) a descriptive title, (2) the core content capturing the full substance of the concept with no loss of meaning, (3) the thematic category it belongs to, and (4) relationships to other extracted concepts. Preserve all proprietary terminology exactly as used in the sources. Use the proprietary vocabulary definitions provided in the notebook notes to ensure accurate handling of framework-specific terms.
 Timestamp:       2026-02-07T02:32:33.000130+00:00
 Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9

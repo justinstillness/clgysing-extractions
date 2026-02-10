@@ -5,6 +5,7 @@ Source Package:  N/A
 Pass Type:       N/A (N/A)
 Pass Number:     N/A
 Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           What are the current findings F55 through F65 from Session 012? What were the results of the parity comparison and scale testing? What open questions remain for the stress test on Para vs Symb Data notebook?
 Timestamp:       2026-02-08T22:11:33.000248+00:00
 Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d

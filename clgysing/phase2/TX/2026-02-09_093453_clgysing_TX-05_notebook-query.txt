@@ -1,0 +1,112 @@
+================================================================================
+EXTRACTION: 2026-02-09_093453_clgysing_TX-05_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       TX (Thematic Extraction)
+Pass Number:     05
+Theme/Focus:     parasitic-vs-symbiotic-exclusion-test
+Project:         clgysing
+Session:         013
+Routing:         Tier 1 (Tagged + Known)
+Query:           \nYou previously extracted 10 concept packets from the Parasitic vs. Symbiotic Framework theme. What additional discrete concepts related to this theme exist in the sources that were NOT covered in your previous response? Extract them as structured concept packets with the same format: title, definition, source attribution, direct quotes, related concepts, and evolution notes.
+Timestamp:       2026-02-09T09:34:53.000775+00:00
+Notebook ID:     05dbf2cc-4060-42d0-97f1-65d38ea90204
+Source IDs:      all
+Conversation ID: 4c7d523b-71d8-4c5f-9fa1-48041596eca4
+Chat Configure:  default
+Thread:          continue
+Notes:           conversational-exclusion-test
+Response Chars:  10053
+Duration:        372999ms
+================================================================================
+
+Based on the provided sources, here are additional concepts related to the Parasitic vs Symbiotic civilizational framework, structured as requested.\
+\
+### **Concept Packet 1: The Contractual Fascia of Civilization**\
+*   **Definition:** A model viewing contracts not merely as legal documents but as the fundamental \"connective tissue\" or interstitial fluid of reality and society. Every interaction between agents generates a contract (implicit or explicit) that transmits social waveforms. In a symbiotic system, this fascia allows for clear, truthful signal propagation; in a parasitic system, it is distorted to block or warp causality.\
+*   **Source Attribution:** \"chatgpt.com-Civ Contract Formalism - Dishonorable agreements analysis.pdf\"\
+*   **Direct Quotes:**\
+    *   \"...contracts are the fascia of civilization, to the extent that all citizens are interconnected with each other... via contracts...\" [1]\
+    *   \"...by mapping out the contract we essentially map out the interstitial fluid or the medium through which the waveforms of civilization propagate.\" [1]\
+*   **Related Concepts:** The Contract Web, Social Waveforms, Epistemic Sabotage.\
+\
+### **Concept Packet 2: Functional Omniscience**\
+*   **Definition:** An epistemic state where an agent possesses sufficient knowledge of all operative variables, objects, and relationships within a specific bounded territory to make optimized decisions. It is the goal of the intrinsic path (Service to Others) to share this state, whereas the parasitic path (Service to Self) attempts to hoard it or simulate it through surveillance while keeping others in ignorance.\
+*   **Source Attribution:** \"1 Parasitic & Symbiotic Eco (Evaluation)\", \"2 Parasitic Economy Evaluate\"\
+*   **Direct Quotes:**\
+    *   \"Functional Omniscience = Sufficient awareness of territory relative to the goals and values held\" [2]\
+    *   \"...functional omniscience within a symbiotic civilization is going to have a more distributed fashion.\" [3]\
+    *   \"Parasitic systems... enforce compartmentalized ignorance... while cultivating a priest-class of partial-knowers.\" [4]\
+*   **Related Concepts:** Intrinsic Knowledge, Compartmentalization, Epistemic Asymmetry.\
+\
+### **Concept Packet 3: The Civilizational Compiler**\
+*   **Definition:** The implicit or explicit processing system (analogous to a software compiler or subconscious rulebook) within a civilization that assigns value to actions. It determines what is compensated (financially or socially) and what is penalized. In parasitic systems, it is biased to reward extraction; in symbiotic systems, it rewards contribution to stability and growth.\
+*   **Source Attribution:** \"Approachable Parasitic Economy Points\", \"Omniology 2 - Project a\"\
+*   **Direct Quotes:**\
+    *   \"...a civilizational compiler... is the thing that a civilization uses to define the things that are of value and the things that are not of value, and then to either reinforce or penalize those behaviors...\" [5]\
+    *   \"The compiler can be visualized as an unconscious AI...or even an invisible judge...deciding what society believes is worth paying for.\" [6]\
+*   **Related Concepts:** Civilizational Surplus, Proof-of-Work, The Waterline Model.\
+\
+### **Concept Packet 4: Rights as Causal Powers**\
+*   **Definition:** A reframing of \"rights\" from granted legal permissions to inherent ontological powers. A right is defined as the capacity to initiate a cause that produces an effect. Moral rights produce symbiotic effects; immoral rights (parasitic rights) produce harmful effects. Rights cannot be taken, only obstructed or deceived.\
+*   **Source Attribution:** \"chatgpt.com-Civ Contract Formalism - Intimacy and contract economy.pdf\"\
+*   **Direct Quotes:**\
+    *   \"...if one has the power to make a choice, initiating a cause that produces an effect, then this is itself a 'right.'\" [7]\
+    *   \"Rights cannot be 'taken away,' only obstructed, counterfeited, or deceived, because the capacity to choose cause remains inherent in agency.\" [8]\
+*   **Related Concepts:** Moral Thermodynamics, Causal Wavefronts, The Intrinsic Path.\
+\
+### **Concept Packet 5: The S.C.R.E. Framework (Social Reinforcement)**\
+*   **Definition:** A diagnostic model for analyzing how social systems mobilize or suppress action. It consists of four variables: **S**alience (immediacy of issue), **C**ontrast (visibility of alternatives), **R**isk (cost of deviation), and **E**fficacy (belief in ability to act). Parasitic systems manipulate these (e.g., high Risk, low Contrast) to maintain \"vent-loops\" rather than repair.\
+*   **Source Attribution:** \"Parasitic v Symbiotic Economy Project\"\
+*   **Direct Quotes:**\
+    *   \"Let S = salience... Let C = available contrast... Let R = risk... Let E = self-efficacy.\" [9]\
+    *   \"Parasitic systems cultivate C-poverty... inflate R (sanctions), and supply addictive vent conduits to drain tension without repair.\" [10]\
+*   **Related Concepts:** Learned Helplessness, Preference Falsification, Vent Conduits.\
+\
+### **Concept Packet 6: Contextual Extraction via Dispensational Asymmetry**\
+*   **Definition:** A specific mechanism of parasitic finance where incomplete economic rules (e.g., \"bond prices move inversely to rates\") are taught to the public, while the \"operative context\" (regime timing, secondary market mechanics) is gated. Elites monetize the policy-driven shifts (dispensations) using this asymmetry.\
+*   **Source Attribution:** \"Financial system in civilization\"\
+*   **Direct Quotes:**\
+    *   \"Name: Contextual Extraction via Dispensational Asymmetry...a specific species of parasitic finance in which policy...driven regime changes are front...run through knowledge asymmetry and monetized via bond math.\" [11]\
+    *   \"Teach the publi< 2026/02/09 09:41:06.000322254  length=4253 from=16885 to=21137
+c an incomplete rule... while gating the operative context... Monetize dispensations... with privileged access.\" [12]\
+*   **Related Concepts:** Information Moat, Bond Exploitation, The \"Overt vs. Covert\" Game.\
+\
+### **Concept Packet 7: Hope as Stored Energy (Thermodynamics of Salvation)**\
+*   **Definition:** A thermodynamic model of social control where \"Hope\" is potential energy generated by existential tension. Parasitic systems harvest this energy by endlessly deferring the resolution (salvation), effectively using hope as a battery to power the hierarchy. Symbiotic systems \"close the circuit\" through micro-redemptions and actual resolution.\
+*   **Source Attribution:** \"Parasitic v Symbiotic Economy Project\"\
+*   **Direct Quotes:**\
+    *   \"Hope is the principal energy reservoir of a parasitic order. It is accumulated through deferred resolution... and discharged upward...\" [13]\
+    *   \"...the parasitic economy can be thought of as a futures market in salvation.\" [14]\
+    *   \"Parasitic civilizations grow by harvesting deferred hope... Symbiotic civilizations stabilize by closing the loop...\" [15]\
+*   **Related Concepts:** Temporal Displacement, Narrative Thermostats, The Savior Meme.\
+\
+### **Concept Packet 8: Initiation vs. Hazing**\
+*   **Definition:** The distinction between trials that transform and integrate (Symbiotic Initiation) versus trials that exhaust and enforce submission (Parasitic Hazing). Initiation uses entropy to fuel growth; Hazing generates entropy to maintain hierarchical potential.\
+*   **Source Attribution:** \"Parasitic v Symbiotic Economy Project\"\
+*   **Direct Quotes:**\
+    *   \"Initiation (Symbiotic Mode): Function: Integration ... Comprehension ... Growth.\" [16]\
+    *   \"Hazing (Parasitic Mode): Function: Submission ... Endurance ... Exhaustion... The individual...s time, energy, and comprehension are dissipated to maintain the hierarchy...s potential gradient.\" [16]\
+    *   \"hazing functions as the social engine that converts individual vitality into hierarchical structure.\" [17]\
+*   **Related Concepts:** The Sacrificial Preference Circuit, Moral Capital, Purity Rituals.\
+\
+### **Concept Packet 9: The Four Intimacies as Economy**\
+*   **Definition:** Intimacy is defined as an \"economy of information\" across four domains: Physical, Emotional, Intellectual, and Spiritual. These function as the lifeblood of relationships and civilization. Parasitic systems \"hijack\" these intimacies by blocking them or counterfeiting them (e.g., spectacle replacing substance).\
+*   **Source Attribution:** \"W 4 Intimacies and Civilization\"\
+*   **Direct Quotes:**\
+    *   \"Intimacy is the water that feeds the engine of human living... Contracts... are the irrigation channels that allow intimacy to flow.\" [18]\
+    *   \"Parasitic relationships drain individuals, block growth, and counterfeit intimacy... Symbiotic relationships maximize opportunities for flourishing.\" [19]\
+*   **Related Concepts:** Spectacle vs. Substance, Intimacy Hijacks, The Contract Web.\
+\
+### **Concept Packet 10: The Waterline Model**\
+*   **Definition:** A socio-economic model visualizing a threshold of \"Civilizational Surplus.\" Those \"Below the Waterline\" are trapped in survival mode where cost of stability equals or exceeds compensation. Those \"Above the Waterline\" possess surplus capacity, assets, and agency. Parasitic systems engineer this line to maintain a dependent labor class.\
+*   **Source Attribution:** \"1 Parasitic & Symbiotic Eco (Evaluation)\", \"Approachable Parasitic Economy Points\"\
+*   **Direct Quotes:**\
+    *   \"Below the Waterline: Citizens trapped in survival mode... Above the Waterline: Citizens with surplus capacity, assets, and options.\" [20]\
+    *   \"Civilizational Surplus = Compensation ... Cost of Stability.\" [6]\
+    *   \"...access to capital for those below the waterline is significantly high, thereby making it almost impossible... to accrue enough value to begin getting what we might think of as escape velocity...\" [21]\
+*   **Related Concepts:** Weaponized Scarcity, The Hamster Wheel, Wage Slavery.
+
+================================================================================
+END OF EXTRACTION
+================================================================================
