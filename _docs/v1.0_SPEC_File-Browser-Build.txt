@@ -1,0 +1,1 @@
+See local download or GitHub commit for full content. Build spec for the HA Suite File Browser web app — Flask + Caddy + GitHub API. Deployed at justinstillness.com/files/. Created S022.
