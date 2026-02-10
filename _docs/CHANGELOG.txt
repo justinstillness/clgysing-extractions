@@ -19,11 +19,129 @@ COMPONENTS:
   SeraphRecorder  — Traffic capture pipeline (socat + extract.py)
   Chronicler      — GitHub repository tool (read/write/organize)
   Caliper         — Document analysis MCP (GitHub file inventory)
+  File Browser    — Web UI for repo browsing/download (user-facing)
+  Indexer         — File organization protocol (naming, manifest, routing)
   Infrastructure  — EC2, Caddy, networking, security, systemd
 
 ================================================================================
 CHANGELOG
 ================================================================================
+
+--------------------------------------------------------------------------------
+2026-02-10 | Session 023 | File Browser, Indexer, Infrastructure
+--------------------------------------------------------------------------------
+FIXED: File Browser basic auth loop resolved (D-035)
+  - Root cause: bcrypt hash format mismatch ($2y$ vs $2a$)
+  - Claude Code had generated hash with external tool; Caddy requires
+    hashes from its own caddy hash-password command
+  - Fix: regenerated hash using caddy hash-password, reloaded Caddy
+  - All functions validated: browse, preview, download, folder ZIP,
+    full repo ZIP, mobile access confirmed
+
+CHANGED: Indexer spec updated from v0.1 to v0.2 (D-036)
+  - Added purpose field to query manifest schema (Section 6.1)
+    Values: testing, production, infrastructure, exploratory
+  - Added combined pass classification guidance (Section 3.1)
+    Rule: classify by primary intent, note secondary in quality_notes
+    Split threshold: >30% secondary content → separate file at D2
+  - Updated folder structure to reflect actual repo state
+    (testing/ folder with S010-S013, cleared _untagged/)
+  - Updated evolutionary roadmap staging
+  - Added notebooks maintained list to NLM sync protocol
+
+ADDED: File Browser tool reference v1.0 (D-037)
+  - Proper REF document replacing 188-byte build spec stub
+  - Consistent with other HA Suite tool reference format
+  - Includes architecture, features, maintenance, troubleshooting
+
+CHANGED: NLM notebook housekeeping
+  - Removed duplicate Indexer spec source from HA Suite notebook
+  - Old v0.1 Indexer source replaced with v0.2 summary
+  - File Browser reference added as new source
+  - NLM-MANIFEST.json updated with notebooks_maintained section
+
+REMOVED: Superseded files from _docs/
+  - v0.1_SPEC_Indexer-File-Organization-System.txt (replaced by v0.2)
+  - v1.0_SPEC_File-Browser-Build.txt (stub replaced by proper REF)
+
+CROSS-COMPONENT NOTES:
+  - HA Suite NLM notebook now has 7 clean sources (no duplicates)
+  - NLM-MANIFEST.json now tracks both maintained notebooks
+
+DECISIONS: D-035 (auth fix), D-036 (Indexer v0.2), D-037 (File Browser REF)
+
+--------------------------------------------------------------------------------
+2026-02-09 | Session 022 | Indexer, File Browser, Infrastructure
+--------------------------------------------------------------------------------
+ADDED: Indexer file organization system v0.1 designed and documented (D-028)
+  - Six design principles (P-1 through P-6)
+  - Faceted classification from library science, DAM, LIMS
+  - Degree classification (D1/D2/D3/DM) refinement pipeline (D-029)
+  - Pass type registry with 10 codes (PE/CE/VX/TS/TM/GL/EV/TX/INF/DOC)
+  - Filename convention: {PassType}-{SourceScope}-{Degree}-S{Session}.txt (D-030)
+  - Folder structure: project/phase/pass-type
+  - Query manifest schema as JSON at repo root (D-031)
+  - NLM sync protocol for _docs/ to HA Suite notebook
+  - SERAPH routing roadmap (conceptual)
+  - 8 open questions for alpha/beta resolution
+
+ADDED: File Browser web application designed, specified, deployed (D-032)
+  - Flask + Caddy + GitHub API architecture
+  - URL: https://mcp.justinstillness.com/files/
+  - Dark theme, mobile-friendly, batch ZIP download
+  - Auth loop identified at deployment — deferred to S023
+
+ADDED: query-manifest.json initialized at repo root (empty, production-ready)
+
+CHANGED: concept-counter.json reset from test data to clean slate {}
+
+ADDED: NLM-MANIFEST.json in _docs/ for tracking doc-to-NLM sync state
+
+ADDED: Two Mermaid diagrams generated
+  - Extraction-to-Organization Pipeline (full flow)
+  - Degree Progression Model (D1 through DM)
+
+CHANGED: EC2 upgraded from t3.micro to t3.small (D-033)
+  - Memory exhaustion causing SSH failures and service instability
+  - Doubles RAM, cost increase ~$7/month (~$8 → ~$15/month)
+
+FIXED: EC2 Tailscale VPN had dropped offline — restarted
+
+RECEIVED: NLMINTA S014 cross-session briefing
+  - Five observations on Indexer from real classification work
+  - Purpose field and combined pass guidance recommended for v0.2
+  - Filename convention validated in practice
+
+CROSS-COMPONENT NOTES:
+  - Chronicler: _docs/ now primary documentation home with sync tracking
+  - Claude Code: Validated as efficient deployment path (~2 min for Flask app)
+  - Tailscale: Stability concern noted — monitor for recurring drops
+
+DECISIONS: D-028 through D-034 (Indexer principles, degrees, filenames,
+  manifest, File Browser, EC2 upgrade, Indexer naming)
+
+--------------------------------------------------------------------------------
+2026-02-09 | Session 021 | Documentation, Infrastructure
+--------------------------------------------------------------------------------
+ADDED: HA Suite Architecture Reference v4.0
+  - Comprehensive documentation of full suite architecture
+  - All components, ports, paths, service management
+  - Network topology, security configuration
+  - Uploaded to HA Suite NLM notebook
+
+ADDED: Tool references uploaded to HA Suite NLM notebook
+  - Caliper Tool Reference v1.0
+  - Majeston Tool Reference v1.0
+  - SeraphRecorder Tool Reference v1.0
+  - CHANGELOG v1.0
+
+ADDED: HA Suite NLM notebook established (430df618-e337-4971-abaa-6528e96bb1c4)
+  - Central documentation notebook for all HA Suite living docs
+  - 5 initial sources synced
+
+CROSS-COMPONENT NOTES:
+  - Documentation baseline established for all existing components
+  - NLM notebook enables AI-queryable access to suite documentation
 
 --------------------------------------------------------------------------------
 2026-02-09 | Session 020 | SeraphRecorder
@@ -194,6 +312,7 @@ ADDED: Caliper deployed — new component in suite
   - 2 tools: analyze_github_folder, server_status
   - Caddy routing: /tools/* → localhost:8001
   - Connector URL: https://mcp.justinstillness.com/tools/mcp
+  - Named after Urantia measurement instrument
 
 CHANGED: Caddy routing — handle_path fix
   - Switched from handle to handle_path for /tools/* block
@@ -288,9 +407,11 @@ here for visibility and will move to dated entries when addressed.
 
 INFRASTRUCTURE:
   [ ] GitHub PAT rotation (deferred since S011 — avoiding service disruption)
-  [ ] health-check.sh update to include Caliper + Chronicler checks (S011)
-  [ ] jacob-bd package update to v0.2.16 (non-urgent, S011)
-  [ ] Counter reset — concept-counter.json holds test data (S018)
+  [ ] health-check.sh update to include Caliper + Chronicler + File Browser
+  [ ] jacob-bd package update check (non-urgent)
+  [ ] Tailscale stability monitoring (dropped in S022, restarted)
+  [ ] EC2 t3.small cost review — is upgrade still needed? (~$15/month)
+  [x] Counter reset — concept-counter.json (DONE S022)
 
 SERAPHRECORDER:
   [ ] push-to-github.sh JSONL archival — D-019 (S017)
@@ -298,12 +419,21 @@ SERAPHRECORDER:
   [ ] Historical reprocessing validation (S019/S020)
   [ ] Remove --verbose debug flags from extract.py (S014)
 
+INDEXER:
+  [ ] Alpha test with production CLGYSING extraction work
+  [ ] Manifest format evaluation at ~100 entries (Q2)
+  [ ] Full D1→D2→D3→DM consolidation chain test (Q4)
+
+FILE BROWSER:
+  [ ] Custom batch select (nice-to-have, folder ZIP covers main use case)
+
 FEATURE BACKLOG:
-  [ ] Shell MCP Connector — 5th tool for EC2 shell access (S020)
+  [ ] Shell MCP Connector — dedicated tool for EC2 shell access (S020)
   [ ] Auto-extraction automation — W-005 (S017)
   [ ] Concept ID numbering via Chronicler (S017)
   [ ] Notebook integration — read from GitHub, add to NLM (W-003, S017)
   [ ] AIPM repo integration — session logs to GitHub (W-006, S018)
+  [ ] NLM full-file upload method (text summary workaround used, S022)
 
 ================================================================================
 END OF CHANGELOG
