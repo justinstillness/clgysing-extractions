@@ -5,10 +5,11 @@
   "last_synced_session": "023",
   "sources": {
     "CHANGELOG.txt": {
-      "version": "v1.0",
+      "version": "v1.1",
       "repo_path": "_docs/CHANGELOG.txt",
-      "nlm_source_id": "6b4ed446-c3f7-444b-a7c3-50f2185802bb",
-      "last_updated_session": "021"
+      "nlm_source_id": "d5325ddc-8a59-44cf-9183-63db86496451",
+      "nlm_source_type": "text_summary",
+      "last_updated_session": "023"
     },
     "v4.0_SPEC_HA-Suite-Architecture-Reference.txt": {
       "version": "v4.0",
