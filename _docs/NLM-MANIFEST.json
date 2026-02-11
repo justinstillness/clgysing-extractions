@@ -40,7 +40,6 @@
       "repo_path": "_docs/v0.2_SPEC_Indexer-File-Organization-System.txt",
       "nlm_source_id": "c07a5287-d1fa-4abf-aa01-d7d2174aa09f",
       "nlm_source_type": "text_summary",
-      "note": "Added as text summary due to file upload path limitation. Full spec in GitHub repo.",
       "last_updated_session": "023"
     },
     "v1.0_REF_File-Browser-Tool-Reference.txt": {
@@ -48,7 +47,13 @@
       "repo_path": "_docs/v1.0_REF_File-Browser-Tool-Reference.txt",
       "nlm_source_id": "e941bbfd-efe3-44df-9e5d-35028ff1a567",
       "nlm_source_type": "text_summary",
-      "note": "Added as text summary due to file upload path limitation. Full reference in GitHub repo.",
+      "last_updated_session": "023"
+    },
+    "v1.0_REF_Development-Wishlist.txt": {
+      "version": "v1.0",
+      "repo_path": "_docs/v1.0_REF_Development-Wishlist.txt",
+      "nlm_source_id": "dd3e257d-2af6-4330-97b6-115236c74007",
+      "nlm_source_type": "text_summary",
       "last_updated_session": "023"
     }
   },
