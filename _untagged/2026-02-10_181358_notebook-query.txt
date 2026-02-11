@@ -1,0 +1,75 @@
+================================================================================
+EXTRACTION: 2026-02-10_181358_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What specific behaviors does Claude tend to forget despite being encoded in protocols? What workarounds exist? What is the relationship between Project Knowledge files and session startup reminders? Why do some behaviors need explicit reminders every session?
+Timestamp:       2026-02-10T18:13:58.000711+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: 4aebd6a1-4727-4e59-88df-52ce9c4db6f1
+Chat Configure:  default
+Response Chars:  6065
+Duration:        45000ms
+================================================================================
+
+### Specific Behaviors Claude Tends to Forget\
+\
+Despite protocols and successful deployments, the sources highlight specific technical and interface behaviors that Claude repeatedly \"forgets\" or fails to detect automatically across sessions:\
+\
+1.  **Tool Visibility (The \"Chronicler\" Issue):**\
+    The most persistent \"forgotten\" behavior involves the visibility of Custom Connector tools. Even though the \"Chronicler\" tools are registered and functional on the server, the Claude UI frequently fails to display them in the auto-discovered tool list [1]. The system behaves as if the tools do not exist until explicitly told otherwise. In Session 017, Claude reported, \"I don't see any tools explicitly prefixed with 'Chronicler:' in my current tool set\" despite the connector being active [2].\
+\
+2.  **Tool Schema Updates:**\
+    Claude tends to cache tool definitions at the start of a connection. In Session 002, a tool parameter was renamed from `query` to `question` on the server, but Claude continued to use the old parameter `query` because the \"connector cached the old tool definition,\" causing errors until the connector was deleted and re-added [3].\
+\
+3.  **Context Continuity:**\
+    Claude does not retain memory of previous sessions. It forgets the current state of the infrastructure (e.g., that Docker was removed or that specific ports were closed) unless this information is explicitly re-loaded via \"Bootstrap\" files or Architecture References at the start of a new session [4].\
+\
+### Workarounds\
+\
+The sources detail specific workarounds developed to counter these memory and interface gaps:\
+\
+*   **Explicit Invocation (\"Call Them Anyway\"):**\
+    The primary workaround for the tool visibility issu< 2026/02/10 18:14:43.000745684  length=4362 from=8693 to=13054
+e is to force the call using the exact tool name. The documentation explicitly instructs: \"If you do not see Chronicler tools listed, call them anyway ... they work\" [1]. This bypasses the UI display failure by directly invoking the API endpoint [5].\
+\
+*   **Reference Documents as \"Memory Prosthetics\":**\
+    To counter the \"forgetting\" of tool names and parameters, specific text files (like `v1.1_REF_Chronicler-Quick-Reference.txt`) were created. These files list the \"Exact Call Names\" (e.g., `Chronicler:list_files`) so the user or Claude can reference them even if the UI doesn't show them [6].\
+\
+*   **Connector Refreshing:**\
+    To force Claude to \"remember\" or recognize updates to tool schemas (like new tools added mid-session), the workaround is to delete the Custom Connector in settings and re-add it, or to start a completely fresh chat session to force a new handshake [7, 8].\
+\
+*   **Adjunct Project Knowledge:**\
+    A NotebookLM notebook (\"AWSNBLM Session Transcripts\") is used as a repository of \"cross-session context\" [9]. Instead of relying on Claude's immediate context window, Claude is instructed to query this notebook to retrieve historical decisions and current system states [9].\
+\
+### Relationship Between Project Knowledge and Session Startup Reminders\
+\
+The sources distinguish between **static knowledge** (Project Knowledge) and **active context activation** (Session Startup/Bootstraps):\
+\
+*   **Project Knowledge (The Library):** Files like the \"Architecture Reference\" or \"Chronicler Quick Reference\" stored in Project Knowledge represent the \"single source of truth\" [10, 11]. They contain the definitions, naming conventions (e.g., \"Havona Anvil Suite\"), and technical specs. However, their mere presence does not guarantee Claude will use them correctly or prioritize them over its default training.\
+*   **Session Startup/Bootstraps (The Librarian's Directive):** The \"Bootstrap\" file uploaded at the start of a session acts as the activation trigger. It explicitly tells Claude *which* Project Knowledge files to look at, defines the current \"Session Scope,\" and provides the \"Alignment Checklist\" to ensure Claude is synchronized with the latest state (e.g., reminding Claude that the project is named AWSNBLM, not NLMINTA) [12, 13].\
+*   **The Bridge:** The startup reminder forces Claude to \"query the notebook\" or read the specific reference files to load the necessary context into its immediate working memory [14]. Without the startup prompt, the Project Knowledge remains passive and potentially unreferenced.\
+\
+### Why Explicit Reminders Are Needed Every Session\
+\
+The sources point to specific technical reasons why behaviors must be reinforced every session:\
+\
+1.  **Cached Tool Manifests:**\
+    Claude caches the tool manifest (the list of what tools can do) at the *start* of a conversation [15]. If a tool is added (like `flush_pipeline`) or modified after the session begins, the current Claude instance cannot \"see\" it. A new session...and a reminder of what tools exist...is required to force a new handshake with the server [16].\
+\
+2.  **Session Isolation (Tabula Rasa):**\
+    Each session is a \"fresh\" instance with no memory of the previous one. While Project Knowledge persists, the *operational state* (e.g., \"we just deployed Caliper and it listens on port 8001\") is lost. Explicit reminders in the Bootstrap file re-establish this \"Dynamic State\" immediately so the user doesn't have to re-explain the infrastructure [17].\
+\
+3.  **Platform Display Issues:**\
+    There is a documented \"platform-level display issue\" where valid tools are simply not rendered in the UI [1]. Explicit reminders in the documentation (e.g., \"Chronicler tools may not appear... call them anyway\") are necessary to override the user's and Claude's reliance on visual UI confirmation [1].\
+\
+4.  **Context Window Compaction:**\
+    In very long sessions (like Session 008), the context window fills up, leading to \"compaction errors\" where early instructions are compressed or lost [18]. Explicit reminders or re-uploading architecture docs ensures that critical constraints (like \"do not use Docker\") remain active in the model's priority queue [19].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

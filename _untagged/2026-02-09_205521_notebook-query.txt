@@ -1,0 +1,154 @@
+================================================================================
+EXTRACTION: 2026-02-09_205521_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           List every significant infrastructure change, deployment, tool addition, bug fix, and architectural decision made across all AWSNBLM sessions chronologically. Include session numbers, dates, decision numbers, and what component was affected. Cover sessions 001 through 019.
+Timestamp:       2026-02-09T20:55:21.000732+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: 56e366f2-4a81-4270-bb8a-ed15775e22c0
+Chat Configure:  default
+Response Chars:  8227
+Duration:        57999ms
+================================================================================
+
+Here is the chronological list of significant infrastructure changes, deployments, tool additions, bug fixes, and architectural decisions for the AWSNBLM project from Session 001 through 019.\
+\
+### Session 001: Initial Infrastructure Deployment\
+**Date:** 2026-02-02\
+**Component:** AWS EC2, Networking, Docker, Roomi-Fields Bridge\
+\
+*   **Infrastructure:** Created AWS account and launched EC2 instance `i-04c8075f89e3c2ecf` (t3.micro, Ubuntu 24.04 LTS) [1, 2].\
+*   **Networking:** Allocated Elastic IP `52.2.11.33` and configured Security Group `notebooklm-mcp-sg` allowing ports 22, 80, 443, 3000, and 5900/6080 [3, 4].\
+*   **DNS:** Configured GoDaddy A record for `mcp.justinstillness.com` pointing to Elastic IP [5].\
+*   **Deployment:** Installed Docker and deployed `roomi-fields/notebooklm-mcp` container [6, 7].\
+*   **Tool Addition:** Installed Caddy web server as a reverse proxy for automatic SSL/HTTPS [8, 9].\
+*   **Bug Fix:** Identified incompatibility between Claude Custom Connectors (requires SSE) and `roomi-fields` (REST API only), necessitating a new architecture [10].\
+\
+### Session 002: Custom Bridge Development\
+**Date:** 2026-02-02\
+**Component:** Python Bridge, Docker\
+\
+*   **Decision (D-005):** Build a custom MCP-to-REST bridge (Python) rather than switching packages immediately [11].\
+*   **Deployment:** Built and deployed `mcp-bridge` container running on port 8001 to translate MCP protocol for the `roomi-fields` backend [12].\
+*   **Bug Fix:** Fixed `FastMCP` constructor API mismatch in bridge code [13].\
+*   **Bug Fix:** Updated Caddy configuration to route `/sse` and `/messages` to the bridge [14].\
+*   **Bug Fix:** Corrected parameter mapping in bridge from `query` to `question` to match REST API requirements [15].\
+*   **Milestone:** Achieved successful mobile query capability via Claude App [16].\
+\
+### Session 005: \"Majeston\" (Jacob-BD) Migration\
+**Date:** 2026-02-03\
+**Component:** Majeston (NotebookLM MCP), Systemd\
+\
+*   **Decision (D-003):** Switch to direct `uv` installation of `jacob-bd/notebooklm-mcp-cli` (eliminating Docker for runtime) [17].\
+*   **Deployment:** Installed `jacob-bd` package (Majeston) and configured as a native systemd service on port 8000 [18, 19].\
+*   **Decision (D-007):** Updated Caddy to route `/mcp` directly to Majeston (port 8000), replacing the Python bridge [20].\
+*   **Decision (D-008):** Stopped old Docker containers immediately to recover memory [21].\
+*   **Tool Addition:** Created `MAINTENANCE.md` on EC2 for quick reference [22].\
+\
+### Session 006: Hardening & Automation\
+**Date:** 2026-02-03\
+**Component:** EC2 OS, Security, Maintenance Scripts\
+\
+*   **Tool Addition:** Deployed `refresh-tokens.sh` and `health-check.sh` scripts to Mac for maintenance [23].\
+*   **Bug Fix:** Resolved Mac DNS cache issue causing health check failures by switching Mac DNS to Cloudflare/Google [24].\
+*   **Decision (D-009):** Permanently removed all Docker containers/images and disabled Docker daemon to free ~2.9GB disk/88MB RAM [25].\
+*   **Decision (D-010):** Applied all pending system updates (48 packages) [26].\
+*   **Decision (D-011):** Implemented `iptables` rate limiting (30 requests/60s per IP) on port 443 [27].\
+\
+### Session 009: \"Caliper\" Design & Drive Bridge\
+**Date:** 2026-02-05\
+**Component:** Majeston, Caliper (Design)\
+\
+*   **Maintenance:** Updated `jacob-bd` to v0.2.15 [28].\
+*   **Discovery:** Validated Google Drive as a bidirectional file bridge (upload via Drive, ingest via Majeston) [29].\
+*   **Architecture:** Designed \"Caliper\" (Document Analysis MCP) using GitHub folder integration [30].\
+*   **Decision (D-012):** Adopted naming convention: \"Majeston\" (NotebookLM), \"Caliper\" (Doc Analysis), \"LibForge\" (Framework) [31].\
+\
+### Session 010: Caliper Build\
+**Date:** 2026-02-05\
+**Component:** Caliper (Document Analysis MCP)\
+\
+*   **Build:** Generated code for `document-analysis-mcp.py` (Caliper) using FastMCP [32].\
+*   **Architecture:** Configured Caliper to run on port 8001 with GitHub Token authentication [32].\
+\
+### Session 011: Caliper Deployment\
+**Date:** 2026-02-05\
+**Component:** Caliper, Caddy\
+\
+*   **Deployment:** Deployed Caliper to EC2 via SCP and systemd [33, 34].\
+*   **Bug Fix:** Updated Caddy to use `handle_path` (instead of `handle`) to correctly strip URL prefixes for routing [35].\
+*   **Tool Addition:** Added \"Document Analysis\" Custom Connector to Claude [36].\
+*   **Validation:** Verified Caliper can analyze private GitHub repositories [37].\
+*   **Doc:** Created `v3.1 Architecture Reference` [38].\
+\
+### Session 012: \"SeraphRecorder\" Design\
+**Date:** 2026-02-06\
+**Component:** SeraphRecorder (Pipeline)\
+\
+*   **Architecture:** Designed \"SeraphRecorder\" pipeline to capture Majeston traffic, extract content, and push to GitHub [39].\
+*   **Decision (D-013 to D-017):** Established pipeline components: Traffic Logger (socat), Extraction Script (Python), GitHub Push Script (Bash) [40].\
+\
+### Session 013: SeraphRecorder Build\
+**Date:** 2026-02-06\
+**Component:** SeraphRecorder, Socat\
+\
+*   **Architecture Change:** Switched from Python proxy to `socat` for traffic capture to handle MCP Streamable HTTP concurrency issues [41].\
+*   **Deployment:** Deployed `mcp-wrapper.py` (v5) which manages `socat` (port 8000) and Majeston (port 8100) [42].\
+*   **Validation:** Confirmed transparent traffic capture to `mcp-logs/traffic/` [43].\
+\
+### Session 014: Pipeline End-to-End\
+**Date:** 2026-02-06\
+**Component:** SeraphRecorder, extract.py\
+\
+*   **Build:** Deployed `extract.py` parser and `push-to-github.sh` [44].\
+*   **Bug Fix:** Fixed multiple parser bugs in `extract.py` (duplicate request parsing, literal `\\\` escaping in JSON) [45, 46].\
+*   **Deployment:** Configured git on EC2 with Personal Access Token [47].\
+*   **Validation:** Achieved full end-to-end extraction of Majeston queries to GitHub repo [48].\
+\
+### Session 016: SSM & Security Hardening\
+**Date:** 2026-02-06\
+**Component:** AWS SSM, Tailscale, Security Groups\
+\
+*   **Deployment:** Installed and registered AWS Systems Manager (SSM) agent [49].\
+*   **Deployment:** Installed Tailscale VPN on EC2 and local devices [50].\
+*   **Decision (D-023):** Removed Port 22 (SSH) from Security Group. SSH access restricted to Tailscale tunnel only [51].\
+*   **Infrastructure:** Established `mcp-logger/` directory structure and cleanup scripts [52].\
+\
+### Session 017: \"Chronicler\" Deployment\
+**Date:** 2026-02-07\
+**Component:** Chronicler (GitHub Repo Tool)\
+\
+*   **Decision (D-020):** Named and architected \"Chronicler\" running on port 8002 to manage the GitHub repository [53].\
+*   **Deployment:** Built and deployed Chronicler via Claude Code on EC2 [54].\
+*   **Bug Fix:** Diagnosed Claude UI issue where tools were not visible; verified tools work via direct call [55].\
+*   **Doc:** Published `v1.0_REF_Chronicler-Quick-Reference.txt` [56].\
+\
+### Session 018: Pipeline Automation\
+**Date:** 2026-02-07\
+**Component:** Chronicler, SeraphRecorder Automation\
+\
+*   **Bug Fix:** Fixed `httpx.delete` bug in Chronicler code to enable file deletion/moves [57].\
+*   **Tool Addition:** Added `flush_pipeline` tool to Chronicler for on-demand extraction [58].\
+*   **Deployment:** Installed `daily-rotate.sh` cron job for automated daily extraction and log rotation [59].\
+*   **Fix:** Updated rotation script to target correct service name (`notebooklm-mcp`) [60].\
+*   **Infrastructure:** Configured Port 2222 as backup SSH (later superseded by Tailscale/SSM preference) [61].\
+\
+### Session 019: Signal String Integration\
+**Date:** 2026-02-08\
+**Component:** extract.py (v5)\
+\
+*   **Deployment:** Deployed `extract.py` v5 [62].\
+*   **Feature:** Implemented `[SERAPH: ...]` signal s< 2026/02/09 20:56:19.000127278  length=495 from=18351 to=18845
+tring parsing for automated metadata tagging [63].\
+*   **Feature:** Implemented 3-tier routing logic (Tier 1: Tagged -> Project Folder, Tier 2: Review, Tier 3: Untagged) [64].\
+*   **Bug Fix (D-024):** Added regex stripping to remove stray `socat` header artifacts from extracted content [65].\
+*   **Validation:** Verified correct routing of tagged queries to `clgysing/phase2/VX/` [66].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

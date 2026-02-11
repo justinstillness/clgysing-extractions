@@ -1,0 +1,35 @@
+================================================================================
+EXTRACTION: 2026-02-11_034042_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Summarize findings F74 through F79 from Session 014, including the threading optimization matrix results and the source_ids cross-notebook bleed test. What were the key quantitative results and production implications?
+Timestamp:       2026-02-11T03:40:42.000427+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: c135a81b-a275-4ae1-8039-67f8ee1dd73f
+Chat Configure:  default
+Response Chars:  1553
+Duration:        38999ms
+================================================================================
+
+Based on the provided sources, I cannot summarize Findings F74 through F79 from Session 014 because the source materials end at **Session 013** (Finding F73).
+
+However, I can confirm from the **Session 013** documentation that **Session 014** was planned to focus on **threading optimization** and methodological consolidation.
+
+### Context from Available Sources (Session 013)
+*   **Current Status:** The last recorded finding is **F73** (Session 013), which confirmed that the Pre-Extraction Evaluation (PE) pass successfully characterizes raw conversational corpora [1].
+*   **Planned Scope for Session 014:** The bootstrap generated at the end of Session 013 explicitly targeted **"threading optimization"** as a primary objective [2].
+*   **Threading Optimization Matrix (Planned):** This test was designed in Session 013 as a **2x2 matrix** to test conversation threading behavior [3]:
+    *   **Variables:** Simple vs. Complex concepts .. Threaded (conversation_id reuse) vs. Unthreaded (fresh context).
+    *   **Goal:** Determine if threading improves depth accumulation or causes redundancy.
+*   **Source_IDs Cross-Notebook Bleed (Planned):** This refers to **Test 7** (Cross-notebook query bleed), which was scoped in Session 012 [4] and deferred to Session 014. It aims to determine if filtering a query to a single source ID within a multi-source notebook prevents "bleed-through" or noise from other sources in that notebook.
+
+**To provide the summary for F74...F79, please upload the "014_session-log" or "P2_FINDINGS_Session-014" file.**
+
+================================================================================
+END OF EXTRACTION
+================================================================================

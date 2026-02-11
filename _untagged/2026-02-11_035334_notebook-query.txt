@@ -1,0 +1,90 @@
+================================================================================
+EXTRACTION: 2026-02-11_035334_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What are all the bottom-up extraction processes and components defined in LibForge? List every extraction-related process, pass type, and methodology component that falls under bottom-up extraction as opposed to top-down thesis architecture or the handshake/integration phase. Include any process from the Master List, WIP specs, or session discussions.
+Timestamp:       2026-02-11T03:53:34.000442+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 6b6063eb-d767-4b03-acaa-1487ad4dee54
+Chat Configure:  default
+Response Chars:  6448
+Duration:        50000ms
+================================================================================
+
+Based on the provided sources, here are the bottom-up extraction processes, pass types, and methodology components defined in LibForge and its NLMINTA branch.\
+\
+### **I. Core Master List Extraction Components**\
+These components form the foundational \"bottom-up\" layer of LibForge, focused on objective extraction from source materials before any top-down thesis architecture is applied.\
+\
+*   **Item 1: Pre-Extraction Coherence Scan**\
+    *   **Purpose:** Assesses sources for internal consistency and external alignment before extraction begins [1].\
+    *   **Components:**\
+        *   **Internal Coherence Check:** Flags self-contradictions (e.g., circular logic, factual errors) which require mandatory resolution [2, 3].\
+        *   **External Coherence Check:** Flags conflicts with established knowledge or counter-narratives; treats these as informational \"novelty\" tags [4].\
+        *   **Density Grading:** Assigns a Low/Medium/High density score based on the number of flags [2].\
+\
+*   **Item 2: Extraction Process (Three-Pass Protocol)**\
+    *   **Purpose:** The primary engine for converting raw sources into atomic repository entries [5].\
+    *   **Phase 1 (Extraction):** Semantic-first, append-only capture of concepts. Captures all variants without standardization [6].\
+    *   **Phase 2 (Consolidation):** Clusters variants using the Similarity Index (#16) and assigns domain tags [7].\
+    *   **Phase < 2026/02/11 03:54:24.000851317  length=5053 from=10159 to=15211
+3 (Canonical Selection):** Selects canonical terms for storyboarding (bridges to top-down) [8].\
+\
+*   **Item 3: Concept Repository & Entry Process**\
+    *   **Purpose:** Stores atomic concepts (Layer 1) [9].\
+    *   **Methodology:** \"Semantic-First\" reading to identify underlying meanings rather than keywords [10].\
+    *   **Structure:** Uses the **Dual-Register Model (#12)** to separate a \"Canonical Definition\" (Register 1) from a verbatim \"Source Trace\" (Register 2) [11, 12].\
+\
+*   **Item 5: Relationship Extraction & Registry**\
+    *   **Purpose:** Captures typed connections between concepts (Layer 2) to create a structural grammar [13].\
+    *   **Protocol:** Performed *post-concept extraction* to use finalized IDs. Limits extraction to the 3-5 strongest relationships per concept [14, 15].\
+    *   **Vocabulary:** Uses 8 mandatory types (ENABLES, REQUIRES, COMPOSES, CONTRADICTS, EXTENDS, PARALLELS, CAUSES, PREVENTS) [16].\
+\
+*   **Item 4: Card Entry Process**\
+    *   **Purpose:** Extracts atomic units of argumentation or \"rhetorical moves\" (Layer 3) [17].\
+    *   **Standards:** Enforces a 25...75 word count target (domain-tuned, e.g., shorter for Psychology) and standalone integrity [18].\
+    *   **Methodology:** Steps include identifying rhetorical moves, drafting entries, and assigning primary/cross-domain tags [19].\
+\
+*   **Item 9: Provenance Files**\
+    *   **Purpose:** Ensures traceability and auditability [20].\
+    *   **Component:** Captures Source ID, Location (page/timestamp), and verbatim Usage Context for every extracted asset [21].\
+\
+*   **Item 11: Interim Concept Repository (ICR)**\
+    *   **Purpose:** A temporary staging area for emergent concepts, gaps, or partial extractions that arise during the workflow before they are validated for the permanent library [22].\
+\
+*   **Item 15: Terminology Protocol (Phase 1)**\
+    *   **Purpose:** Governs the capture of variance in terminology. Phase 1 (Variance Capture) is the bottom-up step where every unique phrasing is captured as a trace before normalization occurs [23].\
+\
+### **II. NLMINTA Extraction Pass Types (Signal Strings)**\
+The NLMINTA branch operationalizes extraction through specific \"Pass Types\" executed via the Majeston tool (NotebookLM). These are encoded in **Signal Strings** to automate routing and organization [24].\
+\
+*   **PE (Pre-Extraction Evaluation):** Scans sources for coherence, factuality, structure, and key themes. Maps to Master List Item 1 [25, 26].\
+*   **TM (Theme Mapping):** A structural survey pass that identifies major themes and conceptual clusters within a source [25, 27].\
+*   **TX (Thematic Concept Extraction):** The primary extraction pass. Extracts discrete concepts filtered by specific themes identified in the TM pass [27, 28]. *Note: Formerly referred to as CE (Concept Extraction) [29].*\
+*   **VX (Vocabulary Extraction):** Extracts specialized terms, jargon, and definitions to build glossary entries. Maps to Item 15 [27, 30].\
+*   **TS (Thesis String Extraction):** Extracts argumentative claims, evidence chains, and thesis statements directly from the source [25, 31].\
+*   **EV (Evaluation Pass):** Performs critical analysis for contradictions, internal inconsistencies, and factual flags [32, 33].\
+*   **GD (Gap Detection):** An apophatic search pass that explicitly queries for concepts *missed* by previous thematic passes [27, 34].\
+*   **GX (Gap Extraction):** Targeted extraction to fill the specific gaps identified by the GD pass [27].\
+*   **CL (Classification):** A post-extraction pass that applies the Domain Taxonomy (DDS) to extracted items [27, 35].\
+\
+### **III. Supporting Methodology Components**\
+These components support the bottom-up extraction workflow by providing structure, organization, or validation standards.\
+\
+*   **Dual-Register Model (#12):** A mandatory structure for entries that preserves the author's original voice (Source Trace) alongside the system's standardized definition (Canonical Register) [11].\
+*   **Similarity Index (#16):** A derived artifact generated *post-extraction* that computes secondary domain associations and identifies clusters/duplicates [36, 37].\
+*   **Degree Classification:** A file organization protocol for tracking refinement [38]:\
+    *   **D1 (First Degree):** Raw extraction output (The \"Ore\").\
+    *   **D2 (Second Degree):** Cleaned, ID-assigned, and formatted.\
+    *   **D3 (Third Degree):** Consolidated across multiple source packages.\
+*   **Pass Separation Principle:** A methodology rule dictating that extraction must be separated into distinct passes (e.g., run TX, then VX, then TS separately) rather than combined into one query, to prevent loss of depth [39].\
+*   **Semantic Resonance Model:** A theory stating that extraction quality depends on the source material containing \"bridging\" language that connects proprietary concepts to general knowledge (Layer 2) [40].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

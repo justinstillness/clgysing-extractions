@@ -1,0 +1,64 @@
+================================================================================
+EXTRACTION: 2026-02-09_200712_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What architecture reference documents, pipeline specs, or README files currently exist for the AWSNBLM project? List their names, versions, and what they cover. Include any pipeline documentation, deployment guides, or operational references.
+Timestamp:       2026-02-09T20:07:12.000641+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: fa96e31e-5957-44ef-8bcc-01bd8f376cf9
+Chat Configure:  default
+Response Chars:  3644
+Duration:        31999ms
+================================================================================
+
+Based on the project history and source files, here are the architecture reference documents, pipeline specifications, and README files currently existing for the AWSNBLM project (MCP Workshop Suite).
+
+### **1. Core Architecture Reference**
+*   **`v3_1_SPEC_MCP-Workshop-Suite-Architecture-Reference.txt`** (Version 3.1)
+    *   **Covers:** The canonical "as-built" system specification. Details the EC2 infrastructure, software stack (Majeston, Caliper, Caddy), security configuration (Tailscale, iptables), auth models, port mappings, and tool inventory (31 tools).
+    *   **Created/Updated:** Session 011 (Feb 5, 2026).
+
+### **2. SeraphRecorder Pipeline Specifications**
+*   **`v1.0_SPEC_MCP-Traffic-Capture-Pipeline_(Session_012).txt`** (Version 1.0)
+    *   **Covers:** The complete design of the traffic capture pipeline (socat wrapper, extract.py, push-to-github.sh), data flow architecture, file formats, and directory structures.
+*   **`v1.0_SPEC_Signal-String-Initial-Conventions_(Session_013).txt`** (Version 1.0)
+    *   **Covers:** The active conventions for the `[SERAPH: ...]` signal strings, pass type codebook (TM, TX, VX, etc.), routing tiers, and filename generation logic.
+*   **`v1.0_SPEC_Signal-String-Format-Considerations.txt`** (Version 1.0)
+    *   **Covers:** Design considerations and field definitions for the signal string system (Preliminary spec).
+
+### **3. Tool Specifications & Guides**
+*   **`v1.0_SPEC_Chronicler-GitHub-Repo-Tool.txt`** (Version 1.0)
+    *   **Covers:** Full specification for the Chronicler tool (GitHub interaction), including API patterns, deployment details, and the Claude Code handoff brief used to build it.
+*   **`v1.1_REF_Chronicler-Quick-Reference.txt`** (Version 1.1)
+    *   **Covers:** Exact call names for all 10 Chronicler tools, common workflows, and the repository directory structure. Updated in Session 018 to include the `flush_pipeline` tool.
+*   **`v1.0_GUIDE_SeraphRecorder_Quick-Use.txt`** (Version 1.0)
+    *   **Covers:** A lean guide for sharing with Claude instances to explain how the capture pipeline works, token efficiency, and current limitations.
+*   **`v1.0_REF_LibForge-Tool-Naming-Reference.txt`** (Version 1.0)
+    *   **Covers:** The naming convention catalog using Urantia beings (info tools) and Craft terms (measurement tools). Defines names like Majeston, Caliper, and Chronicler.
+
+### **4. Operational & Maintenance Documentation**
+*   **`MAINTENANCE-PROTOCOL.md`**
+    *   **Covers:** Comprehensive maintenance procedures, troubleshooting workflows, disaster recovery, and detailed system administration commands.
+*   **`README.md`** (Maintenance ORG Folder)
+    *   **Covers:** Quick reference for local Mac scripts (`health-check.sh`, `refresh-tokens.sh`), how to SSH via Tailscale, and basic emergency commands.
+*   **`MCP-Workshop-Suite-Quick-Reference.txt`**
+    *   **Covers:** A one-page cheat sheet for the EC2 instance, listing ports, paths, and key commands for both Majeston and Caliper.
+*   **`Caliper-README.md`**
+    *   **Covers:** Standalone maintenance guide specifically for the Caliper (Document Analysis) tool service.
+*   **`DEPLOYMENT-INSTRUCTIONS.txt`**
+    *   **Covers:** Step-by-step instructions used for deploying Caliper (Session 010/011).
+
+### **5. Planning & Findings**
+*   **`v1.0_PLAN_SeraphRecorder_Wishlist.txt`** (Version 1.0)
+    *   **Covers:** Future development items, including automation, advanced tagging, and n8n integration.
+*   **`005_FINDINGS_Session-009-Drive-Bridge-and-File-Interface.txt`**
+    *   **Covers:** Research findings regarding Google Drive integration and file handling capabilities.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

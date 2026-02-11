@@ -1,0 +1,59 @@
+================================================================================
+EXTRACTION: 2026-02-08_222642_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Summarize the key methodology decisions and findings from Sessions 007 through 011 that are load-bearing for extraction pipeline design. Include: the recommended extraction sequence, chat_configure findings, template-as-source results, combined vs separated pass decisions, and any decisions about query design best practices. Focus on what's operationally relevant for running extraction passes today.
+Timestamp:       2026-02-08T22:26:42.000953+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 80902cd9-bcc1-418e-b95f-5ba835dd619f
+Chat Configure:  default
+Response Chars:  4831
+Duration:        33999ms
+================================================================================
+
+Based on the findings from Sessions 007 through 011, here is a summary of the key methodology decisions and load-bearing findings for the extraction pipeline design.\
+\
+### 1. Recommended Extraction Sequence (The \"Pass Separation Principle\")\
+Testing confirmed that attempting to extract multiple data types (concepts, vocabulary, thesis strings) in a single query degrades quality and reduces yield by 29...56% [1]. Consequently, **D-029** established the **Pass Separation Principle**: distinct output classes require dedicated, calibrated queries [2].\
+\
+The operationally recommended sequence for degree-one extraction is:\
+1.  **TM (Theme Mapping):** Identify major themes and conceptual clusters to structure subsequent passes [3].\
+2.  **TX (Thematic Extraction):** Run separate queries for each identified theme to extract concepts (proven to yield higher coverage than sequential/positional chunking) [4], [5].\
+3.  **VX (Vocabulary Extraction):** Dedicated pass for specialized terms, definitions, and usage context [6], [3].\
+4.  **TS (Thesis String Extraction):** Extract argumentative claims with evidence and logical relationships [7], [8].\
+5.  **EV (Evaluation):** Critical analysis pass to identify internal contradictions, factual flags, and logical gaps [9], [8].\
+6.  **GD (Gap Detection):** Apophatic search for concepts missed in prior passes (often catches operational/meta content) [10], [3].\
+7.  **GX (Gap Extraction):** Extract from the specific gap themes identified [3].\
+8.  **CL (Classification):** Post-extraction pass using a domain taxonomy source to assign codes/tags to extracted items [11], [3].\
+\
+### 2. Combined vs. Separated Pass Findings\
+*   **Yield Reduction:** Combined queries hit NotebookLM's response length ceiling, causing it to distribute its \"budget\" across categories rather than going deep on any single one [1].\
+*   **Quality Loss:** Combined vocabulary entries lacked fields like \"Related Terms\" and had shorter definitions compared to separated VX passes [1].\
+*   **Operational Decision:** Combined passes are relegated to **triage only** (initial assessment); production extraction must use separated passes [12].\
+\
+### 3. `chat_configure` and Response Length Findings\
+*   **Soft Guidance, Not Hard Rules:** Custom prompts via `chat_configure` provide \"soft guidance.\" They successfully nudged output formats (e.g., spontaneously adding `CONCEPT-001` numbering) but failed to enforce complex analytical directives like \"flag contradictions\" unless explicitly requested in the query itself [13], [14].\
+*   **Depth vs. Breadth:** Setting `response_length=\"longer\"` does **not** increase the number of concepts extracted. Instead, it increases the depth/richness of individual entries (longer quotes, better notes) [15].\
+*   **Dual-Config Strategy:** Different configurations (Default vs. Custom) surface unique concepts. For maximum yield, the pipeline may require running TX passes twice (once with each config) and merging results, despite the token cost [16], [17].\
+\
+### 4. Template-as-Sou< 2026/02/08 22:27:16.000866545  length=1804 from=10159 to=11962
+rce & Context Injection\
+*   **Passive Influence Fails:** Uploading a template or taxonomy document as a source does **not** passively cause NotebookLM to adopt that format or vocabulary [18].\
+*   **Directed Influence Works:** Explicitly instructing NotebookLM to *use* the uploaded template (e.g., \"Use the Domain Taxonomy source to classify these concepts\") works perfectly [11].\
+*   **Output Envelope (F52):** Adding contextual notes (like a thesis lens or glossary) does not increase total output volume. Instead, it redistributes the \"output envelope\"...producing fewer, deeper, and more specific items [19].\
+*   **Thesis-as-Lens (F50):** Uploading a thesis as a note acts as a filter. It drops peripheral concepts to focus deeply on thesis-relevant material, shifting framing from descriptive (\"what the source says\") to argumentative (\"how it supports the thesis\"). This is validated as a **Phase 4 structuring tool**, not a Phase 2 broad extraction tool [20], [21].\
+\
+### 5. Query Design Best Practices\
+*   **Thematic over Sequential:** NotebookLM operates semantically, not positionally. Extracting by \"Theme\" yields better results than trying to extract by \"Section\" or word count [22].\
+*   **Gap Detection is Critical:** A dedicated \"Gap Detection\" query consistently finds operational and meta-content that thematic passes miss [10].\
+*   **Provenance:** Explicitly requesting direct quotes is the only way to ensure fidelity; extraction prompts must mandate source citations [23].\
+*   **Source Filtering:** The `source_ids` parameter is non-negotiable for targeted extraction; natural language instructions alone are unreliable for isolating specific sources [24].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

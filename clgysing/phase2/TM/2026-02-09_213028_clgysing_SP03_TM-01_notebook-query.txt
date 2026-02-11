@@ -1,0 +1,59 @@
+================================================================================
+EXTRACTION: 2026-02-09_213028_clgysing_SP03_TM-01_notebook-query
+================================================================================
+Source Package:  SP03
+Pass Type:       TM (Theme Mapping)
+Pass Number:     01
+Theme/Focus:     N/A
+Project:         clgysing
+Session:         014
+Routing:         Tier 1 (Tagged + Known)
+Query:           What are the major conceptual themes across all sources in this notebook?
+Timestamp:       2026-02-09T21:30:28.000752+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: 7ca6ec4c-7301-4609-a559-71a46a1a885d
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  4777
+Duration:        34999ms
+================================================================================
+
+Based on the extraction reports provided in the notebook, the major conceptual themes center on a comprehensive philosophical and sociological research project divided into two primary series: **Cultology** and **Agenda 47 Explained**. These projects are underpinned by a foundational philosophy called **Omniology**.\
+\
+Here are the major conceptual themes across the sources:\
+\
+### 1. Omniology and the \"Omniological Approach\"\
+The foundational theme is **Omniology**, defined as the pursuit of truth to understand the self, reality, and the purpose of life [1-4]. This philosophy drives a specific research methodology known as the **Omniological Approach**, which prioritizes:\
+*   **Intrinsic Knowledge:** Building understanding by modeling subjects within one's own conceptual frameworks and integrating them across domains, rather than relying on \"authoritative statements\" or surface-level explanations [5-9].\
+*   **The Pursuit of Truth:** A commitment to follow truth wherever it leads, regardless of discomfort or challenge [1, 10].\
+*   **Systemic Production:** The author describes a \"Third-Generation\" research system that uses AI as a \"force multiplier\" (not a replacement) to handle massive data libraries (7,500+ pages) without sacrificing accuracy or \"voice\" [11-14].\
+*   **Pedagogical Spiral Staircase:** A teaching method designed to introduce concepts accessibly and then deepen them recursively to serve readers at all levels of familiarity [15-18].\
+\
+### 2. The Cultology Framework (Parasitic vs. Symbiotic)\
+**Cultology** is described as a \"unified field theory\" for analyzing relationships, power, and belief systems [19-22]. It operates on a strict dichotomy between two modalities:\
+*   **The Parasitic Modality (Cults):** Defined not by rituals but by the interruption of the \"natural flow of truth and growth\" [23-25]. These systems rely on \"extrinsic knowledge,\" rigid dogma, and social pressure to \"hijack human potential\" and turn people into engines of extraction [6, 26-29]. They are described as \"counterfeit transcendence mechanisms\" that replace authentic purpose with surrogate identities [26, 30, 31].\
+*   **The Symbiotic Modality:** The positive counterpart, characterized by \"honorable contracts,\" truth-centered inquiry, and the \"intrinsic path\" [32-35]. These systems aim for the full flourishing of human relationships, marked by freedom, honesty, and mutual benefit [33, 34].\
+\
+### 3. Civilization as a \"Macro-Cult\"\
+The sources outline a critique of modern society as a **Macro-Cult**...a distributed parasitic architecture operating across families, businesses, and governments [31, 36-38]. Key concepts include:\
+*   **The Technocratic Plantation:** Modern civilization is described as a \"plantation\" adorned with conveniences that act as a **Trojan Horse**, enticing humanity into dependency while concealing a \"toxic payload\" of control [39-43].\
+*   **Loss of Freedom:** A theme of generational amnesia, where populations born into the \"free-range plantation\" confuse meager benefits with actual liber< 2026/02/09 21:31:03.000144238  length=1730 from=8693 to=10422
+ty and forget what genuine freedom looks like [43-45].\
+*   **Reclaiming Birthright:** The ultimate goal is reclaiming the \"birthright\" of knowledge and wisdom stolen by these parasitic systems, requiring \"eternal vigilance\" to maintain [46-49].\
+\
+### 4. Agenda 47 Explained (Case Study)\
+This theme represents the practical application of the Cultology framework to contemporary politics [50-53].\
+*   **The Hypothesis:** The project explores the hypothesis that Donald Trump *may* represent the public face of an elite group attempting to transition society from a parasitic to a symbiotic footing [50, 54, 55].\
+*   **Intellectual Honesty:** The sources emphasize that this is a hypothesis, not advocacy. It acknowledges the uncertainty and the possibility that Trump could represent a competing parasitic group, aiming to test the theory in real-time [46, 56, 57].\
+\
+### 5. Structural Models of Human Function\
+Several specific models are introduced to explain how these systems interact with individuals:\
+*   **The Four Intimacies:** A model of value exchange comprising Physical, Emotional, Intellectual, and Spiritual dimensions, with \"Intellectual Intimacy\" serving as the immune system [58, 59].\
+*   **Ontology of Being:** A structure (Personality ... Soul ... Mind ... Emotion ... Physical) that cults attack via a \"Corruption Cascade,\" hijacking the core personality to invert values [60, 61].\
+*   **Contractual Formalism:** A framework for evaluating relationships as energetic and moral contracts, distinguishing between \"honorable\" (symbiotic) and \"counterfeit\" (parasitic) contracts [62, 63].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

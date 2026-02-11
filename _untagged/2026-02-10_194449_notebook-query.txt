@@ -1,0 +1,83 @@
+================================================================================
+EXTRACTION: 2026-02-10_194449_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What does Section 5 Canonical Project Artifacts currently contain for each subsection? How detailed is the Bootstrap subsection 5.4? How detailed is the Session Log subsection 5.3? What templates or examples are provided?
+Timestamp:       2026-02-10T19:44:49.000249+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 297576e9-4aa6-44b4-9366-7f55e5c69290
+Chat Configure:  default
+Response Chars:  5355
+Duration:        37999ms
+================================================================================
+
+Based on the **GOV-AIPM v1.0.7-DRAFT** manual provided in the sources, here is the detailed content of Section 5 (Canonical Project Artifacts), with specific focus on the Bootstrap and Session Log subsections and available templates.\
+\
+### **Section 5: Canonical Project Artifacts Overview**\
+Section 5 outlines the \"external memory system\" required to make multi-session AI projects viable. It defines the specific artifacts that carry authority and continuity throughout a project's lifecycle [1, 2].\
+\
+**Current Subsections in v1.0.7:**\
+*   **5.1 Project Guide:** The authoritative, living document defining the project's identity, scope, deliverables, execution plan, and success criteria. It serves as the primary reorientation tool [2-6].\
+*   **5.2 Decision Logs:** A chronological record of significant choices (decisions), including rationale, alternatives considered, and context to prevent decision churn [7-10].\
+*   **5.3 Session Logs:** (Detailed below) [10].\
+*   **5.4 Bootstrap Files:** (Detailed below) [11].\
+*   **5.5 Supporting Artifacts:** Covers transient materials like drafts, research notes, reusable templates, and periodic reports [12].\
+*   **5.6 Artifact Relationships:** Explains how the artifacts interlock (e.g., the Project Guide governs scope, while Bootstraps carry forward essential elements of the Guide and recent decisions) [13].\
+*   **5.7 Backlog Register:** A systematic mechanism to capture deferred items, out-of-phase observations, and \"parking lot\" ideas, tagged with phase markers for traceability [14].\
+*   **5.8 Project Closure Report:** A mandatory synthesis document completed at project end to validate success criteria, document outcomes, capture lessons, and seed future projects [15].\
+\
+---\
+\
+### **Detail: Subsection 5.4 Bootstrap Files**\
+This subsection is highly detailed, defining the Bootstrap as the primary vehicle for solving the AI \"memory problem.\"\
+\
+*   **Definition:** \"Minimal, scoped context packets designed to initialize a new AI chat\" with necessary information to continue work or branch into new streams [11].\
+*   **Purpose:** Enables clean continuation after session ends, branching, resumption after absence, handoffs, and recovery from failures [16].\
+*   **Principles:**\
+    *   **Minimal Sufficiency:** Include only what is needed to save tokens [17].\
+    *   **Scoped Context:** Context must be specific to the purpose (e.g., drafting vs. research) [17].\
+    *   **Self-Contained:** The recipient should understand the state witho< 2026/02/10 19:45:27.000244899  length=2866 from=8513 to=11378
+ut external reference [18].\
+    *   **Actionable:** Must clarify what the receiving session should *do* [18].\
+*   **Types:** Defines three specific types: **Continuation** (resume work), **Branch** (parallel workstream), and **Recovery** (resume after failure) [18].\
+*   **Structure:** Explicitly lists required elements including Project ID, Source/Target chat info, Current State, Completed Work, End-of-Session Files, Open Items, Immediate Next Actions, and Constraints [19].\
+*   **Discipline:** Emphasizes creating bootstraps proactively at natural transition points rather than waiting for token limits [20].\
+\
+### **Detail: Subsection 5.3 Session Logs**\
+This subsection establishes the protocol for documenting individual work sessions to ensure progress tracking and continuity.\
+\
+*   **Definition:** A record of what occurred in a session: objectives, work accomplished, decisions, issues, and outputs [10].\
+*   **Purpose:** Provides progress tracking, issue documentation, output registry, and support for continuity reconstruction [21].\
+*   **Entry Structure:** Defines specific fields required:\
+    *   **Header:** Session ID, Date, Duration, Session Type.\
+    *   **Body:** Objective, Work Accomplished, Decisions Made (referencing the Decision Log), Issues Encountered, Files Produced.\
+    *   **Footer:** Bootstrap status, Chat export status, Next session notes [21].\
+*   **Relationship to Transcripts:** Clarifies that the log is a structured summary for quick orientation, whereas the chat transcript (exported via tools like Claude Exporter) is the raw record for detailed recovery [22].\
+\
+---\
+\
+### **Templates and Examples Provided**\
+Appendix A of the manual provides full text versions of the templates referenced in Section 5. Specifically:\
+\
+*   **TPL-001: Project Initiation Form** (for Section 5.1) [23].\
+*   **TPL-002: Bootstrap Template** (for Section 5.4) [24].\
+    *   Includes sections for \"Mini Project Map,\" \"End-of-Session Files,\" and \"Next Session Quick-Start\" prompts [25-33].\
+*   **TPL-003: Session Closeout Checklist** [34].\
+*   **TPL-004: Decision Log Entry** (for Section 5.2) [35].\
+*   **TPL-005: Session Log** (for Section 5.3) [36].\
+    *   Includes specific fields for \"Token efficiency\" and \"Alignment verification\" metrics [37].\
+*   **TPL-010: Project Roadmap** [38].\
+*   **TPL-022: Project Closure Report** (for Section 5.8) [39].\
+*   **TPL-023: Backlog Register** (for Section 5.7) [40].\
+\
+**Note on Future Revisions:**\
+While not currently in Section 5 of the v1.0.7 text, the \"Revision Findings & Plan\" document [41] indicates that **Findings Reports** (distinct from session/decision logs) are planned to be added as a new artifact class in future versions (v1.0.8+) [42].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

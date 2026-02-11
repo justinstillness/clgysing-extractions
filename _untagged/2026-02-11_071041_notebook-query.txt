@@ -1,0 +1,53 @@
+================================================================================
+EXTRACTION: 2026-02-11_071041_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           You just identified 21 themes across the sources. Now review all source material again and identify any significant themes, topics, or conceptual areas that are PRESENT in the sources but were NOT included in your previous response. Look for themes you may have subsumed under broader categories, minor but distinct topics, or conceptual areas that deserve their own entry. For each missing theme, provide a brief description and cite where it appears. If all significant themes are covered, state that explicitly.
+Timestamp:       2026-02-11T07:10:41.000168+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: 560048eb-9889-4333-8840-253408d81b6c
+Chat Configure:  default
+Response Chars:  3357
+Duration:        33000ms
+================================================================================
+
+Based on a review of the detailed extraction sources provided, I have identified **7 significant themes, topics, or conceptual areas** that offer distinct nuance or specific modeling beyond the broad categories (like Omniology, Cultology, or the AI System) likely covered in the previous summary of 21 themes.
+
+### **Additional Significant Themes & Conceptual Areas**
+
+**1. Semantic Rehabilitation**
+*   **Description:** A deliberate linguistic strategy to reclaim the term "cult" from being a mere pejorative slur. The framework redefines it as a precise, diagnostic "investigative lens" for identifying social pathology and structural dysfunction.
+*   **Source:** [1], [2] (Source 1, CONCEPT-0016).
+
+**2. The Corruption Cascade**
+*   **Description:** A specific mechanism within the "Ontology of Being" model describing how parasitic systems degrade a human being. The process specifically "hijacks the core personality spark" and inverts the value system, cascading down through soul, mind, emotion, and physical expression.
+*   **Source:** [3], [4] (Source 1, CONCEPT-0014); [5], [6] (Source 2, CONCEPT-0012).
+
+**3. Operational Security (OpSec) in Civilizational Transition**
+*   **Description:** A justification for the ambiguity surrounding the "Agenda 47" hypothesis. The sources argue that any genuine attempt to transition a civilization from parasitic to symbiotic would necessitate "significant operational security, psychological operations, and strategic maneuvering," making it impossible for outside observers to know the full truth in real-time.
+*   **Source:** [7], [8] (Source 1, CONCEPT-0020).
+
+**4. Contractual Formalism**
+*   **Description:** A moral and legalistic model for evaluating relationship health. It posits that all relationships (families, businesses, governments) are "energetic, epistemic, and moral contracts." Symbiotic systems use "honorable contracts" (transparent, revocable), while parasitic systems rely on "counterfeit contracts" that hollow out consent.
+*   **Source:** [9] (Source 1, CONCEPT-0015); [10], [11] (Source 2, CONCEPT-0013).
+
+**5. Intellectual Intimacy as the "Immune System"**
+*   **Description:** Within the "Four Intimacies" model (Physical, Emotional, Intellectual, Spiritual), Intellectual Intimacy is singled out as the "keystone." It functions as the "immune system" for the other forms of intimacy; when it is corrupted, the capacity to resist parasitic control is lost.
+*   **Source:** [12] (Source 1, CONCEPT-0013); [13] (Source 2, CONCEPT-0005).
+
+**6. Technological Mastery vs. Avoidance**
+*   **Description:** A nuanced counter-theme to the "Technocratic Plantation" critique. The sources clarify that "true freedom" does not require rejecting technology (primitivism). Instead, it requires that technology be "properly understood and mastered" to serve human freedom rather than create dependency.
+*   **Source:** [14], [15] (Source 3, CONCEPT-0027).
+
+**7. Epistemic Universality (Political & Spiritual Neutrality)**
+*   **Description:** The claim that these frameworks are designed to be universally applicable tools for clarity, regardless of the user's ideological starting point. The sources explicitly state they are for people "on the left or the right," "pro-Trump or anti-Trump," and "spiritually inclined or deeply skeptical."
+*   **Source:** [15], [16] (Source 3, CONCEPT-0028).
+
+================================================================================
+END OF EXTRACTION
+================================================================================

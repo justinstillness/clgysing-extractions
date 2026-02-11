@@ -1,0 +1,25 @@
+================================================================================
+EXTRACTION: 2026-02-11_012239_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          NO_RESPONSE
+Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Source Package:  N/A
+Pass Type:       N/A
+Would-Be Route:  Tier 3 (Untagged)
+Query:           From DCU 2 Transactions CSV: list every transaction with date, amount, and vendor description in chronological order. Show all transactions individually, do not group by vendor.
+Timestamp:       2026-02-11T01:22:39.000131+00:00
+Notebook ID:     e71c3c3d-ec8f-4a75-a5cc-2d8b33c08150
+Source IDs:      all
+Conversation ID: N/A
+Response Chars:  0
+Duration:        7801000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"prompts": []}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

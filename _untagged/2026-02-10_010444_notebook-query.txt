@@ -1,0 +1,80 @@
+================================================================================
+EXTRACTION: 2026-02-10_010444_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the response indexing system? How does it work across sessions? What is the connector transparency protocol? What is the insight capture system and out-of-phase backlog?
+Timestamp:       2026-02-10T01:04:44.000858+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 8b903d66-a896-4f55-b3f5-5bf014367492
+Chat Configure:  default
+Response Chars:  5103
+Duration:        72000ms
+================================================================================
+
+Based on the **Havona Anvil Suite (HA Suite)** architecture reference and tool documentation, here is the breakdown of the available MCP tools and their specific roles within the AIPM (AI Project Management) and LibForge workflows.\
+\
+### **Overview: The Havona Anvil Suite**\
+The **Havona Anvil Suite** is a custom infrastructure deployed on an AWS EC2 instance. It consists of four integrated components designed to automate the extraction, analysis, and organization of research from your 87+ NotebookLM notebooks [1, 2].\
+\
+The suite follows a specific naming convention established in Session 010: **Urantia Book** personalities are used for information/intelligence tools, and **Craft/Forge** terminology is used for measurement/production tools [3, 4].\
+\
+---\
+\
+### **1. Majeston (NotebookLM MCP)**\
+*   **Type:** Information/Intelligence Tool (Named after the Chief of Reflectivity in Urantia cosmology) [5].\
+*   **Technical Base:** `jacob-bd/notebooklm-mcp-cli` running on internal port 8100 [6, 7].\
+*   **Tool Inventory:** 29 tools, including `notebook_query`, `source_add`, and `studio_create` [8].\
+\
+**Role in AIPM Workflow:**\
+Majeston is the **research engine** of the pipeline. It provides Claude with direct query access to the 6,000+ pages of source material stored in your NotebookLM notebooks without needing to load those documents into Claude's context window [9].\
+*   **Primary Action:** It executes the \"Extraction Passes\" (e.g., Vocabulary Extraction, Thesis String Extraction) defined in your LibForge protocols [10].\
+*   **Signal Integration:** Queries sent to Majeston include a `[SERAPH: ...]` signal string at the end, which tags the query for downstream processing [11].\
+\
+### **2. SeraphRecorder (Traffic Capture Pipeline)**\
+*   **Type:** Information/Archival Tool (Named after Seraphic Recorders) [12].\
+*   **Technical Base:** A pipeline consisting of a `socat` wrapper, `extract.py` (v6), and `push-to-github.sh` [13].\
+*   **Tool Inventory:** It is primarily an automated background process, though it exposes the `flush_pipeline` tool via Chronicler [14].\
+\
+**Role in AIPM Workflow:**\
+SeraphRecorder acts as the **automatic secretary**, solving the \"double-wire cost\" problem. Instead of Claude having to repeat NotebookLM's answers back to you (consuming output tokens), SeraphRecorder transparently captures the traffic between Claude and Majeston [15].\
+*   **Capture:** It intercepts the JSON traffic on the server.\
+*   **Extraction:** It parses the `[SERAPH]` tags to determine what project and pass type the data belongs to (e.g., `clgysing/phase2/VX/`) [16].\
+*   **Resilience:** It creates \"Ghost Files\" for failed queries, ensuring no data is ever silently lost [17].\
+*   **Delivery:** It pushes the extracted text directly to your private GitHub r< 2026/02/10 01:05:56.000951879  length=2333 from=10159 to=12491
+epository [13].\
+\
+### **3. Chronicler (GitHub Repository Tool)**\
+*   **Type:** Organizational Tool (Named after Urantia archivists) [18].\
+*   **Technical Base:** Custom Python FastMCP server running on port 8002 [19].\
+*   **Tool Inventory:** 10 tools, including `list_files`, `read_file`, `write_file`, `move_file`, and `flush_pipeline` [20, 21].\
+\
+**Role in AIPM Workflow:**\
+Chronicler is the **librarian and organizer**. While SeraphRecorder dumps raw extractions into the repository, Chronicler gives Claude the ability to see, read, and reorganize those files [22].\
+*   **Organization:** It moves files from the `_untagged` staging area into the proper project directories [23].\
+*   **ID Assignment:** It manages the `concept-counter.json` file to assign unique, sequential IDs (e.g., `SP03-VX-001`) to extracted concepts [24].\
+*   **Pipeline Control:** It allows Claude to trigger an on-demand flush of the SeraphRecorder pipeline via `Chronicler:flush_pipeline` [14].\
+\
+### **4. Caliper (Document Analysis MCP)**\
+*   **Type:** Measurement Tool (Named after the precision instrument) [25].\
+*   **Technical Base:** Custom Python FastMCP server running on port 8001 [26].\
+*   **Tool Inventory:** 2 tools: `analyze_github_folder` and `server_status` [27].\
+\
+**Role in AIPM Workflow:**\
+Caliper is the **surveyor**. It solves the \"blind metrics\" problem by analyzing text files in your GitHub repository without loading them into context [28].\
+*   **Inventory:** It provides word counts, character counts, and sentence counts for source packages [29].\
+*   **Segmentation:** It flags files that exceed 5,000 words, alerting you that a file needs to be split before being processed by other tools or models [30].\
+\
+### **Summary of the Integrated Workflow**\
+1.  **Caliper** measures raw source materials to ensure they are ready for processing.\
+2.  **Majeston** queries the material using specific LibForge protocols (tagged with `[SERAPH]` signals).\
+3.  **SeraphRecorder** captures the output in the background, converting it to text files and pushing them to GitHub.\
+4.  **Chronicler** allows Claude to access those files, assign Concept IDs, and organize them into the permanent project structure [31].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

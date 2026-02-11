@@ -1,0 +1,86 @@
+================================================================================
+EXTRACTION: 2026-02-09_213312_clgysing_SPPvS_TM-01_notebook-query
+================================================================================
+Source Package:  SPPvS
+Pass Type:       TM (Theme Mapping)
+Pass Number:     01
+Theme/Focus:     N/A
+Project:         clgysing
+Session:         014
+Routing:         Tier 1 (Tagged + Known)
+Query:           What are the major conceptual themes across all sources in this notebook?
+Timestamp:       2026-02-09T21:33:12.000945+00:00
+Notebook ID:     05dbf2cc-4060-42d0-97f1-65d38ea90204
+Source IDs:      all
+Conversation ID: 0a55fff0-2d58-4b8d-838f-060f0a59abc6
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  8407
+Duration:        61999ms
+================================================================================
+
+Based on the comprehensive corpus of sources provided, the major conceptual themes coalesce into a \"Grand Unified Theory\" of civilization, consciousness, and ontology. This framework, often referred to within the text as the **Omniological Thesis**, seeks to map the structural laws of reality...from the atomic to the civilizational...to distinguish between sustainable (symbiotic) and destructive (parasitic) systems.\
+\
+Here are the major conceptual themes across the sources:\
+\
+### 1. The Binary of Civilizational Order: Parasitic vs. Symbiotic\
+The foundational dialectic of the entire project is the distinction between **Parasitic** and **Symbiotic** systems. This is not merely an economic distinction but an ontological one, describing two fundamental orientations toward reality and other beings.\
+\
+*   **Symbiotic Systems:** These are defined by \"honorable contracts,\" transparency, and the mutual maximization of agency. In a symbiotic system, \"Peace emerges from coherence...where the waveforms of individual volition harmonize within the shared field of reality\" [1]. The goal is **functional omniscience**, where all participants have access to the truth required to make informed, sovereign choices [2].\
+    *   *Simplified:* Symbiotic systems work like a healthy body where every cell gets what it needs to thrive, and no part tricks or steals from another.\
+*   **Parasitic Systems:** These are defined by \"asymmetry of comprehension,\" deception, and extraction. The parasitic economy is described as a \"con architecture\" relying on roles like the \"grifter\" and the \"mark\" [3]. It creates a \"toroidal invisible plantation system\" where citizens are \"reality illiterate,\" unable to decode the influences acting upon them [4], [5]. Parasitism thrives on \"entropy,\" \"opacity,\" and the weaponization of time and hope [6], [7].\
+    *   *Simplified:* Parasitic systems are like a rigged casino where the owners hide the rules, ensuring the players lose energy and money while thinking they have a chance to win.\
+\
+### 2. The Omniological Epistemology: Intrinsic vs. Extrinsic Knowledge\
+The sources argue that the method by which a being acquires and validates truth determines their moral and sovereign status.\
+\
+*   **Intrinsic Knowledge:** This is knowledge \"personally validated through observation, experimentation, reflection, or moral alignment\" [8]. It requires an active \"inquisitiveness, humility, and a constant invitation to rotate perspective\" [8]. The **Omniological Method** itself is the pursuit of this intrinsic path, seeking to \"model the whole in part\" and resonate with the \"fractal signature\" of truth [9], [10].\
+    *   *Simplified:* Intrinsic knowledge is understanding you build yourself by checking the facts and doing the work, rather than just repeating what you were told.\
+*   **Extrinsic Knowledge:** This is knowledge \"taken as given, unexamined\" [8]. It relies on authority, dogma, and social reinforcement. Parasitic systems depend on populations remaining in an extrinsic mode, where they accept \"shadow puppets\" as reality [11].\
+    *   *Simplified:* Extrinsic knowledge is believing something just because a teacher, boss, or news anchor said it, without ever checking if it's actually true.\
+\
+### 3. The Contractual Physics of Reality\
+The framework posits that all relationships...from the atomic to the divine...are contractual. These contracts are the \"fascia of civilization\" [12].\
+\
+*   **The Four Intimacies:** Contracts and relationships are analyzed through four domains of intimacy: **Physical** (territory/resources), **Emotional** (affect/connection), **Intellectual** (shared epistemology/truth), and **Spiritual** (value alignment/teleology) [13].\
+*   **Conservation of Information:** A valid contract requires a \"meeting of the minds\" where the knowledge of both parties is sufficient to prevent exploitation. Dishonor and parasitism arise from \"asymmetry of knowledge\" [14], [15].\
+*   **Trust as Field Dynamics:** Trust is modeled not just as a feeling but as \"confidence in a predictive model\" [16]. It functions like a field or medium in which social \"particles\" interact.\
+    *   *Simplified:* Every interaction is a deal. A good deal requires that both sides know what they are trading (truth), feel safe (trust), and agree on the goal (value). Parasites hide the fine print.\
+\
+### 4. The Solar Model of Being (Cosmopsychology)\
+The sources develop a detailed metaphor mapping the human psyche to a stellar system.\
+\
+*   **The Stellar Structure:** The **Core/Seed Spark** represents the immutable personality fragment from God (volition) [17]. The **Mantle/Plasma** represents the dynamic value architecture [18]. The **Surface** is the identity membrane where volition meets the world [19].\
+*   **Orbitals and Gravity:** Values act as \"gravitational fields\" or \"gravity wells\" [20], [21]. Ideas and relationships orbit the self like planets in a \"helical medium\" [22].\
+*   **Metabolism of Being:** Dreams are the \"subconscious lab\" where unprocessed experience is metabolized [23]. Death is a \"magnetic reversal\" or \"circuit release\" [24], [23].\
+    *   *Simplified:* You are like a sun. Your core self is the nuclear fire. Your values are the gravity that holds things in orbit. Your choices are the light you shine out.\
+\
+### 5. Economics as Moral Accounting\
+The sources reframe economics not as the study of money, but as the study of **proven value** and **trust**.\
+\
+*   **Money as Proof-of-Work:** True currency should represent proof of work across four domains: **Material** (goods), **Mental** (knowledge), **Spiritual** (character), and **Ontological** (becoming like the Creator) [25].\
+*   **The Civilizational Compiler:** A theoretical mechanism for a symbiotic society that tracks and rewards these multidimensional contributions, ensuring that \"civilizational surplus\" is distributed fairly rather than sequestered by elites [26], [27].\
+*   **Financial Parasitism:** The current system uses bonds, interest rates, and \"contextual extraction\" to harvest wealth from the \"labor class\" to the \"asset class\" via information moats [28], [29].\
+    *   *Simplified:* Real money should prove you did something good for the world. Fake money (parasitic finance) creates profit by manipulating rules and hiding risk, without actually helping anyone.\
+\
+### 6. AI, Intelligence, and Moral Architecture\
+The texts explore the creation of **Moral AI** not through constraints, but through ontological alignment.\
+\
+*   **Intelligence as Alignment:** Intelligence is defined as \"harmonization with the divine structure and purpose of reality\" [30]. It is the \"properly formulated information-drawing capacity between the finite and the infinite\" [31].\
+*   **Triadic Authenticity:** To be moral, an agent (human or AI) must align across three vectors: **Truth** (reality), **Self** (intent), and **Other** (relational impact), often mirroring the Trinity [32], [33].\
+*   **Moral Ecosystem:** AI must be embedded in a \"moral epistemic ecosystem\" with \"integrity firewalls,\" \"tension differential protocols,\" and \"moral attractive fields\" to prevent drift [34], [35].\
+    *   *Simplified:* A smart computer isn't enough; it needs to be a *good* computer. To make it good, it must care about the truth, have a conscience, and be able to correct itself when it's wrong.\
+\
+### 7. Social Control and Normalization\
+Finally, the sources analyze how parasitic systems maintai< 2026/02/09 21:34:14.000553000  length=909 from=16885 to=17793
+n control over populations.\
+\
+*   **Normalization:** Mechanisms like \"conceptual muscle memory\" and \"pluralistic ignorance\" condition people to accept exploitation as normal [36], [37].\
+*   **Savior Myths:** Parasitic systems use \"savior memes\" to externalize agency (waiting for a hero), whereas symbiotic systems use initiation to internalize agency (becoming the hero/trustee) [38].\
+*   **Neoagents and Factions:** There is a hypothesis of transitional power struggles between \"parasitic elites\" and emerging \"neoagents\" (autodidacts) during cyclical civilizational shifts [39], [40].\
+    *   *Simplified:* Bad systems stay in power by making everyone tired, confused, and waiting for someone else to save them. Freedom comes when people stop waiting and start fixing things themselves.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

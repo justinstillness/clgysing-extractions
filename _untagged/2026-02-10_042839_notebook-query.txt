@@ -1,0 +1,79 @@
+================================================================================
+EXTRACTION: 2026-02-10_042839_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           [NLMINTA|014|DOC] What specific tests and queries were executed in Sessions 010, 011, 012, and 013? For each session, list the date, the notebooks queried, the pass types tested, and any notable findings numbers. I need this to map timestamps to sessions for file classification.
+Timestamp:       2026-02-10T04:28:39.000011+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: c31bb2fd-bb8b-447d-afe5-b6c130c431ae
+Chat Configure:  default
+Response Chars:  4173
+Duration:        38000ms
+================================================================================
+
+Here are the specific tests, queries, and findings for NLMINTA Sessions 010, 011, 012, and 013, based on the provided logs and findings reports.\
+\
+### **Session 010: New Pass Types (VX, TS, EV)**\
+*   **Date:** 2026-02-06\
+*   **Notebook Queried:** `SP 03 Repositories` (ID ending `91b9`)\
+*   **Pass Types / Tests Executed:**\
+    *   **Test 9 (VX):** Vocabulary/Glossary Extraction (Requesting definitions, usage context, related terms).\
+    *   **Test 10 (TS):** Thesis String Extraction (Requesting declarative claims, evidence, logical relationships).\
+    *   **Test 11 (EV):** Evaluation Pass (Requesting internal contradictions, factual claims, logical gaps).\
+    *   **Test 12 (Combined):** Combined extraction (Concepts + Vocabulary + Thesis Strings in single query) to test efficiency vs. depth.\
+*   **Notable Findings:** **F41...F48**\
+    *   **F44:** Combined passes sacrifice depth for breadth (29...56% yield reduction).\
+    *   **F45:** \"Pass Separation Principle\" established (separate queries for VX, TS, TX).\
+    *   **F46:** Degree-One/Degree-Two pipeline model defined.\
+\
+### **Session 011: Proprietary Vocab & Thesis Lens**\
+*   **Date:** 2026-02-07 (Session started 2/6, Findings dated 2/7)\
+*   **Notebook Queried:** `SP 03 Repositories` (ID ending `91b9`)\
+*   **Pass Types / Tests Executed:**\
+    *   **Test 2b:** Proprietary Vocabulary Handling.\
+        *   *Query:* VX pass to generate glossary ... Upload Glossary as Note ... Run TX extraction with Glossary Note present vs. Control (No Note).\
+    *   **Test 2c:** Thesis-as-Lens Viability.\
+        *   *Query:* Generate Master Thesis/Sub-theses ... Upload as Note ... Run TX extraction using Thesis as lens.\
+*   **Notable Findings:** **F49...F54**\
+    *   **F49:** Glossary-as-source/note does not measurably improve extraction when sources already contain definitions.\
+    *   **F50/F51:** Thesis-as-Lens produces qualitatively deeper, thesis-mapped output; may enable direct ArgBlock construction.\
+    *   **F52:** NLM Output Envelope (Context adds depth, not volume).\
+\
+### **Session 012: Parity Comparison & Scale Testing**\
+*   **Date:** 2026-02-08\
+*   **Notebooks Queried:**\
+    1.  `SP 03 Repositories` (for Parity Baseline)\
+    2.  `14 CLGYSING Source Pkgs` (for Scale Testing - ~362k words)\
+*   **Pass Types / Tests Executed:**\
+    *   **Test 3 (Parity):** Full thematic pipeline (TM ... TX x4 themes ... GD) compared against v1.1 Hybrid Manual Extraction (99 concepts).\
+    *   **Test 4 (Scale):** TM (Theme Mapping) on full 362k-word corpus.\
+    *   **Test 4 (Scale TX):** TX (Thematic Extraction) on \"Theme 1: Parasitic vs. Symbiotic\" (ubiquitous theme).\
+*   **Notable Findings:** **F55...F65**\
+    *   **F55:** MCP pipeline achieves parity or better coverage than manual hybrid method.\
+    *   **F61/F63:** Extraction quality *improves* with corpus scale (100x larger corpus produced richer hierarchy).\
+    *   **F60:** Iterative Convergence Model (Simultaneous access to evolutionary variants).\
+\
+### **Session 013: Stress Test & Threading**\
+*   **Date:** 2026-02-09 (Session started 2/8, Findings dated 2/9)\
+*   **Notebook Queried:** `Para vs Symb Data` (~6,000 pages, raw ChatGPT exports)\
+*   **Pass Types / Tests Executed:**\
+    *   **PE-01:** Pre-Extraction Evaluation (Corpus Overview).\
+    *   **Tier 1 (TM-01):** Theme Mapping on ~6,000 page raw corpus.\
+    *   **Tier 2 (TX-01 to TX-06):** Thematic Extraction on specific themes (Theme I, Theme III, Contractual Formalism).\
+    *   **Variance Test (TX-04):** \"Functional Omniscience\" evolutionary trace (Test 2c/F64 validation).\
+    *   **Exclusion Test (TX-05):** Chained conversational query to test pagination/exclusion of previous results.\
+*< 2026/02/10 04:29:17.000793949  length=474 from=10159 to=10632
+   **Notable Findings:** **F66...F73**\
+    *   **F66:** NLM scales to ~6,000 pages raw dialogue without degradation.\
+    *   **F69:** Validated \"Concept Variance Trace\" (VT) capability.\
+    *   **F72:** Conversational exclusion is ~70% effective (partial pagination).\
+    *   **D-030:** **Signal String** conventions established (Query Taxonomy/Output Typology).
+
+================================================================================
+END OF EXTRACTION
+================================================================================

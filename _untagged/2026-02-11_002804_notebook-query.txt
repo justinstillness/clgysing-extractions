@@ -1,0 +1,54 @@
+================================================================================
+EXTRACTION: 2026-02-11_002804_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Show me the total revenue received by SITS LLC for 2025, broken down by month. Also show the total Stripe fees charged. And clarify whether this includes both Stillness in the Storm and Substack income, or just one of them.
+Timestamp:       2026-02-11T00:28:04.000529+00:00
+Notebook ID:     48755ba1-bc2e-4c5f-8db1-650cb92b6055
+Source IDs:      all
+Conversation ID: 38bb461f-c3f1-4c22-a50a-e6ab094926ac
+Chat Configure:  default
+Response Chars:  1817
+Duration:        106999ms
+================================================================================
+
+Based on the **SITS Stripe.csv** file provided, here is the breakdown of revenue and fees for **SITS LLC** in **2025**.
+
+### **Total Revenue & Fees (2025)**
+
+The data below represents the **Gross Revenue** (Converted Amount in USD) and the **Total Stripe Fees** charged per month.
+
+| Month | Total Revenue (USD) | Total Stripe Fees (USD) |
+| :--- | :--- | :--- |
+| **January** | $280.00 | $38.51 |
+| **February** | $56.00 | $9.31 |
+| **March** | $56.00 | $9.31 |
+| **April** | $56.00 | $9.31 |
+| **May** | $72.00 | $11.97 |
+| **June** | $304.00 | $41.90 |
+| **July** | $487.46 | $68.68 |
+| **August** | $317.28 | $46.34 |
+| **September** | $431.88 | $60.13 |
+| **October** | $121.84 | $19.93 |
+| **November** | $599.44 | $76.43 |
+| **December** | $254.95 | $36.50 |
+| **TOTAL** | **$3,036.85** | **$428.32** |
+
+*Note: Calculations use the "Converted Amount" field to standardize all currencies (e.g., GBP, AUD, MXN) to USD. Transactions marked as "Failed" or "Refunded" were excluded from the revenue totals.* [1-20]
+
+### **Clarification: Stillness in the Storm vs. Substack Income**
+
+This data **appears to include Substack income**.
+
+While the file is labeled "SITS LLC" (Stillness in the Storm) and does not explicitly list "Substack" in the description fields, the **fee structure strongly indicates Substack integration**.
+*   **Evidence:** For a standard $8.00 subscription, the fee charged is **$1.33** [1, 2, 21].
+*   **Breakdown:** This matches the combined fees of **Substack's 10% cut** ($0.80) plus **Stripe's standard processing fee** (~2.9% + 30.. ... $0.53).
+*   **Conclusion:** The "Fee" column in this report likely lumps together both the Stripe processing fees and the Substack platform fees, suggesting this source file represents your Substack revenue processed through SITS LLC's Stripe account.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

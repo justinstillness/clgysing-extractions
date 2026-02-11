@@ -1,0 +1,106 @@
+================================================================================
+EXTRACTION: 2026-02-09_212204_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What are the full details of the Caliper document analysis tool? Include: the exact Python script content or structure, how analyze_github_folder works, what metrics it returns, the .env configuration, the systemd service file contents, how it was built in Session 010, and any known issues or limitations.
+Timestamp:       2026-02-09T21:22:04.000185+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: ed2be970-a255-402f-a362-572113d96916
+Chat Configure:  default
+Response Chars:  5284
+Duration:        38000ms
+================================================================================
+
+**Caliper** (technically the `document-analysis-mcp` service) is a custom Model Context Protocol tool built to perform batch analysis on text files stored in GitHub repositories. It was designed to support the \"CLGYSING Phase 2\" material inventory process by providing metrics like word counts and segmentation recommendations without requiring the files to be loaded into Claude's context window first [1].\
+\
+Here are the full details of the tool as built and deployed.\
+\
+### 1. Python Script Structure and Content\
+The core logic resides in `/home/ubuntu/document-analysis-mcp/document-analysis-mcp.py`. It uses the **FastMCP** framework (v2.14.5) and **httpx** for asynchronous HTTP requests [2].\
+\
+**Key Script Components:**\
+*   **Imports:** `fastmcp`, `httpx`, `os`, `json`, `base64`, `math`.\
+*   **Configuration:** Loads `GITHUB_TOKEN` from environment variables; sets a `SEGMENTATION_THRESHOLD` (5,000 words) to flag large files [3].\
+*   **Server Initialization:** Initializes `FastMCP(\"Document Analysis MCP\")`. *Note: During the build in Session 010/011, the `description=` parameter was explicitly removed from the constructor because it caused a `TypeError` with the installed version of FastMCP* [4, 5].\
+*   **Helper Functions:** \
+    *   `_github_headers()`: Constructs auth headers.\
+    *   `_estimate_tokens()`: Approx. 1 token per 4 characters.\
+    *   `_analyze_text()`: Performs the counting logic.\
+\
+**The `analyze_github_folder` Tool Logic:**\
+1.  **Input:** Accepts a `repo_url` (e.g., `owner/repo`) and optional `path`.\
+2.  **API Call:** Calls GitHub API (`GET /repos/{owner}/{repo}/contents/{path}`) to list files.\
+3.  **Iterate & Fetch:** Loops through files. If a file is a supported text type (`.txt`, `.md`, `.csv`, etc.), it fetches the content via the `download_url` or API (decoding Base64 if necessary).\
+4.  **Analyze:** Runs text analysis on the content string.\
+5.  **Output:** Returns a JSON summary of all files processed.\
+\
+### 2. Metrics Returned\
+For every file analyzed, Caliper returns a structured object containing [1, 6]:\
+*   **File Name:** Name of the file.\
+*   **File Type:** Extension (e.g., `.txt`).\
+*   **Size:** File size in KB.\
+*   **Word Count:** Total words.\
+*   **Character Count:** Total characters.\
+*   **Line Count:** Total lines.\
+*   **Sentence Count:** Approximation based on punctuation.\
+*   **Estimated Tokens:** `char_count / 4`.\
+*   **Segmentation:** A boolean flag or note recommending if the file should be split (if words > 5,000) for processing in LLM contexts [3].\
+\
+### 3. Configuration Files\
+\
+##< 2026/02/09 21:22:42.000390446  length=2727 from=8693 to=11419
+## **Systemd Service File**\
+Located at `/etc/systemd/system/document-analysis-mcp.service`. It mirrors the configuration of the Majeston service but runs on **port 8001** [7].\
+\
+```ini\
+[Unit]\
+Description=Document Analysis MCP Server\
+After=network.target\
+\
+[Service]\
+Type=simple\
+User=ubuntu\
+Environment=HOME=/home/ubuntu\
+EnvironmentFile=/home/ubuntu/document-analysis-mcp/.env\
+# Uses uv to resolve dependencies at runtime\
+ExecStart=/home/ubuntu/.local/bin/uv run --with fastmcp --with httpx \\\\\
+/home/ubuntu/document-analysis-mcp/document-analysis-mcp.py \\\\\
+--transport http --port 8001\
+Restart=always\
+RestartSec=10\
+MemoryMax=256M\
+CPUQuota=50%\
+\
+[Install]\
+WantedBy=multi-user.target\
+```\
+\
+#### **.env Configuration**\
+Located at `/home/ubuntu/document-analysis-mcp/.env`.\
+It contains a single variable:\
+```bash\
+GITHUB_TOKEN=ghp_xxxxxxxxxxxxx\
+```\
+This token must have `repo` scope to access private repositories. Using an authenticated token increases the GitHub API rate limit from 60 requests/hour to **5,000 requests/hour** [8].\
+\
+### 4. Build History (Session 010 & 011)\
+*   **Session 010 (Build):** The tool was architected to solve the \"blind spot\" regarding file metrics in the research pipeline. The name \"Caliper\" was chosen based on the \"Craft/Forge\" naming convention for measurement tools [9, 10]. The code was generated via Claude Code.\
+*   **Session 011 (Deployment):**\
+    *   **Issue:** The initial deployment failed because `FastMCP.__init__()` received an unexpected keyword argument `'description'`.\
+    *   **Fix:** The script was manually edited using `nano` to remove the description parameter [5].\
+    *   **Issue:** Caddy routing initially failed (\"Not Found\").\
+    *   **Fix:** Caddyfile was updated to use `handle_path` (which strips the prefix) instead of `handle`, ensuring requests to `mcp.justinstillness.com/tools/mcp` were correctly forwarded to `localhost:8001/mcp` [11, 12].\
+\
+### 5. Known Issues & Limitations\
+*   **FastMCP Compatibility:** The code is pinned to FastMCP version `< 3.0` (specifically v2.14.5). Upgrading to FastMCP 3.0 may require code changes [13, 14].\
+*   **Client-Side Tool Discovery:** During deployment, Claude's UI sometimes failed to visually list the tools in the chat interface due to a platform-level display issue with multiple connectors. However, the tools are functional and can be invoked if the user knows the exact tool name (e.g., `analyze_github_folder`) [15].\
+*   **File Types:** It is designed for text-based files. Binary files (PDFs, images) are skipped or may cause encoding errors if not filtered [6].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

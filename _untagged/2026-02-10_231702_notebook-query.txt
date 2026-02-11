@@ -1,0 +1,121 @@
+================================================================================
+EXTRACTION: 2026-02-10_231702_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           From the DCU 2 bank statement CSV, list all transactions that appear to be business-related expenses. Look for software subscriptions, web hosting, domain registrations, AI services, cloud computing, professional services, office supplies, travel expenses like flights hotels and gas, advertising, marketing, Stripe, PayPal, Adobe, Amazon, Google, AWS, GoDaddy, or any technology and software purchases. List each with date, amount, and description.
+Timestamp:       2026-02-10T23:17:02.000569+00:00
+Notebook ID:     6019e18f-a72c-4c1f-8233-e69955a72a0c
+Source IDs:      all
+Conversation ID: 00d16b65-2b33-473d-9e95-045e25d54207
+Chat Configure:  default
+Response Chars:  5333
+Duration:        99999ms
+================================================================================
+
+Based on the **DCU 2 Transactions (1).csv** file, here are the transactions that appear to be business-related expenses. These include software subscriptions, AI services, web services, marketing, office supplies, shipping, travel/gas, and internet/phone services.\
+\
+**Technology, Software, & AI Services**\
+*   **01/01/2025** | -$14.40 | GOOGLE GSUITE_STILLNESS [1]\
+*   **10/20/2025** | -$20.00 | OPENAI *CHATGPT SUBSCR [2]\
+*   **09/20/2025** | -$20.00 | OPENAI *CHATGPT SUBSCR [3]\
+*   **08/20/2025** | -$20.00 | OPENAI *CHATGPT SUBSCR [4]\
+*   **07/21/2025** | -$20.00 | OPENAI *CHATGPT SUBSCR [5]\
+*   **06/20/2025** | -$20.00 | OPENAI *CHATGPT SUBSCR [6]\
+*   **05/29/2025** | -$200.00 | OPENAI *CHATGPT SUBSCR [7]\
+*   **05/20/2025** | -$20.00 | OPENAI *CHATGPT SUBSCR [8]\
+*   **04/21/2025** | -$20.00 | OPENAI *CHATGPT SUBSCR [9]\
+*   **03/20/2025** | -$20.00 | OPENAI *CHATGPT SUBSCR [10]\
+*   **02/20/2025** | -$20.00 | OPENAI *CHATGPT SUBSCR [11]\
+*   **01/21/2025** | -$20.00 | OPENAI *CHATGPT SUBSCR [12]\
+*   **12/20/2024** | -$20.00 | OPENAI *CHATGPT SUBSCR [13]\
+*   **04/09/2025** | -$10.00 | MIDJOURNEY INC. [14]\
+*   **03/10/2025** | -$10.00 | MIDJOURNEY INC. [15]\
+*   **12/26/2024** | -$174.00 | OPUS CLIP [16]\
+*   **12/16/2024** | -$29.00 | OPUS CLIP [17]\
+*   **07/24/2025** | -$44.99 | STREAMYARD.COM [18]\
+*   **03/24/2025** | -$44.99 | STREAMYARD.COM [19]\
+*   **02/24/2025** | -$44.99 | STREAMYARD.COM [20]\
+*   **05/20/2025** | -$29.99 | PROTON AG [21]\
+*   **04/21/2025** | -$29.99 | PROTON AG [22]\
+*   **03/20/2025** | -$29.99 | PROTON AG [19]\
+*   **02/20/2025** | -$29.99 | PROTON AG [23]\
+*   **01/21/2025** | -$29.99 | PROTON AG [12]\
+*   **12/20/2024** | -$29.99 | PROTON AG [24]\
+*   **04/25/2025** | -$29.99 | ADOBE INC [25]\
+*   **03/24/2025** | -$29.99 | ADOBE INC [19]\
+*   **03/18/2025** | -$59.99 | ADOBE INC [26]\
+*   **02/24/2025** | -$29.99 | ADOBE [20]\
+*   **02/18/2025** | -$59.99 | ADOBE INC [27]\
+*   **01/21/2025** | -$59.99 | ADOBE [28]\
+*   **12/16/2024** | -$59.99 | ADOBE [17]\
+*   **04/18/2025** | -$3.41 | VULNERATOR [29]\
+*   **03/18/2025** | -$3.26 | VULNERATOR [30]\
+*   **02/18/2025** | -$3.14 | VULNERATOR [31]\
+*   **01/21/2025** | -$3.09 | VULNERATOR [28]\
+*   **12/16/2024** | -$3.15 | VULNERATOR [32]\
+*   **04/18/2025** | -$12.83 | SPOTIFY USA [9]\
+*   **03/18/2025** | -$12.83 | SPOTIFY USA [30]\
+*   **02/18/2025** | -$12.83 | SPOTIFY USA [33]\
+*   **01/21/2025** | -$12.83 | SPOTIFY USA [34]\
+*   **12/18/2024** | -$12.83 | SPOTIFY USA [35]\
+\
+**Marketing & Advertising (X Corp / < 2026/02/10 23:18:42.000156100  length=2820 from=8693 to=11512
+Twitter)**\
+*   **10/20/2025** | -$8.00 | X CORP. PAID FEATURES [36]\
+*   **09/19/2025** | -$8.00 | X CORP. PAID FEATURES [37]\
+*   **08/19/2025** | -$8.00 | X CORP. PAID FEATURES [38]\
+*   **07/19/2025** | -$8.00 | X CORP. PAID FEATURES [39]\
+*   **06/20/2025** | -$8.00 | X CORP. PAID FEATURES [6]\
+*   **05/19/2025** | -$8.00 | X CORP. PAID FEATURES [40]\
+*   **04/19/2025** | -$8.00 | X CORP. PAID FEATURES [9]\
+*   **03/19/2025** | -$16.00 | X CORP. PAID FEATURES [26]\
+*   **02/19/2025** | -$16.00 | X CORP. PAID FEATURES [41]\
+*   **01/21/2025** | -$16.00 | X CORP. PAID FEATURES [28]\
+*   **12/19/2024** | -$16.00 | X CORP. PAID FEATURES [42]\
+\
+**Amazon Purchases (Equipment/Supplies)**\
+*   **06/20/2025** | -$25.95 | AMAZON MKTPL*NO0HR6NE1 [6]\
+*   **05/19/2025** | -$28.84 | AMAZON MKTPL*NW4BY7BL1 [43]\
+*   **05/16/2025** | -$62.93 | AMAZON MKTPL*NZ7KI53K2 [43]\
+*   **05/15/2025** | -$48.56 | AMAZON MKTPL*NW4BL4L40 [44]\
+*   **05/14/2025** | -$62.93 | AMAZON MKTPL*NI69J2Y80 [44]\
+*   **04/12/2025** | -$32.09 | AMAZON MKTPL*TM65338W3 [45]\
+*   **03/19/2025** | -$28.84 | AMAZON MKTPL*GV5A018L3 [10]\
+*   **03/03/2025** | -$148.73 | AMAZON PRIME*CE2E62YJ3 [46]\
+*   **02/28/2025** | -$31.52 | AMAZON.COM [47]\
+*   **02/26/2025** | -$21.82 | AMAZON.COM*GS8NH7C13 [48]\
+*   **02/25/2025** | -$38.46 | AMAZON MKTPL*VK0YT5BC3 [48]\
+*   **02/24/2025** | -$38.50 | AMAZON MKTPL*R92KF8T83 [20]\
+*   **02/22/2025** | -$13.90 | AMAZON MKTPL*7C9TV5I93 [49]\
+*   **02/21/2025** | -$54.40 | AMAZON MKTPL*5Q3LR41Z3 [23]\
+*   **02/18/2025** | -$16.04 | AMAZON MKTPL*A66JW2WD3 [33]\
+\
+**Office Supplies, Shipping & Research**\
+*   **12/27/2024** | -$105.93 | BARNES NOBLE PAPERSOURC [16]\
+*   **12/21/2024** | -$17.47 | THE UPS STORE 3801 [50]\
+*   **02/05/2025** | -$39.12 | WWW.ETSY.COM/ [51]\
+*   **12/23/2024** | -$9.00 | TUCKER CARLSON NETWORK [50] (Listed twice on this date)\
+*   **01/12/2026** | -$13.99 | BENJAMINFULFORD.NET [52]\
+*(Note: BENJAMINFULFORD.NET appears as a monthly subscription of $11.00 from Feb 2025 to Dec 2025)*\
+\
+**Travel, Gas & Tolls**\
+*   **10/06/2025** | -$29.48 | SHELL SERVICE STATION [53]\
+*   **11/05/2025** | -$1.00 | E-ZPASS REBILL [54] (Repeats monthly/bi-monthly)\
+*   **02/18/2025** | -$23.84 | SHELL SERVICE STATION [27]\
+*   **02/15/2025** | -$17.94 | E-Z*PASSNY TOLLBYMAIL [55]\
+*   **12/28/2024** | -$20.95 | RUTTERS #107 [56] (Shippensburg PA)\
+*   **12/28/2024** | -$31.18 | ONVO TRAVEL PLAZA [56] (Greentown PA)\
+*   **12/23/2024** | -$37.16 | GULF AYER RD [57] (Littleton MA)\
+\
+**Internet & Phone**\
+*   **03/29/2025** | -$75.91 | ATT*BILL PAYMENT [58]\
+*   **02/18/2025** | -$100.27 | ATT*BILL PAYMENT [31]\
+*   **01/25/2025** | -$193.52 | ATT*BILL PAYMENT [59]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

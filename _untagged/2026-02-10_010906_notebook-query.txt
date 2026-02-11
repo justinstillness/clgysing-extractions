@@ -1,0 +1,58 @@
+================================================================================
+EXTRACTION: 2026-02-10_010906_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the husk vs coconut principle? What is the sine wave model for phase transitions? How does the alignment turn work at session start? What is headroom opportunism? What is the concept of ceremony as continuity?
+Timestamp:       2026-02-10T01:09:06.000585+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 9f4d2bac-cdc7-42a8-a6d5-bec1380a6ebe
+Chat Configure:  default
+Response Chars:  4939
+Duration:        569999ms
+================================================================================
+
+[NLMINTA|014|PE]\
+\
+Based on the testing sessions through Session 013, the following extraction capabilities and tool features remain untested or only partially tested.\
+\
+### 1. `chat_configure` and Custom Prompts (Partially Tested)\
+While basic functionality is confirmed, specific behaviors remain open:\
+*   **\"Soft\" vs. \"Hard\" Influence:** Testing determined that custom prompts provide \"soft guidance\" (nudging format/IDs) rather than hard instructions (F37). Specifically, instructions to \"flag contradictions\" were ignored in Session 009 tests. It remains untested whether **stronger, more explicit prompt engineering** can force adherence to complex analytical directives.\
+*   **Character Limits:** The tool definition suggests a 10,000-character limit, while the UI suggests 5,000. This boundary has not been formally stress-tested to confirm which limit applies through the MCP API.\
+*   **Persistence:** It is not fully verified if `chat_configure` settings persist reliably across long durations or different sessions without needing re-application.\
+\
+### 2. `source_ids` Filtering (Partially Tested)\
+Source isolation works (validated in Session 003), but a key boundary test remains:\
+*   **Cross-Notebook Query Bleed (Test 7):** It is untested whether querying a single source within a consolidated notebook (via `source_ids`) produces identical results to querying that source in a dedicated, isolated notebook. We do not yet know if \"bleed-through\" or noise from adjacent sources occurs despite filtering.\
+\
+### 3. `template-as-source` Methodology Limits (Partially Tested)\
+*   **Passive vs. Active Influence:** Testing confirmed that templates uploaded as sources (e.g., Domain Taxonomy) do **not** passively influence extraction (F38). They are treated as content to be queried, not instructions.\
+*   **Framework Lens Integration:** While \"Thesis-as-Lens\" worked for structuring output (F50), we have not yet tested **loading a raw external source** (e.g., a Hassan book without Claude's prior synthesis) alongside a Cultology framework document to see if NLM can perform *genuine* integration bridging two distinct semantic domains (F19/OQ-7).\
+\
+### 4. Multi-Notebook Workflows (Largely Untested)\
+*   **Agentic Chains:** The exploration backlog lists \"Agentic Multi-Notebook Query Chains\" as deferred. We have not tested workflows where Claude autonomously chains queries across multiple notebooks to synthesize a meta-report.\
+*   **Cross-Notebook Research:** Workflows for extracting and synthesizing content across different project notebooks simultaneously remain undefined and untested.\
+\
+### 5. Caliper Integration with Extraction (Untested)\
+*   **Segmentation Strategy:** Caliper was successfully tested for generating inventory metadata (word counts, etc.) in Session 009/013. However, using that data to **drive extraction segmentation** (e.g., \"Use Caliper to split this 120k word source into 20k chunks for NLM proce< 2026/02/10 01:18:36.000517051  length=2009 from=8693 to=10701
+ssing\") has not been executed. We know NLM word counts are unreliable (F07), making Caliper essential, but the actual handoff workflow is untested.\
+\
+### 6. Chronicler Workflows for Post-Processing (Untested)\
+*   **Routing & Organization:** While the **SeraphRecorder** capture pipeline is active and `extract.py` is parsing Signal Strings (Session 013), the **Chronicler** tool's ability to organize, sort, and retrieve these files from the GitHub repository into a working session has not been tested. The \"Post-processing\" loop...taking captured files and feeding them back into a new NotebookLM notebook or Claude context...is currently theoretical.\
+\
+### 7. Other Untested Capabilities\
+*   **Extraction Ceiling/Degradation:** We successfully tested Theme Mapping (TM) on a 362k-word corpus and ~6,000 pages of raw dialogue (Session 012/013). However, we have **not discovered the upper limit** where quality degrades or errors occur.\
+*   **Direct ArgBlock Construction:** Hypothesis F51 suggests a \"Thesis-Lens\" extraction might allow bypassing degree-one concept extraction to build ArgBlocks directly. This shortcut workflow is untested.\
+*   **PDF vs. Markdown Quality (OQ-22):** It is unknown if source format affects extraction quality (e.g., does a clean Markdown export yield better concepts than a PDF export of the same chat?).\
+*   **Determinism (OQ-23):** We have not formally tested if running the exact same query on the exact same source produces identical results every time.\
+*   **Studio Artifacts:** `mind_map`, `audio`, and `video` generation tools have not been assessed for research utility.\
+*   **Report Readability:** We have not fully validated the workflow of generating a Report via `studio_create`, exporting it to Google Docs via `export_artifact`, and reading it back via `google_drive_fetch` as a standard retrieval path (though confirmed as viable in F09).
+
+================================================================================
+END OF EXTRACTION
+================================================================================

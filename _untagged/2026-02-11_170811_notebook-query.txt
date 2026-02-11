@@ -1,0 +1,52 @@
+================================================================================
+EXTRACTION: 2026-02-11_170811_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Branch management patterns from field testing. How were branches created and managed? Branch startup files, mini-rooting cycles, branch session numbering, cross-branch context sharing. What worked well and what were the challenges? How did branches relate to the main project notebook?
+Timestamp:       2026-02-11T17:08:11.000404+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 0b2d15b9-39f6-4e12-a7b2-c4fdbc93ff32
+Chat Configure:  default
+Response Chars:  3548
+Duration:        34000ms
+================================================================================
+
+Based on field testing across the **CLGYSING**, **AWSNBLM**, and **NLMINTA** projects, branch management emerged as a formal mechanism for handling parallel workstreams under a single project umbrella.
+
+### **Branch Creation and Startup**
+
+Branches were not merely informal tangents but structured sub-projects that inherited governance from the main project while adapting scope.
+
+*   **Branch Startup File:** The process begins in the mainline session, which generates a **Branch Startup File**. This document acts as a "context packet," containing the relevant context, directives, and scope necessary to seed the new branch [1].
+*   **Mini-Rooting Cycle:** Upon starting the new branch, the AI and user conduct a "mini-rooting" cycle. Instead of a full Phase 0 rooting, this abbreviated process answers specific questions: What is this branch trying to accomplish? How does it connect to the mainline? Does the inherited Phase Protocol need adaptation? [1], [2].
+*   **Inherited Governance:** Branches inherit the **Phase Protocol** from the parent project. Field testing validated this approach, with the same Base Phase Protocol successfully managing four distinct branches (CLGYSING mainline, AWSNBLM, NLMINTA, and a test branch) [3].
+
+### **Management and Numbering**
+
+*   **Independent Session Numbering:** Branches maintain their own session numbering sequence separate from the mainline. For example, the CLGYSING project might be at Session 032 while its infrastructure branch (AWSNBLM) is at Session 021 [4].
+*   **Branch Handles:** Each branch utilizes a specific "Branch Handle" (e.g., NLMINTA, AWSNBLM) to distinguish its files and sessions from the mainline [5].
+
+### **Context and Notebook Relation**
+
+Field testing revealed that while branches operate independently, they require specific mechanisms to maintain coherence with the main project.
+
+*   **Notebook Architecture:** The emerging standard involved a **Shared Main Project Notebook** accessible by all branches, supplemented by **Adjunct Notebooks** specific to each branch. This allowed branches to access the project's "deep memory" while maintaining a focused workspace for their specific tasks [6], [7].
+*   **Cross-Branch Context Sharing:**
+    *   **Cross-Branch Awareness Document:** A formal document sitting alongside the Phase Protocol in Project Knowledge. It lists all active branches, their objectives, and coordination needs, giving every session awareness of parallel workstreams [7].
+    *   **Artifact Transfer:** Context is shared by explicitly uploading relevant artifacts (outputs, logs) from one branch's notebook to another's, allowing the output of one branch to become the input of another [8].
+
+### **Successes and Challenges**
+
+*   **What Worked Well:** The "fractal expression" of rooting principles proved effective. By inheriting the Phase Protocol, branches could start quickly without reinventing governance structures, while the mini-rooting cycle ensured they remained aligned with the project's overall goals [4].
+*   **Challenges (Failure Modes):**
+    *   **Handle Confusion:** A specific failure mode identified was **Bootstrap Verification Failure**, where the AI would confuse branch handles (e.g., using the mainline handle for a branch session) or increment session numbers incorrectly across branches sharing the same protocol [5].
+    *   **Context Isolation:** Without explicit mechanisms like the Cross-Branch Awareness Document, branches risked operating in silos, unaware of dependencies or updates in parallel streams [8].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

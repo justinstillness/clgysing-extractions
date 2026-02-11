@@ -1,0 +1,55 @@
+================================================================================
+EXTRACTION: 2026-02-10_194651_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What does Section 12 Extended Context and Section 14 Failure Modes currently contain? How detailed are the multi-session continuity patterns and the failure mode catalog? Are there any sections that seem particularly thin or underdeveloped compared to others?
+Timestamp:       2026-02-10T19:46:51.000906+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: c2ed94f5-f65d-4d3e-a8ad-5070b2fc17cb
+Chat Configure:  default
+Response Chars:  5364
+Duration:        54999ms
+================================================================================
+
+Based on **GOV-AIPM v1.0.7-DRAFT** and the **Revision Findings (Session 032)**, here is the current state of Sections 12 and 14, along with an assessment of the manual's detail and underdeveloped areas.\
+\
+### **1. Content of Section 12 and Section 14**\
+\
+**Section 12: Extended Context**  \
+Located in **Part V (Advanced Patterns)**, this section addresses the management of projects that exceed standard memory limits and timeframes. It contains two primary subsections:\
+*   **12.1 Multi-Session Continuity:** Focuses on the mechanisms required to bridge the \"memory gap\" between AI sessions. It details the use of **Bootstrap Documents (TPL-002)** as the primary continuity vehicle, **Decision Logs (TPL-004)** for preserving rationale, and **Chat Transcript Archives** for raw record recovery. It also explicitly lists **Continuity Anti-Patterns** (e.g., relying on AI memory, verbal continuity without documents).\
+*   **12.2 Complex Project Management:** Provides specific architectures for larger initiatives. It covers **Project Architecture** (Phase structuring, workstream mapping), **Session Planning** (Scoping, buffering, cumulative tracking), **Cross-Session Dependency Management** (Explicit handoffs and verifications), and **Parallel Workstream Coordination** (Isolation protocols and integration checkpoints).\
+\
+**Section 14: Failure Modes**  \
+Also in **Part V**, this section formalizes the reality that \"failure is routine\" and provides protocols for detection and recovery. It contains three subsections:\
+*   **14.1 Common Pitfalls:** Categorizes failures into **Context Failures** (Insufficient rooting, overload), **Communication Failures** (Ambiguous instructions, implicit assumptions), **Process Failures** (Skipped verification, inadequate logging), and **Output Failures** (Hallucination, sycophancy).\
+*   **14.2 Recovery Strategies:** Outlines a tiered response system ranging from **Immediate Response** (Stop and assess) to **Local Recovery** (Targeted correction), **Session-Level Recovery** (Emergency bootstrapping), and **Project-Level Recovery** (Framework adjustment).\
+*   **14.3 Cognitive Divergence Detection:** A deep dive into a specific, insidious failure mode where the AI's logic branches away from user intent. It provides **Detection Signals** (Persistent misses, unexpected coherence), a **Three-Strike Protocol** for correction, and a specific **Response Protocol** (Halt, identify branch point, validate assumptions).\
+\
+### **2. Detail Level of Continuity Patterns and Fail< 2026/02/10 19:47:46.000683585  length=2872 from=8693 to=11564
+ure Catalogs**\
+\
+*   **Multi-Session Continuity Patterns:** These are **highly detailed** regarding *artifacts* and *principles*. The manual does not just suggest \"taking notes\"; it prescribes specific fields for Bootstraps (Logic Position, State, Next Actions) and Decision Logs to ensure context survives the session reset. The distinction between \"Strategic\" documents (Project Guide) and \"Tactical\" documents (Bootstrap) is clearly defined.\
+*   **Failure Mode Catalog:** The failure handling documentation is **extremely robust**.\
+    *   **Section 14** provides the high-level strategies and categorization.\
+    *   **Appendix F (Dialog Intake Failure Mode Catalog)** supports this with a granular list of **60+ specific failure modes** sorted by touchpoint (Entry Point, Artifact Creation, Process Execution). It includes specific detection signals (e.g., \"User says 'It's fine, just continue'\") and one-line recovery paths for the top 10 failures.\
+    *   **Appendix D (Troubleshooting Guide)** provides a \"Problem ... Symptom ... Solution\" reference for operational issues.\
+\
+### **3. Thin or Underdeveloped Sections**\
+\
+Based on the **Revision Findings (Source 97)** generated during field testing, several areas are considered thin or missing compared to the core sections:\
+\
+*   **User-Facing Guidance (The \"90/10\" Gap):** The current manual is estimated to be ~90% AI-facing instructions. It lacks a dedicated **User Guide** covering human behaviors like file organization protocols, post-session housekeeping, prompting discipline (e.g., explicitly inviting the AI to disagree), and \"new chat notepad\" preparation.\
+*   **Branch Management:** While Section 4.1.1 lists \"Branch Chats\" as a type, the manual lacks a formal **Branching Protocol**. It does not detail the \"mini-rooting\" cycle required to spin up a branch, how to manage shared Phase Protocols across branches, or the specific mechanics of merging branch context back into the mainline (Inter-Branch Communication).\
+*   **Rooting as \"Phase 0\":** The manual covers project initiation (TPL-001) but treats it as a task rather than a distinct phase. The revision plan identifies \"Rooting\" as a deep, named phase (Phase 0) with specific exit criteria that is currently underdeveloped in the text.\
+*   **Findings Reports:** The manual currently lacks a dedicated artifact for empirical discoveries. Field testing identified the need for a **Findings Report (F-##)** artifact distinct from Session Logs (chronological) and Decision Logs (choices) to track research insights.\
+*   **Insight Capture:** There is currently no formalized section for an \"Out-of-Phase Backlog\" or insight capture system to prevent scope creep while preserving valuable off-topic ideas.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

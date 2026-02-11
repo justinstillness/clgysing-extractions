@@ -1,0 +1,47 @@
+================================================================================
+EXTRACTION: 2026-02-10_194615_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What does the manual currently say about project initiation and the early stages of starting a new project? Is there any formalized concept of rooting, Phase 0, or a structured process for establishing project foundations before execution begins? What sections cover this?
+Timestamp:       2026-02-10T19:46:15.000990+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 905583c6-2a96-4e90-82ed-7761c833d4cd
+Chat Configure:  default
+Response Chars:  3198
+Duration:        31999ms
+================================================================================
+
+Based on the **GOV-AIPM v1.0.7** manual and the **Revision Findings (Session 032)**, here is the current state of project initiation protocols:
+
+### **1. Current Manual Content (v1.0.7)**
+The manual currently treats project initiation as a generic "Project Definition" stage rather than a formalized "Phase 0." It provides a structured process for starting projects, but it does not yet use the term "Rooting" as a formal phase name, nor does it include the "Phase Protocol" architecture.
+
+**Key Sections Covering Initiation:**
+*   **Section 1.4.6.1 (Starting Your First Project):** Describes the specific workflow for initiating a project: uploading the manual and **TPL-001 (Project Initiation Form)**, engaging in collaborative design, and generating a **Project Guide** [1].
+*   **Section 2.5.1 (Project Lifecycle):** Defines the "Project Definition" phase where objectives and constraints are captured formally [2].
+*   **Section 4.1.1 (Chat Types):** Explicitly defines **"ROOT CHATS"** designed for "Strategy, architecture, high-level planning" [3]. This is the closest existing concept to "Rooting," serving as the designated space for establishing scope before execution chats begin.
+*   **Appendix H (Quick Start Guide):** Provides a step-by-step "collaborative project design" workflow [4].
+
+### **2. Is "Rooting" or "Phase 0" Formalized?**
+**No, not yet.** According to the **Revision Findings (Session 032)**, "Rooting as Phase 0" is a **NEW** concept identified during field testing that is **not** in the current v1.0.7 manual [5].
+
+*   **Current State:** The manual covers project initiation generically. It lacks the specific "sine wave" mental model (where zero-crossings represent transition/planning phases like Rooting) and does not explicitly define Rooting as "Phase 0" with specific exit criteria [5].
+*   **Field Finding:** The revision plan notes that "Rooting is ALWAYS Phase 0 of any project" and its specific purpose is to create the **Project Guide** and **Phase Protocol** (another new artifact not in v1.0.7) [5].
+
+### **3. The Structured Process Currently in Place**
+While it lacks the "Phase 0" terminology, the manual *does* prescribe a mandatory foundation-building process before execution:
+
+1.  **Readiness Assessment (Section 1.4.5):** Users must answer five key questions (e.g., "Can I state what I'm trying to produce in one sentence?") before starting. If they cannot, they are directed to an "Exploration Session" instead [6].
+2.  **Intake Dialog (Section 3.5):** The manual explicitly forbids "passive transcription" of project forms. The AI is required to "actively probe" definitions, surface assumptions, and challenge vague criteria before drafting the Project Guide [4, 7].
+3.  **Project Guide Creation (Section 5.1):** This is the "authoritative, living document" that must be established to define scope, deliverables, and execution plans before active work begins [8].
+
+**Summary:** The manual contains a "Root Chat" architecture and a "Project Definition" phase, but the deeper, formalized concept of **"Rooting as Phase 0"** (including the creation of Phase Protocols) is recognized as a missing element to be added in the v1.0.8 update [5, 9].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

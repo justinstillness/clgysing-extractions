@@ -1,0 +1,78 @@
+================================================================================
+EXTRACTION: 2026-02-11_002445_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           List every unique vendor or merchant name with the total sum of all transactions for that vendor across the entire year. Group by vendor, show the total dollar amount per vendor, and sort from highest to lowest total. Include the number of transactions per vendor. Exclude transfers between bank accounts, loan payments, and income deposits.
+Timestamp:       2026-02-11T00:24:45.000159+00:00
+Notebook ID:     e71c3c3d-ec8f-4a75-a5cc-2d8b33c08150
+Source IDs:      all
+Conversation ID: 408e3159-9df0-436e-922c-e7e8d7c65c35
+Chat Configure:  default
+Response Chars:  5666
+Duration:        128000ms
+================================================================================
+
+Based on the provided transaction logs (DCU 2, DCU 3, DCU Visa, DCU Auto Used, Apple Card, and PNC Spend), here is the list of unique vendors and merchants, sorted by total expenditure.\
+\
+**Notes on Data:**\
+*   **Timeframe:** The data covers transactions primarily from January 2025 through February 2026.\
+*   **Exclusions:** As requested, transfers between accounts (including credit card payoffs like Chase, Citi, Capital One, and Apple Card payments), loan payments (DCU Auto loans), and income deposits have been excluded.\
+*   **Aggregations:** Transactions for **Amazon**, **Whole Foods**, and **Cash App** have been aggregated by their main vendor name for clarity, though specific variations (e.g., Audible, Kindle) are noted within the category.\
+\
+### **Vendor Transaction Summary (Highest to Lowest)**\
+\
+| Vendor / Merchant Name | Total Spend | # of Transactions | Notes |\
+| :--- | :--- | :--- | :--- |\
+| **Avalon (Asheville/Sweeteweb)** | **$13,284.72** | 10 | Rent/Housing payments (Ex: [1], [2], [3], [4], [5], [6], [7], [8], [9], [10]) |\
+| **Whole Foods Market** | **$4,941.13** | 79 | Aggregated across all accounts (Ex: [11], [12], [13], [14], [15], [16], [17]) |\
+| **Amazon (Incl. Audible, Kindle, Prime)** | **$4,122.45** | 80+ | Includes Marketplace, Retail, Digital, Audible, and Kindle purchases (Ex: [18], [19], [20], [21], [22], [23], [24]) |\
+| **SmartStop Self Storage** | **$2,357.00** | 9 | Monthly rent of ~$249-$278 (Ex: [25], [26], [27], [28], [29], [30], [31]) |\
+| **Kooshlie Care Doula** | **$2,000.00** | 2 | Services (Ex: [32], [33]) |\
+| **Verizon Wireless** | **$1,979.67** | 7 | Phone/Internet bills (Ex: [34], [35], [36], [37], [38], [39]) |\
+| **Duke Energy** | **$1,438.10** | 9 | Utilities (Ex: [25], [40], [26], [41], [42], [30], [43], [31], [44]) |\
+| **AT&T** | **$1,290.12** | 13 | Phone/Internet bills (Ex: [45], [46], [47], [48], [49], [50], [51], [52]) |\
+| **Cash App*Carrie Sharma** | **$1,050.54** | 15 | Personal payments (Ex: [1], [53], [54], [55], [56], [57], [58], [59], [60], [61], [45], [62]) |\
+| **Famoda Farms** | **$857.52** | 10 | Groceries/Farm goods (Ex: [63], [64], [65], [66], [67], [68], [69], [70]) |\
+| **Target** | **$760.68** | 11 | General Merchandise (Ex: [71], [72], [73], [< 2026/02/11 00:26:53.000974674  length=3449 from=40689 to=44137
+74], [17], [31], [75], [24], [44], [76]) |\
+| **Progressive Premier Ins** | **$755.58** | 12 | Insurance Premiums (Ex: [77], [78], [79], [80], [81], [82], [26], [27], [28], [29], [83]) |\
+| **MIT Therapy** | **$565.80** | 4 | Healthcare (Ex: [84], [85], [86], [69]) |\
+| **ZenBusiness** | **$501.00** | 2 | Business Services (Ex: [87], [88]) |\
+| **OpenAI (ChatGPT)** | **$440.00** | 13 | Subscriptions (Ex: [56], [57], [89], [90], [20], [91], [61], [92], [93], [94], [95]) |\
+| **Cash App*Laurel Smith** | **$436.00** | 10 | Personal payments (Ex: [96], [97], [98], [99], [100], [101], [57]) |\
+| **Apotheca** | **$393.37** | 4 | Dispensary/Herbal (Ex: [102], [103], [104], [105]) |\
+| **StreamYard** | **$370.96** | 8 | Streaming Software (Ex: [106], [60], [107], [108], [109], [14], [110], [111]) |\
+| **Proton AG** | **$359.88** | 12 | Email/VPN Services (Ex: [112], [113], [107], [114], [95], [115], [116]) |\
+| **Home Depot** | **$355.77** | 6 | Home Improvement (Ex: [117], [112], [118], [48], [115]) |\
+| **Adobe Inc** | **$329.93** | 7 | Creative Software (Ex: [119], [107], [120], [108], [121], [122], [123]) |\
+| **GoDaddy** | **$301.47** | 10 | Web Services (Ex: [124], [125], [126], [127], [128], [129], [42], [74], [24]) |\
+| **Nic Nac Naturals** | **$270.88** | 7 | Consumer Goods (Ex: [130], [131], [132], [27], [41], [133], [49]) |\
+| **EyeMart Express** | **$249.91** | 1 | Healthcare/Vision [134] |\
+| **Delta Airlines** | **$247.20** | 1 | Travel [111] |\
+| **Opus Clip** | **$203.00** | 2 | Video Editing Software (Ex: [135], [123]) |\
+| **Google (Apps/YouTube/One)** | **$197.00** | 15+ | App Services & Storage (Est. based on recurring $22 + misc) |\
+| **The Gathering Church** | **$153.60** | 1 | Donation/Service [136] |\
+| **Payoneer Inc** | **$151.50** | 6 | Payment Service Fees (Ex: [137], [138], [139], [71], [87], [140]) |\
+| **Cloud 9 Smoke** | **$145.45** | 1 | Retail [141] |\
+| **Benjaminfulford.net** | **$132.00** | 12 | Subscription/Media (Ex: [18], [98], [142], [143], [144], [145], [146], [147], [148], [149], [150], [151]) |\
+| **VeG - Asheville** | **$129.35** | 1 | Restaurants and Dining [152] |\
+| **Smokehouse Food Truck** | **$123.12** | 2 | Restaurants and Dining (Ex: [153], [154]) |\
+| **Bears Smokehouse** | **$92.74** | 1 | Restaurants and Dining [155] |\
+| **Wild Wing Cafe** | **$65.00** | 1 | Restaurants and Dining [152] |\
+| **Cash App*Madison Deschamps**| **$60.00** | 2 | Personal payments (Ex: [156]) |\
+| **JetBlue** | **$45.00** | 1 | Travel [157] |\
+\
+### **Vendor Notes:**\
+*   **Cash App*Justin Deschamps:** There were approximately **$1,000** in debits to \"Cash App*Justin Deschamps\". These were excluded from the list above as they are classified as transfers to your own account/cash card rather than payments to a merchant [Source 1, 5, 32, 44, 45, etc.].\
+*   **Credit First NA:** Totaling **$1,140**, these transactions were excluded as they are credit card payments (typically for Firestone/Auto repair lines of credit) [Source 47, 99, 121, 126, 447, 449].\
+*   **Home Depot:** Transactions were a mix of \"Electronic Withdrawal\" and online payments.\
+*   **Apple/iTunes:** Numerous small transactions ($2.99 - $9.99) totaling approximately **$200** were aggregated.\
+*   **Ignite Credit:** **$100** total (4 transactions of $25) was excluded as a loan/credit payment.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

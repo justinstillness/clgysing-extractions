@@ -1,0 +1,57 @@
+================================================================================
+EXTRACTION: 2026-02-10_181235_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the findings report format? How are findings indexed? What information does a findings report contain? How does it differ from session logs and decision logs?
+Timestamp:       2026-02-10T18:12:35.000914+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 568bdc4b-1086-4020-9cb2-216bfcd365aa
+Chat Configure:  default
+Response Chars:  3797
+Duration:        35999ms
+================================================================================
+
+Based on the provided project records, the **Findings Report** is a specialized document class (`FINDINGS`) designed to capture, synthesize, and index discoveries made during exploration sessions.
+
+### Findings Report Format and Content
+
+The findings report is a standalone reference document generated at the end of a session to consolidate insights that would otherwise be lost in the chronological transcript. It follows a structured format:
+
+*   **Header Data:** Identifies the Project, Session, Date, Phase, and File Class (`FINDINGS`) [1], [2].
+*   **Findings Index:** A list of the specific findings generated in the current session (e.g., F22...F33) along with a cumulative index of prior findings [2], [3].
+*   **Structured Finding Entries:** Individual findings are detailed using a specific schema to ensure rigor [4], [5]:
+    *   **Discovery:** A concise statement of the observation.
+    *   **Evidence:** Specific data points or test results supporting the discovery (e.g., "TM01 query on SP03 returned 16 concept packets").
+    *   **Impact/Implication:** How this discovery affects the project pipeline or methodology.
+    *   **Status/Verdict:** Whether the finding validates a tool, identifies a gap, or requires further testing.
+*   **Tool Effectiveness Matrices:** Tables rating specific tools (e.g., `notebook_query`, `source_describe`) against project use cases with ratings like "High," "Low," or "Excellent" [6], [7].
+*   **Open Questions:** A section tracking resolved questions and logging new inquiries for future sessions [8].
+
+### Indexing of Findings
+
+Findings are indexed using a **sequential alphanumeric identifier** (`F##`) that persists and accumulates across the project lifecycle:
+
+*   **Sequential Numbering:** Findings are numbered globally across the project, not restarting per session. For example, Session 002 produced F01...F21, Session 008 produced F22...F33, and Session 009 produced F34...F40 [2], [9].
+*   **Cumulative Tracking:** Later reports include a "Cumulative Findings Index" that maps finding ranges to their originating sessions (e.g., "Session 007-008: F01-F32") [10].
+*   **Queryability:** Because findings are indexed and uploaded to the project notebook, they can be retrieved via NotebookLM queries. For instance, a query can "List every finding (F01 through the highest number)" to generate a complete project inventory [11], [12].
+
+### Differences from Session Logs and Decision Logs
+
+The Findings Report serves a distinct function from Session Logs and Decision Logs within the project's governance structure:
+
+**1. Findings Report vs. Session Log**
+*   **Session Log (`LOG`):** This is the "canonical session record" [13]. It is chronological and narrative, capturing the "Work Accomplished," "Response Index Register" (transcript indices), and "Session Fidelity Report" (metrics) [14], [15]. It records *what happened* in the sequence it occurred.
+*   **Findings Report (`FINDINGS`):** This is a *synthesis* document. It organizes information by topic and insight rather than by time [16]. It strips away the conversational noise of the session to present pure data and conclusions, serving as the building block for the final "Protocol Manual" [17], [18].
+
+**2. Findings Report vs. Decision Log**
+*   **Decision Log (`DECISION`):** Tracks formal commitments and governance rules using `D-###` identifiers (e.g., "D-030: Signal String Architecture"). It records *choices* made by the user to lock in a protocol or strategy [19], [20].
+*   **Findings Report:** Tracks *discoveries* and *observations* (F-###). A finding provides the evidence (e.g., "NotebookLM has a response ceiling" [21]), which then informs a Decision (e.g., "D-029: Pass Separation as Standard Protocol" [22]). Findings are empirical; Decisions are executive.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,64 @@
+================================================================================
+EXTRACTION: 2026-02-11_144357_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Connector transparency protocol, MCP tool narration, transcript auditability, tool call documentation in session logs. What field-tested patterns exist for how AI should narrate tool usage for transcript completeness?
+Timestamp:       2026-02-11T14:43:57.000720+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: a9ef3f86-ad45-4370-a6b1-1187929d9d5c
+Chat Configure:  default
+Response Chars:  4238
+Duration:        43999ms
+================================================================================
+
+Based on the field-tested patterns in the **Connector Transparency Protocol** and the **GOV-AIPM** findings, the following standards exist for how AI should narrate tool usage to ensure transcript completeness and auditability.\
+\
+### The Core Problem: Transcript Gaps\
+Field testing revealed that when AI uses MCP (Model Context Protocol) tools...such as querying NotebookLM via Majeston or accessing repositories via Chronicler...the actions occur \"behind the scenes\" and do not appear in the visible chat transcript [1, 2]. This creates \"transcript gaps\" where the conversation record lacks details on what data was accessed or generated, breaking auditability and future context recovery [3, 4].\
+\
+### The Solution: Connector Transparency Protocol (CTP)\
+The **Connector Transparency Protocol** establishes mandatory behaviors for narrating tool usage. It requires the AI to explicitly document tool interactions within its response text to ensure the transcript serves as a complete record [2].\
+\
+#### 1. Mandatory Inline Tool Documentation\
+For every connector tool call, the AI must narrate four specific elements in the transcript [5]:\
+*   **Tool Identification:** Which tool was called (e.g., `notebook_query`, `Chronicler:read_file`) and the target resource (Notebook name/ID or file path) [5].\
+*   **Query/Parameter Details:** The full text of the query sent or specific parameters applied. This allows a user reading the transcript later to know exactly what was asked [5, 6].\
+*   **Configuration State:** Verification of settings used, such as whether conversation threading was active or if custom prompt configurations were applied [6].\
+*   **Result Summary:** A brief characterization of the return payload (e.g., \"16 glossary entries returned,\" \"7 thesis strings found\") and a quality assessment [6].\
+\
+**Example of Field-Tested Narration:**\
+> \"Running Test 9. Calling `notebook_query` on SP03 (1e03c6b6...) with default chat configuration.\
+> **Query:** 'Identify and extract all significant specialized terms...'\
+> **Result:** 16 structured glossary entries returned, each with definition and usage context.\" [6]\
+\
+#### 2. Output Sample Presentation\
+Because users cannot see the raw output of an MCP tool call, the AI must verify quality by presenting **representative samples** in the chat [7].\
+*   **The 2-3 Rule:** Present 2-3 entries rather than a full data dump.\
+*   **Range of Quality:** Select samples that demonstrate the range of the output...one strong example, one typical example, and one edge case (if applicable) [8].\
+*   **Formatting:** Preserve the exact formatting returned by the tool to prove technical fidelity [8].\
+\
+#### 3. Test Execution Narration\
+During testing or debugging sessions, the AI must narrate actions sequentially so the transcript reads as a coherent test record [9].\
+*   **Pre-Test:** State the hypothesis and confirm the target state (e.g., \"Confirming target notebook is loaded\") [9].\
+*   **During Test:** Document calls and note any unexpected behaviors or errors [10].\
+*   **Post-Test:** Summarize results quantitatively and state whether the hypothesis was confirmed [10].\
+\
+#### 4. Minimum Documentation Threshold\
+Even when token headroom is low, the protocol forbids silent tool usage. At a minimum, the AI must record the **Tool Name**, **Target**, **Config State**, and a **One-Line Result Summary** [11].\
+\
+### Integration with Session Logs\
+To ensure long-term auditability, these narrated tool interactions are integrated into the **Session Log** via the **Response Indexing System**.\
+*   **Response Indexing:** Every substantive response, including those containing tool narrati< 2026/02/11 14:44:41.000573691  length=597 from=10159 to=10755
+ons, is assigned a sequential index (e.g., `[12] SERAPH Signal String ... Full Pipeline Validated`) [13, 14].\
+*   **Retrieval:** The Session Log records these indexes, allowing a user to look up a specific tool interaction in the transcript archive to see exactly what parameters were used and what results were returned [15, 16].\
+\
+This system ensures that even though the tool execution is invisible, the **informational reality** of the session is fully preserved in the transcript [3].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

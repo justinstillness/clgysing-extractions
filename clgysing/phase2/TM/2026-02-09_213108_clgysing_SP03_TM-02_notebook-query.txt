@@ -1,0 +1,50 @@
+================================================================================
+EXTRACTION: 2026-02-09_213108_clgysing_SP03_TM-02_notebook-query
+================================================================================
+Source Package:  SP03
+Pass Type:       TM (Theme Mapping)
+Pass Number:     02
+Theme/Focus:     N/A
+Project:         clgysing
+Session:         014
+Routing:         Tier 1 (Tagged + Known)
+Query:           What are the major conceptual themes across all sources in this notebook?
+Timestamp:       2026-02-09T21:31:08.000686+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: 7ca6ec4c-7301-4609-a559-71a46a1a885d
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  3558
+Duration:        15999ms
+================================================================================
+
+Based on the provided extraction reports, which all analyze the same underlying source material (Package 03: "Update: Thank You for Your Patience..."), the major conceptual themes can be categorized into three main areas: **Methodology & Epistemology**, **Social Systems Framework**, and **Project Architecture & Application**.
+
+### 1. Methodology & Epistemology
+This theme covers *how* the author generates knowledge and the philosophical standards applied to the work.
+
+*   **Omniology & The Omniological Approach:** The central philosophy is defined as "Omniology," a pursuit of truth across all domains (self, reality, civilization) [1-4]. The method involves understanding subjects from multiple angles, modeling them in personal frameworks to build **Intrinsic Knowledge** (deep, internalized reasoning), and rejecting "authoritative statements" or surface-level explanations [5-8].
+*   **AI as "Force Multiplier" with Human Oversight:** A significant portion of the text details a "third-generation" research system. This system uses AI to organize massive data libraries (7,500+ pages) but strictly maintains human oversight to prevent hallucinations and preserve the author's "voice and judgment" [9-11].
+*   **The Pedagogical Spiral Staircase:** To solve the bottleneck of translating deep research into readable content, the author employs a method of introducing concepts accessibly and deepening them recursively ("layer after layer") [12-15].
+
+### 2. Social Systems Framework (Cultology)
+This theme outlines the theoretical models used to analyze human relationships and civilization.
+
+*   **Parasitic vs. Symbiotic Dichotomy:** The core moral and epistemic framework.
+    *   **Parasitic Systems (The Parasitic Modality):** Defined by the hijacking of human potential and the interruption of the "natural flow of truth." They rely on "extrinsic knowledge," rigid beliefs, and fear [16-19].
+    *   **Symbiotic Systems (The Symbiotic Modality):** The positive counterpart, characterized by "truth-centered" functioning, the "intrinsic path" of continual inquiry, and relationships marked by freedom and mutual benefit [20-23].
+*   **Macro-Cult & Civilizational Pathology:** The concept that modern civilization itself functions as a "macro-cult"...a distributed parasitic architecture operating across families, businesses, and governments [24-27].
+*   **Mechanism of Control:** Parasitic systems are described as using a "Trojan horse" of modern conveniences to conceal a "freedom-destroying payload," creating a "technocratic plantation" where dependency is confused with progress [28-31].
+
+### 3. Project Architecture & Application
+This theme explains how the theoretical frameworks are applied to specific outputs.
+
+*   **Cultology vs. Agenda 47 Explained:** "Cultology" is the foundational theoretical framework (the "Unified Field Theory" of relationships) [32, 33]. "Agenda 47 Explained" is a case study applying this framework to the hypothesis that Donald Trump may represent an elite group attempting a transition from a parasitic to a symbiotic civilization [34-36].
+*   **Intellectual Honesty & Hypothesis Testing:** The author emphasizes that the political analysis is a hypothesis ("we cannot know for certain") and commits to exploring counter-arguments (e.g., that Trump represents a competing parasitic group) [37-39].
+*   **Reclaiming "Birthright":** A recurring motive is the restoration of lost wisdom and truth ("birthright") and the necessity of "eternal vigilance" to maintain a free society once it is recovered [40-43].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

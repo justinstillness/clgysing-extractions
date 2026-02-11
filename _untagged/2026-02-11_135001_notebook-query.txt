@@ -1,0 +1,111 @@
+================================================================================
+EXTRACTION: 2026-02-11_135001_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Session Fidelity Report SFR structure format fields example content
+Timestamp:       2026-02-11T13:50:01.000643+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: c5fa0b04-406a-4f1c-a3bb-be9533957ce4
+Chat Configure:  default
+Response Chars:  5257
+Duration:        50999ms
+================================================================================
+
+The Session Fidelity Report (SFR) is a governance and continuity artifact within the LibForge/AIPM framework (specifically Master List Items 22 and 23) designed to ensure project integrity across multi-session AI interactions [1], [2]. Its primary purpose is to capture decisions, identify gaps, log fidelity metrics, and prepare the \"bootstrap\" for the next session [3].\
+\
+The SFR is typically generated at the end of a session (\"Closeout Phase\") and is often embedded directly within the **Session Log** file, though it can be a standalone document for complex assessments [4], [5].\
+\
+### Structure and Fields\
+\
+Based on the Governance & Continuity specifications and actual session logs, the standard SFR includes the following sections and fields:\
+\
+**1. Header Information**\
+*   **Status:** Draft or Complete.\
+*   **Project:** The active project branch (e.g., NLMINTA).\
+\
+**2. Key Milestones Achieved**\
+A checklist of specific tasks or objectives completed during the session.\
+*   *Format:* Bulleted list with checkboxes [6].\
+\
+**3. Decisions Crystallized**\
+Formal decisions made during the session that need to be preserved in the Decision Log.\
+*   *Content:* Decision IDs (D-###) or descriptions of binding choices made regarding methodology or infrastructure [6].\
+\
+**4. Gaps & Insights Identified**\
+*   **Gaps:** Missing information, failed tests, or unverified assumptions (e.g., \"Custom prompt effectiveness unknown\") [7].\
+*   **Key Insights:** Discoveries made during execution (e.g., \"notebook_query produces high-quality... output\") [7].\
+\
+**5. Handoff Status**\
+Critical context transfer for the next session/AI instance.\
+*   **Context Carried Forward:** Assets or knowledge established in this session that must persist.\
+*   **Required for Next Session:** Specific files or inputs needed to resume work.\
+*   **Risks/Warnings:** Potential failure modes (e.g., \"Session numbering error\") [8], [9].\
+\
+**6. Next Session Projection**\
+*   **Focus:** The primary objective for the subsequent session.\
+*   **Success Criteria:** What constitutes a finished job for the next session.\
+*   **Estimated Complexity:** (Low/Medium/High) to help with token management [9], [10].\
+\
+**7. Verification**\
+*   **User Verification:** Placeholder for the user to confirm the AI's assessment (PENDING/CONFIRMED) [10].\
+\
+---\
+\
+### Example Content\
+\
+The following example is reconstructed from **Session 001 (Planning & Toolkit Exploration)** and **Session 011 (Validation Analysis)** to demonstrate both standard reporting and analytical depth.\
+\
+#### **SESSIO< 2026/02/11 13:50:52.000388862  length=2708 from=81604 to=84311
+N FIDELITY REPORT ... EMBEDDED**\
+\
+**Status:** DRAFT\
+**Project:** NLMINTA (NotebookLM Integration)\
+\
+**Key Milestones Achieved:**\
+[...] Notebook landscape surveyed (85 notebooks)\
+[...] CLGYSING notebook tested with structural + targeted queries\
+[...] All 29 tools documented with capabilities and use cases\
+[...] Tool combination workflows designed (5 workflows)\
+[...] Exploration backlog captured (~15 items) [6]\
+\
+**DECISIONS CRYSTALLIZED:**\
+*   **D-001:** Validated \"Hybrid Architecture\" for concept extraction (routing synthesis to context field rather than suppressing it) [11].\
+*   **D-029:** Adopted \"Pass Separation Principle\" (distinct queries for vocabulary vs. concepts vs. thesis strings) [12].\
+\
+**GAPS & INSIGHTS IDENTIFIED:**\
+*   **Gaps:**\
+    *   Custom prompt effectiveness unknown (research needed) [7].\
+    *   Chat persistence failed (MCP queries do not appear in NLM chat history) [13].\
+*   **Key Insights:**\
+    *   `notebook_query` produces high-quality, terminology-preserving output [7].\
+    *   `source_get_content` enables hybrid approach: NotebookLM identifies content, Claude extracts raw text [8].\
+    *   **Severity Assessment:** The quote truncation in Gemini's output was a fidelity gap but \"not catastrophic\" because the architecture itself held; it is a localized failure with a preventive fix [14], [15].\
+\
+**HANDOFF STATUS:**\
+*   **Context Carried Forward:** Complete toolkit documentation in Tool Matrix; Validation findings F41-F48 [8], [16].\
+*   **Required for Next Session:** Tool Matrix document; Package 03 source file for re-extraction [8], [17].\
+*   **Risks/Warnings:** Status polling has lag; `studio_status` returns \"in_progress\" for minutes after actual completion [18].\
+\
+**NEXT SESSION PROJECTION:**\
+*   **Focus:** Systematic testing of high-priority untested tools (`chat_configure`, `studio_create`) [9].\
+*   **Success Criteria:** `chat_configure` custom prompt tested and character limit verified [9].\
+*   **Estimated Complexity:** MEDIUM [10].\
+\
+**VERIFICATION:**\
+*   **User Verification:** PENDING [10].\
+\
+---\
+\
+### Variations\
+\
+*   **Midpoint Assessment:** In testing phases (like the \"Alpha Test Execution\"), the SFR may be generated mid-stream to capture \"severity ratings,\" \"catastrophic vs. recoverable verdicts,\" and \"project-impact framing\" regarding specific failures (e.g., assessing Gemini or Grok extraction errors) [5].\
+*   **Integration:** The SFR is often integrated into the **Session Log** file rather than existing as a standalone file, unless the session is extremely complex [4].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

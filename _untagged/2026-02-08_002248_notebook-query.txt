@@ -1,0 +1,73 @@
+================================================================================
+EXTRACTION: 2026-02-08_002248_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What was accomplished in the most recent sessions? What is the current state of the SeraphRecorder pipeline and the MCP Workshop Suite infrastructure?
+Timestamp:       2026-02-08T00:22:48.000636+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: 90e4cd16-b550-4ccd-82ae-dce458d5e5f0
+Chat Configure:  default
+Response Chars:  4036
+Duration:        34000ms
+================================================================================
+
+Based on the most recent sessions (specifically Session 016 and Session 017), here is the summary of accomplishments and the current state of your infrastructure.\
+\
+### **Recent Accomplishments (Sessions 016 & 017)**\
+\
+The primary focus of recent sessions has been hardening the infrastructure, establishing formal protocols, and closing the \"visibility loop\" so Claude can interact with the data it produces.\
+\
+**1. Deployment of \"Chronicler\" (Layer 4 Capability)**\
+In Session 017, you successfully built and deployed **Chronicler**, a new MCP tool that gives Claude direct read/write access to your GitHub repository [1].\
+*   **Purpose:** Before Chronicler, the pipeline could push data to GitHub, but Claude was \"blind\" to it. Chronicler allows Claude to list, read, move, and organize files within the `clgysing-extractions` repo [1].\
+*   **Status:** Deployed on port 8002, routed via Caddy at `/repo/*`, and verified as fully operational [2, 3].\
+\
+**2. Pipeline Hardening & Security (Session 016)**\
+You transitioned the system from a development setup to a production-hardened environment:\
+*   **AWS Session Manager (SSM):** Replaced standard SSH (Port 22) with AWS Systems Manager. This allows you to manage the EC2 instance securely from any device (including mobile) without managing IP allowlists [4, 5].\
+*   **Security Group Lockdown:** Ports 22 (SSH) and 3000 (old HTTP) were closed. Only Port 443 (HTTPS) remains open to the world for the MCP connection [6].\
+*   **Naming Convention:** You formally adopted the name **SeraphRecorder** for the traffic-capture pipeline [7].\
+\
+**3. Standardization & \"LibForge\" Naming**\
+You established the **LibForge** framework naming convention to keep tools organized [8]:\
+*   **Majeston:** The NotebookLM MCP (Information/Reflectivity).\
+*   **Caliper:** The Document Analysis MCP (Measurement/Inventory).\
+*   **Chronicler:** The GitHub Repo MCP (Records/Archives).\
+*   *Convention:* Information tools are named after Urantia beings; measurement/crafting tools are named after forge terms [8].\
+\
+**4. Design of Signal Strings**\
+You designed a metadata protocol called **Signal Strings** (e.g., `[SERAPH: PROJECT=clgysing, PASS=VX...]`) [9]. These will be appended to queries to allow the extraction script to automatically tag and route files in the future, solving the issue of untagged outputs piling up [10].\
+\
+---\
+\
+### **Current System State**\
+\
+#### **1. The MCP Workshop Suite (Infrastructure)**\
+Your AWS EC2 instance is now running three distinct MCP services behind a Caddy reverse proxy.\
+*   **Host:** `t3.micro` EC2 instance (Ubuntu), accessed via SSM [11].\
+*   **Services:**\
+    *   **Majeston (Port 8000):** Connects to NotebookLM (87+ notebooks).\
+    *   **Caliper (Port 8001):** Analyzes document metrics (word counts, segmentation).\
+    *   **Chronicler (Port 8002):** Manages the GitHub repository files.\
+*   **Status:** All services are configured to auto-recover on reboot via systemd [12].\
+\
+#### **2. The SeraphRecorder Pipeline (Data Flow)**\
+The pipeline is fully operational and automated on the capture side.\
+1.  **Capture:** You query Majeston. A wrapper (`socat`) intercepts the traffic transparently [13].\
+2.  **Log:** Raw traffic is saved to `~/.mcp-logs/raw/` on the server [14].\
+3.  **Extract:** A script (`extract.py`) parses the logs, isolates the query answers, and saves them as text files in `_untagged/`.\
+4.  **Push:** A script (`push-to-github.sh`) syncs these files to your private GitHub repo: `justinstillness/clgysing-extractions` [15].\
+\
+#### **3. Immediate Next Steps (From Session 017 Closeout)**\
+*   **Token Rotation:** You need to rotate your GitHub Personal Access Token (PAT) because it was visible in logs, though this was deferred to avoid disrupting the build [16].\
+*   **Protocol Implemen< 2026/02/08 00:23:22.000892788  length=245 from=10108 to=10352
+tation:** You need to begin using the Signal Strings in your actual research sessions so the pipeline can start producing tagged data [17].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

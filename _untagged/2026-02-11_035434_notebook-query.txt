@@ -1,0 +1,83 @@
+================================================================================
+EXTRACTION: 2026-02-11_035434_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Which of the following extraction pass types and processes have been directly tested via Majeston queries in sessions 007 through 013, and which have NOT been tested? For each tested item, note which session and any key findings. Pass types: PE, TM, TX/CE, VX, TS, EV, GD, GX, CL. Processes: Pre-Extraction Coherence Scan, Relationship Extraction, Card Entry, Provenance tracking, ICR staging, Similarity Index generation, Degree classification workflow.
+Timestamp:       2026-02-11T03:54:34.000797+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 6b6063eb-d767-4b03-acaa-1487ad4dee54
+Chat Configure:  default
+Response Chars:  5253
+Duration:        76999ms
+================================================================================
+
+Based on the provided session logs and findings reports from Session 007 through Session 013, here is the breakdown of which extraction pass types and processes were directly tested via Majeston queries.\
+\
+### **Extraction Pass Types**\
+\
+**Directly Tested:**\
+\
+*   **TM (Theme Mapping)**\
+    *   **Session:** 008, 012, 013.\
+    *   **Key Findings:** Validated as a dual-purpose tool that identifies themes and spontaneously extracts concepts on small sources [1]. Scales successfully to large corpora (362k words in Session 012 [2] and ~6,000 pages in Session 013 [3]) without degradation, producing hierarchical taxonomies.\
+*   **TX (Thematic Extraction) / CE (Concept Extraction)**\
+    *   **Session:** 008, 011, 012, 013. (referred to as TX in findings; CE in legacy/Signal String specs).\
+    *   **Key Findings:** Consistently produces rich, structured concept packets [4]. Quality improves with corpus scale, enabling evolutionary variant tracking and cross-source synthesis [5]. \"Thesis-as-lens\" (Session 011) and \"Proprietary Glossary\" (Session 011) were tested as modifiers to this pass [6], [7].\
+*   **GD (Gap Detection)**\
+    *   **Session:** 008, 012.\
+    *   **Key Findings:** Successfully identifies meta/operational content (biography, logistics) that thematic passes deprioritize [8]. Essential for quality assurance and \"apophatic\" search [9].\
+*   **VX (Vocabulary/Glossary Extraction)**\
+    *   **Session:** 010, 011.\
+    *   **Key Findings:** Validated as a distinct pass type producing term-centered entries (definition, context, related terms) vs. concept-centered TX output [10]. Session 011 used it to generate a proprietary glossary for bridging tests [11].\
+*   **TS (Thesis String Extraction)**\
+    *   **Session:** 010.\
+    *   **Key Findings:** Successfully extracts argumentative architecture, distinguishing claims from descriptive concepts [12]. Produces thesis statements with evidence assessment and logical relationships.\
+*   **EV (Evaluation Pass)**\
+    *   **Session:** 010.\
+    *   **Key Findings:** Performed substantive critical analysis, identifying internal contradictions, factual flags, and logical gaps across sources [13]. Standout capability for pre-extraction validation.\
+*   **PE (Pre-Extraction Evaluation)**\
+    *   **Session:** 013.\
+    *   **Key Findings:** Successfully characterized a raw conversational corpus (~6,000 pages), identifying content types, overlaps, and unique territory [14]. Validated as a reconnaissance step.\
+*   **CL (Classification)**\
+    *   **Session:** 009.\
+    *   **Key Findings:** \"Query-directed\" classification works ex< 2026/02/11 03:55:51.000305210  length=2662 from=8693 to=11354
+cellently when a taxonomy is uploaded as a source and explicitly referenced [15]. Validated as a post-extraction pass to apply domain codes.\
+\
+**Not Directly Tested:**\
+\
+*   **GX (Gap Extraction)**\
+    *   **Status:** Listed as \"Validated\" in findings reports (e.g., F45 [16]), but the session logs (e.g., Session 008 [17]) show that while gaps were *detected* (GD), a specific subsequent query labeled \"GX\" to extract them into packets was not explicitly executed in the provided transcripts.\
+\
+### **Processes**\
+\
+**Directly Tested:**\
+\
+*   **Pre-Extraction Coherence Scan**\
+    *   **Session:** 010 (via EV pass), 013 (via PE pass).\
+    *   **Key Findings:** Majeston can perform genuine critical analysis, flagging inconsistencies and verifying factual claims before extraction begins [18].\
+*   **Provenance Tracking**\
+    *   **Session:** 008, 013.\
+    *   **Key Findings:** Validated via query provenance protocols (recording exact query text in notes) [19] and the SeraphRecorder system (capturing metadata headers in Session 013) [20]. NLM consistently provides source citations in outputs.\
+*   **ICR (Interim Concept Repository) Staging**\
+    *   **Session:** 008, 013.\
+    *   **Key Findings:** Simulated via the \"Save to Note\" protocol [21] and later the SeraphRecorder pipeline [22], effectively staging extracted content before integration.\
+\
+**Not Directly Tested (or Partial/Implied):**\
+\
+*   **Relationship Extraction**\
+    *   **Status:** Not tested as a standalone pass. While TX/CE passes extracted \"Related Concepts,\" a dedicated pass to populate the Layer 2 Relationship Registry (e.g., an \"RX\" pass extracting only *ENABLES*, *REQUIRES* strings) was not executed.\
+*   **Card Entry**\
+    *   **Status:** Not directly tested. Testing focused on Layer 1 Concept Packets (TX). While concept packets serve as the basis for cards, the specific Layer 3 \"Card Entry\" process (formatting for the Card Repository) was not the focus of Majeston queries.\
+*   **Similarity Index Generation**\
+    *   **Status:** Not tested. Similarity indexing was discussed as a design specification (e.g., [23]), but no Majeston query was run to mathematically compute or generate a similarity index file from extracted content.\
+*   **Degree Classification Workflow**\
+    *   **Status:** Partially tested. The **Degree-One** (Extraction) workflow was extensively validated (Sessions 012-013) [24]. The **Degree-Two** (Harmonization/Refinement) workflow remains a future development item and was not tested via Majeston queries.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

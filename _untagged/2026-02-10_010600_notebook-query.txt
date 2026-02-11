@@ -1,0 +1,84 @@
+================================================================================
+EXTRACTION: 2026-02-10_010600_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the session folder workflow? How are session artifacts organized locally? How are transcripts downloaded and stored? What naming conventions are used for session folders and files?
+Timestamp:       2026-02-10T01:06:00.000625+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: 921230a0-9996-4d7b-abaa-e924ccdd9cf8
+Chat Configure:  default
+Response Chars:  5538
+Duration:        83999ms
+================================================================================
+
+Based on the source materials, significant evolutions to the AIPM system have been identified through both the **NLMINTA infrastructure project** and the **CLGYSING content project**. These changes address gaps found in the v1.0.7 manual and introduce new architectural concepts.\
+\
+### 1. Structural Evolutions & New Concepts\
+\
+The AIPM framework has evolved from the v1.0.7 draft to include three distinct structural layers that manage long-term project continuity.\
+\
+*   **Phase Protocols:**\
+    *   **Concept:** While the v1.0.7 manual focuses on Project Guides and Bootstraps, actual use introduced **Phase Protocols** as phase-specific guidance documents [1]. These serve as a \"navigational compass\" for discrete phases, distinct from the static Project Guide [2].\
+    *   **Function:** Phase Protocols provide a \"horizon view,\" specific behaviors, and templates relevant only to the current phase, preventing token exhaustion by not loading the entire Project Guide every session [3, 4].\
+    *   **Structure:** They follow a layered structure (AIPM Framework behaviors + System Context + Project Context) [5].\
+\
+*   **Rooting (Phase 0):**\
+    *   **Concept:** Rooting evolved from a session initiation behavior to a dedicated **Phase 0** [6].\
+    *   **Objective:** The goal of Rooting is to build the comprehensive **Project Guide** and the **Base Phase Protocol** [6]. It acts as the \"architectural\" phase where the entire project is mapped before execution begins [7].\
+\
+*   **Response Indexing:**\
+    *   **Concept:** A system using `[####]` format at the start of every AI response to track conversation turns [8].\
+    *   **Purpose:** This allows for precise retrieval of information from chat transcripts if context is lost, enabling the user to point the AI to specific turn numbers in the **Session Log** [9].\
+\
+### 2. Methodology Gaps & Improvements (CLGYSING Findings)\
+\
+Beta testing during the CLGYSING project revealed critical failures in extraction fidelity and AI behavior, leading to specific methodology changes.\
+\
+*   **External Knowledge Contamination:**\
+    *   **Gap:** The AI hallucinated connections (e.g., integrating the \"BITE model\") that were *not* in the source text but existed in the AI's broader project knowledge [10].\
+    *   **Fix:** Implementation of **Strict Source Boundary Enfo< 2026/02/10 01:07:24.000491721  length=3233 from=8513 to=11745
+rcement**, requiring the AI to extract *only* from the provided source package and flag uncertainty rather than inferring connections [11].\
+\
+*   **Compression Drift:**\
+    *   **Gap:** When asked to compress concepts, the AI inadvertently \"drifted\" by synthesizing context from surrounding paragraphs into the extraction, violating fidelity [12].\
+    *   **Fix:** Creation of a **Hybrid Template** with a dedicated **Context Synthesis field**. This routes the AI's natural tendency to synthesize into a specific box, keeping the \"Compressed Notation\" field pure and traceable [13].\
+\
+*   **Line Tracking Failures:**\
+    *   **Gap:** The AI systematically failed to track line numbers accurately in Markdown files, often hallucinating line ranges [14].\
+    *   **Fix:** Recommendation to pre-mark source files or use software to add line codes, rather than relying on AI counting [15].\
+\
+### 3. Infrastructure & Tooling Improvements (NLMINTA Findings)\
+\
+The infrastructure supporting AIPM (specifically the \"Havona Anvil Suite\") identified gaps in how AI interacts with external tools and pipelines.\
+\
+*   **Pipeline Resilience (Ghost Files):**\
+    *   **Gap:** Batch testing revealed that queries yielding empty responses (0-char answers) were silently dropped by the extraction pipeline, creating data gaps [16].\
+    *   **Fix (D-025):** Implementation of a **Ghost File System**. The pipeline now produces `_FAILED` files for every failed query, preserving the query text and failure classification so no data is ever silently lost [16, 17].\
+\
+*   **Connector Transparency Protocol:**\
+    *   **Gap:** Use of MCP tools (like Majeston or Caliper) created \"transcript gaps\" where tool activities and outputs were invisible to the user [18].\
+    *   **Fix:** A new **Connector Transparency Protocol** was created. It mandates that the AI explicitly document every tool call (Tool Identification, Query Details, Config State, Result Summary) in the chat transcript [19].\
+\
+*   **NotebookLM Integration Strategy:**\
+    *   **Improvement:** Moving beyond simple retrieval, NotebookLM is now viewed as a \"Glossary Management Revolution\" [20]. Instead of managing massive concept libraries in the chat context, all provisional glossaries can be loaded into a Notebook for semantic querying and consolidation [20].\
+\
+### 4. Documentation Architecture\
+\
+*   **Three-Tier Documentation (D-027):**\
+    *   **Change:** The system moved away from monolithic documentation to a tiered approach:\
+        1.  **Architecture Reference:** System-level topology.\
+        2.  **Per-Tool References:** Component-specific docs.\
+        3.  **CHANGELOG:** Running reverse-chronological log [21].\
+    *   **Rationale:** This solves the \"scattered documentation problem\" found during infrastructure development [22].\
+\
+*   **Work Product Presentation (D-001):**\
+    *   **Change:** Due to technical issues with Claude's artifact generation, a decision was made to strictly use **triple-backtick code blocks** for all work products rather than downloadable files, ensuring reliability across all AI platforms [23].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

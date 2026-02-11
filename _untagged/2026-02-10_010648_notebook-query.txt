@@ -1,0 +1,61 @@
+================================================================================
+EXTRACTION: 2026-02-10_010648_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What changes or improvements to the AIPM system have been identified? What gaps were found in the manual during beta testing or actual project use? What new concepts like phase protocols, rooting, response indexing, or NotebookLM integration need to be added?
+Timestamp:       2026-02-10T01:06:48.000873+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: abd139de-521e-4169-ae87-21f50f9cd6ad
+Chat Configure:  default
+Response Chars:  3168
+Duration:        62999ms
+================================================================================
+
+The **AI Operations Manual (GOV-AIPM)** is currently in **Version 1.0.7-DRAFT**, dated December 28, 2025, and is in the **Phase 6b Review and Validation** stage [1].
+
+### **Current State and Structure**
+
+The manual is organized into **six primary parts**, followed by reference sections and eight appendices [2, 3].
+
+**Major Structural Components:**
+*   **Part I: Foundations:** Covers purpose, core philosophy, and alignment principles [2, 4].
+*   **Part II: Project Management:** Details project architecture, token management, session lifecycles, and canonical artifacts [5, 6].
+*   **Part III: Governance Integration:** Explains the governance stack, resolution drafting, and SOP development [7, 8].
+*   **Part IV: Tools & Formats:** Discusses AI role separation, adjunct tools, and file formatting [8, 9].
+*   **Part V: Advanced Patterns:** Covers extended context, specialized use cases (research, creative, technical), and failure modes [9, 10].
+*   **Part VI: Mail & External Communications:** Addresses email integration and external stakeholder communications [10].
+*   **Appendices (A...H):** Includes templates, the Golden Prompt Library, tool configurations, troubleshooting, version history, failure mode catalogs, taxonomies, and a Quick Start Guide [3].
+
+### **The Three Cycles Framework (Section 2.5)**
+
+The **Three Cycles of AI-Assisted Work** provide a mental map for navigating the system, distinguishing between different temporal scales of operation. Each cycle has distinct concerns, tools, and potential failure modes [11].
+
+**1. Project Lifecycle (Macro Cycle)**
+*   **Scope:** The strategic level spanning days to months, covering the entire arc from conception to completion [12].
+*   **Key Question:** "Where is this project in its overall journey?" [13].
+*   **Phases:** Pre-AI Planning, Project Definition, Execution Phases, and Completion [13, 14].
+*   **Primary Artifacts:** Project Initiation Form (TPL-001), Re-Entry Checklist (TPL-007), and Project Roadmap (TPL-010) [15].
+
+**2. Session Lifecycle (Meso Cycle)**
+*   **Scope:** The tactical level spanning minutes to hours...what happens each time you sit down to work [16].
+*   **Key Question:** "What do I need to do before, during, and after this session?" [16].
+*   **Phases:** Preparation, Initiation (establishing context), Active Work, and Closeout (generating bootstraps and logs) [16, 17].
+*   **Primary Artifacts:** Bootstrap (TPL-002), Session Closeout Checklist (TPL-003), Session Log (TPL-005) [18].
+
+**3. Interaction Cycle (Micro Cycle)**
+*   **Scope:** The operational rhythm of back-and-forth dialogue, spanning seconds to minutes [19].
+*   **Key Question:** "How do I work effectively with AI moment to moment?" [19].
+*   **Phases:** Prompt Formulation, AI Response, Verification, and Adjustment [20].
+*   **Primary Tools:** Failure Recovery Worksheet (TPL-009) and the Golden Prompt Library [21].
+
+**The Parallel Support Track**
+The framework also defines a **Parallel Support Track** for essential work that occurs outside the AI environment to enable success within it. This includes file management, cross-AI validation, weekly reviews, and tool maintenance [22].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

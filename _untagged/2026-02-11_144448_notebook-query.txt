@@ -1,0 +1,73 @@
+================================================================================
+EXTRACTION: 2026-02-11_144448_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Exhaustive querying technique for notebook context recovery. Notebook organization strategy with main notebook and adjunct notebooks. Source efficiency for limited plans. What to upload vs skip. Notebook index or directory concept. Upload workflow after sessions.
+Timestamp:       2026-02-11T14:44:48.000183+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 05202f10-9094-48e9-9f55-e89e6712dcc9
+Chat Configure:  default
+Response Chars:  4418
+Duration:        38999ms
+================================================================================
+
+Based on the **GOV-AIPM Revision Findings (Session 032)** and **Drafting Plan (Session 033)**, here are the details regarding notebook context recovery, organization, and workflow.\
+\
+### 1. Exhaustive Querying Technique\
+This technique allows the AI to build comprehensive context from NotebookLM without consuming the full token budget by loading entire documents. It follows a specific loop to ensure \"saturation\" of the topic.\
+\
+*   **The Loop:**\
+    1.  **Query:** The AI queries NotebookLM on a specific subject.\
+    2.  **Summarize:** The AI summarizes the information received from the query.\
+    3.  **Gap Question:** The AI explicitly asks, \"Is there anything else I'm missing?\" or a similar gap-seeking follow-up.\
+    4.  **Repeat:** This cycle repeats until the responses start returning similar content (saturation), indicating the AI has retrieved the complete context available in the notebook [1-3].\
+\
+### 2. Notebook Organization Strategy\
+The framework recommends a tiered approach to organizing notebooks to balance accessibility with specificity.\
+\
+*   **Main Project Notebook:** The general rule is to have **one main notebook** for the entire project. All branches should generally access this central repository to maintain shared context [2, 3].\
+*   **Adjunct Notebooks:** Create separate, \"adjunct\" notebooks for specific targeted purposes, such as:\
+    *   Specific branches (e.g., a testing branch vs. a tooling branch).\
+    *   External research repositories.\
+    *   Specification documentation [2].\
+    *   *Example:* In the NLMINTA project, separate notebooks were used for \"AIPM Review Material,\" \"NLMINTA Sessions,\" and \"AWSNBLM Session Transcripts\" [4].\
+\
+### 3. Source Efficiency for Limited Plans\
+For users on limited NotebookLM plans (which restrict the number of sources), the framework provides a consolidation technique.\
+\
+*   **Consolidation Method:** Instead of uploading every individual session transcript as a separate source file, consolidate multiple session transcripts into a single **Google Doc** with separate tabs or headings for each session.\
+*   **Sync:** Upload/sync this single Google Doc as one source. This allows you to add many sessions of data while only consuming one \"source slot\" in the notebook [2, 3].\
+\
+### 4. What to Upload vs. Skip\
+The goal of the notebook is to serve as a **deep context archive** (everything that happened), while the Bootstrap serves as a lightweight orientation tool (where we left off).\
+\
+*   **Upload:**\
+    *   **Transcripts:** Always upload the full chat transcript. This is the primary source of deep memory [1].\
+    *   **Non-Ephemeral Artifacts:** Upload specifications (SPECs), work-in-progress reports (WIPs), findings reports, and research documents. These represent the crystallized intelligence of the project [1, 5].\
+*   **Skip:**\
+    *   **Bootstraps & Session Logs:** These are considered \"purely ephemeral\" in the context of the deep archive. They are essential for the *immediate* next session (loaded into the chat window), but they do not need to be permanently archived in the notebook because the transcript and specific artifacts already contain the detailed information [1].\
+\
+### 5. Notebook Index (or Directory) Concept\
+To help the AI know *where* to look without wasting tokens querying every notebook blindly, you create a master reference document.\
+\
+
+*   **The Manifest:** This is a single file listing all your notebook IDs, their contents/summaries, and their specific purposes.\
+*   **Function:** It gives the AI a \"map\" of your external memory.\
+*   **Creation Method:** You can create this by querying each notebook for a summary of itself, then compiling those summaries into a single \"Notebook Directory\" document [6, 7].\
+\
+### 6. Upload Workflow (Post-Session)\
+This \"Post-Session Housekeeping\" protocol ensures the deep context layer remains current [1, 5, 8].\
+\
+1.  **Download:** At the end of a session, download the transcript (via an exporter tool) and all artifacts produced.\
+2.  **Local Organization:** Store these in your local session folder.\
+3.  **Upload to Notebook:** Upload the transcript and any new non-ephemeral artifacts (specs, findings) to the Main or Adjunct project notebook.\
+4.  **Sync:** If using the Google Doc consolidation method, copy the new transcript into the master Doc and re-sync the source in NotebookLM.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

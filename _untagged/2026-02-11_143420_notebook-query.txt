@@ -1,0 +1,55 @@
+================================================================================
+EXTRACTION: 2026-02-11_143420_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           How does SeraphRecorder's extraction cycle work? Is there a manual trigger or tool to initiate extraction from the staging area to _untagged in the GitHub repository? What tool or command initiates the extract.py processing cycle?
+Timestamp:       2026-02-11T14:34:20.000956+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 2db63a1b-5caf-4dc1-a2b7-62436edad7b1
+Chat Configure:  default
+Response Chars:  2752
+Duration:        48999ms
+================================================================================
+
+Based on the `SERAPH-Signal-String-Reference` and session logs, here is the breakdown of the SeraphRecorder extraction cycle and its triggers.
+
+### **How the SeraphRecorder Extraction Cycle Works**
+
+The extraction cycle is a passive interception pipeline that operates on the AWS EC2 instance hosting the MCP server. It follows this four-step flow:
+
+1.  **Traffic Generation:** Claude sends a `notebook_query` via the Majeston tool. This query includes a `[SERAPH: ...]` signal string at the beginning of the text [1].
+2.  **Capture:** A utility called `socat` intercepts the full request/response traffic between the MCP server and Google's NotebookLM API. It logs this data to a daily traffic log located at `/home/ubuntu/mcp-logs/traffic/{YYYY-MM-DD}.log` [2], [3].
+3.  **Extraction:** The `extract.py` script parses this traffic log. It:
+    *   Identifies JSON-RPC tool calls.
+    *   Parses the SERAPH tag from the query.
+    *   Strips artifacts (like `socat` headers) from the answer.
+    *   Generates a formatted text file with a metadata header [3].
+4.  **Routing:** Based on the pass type code in the signal string (e.g., `TX`, `VX`), `extract.py` writes the file to a specific local directory. If no tag is present, it defaults to the `_untagged/` directory [4].
+
+### **Manual Triggers and Tools**
+
+There is no MCP tool exposed directly to Claude (like `Seraph:extract_now`) to initiate the processing cycle from inside a chat session. Instead, the process is handled by infrastructure scripts on the server.
+
+**To initiate extraction/push to GitHub:**
+*   **Automated Trigger:** The system is configured to automatically push data from the holding area to the GitHub repository at **midnight GMT** [5].
+*   **Manual Trigger (Server-Side):** There is a shell script named `push-to-github.sh` located on the EC2 instance. Running this script manually pushes the new extractions from the local EC2 directories to the GitHub repository [3].
+*   **Manual Trigger (Client-Side):** During the development sessions, it was noted that a tool via **Chronicler** might be able to "push data through" to see it immediately, essentially triggering the sync on demand, though the primary architecture relies on the server-side scripts [6].
+
+### **Command that Initiates the Processing Cycle**
+
+The core processing logic resides in a Python script.
+
+*   **Script Location:** `/home/ubuntu/mcp-logger/extract.py` [3].
+*   **Input:** It reads from `/home/ubuntu/mcp-logs/traffic/`.
+*   **Output:** It writes to `/home/ubuntu/mcp-logs/extracted/` [3].
+
+In the current architecture, `extract.py` parses the logs to create the files, and `push-to-github.sh` syncs those files to the repository where they become visible to Claude via the Chronicler tool [3].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

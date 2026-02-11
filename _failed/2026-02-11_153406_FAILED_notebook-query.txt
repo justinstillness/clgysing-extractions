@@ -1,0 +1,26 @@
+================================================================================
+EXTRACTION: 2026-02-11_153406_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 1008 chars but answer extraction failed
+Source Package:  N/A
+Pass Type:       N/A
+Would-Be Route:  Tier 3 (Untagged)
+Query:           What is the exact tool call name for flush_pipeline in Chronicler? Is it Chronicler:flush_pipeline or something else? What parameters does it take? Were there any errors or issues reported with flush_pipeline in sessions 023 or 024?
+Timestamp:       2026-02-11T15:34:06.000491+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: a1a43d12-19c6-4384-8d49-1d95a2e68ef6
+Response Chars:  0
+Duration:        40999ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "notebook": {"id": "430df618-e337-4971-abaa-6528e96bb1c4", "title": "Havona Anvil Suite", "source_count": 8, "url": "https://notebooklm.google.com/notebook/430df618-e337-4971-abaa-6528e96bb1c4"}, "sources": [{"id": "d5325ddc-8a59-44cf-9183-63db86496451", "title": "CHANGELOG.txt"}, {"id": "c07a5287-d1fa-4abf-aa01-d7d2174aa09f", "title": "v0.2_SPEC_Indexer-File-Organization-System.txt"}, {"id": "e31e6eda-2a49-4ec9-bfb2-1c935fc9aabb", "title": "v1.0_REF_Caliper-Tool-Reference.
+... [508 more chars]
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

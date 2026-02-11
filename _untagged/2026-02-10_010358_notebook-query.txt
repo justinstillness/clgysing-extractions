@@ -1,0 +1,49 @@
+================================================================================
+EXTRACTION: 2026-02-10_010358_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What improvements have been made to session logs, bootstraps, and decision logs since the original AIPM manual? What new fields, structures, or practices emerged from actual project use? What is the Session Fidelity Report and how does it work?
+Timestamp:       2026-02-10T01:03:58.000286+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: c598a1df-b83f-43f4-959a-1b830f8c5072
+Chat Configure:  default
+Response Chars:  3754
+Duration:        79000ms
+================================================================================
+
+Based on the provided sources, here is the breakdown of the response indexing system, connector transparency protocol, and the insight capture system/out-of-phase backlog.
+
+### **Response Indexing System**
+
+The **Response Indexing System** is a continuity mechanism used to track the sequence of interactions (turns) across multiple AI sessions. It ensures that even when an AI conversation is closed or context is "compacted" (summarized/lost), the precise sequence of work is preserved.
+
+*   **How it Works:** Every AI response is assigned a unique bracketed index number (e.g., `[1]`, `[2]`) [3]. This register tracks the progression of the project turn-by-turn [4].
+*   **Across Sessions:** The system relies on **Bootstrap** files to maintain continuity. At the end of a session, the "Session Log" records the last index used. The Bootstrap file for the *next* session explicitly states: "Last session ended at index: [XXXX]. NEXT SESSION STARTS AT INDEX: [YYYY]" [5, 6]. This allows the AI to pick up the numbering sequence exactly where the previous session left off, maintaining a unbroken chain of provenance across the entire project lifecycle [2].
+
+### **Connector Transparency Protocol**
+
+The **Connector Transparency Protocol** is a set of mandatory behaviors established to address a specific limitation: the user cannot see the "behind-the-scenes" Model Context Protocol (MCP) tool interactions (such as `notebook_query` or `studio_create`) in the chat transcript [7, 8].
+
+*   **The Problem:** Because tool calls are invisible to the user, the transcript lacks details on what parameters were used or what raw data was returned, preventing quality assessment and future reconstruction [8].
+*   **The Protocol:** The AI must explicitly **narrate** every tool invocation in the chat [7]. This includes:
+    1.  **Inline Documentation:** Stating clearly which tool is being called, what parameters (like source filtering or prompts) are being used, and the intent of the action [9, 10].
+    2.  **Output Samples:** Since the user cannot see the raw return, the AI must present representative samples of the output (e.g., specific concept packets or glossary entries) in the chat for user verification [9, 10].
+    3.  **Execution Narration:** Describing the "behind the scenes" actions (like saving notes or checking status) to ensure they are recorded in the transcript [11].
+
+### **Insight Capture System (Item 26) & Out-of-Phase Backlog**
+
+The **Insight Capture System** (Master List Item #26) is a safety net designed to preserve valuable ideas, feature requests, or thesis threads that arise during a session but are **"out of scope"** (Out-of-Phase) for the current work [12]. It prevents "scope creep" while ensuring nothing is lost.
+
+*   **Out-of-Phase Backlog:** This refers to the specific workflow for handling these items. It operates in two distinct phases to minimize disruption [12, 13]:
+    *   **Phase 1: Capture (In-Session):** When an out-of-scope idea arises, the user triggers the protocol. The AI conducts a brief "containable survey" (3...5 questions) to capture the thought process, context, and priority. It generates a **Backlog Item Report** (a text file with provenance data) but *does not* act on the idea immediately [14, 15].
+    *   **Phase 2: Evaluation & Routing (Dedicated Session):** In a separate session, the user and AI review the accumulated reports. Items are evaluated and then "routed" to their appropriate place...such as a new component in the library, a future task, or a specific update to a document [16, 17].
+*   **Artifacts:** The system uses **Backlog Registers** (inventories of captured items) and **Decision Logs** to track the status (Captured, Evaluated, Routed) of these insights [18].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

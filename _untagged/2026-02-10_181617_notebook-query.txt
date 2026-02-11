@@ -1,0 +1,58 @@
+================================================================================
+EXTRACTION: 2026-02-10_181617_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           How are session transcripts exported and managed? What is Claude Exporter? How does the transcript-to-notebook upload workflow work in practice? What naming conventions are used for transcripts?
+Timestamp:       2026-02-10T18:16:17.000874+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: 809df2b7-9866-48d5-bc27-5b3c8bf5e427
+Chat Configure:  default
+Response Chars:  3778
+Duration:        42999ms
+================================================================================
+
+Based on the provided sources, here is how session transcripts are exported, managed, and integrated into the workflow.
+
+### 1. What is Claude Exporter?
+**Claude Exporter** is a third-party tool or browser extension used by the user to extract chat logs from the Claude web interface into portable files (typically Markdown or Text). It is not part of the custom Havona Anvil Suite built during these sessions, but rather a utility used client-side to generate the source materials for the project.
+
+*   **Evidence:** The footer "Powered by Claude Exporter" appears at the end of source files containing raw chat logs [1], [2], [3].
+*   **Function:** It captures metadata including the creation date, update date, and the original link to the chat [4].
+
+### 2. Session Transcript Management
+Transcripts are managed as the primary form of "long-term memory" for the project, utilizing a specific NotebookLM notebook as a knowledge base.
+
+*   **Storage Location:** Transcripts are uploaded to a dedicated notebook titled **"AWSNBLM Session Transcripts"** (ID: `78ccac4a-4c28-4902-b721-0f77e25e1d59`) [5].
+*   **Purpose:** This notebook serves as "adjunct project knowledge." At the start of a new session, the AI queries this notebook via the **Majeston** tool to recover context, architectural decisions, and previous workflows without needing to upload every previous file into the current chat context [6], [7].
+*   **Session Logs vs. Raw Transcripts:** The workflow distinguishes between raw exports (from Claude Exporter) and formalized **Session Logs**. Session Logs often include an "embedded SFR" (Session Findings Report) and are generated as official artifacts at the end of a session [8].
+
+### 3. The Transcript-to-Notebook Upload Workflow
+In practice, the upload workflow is currently **semi-automated** due to specific security constraints regarding the EC2 instance.
+
+*   **The Constraint:** The Majeston tool's `source_add` function runs on the remote EC2 server. It cannot directly read files from the user's local Mac computer [9]. Therefore, the AI cannot simply "grab" a transcript from the user's desktop and upload it to NotebookLM.
+*   **The "Drive Bridge" Solution:** To bridge this gap, the user uploads transcripts to **Google Drive**. The AI can then use Majeston to ingest these files into the notebook using the `source_add(drive)` function, or the user can upload them manually via the NotebookLM web interface [10], [11].
+*   **Sync Protocol:** A "NLM Notebook Sync Protocol" was established. When documentation or transcripts change, the protocol dictates deleting the old source from the notebook and adding the updated version to ensure the context remains current [12].
+
+### 4. Naming Conventions
+The project utilizes a strict naming convention to ensure files are machine-readable and easily organized by the **Chronicler** tool.
+
+*   **Session Identifier:** Files begin with a three-digit session number (e.g., `018`, `022`) [13].
+*   **Project Code:** The project identifier follows the number (e.g., `AWSNBLM`). Note: Ideally, this code remains static, though there was a brief period where it was mislabeled `NLMINTA` before being corrected back to `AWSNBLM` [14].
+*   **Artifact Format:**
+    *   **Session Logs:** `0XX_session-log.txt` (e.g., `018_session-log.txt`) [15].
+    *   **Bootstraps:** `0XX_bootstrap.txt` (e.g., `019_bootstrap.txt`) [16].
+    *   **Raw Transcripts:** Typically formatted as `Claude-0XX [Project] ([Topic]).md` (e.g., `Claude-018 AWSNBLM (Layer 4 Automation & Testing).md`) [17].
+
+**Summary Example of a standard file set for one session:**
+1.  `Claude-020 AWSNBLM (Pipeline Testing & Automation).md` (Raw Export)
+2.  `020_session-log.txt` (Formal Record)
+3.  `021_bootstrap.txt` (Context for the *next* session)
+
+================================================================================
+END OF EXTRACTION
+================================================================================

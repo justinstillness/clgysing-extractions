@@ -1,0 +1,31 @@
+================================================================================
+EXTRACTION: 2026-02-11_002657_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           List every unique vendor or merchant name with the total sum of all transactions for that vendor across the entire year. Group by vendor, show the total dollar amount per vendor, and sort from highest to lowest total. Include the number of transactions per vendor. Exclude transfers between bank accounts and income deposits.
+Timestamp:       2026-02-11T00:26:57.000954+00:00
+Notebook ID:     48755ba1-bc2e-4c5f-8db1-650cb92b6055
+Source IDs:      all
+Conversation ID: 38bb461f-c3f1-4c22-a50a-e6ab094926ac
+Chat Configure:  default
+Response Chars:  975
+Duration:        61999ms
+================================================================================
+
+Based on the source file provided (**Justinstillness:SITS Stripe.csv**), the data represents **incoming subscription payments** (revenue) to **SITS LLC** from various customers, rather than expense transactions paid to external vendors or merchants [1].
+
+Because your query asks to list vendors and **exclude income deposits**, there are **no qualifying transactions** to report from this file. The dataset consists entirely of income deposits (sales) and associated status updates (refunds, failures) where **SITS LLC** is the merchant receiving funds.
+
+*   **Merchant Name:** SITS LLC [1, 2]
+*   **Role:** The entity receiving payment (Seller).
+*   **Transaction Type:** Subscription creations and updates (Income) [1].
+
+If your intent was to analyze the **customers** (the people paying SITS LLC) or to see the **total revenue** collected by SITS LLC, please let me know, and I can provide that breakdown. However, as an expense report excluding income, the list is empty.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

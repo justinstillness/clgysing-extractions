@@ -1,0 +1,76 @@
+================================================================================
+EXTRACTION: 2026-02-11_123227_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Show me the full text of Section 5.1 Project Guide from the GOV-AIPM manual v1.0.7. Include all subsections and content.
+Timestamp:       2026-02-11T12:32:27.000706+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: f4c42a44-43c1-4ad0-8a2c-fcd9b34f8748
+Chat Configure:  default
+Response Chars:  5617
+Duration:        95999ms
+================================================================================
+
+Based on the `v1.2_PP_CLGYSING-PHASE 1_Base-Protocol`, here are the details regarding its structure, layers, and behavioral instructions.\
+\
+### Overall Structure and Major Sections\
+The Base Protocol is a phase-stable document serving as the framework for the entire CLGYSING project [1]. It consists of eight major parts:\
+\
+*   **Part A:** AIPM Framework Behaviors (Layer 1) [2]\
+*   **Part B:** Manual LibForge Context (Layer 2) [2]\
+*   **Part C:** CLGYSING Project Context (Layer 3) [2]\
+*   **Part D:** Six-Phase Project Structure [2]\
+*   **Part E:** Continuity Protocols [2]\
+*   **Part F:** Templates & Quick Reference [2]\
+*   **Part G:** Artifact Naming & Versioning [2]\
+*   **Part H:** Phase 1 Specific Protocols [2]\
+\
+### Layer 1: AIPM Framework Behaviors (Part A)\
+This layer contains mandatory behaviors for every session to ensure continuity and project management [3]. Key contents include:\
+\
+*   **Session Initiation:** Protocols for confirming protocol review, acknowledging bootstraps, and verifying context freshness [3, 4].\
+*   **Alignment Turn:** A mandatory sequence at the start of a session involving a checklist to verify scope, materials, workflow, and expected outputs before substantive work begins [5-9].\
+*   **Mandatory Coordinator Behaviors:** Specific duties for the AI, including Scope Monitoring, Decision Capture, Continuity Assurance, Proactive Orientation, Document Awareness, and Headroom Opportunism [10-14].\
+*   **Response Indexing System:** A requirement to prefix every response with a sequential 4-digit index (e.g., `[15] | Semantic Title`) [16].\
+*   **Work Product Presentation:** Standards for formatting deliverables using code blocks, clear boundaries, and file class designators (e.g., SPEC, GUIDE, CONCEPT) [17-20].\
+*   **Token Management:** Protocols for monitoring \"headroom\" and segmentation strategies for large artifacts to ensure 100% fidelity retention [21-27].\
+*   **Closeout Protocol:** A strict requirement that the AI never auto-initiates closeout; it must be explicitly triggered by the user (e.g., \"Close out\"), followed by a loose ends check and artifact generation [28-31].\
+\
+### Layer 2: Manual LibForge Context (Part B)\
+This layer outlines the knowledge management methodology ad< 2026/02/11 12:34:03.000114385  length=3395 from=8693 to=12087
+apted for this project [32]. Key contents include:\
+\
+*   **Manual LibForge Overview:** A system for transforming raw research into structured content via bottom-up extraction and top-down organization [33].\
+*   **Extraction Process:** Methods for distilling core information with 100% fidelity from raw materials like voice memos and notes [34, 35].\
+*   **Thesis Architecture:** Processes for \"Thesis Regress\" (an interactive interview to build a thesis tree) and the \"Six-Stage Argument Framework\" [36, 37].\
+*   **Argument Blocks (ArgBlocks):** Semantic blueprints that combine thesis strings with concept packets to guide prose generation [38].\
+*   **Voice & Style Preservation:** Specific voice distribution metrics: 40% Analytical, 30% Prophetic, 20% Personal, and 10% Polemical [39]. It also mandates a \"Pedagogical Spiral Staircase\" methodology for accessibility [40].\
+*   **Collaboration Model:** Defines the user's role (generating concepts/voice) versus the AI's role (organization/structure) [41].\
+\
+### Layer 3: CLGYSING Project Context (Part C)\
+This layer provides the subject matter focus for the \"Cultology Singles\" project [42]. Key contents include:\
+\
+*   **Project Overview:** A series of standalone articles explaining \"ontological singularity\" mechanics in cult systems [42, 43].\
+*   **Core Thesis:** The assertion that parasitic social systems exploit the \"ontological singularity engine\" within human psyches via \"Four Intimacies\" to hijack individuals [44].\
+*   **Existing Frameworks:** References to established Cultology concepts like Parasitic vs. Symbiotic systems, Intrinsic vs. Extrinsic knowledge paths, and the BITE model integration [45].\
+*   **Definitions:** Preliminary definitions of the \"Ontological Singularity\" as the deepest foundation of identity and a vulnerability point for influence [46].\
+*   **Research Integration:** Strategy for integrating standard cult research (Steven Hassan, Margaret Singer) with the original framework [47, 48].\
+*   **Audience:** Targeted at general readers (5th-grade comprehension floor) to researchers, requiring multiple explanation layers [49].\
+\
+### Behavioral Instructions\
+The document provides specific behavioral governance instructions to the AI:\
+\
+*   **Primacy of Objectives:** Project objectives always override protocol behaviors. If a protocol conflicts with an objective (e.g., fidelity vs. brevity), the AI must stop and flag the conflict [50, 51].\
+*   **Non-Negotiables:** The AI must adhere to 100% content fidelity (no abbreviation of concepts), voice preservation, and intellectual depth [52, 53].\
+*   **Alignment Over Assumption:** The AI adheres to the philosophy that \"Propose and pause beats assume and proceed.\" It must prioritize explicit confirmation over inferred continuation [54].\
+*   **Instruction Chain Interpretation:** Multi-step user instructions (e.g., \"Do X, then Y\") must be interpreted as sequential steps with alignment checkpoints, not executed automatically in one go [55].\
+*   **Mandatory First Action:** Upon receiving a new bootstrap, the AI's first response must explicitly state: \"Phase Protocol confirmed. I have reviewed the AIPM Phase Protocol from Project Knowledge and confirm adherence to all behavioral requirements.\" [3].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

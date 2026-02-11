@@ -1,0 +1,54 @@
+================================================================================
+EXTRACTION: 2026-02-11_154558_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What were the findings from scale testing on large source packages? What happened with extraction quality on files over 50,000 words? Did NotebookLM show degradation with very large sources? What were findings F08 and F09 about word counts and source size limits?
+Timestamp:       2026-02-11T15:45:58.000901+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: b4359243-1369-4dc1-9aef-492898c0da54
+Chat Configure:  default
+Response Chars:  4684
+Duration:        48999ms
+================================================================================
+
+Based on the provided sources, here are the findings regarding scale testing, extraction quality on large files, and the specific findings regarding word counts and limits.\
+\
+### **Findings from Scale Testing on Large Source Packages**\
+\
+Scale testing revealed that NotebookLM (NLM) does not suffer from performance degradation when handling massive source packages. Contrary to initial expectations, the quality of thematic mapping and concept extraction actually **improved** as the corpus size increased.\
+\
+*   **No Degradation at Scale:** Testing was conducted on the \"CLGYSING Source Pkgs\" notebook (~362,000 words across 15 sources) and the \"Para vs Symb Data\" notebook (~6,000 pages of raw dialogue). Findings **F61** and **F66** confirmed that NLM successfully generated coherent, hierarchical thematic maps with accurate cross-source attribution on both corpora without quality degradation [1], [2], [3].\
+*   **Quality Improvement (Iterative Convergence):** Finding **F62** and **F63** noted that the larger corpus produced qualitatively superior results compared to smaller control groups. Because NLM could access the full evolutionary arc of a concept (seeing early drafts alongside mature definitions), it was able to synthesize the \"state of the art\" articulation of concepts, leading to richer differentiation [4], [5].\
+*   **Corpus Ceiling Undiscovered:** Stress tests on the ~6,000-page corpus (Finding **F66**) suggested that the upper limit for NLM's ingestion and processing capability has not yet been reached [3].\
+\
+### **Extraction Quality on Files Over 50,000 Words**\
+\
+Extraction quality remained high for individual files exceeding 50,000 words.\
+\
+*   **Validation on 62K Words:** Finding **F18** specifically tested extraction on \"Package 08\" (Hassan x Singer), a document containing 61,963 words. NLM successfully processed the file, producing richly detailed concept packets with integration notes. The verdict was that \"large document extraction works,\" though a strategy of using multiple targeted thematic queries is recommended over a single comprehensive extraction query [6], [7].\
+*   **Transient vs. Structural Errors:** During stress testing on the large \"Para vs Symb\" corpus, researchers encountered timeout errors on a complex combined query (Finding **F68**). However, this was determined to be a \"transient API issue, not structural,\" as subsequent queries of comparable complexity succeeded immediately. The large file size did not cause systematic failures [8], [9].\
+\
+### **Clarification on Findings F08 and F09**\
+\
+In the provided source text (*P2_FINDINGS_Session-007*), Findings F08 and F09 refer to infrastructure constraints rather than word counts. The finding regarding word count reliability is **F07**.\
+\
+*   **Finding F07 (Word Count Reliability):** This finding established that \"Word Count Accuracy is Unreliable in Data Tables.\" When generating metadata tables, NLM appears to **estimate** rather than precisely compute word counts. For example, a source with a known count of 12,268 words was estimated by NLM at 22,650 words in one test and 24,268 in another. The verdict was that NLM data tables should be used for relative size comparison but no< 2026/02/11 15:46:47.000880471  length=1491 from=8693 to=10183
+t precise accounting [10], [11].\
+*   **Finding F08 (Filesystem Boundary):** This finding documented that `download_artifact` writes files to the EC2 server filesystem, meaning the AI (Claude) cannot directly read downloaded artifacts. It established the need for using `export_artifact` to Google Drive as a bridge [12].\
+*   **Finding F09 (Export Pathway):** This finding defined the optimal output pathway for Claude-readable content. It determined that reports exported to Google Docs are viable for the AI to read, whereas data tables exported to Google Sheets are only partially accessible [13], [14].\
+\
+### **Summary of Source Size Limits**\
+\
+While specific findings F08/F09 dealt with other technical limits, the cumulative testing established the following regarding size limits:\
+*   **Source Limit:** The NotebookLM Business Plus tier allows for up to **300 sources per notebook** [15].\
+*   **Query Limit:** The system supports **500 queries per day** [15].\
+*   **Practical Extraction Limit:** While NLM can ingest massive files (up to 140k words or 6,000 pages tested), the output of a single query has a \"response length ceiling.\" To extract *everything* from a massive source, one must use the **Pass Separation Principle (Finding F45)**, running multiple specific queries (e.g., Theme Mapping, Vocabulary, Thesis Strings) rather than one giant combined query [16].
+
+================================================================================
+END OF EXTRACTION
+================================================================================
