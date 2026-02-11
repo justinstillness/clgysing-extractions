@@ -1,0 +1,440 @@
+================================================================================
+HAVONA ANVIL SUITE — CHANGELOG
+================================================================================
+Suite:          Havona Anvil Suite (HA Suite)
+Project:        AWSNBLM / LibForge
+File Class:     REF
+Format:         Reverse chronological (newest first)
+Convention:     Based on Keep a Changelog (keepachangelog.com)
+Created:        2026-02-09
+
+PURPOSE:
+Running record of all significant changes to the HA Suite. Each entry
+identifies the component affected, what changed, and cross-component
+implications. Upload this file alongside the Architecture Reference to
+get full current-state context.
+
+COMPONENTS:
+  Majeston        — NotebookLM MCP (research notebook access)
+  SeraphRecorder  — Traffic capture pipeline (socat + extract.py)
+  Chronicler      — GitHub repository tool (read/write/organize)
+  Caliper         — Document analysis MCP (GitHub file inventory)
+  File Browser    — Web UI for repo browsing/download (user-facing)
+  Indexer         — File organization protocol (naming, manifest, routing)
+  Infrastructure  — EC2, Caddy, networking, security, systemd
+
+================================================================================
+CHANGELOG
+================================================================================
+
+--------------------------------------------------------------------------------
+2026-02-10 | Session 023 | File Browser, Indexer, Infrastructure
+--------------------------------------------------------------------------------
+FIXED: File Browser basic auth loop resolved (D-035)
+  - Root cause: bcrypt hash format mismatch ($2y$ vs $2a$)
+  - Claude Code had generated hash with external tool; Caddy requires
+    hashes from its own caddy hash-password command
+  - Fix: regenerated hash using caddy hash-password, reloaded Caddy
+  - All functions validated: browse, preview, download, folder ZIP,
+    full repo ZIP, mobile access confirmed
+
+CHANGED: Indexer spec updated from v0.1 to v0.2 (D-036)
+  - Added purpose field to query manifest schema (Section 6.1)
+    Values: testing, production, infrastructure, exploratory
+  - Added combined pass classification guidance (Section 3.1)
+    Rule: classify by primary intent, note secondary in quality_notes
+    Split threshold: >30% secondary content → separate file at D2
+  - Updated folder structure to reflect actual repo state
+    (testing/ folder with S010-S013, cleared _untagged/)
+  - Updated evolutionary roadmap staging
+  - Added notebooks maintained list to NLM sync protocol
+
+ADDED: File Browser tool reference v1.0 (D-037)
+  - Proper REF document replacing 188-byte build spec stub
+  - Consistent with other HA Suite tool reference format
+  - Includes architecture, features, maintenance, troubleshooting
+
+CHANGED: NLM notebook housekeeping
+  - Removed duplicate Indexer spec source from HA Suite notebook
+  - Old v0.1 Indexer source replaced with v0.2 summary
+  - File Browser reference added as new source
+  - NLM-MANIFEST.json updated with notebooks_maintained section
+
+REMOVED: Superseded files from _docs/
+  - v0.1_SPEC_Indexer-File-Organization-System.txt (replaced by v0.2)
+  - v1.0_SPEC_File-Browser-Build.txt (stub replaced by proper REF)
+
+CROSS-COMPONENT NOTES:
+  - HA Suite NLM notebook now has 7 clean sources (no duplicates)
+  - NLM-MANIFEST.json now tracks both maintained notebooks
+
+DECISIONS: D-035 (auth fix), D-036 (Indexer v0.2), D-037 (File Browser REF)
+
+--------------------------------------------------------------------------------
+2026-02-09 | Session 022 | Indexer, File Browser, Infrastructure
+--------------------------------------------------------------------------------
+ADDED: Indexer file organization system v0.1 designed and documented (D-028)
+  - Six design principles (P-1 through P-6)
+  - Faceted classification from library science, DAM, LIMS
+  - Degree classification (D1/D2/D3/DM) refinement pipeline (D-029)
+  - Pass type registry with 10 codes (PE/CE/VX/TS/TM/GL/EV/TX/INF/DOC)
+  - Filename convention: {PassType}-{SourceScope}-{Degree}-S{Session}.txt (D-030)
+  - Folder structure: project/phase/pass-type
+  - Query manifest schema as JSON at repo root (D-031)
+  - NLM sync protocol for _docs/ to HA Suite notebook
+  - SERAPH routing roadmap (conceptual)
+  - 8 open questions for alpha/beta resolution
+
+ADDED: File Browser web application designed, specified, deployed (D-032)
+  - Flask + Caddy + GitHub API architecture
+  - URL: https://mcp.justinstillness.com/files/
+  - Dark theme, mobile-friendly, batch ZIP download
+  - Auth loop identified at deployment — deferred to S023
+
+ADDED: query-manifest.json initialized at repo root (empty, production-ready)
+
+CHANGED: concept-counter.json reset from test data to clean slate {}
+
+ADDED: NLM-MANIFEST.json in _docs/ for tracking doc-to-NLM sync state
+
+ADDED: Two Mermaid diagrams generated
+  - Extraction-to-Organization Pipeline (full flow)
+  - Degree Progression Model (D1 through DM)
+
+CHANGED: EC2 upgraded from t3.micro to t3.small (D-033)
+  - Memory exhaustion causing SSH failures and service instability
+  - Doubles RAM, cost increase ~$7/month (~$8 → ~$15/month)
+
+FIXED: EC2 Tailscale VPN had dropped offline — restarted
+
+RECEIVED: NLMINTA S014 cross-session briefing
+  - Five observations on Indexer from real classification work
+  - Purpose field and combined pass guidance recommended for v0.2
+  - Filename convention validated in practice
+
+CROSS-COMPONENT NOTES:
+  - Chronicler: _docs/ now primary documentation home with sync tracking
+  - Claude Code: Validated as efficient deployment path (~2 min for Flask app)
+  - Tailscale: Stability concern noted — monitor for recurring drops
+
+DECISIONS: D-028 through D-034 (Indexer principles, degrees, filenames,
+  manifest, File Browser, EC2 upgrade, Indexer naming)
+
+--------------------------------------------------------------------------------
+2026-02-09 | Session 021 | Documentation, Infrastructure
+--------------------------------------------------------------------------------
+ADDED: HA Suite Architecture Reference v4.0
+  - Comprehensive documentation of full suite architecture
+  - All components, ports, paths, service management
+  - Network topology, security configuration
+  - Uploaded to HA Suite NLM notebook
+
+ADDED: Tool references uploaded to HA Suite NLM notebook
+  - Caliper Tool Reference v1.0
+  - Majeston Tool Reference v1.0
+  - SeraphRecorder Tool Reference v1.0
+  - CHANGELOG v1.0
+
+ADDED: HA Suite NLM notebook established (430df618-e337-4971-abaa-6528e96bb1c4)
+  - Central documentation notebook for all HA Suite living docs
+  - 5 initial sources synced
+
+CROSS-COMPONENT NOTES:
+  - Documentation baseline established for all existing components
+  - NLM notebook enables AI-queryable access to suite documentation
+
+--------------------------------------------------------------------------------
+2026-02-09 | Session 020 | SeraphRecorder
+--------------------------------------------------------------------------------
+CHANGED: extract.py upgraded from v5 to v6
+  - Added failure resilience architecture
+  - New failure taxonomy: NO_RESPONSE, EMPTY_ANSWER, PARTIAL, PARSE_ERROR,
+    CORRELATION_FAILED
+  - Ghost files written for every failed extraction (never silently drop)
+  - Ghost files include: failure classification, preserved query text,
+    raw response preview
+  - _FAILED suffix added to ghost filenames
+  - New _failed/ directory tree mirrors project routing structure
+    (e.g., _failed/clgysing/PE/, _failed/clgysing/TS/)
+  - Extraction summary now shows success/failure breakdown in console
+
+ADDED: Ghost file routing
+  - Failed extractions route to extracted/_failed/{project}/{pass}/
+  - Structure mirrors successful extraction routing
+
+ROOT CAUSE DOCUMENTED: NotebookLM rate limiting
+  - Rapid-fire queries cause empty responses: {"prompts": []} (15 chars)
+  - Some queries wait 25+ minutes before returning empty
+  - Mitigation: space queries when batch testing
+
+CROSS-COMPONENT NOTES:
+  - Chronicler: _failed/ directories may appear in repo if push script
+    is updated to include them
+  - Infrastructure: v5 backup preserved as extract_v5_backup.py on EC2
+
+DECISION: D-025 (extract.py v6 failure resilience architecture)
+
+--------------------------------------------------------------------------------
+2026-02-08 | Session 019 | SeraphRecorder
+--------------------------------------------------------------------------------
+CHANGED: extract.py upgraded from v4 to v5
+  - Implemented SERAPH signal string parsing
+  - 3-tier routing: Tagged→project folder, Unknown tag→_review, Untagged→_untagged
+  - Signal format: [SERAPH: PROJECT=..., SP=..., PASS=..., NUM=...]
+  - Auto-populates file headers with project, pass type, session metadata
+  - Filename generation from signal string fields
+
+ADDED: Socat artifact stripping (D-024)
+  - Regex pass removes stray chunk headers from extracted content
+  - Handles "< YYYY/MM/DD... length=..." lines injected by socat
+
+VALIDATED: End-to-end tagged query routing to clgysing/phase2/VX/
+
+CROSS-COMPONENT NOTES:
+  - Chronicler: New directory structure (clgysing/phase2/{pass}/) created
+    in GitHub repo for routed extractions
+
+DECISION: D-024 (socat artifact stripping)
+
+--------------------------------------------------------------------------------
+2026-02-07 | Session 018 | Chronicler, SeraphRecorder
+--------------------------------------------------------------------------------
+CHANGED: Chronicler — bug fix for delete/move operations
+  - httpx.delete does not accept JSON bodies
+  - Fixed by switching to client.request("DELETE", ...) pattern
+  - move_file and delete_file now functional
+
+ADDED: Chronicler — flush_pipeline tool (10th tool)
+  - On-demand extraction trigger callable from Claude
+  - Runs extract.py and push-to-github.sh without SSH
+
+ADDED: SeraphRecorder — daily-rotate.sh cron job
+  - Runs at midnight UTC
+  - Workflow: extract.py → push-to-github.sh → service restart (log rotation)
+  - Fixed service name reference (notebooklm-mcp, not mcp-wrapper)
+
+ADDED: Infrastructure — Port 2222 backup SSH
+  - Later superseded by Tailscale/SSM preference
+
+CROSS-COMPONENT NOTES:
+  - Chronicler Quick Reference updated to v1.1 to include flush_pipeline
+
+--------------------------------------------------------------------------------
+2026-02-07 | Session 017 | Chronicler
+--------------------------------------------------------------------------------
+ADDED: Chronicler deployed — new component in suite
+  - GitHub repository interaction tool (read/write/move/delete)
+  - Running on port 8002
+  - Caddy routing: /repo/* → localhost:8002
+  - Connector URL: https://mcp.justinstillness.com/repo/mcp
+  - 9 initial tools: list_files, read_file, write_file, move_file,
+    delete_file, create_directory, get_counter, increment_counter,
+    server_status
+  - Built via Claude Code on EC2
+
+KNOWN ISSUE: Claude UI may not show Chronicler tools in auto-discovery
+  - Tools ARE functional when called directly by name
+  - Platform-level display issue, not a connectivity problem
+
+CROSS-COMPONENT NOTES:
+  - Caddy: New handle_path block added for /repo/* routing
+  - Infrastructure: Port 8002 added to internal port map
+
+DECISION: D-020 (Chronicler architecture and naming)
+
+--------------------------------------------------------------------------------
+2026-02-06 | Session 016 | Infrastructure
+--------------------------------------------------------------------------------
+ADDED: AWS Systems Manager (SSM) agent installed and registered
+ADDED: Tailscale VPN installed on EC2 and local devices
+
+CHANGED: Security hardening — SSH access restricted
+  - Port 22 removed from EC2 Security Group
+  - SSH now exclusively via Tailscale tunnel
+  - Termius on iPhone updated with Tailscale IP
+
+DECISION: D-023 (SSH restriction to Tailscale only)
+
+CROSS-COMPONENT NOTES:
+  - All SSH-dependent operations (token refresh, maintenance) now
+    require Tailscale connection
+
+--------------------------------------------------------------------------------
+2026-02-06 | Sessions 013-014 | SeraphRecorder
+--------------------------------------------------------------------------------
+ADDED: SeraphRecorder pipeline deployed — new component in suite
+  - Component 1: socat traffic capture (transparent proxy)
+    * Listens on port 8000, forwards to Majeston on port 8100
+    * Logs all traffic to /home/ubuntu/mcp-logs/traffic/
+  - Component 2: extract.py parser
+    * Parses JSONL logs, extracts notebook_query results
+    * Generates clean text files with metadata headers
+  - Component 3: push-to-github.sh
+    * Syncs extracted files to clgysing-extractions repo
+    * Uses dedicated GitHub PAT
+
+CHANGED: Majeston port remapped
+  - Majeston moved from port 8000 to port 8100 (internal only)
+  - Socat wrapper occupies port 8000 (Caddy still routes to 8000)
+  - Transparent to external connections — no Caddy changes needed
+
+ADDED: Infrastructure — mcp-logger/ directory structure on EC2
+  - /home/ubuntu/mcp-logger/ — scripts (extract.py, push-to-github.sh)
+  - /home/ubuntu/mcp-logs/traffic/ — raw socat logs
+  - /home/ubuntu/mcp-logs/raw/ — JSONL correlation output
+  - /home/ubuntu/mcp-logs/extracted/ — text extraction output
+
+CROSS-COMPONENT NOTES:
+  - Majeston: Now runs on port 8100 behind socat wrapper
+  - Chronicler: GitHub repo (clgysing-extractions) is the delivery target
+
+DECISIONS: D-013 through D-017 (pipeline architecture)
+
+--------------------------------------------------------------------------------
+2026-02-06 | Session 012 | SeraphRecorder
+--------------------------------------------------------------------------------
+ADDED: SeraphRecorder designed
+  - Architecture: 4-component pipeline (capture, extract, push, cleanup)
+  - Two data streams: Stream 1 (JSONL archive), Stream 2 (text extractions)
+  - Named after Urantia "Recorders" (seraphic archivists)
+
+CROSS-COMPONENT NOTES:
+  - Design only — deployment in Sessions 013-014
+
+--------------------------------------------------------------------------------
+2026-02-05 | Sessions 010-011 | Caliper, Infrastructure
+--------------------------------------------------------------------------------
+ADDED: Caliper deployed — new component in suite
+  - Document analysis MCP (GitHub file inventory)
+  - Running on port 8001
+  - FastMCP 2.14.5, uv runtime
+  - GitHub PAT authentication (.env file)
+  - 2 tools: analyze_github_folder, server_status
+  - Caddy routing: /tools/* → localhost:8001
+  - Connector URL: https://mcp.justinstillness.com/tools/mcp
+  - Named after Urantia measurement instrument
+
+CHANGED: Caddy routing — handle_path fix
+  - Switched from handle to handle_path for /tools/* block
+  - handle_path strips prefix before forwarding (required for Caliper)
+  - Critical fix: without this, Caliper received /tools/mcp instead of /mcp
+
+ADDED: Naming convention established (D-012)
+  - Urantia beings → information/intelligence tools
+  - Craft terminology → measurement/production tools
+  - "MCP Workshop Suite" as umbrella name (now superseded by HA Suite)
+
+CROSS-COMPONENT NOTES:
+  - Caddy: Now routes three paths (/, /tools/*, /repo/*)
+  - FastMCP: description= parameter removed for v2.14.5 compatibility
+
+DECISION: D-012 (Caliper architecture and naming convention)
+
+--------------------------------------------------------------------------------
+2026-02-05 | Session 009 | Majeston
+--------------------------------------------------------------------------------
+CHANGED: Majeston (jacob-bd) updated to v0.2.15
+
+ADDED: Google Drive validated as bidirectional file bridge
+  - Upload via Drive → ingest via Majeston source_add
+  - Enables file transfer without SSH
+
+--------------------------------------------------------------------------------
+2026-02-03 | Session 006 | Infrastructure
+--------------------------------------------------------------------------------
+ADDED: Mac maintenance scripts deployed
+  - refresh-tokens.sh (push Majeston auth tokens to EC2)
+  - health-check.sh (system diagnostic)
+
+CHANGED: Mac DNS configured to Cloudflare/Google
+  - Resolved health check failures caused by stale DNS cache
+
+REMOVED: Docker fully uninstalled (D-009)
+  - Recovered ~2.9GB disk + ~88MB RAM
+  - Nothing in suite uses Docker
+
+ADDED: Rate limiting via iptables (D-011)
+  - 30 new connections per 60 seconds per IP on port 443
+  - Persisted in /etc/iptables/rules.v4
+
+ADDED: System updates applied (48 packages) (D-010)
+
+DECISIONS: D-009 (Docker removal), D-010 (updates), D-011 (rate limiting)
+
+--------------------------------------------------------------------------------
+2026-02-03 | Session 005 | Majeston, Infrastructure
+--------------------------------------------------------------------------------
+CHANGED: Majeston migrated from Docker to native install
+  - Installed via uv tool install notebooklm-mcp-cli
+  - Configured as systemd service (notebooklm-mcp)
+  - Port 8000, auto-start on boot, auto-restart on crash
+
+CHANGED: Caddy migrated from Docker to native install
+  - Simplified stack, recovered Docker memory overhead
+
+REMOVED: Python bridge and roomi-fields container
+  - Replaced by direct jacob-bd installation
+
+CROSS-COMPONENT NOTES:
+  - All components now run natively (no Docker anywhere)
+
+DECISIONS: D-003 (direct install), D-007 (Caddy native), D-008 (Docker stop)
+
+--------------------------------------------------------------------------------
+2026-02-02 | Sessions 001-002 | Infrastructure, Majeston
+--------------------------------------------------------------------------------
+ADDED: Initial infrastructure deployed
+  - EC2 t3.micro instance (Ubuntu 24.04 LTS, us-east-1)
+  - Elastic IP 52.2.11.33
+  - GoDaddy A record: mcp.justinstillness.com
+  - Caddy reverse proxy with auto-TLS (Let's Encrypt)
+  - Security Group: ports 22, 80, 443
+
+ADDED: First NotebookLM access achieved
+  - Initially via roomi-fields Docker container + custom Python bridge
+  - Proved concept: Claude can query NotebookLM remotely
+
+KNOWN ISSUE: roomi-fields incompatible with Claude Custom Connectors
+  - REST API only; Claude requires MCP Streamable HTTP
+  - Resolved in Session 005 by migrating to jacob-bd
+
+================================================================================
+PENDING / DEFERRED ITEMS
+================================================================================
+
+These items have been identified but not yet implemented. They are tracked
+here for visibility and will move to dated entries when addressed.
+
+INFRASTRUCTURE:
+  [ ] GitHub PAT rotation (deferred since S011 — avoiding service disruption)
+  [ ] health-check.sh update to include Caliper + Chronicler + File Browser
+  [ ] jacob-bd package update check (non-urgent)
+  [ ] Tailscale stability monitoring (dropped in S022, restarted)
+  [ ] EC2 t3.small cost review — is upgrade still needed? (~$15/month)
+  [x] Counter reset — concept-counter.json (DONE S022)
+
+SERAPHRECORDER:
+  [ ] push-to-github.sh JSONL archival — D-019 (S017)
+      Push daily JSONL to /raw/YYYY-MM/ on GitHub for archival
+  [ ] Historical reprocessing validation (S019/S020)
+  [ ] Remove --verbose debug flags from extract.py (S014)
+
+INDEXER:
+  [ ] Alpha test with production CLGYSING extraction work
+  [ ] Manifest format evaluation at ~100 entries (Q2)
+  [ ] Full D1→D2→D3→DM consolidation chain test (Q4)
+
+FILE BROWSER:
+  [ ] Custom batch select (nice-to-have, folder ZIP covers main use case)
+
+FEATURE BACKLOG:
+  [ ] Shell MCP Connector — dedicated tool for EC2 shell access (S020)
+  [ ] Auto-extraction automation — W-005 (S017)
+  [ ] Concept ID numbering via Chronicler (S017)
+  [ ] Notebook integration — read from GitHub, add to NLM (W-003, S017)
+  [ ] AIPM repo integration — session logs to GitHub (W-006, S018)
+  [ ] NLM full-file upload method (text summary workaround used, S022)
+
+================================================================================
+END OF CHANGELOG
+================================================================================

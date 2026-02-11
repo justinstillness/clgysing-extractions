@@ -1,0 +1,75 @@
+{
+  "notebook_name": "Havona Anvil Suite",
+  "notebook_id": "430df618-e337-4971-abaa-6528e96bb1c4",
+  "last_synced": "2026-02-10",
+  "last_synced_session": "023",
+  "sources": {
+    "CHANGELOG.txt": {
+      "version": "v1.1",
+      "repo_path": "_docs/CHANGELOG.txt",
+      "nlm_source_id": "d5325ddc-8a59-44cf-9183-63db86496451",
+      "nlm_source_type": "text_summary",
+      "last_updated_session": "023"
+    },
+    "v4.0_SPEC_HA-Suite-Architecture-Reference.txt": {
+      "version": "v4.0",
+      "repo_path": "_docs/v4.0_SPEC_HA-Suite-Architecture-Reference.txt",
+      "nlm_source_id": "c93315ab-689e-4a8e-a9d0-baca4f2024a9",
+      "last_updated_session": "021"
+    },
+    "v1.0_REF_SeraphRecorder-Tool-Reference.txt": {
+      "version": "v1.0",
+      "repo_path": "_docs/v1.0_REF_SeraphRecorder-Tool-Reference.txt",
+      "nlm_source_id": "b94becf8-96b9-4591-afaa-d1f62b427f3a",
+      "last_updated_session": "021"
+    },
+    "v1.0_REF_Caliper-Tool-Reference.txt": {
+      "version": "v1.0",
+      "repo_path": "_docs/v1.0_REF_Caliper-Tool-Reference.txt",
+      "nlm_source_id": "e31e6eda-2a49-4ec9-bfb2-1c935fc9aabb",
+      "last_updated_session": "021"
+    },
+    "v1.0_REF_Majeston-Tool-Reference.txt": {
+      "version": "v1.0",
+      "repo_path": "_docs/v1.0_REF_Majeston-Tool-Reference.txt",
+      "nlm_source_id": "78cf949f-1393-4d72-a989-27c936b8e560",
+      "last_updated_session": "021"
+    },
+    "v0.2_SPEC_Indexer-File-Organization-System.txt": {
+      "version": "v0.2",
+      "repo_path": "_docs/v0.2_SPEC_Indexer-File-Organization-System.txt",
+      "nlm_source_id": "c07a5287-d1fa-4abf-aa01-d7d2174aa09f",
+      "nlm_source_type": "text_summary",
+      "last_updated_session": "023"
+    },
+    "v1.0_REF_File-Browser-Tool-Reference.txt": {
+      "version": "v1.0",
+      "repo_path": "_docs/v1.0_REF_File-Browser-Tool-Reference.txt",
+      "nlm_source_id": "e941bbfd-efe3-44df-9e5d-35028ff1a567",
+      "nlm_source_type": "text_summary",
+      "last_updated_session": "023"
+    },
+    "v1.0_REF_Development-Wishlist.txt": {
+      "version": "v1.0",
+      "repo_path": "_docs/v1.0_REF_Development-Wishlist.txt",
+      "nlm_source_id": "dd3e257d-2af6-4330-97b6-115236c74007",
+      "nlm_source_type": "text_summary",
+      "last_updated_session": "023"
+    }
+  },
+  "maintenance_note": "When any _docs/ file is updated: (1) commit new version via Chronicler, (2) delete old source from NLM notebook via Majeston:source_delete, (3) add updated file via Majeston:source_add, (4) update this manifest with new source_id and session number.",
+  "notebooks_maintained": {
+    "ha_suite_docs": {
+      "id": "430df618-e337-4971-abaa-6528e96bb1c4",
+      "name": "Havona Anvil Suite",
+      "sync_type": "auto",
+      "note": "Living docs — Claude syncs per protocol"
+    },
+    "session_transcripts": {
+      "id": "78ccac4a-4c28-4902-b721-0f77e25e1d59",
+      "name": "AWSNBLM Session Transcripts and Specs",
+      "sync_type": "manual",
+      "note": "User-managed transcript uploads"
+    }
+  }
+}

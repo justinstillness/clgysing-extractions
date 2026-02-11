@@ -1,0 +1,564 @@
+================================================================================
+HAVONA ANVIL SUITE — ARCHITECTURE REFERENCE
+================================================================================
+Suite:          Havona Anvil Suite (HA Suite)
+Project:        AWSNBLM / LibForge
+Version:        v4.0
+File Class:     SPEC
+Created:        2026-02-09
+Updated:        2026-02-09
+Sessions:       001-021 (cumulative)
+
+PURPOSE:
+Canonical system-level reference for the Havona Anvil Suite. Upload this to
+any Claude session for complete infrastructure context. For component-specific
+detail, see the per-tool reference documents. For recent changes, see the
+CHANGELOG.
+
+This document describes the system AS BUILT AND VERIFIED.
+
+COMPANION DOCUMENTS:
+  CHANGELOG.txt                    — Running change log (newest first)
+  SeraphRecorder-Reference.txt     — Pipeline tool reference (planned)
+  Chronicler-Quick-Reference.txt   — GitHub tool reference (exists, v1.1)
+  Caliper-Reference.txt            — Document analysis reference (planned)
+  Majeston-Reference.txt           — NotebookLM tool reference (planned)
+
+================================================================================
+TABLE OF CONTENTS
+================================================================================
+
+1.  SUITE OVERVIEW
+2.  ARCHITECTURE DIAGRAM
+3.  COMPONENT SUMMARY
+4.  EC2 INSTANCE
+5.  PORT MAP
+6.  CADDY ROUTING
+7.  AUTHENTICATION MODEL
+8.  NETWORK & SECURITY
+9.  AUTO-RECOVERY
+10. NOTEBOOKLM TIER & LIMITS
+11. DIRECTORY MAP (EC2)
+12. MAC-SIDE INFRASTRUCTURE
+13. MOBILE OPERATIONS
+14. MAINTENANCE PROCEDURES
+15. FAILURE MODES & RECOVERY
+16. EXTERNAL DEPENDENCIES
+17. DECISION HISTORY
+18. KNOWN ISSUES & DEFERRED ITEMS
+
+================================================================================
+1. SUITE OVERVIEW
+================================================================================
+
+The Havona Anvil Suite is an integrated collection of MCP tools running on
+a single AWS EC2 instance. It provides Claude with direct access to research
+materials, automated traffic capture, repository management, and document
+analysis — serving the LibForge content production framework.
+
+COMPONENTS (4 tools + infrastructure):
+
+  Majeston        NotebookLM MCP — queries 87+ research notebooks
+  SeraphRecorder  Traffic capture pipeline — records all Majeston queries,
+                  extracts content, routes to GitHub
+  Chronicler      GitHub repository tool — read/write/organize extractions
+  Caliper         Document analysis MCP — batch file inventory from GitHub
+
+NAMING CONVENTION:
+  Urantia beings    → information/intelligence tools (Majeston, Chronicler,
+                      SeraphRecorder)
+  Craft terminology → measurement/production tools (Caliper)
+  Full reference: v1.0_REF_LibForge-Tool-Naming-Reference.txt
+
+COST: ~$8/month (EC2 t3.micro + minimal data transfer)
+
+DEPLOYMENT TIMELINE:
+  2026-02-02  Infrastructure + Majeston (initial)
+  2026-02-03  Majeston (jacob-bd migration, production)
+  2026-02-05  Caliper (Document Analysis MCP)
+  2026-02-06  SeraphRecorder (traffic capture pipeline)
+  2026-02-07  Chronicler (GitHub repository tool)
+
+LAST VERIFIED: 2026-02-09 (Session 020 — all components operational)
+
+================================================================================
+2. ARCHITECTURE DIAGRAM
+================================================================================
+
+REQUEST FLOW (external):
+
+  Claude (any device)
+    |
+    | HTTPS (port 443)
+    v
+  mcp.justinstillness.com
+  (GoDaddy A record → 52.2.11.33)
+    |
+    | iptables rate limiting (30 conn/60s per IP)
+    v
+  Caddy (systemd, ports 80/443, auto-TLS)
+    |
+    |--- /repo/*   → Chronicler  (port 8002)
+    |--- /tools/*  → Caliper     (port 8001)
+    |--- /*        → socat       (port 8000) → Majeston (port 8100)
+                        |
+                        +--→ traffic log → extract.py → GitHub repo
+                             (SeraphRecorder pipeline)
+
+DATA FLOW (SeraphRecorder):
+
+  Claude query → Majeston
+    |
+    v
+  socat captures traffic → /mcp-logs/traffic/YYYY-MM-DD.log
+    |
+    v
+  extract.py parses → /mcp-logs/raw/YYYY-MM-DD.jsonl    (Stream 1: archive)
+                    → /mcp-logs/extracted/{routing}/     (Stream 2: text files)
+    |
+    v
+  push-to-github.sh → clgysing-extractions repo
+    |
+    v
+  Chronicler can read/write/organize repo contents
+
+AUTHENTICATION FLOWS:
+
+  Majeston (periodic, from Mac):
+    Mac: nlm login → Chrome OAuth → local tokens
+    Mac: refresh-tokens.sh → SCP to EC2 → service restart
+
+  Caliper (static):
+    GitHub PAT in .env → loaded at service startup
+
+  Chronicler (static):
+    GitHub PAT in .env → loaded at service startup
+
+================================================================================
+3. COMPONENT SUMMARY
+================================================================================
+
+Each component has (or will have) its own detailed reference document.
+This section provides the minimum needed for system-level understanding.
+
+MAJESTON (NotebookLM MCP)
+  Package:    jacob-bd notebooklm-mcp-cli v0.2.15
+  Framework:  FastMCP (Python), Streamable HTTP
+  Port:       8100 (internal, behind socat wrapper)
+  Endpoint:   /mcp (via Caddy default route)
+  Connector:  https://mcp.justinstillness.com/mcp
+  Tools:      29 (notebook, source, query, studio, research, sharing)
+  Auth:       Google cookie-based (refreshed every 10-14 days from Mac)
+  systemd:    notebooklm-mcp
+
+SERAPHRECORDER (Traffic Capture Pipeline)
+  Components: socat wrapper + extract.py v6 + push-to-github.sh + daily-rotate.sh
+  Port:       8000 (socat, transparent proxy to Majeston on 8100)
+  Features:   SERAPH signal string parsing, 3-tier routing, ghost files (v6),
+              failure taxonomy, automated daily extraction
+  Output:     Text files → GitHub repo (clgysing-extractions)
+  systemd:    Part of notebooklm-mcp service (socat wraps Majeston)
+  Cron:       daily-rotate.sh at midnight UTC
+
+CHRONICLER (GitHub Repository Tool)
+  Version:    Custom-built (Session 017)
+  Framework:  FastMCP (Python), Streamable HTTP
+  Port:       8002
+  Endpoint:   /mcp (via Caddy /repo/* route)
+  Connector:  https://mcp.justinstillness.com/repo/mcp
+  Tools:      10 (list, read, write, move, delete, directory, counter x2,
+              server_status, flush_pipeline)
+  Auth:       GitHub PAT (.env file)
+  Target:     github.com/justinstillness/clgysing-extractions (private)
+  systemd:    chronicler (or equivalent service name)
+  Known issue: Tools may not appear in Claude UI auto-discovery; call directly
+
+CALIPER (Document Analysis MCP)
+  Version:    1.0.0 (custom-built Session 010)
+  Framework:  FastMCP 2.14.5 (Python), Streamable HTTP
+  Port:       8001
+  Endpoint:   /mcp (via Caddy /tools/* route)
+  Connector:  https://mcp.justinstillness.com/tools/mcp
+  Tools:      2 (analyze_github_folder, server_status)
+  Auth:       GitHub PAT (.env file, 5000 req/hr)
+  systemd:    document-analysis-mcp
+
+================================================================================
+4. EC2 INSTANCE
+================================================================================
+
+Instance ID:      i-04c8075f89e3c2ecf
+Instance Type:    t3.micro (1 vCPU, 1 GB RAM)
+Region:           us-east-1
+IP:               52.2.11.33 (Elastic IP)
+OS:               Ubuntu 24.04 LTS
+SSH User:         ubuntu
+Private Hostname: ip-172-31-68-149
+
+RESOURCE BASELINES (4 services running):
+  Memory:   ~55-65% used (~500-600MB of 914MB)
+    Majeston:  ~75-125MB
+    Caliper:   ~50-75MB
+    Chronicler: ~50-75MB (estimated)
+    Caddy:     ~15-50MB
+    OS:        ~300MB
+  Disk:     ~35% used
+
+SSH ACCESS:
+  Via Tailscale only (port 22 removed from Security Group — D-023)
+  Mac: ssh -i '[PEM path]' ubuntu@[Tailscale IP]
+  iPhone: Termius (saved host with Tailscale IP and PEM key)
+
+PEM KEY:
+  /Users/faenor2024/Library/Mobile Documents/com~apple~CloudDocs/
+  AI Files/Cultology/Notebook LM Claude Integration/
+  pem EC2 file/notebooklm-mcp-key.pem
+
+================================================================================
+5. PORT MAP
+================================================================================
+
+  Port   Service          Access         Notes
+  ----   -------          ------         -----
+  443    Caddy (HTTPS)    External       Auto-TLS, rate limited
+  80     Caddy (HTTP)     External       Redirects to HTTPS
+  8000   socat wrapper    Internal only  SeraphRecorder capture layer
+  8001   Caliper          Internal only  Document analysis
+  8002   Chronicler       Internal only  GitHub repo tool
+  8100   Majeston         Internal only  NotebookLM MCP (behind socat)
+
+All internal ports are NOT exposed in Security Group.
+External access is exclusively through Caddy on 443.
+
+================================================================================
+6. CADDY ROUTING
+================================================================================
+
+Config: /etc/caddy/Caddyfile
+
+  mcp.justinstillness.com {
+      handle_path /repo/* {
+          reverse_proxy localhost:8002
+      }
+      handle_path /repo {
+          reverse_proxy localhost:8002
+      }
+      handle_path /tools/* {
+          reverse_proxy localhost:8001
+      }
+      handle_path /tools {
+          reverse_proxy localhost:8001
+      }
+      reverse_proxy localhost:8000
+  }
+
+CRITICAL: Uses handle_path (not handle) to strip URL prefixes before
+forwarding. Without this, downstream services receive /repo/mcp or
+/tools/mcp instead of /mcp.
+
+ROUTING SUMMARY:
+  /repo/*   → strip /repo  → localhost:8002/mcp (Chronicler)
+  /tools/*  → strip /tools → localhost:8001/mcp (Caliper)
+  /*        → pass through → localhost:8000/mcp (socat → Majeston)
+
+================================================================================
+7. AUTHENTICATION MODEL
+================================================================================
+
+MAJESTON (cookie-based, periodic refresh):
+  Mechanism:   Google OAuth cookies via jacob-bd CLI
+  Token path:  EC2: ~/.notebooklm-mcp-cli/profiles/default
+  Lifespan:    ~10-14 days
+  Refresh:     Mac only: nlm login → refresh-tokens.sh → service restart
+  CONSTRAINT:  Cannot refresh from iPhone — requires Mac + Chrome
+
+CALIPER (static PAT):
+  Mechanism:   GitHub Personal Access Token
+  Token path:  EC2: /home/ubuntu/document-analysis-mcp/.env
+  Format:      GITHUB_TOKEN=ghp_xxxxxxxxxxxxx
+  Scope:       repo (full control private repos)
+  Rate limit:  5,000 requests/hour
+
+CHRONICLER (static PAT):
+  Mechanism:   GitHub Personal Access Token
+  Token path:  EC2: /home/ubuntu/chronicler/.env (or equivalent)
+  Same PAT as Caliper (shared GitHub token)
+
+GOOGLE ACCOUNT:
+  Google Workspace Business Plus (includes NotebookLM Plus tier)
+
+================================================================================
+8. NETWORK & SECURITY
+================================================================================
+
+DNS:
+  Domain:      mcp.justinstillness.com
+  Registrar:   GoDaddy
+  Record:      A → 52.2.11.33
+  Nameservers: GoDaddy default
+
+HTTPS:
+  Certificate: Auto-provisioned by Caddy (Let's Encrypt)
+  Renewal:     Automatic (no manual intervention)
+  Protocol:    TLS 1.2+
+
+RATE LIMITING:
+  Method:      iptables (D-011)
+  Rule:        30 new connections per 60 seconds per source IP on port 443
+  Persistence: /etc/iptables/rules.v4
+
+FIREWALL (EC2 Security Group):
+  Port 80:    HTTP (Caddy redirect)
+  Port 443:   HTTPS (Caddy → routing)
+  Port 22:    REMOVED (D-023) — SSH via Tailscale only
+
+ADDITIONAL SECURITY:
+  Tailscale VPN: Installed on EC2 + local devices (D-023)
+  AWS SSM:       Agent installed and registered (Session 016)
+
+MAC DNS:
+  Configured for Cloudflare (1.1.1.1) and Google (8.8.8.8)
+  NOTE: May revert when connecting to new Wi-Fi networks
+
+================================================================================
+9. AUTO-RECOVERY
+================================================================================
+
+All services configured with:
+  - systemd "enabled" (auto-start on boot)
+  - Restart=always (auto-restart on crash, 10s delay)
+
+ON REBOOT: All services operational within ~30 seconds. No intervention.
+
+DOES NOT AUTO-RECOVER:
+  - Expired Majeston auth tokens (requires Mac refresh)
+  - Revoked GitHub PAT (requires manual .env edit)
+  - EC2 instance stopped/terminated (requires AWS Console)
+  - PEM key loss (Termius has cached copy; worst case: AWS key regen)
+
+================================================================================
+10. NOTEBOOKLM TIER & LIMITS
+================================================================================
+
+Tier: Google Workspace Business Plus → NotebookLM Plus
+
+  Resource                Limit
+  --------                -----
+  Notebooks               500
+  Sources per notebook    300
+  Words per source        500,000
+  Chat queries per day    500
+  Audio Overviews/day     20
+
+GitHub API (Caliper + Chronicler):
+  Authenticated:          5,000 requests/hour
+  Shared across both tools (same PAT)
+
+================================================================================
+11. DIRECTORY MAP (EC2)
+================================================================================
+
+/home/ubuntu/
+  mcp-logger/
+    extract.py                  — v6 production (SeraphRecorder)
+    extract_v5_backup.py        — v5 backup
+    push-to-github.sh           — GitHub sync script
+    daily-rotate.sh             — Cron: extract + push + rotate
+
+  mcp-logs/
+    traffic/                    — Raw socat capture logs
+      YYYY-MM-DD.log
+    raw/                        — Stream 1: JSONL correlation
+      YYYY-MM-DD.jsonl
+    extracted/                  — Stream 2: Text extractions
+      _untagged/                — Tier 3: No signal string
+      _failed/                  — v6: Ghost files for failed extractions
+        clgysing/PE/
+        clgysing/TS/
+        clgysing/TX/
+      clgysing/                 — Tier 1: SERAPH-routed
+        phase2/
+          VX/
+          CE/
+          TS/
+          PE/
+          GL/
+          TM/
+          TX/
+
+  document-analysis-mcp/        — Caliper
+    document-analysis-mcp.py
+    .env                        — GitHub PAT
+
+  chronicler/                   — Chronicler (approximate path)
+    chronicler.py
+    .env                        — GitHub PAT
+
+  .notebooklm-mcp-cli/         — Majeston auth tokens
+    profiles/default/
+
+/etc/caddy/Caddyfile            — Caddy reverse proxy config
+/etc/systemd/system/
+  notebooklm-mcp.service        — Majeston + socat wrapper
+  document-analysis-mcp.service — Caliper
+  caddy.service                 — Caddy
+
+GitHub Repository:
+  github.com/justinstillness/clgysing-extractions (private)
+    _docs/                      — Documentation (CHANGELOG, etc.)
+    _pipeline/                  — Pipeline source code
+      extract.py                — Current production
+      extract_v5.py             — Archive
+      extract_v6.py             — Archive
+      SERAPH-Signal-String-Reference.txt
+    _untagged/                  — Landing zone
+    concept-counter.json        — Sequential ID tracking
+
+================================================================================
+12. MAC-SIDE INFRASTRUCTURE
+================================================================================
+
+SCRIPTS DIRECTORY:
+  /Users/faenor2024/Library/Mobile Documents/com~apple~CloudDocs/
+  AI Files/Cultology/Notebook LM Claude Integration/
+  Notebook LM Claude Integration (Maintenance ORG Folder) /
+  NOTE: Folder name has TRAILING SPACE.
+
+SCRIPTS:
+  health-check.sh     — System diagnostic (HTTP 406 from MCP endpoints is normal)
+  refresh-tokens.sh   — Push Majeston auth tokens from Mac to EC2
+
+LOCAL AUTH TOKENS (Majeston):
+  ~/.notebooklm-mcp-cli/
+
+================================================================================
+13. MOBILE OPERATIONS (iPhone/Termius)
+================================================================================
+
+CAN DO:
+  [✓] SSH to EC2 (Termius via Tailscale)
+  [✓] Check/restart any service
+  [✓] Check memory, disk, logs
+  [✓] Edit .env files (GitHub token)
+  [✓] Deploy code via git pull
+
+CANNOT DO:
+  [✗] Refresh Majeston auth tokens (requires Mac + Chrome)
+  [✗] Run health-check.sh or refresh-tokens.sh (Mac scripts)
+  [✗] Run system updates (guided session recommended)
+
+EMERGENCY COMMANDS:
+  sudo systemctl status notebooklm-mcp --no-pager | head -5
+  sudo systemctl status document-analysis-mcp --no-pager | head -5
+  sudo systemctl status caddy --no-pager | head -5
+  sudo systemctl restart [service-name]
+  free -h
+  df -h /
+  sudo journalctl -u [service-name] -n 20 --no-pager
+
+================================================================================
+14. MAINTENANCE PROCEDURES
+================================================================================
+
+  Task                    Frequency           Method
+  ----                    ---------           ------
+  Majeston token refresh  Every 10-14 days    Mac: nlm login → refresh-tokens.sh
+  Health check            As needed           Mac: health-check.sh
+  System updates          Monthly             Guided Claude session
+  jacob-bd updates        When available      uv tool upgrade notebooklm-mcp-cli
+  GitHub token check      Per token expiry    Regenerate, edit .env, restart
+  Security review         Quarterly           Guided Claude session
+
+================================================================================
+15. FAILURE MODES & RECOVERY
+================================================================================
+
+  Failure                          Recovery
+  -------                          --------
+  Majeston auth expired            Mac: nlm login → refresh-tokens.sh
+  Caliper/Chronicler conn error    SSH: restart service
+  EC2 reboots                      AUTOMATIC (systemd auto-start)
+  Service crash                    AUTOMATIC (systemd restart in 10s)
+  Caddy crash                      AUTOMATIC (systemd restart)
+  EC2 stopped/terminated           AWS Console
+  PEM key lost                     Termius cache; worst case: AWS regen
+  Google changes NLM auth          Depends on jacob-bd maintainer
+  jacob-bd abandoned               Fork and maintain locally
+  Disk full                        journalctl --vacuum-time=7d; apt clean
+  Caddy routing broken             Verify Caddyfile uses handle_path
+  DNS cache stale (Mac)            dscacheutil -flushcache
+
+================================================================================
+16. EXTERNAL DEPENDENCIES
+================================================================================
+
+  Dependency                    Risk        Mitigation
+  ----------                    ----        ----------
+  jacob-bd / notebooklm-mcp    Abandonment Fork and maintain (open source)
+  Google NotebookLM API         Auth change Depends on jacob-bd update
+  GitHub API                    Stable      Standard REST, well-documented
+  FastMCP                       v3.0 break  Pin < 3 if needed
+  Anthropic Custom Connectors   Beta spec   Monitor changelog
+  Let's Encrypt (via Caddy)     Reliable    Auto-managed by Caddy
+  GoDaddy DNS                   Minimal     Simple A record
+
+================================================================================
+17. DECISION HISTORY
+================================================================================
+
+  ID    Session  Decision
+  --    -------  --------
+  D-003 005      Direct uv install (no Docker for Majeston)
+  D-004 005      MCP auto-discovery (no manual tool definitions)
+  D-005 002      Authless MCP via Custom Connector
+  D-006 005      FastMCP Streamable HTTP transport
+  D-007 005      Caddy native install (not Docker)
+  D-008 005      Stop Docker containers immediately
+  D-009 006      Docker fully removed
+  D-010 006      System updates applied
+  D-011 006      Rate limiting via iptables (30/60s)
+  D-012 010      Caliper architecture + naming convention
+  D-013 012      SeraphRecorder pipeline architecture
+  D-014 012      Socat for traffic capture (not Python proxy)
+  D-015 013      JSONL as Stream 1 format
+  D-016 013      Text extraction as Stream 2 format
+  D-017 014      GitHub as extraction delivery target
+  D-019 017      JSONL archival strategy (pending implementation)
+  D-020 017      Chronicler architecture and naming
+  D-023 016      SSH restricted to Tailscale only
+  D-024 019      Socat artifact stripping in extract.py
+  D-025 020      extract.py v6 failure resilience
+  D-026 021      Tool suite named "Havona Anvil Suite"
+
+================================================================================
+18. KNOWN ISSUES & DEFERRED ITEMS
+================================================================================
+
+See CHANGELOG.txt "PENDING / DEFERRED ITEMS" section for full list.
+
+Key items:
+  - GitHub PAT rotation (deferred since S011)
+  - push-to-github.sh JSONL archival (D-019, not implemented)
+  - health-check.sh needs Caliper + Chronicler checks
+  - Chronicler tools may not appear in Claude UI (call directly)
+  - FastMCP 3.0 forthcoming — may require code changes
+  - concept-counter.json holds test data (needs reset before production)
+
+================================================================================
+END OF ARCHITECTURE REFERENCE
+================================================================================
+
+Document History:
+--------------------------------------------------------------------------------
+Version  Date        Session  Description
+-------  ----------  -------  -------------------------------------------------
+v1.0     2026-02-03  003      Initial deployment plan (Docker, t3.medium)
+v2.0     2026-02-03  004      Revised plan (direct install, authless, t3.micro)
+v3.0     2026-02-03  007      As-built reference. Majeston only.
+v3.1     2026-02-05  011      Added Caliper. Updated routing, tools, baselines.
+v4.0     2026-02-09  021      Restructured as Havona Anvil Suite Architecture
+                              Reference. Added SeraphRecorder, Chronicler.
+                              Moved component detail to per-tool references.
+                              Added CHANGELOG companion document. Renamed
+                              from "MCP Workshop Suite" to "HA Suite" (D-026).
+================================================================================

@@ -1,0 +1,381 @@
+================================================================================
+MAJESTON — TOOL REFERENCE
+================================================================================
+Suite:          Havona Anvil Suite (HA Suite)
+Component:      Majeston (NotebookLM MCP)
+Version:        v1.0
+File Class:     REF
+Created:        2026-02-09
+Session:        021
+
+PURPOSE:
+Per-tool reference for Majeston, the NotebookLM MCP tool. Majeston provides
+Claude with direct access to 87+ research notebooks containing approximately
+6,000 pages of source materials across cult research, theology, philosophy,
+psychology, economics, and intelligence studies.
+
+For system-level context, see: v4.0_SPEC_HA-Suite-Architecture-Reference.txt
+For recent changes, see: CHANGELOG.txt
+For notebook inventory, see: v1.0_REF_NotebookLM-Notebook-Directory.txt
+
+================================================================================
+1. OVERVIEW
+================================================================================
+
+Majeston is the foundational tool of the HA Suite — the entire infrastructure
+was built to support it. It bridges Claude and Google's NotebookLM service,
+enabling research queries against uploaded source documents without loading
+them into Claude's context window.
+
+Named after the Urantia Book "Majeston" — the chief of reflective intelligence
+on Paradise, coordinating information across the grand universe.
+
+PACKAGE: jacob-bd/notebooklm-mcp-cli (v0.2.15)
+TOOLS: 29 (across notebook, source, query, studio, research, and sharing)
+AUTH: Google cookie-based (browser OAuth, refreshed every 10-14 days)
+
+================================================================================
+2. TOOL INVENTORY
+================================================================================
+
+Majeston exposes 29 tools organized into functional groups. The most
+frequently used tools for LibForge/CLGYSING work are marked with ★.
+
+NOTEBOOK MANAGEMENT:
+  notebook_create        Create a new notebook
+  notebook_delete        Delete notebook (requires confirm=True)
+  notebook_get           Get notebook details with sources
+  notebook_list          List all notebooks
+  notebook_rename        Rename a notebook
+  notebook_describe      AI-generated summary with suggested topics
+
+★ QUERYING:
+  notebook_query         Ask AI about existing sources in a notebook
+                         Primary tool for research extraction workflows
+                         Supports conversation threading (conversation_id)
+
+SOURCE MANAGEMENT:
+  source_add             Add source (url, text, drive, file)
+  source_delete          Delete source (requires confirm=True)
+  source_describe        AI-generated source summary with keywords
+  source_get_content     Raw text content of a source (no AI processing)
+  source_list_drive      List sources with Drive freshness status
+  source_sync_drive      Sync Drive sources with latest content
+
+STUDIO (ARTIFACT GENERATION):
+  studio_create          Create artifacts (audio, video, report, quiz, etc.)
+  studio_status          Check generation status and get URLs/rename
+  studio_delete          Delete studio artifact
+
+RESEARCH:
+  research_start         Deep/fast research (web or Drive search)
+  research_status        Poll research progress
+  research_import        Import discovered sources into notebook
+
+SHARING:
+  notebook_share_invite  Invite collaborator by email
+  notebook_share_public  Enable/disable public link
+  notebook_share_status  Get sharing settings and collaborators
+
+CONFIGURATION:
+  chat_configure         Set notebook chat goal, custom prompt, response length
+
+DOWNLOAD:
+  download_artifact      Download any artifact (audio, video, report, etc.)
+
+EXPORT:
+  export_artifact        Export to Google Docs or Sheets
+
+AUTHENTICATION:
+  save_auth_tokens       Save cookies (fallback method)
+  refresh_auth           Reload auth tokens from disk
+
+SYSTEM:
+  server_info            Version and update check
+
+================================================================================
+3. KEY TOOL DETAILS
+================================================================================
+
+3.1 NOTEBOOK_QUERY (Primary Research Tool)
+------------------------------------------
+
+The workhorse tool for all extraction work. Sends a natural language query
+to NotebookLM's AI against the sources loaded in a specific notebook.
+
+Parameters:
+  notebook_id      (str, required)    Notebook UUID
+  query            (str, required)    Question to ask
+  source_ids       (list, optional)   Specific sources to query (default: all)
+  conversation_id  (str, optional)    For follow-up questions (threading)
+  timeout          (float, optional)  Request timeout (default: 120s)
+
+Returns:
+  answer           AI-generated response grounded in notebook sources
+  conversation_id  For threading follow-up queries
+  sources_used     Which sources contributed to the answer
+
+SERAPH INTEGRATION:
+  Embed [SERAPH: ...] tag at the start of the query text for automatic
+  extraction routing via SeraphRecorder pipeline.
+
+RATE LIMITS:
+  500 queries per day (NotebookLM Plus tier)
+  Rapid-fire queries may trigger empty responses (rate limiting)
+  Recommended: 30-60 second spacing for batch operations
+
+CHAT_CONFIGURE INTERACTION:
+  notebook_query behavior is affected by chat_configure settings.
+  Custom prompts and response_length settings persist per notebook
+  until changed. Always verify/set configuration before batch extraction.
+
+
+3.2 CHAT_CONFIGURE
+------------------
+
+Sets the AI behavior for a notebook's chat responses.
+
+Parameters:
+  notebook_id      (str, required)
+  goal             (str) — "default", "learning_guide", or "custom"
+  custom_prompt    (str) — Required when goal="custom" (max 10,000 chars)
+  response_length  (str) — "default", "longer", or "shorter"
+
+IMPORTANT: Configuration persists on the notebook until explicitly changed.
+When running batch extractions, set configuration at the start and verify
+it hasn't drifted between sessions.
+
+
+3.3 SOURCE_ADD
+--------------
+
+Adds sources to a notebook. Multiple source types supported.
+
+Parameters:
+  notebook_id   (str, required)
+  source_type   (str) — "url", "text", "drive", "file"
+  url           (str) — For source_type=url
+  text          (str) — For source_type=text
+  title         (str) — Display title (for text sources)
+  file_path     (str) — For source_type=file (EC2 filesystem path)
+  document_id   (str) — For source_type=drive
+  wait          (bool) — Wait for processing to complete
+  wait_timeout  (float) — Max wait seconds (default 120)
+
+FILESYSTEM LIMITATION:
+  source_add with source_type="file" operates on the EC2 filesystem,
+  NOT the user's local machine. Cannot directly upload from Mac/iPhone.
+
+WORKAROUNDS FOR FILE UPLOAD:
+  - Use source_type="url" for web-accessible content
+  - Use source_type="text" for pasted content
+  - Use source_type="drive" for Google Drive documents
+  - Upload files to Google Drive first, then use drive source type
+
+================================================================================
+4. INSTALLATION & BINARY PATHS
+================================================================================
+
+INSTALL COMMAND:
+  uv tool install notebooklm-mcp-cli
+
+UPDATE COMMAND:
+  uv tool install --force notebooklm-mcp-cli
+
+BINARY PATHS:
+  Actual:   /home/ubuntu/.local/share/uv/tools/notebooklm-mcp-cli/bin/notebooklm-mcp
+  Symlink:  /home/ubuntu/.local/bin/notebooklm-mcp
+
+DIRECT LAUNCH (without wrapper):
+  /home/ubuntu/.local/bin/notebooklm-mcp --transport http --port 8000
+
+WRAPPED LAUNCH (production — via mcp-wrapper.py):
+  /usr/bin/python3 /home/ubuntu/mcp-logger/mcp-wrapper.py
+  (Launches Majeston on port 8100 behind socat on port 8000)
+
+================================================================================
+5. AUTHENTICATION
+================================================================================
+
+METHOD: Browser cookie-based (Google OAuth)
+
+TOKEN LOCATION:
+  Mac:  ~/.notebooklm-mcp-cli/profiles/default/
+  EC2:  /home/ubuntu/.notebooklm-mcp-cli/profiles/default/
+
+TOKEN LIFESPAN: ~10-14 days
+
+REFRESH PROCESS (requires Mac + Chrome):
+  1. On Mac terminal: nlm login
+     → Opens Chrome for Google OAuth
+     → Tokens saved locally to ~/.notebooklm-mcp-cli/
+  2. Run: ./refresh-tokens.sh
+     → SCPs tokens to EC2: ~/.notebooklm-mcp-cli/profiles/default/
+     → Restarts notebooklm-mcp service
+  3. Verify: Send a test query via Claude
+
+CANNOT REFRESH FROM:
+  - iPhone (no Chrome OAuth capability)
+  - EC2 directly (headless, no browser)
+  - Any device other than Mac with Chrome
+
+REFRESH SCRIPT LOCATION:
+  /Users/faenor2024/Library/Mobile Documents/com~apple~CloudDocs/
+  AI Files/Cultology/Notebook LM Claude Integration/
+  Notebook LM Claude Integration (Maintenance ORG Folder) /
+  refresh-tokens.sh
+  NOTE: Folder name has TRAILING SPACE.
+
+SYMPTOMS OF EXPIRED AUTH:
+  - Queries return authentication errors
+  - notebook_list returns empty or errors
+  - Claude reports tool connection failure
+
+================================================================================
+6. DEPLOYMENT
+================================================================================
+
+PORT: 8100 (internal, behind socat wrapper on 8000)
+CADDY ROUTE: /* (default route) → localhost:8000 (socat) → 8100 (Majeston)
+CONNECTOR URL: https://mcp.justinstillness.com/mcp
+CONNECTOR NAME: "Majeston" in Claude Custom Connectors
+
+SYSTEMD SERVICE:
+  Name: notebooklm-mcp
+  File: /etc/systemd/system/notebooklm-mcp.service
+
+  [Unit]
+  Description=NotebookLM MCP Server (jacob-bd) with Traffic Logger
+  After=network.target
+
+  [Service]
+  Type=simple
+  User=ubuntu
+  Environment=HOME=/home/ubuntu
+  ExecStart=/usr/bin/python3 /home/ubuntu/mcp-logger/mcp-wrapper.py
+  Restart=always
+  RestartSec=10
+  StandardOutput=journal
+  StandardError=journal
+  MemoryMax=512M
+  CPUQuota=80%
+
+  [Install]
+  WantedBy=multi-user.target
+
+NOTE: ExecStart points to mcp-wrapper.py (SeraphRecorder pipeline wrapper),
+not directly to the Majeston binary. The original direct command is
+commented out in the service file for rollback.
+
+================================================================================
+7. COMMON OPERATIONS
+================================================================================
+
+CHECK SERVICE STATUS:
+  sudo systemctl status notebooklm-mcp --no-pager
+
+RESTART SERVICE:
+  sudo systemctl restart notebooklm-mcp
+
+VIEW LOGS:
+  sudo journalctl -u notebooklm-mcp -n 20 --no-pager
+
+CHECK CURRENT PACKAGE VERSION:
+  /home/ubuntu/.local/bin/notebooklm-mcp --version
+  OR: uv tool list | grep notebooklm
+
+UPDATE PACKAGE:
+  uv tool install --force notebooklm-mcp-cli
+  sudo systemctl restart notebooklm-mcp
+
+ROLLBACK TO DIRECT MODE (disable SeraphRecorder):
+  1. sudo nano /etc/systemd/system/notebooklm-mcp.service
+  2. Comment out wrapper ExecStart
+  3. Uncomment: ExecStart=/home/ubuntu/.local/bin/notebooklm-mcp --transport http --port 8000
+  4. sudo systemctl daemon-reload && sudo systemctl restart notebooklm-mcp
+
+================================================================================
+8. NOTEBOOKLM TIER & LIMITS
+================================================================================
+
+Account: Google Workspace Business Plus → NotebookLM Plus
+
+  Resource                Limit
+  --------                -----
+  Notebooks               500
+  Sources per notebook    300
+  Words per source        500,000
+  Chat queries per day    500
+  Audio Overviews/day     20
+
+Current usage: 87 notebooks (of 500 max)
+
+================================================================================
+9. KNOWN ISSUES & QUIRKS
+================================================================================
+
+FILESYSTEM LIMITATION:
+  source_add (file) and download_artifact operate on EC2 filesystem.
+  Cannot upload from Mac or download to Mac directly.
+  Workaround: Use Drive bridge, URL sources, or text paste.
+
+TOOL DISCOVERY BUG:
+  Claude UI may not display all 29 tools in auto-discovery list.
+  Tools work when called by exact name regardless.
+
+RATE LIMITING:
+  Rapid-fire notebook_query calls trigger empty responses from NotebookLM.
+  Space queries 30-60 seconds apart for reliable batch operations.
+  Empty responses manifest as: {"prompts": []} (15-char envelope).
+
+CHAT_CONFIGURE PERSISTENCE:
+  Custom configuration sticks to the notebook until explicitly changed.
+  Always verify configuration state at the start of extraction sessions.
+
+NLM CLI CHAT BUG (v0.2.14):
+  nlm chat start was broken due to TypeError.
+  Fixed in v0.2.15 (current version).
+
+FASTMCP COMPATIBILITY:
+  Current: FastMCP v2.14.5. The description= constructor parameter
+  must be omitted. FastMCP 3.0 may require further changes.
+
+CONTENT FILTERING:
+  NotebookLM may censor or filter graphic content from certain sources
+  during AI-generated outputs (observed with ritual abuse research material).
+  Raw source content via source_get_content is unfiltered.
+
+================================================================================
+10. BUILD HISTORY
+================================================================================
+
+Session 001-002 (2026-02-02): Initial concept
+  - First NotebookLM access via roomi-fields Docker container
+  - Custom Python bridge for MCP-to-REST translation
+  - Proved concept but incompatible with Claude Custom Connectors
+
+Session 005 (2026-02-03): Production deployment
+  - Migrated to jacob-bd/notebooklm-mcp-cli (D-003)
+  - Native uv install, systemd service
+  - Port 8000, auto-start, auto-restart
+  - Caddy HTTPS routing with auto-TLS
+
+Session 006 (2026-02-03): Hardening
+  - Mac maintenance scripts (refresh-tokens.sh, health-check.sh)
+  - Docker fully removed
+
+Session 009 (2026-02-05): Update
+  - Updated to v0.2.15
+  - Google Drive validated as bidirectional file bridge
+
+Session 013 (2026-02-06): Pipeline integration
+  - Majeston moved from port 8000 to port 8100
+  - socat wrapper installed on port 8000 (SeraphRecorder)
+  - Transparent to external connections
+
+No changes to Majeston itself since Session 013 — stable component.
+All subsequent changes have been to the SeraphRecorder wrapper layer.
+
+================================================================================
+END OF MAJESTON TOOL REFERENCE
+================================================================================

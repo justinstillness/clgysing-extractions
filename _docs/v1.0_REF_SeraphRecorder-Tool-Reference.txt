@@ -1,0 +1,659 @@
+================================================================================
+SERAPHRECORDER — TOOL REFERENCE
+================================================================================
+Suite:          Havona Anvil Suite (HA Suite)
+Component:      SeraphRecorder (Traffic Capture Pipeline)
+Version:        v1.0 (documents extract.py v6)
+File Class:     REF
+Created:        2026-02-09
+Session:        021
+
+PURPOSE:
+Comprehensive reference for the SeraphRecorder pipeline. Covers all
+subcomponents: socat wrapper, extract.py, push-to-github.sh, and
+daily-rotate.sh. Use this document for troubleshooting, modification,
+or onboarding a new Claude session to pipeline work.
+
+For system-level context, see: v4.0_SPEC_HA-Suite-Architecture-Reference.txt
+For recent changes, see: CHANGELOG.txt
+
+================================================================================
+TABLE OF CONTENTS
+================================================================================
+
+1.  OVERVIEW & PURPOSE
+2.  ARCHITECTURE
+3.  SUBCOMPONENTS
+4.  DATA STREAMS
+5.  SERAPH SIGNAL STRINGS
+6.  3-TIER ROUTING
+7.  FAILURE RESILIENCE (v6)
+8.  EXTRACTION FILE FORMAT
+9.  AUTOMATION (CRON)
+10. FILE LOCATIONS
+11. SYSTEMD SERVICE
+12. COMMON OPERATIONS
+13. TROUBLESHOOTING
+14. MAINTENANCE
+15. VERSION HISTORY
+
+================================================================================
+1. OVERVIEW & PURPOSE
+================================================================================
+
+SeraphRecorder is the traffic capture and extraction pipeline for the
+Havona Anvil Suite. It solves the "double-wire cost" problem: without it,
+Claude would need to repeat NotebookLM's answers into notes (consuming
+tokens). Instead, SeraphRecorder captures traffic server-side, extracts
+useful content, and delivers it to GitHub automatically.
+
+Named after the Urantia Book "Recorders" — seraphic beings responsible
+for maintaining records of local systems.
+
+WHAT IT DOES:
+  1. Transparently captures all Majeston (NotebookLM) traffic
+  2. Parses and correlates request/response pairs
+  3. Extracts notebook_query results into clean text files
+  4. Routes extractions based on SERAPH signal string metadata
+  5. Creates ghost files for failed extractions (never silently drops data)
+  6. Pushes extractions to GitHub repository
+  7. Automates daily extraction and log rotation
+
+SUBCOMPONENTS:
+  socat wrapper       — Traffic capture (transparent proxy)
+  mcp-wrapper.py      — Process manager (launches socat + Majeston)
+  extract.py v6       — Parser, correlator, extractor, router
+  push-to-github.sh   — Syncs extractions to GitHub repo
+  daily-rotate.sh     — Cron-driven: extract + push + log rotation
+
+================================================================================
+2. ARCHITECTURE
+================================================================================
+
+REQUEST FLOW:
+
+  Claude (via Caddy port 443)
+    |
+    v
+  socat (port 8000, transparent proxy)
+    |
+    |--→ captures traffic to /mcp-logs/traffic/YYYY-MM-DD.log
+    |
+    v
+  Majeston (port 8100, actual NotebookLM MCP)
+    |
+    v
+  Response returns through socat → Caddy → Claude
+
+EXTRACTION FLOW:
+
+  /mcp-logs/traffic/YYYY-MM-DD.log (raw socat capture)
+    |
+    v
+  extract.py v6 parses
+    |
+    |--→ Stream 1: /mcp-logs/raw/YYYY-MM-DD.jsonl (JSONL archive)
+    |
+    |--→ Stream 2: /mcp-logs/extracted/{routing}/ (text files)
+    |      |
+    |      |--→ Tier 1: {project}/phase2/{pass}/ (tagged + known)
+    |      |--→ Tier 2: _review/ (tagged + unknown pass)
+    |      |--→ Tier 3: _untagged/ (no signal string)
+    |      |--→ _failed/ (ghost files for failed extractions)
+    |
+    v
+  push-to-github.sh → clgysing-extractions repo
+
+DAILY AUTOMATION:
+
+  midnight UTC → daily-rotate.sh
+    1. Runs extract.py on current day's log
+    2. Runs push-to-github.sh
+    3. Restarts notebooklm-mcp service (forces new log file)
+
+================================================================================
+3. SUBCOMPONENTS
+================================================================================
+
+3.1 SOCAT WRAPPER
+-----------------
+
+socat is a command-line utility that establishes bidirectional byte streams.
+It replaces earlier Python proxy attempts that failed to handle MCP's
+concurrent connections and SSE streams.
+
+Command (executed by mcp-wrapper.py):
+  socat -v TCP-LISTEN:8000,fork,reuseaddr TCP:127.0.0.1:8100
+
+Flags:
+  -v           Verbose: prints transferred data to stderr
+               Uses > for client→server, < for server→client
+  TCP-LISTEN   Listens on port 8000 (where Caddy forwards traffic)
+  fork         Handles multiple concurrent connections
+  reuseaddr    Allows immediate restart without socket timeout
+  TCP:...8100  Forwards to Majeston on internal port 8100
+
+Traffic is written to stderr, which mcp-wrapper.py redirects to the
+daily log file.
+
+
+3.2 MCP-WRAPPER.PY
+------------------
+
+Process manager that orchestrates socat and Majeston.
+
+Location: /home/ubuntu/mcp-logger/mcp-wrapper.py
+
+Behavior:
+  1. Launches Majeston on port 8100 (internal)
+  2. Launches socat on port 8000 (captures to daily log)
+  3. Redirects socat stderr to /mcp-logs/traffic/YYYY-MM-DD.log
+  4. Handles SIGTERM/SIGINT: terminates both subprocesses
+
+The systemd service (notebooklm-mcp) points to this wrapper, not
+directly to the Majeston binary.
+
+
+3.3 EXTRACT.PY (v6 — CURRENT PRODUCTION)
+-----------------------------------------
+
+The core parser and extraction engine. Reads raw socat traffic logs,
+correlates request/response pairs, and produces two output streams.
+
+Location: /home/ubuntu/mcp-logger/extract.py
+Backup:   /home/ubuntu/mcp-logger/extract_v5_backup.py
+GitHub:   _pipeline/extract_v6.py (archive), _pipeline/extract.py (production)
+
+Key capabilities:
+  - JSON-RPC tool call extraction from raw traffic
+  - Request/response correlation by message ID
+  - SERAPH signal string parsing (v5+)
+  - 3-tier file routing (v5+)
+  - Socat artifact stripping — D-024 (v5+)
+  - Failure resilience with ghost files (v6)
+  - Failure taxonomy classification (v6)
+  - Multi-block response assembly
+  - Extraction summary with success/failure breakdown (v6)
+
+Usage:
+  python3 extract.py                  # Process today's log
+  python3 extract.py --all            # Reprocess all logs
+  python3 extract.py --date 2026-02-09  # Process specific date
+
+Output:
+  Stream 1: /mcp-logs/raw/YYYY-MM-DD.jsonl
+  Stream 2: /mcp-logs/extracted/{routing path}/
+
+
+3.4 PUSH-TO-GITHUB.SH
+-----------------------
+
+Syncs extracted files to the private GitHub repository.
+
+Location: /home/ubuntu/mcp-logger/push-to-github.sh
+
+Behavior:
+  1. Checks local repo exists
+  2. rsync copies extracted files to local repo folder
+  3. git pull --rebase (prevents merge conflicts with Chronicler)
+  4. git commit + push to origin main
+
+Auth: Dedicated GitHub PAT (configured in git credential store)
+
+NOTE: Currently only pushes text extractions (Stream 2).
+PENDING: D-019 — add JSONL archival to /raw/YYYY-MM/ on GitHub.
+
+
+3.5 DAILY-ROTATE.SH
+--------------------
+
+Cron-driven automation script for daily pipeline execution.
+
+Location: /home/ubuntu/mcp-logger/daily-rotate.sh
+
+Sequence:
+  1. python3 extract.py (process current log)
+  2. bash push-to-github.sh (sync to GitHub)
+  3. sudo systemctl restart notebooklm-mcp (force new log file)
+
+The restart in step 3 is critical: socat holds the log file handle open,
+so the filename (based on start date) never updates. Restarting the
+service kills socat and starts a new instance, which creates a new log
+file with the current date.
+
+Cron schedule:
+  0 0 * * * /home/ubuntu/mcp-logger/daily-rotate.sh >> /home/ubuntu/mcp-logs/rotate.log 2>&1
+
+Log output: /home/ubuntu/mcp-logs/rotate.log
+
+================================================================================
+4. DATA STREAMS
+================================================================================
+
+STREAM 1 — JSONL ARCHIVE
+  Location:  /mcp-logs/raw/YYYY-MM-DD.jsonl
+  Format:    One JSON object per line
+  Contains:  Every tool call and response, fully correlated
+  Purpose:   Complete archival record; can re-extract from this
+  GitHub:    NOT YET PUSHED (D-019 pending)
+
+STREAM 2 — TEXT EXTRACTIONS
+  Location:  /mcp-logs/extracted/{routing path}/
+  Format:    Plain text with metadata header
+  Contains:  notebook_query results only (filtered from all tool calls)
+  Purpose:   Human-readable extractions for research use
+  GitHub:    Pushed via push-to-github.sh
+
+GHOST FILES (v6)
+  Location:  /mcp-logs/extracted/_failed/{project}/{pass}/
+  Format:    Plain text with failure metadata
+  Contains:  Query text, failure classification, raw response preview
+  Purpose:   Audit trail for failed extractions; never silently drop data
+
+================================================================================
+5. SERAPH SIGNAL STRINGS
+================================================================================
+
+FORMAT:
+  [SERAPH: PROJECT=value, SP=value, PASS=XX, NUM=value, THEME=value, SESSION=value]
+
+Placed at the BEGINNING of the notebook_query text. extract.py strips
+the tag from the clean query display in extraction files.
+
+REQUIRED FIELDS:
+  PROJECT   Project identifier (lowercase) — e.g., clgysing
+  PASS      Pass type code (2-letter uppercase) — e.g., VX, TX, PE
+  NUM       Sequence number (zero-padded) — e.g., 01, 05
+
+OPTIONAL FIELDS:
+  SP        Source Package number — e.g., 03
+  THEME     Thematic focus — e.g., identity-mechanics
+  SESSION   Session number — e.g., 021
+  CONFIG    Chat configuration state — default if omitted
+  THREAD    Conversation threading — new or continue
+  NOTES     Freeform notes
+
+PASS TYPE CODEBOOK:
+
+  Extraction passes:
+    TM  Theme Mapping           TX  Thematic Extraction
+    VX  Vocabulary Extraction   TS  Thesis String Extraction
+    EV  Evaluation Pass         GD  Gap Detection
+    GX  Gap Extraction          CL  Classification
+    TL  Thesis-Lens Extraction
+
+  Administrative passes:
+    PE  Pre-Extraction Evaluation   QC  Query Context
+    NB  Notebook Administration     GL  Glossary Generation
+    CR  Cross-Reference Mapping
+
+  Legacy (backward compatible):
+    CE  Concept Extraction (deprecated → use TX)
+    FP  Full Pass (legacy)
+
+EXAMPLES:
+
+  Basic:
+    [SERAPH: PROJECT=clgysing, PASS=TX, NUM=01]
+    Extract all concepts related to identity formation...
+
+  Full:
+    [SERAPH: PROJECT=clgysing, SP=03, PASS=VX, NUM=05, THEME=four-intimacies, SESSION=021]
+    Identify specialized vocabulary related to the Four Intimacies...
+
+For complete signal string reference, see:
+  _pipeline/SERAPH-Signal-String-Reference.txt
+
+================================================================================
+6. 3-TIER ROUTING
+================================================================================
+
+TIER 1 — TAGGED + KNOWN PASS
+  Condition:  SERAPH tag present AND PASS code in codebook
+  Route:      extracted/{PROJECT}/phase2/{PASS}/
+  Filename:   {DATE}_{TIME}_{PROJECT}_SP{SP}_{PASS}-{NUM}_notebook-query.txt
+  Example:    clgysing/phase2/VX/2026-02-09_053056_clgysing_SP03_VX-01_notebook-query.txt
+
+TIER 2 — TAGGED + UNKNOWN PASS
+  Condition:  SERAPH tag present BUT PASS code NOT in codebook
+  Route:      extracted/_review/
+  Filename:   Same pattern as Tier 1
+  Purpose:    Holds new/unregistered pass types for manual review
+
+TIER 3 — UNTAGGED
+  Condition:  No SERAPH tag detected
+  Route:      extracted/_untagged/
+  Filename:   {DATE}_{TIME}_notebook-query.txt
+  Purpose:    Catches all untagged queries (ad-hoc, testing)
+
+FAILED (v6)
+  Condition:  Query present but response empty or unparseable
+  Route:      extracted/_failed/{PROJECT}/{PASS}/ (if tagged)
+              extracted/_failed/_untagged/ (if untagged)
+  Filename:   Same pattern + _FAILED suffix
+  Purpose:    Ghost files for audit trail
+
+================================================================================
+7. FAILURE RESILIENCE (v6)
+================================================================================
+
+Added in extract.py v6 (Session 020, D-025).
+
+PHILOSOPHY: Never silently drop data. Every query that enters the pipeline
+produces either a successful extraction or a ghost file documenting the
+failure.
+
+FAILURE TAXONOMY:
+
+  NO_RESPONSE       NotebookLM returned empty response ({"prompts": []})
+                    Most common failure. Usually caused by rate limiting
+                    when queries are sent in rapid succession.
+
+  EMPTY_ANSWER      Response parsed but answer field is empty string
+
+  PARTIAL           Response present but incomplete or truncated
+
+  PARSE_ERROR       Response could not be parsed (malformed JSON, etc.)
+
+  CORRELATION_FAILED  Request found but no matching response in traffic log
+
+GHOST FILE CONTENTS:
+  - Failure classification (which taxonomy category)
+  - Full query text preserved (including SERAPH tag if present)
+  - Raw response preview (first 500 chars of response body)
+  - Timestamp, notebook ID, and other available metadata
+
+GHOST FILE ROUTING:
+  Ghost files follow the same routing logic as successful extractions
+  but land in the _failed/ directory tree:
+    _failed/clgysing/PE/   (tagged PE query that failed)
+    _failed/clgysing/TS/   (tagged TS query that failed)
+    _failed/_untagged/     (untagged query that failed)
+
+GHOST FILE NAMING:
+  Same as successful extraction filename + _FAILED suffix before extension
+  Example: 2026-02-09_053056_clgysing_SP03_TX-01_notebook-query_FAILED.txt
+
+EXTRACTION SUMMARY (v6):
+  After processing, extract.py prints a summary to console:
+    Extraction complete: 17 successful, 7 failed [7 NO_RESPONSE]
+  This gives immediate visibility into pipeline health.
+
+ROOT CAUSE — NOTEBOOKLM RATE LIMITING:
+  When queries are sent in rapid succession (batch testing), NotebookLM
+  may return empty responses: {"prompts": []} (15-char envelope).
+  Some queries wait 25+ minutes before returning empty.
+  Mitigation: Space queries when batch testing.
+
+================================================================================
+8. EXTRACTION FILE FORMAT
+================================================================================
+
+SUCCESSFUL EXTRACTION HEADER:
+
+  ================================================================================
+  EXTRACTION: {filename without .txt}
+  ================================================================================
+  Source Package:  SP{nn} or N/A
+  Pass Type:       {CODE} ({Full Name})
+  Pass Number:     {nn}
+  Theme/Focus:     {theme} or N/A
+  Project:         {project}
+  Session:         {session} or N/A
+  Routing:         Tier {N} ({description})
+  Query:           {clean query text, SERAPH tag stripped}
+  Timestamp:       {ISO 8601}
+  Notebook ID:     {UUID}
+  Source IDs:      {list or "all"}
+  Conversation ID: {UUID or N/A}
+  Chat Configure:  {config state}
+  Thread:          {thread or N/A}
+  Notes:           {notes or N/A}
+  Response Chars:  {count}
+  Duration:        {ms}ms
+  ================================================================================
+
+  {extracted answer content — socat artifacts stripped}
+
+GHOST FILE HEADER (v6):
+
+  ================================================================================
+  FAILED EXTRACTION: {filename without .txt}
+  ================================================================================
+  Failure Type:    {taxonomy classification}
+  Query:           {full query text including SERAPH tag}
+  Timestamp:       {ISO 8601}
+  Notebook ID:     {UUID}
+  Raw Response:    {first 500 chars of response body}
+  ================================================================================
+
+================================================================================
+9. AUTOMATION (CRON)
+================================================================================
+
+Cron entry (ubuntu user crontab):
+  0 0 * * * /home/ubuntu/mcp-logger/daily-rotate.sh >> /home/ubuntu/mcp-logs/rotate.log 2>&1
+
+Schedule: Every day at midnight UTC
+
+Sequence:
+  1. extract.py processes current day's traffic log
+  2. push-to-github.sh syncs to repository
+  3. systemctl restart forces new log file creation
+
+Log: /home/ubuntu/mcp-logs/rotate.log
+
+ON-DEMAND EXTRACTION:
+  Chronicler has a flush_pipeline tool that triggers extraction + push
+  without requiring SSH. Call directly from Claude.
+
+MANUAL EXTRACTION:
+  SSH to EC2:
+    cd /home/ubuntu/mcp-logger
+    python3 extract.py           # today's log
+    python3 extract.py --all     # all logs
+    bash push-to-github.sh       # push to repo
+
+================================================================================
+10. FILE LOCATIONS
+================================================================================
+
+EC2 SCRIPTS:
+  /home/ubuntu/mcp-logger/
+    mcp-wrapper.py              — Process manager (socat + Majeston)
+    extract.py                  — v6 production parser
+    extract_v5_backup.py        — v5 backup
+    push-to-github.sh           — GitHub sync
+    daily-rotate.sh             — Cron automation
+
+EC2 DATA:
+  /home/ubuntu/mcp-logs/
+    traffic/                    — Raw socat capture
+      YYYY-MM-DD.log
+    raw/                        — Stream 1: JSONL correlation
+      YYYY-MM-DD.jsonl
+    extracted/                  — Stream 2: Text extractions
+      _untagged/                — Tier 3
+      _review/                  — Tier 2
+      _failed/                  — Ghost files (v6)
+        clgysing/{PASS}/
+        _untagged/
+      clgysing/                 — Tier 1
+        phase2/
+          VX/ CE/ TS/ PE/ GL/ TM/ TX/
+    rotate.log                  — Cron output log
+
+GITHUB REPOSITORY (clgysing-extractions):
+  _pipeline/
+    extract.py                  — Current production source
+    extract_v5.py               — v5 archive
+    extract_v6.py               — v6 archive
+    SERAPH-Signal-String-Reference.txt
+  _docs/
+    CHANGELOG.txt
+    v4.0_SPEC_HA-Suite-Architecture-Reference.txt
+  _untagged/                    — Landing zone for pushed extractions
+
+================================================================================
+11. SYSTEMD SERVICE
+================================================================================
+
+Service: notebooklm-mcp
+File:    /etc/systemd/system/notebooklm-mcp.service
+
+Configuration:
+  [Unit]
+  Description=NotebookLM MCP Server (jacob-bd) with Traffic Logger
+  After=network.target
+
+  [Service]
+  Type=simple
+  User=ubuntu
+  Environment=HOME=/home/ubuntu
+  ExecStart=/usr/bin/python3 /home/ubuntu/mcp-logger/mcp-wrapper.py
+  Restart=always
+  RestartSec=10
+  StandardOutput=journal
+  StandardError=journal
+  MemoryMax=512M
+  CPUQuota=80%
+
+  [Install]
+  WantedBy=multi-user.target
+
+NOTE: The original ExecStart (direct Majeston binary) is commented out
+in the service file for rollback if needed.
+
+ROLLBACK TO DIRECT MAJESTON (disable pipeline):
+  1. Edit service file
+  2. Comment out wrapper ExecStart
+  3. Uncomment original: ExecStart=/home/ubuntu/.local/bin/notebooklm-mcp --transport http --port 8000
+  4. sudo systemctl daemon-reload && sudo systemctl restart notebooklm-mcp
+
+================================================================================
+12. COMMON OPERATIONS
+================================================================================
+
+CHECK PIPELINE STATUS:
+  sudo systemctl status notebooklm-mcp --no-pager
+  ls -la /home/ubuntu/mcp-logs/traffic/    # Today's log exists?
+  ls -la /home/ubuntu/mcp-logs/extracted/  # Extractions present?
+
+RUN EXTRACTION MANUALLY:
+  cd /home/ubuntu/mcp-logger
+  python3 extract.py                       # Today only
+  python3 extract.py --all                 # All dates
+
+PUSH TO GITHUB MANUALLY:
+  cd /home/ubuntu/mcp-logger
+  bash push-to-github.sh
+
+REPROCESS SPECIFIC DATE:
+  python3 extract.py --date 2026-02-09
+
+CHECK FOR FAILED EXTRACTIONS:
+  ls -la /home/ubuntu/mcp-logs/extracted/_failed/
+  find /home/ubuntu/mcp-logs/extracted/_failed/ -name "*_FAILED*"
+
+VIEW EXTRACTION SUMMARY (from last run):
+  # Run extract.py and observe console output:
+  # "Extraction complete: N successful, M failed [details]"
+
+VERIFY SOCAT IS CAPTURING:
+  # Send a test query via Claude, then check:
+  tail -50 /home/ubuntu/mcp-logs/traffic/$(date +%Y-%m-%d).log
+
+CHECK CRON IS RUNNING:
+  crontab -l
+  cat /home/ubuntu/mcp-logs/rotate.log | tail -20
+
+================================================================================
+13. TROUBLESHOOTING
+================================================================================
+
+PROBLEM: No traffic log for today
+  CAUSE:   socat not running or service not started
+  CHECK:   sudo systemctl status notebooklm-mcp
+  FIX:     sudo systemctl restart notebooklm-mcp
+
+PROBLEM: Extractions missing after manual extract.py run
+  CAUSE 1: Empty NotebookLM responses (rate limiting)
+  CHECK:   Look for ghost files in _failed/
+  CAUSE 2: No notebook_query calls in traffic (only other tool types)
+  CHECK:   grep "notebook_query" /mcp-logs/raw/YYYY-MM-DD.jsonl
+
+PROBLEM: Ghost files appearing for batch test queries
+  CAUSE:   NotebookLM rate limiting (rapid-fire queries)
+  FIX:     Space queries 30-60 seconds apart when batch testing
+
+PROBLEM: push-to-github.sh fails with merge conflict
+  CAUSE:   Chronicler made changes to repo between pulls
+  FIX:     cd to local repo, git pull --rebase, resolve conflicts
+
+PROBLEM: Socat artifacts in extracted text (stray chunk headers)
+  CAUSE:   Regex not matching new artifact patterns
+  CHECK:   Inspect extracted file for "< YYYY/MM/DD" lines
+  FIX:     Update SOCAT_ARTIFACT_PATTERN in extract.py
+
+PROBLEM: SERAPH tag not being parsed (file lands in _untagged)
+  CAUSE:   Tag format incorrect or missing required fields
+  CHECK:   Verify tag starts with [SERAPH: and has PROJECT, PASS, NUM
+  FIX:     Correct tag format in query
+
+PROBLEM: New pass type routing to _review/ instead of project folder
+  CAUSE:   Pass code not in PASS_TYPE_NAMES dictionary
+  FIX:     Add code to extract.py PASS_TYPE_NAMES, rerun extraction
+
+PROBLEM: Daily rotation not happening
+  CHECK:   crontab -l (verify entry exists)
+  CHECK:   cat /home/ubuntu/mcp-logs/rotate.log (check for errors)
+  FIX:     Verify daily-rotate.sh is executable: chmod +x daily-rotate.sh
+
+================================================================================
+14. MAINTENANCE
+================================================================================
+
+ADDING NEW PASS TYPES:
+  1. Add code and full name to PASS_TYPE_NAMES dict in extract.py
+  2. Update SERAPH-Signal-String-Reference.txt codebook section
+  3. Unknown codes work immediately (Tier 2) — registration enables Tier 1
+
+UPDATING EXTRACT.PY:
+  1. Edit on EC2: nano /home/ubuntu/mcp-logger/extract.py
+     OR push via GitHub + git pull
+  2. Test: python3 extract.py --all (reprocess to verify)
+  3. Archive previous version if significant change:
+     cp extract.py extract_v{N}_backup.py
+  4. Update CHANGELOG
+
+DISK MANAGEMENT:
+  Traffic logs grow daily. Monitor with: du -sh /home/ubuntu/mcp-logs/
+  Cleanup old logs: find /home/ubuntu/mcp-logs/traffic/ -mtime +30 -delete
+  Compress old logs: gzip /home/ubuntu/mcp-logs/traffic/2026-02-*.log
+
+GITHUB REPO SIZE:
+  Extraction files are small (typically 2-20KB each).
+  JSONL files can be larger. Monitor if/when D-019 JSONL push is implemented.
+
+================================================================================
+15. VERSION HISTORY
+================================================================================
+
+  Version  Date        Session  Description
+  -------  ----------  -------  -----------------------------------------------
+  v6       2026-02-09  020      Failure resilience: ghost files, failure
+                                taxonomy, _failed/ routing, extraction summary
+  v5       2026-02-08  019      SERAPH signal string parsing, 3-tier routing,
+                                socat artifact stripping (D-024)
+  v4       2026-02-08  018      Multi-block response assembly, raw fallback
+  v3       2026-02-07  016      Structural improvements
+  v2       2026-02-06  014      Rewritten socat parsing, end-to-end pipeline
+  v1       2026-02-06  013      Initial extraction parser
+
+  Wrapper deployed:    Session 013 (socat + mcp-wrapper.py)
+  Automation deployed: Session 018 (daily-rotate.sh + cron)
+  Chronicler integration: Session 017 (flush_pipeline tool)
+
+================================================================================
+END OF SERAPHRECORDER TOOL REFERENCE
+================================================================================
