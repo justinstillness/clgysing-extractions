@@ -1,0 +1,155 @@
+================================================================================
+CHRONICLER — MCP TOOL QUICK REFERENCE
+================================================================================
+Project:        AWSNBLM (Havona Anvil Suite)
+Version:        v1.1
+Created:        2026-02-07
+Updated:        2026-02-12
+File Class:     REF
+
+PURPOSE:
+Chronicler is a custom MCP tool that gives Claude direct read/write access
+to the clgysing-extractions GitHub repository. It runs on the same EC2
+instance as Majeston and Caliper.
+
+Connector URL: https://mcp.justinstillness.com/repo/mcp
+
+NOTE ON TOOL DISCOVERY:
+A tool ordering bug was fixed on 2026-02-12 (Session 026) where
+flush_pipeline was defined after mcp.run() in chronicler.py, causing it
+to be invisible to Claude's MCP tool discovery. All 10 tools should now
+be discoverable in fresh sessions.
+
+================================================================================
+TOOL INVENTORY — EXACT CALL NAMES (10 tools)
+================================================================================
+
+1. Chronicler:list_files
+   List files and directories in the GitHub repo.
+   Parameters:
+     path (str, default "/") — directory path relative to repo root
+     recursive (bool, default false) — list subdirectories recursively
+
+2. Chronicler:read_file
+   Read contents of a file from the repo.
+   Parameters:
+     path (str, required) — file path relative to repo root
+
+3. Chronicler:write_file
+   Create or overwrite a file in the repo.
+   Parameters:
+     path (str, required) — file path relative to repo root
+     content (str, required) — file contents
+     message (str, optional) — git commit message
+
+4. Chronicler:move_file
+   Move or rename a file within the repo.
+   Parameters:
+     source (str, required) — current file path
+     destination (str, required) — new file path
+     message (str, optional) — git commit message
+
+5. Chronicler:delete_file
+   Delete a file from the repo. Requires confirm=true.
+   Parameters:
+     path (str, required) — file path to delete
+     confirm (bool, required) — must be true
+     message (str, optional) — git commit message
+
+6. Chronicler:create_directory
+   Create a directory (via .gitkeep placeholder).
+   Parameters:
+     path (str, required) — directory path to create
+     message (str, optional) — git commit message
+
+7. Chronicler:get_counter
+   Read current value of a named counter from concept-counter.json.
+   Parameters:
+     counter_name (str, required) — counter name (e.g., "SP03-VX")
+
+8. Chronicler:increment_counter
+   Increment a named counter and return new value.
+   Parameters:
+     counter_name (str, required) — counter name
+     increment (int, default 1) — amount to increment
+     message (str, optional) — git commit message
+
+9. Chronicler:server_status
+   Return server health and configuration info.
+   Parameters: none
+
+10. Chronicler:flush_pipeline
+    Trigger on-demand extraction and GitHub push of SeraphRecorder data.
+    Runs: git pull → extract.py --all → push-to-github.sh
+    Parameters: none
+    Returns: Status of each pipeline stage with output summaries.
+    Note: Added Session 018, discovery fix applied Session 026.
+
+================================================================================
+TARGET REPOSITORY
+================================================================================
+
+Repo: github.com/justinstillness/clgysing-extractions (private)
+
+Current structure:
+  _untagged/          — Landing zone for SeraphRecorder extractions
+  _tools/             — Utility scripts and fix logs
+  _docs/              — Documentation and diagrams
+    diagrams/         — Mermaid source files for pipeline visualizations
+  concept-counter.json — Sequential ID tracking
+
+Target structure (built incrementally):
+  _untagged/          — Landing zone
+  raw/YYYY-MM/        — JSONL archive (daily files, monthly dirs)
+  clgysing/phase2/    — Organized by project/phase/pass-type
+    PE/               — Pre-Extraction evaluation
+    CE/               — Concept Extraction
+    VX/               — Vocabulary Extraction
+    TS/               — Thesis Strings
+    TM/               — Thematic Mapping
+    GL/               — Glossary
+
+================================================================================
+COMMON WORKFLOWS
+================================================================================
+
+CHECK WHAT'S IN THE REPO:
+  Chronicler:list_files()
+  Chronicler:list_files(path="_untagged")
+  Chronicler:list_files(path="/", recursive=true)
+
+READ AN EXTRACTION:
+  Chronicler:read_file(path="_untagged/2026-02-07_143022_notebook-query.txt")
+
+ORGANIZE AN EXTRACTION (move from untagged to project folder):
+  Chronicler:move_file(
+    source="_untagged/file.txt",
+    destination="clgysing/phase2/VX/SP03-VX-raw.txt"
+  )
+
+FLUSH PIPELINE (extract and push all pending traffic):
+  Chronicler:flush_pipeline()
+
+ASSIGN CONCEPT IDS:
+  1. Chronicler:get_counter(counter_name="SP03-VX")
+  2. Read file, identify concepts, assign IDs
+  3. Chronicler:write_file() with numbered content
+  4. Chronicler:increment_counter(counter_name="SP03-VX", increment=N)
+
+================================================================================
+RELATED TOOLS
+================================================================================
+
+Majeston        — NotebookLM queries (generates extractions via SeraphRecorder)
+Caliper         — Document analysis (word counts, segmentation recommendations)
+Chronicler      — This tool (GitHub repository read/write/organize)
+SeraphRecorder  — Traffic capture pipeline (socat + extract.py)
+File Browser    — Web UI for repo browsing at /files/
+Mermaid Chart   — Diagram generation
+
+SeraphRecorder pipeline captures Majeston traffic automatically.
+Chronicler organizes the resulting extraction files.
+
+================================================================================
+END OF QUICK REFERENCE
+================================================================================
