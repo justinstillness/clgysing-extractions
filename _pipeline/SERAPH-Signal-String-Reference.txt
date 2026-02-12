@@ -2,9 +2,10 @@
 SERAPH SIGNAL STRING — QUICK REFERENCE
 ================================================================================
 Project:        NLMINTA / CLGYSING (SeraphRecorder Pipeline)
-Version:        v1.0
+Version:        v1.1
 File Class:     REF
 Created:        2026-02-09
+Updated:        2026-02-12 (Session 017 — added RX, DM, HR, CE-CARD)
 Session:        019/020 (SSH Recovery + Signal String Implementation)
 
 PURPOSE:
@@ -44,7 +45,7 @@ REQUIRED FIELDS (extraction fails to Tier 3 without these):
               Examples: clgysing, nlminta
               Used in: filename, directory routing
 
-  PASS        Pass type code (2-letter uppercase)
+  PASS        Pass type code (2-letter uppercase, or hyphenated compound)
               Must match codebook below
               Used in: filename, directory routing, header metadata
 
@@ -68,7 +69,7 @@ OPTIONAL FIELDS:
               Used in: header metadata
 
   CONFIG      Chat configuration state
-              Examples: default, custom-depth
+              Examples: default, custom-depth, json-schema
               Used in: header metadata
               Default: "default" if omitted
 
@@ -77,7 +78,7 @@ OPTIONAL FIELDS:
               Used in: header metadata
 
   NOTES       Freeform notes
-              Examples: first-pass, retest-after-config-change
+              Examples: first-pass, retest-after-config-change, json-test-run-3
               Used in: header metadata
 
 ================================================================================
@@ -94,6 +95,12 @@ VALIDATED EXTRACTION PASSES:
   GX    Gap Extraction
   CL    Classification
   TL    Thesis-Lens Extraction
+  RX    Relationship Extraction (validated S015, F83)
+  DM    Domain Mapping / Cross-Domain Tagging (validated S015, F85)
+  HR    Harmonization / Degree-2 Refinement (validated S015, F86)
+
+COMPOUND EXTRACTION PASSES:
+  CE-CARD   Card Entry / Atomic Rhetorical Move Extraction (validated S015, F84)
 
 ADMINISTRATIVE / NON-EXTRACTION PASSES:
   PE    Pre-Extraction Evaluation
@@ -105,6 +112,9 @@ ADMINISTRATIVE / NON-EXTRACTION PASSES:
 LEGACY CODES (backward compatibility):
   CE    Concept Extraction (deprecated — use TX)
   FP    Full Pass (legacy)
+
+RESERVED FOR PHASE 3 JSON TESTING:
+  JT    JSON Test (for repeatability, info loss, and schema validation runs)
 
 NEW CODES:
 When a new pass type is needed, add it to PASS_TYPE_NAMES in extract.py
@@ -182,6 +192,18 @@ FULL (all fields):
   [SERAPH: PROJECT=clgysing, SP=03, PASS=VX, NUM=05, THEME=four-intimacies, SESSION=020, CONFIG=custom-depth, THREAD=continue, NOTES=second-iteration]
   Identify specialized vocabulary related to the Four Intimacies framework...
 
+RELATIONSHIP EXTRACTION:
+  [SERAPH: PROJECT=clgysing, SP=03, PASS=RX, NUM=01, THEME=concept-relationships]
+  Identify and describe the relationships between major concepts...
+
+CARD ENTRY EXTRACTION:
+  [SERAPH: PROJECT=clgysing, SP=03, PASS=CE-CARD, NUM=01, THEME=rhetorical-moves]
+  Extract atomic rhetorical moves and argument units...
+
+JSON TEST RUN:
+  [SERAPH: PROJECT=nlminta, PASS=JT, NUM=03, SESSION=017, CONFIG=json-schema, NOTES=repeatability-run-3]
+  Extract all significant concepts as structured JSON entries...
+
 ADMINISTRATIVE QUERY:
   [SERAPH: PROJECT=clgysing, PASS=PE, NUM=01, THEME=corpus-overview]
   Provide a high-level summary of the topics covered in this notebook...
@@ -203,7 +225,7 @@ Flow: Claude -> Majeston (MCP) -> NotebookLM -> socat capture -> extract.py
         - Strips socat artifacts from answer (D-024 fix)
         - Routes file to appropriate directory
         - Writes extraction with full metadata header
-  5. push-to-github.sh pushes new extractions to repo (manual step)
+  5. Chronicler:flush_pipeline pushes extractions to repo (or nightly cycle)
 
 FILES:
   extract.py location:     /home/ubuntu/mcp-logger/extract.py
@@ -229,9 +251,10 @@ MODIFYING ROUTING:
   Directory structure pattern: {PROJECT}/phase2/{PASS}/
 
 VERSION HISTORY:
-  v5 (2026-02-09): Initial SERAPH implementation
-  v4 (2026-02-08): Raw fallback extraction, multi-block assembly
-  v2 (2026-02-06): Rewritten socat parsing
+  v1.1 (2026-02-12): Added RX, DM, HR, CE-CARD pass types. Added JT
+                       reserved code for Phase 3 JSON testing. Updated
+                       examples. Updated flush_pipeline reference.
+  v1.0 (2026-02-09): Initial SERAPH implementation (extract.py v5)
 
 ================================================================================
 END OF SERAPH SIGNAL STRING QUICK REFERENCE
