@@ -1,0 +1,33 @@
+---
+title: "HA Suite — Pipeline Trigger Paths"
+---
+flowchart TD
+    subgraph TRIGGERS["Three Ways to Trigger Pipeline"]
+        T1["⏰ Nightly Cron\n(midnight UTC)\ndaily-rotate.sh"]
+        T2["💻 Manual SSH\nbash ~/flush.sh"]
+        T3["🔌 MCP Tool Call\nChronicler:flush_pipeline"]
+    end
+
+    T1 --> E1["extract.py\n(today only)"]
+    T2 --> PULL["git pull --no-rebase"]
+    T3 --> PULL
+
+    PULL --> E2["extract.py --all"]
+    
+    E1 --> PUSH["push-to-github.sh"]
+    E2 --> PUSH
+
+    PUSH --> PULLF["git pull --no-rebase\n(sync before push)"]
+    PULLF --> COMMIT["git add + commit"]
+    COMMIT --> GPUSH["git push origin main"]
+    GPUSH --> REPO["📦 GitHub Repo\nUpdated"]
+
+    T1 -.->|also| RESTART["Restart services\n(Majeston, SeraphRecorder,\nChronicler, Caliper)"]
+
+    style T1 fill:#553c9a,color:#e9d8fd,stroke:#6b46c1
+    style T2 fill:#2c5282,color:#bee3f8,stroke:#3182ce
+    style T3 fill:#276749,color:#c6f6d5,stroke:#38a169
+    style PULL fill:#744210,color:#fefcbf,stroke:#d69e2e
+    style PUSH fill:#744210,color:#fefcbf,stroke:#d69e2e
+    style REPO fill:#276749,color:#c6f6d5,stroke:#38a169
+    style RESTART fill:#9b2c2c,color:#fed7d7,stroke:#e53e3e
