@@ -1,0 +1,53 @@
+================================================================================
+AUTOTEST — INITIAL CONCEPT EXTRACTION
+================================================================================
+Source:         Trust_and_Civilization_Analysis_otter_ai.txt
+Source Type:    Voice memo transcript (Otter.ai)
+Word Count:     ~3,500 words
+Date Extracted: 2026-02-12
+Extractor:      Claude (Session 001 AUTOTEST)
+
+PURPOSE:
+Complete extraction of concepts, theses, arguments, vocabulary, and structural
+elements from the seed voice memo. This document serves as the foundation for
+the NotebookLM research enhancement phase.
+
+================================================================================
+SECTION 1: MASTER THESIS & SUB-THESES
+================================================================================
+
+MASTER THESIS (as articulated in transcript):
+There exists an inherent physics of relationships — broadly called trust and
+contract — that is deeper than conventionally understood. By properly
+apprehending money (one of the least understood phenomena on the planet) as
+a surface indicator of this deeper physics, one can reveal the whole truth of
+the civilizational game: that symbiosis is not an arbitrary moral preference
+but an objective law of optimization, applicable from the dyad to the
+civilization to all of creation.
+
+SUB-THESIS 1: TRINITY AS RELATIONAL ARCHETYPE
+SUB-THESIS 2: TRUST AS NATURAL LAW
+SUB-THESIS 3: MONEY AS TRUST INSTRUMENT
+SUB-THESIS 4: FUNCTIONAL OMNISCIENCE AS CIVILIZATIONAL IMPERATIVE
+SUB-THESIS 5: SYMBIOSIS AS OBJECTIVE OPTIMIZATION LAW
+SUB-THESIS 6: INFORMATION AS ORIENTING FIELD
+SUB-THESIS 7: PARASITISM AS INFORMATION ASYMMETRY EXPLOITATION
+SUB-THESIS 8: THE ASYMPTOTIC PRINCIPLE
+SUB-THESIS 9: ACTIVE PARTICIPATION AS MORAL IMPERATIVE
+SUB-THESIS 10: CITIZENSHIP AS TRUSTEESHIP
+SUB-THESIS 11: EXPANDED MONEY CONCEPT
+SUB-THESIS 12: THE CORRAL METAPHOR FOR INFORMATION CONTROL
+
+(Full descriptions in local extraction document)
+
+CONCEPTS: 17 identified
+ARGUMENTS: 7 formalized
+VOCABULARY TERMS: 16 specialized
+RESEARCH GAPS: 10 identified
+
+Stored: GitHub autotest/ directory
+Full document: Session 001 transcript
+
+================================================================================
+END OF EXTRACTION SUMMARY
+================================================================================
