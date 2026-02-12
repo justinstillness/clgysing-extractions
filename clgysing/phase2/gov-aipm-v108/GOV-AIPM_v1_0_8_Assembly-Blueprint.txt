@@ -1,0 +1,28 @@
+================================================================================
+MASTER ASSEMBLY BLUEPRINT — GOV-AIPM v1.0.8-DRAFT
+================================================================================
+Document Code: GOV-AIPM
+Version: 1.0.8-DRAFT
+Created: Session 039 (Drafting Session G1)
+Purpose: Maps all draft files and integration points to target volumes
+         for sequential assembly across sessions.
+================================================================================
+
+[Blueprint content stored in outputs and draft corpus notebook.
+ See GOV-AIPM_v1_0_8_Assembly-Blueprint.txt for full content.
+ This repo copy serves as a persistence backup.]
+
+Volume Structure:
+  Volume 1: Sections 1-2 (Foundations)        — COMPLETE (Session 039)
+  Volume 2: Sections 3-4 (Interaction + Session Architecture)
+  Volume 3: Sections 5-6 (Artifacts + External Organization)
+  Volume 4: Sections 7-11 (Governance, Tools, Formats)
+  Volume 5: Sections 12-14 (Complex Projects, Specialized, Failure Modes)
+  Volume 6: Sections 15-17 + Appendices (Comms, Reference, Templates)
+
+Integration Points: 9 of 27 applied (Volume 1). 18 remaining.
+Estimated remaining sessions: 4-5
+
+================================================================================
+END
+================================================================================
