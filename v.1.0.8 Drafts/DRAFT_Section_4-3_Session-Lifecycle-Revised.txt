@@ -1,0 +1,596 @@
+================================================================================
+DRAFT SECTION — For integration into GOV-AIPM v1.0.8-DRAFT
+================================================================================
+Target Location: Section 4.3 (MAJOR REVISION — replaces existing 4.3.1
+                 through 4.3.3; 4.3.4 and 4.3.5 unchanged except as noted)
+Current Lines:   2356-2454 (Sections 4.3 through 4.3.3 and 4.3.4)
+                 Section 4.3.5+ retained as-is (Session E scope)
+Drafted:         Session 034
+Category:        3 (Enhanced Session Lifecycle) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE ON SESSION A INTEGRATION:
+
+This draft supersedes Integration Point 1 from Session A
+(DRAFT_Integration-Points_Phase-Protocol.txt), which provided a stub
+revision of 4.3.1. The Session A stub established the Phase Protocol
+review and alignment turn concepts. This draft expands those into full
+protocol specifications and adds the remaining Session B content
+(response indexing, closeout revision, headroom opportunism,
+segmentation enhancement).
+
+Section 4.3.5 (Phase Transition Sessions) is NOT revised here — that is
+Session E scope. Integration Point 2 from Session A (adding Phase
+Protocol evaluation to 4.3.5) remains valid and should be applied
+separately.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+4.3 SESSION LIFECYCLE
+---------------------
+
+Each chat session follows a lifecycle from initiation through closeout.
+Managing this lifecycle ensures continuity, prevents work loss, and
+maintains the behavioral consistency that makes multi-session projects
+coherent.
+
+The session lifecycle has three phases: initiation (establishing context
+and alignment), active work (producing deliverables within scope), and
+closeout (preserving work and enabling clean resumption). Each phase has
+specific protocols that have been refined through extensive field testing.
+
+Two cross-cutting practices span the entire session lifecycle: the
+Response Indexing System, which maintains a persistent retrieval index
+across all sessions, and Headroom Opportunism, which optimizes the use
+of remaining context capacity after primary objectives are met.
+
+
+4.3.1 Session Initiation
+-------------------------
+
+Proper session start establishes productive trajectory. The initiation
+sequence varies by session type but always includes behavioral alignment
+through the Phase Protocol and explicit scope verification through the
+Alignment Turn.
+
+SESSION INITIATION SEQUENCE — BY TYPE:
+
+For New Projects (Rooting / Phase 0):
+
+1. Upload this manual (or orient the AI to the AIPM framework)
+2. Describe project objectives and desired outcomes
+3. Engage in the collaborative rooting process (see Section 2.5.1)
+4. Produce Project Guide and Base Phase Protocol
+5. Generate Bootstrap for the first execution session
+
+Rooting sessions do not follow the standard continuation sequence below
+because no prior state exists. The rooting process itself establishes
+the governance infrastructure that subsequent sessions rely on.
+
+Cross-reference: Section 2.5.1 details the full rooting process.
+Section 1.4.6.1 provides the user workflow overview.
+
+For Continuation (Via Bootstrap):
+
+1. User provides Bootstrap file and any required attachments
+2. AI executes the Bootstrap's mandatory first action — typically:
+   review the Phase Protocol from Project Knowledge and confirm
+   adherence to all behavioral requirements
+3. AI acknowledges the Bootstrap and confirms understanding of current
+   state, including response index continuity (see Section 4.3.1.2)
+4. AI generates the Alignment Checklist (see Section 4.3.1.1)
+5. User verifies the Alignment Checklist
+6. If aligned, work proceeds; if misaligned, adjustments are made
+   before proceeding
+7. AI requests and verifies any dependencies noted in the Bootstrap
+
+This sequence is mandatory, not optional. Skipping steps — particularly
+the alignment turn — leads to the failure modes documented below.
+
+For Branch Sessions:
+
+1. User provides Branch Startup File (see Section [Branch Management])
+2. AI reviews the inherited Phase Protocol (which may be modified for
+   the branch's specific scope)
+3. If this is the branch's first session, conduct a mini-rooting cycle
+   to establish branch-specific context
+4. AI generates an Alignment Checklist specific to branch scope
+5. User verifies alignment
+6. Establish integration expectations with the mainline project
+
+Cross-reference: Section 5.2 details the Phase Protocol. Section 5.5
+details Bootstrap Files.
+
+
+4.3.1.1 The Alignment Turn
+--------------------------
+
+The Alignment Turn is a mandatory exchange at the start of every
+continuation session. After the AI has reviewed the Phase Protocol and
+acknowledged the Bootstrap, it generates an Alignment Checklist and
+presents it to the user for verification before any substantive work
+begins.
+
+PURPOSE:
+
+The Alignment Turn prevents three failure modes:
+
+Evaporation — starting work without shared understanding of objectives.
+The AI may interpret the Bootstrap differently than the user intended,
+or the user's priorities may have shifted since the Bootstrap was
+written. The Alignment Turn surfaces these disconnects before they
+compound.
+
+Missing Context — beginning without required materials loaded. The
+Bootstrap may reference files, notebooks, or prior artifacts that need
+to be present before work can proceed. The Alignment Turn verifies that
+all dependencies are satisfied.
+
+Misalignment — working toward different objectives than intended. In
+complex projects with multiple active threads, the session's focus may
+need adjustment based on developments since the Bootstrap was written.
+The Alignment Turn creates space for this recalibration.
+
+ALIGNMENT CHECKLIST STRUCTURE:
+
+The AI generates the Alignment Checklist covering:
+
+Scope — what this session aims to accomplish, stated as specific
+objectives drawn from the Bootstrap and any user input at session start.
+
+Materials — what documents, files, and notebook access are confirmed
+present, and what is still needed.
+
+Workflow — the proposed sequence of work for the session, including
+natural breakpoints and priority ordering.
+
+Expected Outputs — the deliverables and artifacts the session should
+produce.
+
+Gaps or Questions — anything unclear, potentially conflicting, or
+requiring user clarification before work begins.
+
+PROTOCOL:
+
+1. The AI generates the checklist and presents it to the user
+2. The user reviews and responds:
+   - "Aligned" (or equivalent confirmation) — work proceeds
+   - Corrections or adjustments — the AI incorporates changes and
+     re-presents if needed
+   - Additional context — the user provides information that reshapes
+     the session plan
+3. Work begins only after explicit user confirmation
+
+The Alignment Checklist Template (TPL-0XX) provides the standard format.
+The AI may adapt the depth and detail of the checklist to match session
+complexity — a simple continuation session warrants a concise checklist,
+while a complex multi-deliverable session warrants a thorough one.
+
+AI COORDINATOR NOTE: The Alignment Turn is part of the Session
+Stewardship Duty (see Section 2.7). Generate the alignment checklist
+proactively at session start. Do not begin substantive work before user
+confirmation, even if the session scope seems obvious from the Bootstrap.
+
+
+4.3.1.2 Response Indexing System
+--------------------------------
+
+The Response Indexing System provides a persistent, project-wide
+numbering scheme for significant AI responses. Every substantive AI
+output receives a sequential index that enables precise retrieval from
+transcripts across the project's entire history.
+
+FORMAT:
+
+[####] | Semantic Title
+
+Where:
+- [####] is a four-digit, zero-padded sequential number (e.g., [0001],
+  [0042], [0157])
+- The semantic title is a brief description of the response's primary
+  content or action (e.g., "Session 034 Initiation & Protocol
+  Confirmation," "Headroom Assessment & Segmentation Plan,"
+  "Closeout Artifacts — Session Log & Bootstrap")
+
+The index appears at the start of every substantive AI response.
+
+CONTINUITY RULES:
+
+The response index is continuous across the entire project lifecycle.
+It never resets at phase boundaries or session boundaries — only at the
+project level (a new project starts a new sequence at [0001]).
+
+Session Continuity: The Bootstrap specifies two fields for response
+index continuity:
+- "Last response index: [####]" — where the prior session ended
+- "NEXT SESSION STARTS AT INDEX: [####]" — where this session begins
+
+The AI inherits the index from the Bootstrap and continues the sequence
+without gaps.
+
+Recovery Protocol: If the Bootstrap lacks response index information, or
+if the sequence appears broken (e.g., an unexpected gap or duplicate),
+the AI asks the user for recovery guidance rather than guessing. The
+user may direct the AI to continue from a specified number, restart from
+[0001], or check the prior session log for the correct index.
+
+WHAT GETS INDEXED:
+
+All substantive AI responses receive an index. This includes:
+- Session initiation acknowledgments
+- Alignment checklists
+- Research and analysis outputs
+- Drafted content and deliverables
+- Headroom assessments
+- Closeout artifacts (session logs, bootstraps)
+- Any response that advances the session's work
+
+Brief clarifying exchanges, simple confirmations, and error corrections
+may omit the index at the AI's discretion, though when in doubt, index.
+
+PURPOSE:
+
+The Response Indexing System enables precise retrieval from transcripts.
+The Session Log records all indexes used during the session (in the
+Response Index Register), creating a structured lookup table: the log
+tells you which response index to look for, and the transcript contains
+the full content at that index. This is significantly faster than
+searching unindexed transcripts for specific content.
+
+The system also provides a project-level activity metric — the highest
+response index indicates the total volume of substantive AI work across
+all sessions.
+
+SESSION LOG INTEGRATION:
+
+Each Session Log includes a Response Index Register recording all indexes
+used in the session, the semantic title for each, and the session's index
+range. See Section 5.4 for the Session Log entry structure and TPL-005
+for the template.
+
+BOOTSTRAP INTEGRATION:
+
+Every Bootstrap includes response index continuity fields in its Dynamic
+State section. See Section 5.5 for Bootstrap structure and TPL-002 for
+the template.
+
+
+4.3.2 Active Session Management
+--------------------------------
+
+During productive work:
+
+Maintain Focus:
+- Stay within the scope confirmed during the alignment turn
+- Defer out-of-scope items to the Backlog Register or appropriate
+  future sessions
+- Note but do not pursue tangents — capture them for later consideration
+
+Monitor Tokens:
+- Be aware of session length and context consumption
+- Notice if responses become truncated or less coherent (see Section
+  4.2.4 for warning signs)
+- Plan exit before limits force it
+- The AI should proactively assess headroom before major work blocks,
+  not only at session boundaries
+
+Checkpoint Progress:
+- Confirm understanding at transition points between work blocks
+- Request file outputs for completed work — do not let substantial
+  work exist only in conversation
+- If producing multiple deliverables, save each as a discrete file
+  before moving to the next
+
+Document Decisions:
+- Note significant decisions as they occur, including rationale
+- Capture the reasoning, not just the conclusion — future sessions will
+  need to understand why, not just what
+- These feed the Decision Log; if criteria are met per TPL-002, a
+  dedicated Decision Log file is generated at closeout
+
+
+4.3.2.1 Headroom Opportunism
+-----------------------------
+
+Headroom Opportunism is the strategic practice of utilizing remaining
+token capacity after primary objectives are met but before the session
+must close. It is a named duty of the AI coordinator — not optional
+optimization but a deliberate part of session management.
+
+When primary session objectives are complete, the AI assesses remaining
+headroom and identifies secondary objectives that can be achieved with
+the loaded context. The AI then proposes specific options to the user,
+who decides whether to proceed.
+
+This practice optimizes the value of context already loaded into the
+session. Context loading is expensive — files uploaded, notebook queries
+executed, state established. When primary work completes with headroom
+remaining, that loaded context represents unrealized value. Headroom
+Opportunism captures that value without scope creep because the user
+retains full control over whether to proceed.
+
+PROTOCOL:
+
+1. Primary objectives are complete
+2. AI estimates remaining headroom and the token cost of mandatory
+   closeout artifacts (session log, bootstrap, any other required
+   outputs)
+3. AI identifies secondary objectives from:
+   - The Bootstrap's secondary/tertiary objectives
+   - Items in the Backlog Register that are achievable with loaded
+     context
+   - Quality audit items identified during the session
+   - Research queries or exploratory work that leverages current context
+4. AI proposes specific options to the user with estimated token cost
+   for each
+5. User selects, modifies, or declines
+6. If proceeding, the AI executes the selected work and reassesses
+   headroom before closeout
+
+CRITICAL CONSTRAINT:
+
+Headroom Opportunism never compromises closeout quality. The mandatory
+closeout artifacts — Session Log with embedded SFR, Bootstrap, and
+conditional Decision Log — require sufficient headroom for thorough
+generation. If remaining capacity after primary work is marginal, the
+AI should recommend proceeding directly to closeout rather than risking
+compressed or degraded closing artifacts.
+
+The headroom floor — the minimum capacity reserved for closeout — should
+be assessed before proposing secondary work. If the floor cannot
+accommodate both the proposed secondary work and full closeout, the
+secondary work is deferred.
+
+Cross-reference: Section 4.2.2 (Headroom Discipline).
+
+DISTINCTION FROM SCOPE CREEP:
+
+Headroom Opportunism is not scope creep. Scope creep is uncontrolled
+expansion of session objectives. Headroom Opportunism is controlled
+utilization of excess capacity with explicit user approval. The
+distinction lies in intentionality and consent:
+- Scope creep happens without deliberate decision
+- Headroom Opportunism is proposed, evaluated, and approved
+
+
+4.3.3 Session Closeout
+-----------------------
+
+Proper closeout preserves work and enables clean resumption. The closeout
+protocol has a specific trigger, a defined sequence, and mandatory
+artifacts.
+
+TRIGGER:
+
+"CLOSE OUT" (or equivalent phrasing) is the only keyword trigger for
+closeout. The AI never auto-initiates closeout. This is a firm boundary:
+the user controls when a session ends.
+
+User language interpretation:
+- "we can wrap up soon" → the AI asks: "Ready to close out?"
+- "do X then close out" → the AI completes X, then asks: "Ready to
+  close out?"
+- "close out" → the AI initiates the closeout sequence
+
+The rationale for user-only initiation: field testing revealed that
+AI-initiated closeout suggestions disrupt flow and create pressure to
+end prematurely. The user is the best judge of when work should conclude.
+The AI's role is to ensure the closeout is thorough once initiated, not
+to decide when it occurs.
+
+EXCEPTION: If the AI detects clear signs of context exhaustion (see
+Section 4.2.4), it should alert the user to the degradation and
+recommend closeout — but still wait for user confirmation before
+initiating the sequence.
+
+CLOSEOUT SEQUENCE:
+
+The closeout follows a five-step protocol:
+
+Step 1 — Loose Ends Assessment. The AI pauses and systematically
+assesses outstanding items across six categories:
+
+- Decisions: Were any decisions made that need formal documentation?
+  Are there unresolved decision points?
+- Scope Items: Was everything planned for this session completed? What
+  was deferred? Are any planned items at risk of being lost?
+- Questions: Are there unanswered questions that could affect future
+  sessions?
+- Artifacts: Are all produced files accounted for? Has anything been
+  discussed but not saved as a file?
+- Handoff Context: What must be explicitly captured in the Bootstrap for
+  the next session to proceed without loss?
+- User Action Items: What does the user need to do after the session
+  ends? (exports, uploads, file organization, external actions)
+
+Step 2 — Present Loose Ends. The AI presents the loose ends assessment
+to the user in a clear, structured format. This is a verification
+moment — the user may identify items the AI missed or deprioritize items
+the AI flagged.
+
+Step 3 — Resolve Loose Ends. Per user direction, address any items that
+need resolution before closeout. This may include:
+- Capturing a decision that was made informally during the session
+- Saving a draft that exists only in conversation
+- Noting a deferred item for the Bootstrap
+- Answering a question that will affect the next session
+
+Step 4 — Confirm Readiness. The AI lists the artifacts it will generate
+and confirms with the user before proceeding:
+- Session Log (with embedded Session Fidelity Report) — ALWAYS
+- Bootstrap (for the next session) — ALWAYS
+- Decision Log — CONDITIONAL (if decision log trigger criteria from
+  TPL-002 are met)
+- Any other session-specific deliverables not yet produced
+
+Step 5 — Generate Artifacts. Only after user confirmation, the AI
+generates all closeout artifacts. These are produced as discrete files
+for download, not embedded in conversation.
+
+MANDATORY CLOSEOUT ARTIFACTS:
+
+Session Log (with embedded SFR): Records what occurred, indexes used,
+decisions made, files produced, and provides the fidelity assessment.
+Always generated. See Section 5.4 and TPL-005.
+
+Bootstrap: Enables clean resumption in the next session. Contains all
+context needed for the next AI instance to continue without loss. Always
+generated. See Section 5.5 and TPL-002.
+
+Decision Log: Formal record of decisions with rationale, alternatives
+considered, and implications. Generated when trigger criteria are met
+(see TPL-002 for trigger criteria). Minor decisions captured within the
+Session Log do not require a separate Decision Log.
+
+USER CLOSEOUT DUTIES:
+
+After the AI generates closeout artifacts, the user completes their
+own closeout actions:
+- Export the chat transcript (via Claude Exporter or equivalent)
+- Download all AI-produced files
+- Organize files per the project's folder convention
+- Upload the transcript and non-ephemeral artifacts to the project
+  notebook (if using notebook connectivity)
+- Update personal task tracking as needed
+
+The Session Closeout Checklist (TPL-003) provides the complete protocol
+including both AI and user responsibilities.
+
+Cross-reference: Section 4.3.4 (Emergency Exit) covers the abbreviated
+protocol for unexpected token exhaustion.
+
+
+4.3.2.2 Large Artifact Segmentation Protocol
+---------------------------------------------
+
+When a session requires producing large artifacts — lengthy documents,
+extensive analysis, multi-part deliverables — the segmentation protocol
+prevents token exhaustion mid-draft and maintains output quality
+throughout.
+
+TRIGGERS FOR SEGMENTATION:
+
+Segmentation should be proactively planned when any of the following
+conditions apply:
+- Source material exceeds 5,000 words
+- Expected output exceeds 20 discrete entries (concepts, items, records)
+- Estimated output exceeds 10,000 characters
+- Token headroom is below 20% of estimated session capacity
+- A repository or collection approaches 75 entries (volume cap)
+
+The AI should assess these triggers before beginning any substantial
+generation task. Proactive segmentation planning is always preferable
+to reactive recovery after a token cliff.
+
+METHODOLOGY:
+
+1. Logical Unit Division. Identify natural division points in the work:
+   sections, chapters, conceptual clusters, source boundaries, or other
+   structural breaks. The goal is segments that are meaningful units of
+   work, not arbitrary slices.
+
+2. Conservative Chunk Sizing. Target approximately 10,000 characters per
+   segment as a working guideline. This leaves margin for cross-segment
+   continuity content (numbering, cross-references, transition notes)
+   without pressing against headroom limits.
+
+3. Cross-Segment Continuity. Maintain sequential numbering, consistent
+   formatting, and explicit cross-references across segments. Each
+   segment should begin with a brief orientation noting what came before
+   and what comes next. The final segment should include a completeness
+   verification.
+
+4. User Approval at Each Stage. Present each completed segment to the
+   user before proceeding to the next. This creates natural checkpoints
+   for quality review and course correction.
+
+5. Completion Verification. After all segments are produced, verify
+   completeness: are all items accounted for? Does the combined output
+   meet the original scope? Are cross-segment references consistent?
+
+CRITICAL RULE: Never abbreviate, truncate, or compress artifacts to
+avoid segmentation. Segmentation maintains complete, full-quality
+generation while managing constraints. The quality standard is the same
+whether output is produced in one pass or five segments. If the AI finds
+itself reducing detail or omitting content to fit within a single
+response, it should stop and segment instead.
+
+This rule exists because field testing revealed a persistent failure
+mode: AIs will silently compress output quality to avoid the overhead
+of segmentation, producing technically complete but substantively
+degraded artifacts. Explicit segmentation prevents this.
+
+Cross-reference: Section 4.2.2 (Headroom Discipline), Section 4.2.5
+(Token Exhaustion Recovery Protocol).
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+- This content replaces existing Sections 4.3 through 4.3.3 (lines
+  2356-2430 approximately in v1.0.7)
+- Section 4.3.4 (Emergency Exit) is RETAINED as-is (lines 2432-2454)
+- Section 4.3.5 (Phase Transition Sessions) is RETAINED as-is — Session
+  E will revise it separately; Session A's Integration Point 2 (Phase
+  Protocol evaluation addition) should be applied independently
+
+STRUCTURAL CHANGES:
+- 4.3.1 expanded with two new subsections:
+  - 4.3.1.1 The Alignment Turn (new)
+  - 4.3.1.2 Response Indexing System (new)
+- 4.3.2 Active Session Management lightly revised
+  - 4.3.2.1 Headroom Opportunism (new subsection)
+  - 4.3.2.2 Large Artifact Segmentation Protocol (new subsection —
+    content enhanced from what was previously implicit in Section 4.2
+    and 4.3.5.2.1; consider whether to retain the segmentation guidance
+    in 4.3.5.2.1 or cross-reference to this section)
+- 4.3.3 Session Closeout substantially revised (new 5-step protocol)
+
+CROSS-REFERENCES TO UPDATE IN SESSION G:
+- Section 2.7 (AI Duties) should reference Headroom Opportunism and
+  the Alignment Turn as named duties
+- Section 5.4 (Session Logs, new numbering) should reference the
+  Response Index Register requirement
+- Section 5.5 (Bootstrap Files, new numbering) should reference
+  response index continuity fields
+- Section 12.1 (Multi-Session Continuity) should reference response
+  indexing as a retrieval enabler and the SFR as a continuity
+  verification tool
+- Glossary (Section 17.2) needs entries for: Response Index, Alignment
+  Turn, Headroom Opportunism, Session Fidelity Report, Loose Ends
+  Assessment
+
+CONSISTENCY WITH SESSION A DRAFTS:
+- Section 5.2 (Phase Protocol) references response indexing, alignment
+  turns, and the closeout protocol — this draft provides the full
+  specifications those references point to
+- Integration Point 1 (revised 4.3.1) from Session A is superseded by
+  this draft, which expands the stub into complete protocol documentation
+- Phase Protocol Template (Layer 1, Part A) includes behavioral specs
+  for session management — this draft's manual content is consistent
+  with those template specifications
+
+QUALITY AUDIT NOTES:
+- Section 4.3.2 (Active Session Management) was lightly revised for
+  consistency but found to be adequate in the current version. The
+  addition of Headroom Opportunism and Segmentation Protocol as named
+  subsections addresses the identified gaps without requiring a full
+  rewrite of the parent section.
+- Section 4.3.4 (Emergency Exit) reviewed and found adequate — no
+  changes needed. The existing protocol aligns with field-tested
+  practice.
+- The segmentation protocol (4.3.2.2) consolidates guidance that was
+  previously split between Section 4.2 (token management) and Section
+  4.3.5.2.1 (phase transition token considerations). The Session G
+  integration pass should evaluate whether to consolidate these or
+  maintain cross-references.
+
+================================================================================
+END OF SECTION 4.3 REVISION DRAFT
+================================================================================

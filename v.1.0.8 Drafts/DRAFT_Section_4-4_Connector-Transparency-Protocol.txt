@@ -1,0 +1,315 @@
+================================================================================
+DRAFT — SECTION 4.4 CONNECTOR TRANSPARENCY PROTOCOL (NEW)
+================================================================================
+Target Location: NEW Section 4.4 (after Section 4.3 Session Lifecycle)
+Drafted:         Session 035
+Category:        8 (Connector Transparency Protocol) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+RATIONALE:
+
+When the AI uses MCP tools — querying notebooks, reading repositories,
+calling external services — the actions happen behind the scenes. The
+tool calls and their results do not appear in the visible chat
+transcript. This creates "transcript gaps" where the conversation record
+lacks details on what data was accessed, what queries were executed, and
+what results were returned.
+
+Transcript gaps break three things:
+1. Auditability — future review cannot determine what information the
+   AI used to reach its conclusions
+2. Context recovery — transcripts uploaded to notebooks for future
+   sessions are missing critical content
+3. Session fidelity — the Session Fidelity Report cannot accurately
+   characterize a session whose tool interactions are invisible
+
+The Connector Transparency Protocol (CTP) establishes mandatory
+behaviors for narrating tool usage within the conversation, ensuring the
+transcript serves as a complete record of the session's informational
+reality.
+
+Placement in Section 4 (Session Management) rather than Section 10
+(Adjunct Tools) is deliberate: CTP is a behavioral requirement for the
+AI — a protocol governing how work is conducted — not a description of
+a tool the user selects. It governs the AI's conduct during any session
+where connector tools are used.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+4.4 CONNECTOR TRANSPARENCY PROTOCOL
+-------------------------------------
+
+4.4.1 The Transcript Gap Problem
+----------------------------------
+
+AI platforms that support tool connectivity (MCP or equivalent) enable
+the AI to interact directly with external services — querying notebooks,
+reading repositories, accessing data sources, calling APIs. These
+interactions occur programmatically: the AI sends a request, receives a
+response, and incorporates the result into its reasoning.
+
+The problem: these interactions are invisible in the chat transcript.
+The transcript records only what the AI writes in its visible responses,
+not the tool calls executed between responses. If the AI queries a
+notebook and uses the result to draft content, the transcript shows the
+drafted content but not the query, the notebook's response, or the AI's
+assessment of that response.
+
+This creates transcript gaps — missing information that degrades:
+
+Auditability. A reviewer reading the transcript cannot determine what
+external information the AI accessed. Did the AI verify its claims? What
+sources did it consult? Was the query well-targeted or vague? These
+questions become unanswerable.
+
+Context Recovery. When transcripts are uploaded to project notebooks for
+future sessions, the gaps travel with them. A future session querying
+"what research did we do on topic X?" will find no record of notebook
+queries that were executed but not narrated.
+
+Session Fidelity. The Session Fidelity Report (Section 5.4.4) relies
+on an accurate record of what occurred. Sessions with unnarrated tool
+interactions produce incomplete fidelity assessments.
+
+
+4.4.2 Protocol Requirements
+-----------------------------
+
+For every connector tool invocation, the AI must narrate the following
+elements in its visible response:
+
+MANDATORY ELEMENTS (always required):
+
+1. TOOL IDENTIFICATION. Which tool is being called and what resource
+   is being targeted. Include the tool name and the target identifier.
+   
+   Example: "Querying notebook_query on AIPM Review Material
+   (a0a96d92...)."
+
+2. QUERY OR PARAMETER DETAILS. The full text of the query sent or the
+   specific parameters applied. This allows a reader of the transcript
+   to know exactly what was asked.
+   
+   Example: "Query: 'What does Section 10 currently cover? Show me
+   the full structure and content of Section 10.'"
+
+3. RESULT SUMMARY. A characterization of the return payload — what was
+   found, how much was returned, and a brief quality assessment.
+   
+   Example: "Result: Comprehensive listing of all 8 subsections with
+   detailed content for Section 10.3. Sufficient for revision planning."
+
+RECOMMENDED ELEMENTS (include when relevant):
+
+4. INTENT. Why this query is being made — what information need it
+   addresses and how it connects to the session's current work.
+   
+   Example: "Querying to assess current content before drafting the
+   revision, to determine whether to revise the existing subsection
+   or create new content."
+
+5. ASSESSMENT. An evaluation of whether the result adequately addresses
+   the information need, and whether follow-up queries are warranted.
+   
+   Example: "The response covers structure but lacks detail on the
+   workflow integration content. A follow-up query is needed."
+
+FULL NARRATION EXAMPLE:
+
+  "Let me query the AIPM Review Material notebook for the current
+  Section 10 content.
+
+  Querying notebook_query on AIPM Review Material (a0a96d92) —
+  Query: 'What does Section 10 currently cover? Show me the full
+  structure and content of Section 10, particularly Section 10.3
+  on retrieval and query tools.'
+
+  Result: Comprehensive response covering all 8 subsections of
+  Section 10. Section 10.3 currently contains 5 paragraphs covering
+  NotebookLM workflow, search tools, and reference managers. The
+  content is thin relative to what field testing has demonstrated —
+  confirms the need for a major revision.
+
+  I have what I need to proceed with drafting. No follow-up query
+  required for this topic."
+
+
+4.4.3 Minimum Documentation Threshold
+---------------------------------------
+
+Even when token headroom is constrained, the protocol forbids silent
+tool usage. At minimum, every tool invocation must be documented with:
+
+- Tool name
+- Target resource
+- One-line result summary
+
+This minimum threshold ensures the transcript captures that a tool
+interaction occurred, what it targeted, and whether it was productive —
+even when a full narration is not feasible.
+
+Example (minimum threshold):
+
+  "Queried notebook_query on AWSNBLM Sessions (78ccac4a) — MCP tool
+  patterns. Returned 4 relevant examples."
+
+
+4.4.4 Output Sample Presentation
+----------------------------------
+
+Because users cannot see the raw output of MCP tool calls, the AI
+should verify quality by presenting representative samples of the
+results in the conversation.
+
+THE 2-3 RULE:
+
+When a tool call returns structured data (a list of entries, a set of
+findings, a collection of examples), present 2-3 representative entries
+rather than the full payload. This confirms that the tool returned
+relevant, well-structured results without consuming excessive tokens.
+
+SAMPLE SELECTION:
+
+Select samples that demonstrate the range of the output:
+- One strong example (clearly relevant, well-structured)
+- One typical example (representative of the bulk of results)
+- One edge case (if applicable — an unusual or boundary result)
+
+FORMATTING:
+
+Preserve the formatting returned by the tool when presenting samples.
+This proves technical fidelity — the results are being presented as
+received, not interpreted or restructured.
+
+The output sample is particularly important when the results will
+inform significant decisions or drafting work. It gives the user an
+opportunity to assess quality before the AI proceeds.
+
+
+4.4.5 Integration with Session Artifacts
+-----------------------------------------
+
+Connector transparency integrates with the session artifact system:
+
+RESPONSE INDEXING:
+
+Responses that include substantive tool narration receive response
+indexes like any other substantive output. The semantic title should
+reflect the query purpose:
+
+  [0023] | Notebook Query — Current Section 10 Content
+
+This makes tool interactions retrievable through the Response Index
+Register in the Session Log.
+
+SESSION LOG:
+
+The Session Log's Work Accomplished section should note the number and
+nature of tool queries executed during the session:
+
+  "Executed 4 notebook queries across 2 notebooks for current state
+  assessment and field-tested example retrieval."
+
+This provides a summary-level accounting of tool activity for the
+session record.
+
+TRANSCRIPT COMPLETENESS:
+
+When the Connector Transparency Protocol is followed consistently, the
+transcript uploaded to the project notebook contains a complete record
+of both visible conversation and tool interactions. This makes future
+exhaustive querying (Section 10.3.2) significantly more effective —
+the queries and their results are part of the searchable corpus.
+
+
+4.4.6 Scope of Application
+----------------------------
+
+The Connector Transparency Protocol applies to all connector tool
+interactions that contribute to the session's informational content:
+
+ALWAYS NARRATE:
+- Notebook queries that inform reasoning or drafting
+- Repository reads that provide content for reference
+- Data source queries that produce results used in the session
+- Any tool interaction whose result influences the AI's output
+
+NARRATION OPTIONAL (but recommended):
+- Status checks or configuration verification
+- Tool calls that return empty or irrelevant results (a brief note
+  is still useful: "Queried X — no relevant results")
+- Repeated queries to the same resource when iterating (narrate the
+  first and last; note "continued querying" for iterations)
+
+DOES NOT APPLY TO:
+- Tools used for file creation, formatting, or other mechanical
+  operations where the action and result are visible in the
+  conversation (e.g., creating a document, running a bash command
+  whose output appears inline)
+
+The distinguishing principle: if a tool interaction produces information
+that the AI uses but that the user cannot independently see, it must
+be narrated. If the tool's action and result are already visible in the
+conversation, narration is redundant.
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+New Section 4.4, inserted after Section 4.3 (Session Lifecycle) and
+before what is currently Section 4.4 in v1.0.7. This will require
+renumbering the existing 4.4+ subsections, which should be handled
+during Session G integration.
+
+NOTE ON EXISTING 4.4:
+The current Section 4.4 in v1.0.7 is "AI Coordinator Duties." The CTP
+could alternatively be placed as a subsection within 4.4 (as a named
+duty) rather than displacing it. During Session G integration, evaluate:
+(a) CTP as new 4.4, existing 4.4 renumbered to 4.5+ (current draft
+    approach — treats CTP as a peer to Session Lifecycle)
+(b) CTP as subsection within existing 4.4 AI Coordinator Duties
+    (treats CTP as one of several duties)
+
+Recommendation: Option (a). CTP is a protocol with its own structure,
+not a single duty. It warrants its own section heading for navigability.
+However, this is a Session G integration decision.
+
+CROSS-REFERENCES TO ESTABLISH:
+- Section 4.3 (Session Lifecycle) → CTP applies during active sessions
+- Section 10.3.1 (Notebook Connectivity) → references CTP for narration
+  of notebook queries
+- Section 10.3.2 (Exhaustive Querying) → multiple tool calls require
+  CTP narration at each step
+- Section 12.1 (Multi-Session Continuity) → CTP ensures transcript
+  completeness for continuity
+- Section 5.4 (Session Logs) → tool interactions reflected in work
+  accomplished and response indexes
+- TPL-002 (Bootstrap) → behavioral reminders section may include CTP
+  reminder for sessions involving heavy tool usage
+
+CONSISTENCY WITH SESSION A-B DRAFTS:
+- Integration Point 4 (Section 5.5 Bootstrap Files) mentions connector
+  transparency as a behavior prone to being forgotten — this section
+  provides the full specification
+- TPL-002 v2.0 Behavioral Reminders section notes connector
+  transparency as a typical reminder item — this section is what the
+  reminder points to
+- Section 4.3.1.2 (Response Indexing) specifies indexing criteria that
+  include tool narration responses — this section confirms that
+  integration
+
+RELATIONSHIP TO CATEGORY 13 (FAILURE MODES):
+Category 13.5 in the Findings document identifies "Context Invisibility
+(Transcript Gaps)" as a known failure mode, with the CTP as the
+workaround. When Session F drafts failure modes, this section should be
+cross-referenced as the mitigation for that failure mode.
+
+================================================================================
+END OF SECTION 4.4 DRAFT
+================================================================================

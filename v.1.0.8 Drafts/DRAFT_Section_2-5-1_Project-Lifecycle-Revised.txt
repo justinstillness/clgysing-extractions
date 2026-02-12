@@ -1,0 +1,176 @@
+================================================================================
+DRAFT SECTION — For integration into GOV-AIPM v1.0.8-DRAFT
+================================================================================
+Target Location: Section 2.5.1 (REVISION — replaces existing content)
+Drafted:         Session 033
+Category:        2 (Rooting as Phase 0) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+
+2.5.1 Project Lifecycle (Macro Cycle)
+-------------------------------------
+
+The Project Lifecycle spans the entire arc of a project from conception
+through completion. This is the strategic level — where objectives are
+defined, foundations are built, and success is ultimately measured.
+
+Temporal Scope: Days to months, depending on project complexity.
+
+Key Question: "Where is this project in its overall journey?"
+
+THE PROJECT RHYTHM — SINE WAVE MODEL:
+
+A useful mental model for the project lifecycle is a sine wave. The
+rhythm of a project alternates between two modes:
+
+Peaks represent active phase work — high-output execution sessions where
+deliverables are produced, problems are solved, and the project advances
+toward its objectives.
+
+Zero-crossings represent transition work — planning, scoping, protocol
+development, and consolidation sessions where the project pauses active
+execution to prepare for the next phase.
+
+The first zero-crossing is rooting (Phase 0). It occurs before the first
+peak — the project establishes its foundation before any execution begins.
+Subsequent zero-crossings are phase transitions, where the project
+consolidates completed work and prepares for the next execution phase.
+
+This model sets expectations: transition sessions feel different from
+execution sessions. They are planning-heavy and execution-light. This is
+by design, not a sign of stalled progress.
+
+PHASES:
+
+Phase 0 — Rooting. Every project begins with rooting: the deliberate
+process of establishing the project's foundation before execution begins.
+Rooting is not optional, and it is not a formality. It is the most
+consequential phase of the project because everything that follows depends
+on the quality of the foundation built here.
+
+If rooting takes 10 sessions, take 10 sessions. This is the nervous
+system of the project — the governance infrastructure that enables
+coherent multi-session execution. Rushing rooting to begin "real work"
+is the most common and most costly mistake in AI-assisted project
+management.
+
+Rooting produces two foundational outputs:
+
+1. The Project Guide — the authoritative document defining the project's
+   identity, scope, deliverables, execution plan, and success criteria
+   (see Section 5.1).
+
+2. The Base Phase Protocol — the behavioral governance document that
+   tells the AI how to conduct work during the first execution phase
+   (see Section 5.2).
+
+The rooting process is collaborative, not mechanical. It involves
+substantive dialogue — typically 10 to 20 exchanges — where the AI
+probes assumptions, surfaces gaps, and proposes alternatives while the
+user engages thoughtfully and raises concerns. This is design work, not
+form completion.
+
+THE ROOTING PROCESS:
+
+1. ESTABLISH CONTEXT. The user uploads this manual to a new project
+   (or the AI is otherwise oriented to the AIPM framework). The user
+   describes what they want to accomplish in broad terms.
+
+2. DEFINE THE DESTINATION. Before mapping the journey, clarify where
+   it ends. What are the deliverables? What form will they take? What
+   does success look like? Knowing the end helps discern the means and
+   the process. If the end-result format is unknown, note it explicitly
+   as an open item for resolution — do not leave it implicitly undefined.
+
+3. DETERMINE SCOPE AND APPROACH. Working backward from the destination:
+   - What objectives must be met?
+   - What methodological approach fits the work?
+   - What constraints apply (timeline, resources, expertise)?
+   - What dependencies exist?
+
+4. STRUCTURE THE PHASES. Group objectives into discrete phases with
+   clear boundaries. For each phase, define:
+   - What it aims to accomplish
+   - What it produces (deliverables or intermediate outputs)
+   - What it requires (inputs, tools, context)
+   - Exit criteria (how do we know the phase is complete?)
+   - Dependencies on prior phases
+
+5. IDENTIFY TEMPLATES AND TOOLS. Based on the project structure:
+   - What templates are needed? (Known now, or anticipated for later?)
+   - What tools will be used? (Notebook connectivity, specialized
+     software, external validators?)
+   - What recurring patterns apply? (Research cycles, review cycles,
+     drafting cycles?)
+
+6. PRODUCE THE PROJECT GUIDE. The AI drafts the Project Guide
+   incorporating all decisions from steps 1-5. The user reviews,
+   revises, and approves.
+
+7. PRODUCE THE BASE PHASE PROTOCOL. The AI drafts the Phase Protocol
+   for Phase 1 (the first execution phase), drawing from:
+   - Layer 1: AIPM framework behaviors (from this manual)
+   - Layer 2: Methodology appropriate to the project type
+   - Layer 3: Project-specific context from the rooting conversation
+   The user reviews, revises, and approves.
+
+8. PREPARE FOR EXECUTION. The rooting session (or final rooting session,
+   if rooting spans multiple sessions) generates a Bootstrap for the
+   first execution session. This Bootstrap references the Phase Protocol
+   as a mandatory first-action review item.
+
+EXIT CRITERIA FOR PHASE 0:
+- Project Guide exists and is approved
+- Base Phase Protocol exists and is approved
+- Phase structure is defined with clear boundaries
+- First execution phase scope and exit criteria are established
+- Bootstrap for first execution session is generated
+- All foundational decisions are documented
+
+USER ACTION — ROOTING READINESS:
+
+Before entering rooting, the user should be able to answer:
+- "What am I trying to accomplish?" (even if the answer is broad)
+- "Why does this matter?" (motivation clarifies priorities)
+- "What does 'done' look like?" (even approximately)
+
+If the user cannot answer these questions, an Exploration Session may be
+more appropriate than formal rooting. Exploration Sessions are
+unstructured conversations that help clarify thinking before committing
+to a project structure.
+
+Cross-reference: Section 1.4.5 provides the Project Readiness Assessment.
+Section 5.1 details the Project Guide. Section 5.2 details the Phase
+Protocol. Section 4.3.5 covers phase transitions.
+
+Execution Phases (Phases 1 through N). The bulk of project work, spanning
+multiple sessions per phase and potentially multiple phases per project.
+Progress is measured against defined milestones and phase exit criteria.
+The sine wave rhythm continues: execution peaks followed by transition
+zero-crossings as the project advances through its phase structure.
+
+Each execution phase operates under its Phase Protocol, which may be
+redrafted at phase transitions if behaviors need to change. The Project
+Roadmap (TPL-010) tracks phase completion and upcoming work.
+
+Completion. Final deliverables produced, reviewed, and accepted. Project
+artifacts archived for future reference. Lessons captured for process
+improvement. The Project Closure Report (TPL-022) formalizes the
+completion process.
+
+Templates Operating at This Level:
+- TPL-001: Project Initiation Form (structures the rooting process)
+- TPL-0XX: Phase Protocol Template (governs phase-level behaviors)
+- TPL-007: Re-Entry Checklist (resuming after extended absence)
+- TPL-010: Project Roadmap (tracking overall progress)
+- TPL-022: Project Closure Report (formal project completion)
+
+Common Macro-Level Failures:
+- Rushing or skipping rooting, leading to weak project foundations
+- Scope creep undetected until late stages
+- Insufficient upfront definition leading to repeated pivots
+- Loss of project thread across extended timelines
+- Completion criteria never clarified, causing indefinite extension
+- Phase transitions treated as interruptions rather than essential
+  consolidation points

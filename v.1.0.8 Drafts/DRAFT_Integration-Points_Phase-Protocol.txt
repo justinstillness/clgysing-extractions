@@ -1,0 +1,328 @@
+================================================================================
+DRAFT — INTEGRATION POINTS FOR PHASE PROTOCOL
+================================================================================
+Target:     Multiple existing sections in GOV-AIPM v1.0.8-DRAFT
+Drafted:    Session 033
+Category:   1 (Phase Protocol) — integration weave
+Status:     DRAFT — pending user review
+================================================================================
+
+These are targeted insertions and modifications to existing manual
+sections that create the cross-reference web connecting the Phase Protocol
+to every relevant context in the manual.
+
+------------------------------------------------------------------------
+INTEGRATION POINT 1: Section 4.3.1 Session Initiation
+Location: After the existing "For Continuation (Via Bootstrap)" block
+Action: REPLACE the three existing initiation scenarios with enhanced
+        versions that incorporate Phase Protocol review
+------------------------------------------------------------------------
+
+REPLACE EXISTING 4.3.1 CONTENT WITH:
+
+4.3.1 Session Initiation
+------------------------
+
+Proper session start establishes productive trajectory. The initiation
+sequence varies by session type but always includes behavioral alignment
+through the Phase Protocol.
+
+For New Projects (Rooting / Phase 0):
+1. Upload this manual (or orient AI to AIPM framework)
+2. Describe project objectives and desired outcomes
+3. Engage in collaborative rooting process (see Section 2.5.1)
+4. Produce Project Guide and Base Phase Protocol
+5. Generate Bootstrap for first execution session
+
+Cross-reference: Section 2.5.1 details the full rooting process.
+
+For Continuation (Via Bootstrap):
+1. Provide Bootstrap file (and any required attachments)
+2. AI executes Bootstrap mandatory first action — typically: review
+   Phase Protocol from Project Knowledge and confirm adherence
+3. AI acknowledges Bootstrap and confirms understanding of current state
+4. AI generates alignment checklist (scope, materials, workflow,
+   expected outputs, gaps or questions)
+5. User verifies alignment checklist
+6. If aligned, work proceeds; if misaligned, adjust before proceeding
+7. AI requests and verifies any dependencies noted in Bootstrap
+
+For Branch Sessions:
+1. Provide Branch Startup File (see Section [Branch Management])
+2. AI reviews inherited Phase Protocol (may be modified for branch)
+3. Conduct mini-rooting cycle if this is the branch's first session
+4. AI generates alignment checklist specific to branch scope
+5. User verifies alignment
+6. Establish integration expectations with mainline
+
+The alignment turn at session start (steps 4-6 in the continuation
+sequence) is mandatory, not optional. It prevents three failure modes:
+
+- Evaporation: starting work without shared understanding of objectives
+- Missing context: beginning without required materials loaded
+- Misalignment: working toward different objectives than intended
+
+Cross-reference: Section 5.2 details the Phase Protocol. Section 5.5
+details Bootstrap Files.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 2: Section 4.3.5 Phase Transition Sessions
+Location: Within the existing phase transition content
+Action: ADD Phase Protocol evaluation as a formal step
+Note: Full revision of phase transitions is Session E scope; this
+      insertion establishes the Phase Protocol reference point
+------------------------------------------------------------------------
+
+ADD TO EXISTING PHASE TRANSITION CONTENT:
+
+Phase Protocol Evaluation:
+
+At every phase transition, the Phase Protocol must be explicitly
+evaluated. This is not optional — even if the conclusion is that no
+changes are needed, the evaluation must occur and the conclusion must
+be documented.
+
+Evaluation questions:
+- Do AI behaviors need to change for the upcoming phase?
+- Has the methodology (Layer 2) shifted?
+- Have project-specific parameters (Layer 3) changed?
+- Have addenda accumulated that warrant a clean redraft?
+- Are there behavioral lessons from the completed phase to incorporate?
+
+If the answer to any question is yes, the Phase Protocol should be
+redrafted for the new phase. If all answers are no, the existing protocol
+carries forward with a version note confirming it was reviewed and found
+adequate.
+
+Cross-reference: Section 5.2.5 details the Phase Protocol lifecycle
+including the redrafting process.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 3: Section 5.1 Project Guide — Enhancement
+Location: Section 5.1.2 (Contents) and 5.1.4 (Template Reference)
+Action: ADD explicit relationship to Phase Protocol
+------------------------------------------------------------------------
+
+ADD TO END OF SECTION 5.1.2 (after the existing contents list):
+
+Relationship to Phase Protocol:
+
+The Project Guide and Phase Protocol are complementary but distinct. The
+Project Guide defines the project — its scope, deliverables, phases, and
+success criteria. The Phase Protocol governs how work is conducted within
+a given phase. Both are created during rooting (Phase 0), but they evolve
+on different cadences: the Project Guide changes rarely (only for
+material scope changes), while the Phase Protocol may be redrafted at
+every phase transition.
+
+The Phase Protocol draws FROM the Project Guide — particularly the phase
+structure, deliverable definitions, and project-specific context — to
+create phase-appropriate behavioral governance. Changes to the Project
+Guide may trigger Phase Protocol review.
+
+Cross-reference: Section 5.2 details the Phase Protocol.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 4: Section 5.5 Bootstrap Files (new number)
+Location: Throughout the Bootstrap section
+Action: ADD Phase Protocol relationship content + quality enhancement
+------------------------------------------------------------------------
+
+ADD NEW SUBSECTION (after existing Bootstrap Structure, before
+Bootstrap Discipline):
+
+5.5.X The Bootstrap-Phase Protocol Relationship
+------------------------------------------------
+
+The Bootstrap and Phase Protocol work in tandem to ensure every session
+begins with both context (Bootstrap) and behavioral governance (Phase
+Protocol).
+
+The Bootstrap as Prompt List:
+
+The Bootstrap functions partly as a prompt list — a set of explicit
+instructions telling the AI what to do at session start. The most
+critical of these instructions is typically the mandatory first action:
+reviewing the Phase Protocol from Project Knowledge.
+
+This prompt-list function means the Bootstrap contains two categories of
+content:
+
+Dynamic content (changes every session):
+- Last session summary and state
+- Next actions and priorities
+- Open items and questions
+- Headroom notes
+- Session-specific instructions
+
+Stable content (persists across the phase):
+- Instruction to review Phase Protocol
+- Notebook connectivity references (IDs and descriptions)
+- Recurring behavioral reminders
+- Standing instructions that apply to every session
+- Decision log continuity (next decision number)
+
+As a project matures, the stable content section of the Bootstrap tends
+to grow. This growth is normal and expected. However, if stable content
+becomes unwieldy, consider whether some of it should be consolidated
+into a Phase Protocol addendum — moving standing behavioral instructions
+into the phase-stable document where they more naturally belong.
+
+Behavioral Reminder Section:
+
+Despite Phase Protocol governance, certain behaviors may require explicit
+reminders in the Bootstrap. Field testing has shown that some behaviors
+are prone to being forgotten or deprioritized even when encoded in the
+Phase Protocol:
+
+- Connector transparency (narrating tool calls for transcript
+  completeness)
+- Specific formatting conventions
+- Project-specific naming or numbering schemes
+
+These reminders are not redundant — they serve as reinforcement for
+behaviors that are critical but easily dropped. Include them in the
+Bootstrap's stable content section.
+
+Cross-reference: Section 5.2 details the Phase Protocol. Section 5.2.4
+explains the Bootstrap-Phase Protocol relationship in depth.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 5: Section 5.8 Artifact Relationships (new number)
+Location: Within the artifact relationship map
+Action: ADD Phase Protocol to the relationship map
+------------------------------------------------------------------------
+
+ADD TO ARTIFACT RELATIONSHIPS:
+
+Phase Protocol Relationships:
+
+The Phase Protocol connects to the artifact ecosystem as follows:
+
+- DRAWS FROM: Project Guide (scope, phases, project context)
+- GOVERNS: Session behavior, work product standards, coordination duties
+- REFERENCED BY: Bootstrap (mandatory first-action review)
+- SUPPLEMENTED BY: Phase Protocol Addenda
+- UPDATED AT: Phase transitions
+- CREATED DURING: Rooting (Phase 0)
+- STORED IN: Project Knowledge
+- ARCHIVED TO: /Phase Protocols/Old/ when superseded
+
+The Phase Protocol is the behavioral bridge between the strategic layer
+(Project Guide, Project Roadmap) and the tactical layer (Bootstrap,
+Session Log, Decision Log). Without it, behavioral expectations must be
+re-established every session from scratch or inferred from context —
+both of which are unreliable.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 6: Section 2.6 The Orientation Principle
+Location: Section 2.6.2 (The Orientation Templates)
+Action: ADD Phase Protocol to the orientation template list
+------------------------------------------------------------------------
+
+ADD TO SECTION 2.6.2 (after TPL-002 entry, before TPL-007):
+
+Phase Protocol (stored in Project Knowledge): Phase-level behavioral
+orientation. Reviewed at every session start for continuing projects.
+Establishes how the AI should behave throughout the current phase —
+behavioral standards, methodology, conventions, and coordination duties.
+Unlike the templates above, the Phase Protocol is not a form to fill out
+but a governance document reviewed for adherence.
+
+UPDATE THE PARAGRAPH FOLLOWING THE TEMPLATE LIST:
+
+These templates and the Phase Protocol are not bureaucratic overhead.
+They are orientation instruments — structured ways to establish the shared
+understanding that productive work requires.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 7: Section 1.4.6 User Workflow Overview
+Location: Within the existing user workflow content
+Action: UPDATE to reflect rooting as the entry point for new projects
+------------------------------------------------------------------------
+
+NOTE: Full content of Section 1.4.6 not yet reviewed. The integration
+here should ensure that the user workflow overview references:
+- Rooting (Phase 0) as the starting process for new projects
+- Phase Protocol creation as part of project startup
+- The collaborative nature of the rooting process
+
+This integration point should be verified against the actual Section
+1.4.6 content during drafting session assembly.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 8: Table of Contents
+Location: Lines 99-107 (Section 5 TOC entries)
+Action: UPDATE to reflect new section numbering
+------------------------------------------------------------------------
+
+REPLACE Section 5 TOC entries:
+
+  Section 5: Canonical Project Artifacts
+    5.1 Project Guide
+    5.2 Phase Protocol
+    5.3 Decision Logs
+    5.4 Session Logs
+    5.5 Bootstrap Files
+    5.6 Findings Reports
+    5.7 Supporting Artifacts
+    5.8 Artifact Relationships
+    5.9 Backlog Register
+    5.10 Project Closure Report
+
+NOTE: Findings Reports (5.6) is Session D scope — placeholder in TOC
+can be established now, with content drafted later.
+
+
+================================================================================
+QUALITY AUDIT NOTES
+================================================================================
+
+During research for this drafting session, the following quality
+observations were noted for existing manual content:
+
+1. SECTION 5.1 (Project Guide): Adequately detailed. The contents list,
+   maintenance rules, and template reference are comprehensive. The main
+   enhancement needed is the Phase Protocol relationship paragraph
+   (Integration Point 3 above). No other quality issues identified.
+
+2. SECTION 5.4/5.5 (Bootstrap Files — current/new numbering): Reasonably
+   detailed in structure and principles. However, the field-tested
+   Bootstrap practices have evolved significantly beyond what TPL-002
+   currently prescribes. Key gaps:
+   - No mention of Phase Protocol review as mandatory first action
+   - No concept of stable vs. dynamic Bootstrap content
+   - No behavioral reminder section
+   - No notebook connectivity references
+   - No response index continuity fields
+   - Bootstrap Types (Continuation, Branch, Recovery) are defined but
+     the Continuation type doesn't reflect current best practice
+
+   RECOMMENDATION: TPL-002 (Bootstrap Template) needs a significant
+   revision in Session B to reflect field-tested structure. The current
+   template is functional but does not encode the evolved practices that
+   make bootstraps most effective. This is a priority quality enhancement.
+
+3. SECTION 4.3.1 (Session Initiation): Currently thin — just brief
+   checklists for three scenarios. The replacement content in Integration
+   Point 1 above significantly enhances this. Session B will further
+   develop the alignment turn protocol.
+
+4. SECTION 2.6 (Orientation Principle): Well-written and conceptually
+   strong. Needs only the Phase Protocol addition (Integration Point 6).
+
+5. SECTION 4.3.5 (Phase Transitions): Currently the most robust part of
+   the session lifecycle section. The Phase Protocol evaluation addition
+   (Integration Point 2) is a natural fit. Full enhancement deferred to
+   Session E as planned.
+
+================================================================================
+END OF INTEGRATION POINTS DRAFT
+================================================================================

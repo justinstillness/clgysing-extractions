@@ -1,0 +1,315 @@
+================================================================================
+DRAFT — SECTION 12.4 THREE-TIER DOCUMENTATION ARCHITECTURE (NEW)
+================================================================================
+Target Location: NEW Section 12.4 (after Section 12.3 Branch Management)
+Drafted:         Session 038
+Category:        12 (Three-Tier Documentation Architecture) from
+                 Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE ON PLACEMENT:
+
+Section 12 (Extended Context) covers multi-session continuity (12.1),
+complex project management (12.2), and branch management (12.3). The
+Three-Tier Documentation Architecture fits naturally here as a pattern
+for managing documentation complexity in substantial projects — a
+structural concern that spans sessions and phases.
+
+Alternative considered: Section 6 (External Organization). The case
+for Section 6 is that documentation architecture is an organizational
+concern. However, Section 6 focuses on the physical file system —
+naming conventions, folder structures, notebook organization. The
+Three-Tier Architecture is a conceptual pattern for how documentation
+is structured and maintained, which is a higher-order concern that
+belongs in Section 12's treatment of complex project management.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+12.4 Three-Tier Documentation Architecture
+--------------------------------------------
+
+12.4.1 The Problem: Documentation Sprawl
+------------------------------------------
+
+As projects grow in complexity, documentation tends toward one of two
+failure modes.
+
+Monolithic specifications: All documentation lives in a single large
+file that becomes increasingly difficult to navigate, update, and
+maintain. Changes to one component require editing a document that
+covers the entire system. The file grows until it exceeds practical
+working limits for both humans and AI context windows.
+
+Scattered fragments: Documentation is spread across many small files
+with no clear hierarchy or relationship between them. Finding
+authoritative information requires knowing which file to check, and
+updates may be made in one location while related content elsewhere
+becomes stale.
+
+The Three-Tier Documentation Architecture solves both problems by
+separating documentation into three levels with distinct purposes,
+update cadences, and scopes.
+
+
+12.4.2 The Three Tiers
+------------------------
+
+TIER 1: ARCHITECTURE REFERENCE (SYSTEM LEVEL)
+
+Purpose: High-level blueprint of the system, project, or deliverable.
+Captures design philosophy, component relationships, and structural
+decisions.
+
+Content includes:
+- System topology or project architecture
+- Component inventory and interrelationships
+- Design principles and governing decisions
+- Scope boundaries and constraints
+
+Stability: High. Architecture references change rarely — only when the
+fundamental structure of the system changes. They provide the stable
+foundation that the other tiers reference.
+
+Update trigger: Major structural changes, new components added or
+removed, fundamental design philosophy shifts.
+
+Naming convention: [VERSION]_SPEC_[System]-Architecture-Reference.[ext]
+Example: v4.0_SPEC_HA-Suite-Architecture-Reference.txt
+
+Characteristics:
+- Written for orientation — a reader encountering the project for the
+  first time should be able to understand the overall structure from
+  this document alone
+- Comprehensive but not granular — it maps the territory without
+  describing every feature of the terrain
+- Maintained as a single authoritative file per system or major
+  subsystem
+
+TIER 2: PER-TOOL / PER-COMPONENT REFERENCES (OPERATIONAL LEVEL)
+
+Purpose: Detailed specifications for individual components, tools,
+processes, or subsystems. Bridges the architecture-level view to
+operational execution.
+
+Content includes:
+- Component-specific specifications and parameters
+- Operational procedures and usage guidance
+- Configuration details and dependencies
+- Troubleshooting and known issues
+
+Stability: Medium. Component references update when the specific
+component changes, but are unaffected by changes to other components.
+This isolation is the key benefit — a change to Component A requires
+updating only Component A's reference, not a monolithic document that
+covers everything.
+
+Update trigger: Component-specific changes — new features, modified
+behaviors, updated configurations, resolved issues.
+
+Naming convention: [VERSION]_REF_[Component]-Reference.[ext]
+Example: v1.0_REF_Caliper-Tool-Reference.txt
+
+Characteristics:
+- Self-contained — each reference covers one component completely
+- Consistent structure across references for the same system (common
+  sections, shared formatting)
+- Cross-references the Architecture Reference for system-level context
+- Multiple references exist in parallel — one per component
+
+TIER 3: CHANGELOG (TEMPORAL LEVEL)
+
+Purpose: Sequential record of what changed, when, and why. Tracks the
+evolution of the system over time.
+
+Content includes:
+- Reverse-chronological entries documenting changes
+- Decision references for significant changes
+- Version progression
+- Session provenance (which session produced each change)
+
+Stability: Continuously updated. Every session that modifies the system
+adds to the changelog.
+
+Update trigger: Any change to Tier 1 or Tier 2 documentation, any
+significant implementation change, any relevant decision.
+
+Naming convention: CHANGELOG.[ext] or [PROJECT]_CHANGELOG.[ext]
+Example: CHANGELOG.txt
+
+Characteristics:
+- Append-only (reverse-chronological) — entries are added, never
+  modified after the session that created them
+- Provides temporal context that static specifications lack — why
+  something is the way it is, what it replaced, what prompted the change
+- Enables context recovery for AI sessions — querying the changelog
+  reveals project evolution without requiring the AI to read every
+  prior session
+- May be backfilled for existing projects that adopt the pattern
+  retroactively
+
+
+12.4.3 When to Apply This Pattern
+-----------------------------------
+
+The Three-Tier Architecture is not needed for every project. It is
+most valuable when:
+
+- The project produces or manages a system with multiple distinct
+  components
+- Documentation would otherwise grow into an unwieldy monolithic file
+- Multiple people or AI sessions need to reference documentation, and
+  different sessions need different levels of detail
+- Components evolve at different rates, making a single document
+  difficult to maintain
+- The project spans enough sessions that temporal context (what changed
+  and when) becomes valuable for continuity
+
+Projects that typically benefit:
+- Software development with multiple tools or services
+- Governance frameworks with multiple policy domains
+- Research projects with multiple investigation threads
+- Any project producing deliverables with distinct, independently
+  evolving components
+
+Projects where it may be unnecessary:
+- Short projects (fewer than 5 sessions)
+- Single-deliverable projects with no component structure
+- Projects where all documentation fits comfortably in one file
+
+The decision to adopt the Three-Tier Architecture should be made during
+rooting (Phase 0) or at a phase transition when documentation complexity
+has become apparent. It can be recorded as a project decision in the
+Decision Log.
+
+
+12.4.4 Implementation Guidance
+--------------------------------
+
+CREATING THE INITIAL ARCHITECTURE:
+
+When adopting the pattern for a new project:
+
+1. Draft the Architecture Reference first. Map the system's components
+   and relationships. This becomes the authoritative structural document
+   that all other documentation references.
+
+2. Create Component References for each major component. Use a
+   consistent structure across all references for the same system —
+   common sections (Purpose, Configuration, Usage, Known Issues) make
+   references predictable and navigable.
+
+3. Initialize the Changelog. If the project already has history, backfill
+   from session logs and decision logs. If the project is new, the first
+   entry documents the architecture's creation.
+
+RETROFITTING AN EXISTING PROJECT:
+
+When an existing project's documentation has outgrown a monolithic
+structure:
+
+1. Identify the component boundaries within the existing documentation.
+2. Extract the Architecture Reference by distilling the high-level
+   structure from the monolithic document.
+3. Extract Component References by separating component-specific content
+   into individual files.
+4. Create the Changelog from existing session and decision logs.
+5. Retire the monolithic document — archive it and redirect references
+   to the new three-tier structure.
+
+STORAGE AND ORGANIZATION:
+
+Store all tiers in a dedicated documentation directory within the
+project's file structure. A common pattern:
+
+  /[PROJECT]/
+  └── /docs/  (or /Documentation/)
+      ├── [Architecture Reference]
+      ├── [Component Reference 1]
+      ├── [Component Reference 2]
+      ├── [Component Reference N]
+      └── CHANGELOG.txt
+
+For projects using notebook connectivity, upload the Architecture
+Reference and Component References to the project notebook. The
+Changelog may be uploaded as well, but be mindful of source limits —
+a very long changelog may be more efficient as a queryable document
+than a full notebook source.
+
+
+12.4.5 Relationship to Other Framework Elements
+-------------------------------------------------
+
+The Three-Tier Architecture integrates with the broader AIPM framework
+at several points:
+
+File Naming (Section 6.1): Tier naming conventions ([VERSION]_SPEC_,
+[VERSION]_REF_, CHANGELOG) follow the project's naming standards and
+include the project handle.
+
+Notebook Organization (Section 6.2.4): Architecture and Component
+References are prime candidates for notebook upload — they provide
+high-value queryable context for AI sessions. The Changelog provides
+temporal context that supports exhaustive querying.
+
+Session Lifecycle (Section 4.3): When an AI session needs to understand
+the system it's working on, the Architecture Reference is the first
+document to reference. Component References are pulled as needed for
+specific work. The Changelog provides recent evolution context.
+
+Phase Transitions (Section 4.3.5): Phase transitions are natural
+checkpoints for updating documentation tiers. The transition's
+consolidation step (Step 2 of the 8-step process) should verify that
+all three tiers reflect the completed phase's work.
+
+Branch Management (Section 12.3): Branches may produce their own
+Component References that are later integrated into the mainline
+documentation structure.
+
+Cross-reference: Section 6 (External Organization), Section 10.3
+(Notebook Connectivity), Section 4.3.5 (Phase Transitions), Section
+12.3 (Branch Management).
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+New Section 12.4 after Section 12.3 (Branch Management).
+
+FIELD-TESTED ORIGIN:
+This pattern was formally adopted in Session 021 (Decision D-027) for
+the Havona Anvil Suite project, replacing a monolithic v3.1
+specification with:
+- Tier 1: v4.0_SPEC_HA-Suite-Architecture-Reference.txt
+- Tier 2: Individual references for SeraphRecorder, Caliper, Majeston
+- Tier 3: CHANGELOG.txt (backfilled from Sessions 001-020)
+
+The implementation produced approximately 83,000 characters of
+structured documentation across five files, demonstrating the pattern's
+scalability and practical effectiveness.
+
+RELATIONSHIP TO PRIOR DRAFTS:
+- Session C Section 6.2.4 (Notebook Organization): Aligns — notebook
+  organization covers where to store documentation; Three-Tier covers
+  how to structure it.
+- Session D Section 12.3 (Branch Management): Complementary — branches
+  may produce their own component references.
+- Session B Section 12.1 (Multi-Session Continuity): The Changelog
+  tier directly supports continuity by providing temporal context.
+
+CROSS-REFERENCES TO ESTABLISH IN SESSION G:
+- Section 6.1: Note that Three-Tier naming conventions extend the
+  project's file naming standards
+- Section 12.2 (Complex Project Management): Cross-reference to 12.4
+  for documentation management in complex projects
+- Glossary: Entry for "Three-Tier Documentation Architecture"
+- TOC: Add 12.4 entry
+
+================================================================================
+END OF SECTION 12.4 THREE-TIER DOCUMENTATION ARCHITECTURE DRAFT
+================================================================================

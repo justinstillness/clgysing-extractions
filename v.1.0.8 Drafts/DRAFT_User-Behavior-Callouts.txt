@@ -1,0 +1,373 @@
+================================================================================
+DRAFT — USER BEHAVIOR CALLOUTS (EMBEDDED THROUGHOUT MANUAL)
+================================================================================
+Target Location: Multiple sections (see placement instructions per item)
+Drafted:         Session 038
+Category:        7 (User Behaviors & User Guide) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE ON FORMAT:
+
+User Behavior callouts are embedded within AI-facing sections to make
+user responsibilities visible where they are most relevant. Each callout
+uses a consistent format marker:
+
+    ┌─────────────────────────────────────────────────────────────┐
+    │ USER ACTION: [title]                                        │
+    │                                                             │
+    │ [Description of the user-side action]                       │
+    └─────────────────────────────────────────────────────────────┘
+
+Or for behavioral patterns (ongoing practices rather than discrete
+actions):
+
+    ┌─────────────────────────────────────────────────────────────┐
+    │ USER BEHAVIOR: [title]                                      │
+    │                                                             │
+    │ [Description of the practice]                               │
+    └─────────────────────────────────────────────────────────────┘
+
+These are rendered as indented, bordered text blocks in the final
+manual — visually distinct from surrounding AI-facing content.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+========================================================================
+CALLOUT 1: PROJECT HANDLE NAMING
+Placement: Section 6.1 (Naming Conventions) — INSERT near the beginning
+           of the naming conventions section, before file naming rules
+========================================================================
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ USER ACTION: Establish a Project Handle                             │
+│                                                                     │
+│ At project start, choose a short, consistent alphanumeric tag       │
+│ (3–10 characters) that will identify this project across all        │
+│ contexts: files, sessions, folders, and notebooks.                  │
+│                                                                     │
+│ Requirements:                                                       │
+│ - Uppercase letters and optional hyphens (e.g., GOV-AIPM, CLGYSING)│
+│ - Unique across your active projects                                │
+│ - Short enough to use comfortably in every filename and chat name   │
+│ - Meaningful enough that you can identify the project at a glance   │
+│                                                                     │
+│ The project handle is the connective tissue of your external memory │
+│ system. It links chats, files, folders, and notebooks into a single │
+│ retrievable scope. Choose it during rooting and use it everywhere.  │
+│                                                                     │
+│ Examples: GOV-AIPM, CLGYSING, AWSNBLM, NLMINTA                     │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+========================================================================
+CALLOUT 2: SESSION NAMING CONVENTION
+Placement: Section 6.1 (Naming Conventions) — INSERT after session/chat
+           naming guidance, or alongside Project Handle callout
+========================================================================
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ USER ACTION: Name Every Chat Session                                │
+│                                                                     │
+│ Immediately after starting a new chat and receiving the AI's first  │
+│ response, rename the chat to match this convention:                 │
+│                                                                     │
+│   [session#] [PROJECT-HANDLE] ([semantic descriptor])               │
+│                                                                     │
+│ Examples:                                                           │
+│   001 CLGYSING (Rooting and Project Architecture)                   │
+│   023 AWSNBLM (File Fix and Index Alpha)                            │
+│   034 GOV-AIPM (Session Lifecycle Drafting)                         │
+│                                                                     │
+│ The session number comes from the Bootstrap. The semantic descriptor │
+│ should be brief but meaningful — enough to identify the session's   │
+│ purpose when scanning a list of chats.                              │
+│                                                                     │
+│ Do not rely on the AI's auto-generated chat name. These are generic │
+│ and do not follow project conventions. Replace them immediately.    │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+========================================================================
+CALLOUT 3: NEW CHAT NOTEPAD SYSTEM
+Placement: Section 4.3.1 (Session Initiation) — INSERT before or after
+           the continuation sequence, as a user-side companion to the
+           AI-side initiation protocol
+========================================================================
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ USER BEHAVIOR: Maintain a New Chat Notepad                          │
+│                                                                     │
+│ Keep an external notepad (Google Keep, text file, or equivalent)    │
+│ that you update between sessions to prepare your session start      │
+│ prompt. This notepad is your pre-session staging area.              │
+│                                                                     │
+│ Contents to maintain:                                               │
+│ - Chat name: Pre-formatted per the naming convention, ready to      │
+│   copy-paste when renaming the chat                                 │
+│ - Standard opening line: e.g., "Please review and let me know if    │
+│   you have any questions"                                           │
+│ - Notebook references: IDs and brief descriptions of project        │
+│   notebooks the AI should access                                    │
+│ - Behavioral reminders: Explicit instructions for behaviors the     │
+│   AI tends to forget (e.g., "Narrate all tool calls per CTP")      │
+│ - Between-session notes: Context updates, ideas, or corrections     │
+│   that arose since the last session                                 │
+│                                                                     │
+│ Session start workflow:                                              │
+│ 1. Update the notepad with this session's specifics                 │
+│ 2. Open a new chat (with Phase Protocol in Project Knowledge)       │
+│ 3. Paste notepad content into the message box                       │
+│ 4. Attach the Bootstrap file (and Session Log if needed)            │
+│ 5. Send                                                             │
+│ 6. Once the AI responds, paste the chat name to rename the session  │
+│                                                                     │
+│ The notepad ensures consistent, complete session starts without     │
+│ relying on memory. It takes 2-3 minutes to update between sessions  │
+│ and prevents the most common session-start failures.                │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+========================================================================
+CALLOUT 4: PRE-SESSION HOUSEKEEPING
+Placement: Section 4.3.1 (Session Initiation) — INSERT alongside or
+           near the New Chat Notepad callout, as the preparation
+           checklist before entering the AI interface
+========================================================================
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ USER ACTION: Pre-Session Preparation                                │
+│                                                                     │
+│ Before starting a new session:                                      │
+│                                                                     │
+│ □ Verify the Bootstrap is correct (session number, project handle,  │
+│   scope description — see Section 14.1, Bootstrap verification      │
+│   failure)                                                          │
+│ □ Update the New Chat Notepad with current session specifics        │
+│ □ Confirm the Phase Protocol is stored in Project Knowledge         │
+│ □ Gather any files the Bootstrap lists as required materials        │
+│ □ Review any between-session notes for context to include           │
+│                                                                     │
+│ Time investment: 3-5 minutes. Prevents: misaligned sessions,        │
+│ missing materials, propagated bootstrap errors.                     │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+========================================================================
+CALLOUT 5: POST-SESSION HOUSEKEEPING
+Placement: Section 4.3.3 (Session Closeout) — INSERT after the
+           USER CLOSEOUT DUTIES list in the Session B draft, as a
+           structured version of those duties
+========================================================================
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ USER ACTION: Post-Session Housekeeping                              │
+│                                                                     │
+│ After the AI generates closeout artifacts and the session ends:     │
+│                                                                     │
+│ □ Download all AI-produced files (use "show all artifacts" if       │
+│   available) and place in the session's chat folder                 │
+│ □ Verify the Bootstrap: check session number incremented by         │
+│   exactly 1, project handle is correct, scope aligns with plan     │
+│ □ Export the chat transcript (via Claude Exporter or equivalent)    │
+│   and save to the session folder                                    │
+│ □ Upload to project notebook: transcript + non-ephemeral artifacts  │
+│   (specifications, findings, deliverables — not drafts or          │
+│   ephemeral working files)                                          │
+│ □ Update the New Chat Notepad: copy next session's name from the   │
+│   Bootstrap, update notebook references if changed, add any        │
+│   behavioral reminders                                              │
+│ □ Copy relevant files to functional folders (guides, logs,          │
+│   artifacts) per project folder convention                          │
+│                                                                     │
+│ Time investment: 10-15 minutes. Prevents: lost artifacts, stale    │
+│ notebooks, propagated bootstrap errors, broken continuity.          │
+│                                                                     │
+│ This is the "10%" — the user's essential contribution to the        │
+│ external memory system that makes multi-session work possible.      │
+│ The AI generates 90% of the continuity infrastructure; these        │
+│ actions complete it.                                                │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+========================================================================
+CALLOUT 6: FILE ORGANIZATION
+Placement: Section 6.2 (Folder Structure) — INSERT near the beginning
+           of the folder structure section
+========================================================================
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ USER BEHAVIOR: Maintain Dual Folder Structure                       │
+│                                                                     │
+│ Organize project files in two parallel structures:                  │
+│                                                                     │
+│ A. Chat-Based (Source of Truth):                                    │
+│   /Projects/[HANDLE]/Chats/[Session Name]/                          │
+│   Each session gets a dedicated folder containing:                  │
+│   - Bootstrap (input), Session Log, Chat Transcript                 │
+│   - All drafts and deliverables produced during that session        │
+│                                                                     │
+│ B. Functional (Working View):                                       │
+│   /Projects/[HANDLE]/                                               │
+│   ├── /Guides/          (Project Guide, references)                 │
+│   ├── /Logs/            (Session logs, decision logs)               │
+│   ├── /Artifacts/       (Current drafts and specs)                  │
+│   └── /Phase Protocols/ (Current protocol; /Old/ for superseded)    │
+│                                                                     │
+│ The chat folder is the origin — it preserves exactly what each      │
+│ session produced. The functional folders are the working library —   │
+│ organized by type for quick access. Files are duplicated across     │
+│ both structures.                                                    │
+│                                                                     │
+│ Update functional folders after each session as part of post-       │
+│ session housekeeping.                                               │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+========================================================================
+CALLOUT 7: PROMPTING DISCIPLINE
+Placement: Section 3 (Explicit Alignment Principle) — INSERT at end of
+           section, or as a callout within Section 3.5 (Dialog Intake
+           System) or Section 3.8 (Instruction Chain Interpretation)
+========================================================================
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ USER BEHAVIOR: Prompting Discipline                                 │
+│                                                                     │
+│ Compose complex responses in an external notepad before pasting     │
+│ into the AI interface. This prevents accidental sends of incomplete │
+│ messages and allows you to review your own clarity before the AI    │
+│ processes it.                                                       │
+│                                                                     │
+│ When providing direction on decisions, use this formula:            │
+│                                                                     │
+│   [State your thinking] +                                           │
+│   [Provide your direction] +                                        │
+│   "Let me know if you think there's a better way or if my          │
+│    thinking is incorrect."                                          │
+│                                                                     │
+│ The final clause is critical. AI assistants default to compliance   │
+│ — they will execute your direction even if it is suboptimal. You    │
+│ must explicitly invite disagreement to receive honest feedback.     │
+│ Without this invitation, the AI treats your direction as a          │
+│ command rather than a proposal.                                     │
+│                                                                     │
+│ This practice complements the AI's "alignment over assumption"      │
+│ principle (Section 2.2.3): the AI proposes and pauses; you direct   │
+│ and invite challenge.                                               │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+========================================================================
+CALLOUT 8: NOTEBOOKLM MAINTENANCE
+Placement: Section 10.3 (Notebook Connectivity) — INSERT within or
+           after the upload workflow subsection (10.3.3)
+========================================================================
+
+┌─────────────────────────────────────────────────────────────────────┐
+│ USER BEHAVIOR: Notebook Maintenance                                 │
+│                                                                     │
+│ The project notebook is your deep context recovery layer. Its       │
+│ value depends entirely on keeping it current.                       │
+│                                                                     │
+│ After each session:                                                 │
+│ - Upload the session transcript to the project notebook             │
+│ - Upload non-ephemeral artifacts (specifications, findings,         │
+│   reports, deliverables)                                            │
+│ - Skip ephemeral artifacts (bootstraps, working drafts, session     │
+│   logs already captured in transcripts)                             │
+│                                                                     │
+│ Weekly:                                                             │
+│ - Verify no sessions are missing from the notebook                  │
+│ - Review source count against plan limits                           │
+│ - Update the notebook directory if notebooks were added             │
+│                                                                     │
+│ When directing the AI to use notebook context:                      │
+│ - Be explicit: "The information you're looking for is likely in     │
+│   the NotebookLM notebook. Please begin targeted queries."          │
+│ - Encourage exhaustive querying: query → summarize → ask gap        │
+│   questions → repeat until saturation                               │
+│ - A notebook that falls behind the project provides degraded        │
+│   retrieval. Stale notebooks produce stale context.                 │
+│                                                                     │
+│ Time investment: 5-10 minutes per session. The notebook eliminates  │
+│ the need to re-explain project history — a small maintenance cost   │
+│ for a large continuity benefit.                                     │
+└─────────────────────────────────────────────────────────────────────┘
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT SUMMARY:
+
+| Callout | Title                    | Target Section          |
+|---------|--------------------------|-------------------------|
+| 1       | Project Handle Naming    | Section 6.1             |
+| 2       | Session Naming           | Section 6.1             |
+| 3       | New Chat Notepad         | Section 4.3.1           |
+| 4       | Pre-Session Housekeeping | Section 4.3.1           |
+| 5       | Post-Session Housekeeping| Section 4.3.3           |
+| 6       | File Organization        | Section 6.2             |
+| 7       | Prompting Discipline     | Section 3 (3.5 or 3.8)  |
+| 8       | NotebookLM Maintenance   | Section 10.3            |
+
+RELATIONSHIP TO EXISTING CONTENT:
+
+These callouts do not replace existing content. They are embedded
+within AI-facing sections to make user responsibilities visible. The
+surrounding AI-facing content explains what the AI does; the callouts
+explain what the user does at the same workflow point.
+
+Callouts 4 and 5 (pre- and post-session housekeeping) formalize the
+user-side actions that Session B's closeout protocol (Section 4.3.3)
+references in the USER CLOSEOUT DUTIES list. The callout format makes
+these more prominent and actionable.
+
+RELATIONSHIP TO PRIOR DRAFTS:
+
+- Session B Section 4.3.3 (Closeout): USER CLOSEOUT DUTIES list is
+  the prose version of Callout 5. The callout provides the structured
+  checklist format. No conflict — the callout elaborates what the
+  prose describes.
+- Session B TPL-003 (Closeout Checklist): Part B (User Responsibilities)
+  covers the same ground as Callout 5. The callout is the in-section
+  reference; the template is the formal checklist.
+- Session C Section 6.2.4 (Notebook Organization): Callout 8 references
+  the same practices. No conflict — the callout is the user-facing
+  version of AI-facing guidance in 10.3.
+- Session C Section 4.3 Notebook References: Addition 3 (closeout
+  notebook upload) aligns with Callout 5's notebook upload step.
+- Session E Section 14.1 (this session's Failure Modes draft):
+  Bootstrap verification failure references user verification — Callout
+  4 provides the structured pre-session action.
+
+CROSS-REFERENCES FROM CALLOUTS:
+- Callout 3 → Section 4.3.1 (initiation), Section 5.5 (Bootstrap),
+  Section 4.4 (CTP — behavioral reminder example)
+- Callout 4 → Section 14.1 (bootstrap verification failure)
+- Callout 5 → Section 10.3.3 (upload workflow), Section 6.2 (folder
+  convention)
+- Callout 7 → Section 2.2.3 (Alignment Over Assumption), Section 3.8
+  (Instruction Chain)
+- Callout 8 → Section 10.3 (Notebook Connectivity)
+
+CROSS-REFERENCES TO ESTABLISH IN SESSION G:
+- Section 1.4.6 (User Workflow Overview): Should reference the callout
+  system as the user-facing guidance mechanism throughout the manual
+- Glossary: Entries for "New Chat Notepad," "Project Handle"
+
+NOTE ON SECTION 1.4.6:
+The Session A draft of Section 1.4.6 already includes USER ACTION
+callouts (e.g., "Store the Phase Protocol in Project Knowledge").
+The callout format used here is consistent with Session A's approach
+but more visually structured. Session G integration should harmonize
+the format across all USER ACTION references in the manual.
+
+================================================================================
+END OF USER BEHAVIOR CALLOUTS DRAFT
+================================================================================

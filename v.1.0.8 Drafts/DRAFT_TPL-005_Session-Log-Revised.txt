@@ -1,0 +1,386 @@
+================================================================================
+DRAFT — TPL-005 SESSION LOG TEMPLATE (REVISION)
+================================================================================
+Target:     TPL-005 in Appendix A (REPLACES existing template)
+Drafted:    Session 034
+Category:   3 (Enhanced Session Lifecycle) from Revision Findings
+Status:     DRAFT — pending user review
+================================================================================
+
+REVISION RATIONALE:
+
+The current TPL-005 captures the right information categories but does
+not reflect field-tested session log practices. Key enhancements:
+- Embedded Session Fidelity Report (SFR) as a required section
+- Response Index Register as a required section
+- Scope Observations section (planned vs. actual, emergent items)
+- Phase Progress with completion criteria tracking
+- File class annotations (LOG, DRAFT, SPEC, REF, BOOTSTRAP, etc.)
+- Richer structure matching the evolved practice observed across five
+  real-world session logs spanning three different projects
+
+Informed by analysis of field-tested session logs:
+- 033_session-log.txt (GOV-AIPM — high complexity, drafting)
+- 014_session-log.txt (NLMINTA — medium complexity, testing)
+- 013_session-log.txt (NLMINTA — high complexity, stress testing)
+- 023_session-log.txt (AWSNBLM — medium complexity, infrastructure)
+- 022_session-log.txt (AWSNBLM — high complexity, design)
+
+================================================================================
+BEGIN REVISED TEMPLATE
+================================================================================
+
+
+TPL-005: SESSION LOG
+
+Template ID: GOV-AIPM-TPL-005
+Version: 2.0
+Purpose: Record what occurred in a chat session for continuity, project
+         tracking, audit trail, and fidelity verification. Includes
+         embedded Session Fidelity Report (SFR) for structured assessment
+         of session quality and handoff readiness.
+When to Use: At the end of every AI chat session, as part of the
+             closeout sequence (Section 4.3.3).
+
+Cross-reference: Section 5.4 (Session Logs), Section 4.3.3 (Session
+Closeout), TPL-003 (Session Closeout Checklist)
+
+--------------------------------------------------------------------------------
+INSTRUCTIONS
+--------------------------------------------------------------------------------
+
+Complete a Session Log at the end of every AI chat session as part of
+the closeout protocol. The log provides a running record of project
+activity and serves as the structured companion to the full chat
+transcript.
+
+Session Logs are distinct from other closeout artifacts:
+- Session Log: Records what happened (activities, outputs, fidelity)
+- Decision Log: Records what was decided (choices, rationale, alternatives)
+- Bootstrap: Carries forward what the next session needs to know
+- Chat Transcript: Complete verbatim record of the conversation
+
+The Session Log serves dual audiences:
+- The user, for quick orientation when reviewing project history
+- The next AI instance, for understanding what was accomplished and
+  what remains
+
+FILE NAMING:
+[###]_session-log.txt
+Example: 034_session-log.txt
+
+For sessions with distinctive scope, a descriptive suffix may be added:
+Example: 013_session-log_(StressTest-SignalStrings).txt
+
+DIALOG COMPLETION OPTION:
+This template can be completed through dialog with the AI. Say:
+"Help me complete TPL-005" or "Walk me through Session Log."
+More commonly, the AI generates the Session Log proactively as part
+of the closeout sequence.
+
+Tips:
+- Keep entries concise — this is a summary, not a transcript
+- Reference the Decision Log for decision details rather than duplicating
+- Note issues and blockers even if unresolved; they inform future sessions
+- The SFR section requires honest assessment, not optimistic reporting
+
+--------------------------------------------------------------------------------
+SESSION LOG TEMPLATE
+--------------------------------------------------------------------------------
+
+================================================================================
+SESSION LOG — Session [###]
+================================================================================
+File Class:     LOG
+Project:        [Project Name (Brief Description)]
+Session:        [### Project-Code (Session Purpose)]
+Date:           [Date or date range if extended session]
+Session Type:   [Phase Name — Activity Type]
+
+================================================================================
+SESSION OBJECTIVE
+================================================================================
+
+[State the session's intended objective(s) as defined by the Bootstrap
+or user direction at session start. Be specific enough that "objective
+achieved" can be evaluated against this statement.]
+
+Primary: [Primary objective]
+Secondary: [Secondary objective, if applicable]
+
+================================================================================
+WORK ACCOMPLISHED
+================================================================================
+
+[List major activities and outputs. Number each item for reference.
+Be specific about what was produced, not just what was discussed.]
+
+1. [Accomplishment — include specifics: document name, version, count]
+2. [Accomplishment]
+3. [Accomplishment]
+4. [Continue as needed]
+
+Objective Achieved: [FULL / PARTIAL / MINIMAL]
+[If PARTIAL or MINIMAL, explain what was not completed and why.]
+
+================================================================================
+DECISIONS MADE
+================================================================================
+
+[List decisions briefly. Reference the Decision Log for full rationale
+if a separate Decision Log was generated.]
+
+| Decision # | Brief Description |
+|------------|-------------------|
+| D-###      |                   |
+| D-###      |                   |
+
+Total decisions this session: [#]
+[If no decisions: "No formal decisions required this session."]
+
+================================================================================
+SCOPE OBSERVATIONS
+================================================================================
+
+[Compare planned scope to actual execution. Note emergent items.]
+
+Planned vs Actual:
+- [What went as planned]
+- [What diverged and why]
+
+Emerged:
+- [Unplanned items that surfaced during the session]
+- [New insights, concerns, or opportunities identified]
+
+Scope Expansions Flagged: [Any scope expansions, with decision reference
+if formally decided, or "None"]
+
+================================================================================
+PHASE PROGRESS
+================================================================================
+
+[Current phase status with completion criteria tracking]
+
+Phase [N] Status: [Brief status — e.g., "~95% complete"]
+
+Completion Criteria:
+[✓] [Criterion 1] — COMPLETE [(session reference)]
+[✓] [Criterion 2] — COMPLETE
+[~] [Criterion 3] — IN PROGRESS
+[ ] [Criterion 4] — NOT STARTED
+
+Estimated Phase Completion: [XX]%
+
+================================================================================
+ISSUES ENCOUNTERED
+================================================================================
+
+[Note any problems, blockers, or unexpected challenges]
+
+| Issue | Status | Resolution/Notes |
+|-------|--------|------------------|
+|       |        |                  |
+
+Status options: Resolved / Open / Deferred / Noted
+
+[If no issues: "No significant issues encountered."]
+
+================================================================================
+FILES PRODUCED
+================================================================================
+
+[List all files generated this session with file class annotation]
+
+| File Name | File Class | Description |
+|-----------|------------|-------------|
+|           |            |             |
+
+File Class values: LOG, DRAFT, SPEC, REF, PLAN, BOOTSTRAP, FINDINGS,
+TEMPLATE, DELIVERABLE, or project-specific classes.
+
+Total artifacts: [#]
+
+================================================================================
+RESPONSE INDEX REGISTER
+================================================================================
+
+[Record all response indexes used this session]
+
+| Index | Semantic Title |
+|-------|----------------|
+| [####]|                |
+| [####]|                |
+
+Session index range: [####] through [####]
+Next session starts at index: [####]
+
+[If a compaction event occurred mid-session, note it:]
+Note: Transcript compaction occurred between [####] and [####].
+
+================================================================================
+SESSION FIDELITY REPORT — EMBEDDED
+================================================================================
+
+Status:         DRAFT
+Phase:          [Phase Name]
+Date:           [Date]
+
+WORK ACCOMPLISHED:
+
+Planned Objectives:
+- [Objective 1 as stated in Bootstrap/alignment]
+- [Objective 2]
+
+Actual Completion:
+- [What was actually completed]
+- [Include any bonus/headroom work]
+
+Objective Achievement: [FULL / PARTIAL / MINIMAL]
+
+PHASE PROGRESS:
+
+Phase [N] Completion Criteria Status:
+[✓] [Criterion 1] — COMPLETE
+[~] [Criterion 2] — IN PROGRESS
+[ ] [Criterion 3] — NOT STARTED
+
+Current Phase Assessment: [XX]% complete
+Overall Project Progress: Phase [N] of [M]
+
+DECISIONS CRYSTALLIZED:
+
+[Summary of decisions made. If none: "No formal decisions this session."]
+
+GAPS & INSIGHTS IDENTIFIED:
+
+Gaps:
+- [Missing information, unresolved questions, or blocked items]
+- [Content that still needs development]
+
+Insights:
+- [Discoveries or observations that inform future work]
+- [Process improvements identified]
+- [Unexpected findings with implications]
+
+HANDOFF STATUS:
+
+Context Carried Forward:
+- [Key context the next session must have]
+- [State of in-progress work]
+
+Required for Next Session:
+- [Specific files or inputs needed]
+- [Access requirements (notebooks, tools)]
+
+Risks/Warnings:
+- [Anything that could cause problems in the next session]
+- [Dependencies or timing concerns]
+
+NEXT SESSION PROJECTION:
+
+Focus: [Primary objective for next session]
+
+Success Criteria:
+- [What constitutes completion]
+
+Estimated Complexity: [LOW / MEDIUM / MEDIUM-HIGH / HIGH]
+
+VERIFICATION:
+
+User Verification: PENDING
+Notes: —
+
+================================================================================
+BOOTSTRAP STATUS
+================================================================================
+
+Bootstrap Generated: [YES / NO]
+File Name: [Bootstrap filename]
+Target Session: [###]
+Suggested Next Session Name: [### Project-Code (Session Purpose)]
+
+================================================================================
+END OF SESSION LOG
+================================================================================
+
+
+--------------------------------------------------------------------------------
+END OF TEMPLATE
+--------------------------------------------------------------------------------
+
+
+================================================================================
+TEMPLATE NOTES
+================================================================================
+
+COMPARISON WITH v1.0 (PREVIOUS VERSION):
+
+The following sections are NEW in v2.0:
+- SCOPE OBSERVATIONS (planned vs. actual, emergent items)
+- PHASE PROGRESS (completion criteria tracking)
+- RESPONSE INDEX REGISTER (full index listing)
+- SESSION FIDELITY REPORT — EMBEDDED (comprehensive fidelity assessment)
+- File Class annotation throughout
+
+The following sections are REVISED in v2.0:
+- HEADER: Added File Class, expanded session type
+- SESSION OBJECTIVE: Structured with Primary/Secondary
+- WORK ACCOMPLISHED: Added "Objective Achieved" assessment
+- DECISIONS MADE: Simplified to table format with count
+- ISSUES ENCOUNTERED: Added Status column with defined values
+- FILES PRODUCED: Added File Class column
+- BOOTSTRAP STATUS: Added suggested next session name
+
+The following sections from v1.0 are REMOVED or CONSOLIDATED:
+- CHAT EXPORT STATUS: Moved to TPL-003 (Closeout Checklist) where it
+  is a user action, not a session log entry
+- SESSION METRICS (Optional): Replaced by the more comprehensive SFR
+- NEXT SESSION NOTES: Consolidated into SFR's Next Session Projection
+- DURATION: Removed as a standalone field (approximate timing is less
+  useful than the substance of what was accomplished)
+
+SESSION FIDELITY REPORT (SFR) GUIDANCE:
+
+The SFR is generated as part of every Session Log. It provides a
+structured assessment that goes beyond "what happened" to evaluate
+"how well did it go and what does the next session need to know."
+
+The SFR serves three purposes:
+1. Quality verification — honest assessment of whether objectives were
+   met and to what degree
+2. Continuity assurance — explicit handoff context that the Bootstrap
+   draws from
+3. Pattern detection — over multiple sessions, SFR entries reveal
+   patterns in scope management, estimation accuracy, and recurring gaps
+
+The SFR should be written honestly. If objectives were only partially
+met, say so. If the AI's performance degraded due to context exhaustion,
+document it. If scope expanded beyond what was planned, note whether that
+was productive headroom opportunism or uncontrolled drift. The SFR is
+a diagnostic tool, not a success narrative.
+
+User Verification: The SFR is generated in DRAFT status. The user may
+confirm accuracy (changing to CONFIRMED) or note corrections. This
+verification step is encouraged but not blocking — an unverified SFR
+is still valuable for continuity.
+
+FILE STRUCTURE GUIDANCE:
+
+Session Logs are maintained as individual files per session:
+[###]_session-log.txt
+
+This differs from the v1.0 guidance which suggested a single
+append-only file per project. Individual files per session are
+recommended because:
+- Each file can be uploaded to notebooks independently
+- Individual files are easier to reference from Bootstraps
+- File size remains manageable for long-running projects
+- Session identification is immediate from the filename
+
+For projects using notebook connectivity, individual session logs should
+be uploaded to the project notebook after each session for context
+recovery purposes.
+
+================================================================================
+END OF TPL-005 REVISION DRAFT
+================================================================================

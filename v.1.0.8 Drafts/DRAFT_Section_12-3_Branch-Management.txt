@@ -1,0 +1,463 @@
+================================================================================
+DRAFT — SECTION 12.3 BRANCH MANAGEMENT (NEW)
+================================================================================
+Target Location: NEW Section 12.3 (after Section 12.2 Complex Project
+                 Management)
+Drafted:         Session 036
+Category:        6 (Branch Management) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+RATIONALE:
+
+The v1.0.7 manual introduces Branch Chats in Section 4.1.1 as a chat
+type but provides no management system for branching — no creation
+process, no startup protocol, no cross-branch coordination, no guidance
+on when branching is appropriate. Field testing across multiple projects
+(CLGYSING, AWSNBLM, NLMINTA) revealed that branching is a substantial
+operational capability requiring its own governance framework.
+
+Placement in Section 12 (Extended Context) rather than Section 4
+(Session Management) is deliberate: branching is a multi-session,
+multi-workstream concept that extends beyond individual session
+management. It layers naturally on Section 12.1 (Multi-Session
+Continuity) and 12.2 (Complex Project Management). Section 4.1 retains
+the chat-level description of Branch Chats; Section 12.3 provides the
+management system that governs how branches are created, operated, and
+coordinated.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+12.3 BRANCH MANAGEMENT
+-----------------------
+
+12.3.1 Branching Concept
+--------------------------
+
+Branching is the formal mechanism for managing parallel workstreams
+under a single project umbrella. When a project's work naturally
+divides into streams that benefit from isolation — separate context
+windows, independent session sequences, focused scope — branching
+provides the governance structure to manage that division without
+losing coherence.
+
+A branch is a fractal expression of the project structure. It inherits
+the DNA of the parent project — behavioral governance, naming
+conventions, artifact standards — but adapts scope for its specific
+objectives. The rooting principles that establish a project's foundation
+(Section 2.5.1) apply at the branch level in abbreviated form: every
+branch establishes its own foundation before execution begins.
+
+Branching creates managed autonomy. Each branch operates with
+independence sufficient to maintain focus, while coordination mechanisms
+prevent branches from diverging into incompatible directions. The
+balance between autonomy and coordination is the central challenge of
+branch management.
+
+
+12.3.2 When to Branch
+-----------------------
+
+Branching is appropriate when a workstream meets one or more of these
+criteria:
+
+CONTEXT ISOLATION NEEDED: The workstream generates substantial context
+(research findings, technical specifications, test results) that would
+dilute the mainline project's context window. Branching gives the
+workstream its own context space without compromising mainline focus.
+
+PARALLEL EXECUTION POSSIBLE: The workstream can proceed independently
+of the mainline for a meaningful duration. If the workstream requires
+constant mainline coordination, it may be better served as a phase
+within the mainline rather than a separate branch.
+
+DISTINCT LIFECYCLE: The workstream has its own natural phases — setup,
+execution, completion — that do not map cleanly onto the mainline's
+phase structure. Branches accommodate workstreams that move at different
+cadences than the main project.
+
+DEPENDENCY DEVELOPMENT: Work needed before the mainline can proceed,
+but that benefits from focused attention in its own context. A branch
+can develop a dependency (a specification, a tool evaluation, a
+reference document) while the mainline continues other work.
+
+EXPLORATORY RISK: The workstream involves exploratory or speculative
+work where outcomes are uncertain. Branching contains the exploration's
+context footprint — if the exploration proves unfruitful, the mainline
+is unaffected.
+
+WHEN NOT TO BRANCH:
+
+Not every parallel need warrants a branch. Consider alternatives:
+
+- EXECUTION CHATS: For narrowly scoped, one-off tasks (drafting a
+  single document, formatting a deliverable), an Execution Chat
+  (Section 4.1.1) is lighter weight than a branch. Execution Chats
+  are disposable once outputs are saved.
+
+- PHASE DIVISION: If the workstream is sequential with the mainline
+  (one must complete before the other begins), it is better modeled
+  as a phase within the mainline than a parallel branch.
+
+- WITHIN-SESSION SCOPE: If the work can be completed within the current
+  session's headroom, branching introduces unnecessary overhead. Capture
+  it as part of the current session's work.
+
+The decision to branch should be explicit and documented. If the user
+is uncertain, the AI can help evaluate using the criteria above.
+
+
+12.3.3 Branch Creation Process
+--------------------------------
+
+Branch creation follows a five-step process that ensures the new
+workstream is properly scoped and connected to the mainline:
+
+STEP 1 — DECISION. The user decides to create a branch, either during
+a mainline session or a dedicated planning session. The decision should
+be captured in the Decision Log (D-###) with rationale for why
+branching is appropriate.
+
+STEP 2 — STARTUP FILE GENERATION. The mainline session generates a
+Branch Startup File (TPL-0XX) containing the context the new branch
+needs to begin work. The Startup File is a specialized derivative of
+the Bootstrap (TPL-002), adapted for branch initialization rather than
+session continuation.
+
+The Startup File includes:
+- Branch identification (name, handle, parent project reference)
+- Inherited Phase Protocol reference (which Phase Protocol governs
+  this branch, and whether modifications are needed)
+- Relevant mainline decisions and context that the branch needs
+- Branch scope boundaries (what is in scope, what is not)
+- Expected deliverables and integration points back to mainline
+- Notebook connectivity references (main project notebook and any
+  branch-specific adjunct)
+- Mini-rooting questions to be addressed at branch start
+
+STEP 3 — HANDOFF. The user takes the Startup File to the new branch
+chat. This is a user action — the user creates a new chat, uploads the
+Startup File (and this manual if the branch AI needs AIPM orientation),
+and initiates the branch.
+
+STEP 4 — MINI-ROOTING. The new branch conducts an abbreviated rooting
+cycle to establish branch-specific context. Mini-rooting addresses:
+
+- What is this branch trying to accomplish? (Scope confirmation)
+- How does it connect to the mainline project? (Dependency mapping)
+- Do we need to modify the inherited Phase Protocol? (Behavioral
+  calibration — the branch may need different AI behaviors than the
+  mainline)
+- Is this a single-phase or multi-phase branch? (Structure planning)
+- What templates and conventions apply? (Standard confirmation)
+
+Mini-rooting is typically a focused exchange of 3-8 questions, not the
+extensive 10-20 exchange rooting process used for new projects. The
+Startup File provides sufficient context that the branch can orient
+quickly.
+
+STEP 5 — EXECUTION. The branch begins execution with its own session
+numbering, producing its own artifacts and maintaining its own session
+logs and bootstraps. The branch operates with managed autonomy under
+its Phase Protocol.
+
+
+12.3.4 Branch Operational Characteristics
+-------------------------------------------
+
+Each branch maintains operational independence while remaining connected
+to the parent project:
+
+INDEPENDENT SESSION NUMBERING: Branches maintain their own session
+number sequence, separate from the mainline. This prevents confusion
+when multiple workstreams are active simultaneously. Branch sessions
+use the branch handle in their naming convention (see Section 12.3.5).
+
+INHERITED PHASE PROTOCOL: Branches inherit the parent project's Phase
+Protocol but may modify it for branch-specific needs. The branch does
+not start from zero regarding behavioral governance — it inherits the
+framework's behavioral standards, the project's methodology, and any
+project-specific conventions. Modifications should be documented in the
+branch's first session log.
+
+If the branch's Phase Protocol modifications are substantial, a
+branch-specific Phase Protocol document should be created and stored
+in the branch's Project Knowledge. For minor modifications, a note in
+the Startup File and first session log is sufficient.
+
+BRANCH-SPECIFIC NOTEBOOKS: Branches typically use their own adjunct
+notebook (Section 10.3.4) to avoid diluting the main project notebook
+with branch-specific exploration. The branch adjunct contains branch
+transcripts, branch-specific artifacts, and branch research materials.
+
+Both the main project notebook and the branch adjunct should be
+accessible to branch sessions via notebook connectivity, allowing the
+branch to query mainline context when needed. The Bootstrap specifies
+which notebooks to consult and for what purpose.
+
+Naming convention for branch notebooks:
+[PROJECT-HANDLE] [Branch Name] Sessions
+
+OWN ARTIFACTS: Branches generate their own bootstraps, session logs,
+decision logs, and findings reports. These artifacts follow the same
+templates and conventions as mainline artifacts. Branch artifacts should
+be uploaded to the branch adjunct notebook and, selectively, to the
+main project notebook when they contain information relevant to the
+broader project.
+
+RESPONSE INDEX: Branches may maintain their own response index sequence
+(starting at [0001]) or continue the mainline sequence, depending on
+whether the branch will eventually integrate its transcripts with the
+mainline corpus. If maintaining a separate sequence, document this in
+the Startup File.
+
+
+12.3.5 Branch Naming Conventions
+----------------------------------
+
+Branch naming follows the project's established naming convention
+(Section 4.1.3) with the BR type indicator:
+
+FORMAT: [###] [DEPT]-[PROJ]-BR ([branch purpose])
+
+Examples:
+- 001 GOV-AIPM-BR (security research)
+- 002 GOV-AIPM-BR (tooling integration)
+- 003 PRO-CLGY-BR (dependency development)
+
+The sequence number is the branch's own session count, not the
+mainline's. Branch session 003 is the third session of that branch,
+regardless of where the mainline's session count stands.
+
+BRANCH HANDLES:
+
+For projects with multiple active branches, short handles improve
+readability in cross-references and coordination documents:
+
+Examples:
+- SECRES (security research branch)
+- TOOLINT (tooling integration branch)
+- DEPDEV (dependency development branch)
+
+Handles appear in the Cross-Branch Awareness Document (Section 12.3.7)
+and may be used in decision logs and session logs when referencing
+branch-specific work.
+
+
+12.3.6 Cross-Branch Context Sharing
+--------------------------------------
+
+Branches operating in parallel create a coordination challenge: each
+branch accumulates context independently, potentially developing
+approaches or making discoveries that affect other branches or the
+mainline. Without deliberate sharing mechanisms, branches become
+context silos.
+
+SHARING MECHANISMS:
+
+Shared Main Notebook: All branches maintain access to the main project
+notebook. When a branch produces findings, decisions, or deliverables
+relevant to the broader project, these artifacts should be uploaded to
+the main notebook in addition to the branch adjunct. This ensures that
+any session — mainline or branch — can query the main notebook for
+cross-project context.
+
+Selective Artifact Upload: Not every branch artifact belongs in the
+main notebook. Branch-specific exploration, draft iterations, and
+working notes stay in the branch adjunct. Artifacts that cross the
+upload threshold include: finalized deliverables, findings that inform
+mainline decisions, specifications that other branches need to
+reference, and decisions that affect the project-wide scope.
+
+Bootstrap Cross-References: When a mainline session's Bootstrap is
+written, it should note any active branches and their current status.
+This provides mainline sessions with awareness of parallel work without
+requiring full branch context loading.
+
+Integration Sessions: Periodically, branches rejoin the mainline
+through integration sessions. These sessions consolidate branch
+outputs, reconcile any divergences, and update the mainline's artifacts
+with branch contributions. Integration sessions are a natural
+checkpoint for Cross-Branch Awareness Document updates.
+
+
+12.3.7 Cross-Branch Awareness Document
+-----------------------------------------
+
+For projects with multiple active branches, the Cross-Branch Awareness
+Document provides a shared reference that any session — mainline or
+branch — can consult for an overview of the project's parallel work.
+
+PURPOSE:
+
+The document ensures that every session has awareness of what other
+branches are doing without requiring full context on each branch. It
+prevents the common failure mode where branches develop incompatible
+approaches because neither was aware of the other's direction.
+
+CONTENT:
+
+The Cross-Branch Awareness Document contains:
+
+ACTIVE BRANCHES REGISTER:
+| Branch Handle | Full Name              | Objective                    | Status    |
+|---------------|------------------------|------------------------------|-----------|
+| [HANDLE]      | [Branch full name]     | [What branch is working on]  | [Active/  |
+|               |                        |                              |  Paused/  |
+|               |                        |                              |  Complete]|
+
+BRANCH OBJECTIVES: For each active branch, a 2-3 sentence summary of
+its current objective, expected deliverables, and estimated timeline.
+
+INTER-BRANCH DEPENDENCIES: Any dependencies between branches — where
+one branch's output is needed by another, or where branches must
+coordinate approaches to avoid incompatibility.
+
+COORDINATION NEEDS: Specific items requiring cross-branch attention.
+Examples: "SECRES branch evaluating encryption approach — TOOLINT
+branch should not commit to a TLS implementation until SECRES
+concludes."
+
+RECENT UPDATES: A brief log of significant branch events since the
+last update — completions, major findings, scope changes, integration
+milestones.
+
+PLACEMENT:
+
+The Cross-Branch Awareness Document is stored in Project Knowledge
+alongside the Phase Protocol, making it accessible to every session
+without explicit upload. It is updated at natural checkpoints:
+- When a new branch is created
+- When a branch completes or pauses
+- At integration sessions
+- When inter-branch dependencies change
+- Periodically during long-running parallel work
+
+Template TPL-0XX (Cross-Branch Awareness Document) provides the
+standard structure.
+
+
+12.3.8 Branch Integration and Completion
+------------------------------------------
+
+Branches complete their work and rejoin the mainline through a
+structured integration process:
+
+INTEGRATION SESSION: A mainline session (or dedicated integration
+session) reviews branch outputs, assesses quality, and incorporates
+deliverables into the mainline project. The integration session should:
+
+- Review all branch deliverables against the original scope defined in
+  the Startup File
+- Identify any deviations from the original scope and assess whether
+  they are improvements or drift
+- Reconcile any branch decisions that affect the mainline (update
+  Decision Log if needed)
+- Update the mainline's artifacts with branch contributions
+- Update the Cross-Branch Awareness Document to reflect completion
+- Archive the branch's artifacts in the project folder structure
+
+BRANCH CLOSURE: After integration, the branch is marked complete in
+the Cross-Branch Awareness Document. Branch artifacts are preserved in
+the project's archive structure (Section 6.2.3) for future reference.
+
+INCOMPLETE BRANCHES: If a branch is abandoned or indefinitely paused,
+document the reason in the Cross-Branch Awareness Document and ensure
+any partial work is preserved. Incomplete branches may contain valuable
+findings or partial deliverables that inform future work.
+
+
+12.3.9 Anti-Patterns
+----------------------
+
+Common branching failures to avoid:
+
+ORPHANED BRANCHES: Branches created but never integrated back into the
+mainline. The branch produces work that languishes in isolation because
+no integration session was planned. Prevention: define integration
+expectations in the Startup File and track branch status in the
+Cross-Branch Awareness Document.
+
+CONTEXT SILOS: Branches that accumulate significant knowledge but never
+share it with the main notebook or other branches. A branch discovers
+something important, but the discovery stays in the branch adjunct
+where no other session can find it. Prevention: upload cross-relevant
+artifacts to the main notebook; maintain the Cross-Branch Awareness
+Document with recent updates.
+
+PREMATURE BRANCHING: Creating branches for work that would be better
+handled as execution chats or phases within the mainline. Branching
+introduces coordination overhead; if the work does not meet the
+criteria in Section 12.3.2, a simpler structure is preferable.
+Prevention: evaluate against the branching criteria before creating.
+
+BRANCH PROLIFERATION: Creating too many parallel branches, exceeding
+the project's coordination capacity. Each active branch requires
+maintenance (session logs, bootstraps, notebook uploads, awareness
+document updates). Prevention: limit active branches to what the user
+can practically maintain; complete or pause branches before starting
+new ones.
+
+PHASE PROTOCOL DRIFT: A branch modifies its inherited Phase Protocol
+so extensively that it effectively operates under different governance
+than the mainline. When integration occurs, the behavioral gap creates
+reconciliation problems. Prevention: document Phase Protocol
+modifications explicitly; keep modifications minimal unless the branch
+genuinely requires different behavioral governance.
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+New Section 12.3, inserted after Section 12.2 (Complex Project
+Management). The current v1.0.7 does not have a Section 12.3.
+
+RELATIONSHIP TO SECTION 4.1:
+Section 4.1.1 (Chat Types) defines Branch Chats at the chat level —
+what they are and when they are used. Section 12.3 provides the
+management system — how branches are created, operated, coordinated,
+and completed. The two sections are complementary:
+- Section 4.1.1 tells you WHAT a branch chat is
+- Section 12.3 tells you HOW to manage branching as a system
+
+An integration point (drafted this session) enhances Section 4.1.1
+with a cross-reference to 12.3.
+
+CROSS-REFERENCES TO ESTABLISH IN SESSION G:
+- Section 4.1.1 (Branch Chats): Add cross-reference to 12.3 for
+  formal branch management protocol
+- Section 4.3.1 (Session Initiation): Already includes "For Branch
+  Sessions" sequence referencing mini-rooting and Branch Startup File
+  — verify consistency with 12.3.3 and 12.3.4
+- Section 5.2 (Phase Protocol): Reference branch inheritance and
+  modification patterns
+- Section 5.8 (Artifact Relationships): Add Branch Startup File to
+  relationship map (integration point drafted this session)
+- Section 6.2.4 (Notebook Organization): Already references branch
+  adjunct notebooks — verify consistency with 12.3.4
+- Section 10.3.4 (Notebook Organization Strategy): Already references
+  branch-specific notebooks — verify consistency
+- Section 12.1 (Continuity): Branch continuity mechanisms are a
+  specialized application of the six mechanisms described in 12.1
+
+CONSISTENCY WITH PRIOR DRAFTS:
+- Session A Integration Point 1 (Section 4.3.1): Includes "For Branch
+  Sessions" initiation sequence with mini-rooting — CONSISTENT with
+  12.3.3 Step 4
+- Session B TPL-002 v2.0: Mentions branch bootstraps as a bootstrap
+  type — CONSISTENT; the Branch Startup File (TPL-0XX) is the
+  branch-specific derivative
+- Session B Section 4.3.1: "For Branch Sessions" references Branch
+  Startup File and mini-rooting cycle — CONSISTENT with 12.3.3
+- Session C Section 10.3.4: References branch-specific adjunct
+  notebooks with naming convention — CONSISTENT with 12.3.4
+- Session C Section 6.2.4: References branch notebooks — CONSISTENT
+
+================================================================================
+END OF SECTION 12.3 DRAFT
+================================================================================

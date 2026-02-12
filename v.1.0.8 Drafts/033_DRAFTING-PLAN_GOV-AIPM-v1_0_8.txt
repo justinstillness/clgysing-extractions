@@ -1,0 +1,662 @@
+================================================================================
+DRAFTING PLAN — GOV-AIPM v1.0.8-DRAFT
+================================================================================
+File Class:     PLAN
+Project:        GOV-AIPM (AI Operations Manual)
+Session:        033 GOV-AIPM (Phase Protocol drafting)
+Date:           February 10, 2026
+Phase:          Phase 6c — Beta Test Integration
+Authority:      032_FINDINGS_GOV-AIPM-Revision-Plan.txt (working blueprint)
+
+================================================================================
+PURPOSE
+================================================================================
+
+This document maps every revision required for GOV-AIPM v1.0.8-DRAFT,
+organized into discrete drafting sessions. Each session entry specifies:
+- Target sections (what's being created or revised)
+- Content scope (new material, enhancements, integration points)
+- Research needs (notebook queries, examples to pull)
+- Dependencies (what must be done first)
+- Quality audit targets (existing thin content to enhance)
+- Templates affected (new or revised templates)
+- "Done" criteria (what completion looks like)
+
+Governing decisions:
+- D-032-001: Version target is v1.0.8-DRAFT
+- D-032-002: Section-by-section segmented drafting
+- D-032-003: Volume segmentation for drafting convenience
+- D-032-004: Tool-agnostic approach (generic notebook connectivity)
+- D-032-005: User Guide as separate deliverable
+- D-032-006: Findings Reports as artifact class
+- D-033-001: Comprehensive quality pass on all touched sections
+
+================================================================================
+STRUCTURAL CHANGES OVERVIEW
+================================================================================
+
+SECTION RENUMBERING IN SECTION 5:
+Current → New:
+  5.1 Project Guide           → 5.1 Project Guide (ENHANCED)
+  5.2 Decision Logs           → 5.2 Phase Protocol (NEW)
+  5.3 Session Logs            → 5.3 Decision Logs (renumbered, ENHANCED)
+  5.4 Bootstrap Files         → 5.4 Session Logs (renumbered, ENHANCED)
+  5.5 Supporting Artifacts    → 5.5 Bootstrap Files (renumbered, ENHANCED)
+  5.6 Artifact Relationships  → 5.6 Findings Reports (NEW)
+  5.7 Backlog Register        → 5.7 Supporting Artifacts (renumbered)
+  5.8 Project Closure Report  → 5.8 Artifact Relationships (renumbered, ENHANCED)
+                              → 5.9 Backlog Register (renumbered)
+                              → 5.10 Project Closure Report (renumbered)
+
+NEW TEMPLATES REQUIRED:
+  TPL-0XX: Phase Protocol Template
+  TPL-0XX: Phase Protocol Addendum Template
+  TPL-0XX: Findings Report Template
+  TPL-0XX: Branch Startup File Template
+  TPL-0XX: Session Fidelity Report (embedded in TPL-005 revision)
+  TPL-0XX: Alignment Checklist Template
+  TPL-0XX: Cross-Branch Awareness Document Template
+  TPL-0XX: Backlog Item Report Template
+  (Final TPL numbers assigned during drafting)
+
+REVISED TEMPLATES:
+  TPL-002: Bootstrap Template (major revision — field-tested structure)
+  TPL-003: Session Closeout Checklist (revised for new closeout protocol)
+  TPL-005: Session Log (revised to embed SFR)
+  TPL-001: Project Initiation Form (revised for rooting/Phase 0 alignment)
+
+================================================================================
+DRAFTING SESSION PLAN
+================================================================================
+
+Each drafting session targets 1-2 categories from the priority sequence,
+plus quality audit of any existing sections being touched.
+
+------------------------------------------------------------------------
+DRAFTING SESSION A: Phase Protocol + Rooting as Phase 0
+Categories: 1, 2
+Estimated complexity: HIGH
+------------------------------------------------------------------------
+
+TARGET SECTIONS — NEW CONTENT:
+
+1. Section 5.2 Phase Protocol (NEW — substantial subsection)
+   Content scope:
+   - Concept introduction and purpose
+   - Three-layer architecture (AIPM Framework / System-Methodology / 
+     Project-Specific) with explanation of each layer
+   - Relationship diagram: Project Guide → Phase Protocol → Bootstrap
+   - Phase Protocol lifecycle: creation during rooting, stability within
+     phase, redrafting at phase transitions
+   - Addendum pattern: when to redraft vs. when to create addendum
+   - Project Knowledge storage and the bootstrap-as-prompt-list dynamic
+     (files in Project Knowledge aren't auto-read; bootstrap must
+     explicitly instruct AI to review them)
+   - Mandatory review at session start (behavioral requirement)
+   - "Ceremony is continuity" philosophy as it applies to Phase Protocol
+   - When to create vs. when to skip (if behaviors don't change between
+     phases)
+   - Phase Protocol redrafting triggers and 8-step process reference
+   - Cross-branch inheritance (branches inherit parent Phase Protocol)
+   
+   Quality standard: This must be one of the richest subsections in
+   Section 5 — comparable depth to or exceeding the current Project Guide
+   subsection. The Phase Protocol is the most significant new artifact
+   class and deserves commensurate treatment.
+
+2. Section 2.5.1 Project Lifecycle — Rooting as Phase 0 (REVISION)
+   Content scope:
+   - Formalize rooting as Phase 0 with defined activities, outputs,
+     exit criteria
+   - Step-by-step rooting process guide
+   - Sine wave model as mental model for project rhythm
+   - "If rooting takes 10 sessions, take 10 sessions"
+   - Rooting produces: Project Guide + Base Phase Protocol
+   - Connection to existing Project Readiness Assessment (1.4.5)
+   - Example: research project rooting walkthrough
+   
+3. Section 1.4.6 User Workflow Overview (REVISION)
+   Content scope:
+   - Update to reflect Phase 0 / rooting as the entry point
+   - Reference Phase Protocol creation as part of project startup
+
+TARGET SECTIONS — INTEGRATION POINTS:
+
+4. Section 4.3 Session Lifecycle (ADD REFERENCES)
+   - Session initiation: add Phase Protocol review as mandatory first
+     action
+   - Phase transitions: reference Phase Protocol redrafting
+
+5. Section 5.1 Project Guide (QUALITY AUDIT + ENHANCEMENT)
+   - Review current content for adequacy
+   - Add explicit relationship to Phase Protocol
+   - Clarify: Project Guide = project-stable; Phase Protocol = phase-stable
+
+6. Section 5.5 Bootstrap Files (new number; QUALITY AUDIT + ENHANCEMENT)
+   - Review current content against field-tested bootstrap practices
+   - Add: bootstrap as prompt-list concept (explicit instructions to
+     review Project Knowledge files)
+   - Add: bootstrap-Phase Protocol relationship ("cousins")
+   - Add: stable vs. dynamic bootstrap elements
+   - Assess whether TPL-002 needs revision or replacement
+
+7. Section 5.8 Artifact Relationships (new number; UPDATE)
+   - Add Phase Protocol to the artifact relationship map
+   - Update hierarchy: Project Guide → Phase Protocol → Bootstrap
+
+TEMPLATES:
+   - NEW: TPL-0XX Phase Protocol Template
+   - NEW: TPL-0XX Phase Protocol Addendum Template
+   - REVISED: TPL-001 Project Initiation Form (align with rooting)
+
+RESEARCH NEEDS:
+   - Query AIPM notebook for current Section 5.1 (Project Guide) full text
+   - Query AIPM notebook for current Section 4.3 (Session Lifecycle) full
+     text for integration points
+   - Review Phase Protocol document in Project Knowledge
+     (v1.2_PP_CLGYSING-PHASE_1) for template extraction
+   - Optionally: request user provide 2-3 recent bootstraps as examples
+     of evolved practice
+
+DEPENDENCIES: None — this is the foundation everything else builds on.
+
+"DONE" CRITERIA:
+   □ Section 5.2 Phase Protocol drafted with full concept, architecture,
+     lifecycle, addendum pattern, and behavioral requirements
+   □ Section 2.5.1 updated with Phase 0 / rooting formalization
+   □ Section 1.4.6 updated for rooting entry point
+   □ Integration references added to Sections 4.3, 5.1, 5.5, 5.8
+   □ Phase Protocol Template drafted
+   □ Phase Protocol Addendum Template drafted
+   □ TPL-001 revisions identified or drafted
+   □ Quality audit notes on Sections 5.1 and 5.5 (bootstrap) documented
+
+------------------------------------------------------------------------
+DRAFTING SESSION B: Enhanced Session Lifecycle
+Category: 3
+Estimated complexity: HIGH
+------------------------------------------------------------------------
+
+TARGET SECTIONS — REVISIONS:
+
+1. Section 4.3 Session Lifecycle (MAJOR REVISION)
+   Content scope:
+   - 4.3.1 Session Initiation: Add mandatory Alignment Turn protocol
+     (checklist generation, user verification, confirmation gate)
+   - Add Response Indexing System as core practice (4-digit sequential,
+     never resets at phase boundary, semantic titles)
+   - 4.3.3 Session Closeout: Revise to field-tested protocol
+     ("CLOSE OUT" as only keyword trigger, AI never auto-initiates,
+     5-step closeout sequence, loose ends assessment)
+   - Add Headroom Opportunism as named coordinator duty
+   - Enhance segmentation protocol guidance (triggers, methodology,
+     critical rule: never abbreviate to avoid segmentation)
+
+2. Section 5.4 Session Logs (new number; REVISION)
+   Content scope:
+   - Embed Session Fidelity Report (SFR) structure
+   - Update entry structure to reflect field-tested format
+   - Add response index tracking requirement
+
+3. Section 4.2 Token Management (QUALITY AUDIT)
+   Content scope:
+   - Review Headroom Discipline for adequacy
+   - Add Headroom Opportunism concept
+   - Enhance segmentation triggers and methodology
+
+TARGET SECTIONS — INTEGRATION POINTS:
+
+4. Section 12.1 Multi-Session Continuity (ADD REFERENCES)
+   - Reference response indexing as retrieval enabler
+   - Reference SFR as continuity verification tool
+
+TEMPLATES:
+   - REVISED: TPL-005 Session Log (embed SFR)
+   - REVISED: TPL-003 Session Closeout Checklist (new protocol)
+   - NEW: TPL-0XX Alignment Checklist Template
+   - REVISED: TPL-002 Bootstrap Template (add response index fields,
+     behavioral reminder section, notebook references)
+
+RESEARCH NEEDS:
+   - Query AIPM notebook for current Section 4.3 full text
+   - Query NLMINTA or AWSNBLM notebooks for examples of response
+     indexing in practice
+   - Request user provide recent session logs showing SFR format
+   - Review current TPL-002 against field-tested bootstraps
+
+DEPENDENCIES: Session A (Phase Protocol must exist for session initiation
+references to point to).
+
+"DONE" CRITERIA:
+   □ Section 4.3 Session Lifecycle comprehensively revised
+   □ Alignment Turn protocol fully specified
+   □ Response Indexing System fully specified
+   □ Closeout protocol updated to field-tested version
+   □ Headroom Opportunism documented
+   □ Segmentation protocol enhanced
+   □ Session Log template revised with embedded SFR
+   □ Closeout Checklist template revised
+   □ Alignment Checklist template created
+   □ Bootstrap Template revised (may be major revision)
+   □ Quality audit of Section 4.2 complete
+
+------------------------------------------------------------------------
+DRAFTING SESSION C: Notebook Integration + Connector Transparency
+Categories: 4, 8
+Estimated complexity: MEDIUM-HIGH
+------------------------------------------------------------------------
+
+TARGET SECTIONS — NEW CONTENT:
+
+1. Section 10.3 Retrieval and Query Tools (MAJOR REVISION or NEW SUB)
+   Content scope:
+   - Notebook connectivity as deep context recovery layer
+   - Relationship to bootstraps: supplement, not replacement
+   - Upload workflow (post-session): step-by-step
+   - Exhaustive querying technique (query → summarize → gap question →
+     repeat until saturation)
+   - Notebook organization strategy (one main + adjuncts)
+   - Source efficiency techniques for limited plans
+   - Notebook index/directory concept
+   - Tool-agnostic framing per D-032-004
+   - What to upload vs. skip guidance
+
+2. Connector Transparency Protocol (NEW SUBSECTION)
+   Placement: Within Section 10 or as behavioral requirement in Section 4
+   Content scope:
+   - Protocol requirements (tool ID, query details, intent, result
+     summary, assessment)
+   - Purpose: transcript auditability
+   - Connection to session log (tool calls in response index)
+   - Example of proper transparency narration
+
+TARGET SECTIONS — INTEGRATION POINTS:
+
+3. Section 12.1 Multi-Session Continuity (ENHANCEMENT)
+   - Add notebook connectivity as continuity enhancement layer
+   - Update the continuity model: Bootstrap + Notebook = full picture
+
+4. Section 4.3 Session Lifecycle (ADD REFERENCES)
+   - Post-session: notebook upload as part of user housekeeping
+   - Pre-session: notebook references in bootstrap
+
+5. Section 6 External Organization System (ENHANCEMENT)
+   - Add notebook organization to folder/storage guidance
+   - Notebook naming conventions
+
+TEMPLATES:
+   - None new (notebook workflow is procedural, not template-driven)
+   - Possibly: Notebook Index/Directory template
+
+RESEARCH NEEDS:
+   - Query AWSNBLM notebook for MCP tool usage patterns
+   - Query AIPM notebook for current Section 10 content
+   - Review Connector Transparency Protocol supplement document
+     (already in AIPM notebook)
+
+DEPENDENCIES: Session B (session lifecycle must be updated first so
+notebook references integrate cleanly).
+
+"DONE" CRITERIA:
+   □ Notebook integration section drafted (tool-agnostic)
+   □ Upload workflow documented step-by-step
+   □ Exhaustive querying technique documented
+   □ Notebook organization strategy documented
+   □ Connector Transparency Protocol drafted
+   □ Integration references added to Sections 12.1, 4.3, 6
+   □ Quality audit of Section 10 complete
+
+------------------------------------------------------------------------
+DRAFTING SESSION D: Findings Reports + Insight Capture + Branch Management
+Categories: 5, 6, 9
+Estimated complexity: MEDIUM
+------------------------------------------------------------------------
+
+TARGET SECTIONS — NEW CONTENT:
+
+1. Section 5.6 Findings Reports (NEW — artifact in Section 5)
+   Content scope:
+   - Concept: synthesis documents organized by topic, not chronology
+   - Structured finding entry schema (F##, Discovery, Evidence,
+     Impact, Status)
+   - Distinction from Session Logs and Decision Logs
+   - Indexing convention (F## accumulating across project)
+   - Behavioral guidance: when to generate
+   - Queryability via notebook connectivity
+
+2. Branch Management (NEW — placement TBD, likely Section 4 or 12)
+   Content scope:
+   - Branching concept introduction
+   - Branch creation process (5-step)
+   - Branch startup file (mini-rooting context packet)
+   - Mini-rooting cycle for branches
+   - Branch characteristics (own numbering, notebooks, artifacts)
+   - Branch naming conventions
+   - When to branch vs. stay in mainline
+   - Cross-branch context sharing patterns
+   - Fractal expression of rooting principles
+
+3. Section 5.9 Backlog Register (new number; ENHANCEMENT)
+   Content scope:
+   - Add Insight Capture / Out-of-Phase Backlog mechanism
+   - Two-phase workflow (capture in-session, evaluate in dedicated session)
+   - Backlog Item schema with provenance data
+   - AI auto-detect for scope expansion
+   - Connection to scope monitoring duty
+
+TARGET SECTIONS — INTEGRATION POINTS:
+
+4. Section 5.8 Artifact Relationships (UPDATE)
+   - Add Findings Reports to relationship map
+   - Add Branch Startup File to relationship map
+
+5. Section 4.1 Chat Architecture (ENHANCEMENT)
+   - Enhance Branch Chat concept with formal branching protocol
+   - Reference branch management section
+
+TEMPLATES:
+   - NEW: TPL-0XX Findings Report Template
+   - NEW: TPL-0XX Branch Startup File Template
+   - NEW: TPL-0XX Backlog Item Report Template
+   - NEW: TPL-0XX Cross-Branch Awareness Document Template
+
+RESEARCH NEEDS:
+   - Query NLMINTA notebook for branch management examples
+   - Query AIPM notebook for current Section 4.1 Chat Architecture
+   - Review existing Backlog Register template for enhancement points
+
+DEPENDENCIES: Sessions A and B (Phase Protocol and session lifecycle
+must exist for branch management to reference).
+
+"DONE" CRITERIA:
+   □ Findings Reports section drafted with template
+   □ Branch Management section drafted with all sub-concepts
+   □ Backlog Register enhanced with insight capture mechanism
+   □ Branch Startup File template created
+   □ Findings Report template created
+   □ Backlog Item Report template created
+   □ Cross-Branch Awareness Document template created
+   □ Integration references in Sections 5.8, 4.1
+
+------------------------------------------------------------------------
+DRAFTING SESSION E: Phase Transitions + Operational Refinements
+Categories: 10, 11
+Estimated complexity: MEDIUM
+------------------------------------------------------------------------
+
+TARGET SECTIONS — REVISIONS:
+
+1. Section 4.3.5 Phase Transitions (MAJOR ENHANCEMENT)
+   Content scope:
+   - Formalize 8-step phase transition process
+   - Husk vs. coconut filtering guidance
+   - Sine wave model (peaks = execution, zero-crossings = transitions)
+   - Phase Protocol redrafting triggers and process
+   - Transition session expectations
+   - Connection to Phase Protocol (Session A content)
+
+2. Section 2 Core Philosophy (ENHANCEMENTS across subsections)
+   Content scope:
+   - 2.1 or new: "Ceremony is Continuity" philosophy
+   - 2.2 or new: "Alignment Over Assumption" principle
+     ("Propose and pause beats assume and proceed")
+   - Reinforce throughout: explicit confirmation over inferred continuation
+
+3. Conflict Resolution Protocol (NEW — placement in Section 4 or 14)
+   Content scope:
+   - 6-step protocol (STOP, FLAG, EXPLAIN, PROPOSE, AWAIT, DOCUMENT)
+   - "Project objectives ALWAYS override protocol convenience"
+
+4. Instruction Chain Interpretation (NEW — placement in Section 3 or 4)
+   Content scope:
+   - Multi-step instructions as sequential with alignment checkpoints
+   - Exception for routine execution within aligned scope
+
+5. Scope Monitoring Duty (ENHANCEMENT — Section 4 or 12)
+   Content scope:
+   - AI duty to detect, pause, flag scope expansion
+   - Never silently expand scope
+   - Options: update scope, adjust request, or backlog item
+
+TARGET SECTIONS — QUALITY AUDIT:
+
+6. Section 14 Failure Modes (REVIEW)
+   - Assess whether conflict resolution belongs here
+   - Prepare for Session F additions
+
+TEMPLATES:
+   - None new (these are behavioral/procedural, not template-driven)
+
+RESEARCH NEEDS:
+   - Query AIPM notebook for current Section 4.3.5 full text
+   - Query AIPM notebook for current Section 2 full text
+   - Query NLMINTA notebook for phase transition examples
+
+DEPENDENCIES: Sessions A and B (Phase Protocol and session lifecycle
+provide the foundation these refinements build on).
+
+"DONE" CRITERIA:
+   □ 8-step phase transition process fully documented
+   □ Husk/coconut principle documented
+   □ Sine wave model integrated
+   □ Ceremony is Continuity philosophy woven into Section 2
+   □ Alignment Over Assumption reinforced
+   □ Conflict Resolution Protocol drafted
+   □ Instruction Chain Interpretation rules documented
+   □ Scope Monitoring Duty enhanced
+   □ Quality audit of Section 14 complete
+
+------------------------------------------------------------------------
+DRAFTING SESSION F: User Behaviors + Three-Tier Architecture +
+                     Failure Modes + Inter-Branch Communication
+Categories: 7, 12, 13, 14
+Estimated complexity: MEDIUM-HIGH
+------------------------------------------------------------------------
+
+TARGET SECTIONS — NEW/REVISED CONTENT:
+
+1. User Behaviors (EMBEDDED CALLOUTS throughout manual)
+   Per D-032-005, the standalone User Guide is a separate deliverable.
+   This session embeds user behavior callouts in relevant sections:
+   Content scope:
+   - Project handle naming (in Section 6 naming conventions)
+   - New chat notepad system (in Section 4.3 session initiation)
+   - Session naming convention (in Section 6)
+   - File organization (in Section 6)
+   - Post-session housekeeping (in Section 4.3 closeout or Section 6)
+   - Pre-session housekeeping (in Section 4.3 initiation)
+   - Prompting discipline (in Section 3 or 10)
+   - NotebookLM maintenance (in Section 10)
+
+   Format: Clearly marked USER ACTION or USER BEHAVIOR callout boxes
+   within the relevant AI-facing sections, so both audiences find the
+   information where they need it.
+
+2. Three-Tier Documentation Architecture (NEW — Section 12 or 6)
+   Content scope:
+   - Architecture References (system level)
+   - Per-Tool/Component References (operational level)
+   - CHANGELOGs (temporal level)
+   - When each tier is appropriate
+   - Connection to file naming and organization
+
+3. Section 14 Failure Modes (ENHANCEMENT)
+   Content scope:
+   - Bootstrap verification failures (session number, branch handle)
+   - AI behavioral forgetfulness (root causes, workarounds)
+   - External knowledge contamination
+   - Synthesis layer degradation
+   - Context invisibility (transcript gaps from MCP tools)
+   - User-side verification procedures
+   - Connection to Connector Transparency Protocol
+
+4. Inter-Branch Communication (NEW — Section 12 or adjacent to Branch
+   Management from Session D)
+   Content scope:
+   - Cross-branch awareness document concept
+   - Coordination patterns between branches
+   - When to share context vs. operate independently
+   - Connection to notebook organization
+
+TARGET SECTIONS — QUALITY AUDIT:
+
+5. Section 6 External Organization System (COMPREHENSIVE REVIEW)
+   - Assess adequacy of naming conventions
+   - Assess folder structure guidance
+   - Enhance with field-tested patterns
+
+6. Appendix F Dialog Intake Failure Mode Catalog (REVIEW)
+   - Determine if new failure modes warrant catalog entries
+
+TEMPLATES:
+   - Possibly: updated failure recovery references
+   - Cross-Branch Awareness Document template (if not done in Session D)
+
+RESEARCH NEEDS:
+   - Query AWSNBLM notebook for behavioral forgetfulness examples
+   - Query NLMINTA notebook for three-tier documentation examples
+   - Query all notebooks for inter-branch communication patterns
+   - Review Section 6 current content for gaps
+
+DEPENDENCIES: All previous sessions (user behavior callouts reference
+content from Sessions A-E).
+
+"DONE" CRITERIA:
+   □ User behavior callouts embedded throughout all relevant sections
+   □ Three-Tier Documentation Architecture section drafted
+   □ Failure mode catalog extended with all field-tested modes
+   □ Inter-Branch Communication section drafted
+   □ Section 6 quality audit complete
+   □ All user-facing guidance identifiable and clearly marked
+
+------------------------------------------------------------------------
+DRAFTING SESSION G: Templates, Appendices, Cross-References, and
+                     Final Integration
+Categories: All (final pass)
+Estimated complexity: HIGH
+------------------------------------------------------------------------
+
+TARGET:
+
+1. Template Finalization
+   - Assign final TPL numbers to all new templates
+   - Ensure all new templates are in Appendix A
+   - Verify all revised templates are updated
+   - Cross-reference templates to their governing sections
+
+2. Appendix Updates
+   - Appendix A: Template Reference (add all new templates)
+   - Appendix B: Prompt Reference (any new golden prompts)
+   - Appendix E: Version History (add v1.0.8 entry)
+   - Appendix G: Artifact Taxonomy (add Phase Protocol, Findings Report,
+     Branch Startup File, Backlog Item Report, Cross-Branch Awareness Doc)
+   - Appendix H: Quick Start Guide (update for Phase 0 / rooting)
+
+3. Glossary Updates (Section 17.2)
+   - Add: Phase Protocol, Rooting, Phase 0, Branch Startup File,
+     Findings Report, Response Index, Session Fidelity Report,
+     Alignment Turn, Headroom Opportunism, Connector Transparency,
+     Husk/Coconut, Sine Wave Model, Exhaustive Querying, etc.
+
+4. Index Updates (Section 17.3)
+   - Comprehensive index pass for all new content
+
+5. Cross-Reference Verification
+   - Every new concept is referenced from all relevant locations
+   - No orphaned references
+   - Section numbers all correct after renumbering
+
+6. Table of Contents Update
+   - Reflect all structural changes
+
+7. Final Quality Pass
+   - Read-through for consistency of voice, depth, and style
+   - Verify dual-audience accessibility (user education + AI reference)
+   - Confirm all "CONTENT REQUIRED IN MANUAL" items from Findings
+     document are addressed
+   - Mark any remaining items for Development Backlog
+
+DEPENDENCIES: All previous sessions complete.
+
+"DONE" CRITERIA:
+   □ All templates finalized with TPL numbers
+   □ All appendices updated
+   □ Glossary comprehensive
+   □ Cross-references verified
+   □ Table of contents accurate
+   □ Version marked v1.0.8-DRAFT
+   □ Completeness check against Findings document 14 categories
+   □ Development Backlog updated with any deferred items
+
+================================================================================
+SESSION SEQUENCING AND DEPENDENCIES
+================================================================================
+
+Session A ──→ Session B ──→ Session C ──→ Session D ──→ Session E ──→ Session F ──→ Session G
+(Phase       (Session     (Notebook +  (Artifacts + (Transitions+ (User        (Templates+
+Protocol +   Lifecycle)   Connector)   Branches)    Operational)  Behaviors +  Integration)
+Rooting)                                                          Failure Modes)
+
+Sessions A and B are foundational — everything else builds on them.
+Sessions C, D, E can potentially be reordered if needed, but the
+proposed sequence minimizes rework.
+Session F depends on all prior content existing for callout placement.
+Session G is always last.
+
+================================================================================
+BOOTSTRAP TEMPLATE FOR DRAFTING SESSIONS
+================================================================================
+
+Each drafting session bootstrap should include:
+- Reference to this Drafting Plan (file name and target session letter)
+- The specific "TARGET SECTIONS" from the relevant session entry
+- The "RESEARCH NEEDS" for that session
+- The "DONE CRITERIA" as completion checklist
+- Reference to 032_FINDINGS document for detailed content specs
+- Current state of any prior session outputs (what's been drafted)
+- Any decisions or changes made in intervening sessions
+
+================================================================================
+RISK REGISTER
+================================================================================
+
+1. TOKEN EXHAUSTION DURING COMPLEX SESSIONS
+   Mitigation: Conservative scoping per session; headroom monitoring;
+   willingness to split sessions further if needed.
+
+2. RENUMBERING CASCADE
+   Risk: Section 5 renumbering creates ripple of cross-reference updates.
+   Mitigation: Track all cross-references; Session G dedicated to this.
+
+3. CONTENT DRIFT
+   Risk: Later sessions' content doesn't align with earlier sessions.
+   Mitigation: This plan + Findings document as dual authority;
+   each session reviews prior outputs before drafting.
+
+4. TEMPLATE PROLIFERATION
+   Risk: Too many templates makes system unwieldy.
+   Mitigation: Evaluate each template for necessity; combine where logical.
+
+5. DUAL-AUDIENCE TENSION
+   Risk: Content that's optimal for AI reference may not be optimal for
+   user education, and vice versa.
+   Mitigation: Clearly marked user callouts; consistent depth standard;
+   User Guide as separate deliverable handles the education gap.
+
+================================================================================
+NOTES
+================================================================================
+
+- This plan covers 7 drafting sessions (A through G)
+- Actual session count may vary (sessions can split if scope exceeds
+  headroom, or consolidate if work moves quickly)
+- The Findings document (032_FINDINGS_GOV-AIPM-Revision-Plan.txt)
+  remains the authoritative source for WHAT to draft
+- This Drafting Plan is the authoritative source for WHEN and WHERE
+- Both documents should be uploaded to every drafting session
+- After each drafting session, this plan should be updated with
+  completion status and any scope adjustments
+
+================================================================================
+END OF DRAFTING PLAN
+================================================================================

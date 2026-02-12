@@ -1,0 +1,189 @@
+================================================================================
+DRAFT — SECTION 2 CORE PHILOSOPHY ENHANCEMENTS
+================================================================================
+Target Location: Section 2 — two targeted enhancements:
+                 1. New Section 2.1.5 "Ceremony is Continuity"
+                    (INSERT after 2.1.4 "Use the Full System")
+                 2. Enhancement to Section 2.2.3 "Explicit Over Implicit"
+                    (REVISE to incorporate "Alignment Over Assumption")
+Drafted:         Session 037
+Category:        11 (Operational Refinements — Ceremony is Continuity,
+                 Alignment Over Assumption) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE ON APPROACH:
+
+These two philosophy items have been seeded throughout Sessions A-D
+drafts (Phase Protocol references "ceremony is continuity," Session B
+alignment turn embodies "alignment over assumption"). This draft
+formalizes them as named principles in Section 2, giving them a
+canonical home that the rest of the manual can reference.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+------------------------------------------------------------------------
+ENHANCEMENT 1: NEW SECTION 2.1.5 — INSERT after 2.1.4 "Use the Full
+System" (after approximately line 738 in v1.0.7)
+------------------------------------------------------------------------
+
+2.1.5 Ceremony is Continuity
+------------------------------
+
+In human organizations, institutional memory lives in people — their
+recollections, relationships, and tacit knowledge. AI-assisted work has
+no such reservoir. Every session begins from zero. The AI retains
+nothing from prior sessions. The user's memory, while persistent, is
+incomplete and unstructured. Without deliberate action, every session
+boundary is an amnesia event.
+
+The solution is ceremony — the formal, deliberate production of
+artifacts at predictable points in the workflow. Bootstraps at session
+end. Session Logs with embedded fidelity reports. Decision Logs when
+choices are made. Phase Protocols at phase boundaries. These are not
+bureaucratic overhead. They are the continuity mechanism itself.
+
+This is easy to misunderstand. In traditional work, documentation is a
+record of what happened — useful but secondary to the work itself. In
+AI-assisted work, documentation is what makes the work possible across
+sessions. The Bootstrap does not merely describe the project state; it
+is the project state, as far as the next session is concerned. The
+Phase Protocol does not merely record behavioral expectations; it is
+the behavioral governance that makes consistent execution possible.
+
+The ceremonial artifacts — produced at the right moments, in the right
+formats, with the right content — create the external memory that AI
+work demands. Skip the ceremony, and the project loses its thread. Cut
+corners on artifact quality, and continuity degrades. Treat closeout as
+optional, and the next session starts from a weaker foundation.
+
+This principle explains why the framework emphasizes full system
+adoption (Section 2.1.4). Each artifact exists because its absence
+created a real continuity failure in field testing. The system is
+designed so that ceremony and productivity are not in tension — the
+ceremonies are lightweight enough to be routine and valuable enough
+to be non-negotiable.
+
+The specific ceremonies and their timing are documented throughout the
+manual: session initiation (Section 4.3.1), active session management
+(Section 4.3.2), session closeout (Section 4.3.3), and phase
+transitions (Section 4.3.5). The Phase Protocol (Section 5.2) is
+itself a ceremonial artifact — reviewed at every session start as the
+first act of behavioral alignment.
+
+
+------------------------------------------------------------------------
+ENHANCEMENT 2: REVISE SECTION 2.2.3 — REPLACE existing content
+(lines 788-801 in v1.0.7)
+------------------------------------------------------------------------
+
+2.2.3 Explicit Over Implicit — Alignment Over Assumption
+----------------------------------------------------------
+
+AI tools make assumptions to fill gaps in context. These assumptions
+are often reasonable but sometimes wrong — and wrong assumptions
+compound silently. The solution is aggressive explicitness.
+
+State what you are doing and why. Articulate constraints even when they
+seem obvious. Specify desired outputs in detail. Check for understanding
+before proceeding.
+
+This practice — developed in Section 3 as the Explicit Alignment
+Principle — prevents the silent errors that plague AI-assisted work.
+Over-explanation is quality control, not inefficiency.
+
+The operational maxim is: propose and pause beats assume and proceed.
+
+This applies to both parties. The AI should propose plans, approaches,
+and interpretations — then pause for user confirmation rather than
+proceeding on its best guess. Even when the path seems obvious, the AI
+surfaces its understanding and waits for validation. The user, in turn,
+should provide explicit direction rather than assuming the AI will
+infer intent correctly.
+
+The principle manifests throughout the framework:
+
+The Alignment Turn (Section 4.3.1.1): At every session start, the AI
+generates an alignment checklist and waits for confirmation before
+beginning work. This is "propose and pause" at the session level.
+
+Phase Transitions (Section 4.3.5): The AI presents the transition plan
+and waits for user approval before proceeding to new phase work.
+Transitions are explicit checkpoints, not automatic progressions.
+
+Scope Monitoring (Section 2.7.2): When the AI detects potential scope
+expansion, it pauses and flags the question rather than silently
+accommodating the expansion.
+
+Instruction Chain Interpretation (Section 3.X): Multi-step instructions
+are treated as sequential with alignment checkpoints, not as batch
+commands to execute without verification.
+
+Closeout (Section 4.3.3): The user initiates closeout — the AI never
+auto-initiates. Even the session ending is an explicit, user-confirmed
+action.
+
+The cost of explicit alignment is small: a few exchanges of
+verification per session. The cost of implicit assumption is large:
+wasted work, misaligned outputs, compounding drift across sessions.
+When uncertain whether to check or to proceed, check.
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+- Enhancement 1 (2.1.5): Insert after existing 2.1.4 "Use the Full
+  System" (after approximately line 738). No renumbering required —
+  this is a new subsection within the existing 2.1 structure.
+- Enhancement 2 (2.2.3): Replaces existing 2.2.3 "Explicit Over
+  Implicit" (lines 788-801). The section title changes to include
+  "Alignment Over Assumption" as a named principle. The original
+  content is retained and expanded.
+
+CONTENT FROM v1.0.7 RETAINED:
+- Enhancement 2 retains the first three paragraphs of existing 2.2.3
+  (assumptions, aggressive explicitness, Explicit Alignment Principle
+  reference). These are expanded with the "propose and pause"
+  operational maxim and specific manifestation examples.
+
+CONSISTENCY WITH PRIOR DRAFTS:
+- Session A Section 5.2 (Phase Protocol): References "ceremony is
+  continuity" as an underlying philosophy. This section provides the
+  canonical definition.
+- Session A Section 2.5.1 (Project Lifecycle): The rooting emphasis
+  ("if rooting takes 10 sessions, take 10 sessions") reflects the
+  ceremony-is-continuity philosophy.
+- Session B Section 4.3.1.1 (Alignment Turn): Embodies "alignment over
+  assumption" as a procedural requirement. This section provides the
+  philosophical foundation.
+- Session B Section 4.3.3 (Session Closeout): User-initiated-only
+  trigger reflects "propose and pause" — the AI proposes closeout
+  readiness, the user decides.
+- Session E Section 3.X (Instruction Chain Interpretation — drafted
+  this session): Referenced in Enhancement 2. Cross-reference will use
+  the final section number assigned to that content.
+
+CROSS-REFERENCES FROM THIS CONTENT:
+- 2.1.5 references: Section 2.1.4, Section 4.3.1, Section 4.3.2,
+  Section 4.3.3, Section 4.3.5, Section 5.2
+- 2.2.3 references: Section 3 (Explicit Alignment Principle),
+  Section 4.3.1.1, Section 4.3.5, Section 2.7.2, Section 3.X
+  (Instruction Chain), Section 4.3.3
+
+CROSS-REFERENCES TO ESTABLISH IN SESSION G:
+- Section 5.2 (Phase Protocol): May reference 2.1.5 as the philosophy
+  underlying the Phase Protocol concept
+- Section 4.3.5 (Phase Transitions — this session's draft): Already
+  references transition sessions as planning-heavy by design, which
+  aligns with the ceremony-is-continuity philosophy
+- Glossary (Section 17.2): Entries needed for "Ceremony is Continuity"
+  and "Alignment Over Assumption" / "Propose and Pause"
+
+================================================================================
+END OF SECTION 2 CORE PHILOSOPHY ENHANCEMENTS DRAFT
+================================================================================

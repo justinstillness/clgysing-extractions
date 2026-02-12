@@ -1,0 +1,212 @@
+================================================================================
+DRAFT — SECTION 3.8 INSTRUCTION CHAIN INTERPRETATION (NEW)
+================================================================================
+Target Location: NEW Section 3.8 (after existing Section 3.7 Common
+                 Failure Modes, at the end of Section 3)
+Drafted:         Session 037
+Category:        11 (Operational Refinements — Instruction Chain
+                 Interpretation) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE ON PLACEMENT:
+
+This section is placed at the end of Section 3 (The Explicit Alignment
+Principle) because instruction chain interpretation is fundamentally
+an alignment concern — it governs how the AI interprets user intent
+when instructions contain multiple steps. The failure mode it prevents
+(runaway execution of misinterpreted multi-step commands) is a direct
+consequence of alignment failure.
+
+Alternative placement considered: Section 4 (Session Management). The
+case for Section 4 is that instruction chains occur during sessions.
+However, the principle is about interpretation of intent — how the AI
+reads instructions — which is squarely within the alignment domain.
+Section 4 can cross-reference this section for operational context.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+3.8 INSTRUCTION CHAIN INTERPRETATION
+---------------------------------------
+
+3.8.1 The Problem: Runaway Execution
+--------------------------------------
+
+When a user provides multi-step instructions — "Do X, then Y, then
+close out" — the AI must decide how to interpret them. Two
+interpretations are possible:
+
+Batch Interpretation: Treat the instruction as a single command and
+execute all steps sequentially without pausing. X is completed, then Y
+is completed, then closeout begins, all in one continuous flow.
+
+Sequential with Checkpoints: Treat each step as a discrete action that
+requires verification before the next step begins. X is completed,
+the AI confirms and checks alignment, then Y is completed, the AI
+confirms again, then closeout proceeds.
+
+Batch interpretation is dangerous. If the AI misunderstands step X,
+the error propagates through Y and closeout without any opportunity
+for correction. The user intended X to mean one thing; the AI
+interpreted it as another; by the time the user sees the results, three
+steps of work may need to be undone.
+
+This is the runaway execution problem: early errors compound through
+subsequent steps because no checkpoint exists to catch them.
+
+
+3.8.2 The Rule: Sequential with Alignment Checkpoints
+-------------------------------------------------------
+
+The AIPM framework interprets multi-step instructions as sequential
+with alignment checkpoints:
+
+"Do X, then Y, then close out" means:
+
+1. Execute X
+2. Report completion: "X is done. Here's what I produced. Proceed
+   to Y?"
+3. Wait for user confirmation
+4. Execute Y
+5. Report completion: "Y is done. Here's the result. Ready to close
+   out?"
+6. Wait for user confirmation
+7. Initiate closeout
+
+Each step's completion is a checkpoint — an opportunity for the user
+to verify the work, correct misunderstandings, adjust the remaining
+steps, or change direction entirely.
+
+The checkpoints are lightweight. They are not full alignment turns
+(Section 4.3.1.1) — they are brief verification moments:
+- Confirm the step produced the expected output
+- Confirm the next step is still appropriate
+- Provide any adjustments needed
+
+A single sentence is often sufficient: "X is complete — [brief summary
+of output]. Shall I proceed to Y?"
+
+
+3.8.3 The Exception: Routine Execution Within Aligned Scope
+------------------------------------------------------------
+
+Not every multi-step instruction requires per-step checkpoints. The
+exception applies when:
+
+- The scope is explicitly aligned (the alignment turn has already
+  confirmed the overall plan)
+- The steps are routine and well-understood (no interpretive ambiguity)
+- The steps are internally consistent (completing one step correctly
+  makes the next step straightforward)
+- The user has signaled that batch execution is acceptable
+
+Examples of routine execution that may proceed without per-step
+checkpoints:
+
+- "Extract the key concepts from each of these five sections" — the
+  task is repetitive and well-defined. Each section receives the same
+  treatment.
+- "Update the headers, fix the numbering, and check cross-references"
+  — the tasks are mechanical and independent. Error in one does not
+  propagate to others.
+- "Generate the Session Log and Bootstrap" — standard closeout
+  artifacts with well-defined formats and content requirements.
+
+Examples that require checkpoints despite appearing routine:
+
+- "Revise Section A based on findings, then revise Section B" — each
+  revision involves interpretive judgment. The user should verify
+  Section A before the AI's interpretation carries into Section B.
+- "Draft the executive summary, then draft the recommendations" — the
+  executive summary shapes the recommendations. The user should verify
+  the summary's framing before it influences downstream content.
+- "Research X, then make a decision about Y" — research results require
+  user evaluation before they inform decisions.
+
+THE TEST: "If I got step N wrong, would step N+1 compound the error?"
+If yes, checkpoint after step N. If no (the steps are independent or
+mechanical), batch execution is acceptable.
+
+
+3.8.4 AI Behavioral Guidance
+------------------------------
+
+Default to checkpoints. When uncertain whether batch execution or
+checkpointed execution is appropriate, default to checkpoints. The cost
+of an unnecessary checkpoint (one brief exchange) is far less than the
+cost of compounded errors across multiple steps.
+
+Signal your interpretation. When receiving a multi-step instruction,
+briefly state how you intend to proceed:
+
+- "I'll work through these three steps with a checkpoint after each."
+- "These are independent tasks — I'll batch them and present the results
+  together. Let me know if you'd prefer checkpoints."
+
+This transparency gives the user the opportunity to correct the
+interpretation before execution begins.
+
+Respect user signals. If the user says "just do all of these" or "no
+need to check in between," that is an explicit signal to batch. Follow
+the user's preference. The checkpoint default exists for ambiguous
+cases, not to override clear user direction.
+
+Cross-reference: Section 2.2.3 (Alignment Over Assumption — the
+principle that underlies checkpoint defaults). Section 4.3.2 (Active
+Session Management — checkpoint progress as an ongoing practice).
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+New Section 3.8, inserted after existing Section 3.7 (Common Failure
+Modes). This placement keeps the section within the Explicit Alignment
+Principle domain while giving it a clear, navigable home.
+
+No renumbering of existing Section 3 content is required — this is an
+additive section at the end.
+
+RELATIONSHIP TO PHASE PROTOCOL:
+Instruction Chain Interpretation is a Layer 1 AIPM Framework Behavior.
+Session A's Phase Protocol draft (Section 5.2.3, Layer 1 content list)
+includes "Instruction chain interpretation rules (sequential with
+alignment checkpoints)" as a Layer 1 item. This section provides the
+full specification.
+
+CONSISTENCY WITH PRIOR DRAFTS:
+- Session A Section 5.2.3 (Phase Protocol Layer 1): Lists instruction
+  chain interpretation as a Layer 1 behavior — confirmed consistent
+- Session A Section 5.2.7 (Phase Protocol Contents Reference): Part A
+  includes "Instruction chain interpretation" — confirmed consistent
+- Session B Section 4.3.2 (Active Session Management): "Checkpoint
+  progress" guidance aligns with the checkpoint default described here
+- Session E Section 2.2.3 (this session's draft): References Section
+  3.X (this section) as a manifestation of "alignment over assumption"
+- Category 11.3 in Findings document: The rule, exception, and examples
+  match the field-tested specification
+
+CROSS-REFERENCES TO ESTABLISH IN SESSION G:
+- Section 4.3.2 (Active Session Management): Cross-reference to this
+  section for checkpoint guidance during active work
+- Section 2.2.3 (Alignment Over Assumption): Already references this
+  section (from this session's draft)
+- Section 14 (Failure Modes): "Runaway execution" as a named failure
+  mode, cross-referenced to this section as the mitigation
+- Glossary (Section 17.2): Entries for Instruction Chain Interpretation,
+  Runaway Execution
+
+NOTE ON SECTION NUMBER:
+The Section 2.2.3 enhancement (drafted this session) references this
+content as "Section 3.X" pending final number assignment. The final
+reference should be updated to "Section 3.8" during Session G
+integration, or to whatever number is assigned if Section 3 is
+reorganized.
+
+================================================================================
+END OF SECTION 3.8 DRAFT
+================================================================================

@@ -1,0 +1,168 @@
+================================================================================
+DRAFT — INTEGRATION POINTS FOR SESSION D CONTENT
+================================================================================
+Target:     Multiple existing sections in GOV-AIPM v1.0.8-DRAFT
+Drafted:    Session 036
+Categories: 5 (Findings Reports), 6 (Branch Management),
+            9 (Insight Capture) — integration weave
+Status:     DRAFT — pending user review
+================================================================================
+
+These are targeted insertions and modifications to existing manual
+sections and prior drafts that create the cross-reference web connecting
+Session D content to the rest of the manual.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 1: Section 5.8 Artifact Relationships
+Location: Within the artifact relationship map (current 5.6 in v1.0.7,
+          renumbered to 5.8 in v1.0.8)
+Action: ADD Findings Reports and Branch Startup File to relationships
+
+Note: Session A Integration Point 5 already added Phase Protocol to
+this section. This integration point adds Session D artifacts.
+------------------------------------------------------------------------
+
+ADD TO ARTIFACT RELATIONSHIPS (after Phase Protocol relationships
+from Session A Integration Point 5):
+
+Findings Report Relationships:
+
+Findings Reports connect to the artifact ecosystem as follows:
+
+- PRODUCED DURING: Research, exploration, evaluation, and testing
+  sessions
+- INFORMS: Decision Logs (findings provide evidence for decisions)
+- REFERENCES: Session Logs (findings cite session provenance)
+- INDEXED BY: F-## identifiers (project-wide, never resets)
+- TRACKED IN: Cumulative Findings Index (within reports or standalone)
+- UPLOADED TO: Project notebook for queryable retrieval
+- RELATED TO: Backlog Register (findings may generate backlog items
+  when they reveal out-of-scope needs)
+
+The evidence-to-decision pipeline — Findings inform Decisions — is a
+core informational flow in the framework. Findings provide the
+empirical foundation; Decisions record the choices that findings
+support.
+
+Branch Startup File Relationships:
+
+Branch Startup Files connect to the artifact ecosystem as follows:
+
+- DERIVED FROM: Bootstrap (TPL-002) — specialized for branch creation
+- PRODUCED DURING: Mainline sessions when branching is decided
+- REFERENCES: Phase Protocol (inherited by branch), Decision Log
+  (branching decision), Cross-Branch Awareness Document (branch
+  registration)
+- CONSUMED BY: Branch first session (initiates mini-rooting)
+- ANALOGOUS TO: Project Initiation Form (TPL-001) at the branch level
+- ONE-TIME USE: After the branch's first session, subsequent sessions
+  use standard Bootstraps (TPL-002)
+
+Cross-Branch Awareness Document Relationships:
+
+- STORED IN: Project Knowledge (accessible to all sessions)
+- REFERENCES: All active Branch Startup Files
+- UPDATED BY: Any session that creates, completes, or modifies a branch
+- CONSUMED BY: All sessions (mainline and branch) for parallel work
+  awareness
+- RELATED TO: Phase Protocol (shared governance reference), Bootstrap
+  (may include awareness document reminder)
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 2: Section 4.1.1 Chat Types — Branch Chats
+Location: Section 4.1.1, within the BRANCH CHATS description
+          (approximately lines 2086-2098 in v1.0.7)
+Action: ENHANCE with cross-reference to formal branch management
+------------------------------------------------------------------------
+
+ADD after the existing "Example uses" list for Branch Chats:
+
+Formal Branch Management:
+
+Section 4.1.1 describes branch chats as a chat type. Section 12.3
+provides the full management system for branching — including the
+branch creation process, startup files, mini-rooting cycles, naming
+conventions, cross-branch coordination, and integration patterns. For
+projects where branching is a deliberate strategy (rather than a
+one-off chat), the branch management protocol ensures branches are
+properly created, operated, and reintegrated.
+
+Cross-reference: Section 12.3 (Branch Management).
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 3: Section 4.1.2 Chat Relationships
+Location: Section 4.1.2 (approximately lines 2115-2129 in v1.0.7)
+Action: ADD branch management cross-reference
+------------------------------------------------------------------------
+
+ADD after the existing relationship list:
+
+For projects using formal branch management (Section 12.3), the
+ROOT → BRANCH and BRANCH → EXECUTION relationships are governed by the
+Branch Startup File (TPL-0XX) and Cross-Branch Awareness Document
+(TPL-0XX). These artifacts formalize the handoff and coordination that
+the basic bootstrap mechanism handles for simpler chat relationships.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 4: Section 4.3.2 Active Session Management
+Location: Within the "Maintain Focus" block of Section 4.3.2
+          (Session B draft, approximately line 268-271)
+Action: ENHANCE existing backlog reference with Insight Capture Protocol
+------------------------------------------------------------------------
+
+REPLACE the existing bullets:
+
+  - Defer out-of-scope items to the Backlog Register or appropriate
+    future sessions
+  - Note but do not pursue tangents — capture them for later consideration
+
+WITH:
+
+  - When out-of-scope items surface, apply the Insight Capture Protocol
+    (Section 5.9.7): pause, flag to user, and if approved, conduct the
+    brief containable survey to create a structured backlog item. Do not
+    silently defer or silently expand scope.
+  - Note but do not pursue tangents — the Insight Capture Protocol
+    provides the structured mechanism for capturing ideas without
+    disrupting current work
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+ORDERING:
+These integration points should be applied during Session G along with
+all other integration points from Sessions A-C. They are non-destructive
+additions that layer onto existing content.
+
+Integration Point 1 layers onto Session A's Integration Point 5 (which
+added Phase Protocol to artifact relationships). Session G should apply
+both together when revising Section 5.8.
+
+Integration Point 4 modifies Session B's Section 4.3.2 draft content
+(not the v1.0.7 original). Session G should apply the Session B
+revision first, then this modification.
+
+TEMPLATES REFERENCED:
+- TPL-0XX (Findings Report) — drafted this session
+- TPL-0XX (Branch Startup File) — drafted this session
+- TPL-0XX (Cross-Branch Awareness Document) — drafted this session
+All TPL numbers to be finalized in Session G.
+
+SESSION D DRAFT FILE CROSS-REFERENCE:
+| Integration Point | Related Draft File                          |
+|-------------------|---------------------------------------------|
+| 1 (Artifacts)     | DRAFT_Section_5-6_Findings-Reports.txt      |
+|                   | DRAFT_Section_12-3_Branch-Management.txt     |
+| 2 (Chat Types)    | DRAFT_Section_12-3_Branch-Management.txt     |
+| 3 (Relationships) | DRAFT_Section_12-3_Branch-Management.txt     |
+| 4 (Active Mgmt)   | DRAFT_Section_5-9_Backlog-Register-Enhanced  |
+
+================================================================================
+END OF SESSION D INTEGRATION POINTS DRAFT
+================================================================================

@@ -1,0 +1,118 @@
+================================================================================
+QUALITY AUDIT — SECTION 14 FAILURE MODES
+================================================================================
+Audited:    Session 037
+Category:   Drafting Plan Session E, Item 6
+Purpose:    Assess whether conflict resolution belongs here; prepare
+            for Session F additions (Category 13)
+Status:     COMPLETE — assessment only, no content changes
+================================================================================
+
+
+AUDIT ASSESSMENT:
+
+Section 14 currently contains three subsections:
+- 14.1 Common Pitfalls (Context, Communication, Process, Output failures)
+- 14.2 Recovery Strategies (Immediate, Local, Session-Level, Project-Level)
+- 14.3 Cognitive Divergence Detection (understanding, detection, protocol,
+  prevention)
+
+OVERALL QUALITY: SOLID. The section is well-organized with clear
+categories, practical examples, and actionable recovery guidance. The
+Cognitive Divergence Detection subsection (14.3) is particularly strong
+— the Three-Strike Protocol and detection signals are field-relevant.
+
+
+CONFLICT RESOLUTION PLACEMENT DECISION:
+
+Assessment: Section 4.5 (Session Management) is the correct home for
+the Conflict Resolution Protocol. Section 14 documents failure modes
+and recovery — things that go wrong and how to fix them. The Conflict
+Resolution Protocol is an operational behavior for handling a specific
+class of situation (protocol-vs-objective tension) during normal work.
+It is preventive, not reactive.
+
+However, Section 14 should CROSS-REFERENCE the Conflict Resolution
+Protocol for two relevant failure modes:
+
+1. PROTOCOL RIGIDITY failure mode: AI follows protocols rigidly when
+   doing so harms project objectives. Mitigation: Section 4.5 (Conflict
+   Resolution Protocol).
+
+2. SILENT DEVIATION failure mode: AI deviates from protocol without
+   flagging the deviation. Mitigation: Section 4.5 (Conflict Resolution
+   Protocol) — specifically, the requirement to FLAG before deviating.
+
+These two failure modes should be added during Session F when Category
+13 (Known Failure Modes & Workarounds) is drafted.
+
+
+SESSION F PREPARATION — CATEGORY 13 GAPS IDENTIFIED:
+
+The current Section 14 has the following gaps relative to Category 13
+from the Findings document:
+
+1. NO BOOTSTRAP VERIFICATION FAILURE MODE: Category 13.1 identifies
+   bootstraps that are acknowledged but not actually followed. Section
+   14 does not address this. Session F should add it.
+
+2. NO BEHAVIORAL FORGETFULNESS FAILURE MODE: Category 13.2 identifies
+   AI "forgetting" committed behaviors mid-session. Section 14's
+   "Session overrun" entry partially covers this (quality degradation
+   from context exhaustion) but does not address behavioral
+   forgetfulness independent of exhaustion. Session F should add it.
+
+3. NO CONTAMINATION FAILURE MODE: Category 13.3 identifies hallucinated
+   connections across unrelated content. Section 14's "Hallucination"
+   entry covers fabricated information but not cross-contamination
+   between sources. Session F should distinguish these.
+
+4. NO SYNTHESIS LAYER DEGRADATION: Category 13.4 identifies extraction
+   fidelity vs. synthesis error distinction (particularly relevant for
+   notebook-mediated context recovery). No equivalent in current
+   Section 14. Session F should add it.
+
+5. NO CONTEXT INVISIBILITY (TRANSCRIPT GAPS): Category 13.5 identifies
+   MCP tool calls invisible in transcript. This is now mitigated by the
+   Connector Transparency Protocol (Section 4.4, Session C). Section 14
+   should document the failure mode and cross-reference the CTP as
+   mitigation.
+
+6. NO PROTOCOL RIGIDITY / SILENT DEVIATION: As noted above, these
+   should be added with cross-references to Section 4.5.
+
+7. NO RUNAWAY EXECUTION: The failure mode addressed by Instruction
+   Chain Interpretation (Section 3.8, this session). Should be
+   documented in Section 14 with mitigation cross-reference.
+
+RECOMMENDED STRUCTURE FOR SESSION F:
+
+The current Section 14 structure (14.1 Pitfalls, 14.2 Recovery, 14.3
+Divergence) could be enhanced by:
+
+Option A — Extend 14.1: Add the new failure modes as additional entries
+within the existing category structure (Context, Communication, Process,
+Output failures). This preserves the current organization.
+
+Option B — Add 14.4: Create a new subsection for "Field-Tested Failure
+Modes" that documents failures discovered through real-world testing,
+with explicit workaround documentation. This separates the original
+analytical catalog from empirically validated patterns.
+
+Recommendation: Option A is cleaner. The existing categories
+accommodate the new failure modes naturally:
+- Bootstrap verification, behavioral forgetfulness, runaway execution
+  → Process Failures
+- Contamination, synthesis degradation → Output Failures
+- Context invisibility → Context Failures (or new "Tool Failures"
+  category)
+- Protocol rigidity, silent deviation → Process Failures
+
+Each new entry should follow the existing format: name, description,
+symptoms, prevention/mitigation with cross-references to the specific
+manual sections that address them.
+
+
+================================================================================
+END OF SECTION 14 QUALITY AUDIT
+================================================================================

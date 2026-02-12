@@ -1,0 +1,143 @@
+================================================================================
+DRAFT SECTION — For integration into GOV-AIPM v1.0.8-DRAFT
+================================================================================
+Target Location: Section 1.4.6 (REVISION — updates to existing content)
+Drafted:         Session 033
+Category:        2 (Rooting as Phase 0) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+This file contains targeted revisions to Section 1.4.6 subsections.
+Sections not listed here are unchanged from v1.0.7.
+
+------------------------------------------------------------------------
+1.4.6.1 — REPLACE EXISTING CONTENT
+------------------------------------------------------------------------
+
+1.4.6.1 Starting Your First Project (Rooting)
+----------------------------------------------
+
+When you initiate a new project with AI assistance, you enter rooting —
+the formal Phase 0 of every project. Rooting establishes the project's
+foundation before any execution work begins. No prior state exists to
+carry forward; everything must be explicitly built.
+
+What to Upload:
+- This manual (or relevant sections for your project type)
+- Any existing materials relevant to the project (research, notes,
+  prior work, reference documents)
+- Completed Project Initiation Form (TPL-001), or be prepared to
+  develop one through collaborative dialog with the AI
+
+What the AI Does:
+- Recognizes the AIPM framework and adopts its operational behaviors
+- Reviews your TPL-001 or engages in structured collaborative dialog
+  to develop one
+- Probes assumptions, surfaces gaps, and proposes alternatives
+- Helps structure the project into phases with clear objectives and
+  exit criteria
+- Drafts an initial Project Guide based on collaborative inputs
+- Drafts a Base Phase Protocol (Layer 1 AIPM behaviors + Layer 2
+  methodology + Layer 3 project context)
+- Confirms alignment on both documents before concluding rooting
+
+What You Do:
+- Engage substantively in the collaborative rooting dialog — this is
+  design work, not form completion
+- Review the AI's Project Guide draft and correct any misinterpretations
+- Review the Base Phase Protocol and verify behavioral expectations
+- Approve both documents before rooting concludes
+- Store the Phase Protocol in Project Knowledge
+
+Expected Outcome:
+An established project with a Project Guide defining scope, objectives,
+constraints, and phase structure, plus a Base Phase Protocol defining
+how the AI should behave during the first execution phase. Both you and
+the AI share a verified understanding of what you're building, how
+you'll proceed, and what behavioral standards govern the work.
+
+USER ACTION: After rooting concludes, store the Phase Protocol in
+Project Knowledge. Verify the Bootstrap for the first execution session
+includes a mandatory first action to review the Phase Protocol.
+
+Common Pitfall: Rushing rooting to begin "real work." Rooting IS real
+work — it builds the governance infrastructure that makes coherent
+multi-session execution possible. If rooting takes multiple sessions,
+that investment pays dividends throughout the project.
+
+Cross-reference: Section 2.5.1 details the full rooting process.
+Section 5.2 details the Phase Protocol.
+
+
+------------------------------------------------------------------------
+1.4.6.2 — TARGETED ADDITIONS TO EXISTING CONTENT
+------------------------------------------------------------------------
+
+ADD after "What to Upload" section (after line referencing bootstrap):
+
+- Phase Protocol is already stored in Project Knowledge (no upload
+  needed — the AI will review it as part of Bootstrap instructions)
+
+ADD to "What the AI Does" section (insert as first item):
+
+- Reviews the Phase Protocol from Project Knowledge as its mandatory
+  first action, confirming adherence to all behavioral requirements
+
+ADD to "Key Principle" paragraph (append):
+
+Additionally, the Phase Protocol in Project Knowledge provides
+phase-stable behavioral governance that the AI reviews at every session
+start. The Bootstrap instructs the AI to read the Phase Protocol; the
+Phase Protocol tells the AI how to behave. Together, they ensure each
+session begins with both current state awareness and behavioral
+consistency.
+
+
+------------------------------------------------------------------------
+1.4.6.4 — TARGETED ADDITIONS TO EXISTING CONTENT
+------------------------------------------------------------------------
+
+ADD to "What the AI Does" section (insert after "Updates the Roadmap"):
+
+- Evaluates the current Phase Protocol against upcoming phase
+  requirements; recommends redraft if behaviors need to change
+- If redrafting, produces a new Phase Protocol for the upcoming phase
+  incorporating lessons from the completed phase
+
+ADD to "What You Do" section (insert after "Review the AI-generated
+phase plan"):
+
+- Review the Phase Protocol evaluation — approve carry-forward or
+  redraft as appropriate
+- If redrafted, store the new Phase Protocol in Project Knowledge and
+  archive the prior version
+
+ADD a new entry to the "Common Pitfall" section:
+
+Common Pitfall: Carrying the Phase Protocol forward without review at
+phase transitions. Even if no changes are needed, explicit evaluation
+ensures behavioral governance remains intentional.
+
+
+------------------------------------------------------------------------
+1.4.6.5 — UPDATE SUMMARY TABLE
+------------------------------------------------------------------------
+
+REPLACE existing summary table:
+
+| Situation                | Key Upload(s)                | AI Priority Action           |
+|--------------------------|------------------------------|------------------------------|
+| First Project (Rooting)  | Manual + TPL-001 + materials | Collaborative rooting,       |
+|                          |                              | PG + PP draft                |
+| Session Continuation     | Bootstrap                    | PP review, alignment turn,   |
+|                          |                              | execute                      |
+| Extended Absence         | TPL-007, PG, Roadmap, Boot   | Full re-orientation          |
+| Phase Transition         | PG, Roadmap, Bootstrap       | PP evaluation, phase plan,   |
+|                          |                              | horizon view                 |
+
+Abbreviations: PG = Project Guide, PP = Phase Protocol, Boot = Bootstrap
+
+
+================================================================================
+END OF SECTION 1.4.6 REVISIONS
+================================================================================

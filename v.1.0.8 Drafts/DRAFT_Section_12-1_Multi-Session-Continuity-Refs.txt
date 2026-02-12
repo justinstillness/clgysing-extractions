@@ -1,0 +1,124 @@
+================================================================================
+DRAFT — SECTION 12.1 MULTI-SESSION CONTINUITY (ADD REFERENCES)
+================================================================================
+Target Location: Section 12.1 (ADDITIONS to existing content)
+Current Lines:   4783-4848 in v1.0.7
+Drafted:         Session 034
+Category:        3 (Enhanced Session Lifecycle) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE: This is a lightweight cross-reference addition, not a full
+rewrite. The existing Section 12.1 content is well-written and adequate.
+These additions integrate the new Session B concepts into the continuity
+framework.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+------------------------------------------------------------------------
+ADDITION 1: New continuity mechanism — INSERT after "Chat Transcript
+Archives" block (after approximately line 4831) and before "Continuity
+Anti-Patterns"
+------------------------------------------------------------------------
+
+INSERT:
+
+Response Indexing System (Section 4.3.1.2)
+
+The Response Indexing System provides a persistent, project-wide
+numbering scheme for significant AI responses. Each substantive output
+receives a sequential index — [0001], [0002], and so on — that continues
+across all sessions without resetting at phase or session boundaries.
+
+The index enables precise retrieval from transcripts. Each Session Log
+includes a Response Index Register mapping indexes to semantic titles.
+When a future session needs to reference specific prior work, the
+register identifies the exact response index to locate in the
+transcript. This transforms the transcript archive from a verbose,
+unsearchable record into a precisely navigable resource.
+
+Response indexing also supports notebook-based context recovery. When
+session logs are uploaded to a project notebook, the indexes provide
+structured reference points that notebook queries can target.
+
+Continuity is maintained through the Bootstrap, which specifies the
+last index used and the next session's starting index. If the sequence
+breaks, the AI requests recovery guidance from the user.
+
+Session Fidelity Reports (Section 5.4.4)
+
+The Session Fidelity Report (SFR), embedded in every Session Log,
+provides structured assessment of session quality and handoff readiness.
+Beyond recording what happened, the SFR evaluates objective achievement,
+identifies gaps and insights, and projects the next session's focus and
+complexity.
+
+For continuity, the SFR's Handoff Status section is critical: it
+explicitly identifies context that must persist, materials the next
+session requires, and risks or warnings that could affect resumption.
+This structured handoff assessment prevents the subtle context losses
+that accumulate when bootstraps carry forward "what" without assessing
+"how well" and "what's at risk."
+
+Over multiple sessions, the pattern of SFR entries reveals continuity
+health — consistent FULL objective achievement suggests stable
+continuity; recurring PARTIAL achievements may indicate that continuity
+mechanisms are losing information at session boundaries.
+
+
+------------------------------------------------------------------------
+ADDITION 2: Update the introductory paragraph to reference five
+mechanisms instead of three — REPLACE lines 4786-4791
+------------------------------------------------------------------------
+
+REPLACE:
+
+Multi-session continuity is the central challenge of extended AI work.
+Each new session begins with no memory of prior sessions. Without
+deliberate continuity mechanisms, every session restart imposes a
+reconstruction cost that compounds over time.
+
+The framework addresses this through five interconnected mechanisms:
+
+
+------------------------------------------------------------------------
+ADDITION 3: Additional anti-pattern — INSERT after existing anti-
+patterns (after approximately line 4846)
+------------------------------------------------------------------------
+
+INSERT:
+
+Unindexed sessions. Sessions that do not maintain response indexing lose
+the structured retrieval capability that makes transcript archives
+useful. Without indexes, recovering specific prior work from transcripts
+requires linear searching through potentially thousands of exchanges.
+Maintain the index from the first session — the incremental cost is
+negligible and the retrieval value compounds over time.
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+- Addition 1: Insert the two new mechanism descriptions after "Chat
+  Transcript Archives" and before "Continuity Anti-Patterns"
+- Addition 2: Replace the introductory count ("three" → "five")
+- Addition 3: Append after existing anti-patterns
+
+These changes are additive — no existing content is removed or modified
+except the mechanism count in the introduction.
+
+The five mechanisms in the revised section:
+1. Bootstrap Documents (existing)
+2. Decision Logs (existing)
+3. Chat Transcript Archives (existing)
+4. Response Indexing System (new)
+5. Session Fidelity Reports (new)
+
+================================================================================
+END OF SECTION 12.1 CROSS-REFERENCE DRAFT
+================================================================================

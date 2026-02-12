@@ -1,0 +1,484 @@
+================================================================================
+DRAFT — SECTION 10.3 RETRIEVAL AND QUERY TOOLS (MAJOR REVISION)
+================================================================================
+Target Location: Section 10.3 (REPLACES existing content, lines 4488-4510)
+Drafted:         Session 035
+Categories:      4 (NotebookLM / Notebook Integration) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+REVISION RATIONALE:
+
+The current Section 10.3 is five thin paragraphs covering NotebookLM
+workflow integration, search tools, and reference managers. Field testing
+across three project branches (CLGYSING, AWSNBLM, NLMINTA) revealed
+that notebook connectivity is a foundational capability — the deep
+context recovery layer that gives the AI "near-perfect fidelity capacity
+between sessions." This revision expands Section 10.3 into a
+comprehensive treatment with subsections, while retaining the existing
+search and reference manager content.
+
+The expansion adds: notebook connectivity as a distinct concept,
+exhaustive querying technique, upload workflows, notebook organization
+strategy, source efficiency for limited plans, notebook index/directory
+concept, and guidance on what to upload versus skip.
+
+Tool-agnostic framing per D-032-004: content uses "notebook connectivity
+tool" as generic language with NotebookLM (and its MCP interface,
+Majeston) as the reference implementation example.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+10.3 RETRIEVAL AND QUERY TOOLS
+-------------------------------
+
+Context management is a persistent challenge in AI-assisted work. Every
+session begins with an empty context window. Retrieval tools address
+this fundamental constraint by providing access to accumulated project
+knowledge without consuming the active session's token capacity.
+
+This section covers three categories of retrieval tools: notebook
+connectivity tools (the primary deep context layer), search and indexing
+tools, and reference managers. Of these, notebook connectivity has
+emerged from field testing as the most impactful capability for
+multi-session project continuity.
+
+
+10.3.1 Notebook Connectivity
+------------------------------
+
+CONCEPT:
+
+A notebook connectivity tool is an external platform that accepts
+uploaded project materials and responds to natural language queries
+against them. It functions as a grounded retrieval system — answers are
+derived from the uploaded corpus, not from general training data, and
+typically include source attribution.
+
+For AI-assisted project management, notebook connectivity provides the
+deep context recovery layer. It complements the Bootstrap's lightweight
+orientation with comprehensive access to everything that has occurred
+across the project's history.
+
+The relationship between these two systems is critical to understand:
+
+Bootstrap: lightweight orientation tool. Tells the AI WHERE the project
+left off — current state, next actions, open items, headroom notes. The
+Bootstrap changes every session and carries forward only what the next
+session needs to know immediately.
+
+Notebook: deep context archive. Contains EVERYTHING that happened —
+complete transcripts, all artifacts, all decisions, all research.
+The notebook persists across the project and supports retrieval of any
+prior context on demand.
+
+The Bootstrap tells the AI what to look for. The notebook has the
+content. Neither replaces the other — they serve complementary functions
+at different depths.
+
+REFERENCE IMPLEMENTATION:
+
+NotebookLM (by Google) is the reference implementation used throughout
+this manual. It accepts document uploads, supports natural language
+queries with cited responses, and integrates with AI platforms through
+MCP (Model Context Protocol) tools such as Majeston. Other notebook
+connectivity tools that provide grounded retrieval against uploaded
+corpora can be substituted.
+
+When the AI has direct MCP access to a notebook connectivity tool, the
+workflow becomes significantly more efficient. Rather than the user
+manually shuttling queries and responses between the AI and the notebook
+tool, the AI queries the notebook directly and narrates the results in
+the conversation (see Section 4.4, Connector Transparency Protocol).
+
+WORKFLOW INTEGRATION — TWO MODELS:
+
+Model A — User-Mediated Retrieval (no MCP connectivity):
+
+1. AI identifies an information need from project materials
+2. AI provides the specific query for the user to execute
+3. User runs the query in the notebook tool against the project corpus
+4. User returns the cited response to the AI
+5. AI integrates the retrieved information and proceeds
+
+This model preserves AI context capacity for reasoning while leveraging
+the notebook's retrieval capability. The cited responses provide source
+attribution that would otherwise require verification.
+
+Model B — Direct AI Retrieval (with MCP connectivity):
+
+1. AI identifies an information need from project materials
+2. AI queries the notebook tool directly via MCP
+3. AI narrates the query parameters, results, and assessment in the
+   conversation per the Connector Transparency Protocol (Section 4.4)
+4. AI integrates the retrieved information and proceeds
+
+Model B is faster and supports the exhaustive querying technique
+(Section 10.3.2) more naturally. However, it requires adherence to the
+Connector Transparency Protocol to ensure transcript completeness.
+
+Both models share the same principle: the notebook extends effective
+context beyond platform limits without consuming the active session's
+token budget.
+
+
+10.3.2 Exhaustive Querying Technique
+--------------------------------------
+
+When the AI needs comprehensive context on a topic — not just a single
+fact but the full picture of what has been discussed, decided, and
+produced — the exhaustive querying technique provides systematic
+saturation.
+
+THE TECHNIQUE:
+
+1. QUERY. The AI queries the notebook on a specific subject. The query
+   should be focused — a clear topic or question, not a vague request.
+
+2. SUMMARIZE. The AI summarizes the information received, confirming
+   its understanding of what was returned.
+
+3. GAP QUESTION. The AI explicitly asks a follow-up: "Is there anything
+   else about [topic] that I'm missing?" or "What additional context
+   exists on [topic] that wasn't covered in the previous response?"
+
+4. REPEAT. This cycle continues until the responses start returning
+   similar content — saturation. At saturation, the AI has retrieved
+   the substantive context available on that topic.
+
+5. SYNTHESIZE. The AI consolidates the retrieved information into a
+   working understanding and proceeds with the session's work.
+
+WHY THIS WORKS:
+
+Notebook connectivity tools return the most relevant results for a given
+query, but a single query rarely surfaces everything. The iterative
+approach exploits different angles on the same topic, pulling in context
+that a single query would miss. The gap question specifically prompts
+the tool to search for content not yet surfaced.
+
+Field testing has demonstrated that exhaustive querying achieves
+near-perfect fidelity between sessions — the AI reconstructs context
+comparable to having been present for the prior work. This makes it
+substantially more effective than loading a single summary document.
+
+WHEN TO USE:
+
+Exhaustive querying is warranted when:
+- Beginning a session that requires deep context from prior work
+- Researching a topic that spans multiple prior sessions
+- Preparing to draft content that must be consistent with prior decisions
+- Recovering from a context disruption (compaction event, session crash)
+
+For simple factual lookups ("what was the last decision number?"), a
+single targeted query is sufficient. Reserve the full technique for
+situations where comprehensive context matters.
+
+TOKEN TRADE-OFF:
+
+Exhaustive querying consumes tokens — typically 3-6 query-response
+cycles. However, this cost is almost always lower than uploading full
+transcripts or reference documents into the context window. The
+technique optimizes for information quality per token spent.
+
+
+10.3.3 Upload Workflow
+-----------------------
+
+The notebook's value depends entirely on what is uploaded to it. A
+notebook with stale or incomplete content provides stale or incomplete
+retrieval. Maintaining the notebook is a user responsibility performed
+after each session.
+
+POST-SESSION UPLOAD PROCEDURE:
+
+1. EXPORT. Download the chat transcript from the session using an
+   export tool (Claude Exporter or equivalent). Preferred format:
+   Markdown or plain text.
+
+2. DOWNLOAD ARTIFACTS. Download all files produced during the session
+   — drafts, specifications, findings reports, decision logs, session
+   logs, and any other outputs.
+
+3. ORGANIZE LOCALLY. Store all session materials in the appropriate
+   session folder per the project's folder structure (see Section 6.2).
+
+4. UPLOAD TO NOTEBOOK. Upload the following to the project notebook:
+   - Chat transcript (always — this is the primary deep memory source)
+   - Non-ephemeral artifacts: specifications, findings reports,
+     work-in-progress documents, research outputs, deliverables
+
+5. SYNC. If using a consolidated Google Doc approach for source
+   efficiency (see Section 10.3.5), copy the new transcript into the
+   master document and re-sync the source in the notebook tool.
+
+WHAT TO UPLOAD VS. SKIP:
+
+Upload (builds queryable deep memory):
+- Chat transcripts — always. These are the primary source of project
+  context and contain the full record of reasoning, decisions, and work.
+- Specifications and research documents — crystallized intelligence that
+  informs future sessions.
+- Findings reports — synthesis documents that are highly queryable.
+- Decision logs — the formal record of choices and rationale.
+- Work-in-progress drafts — current state of deliverables.
+- Deliverables — final outputs for reference and retrieval.
+
+Skip (ephemeral or redundant in the notebook context):
+- Bootstraps — these are orientation tools for the immediate next
+  session, not deep archive material. The transcript already contains
+  everything the bootstrap summarizes.
+- Session logs — like bootstraps, these summarize what the transcript
+  contains in full. However, uploading session logs is not harmful and
+  some practitioners prefer the convenience of querying structured
+  summaries. This is a preference, not a rule.
+
+The guiding principle: the notebook should contain the materials that
+a future session might need to query for deep context recovery. If a
+document exists only to facilitate the immediate next session (bootstrap)
+or to summarize what the transcript already captures in full (session
+log), it adds limited retrieval value.
+
+Cross-reference: Section 4.3.3 includes notebook upload in the user
+closeout duties. TPL-003 (Session Closeout Checklist) Part B includes
+notebook sync as a post-session action.
+
+
+10.3.4 Notebook Organization Strategy
+---------------------------------------
+
+As a project accumulates sessions and materials, notebook organization
+becomes important for retrieval quality and source management.
+
+ONE MAIN, ADJUNCTS AS NEEDED:
+
+The general rule: maintain one main notebook for the project. All
+sessions and branches should feed into this central repository so that
+any query has access to the project's full history.
+
+Create adjunct notebooks for targeted purposes:
+- Branch-specific notebooks when a branch generates substantial
+  independent context that would dilute the main notebook
+- External research repositories that serve multiple projects
+- Specification or reference documentation that benefits from
+  isolation (e.g., a regulatory compliance corpus)
+
+Example from field testing: a project maintained one main notebook
+(91 sources spanning the full project lifecycle) plus two adjunct
+notebooks — one for a specialized testing branch (33 sources) and one
+for a tooling integration branch (21 sources). All three were
+accessible to any session via MCP, with the Bootstrap specifying which
+notebooks to consult and for what purpose.
+
+NAMING CONVENTIONS:
+
+Notebook names should include the project handle and a descriptive
+purpose:
+- [PROJECT-HANDLE] Review Material (main notebook)
+- [PROJECT-HANDLE] [Branch Name] Sessions (branch adjunct)
+- [PROJECT-HANDLE] Research Sources (research adjunct)
+
+QUERYABILITY:
+
+Good retrieval depends on good input. Practices that improve queryability:
+- Consistent terminology across sessions (the notebook indexes terms)
+- Descriptive artifact names that surface in search results
+- Structured documents (findings reports, session logs) that contain
+  clear section headings and identifiers
+- Consistent use of decision IDs (D-###), finding IDs (F##), and
+  response indexes ([####]) throughout materials
+
+
+10.3.5 Source Efficiency for Limited Plans
+-------------------------------------------
+
+Notebook connectivity tools may impose limits on the number of sources
+(uploaded documents) per notebook. For users on limited plans, source
+efficiency becomes a practical concern.
+
+CONSOLIDATION TECHNIQUE:
+
+Rather than uploading each session transcript as a separate source,
+consolidate multiple transcripts into a single document:
+
+1. Create a Google Doc (or equivalent) with a clear heading structure
+2. After each session, append the transcript under a new heading
+   (e.g., "Session 034 — Session Lifecycle Drafting")
+3. Upload or sync this single document as one source in the notebook
+
+This approach allows many sessions of context to occupy a single source
+slot. The notebook tool indexes the full content regardless of how many
+sessions are consolidated within it.
+
+TRADE-OFFS:
+
+Consolidation trades organizational clarity for source efficiency. A
+notebook with individual session transcripts is easier to navigate by
+session; a notebook with consolidated documents is more source-efficient.
+For projects with many sessions on limited plans, the efficiency benefit
+typically outweighs the organizational cost.
+
+When using consolidation, maintain a clear heading structure within the
+consolidated document so that retrieval results can identify which
+session the content came from.
+
+
+10.3.6 Notebook Index / Directory
+----------------------------------
+
+When a project uses multiple notebooks (main plus adjuncts, or notebooks
+shared across projects), the AI benefits from a directory that maps the
+available notebooks to their contents and purposes.
+
+THE NOTEBOOK INDEX:
+
+A notebook index is a simple reference document — stored in the
+project's materials or embedded in the Bootstrap — that lists:
+
+- Notebook name
+- Notebook ID (for MCP connectivity)
+- Brief description of contents
+- Typical query purposes (what questions this notebook can answer)
+
+Example:
+
+  NOTEBOOK DIRECTORY
+  ------------------
+  1. PROJ Review Material: a0b1c2d3-...
+     Contents: Manual v1.0.7, all session transcripts, specifications
+     Query for: Current state of deliverables, prior decisions, session
+     history, artifact content
+
+  2. PROJ Testing Sessions: e4f5g6h7-...
+     Contents: Testing branch transcripts, test results, findings
+     Query for: Test outcomes, validated patterns, failure modes
+
+  3. PROJ Research Sources: i8j9k0l1-...
+     Contents: External research, reference documents, specifications
+     Query for: Source material, citations, technical references
+
+CREATING THE INDEX:
+
+Query each notebook with: "Provide a summary of your contents — what
+topics, sessions, and materials are represented here." Compile the
+summaries into the directory document. Update when notebooks are
+reorganized or when significant new content is added.
+
+PLACEMENT:
+
+The Bootstrap's Materials Required section should reference the notebook
+index or embed it directly (see TPL-002, Notebook Connectivity block).
+This ensures every session begins with the AI knowing where to look
+for different categories of context.
+
+
+10.3.7 Search and Indexing Tools
+---------------------------------
+
+Beyond notebook connectivity, desktop search applications index local
+files for rapid retrieval. When AI work references historical documents,
+fast local search reduces friction in locating specific files, prior
+versions, or archived materials.
+
+Desktop search is complementary to notebook connectivity — it operates
+on the local file system while notebook connectivity operates on the
+uploaded project corpus. Both serve retrieval but at different layers.
+
+
+10.3.8 Reference Managers
+---------------------------
+
+For research-intensive projects, reference management tools (Zotero,
+Mendeley, or similar) organize source materials with metadata that
+supports later retrieval and citation. These tools are particularly
+valuable when AI-assisted work involves literature review, regulatory
+research, or any domain where source tracking matters.
+
+Reference managers can also feed notebook connectivity tools — export
+collections as documents for upload, creating a queryable research
+corpus within the project notebook.
+
+
+Cross-reference: Section 4.4 (Connector Transparency Protocol) governs
+how AI narrates notebook queries for transcript completeness. Section
+10.8 provides user-side workflow tips including pre-session checklists.
+Section 12.1 covers notebook connectivity as a continuity mechanism.
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+This content REPLACES the existing Section 10.3 (lines 4488-4510 in
+v1.0.7). The existing 5-paragraph content is subsumed — the current
+NotebookLM workflow is expanded in 10.3.1, the search tools content is
+retained in 10.3.7, and the reference managers content is retained in
+10.3.8.
+
+STRUCTURAL CHANGES:
+- 10.3 heading: Retained ("Retrieval and Query Tools")
+- 10.3.1 Notebook Connectivity: NEW — concept, relationship to
+  bootstraps, reference implementation, two workflow models
+- 10.3.2 Exhaustive Querying Technique: NEW — the iterative
+  query-summarize-gap loop for comprehensive context recovery
+- 10.3.3 Upload Workflow: NEW — post-session upload procedure, what
+  to upload vs. skip
+- 10.3.4 Notebook Organization Strategy: NEW — one main + adjuncts,
+  naming conventions, queryability
+- 10.3.5 Source Efficiency for Limited Plans: NEW — consolidation
+  technique for source-limited notebook plans
+- 10.3.6 Notebook Index / Directory: NEW — reference document mapping
+  notebooks to contents and purposes
+- 10.3.7 Search and Indexing Tools: RETAINED from v1.0.7 (reformatted)
+- 10.3.8 Reference Managers: RETAINED from v1.0.7 (reformatted, minor
+  enhancement connecting to notebook connectivity)
+
+CROSS-REFERENCES TO ESTABLISH:
+- Section 4.3.3 (Session Closeout) → references notebook upload in
+  user duties (Session B draft already includes this)
+- Section 4.4 (Connector Transparency Protocol) → governs narration
+  of notebook queries (Session C draft — this session)
+- Section 6 → notebook organization guidance (Session C draft — this
+  session)
+- Section 10.8 → existing NotebookLM Integration tips should cross-ref
+  to this expanded section; consider whether 10.8's notebook content
+  should be consolidated here or retained as user-side quick reference
+- Section 12.1 → notebook connectivity as continuity mechanism
+  (Session C draft — this session)
+- TPL-002 → Notebook Connectivity block in Materials Required (Session
+  B draft already includes this)
+
+CONSISTENCY WITH SESSION A-B DRAFTS:
+- TPL-002 v2.0 includes Notebook Connectivity within Materials Required
+  — this section provides the full specification for what that Bootstrap
+  block references
+- Section 4.3.3 closeout protocol includes user duty to upload
+  transcript and artifacts to notebook — this section provides the
+  detailed workflow (10.3.3)
+- TPL-001 v2.0 Revision 5 adds Notebook Connectivity section to the
+  Project Initiation Form — this section provides the operational
+  guidance that TPL-001 introduces during rooting
+- Section 12.1 (Session B additions) references notebook-based context
+  recovery in the Response Indexing discussion — this section provides
+  the full capability description
+
+SECTION 10.8 CONSIDERATION:
+The existing Section 10.8 includes a "NotebookLM Integration" subsection
+(lines 4604-4610) that partially overlaps with this new content. During
+Session G integration, evaluate whether to:
+(a) Retain 10.8's notebook content as a condensed user-side quick
+    reference with a cross-reference to 10.3 for detail, or
+(b) Consolidate all notebook content into 10.3 and remove the 10.8
+    duplicate
+
+Recommendation: Option (a) — retain the 10.8 quick reference. Section
+10.3 is the comprehensive treatment for understanding; Section 10.8 is
+the quick checklist for doing. Both serve valid purposes.
+
+================================================================================
+END OF SECTION 10.3 REVISION DRAFT
+================================================================================

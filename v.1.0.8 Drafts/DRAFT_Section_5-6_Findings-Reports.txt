@@ -1,0 +1,361 @@
+================================================================================
+DRAFT — SECTION 5.6 FINDINGS REPORTS (NEW)
+================================================================================
+Target Location: NEW Section 5.6 (after Section 5.5 Bootstrap Files,
+                 before Section 5.7 Supporting Artifacts)
+                 Note: v1.0.7 has no Section 5.6 with this content.
+                 Per the v1.0.8 renumbering established in Session A,
+                 Supporting Artifacts moves to 5.7, Artifact
+                 Relationships to 5.8, Backlog Register to 5.9, and
+                 Project Closure Report to 5.10.
+Drafted:         Session 036
+Category:        5 (Findings Reports) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+5.6 FINDINGS REPORTS
+---------------------
+
+5.6.1 Definition
+-----------------
+
+A Findings Report is a synthesis document that captures empirical
+discoveries organized by topic. Unlike Session Logs, which record what
+happened chronologically, and Decision Logs, which record choices made,
+Findings Reports record what was discovered — observations, test
+results, evaluations, and insights extracted from research or
+exploration work.
+
+Findings Reports use a dedicated artifact class (FINDINGS) and a
+project-wide sequential indexing convention (F-##) that accumulates
+across the entire project lifecycle without resetting at session or
+phase boundaries.
+
+
+5.6.2 Purpose
+--------------
+
+Findings Reports serve four purposes:
+
+Discovery Preservation. Research and exploration sessions generate
+empirical observations that are valuable beyond the session that
+produced them. Without a dedicated artifact, these discoveries are
+buried in chat transcripts — difficult to locate, impossible to query
+systematically, and prone to being lost when conversations grow long.
+The Findings Report extracts discoveries from their conversational
+context and preserves them as structured, retrievable records.
+
+Evidence-to-Decision Pipeline. Findings provide the evidentiary
+foundation that informs project decisions. The directional flow is:
+observations produce Findings, Findings inform Decisions. By separating
+the discovery record (Findings Report) from the choice record (Decision
+Log), the framework maintains a clear chain from evidence to conclusion.
+A reviewer can trace any decision back to the findings that supported
+it.
+
+Topical Organization. Session Logs answer the question "what happened
+on this date?" Findings Reports answer the question "what do we know
+about this topic?" This topical organization is particularly valuable
+for projects that revisit the same subject areas across multiple
+sessions — the Findings Report accumulates knowledge by theme rather
+than scattering it across chronological records.
+
+Queryability. Findings Reports are designed for high queryability via
+notebook connectivity tools (Section 10.3). Their structured format —
+unique IDs, concise discovery statements, explicit evidence, and clear
+status verdicts — makes them exceptionally effective as notebook
+sources. A query like "show me all findings related to token
+exhaustion" returns precise, structured results rather than fragments
+of conversation.
+
+
+5.6.3 Distinction from Other Artifacts
+----------------------------------------
+
+Understanding what a Findings Report is NOT clarifies its role:
+
+SESSION LOG (File Class: LOG)
+- Organized: Chronologically (by session)
+- Records: What happened — activities, outputs, issues
+- Indexed by: Session number
+- Answers: "What did we do on this date?"
+
+DECISION LOG (File Class: DECISION)
+- Organized: Sequentially by decision (D-###)
+- Records: What was chosen — rationale, alternatives, implications
+- Indexed by: Decision number
+- Answers: "What did we decide and why?"
+
+FINDINGS REPORT (File Class: FINDINGS)
+- Organized: Topically (by subject area)
+- Records: What was discovered — observations, evidence, implications
+- Indexed by: Finding number (F-##)
+- Answers: "What do we know about this topic?"
+
+The relationship between these artifacts is directional:
+
+  Research produces → Findings (F-##)
+  Findings inform → Decisions (D-###)
+  Decisions shape → Project execution (logged in Session Logs)
+
+All three artifact types are canonical and complementary. A
+well-documented project maintains all three, with each serving its
+distinct retrieval purpose.
+
+
+5.6.4 Indexing Convention
+--------------------------
+
+Findings use the F-## indexing convention:
+
+FORMAT: F-[NN] where NN is a two-digit sequential number, zero-padded.
+
+Examples: F-01, F-02, F-13, F-27
+
+CONTINUITY RULES:
+
+The finding index is continuous across the entire project lifecycle.
+It never resets at phase boundaries or session boundaries — a new
+finding always receives the next available number in the sequence.
+
+Within a single Findings Report, findings are numbered sequentially
+from whatever the project's current index requires. A report may
+contain F-14 through F-22 if those are the next available numbers.
+
+The cumulative index is tracked in two places:
+- Each Findings Report records the range of finding IDs it contains
+- The Session Log notes any findings generated during the session
+
+If a project's finding count exceeds 99, extend to three digits
+(F-100, F-101). The format accommodates growth without requiring
+reindexing.
+
+RELATIONSHIP TO OTHER INDEXES:
+
+The framework uses three parallel indexing systems:
+- D-### for Decisions (project-wide, never resets)
+- F-## for Findings (project-wide, never resets)
+- [####] for Response Indexes (project-wide, never resets)
+
+These indexes are independent — their sequences do not interact. A
+session might produce F-14, D-035-002, and responses [0087] through
+[0094], with each index tracking its own sequence.
+
+
+5.6.5 Structured Finding Entry
+--------------------------------
+
+Each finding follows a five-field schema designed to separate
+observation from interpretation:
+
+FINDING ID: The unique F-## identifier.
+
+DISCOVERY: A concise statement of the observation or insight. This
+should be specific enough to stand alone — a reader should understand
+the finding without additional context. One to three sentences.
+
+EVIDENCE: The specific data points, test results, source references,
+or observations that support the discovery. This is the empirical
+foundation — what was seen, measured, or tested that led to the
+discovery statement. Reference specific sessions, response indexes,
+or external sources as appropriate.
+
+IMPACT / IMPLICATION: Analysis of how this finding affects the project
+— its pipeline, methodology, deliverables, or thesis. This field
+connects the observation to the project's trajectory. What changes (or
+should change) because of this discovery?
+
+STATUS / VERDICT: The conclusion regarding the finding. Standard
+verdicts include:
+
+- VALIDATED — The finding confirms an approach, tool, or hypothesis
+- GAP IDENTIFIED — The finding reveals a missing capability or content
+- REQUIRES FURTHER TESTING — The finding is promising but inconclusive
+- CONTRADICTS — The finding contradicts a prior assumption or approach
+- INFORMS DECISION — The finding provides evidence for a pending choice
+- NOTED — The finding is recorded for reference without immediate action
+
+Custom verdicts are acceptable when standard options do not fit.
+
+EXAMPLE ENTRY:
+
+  F-14
+  Discovery: Exhaustive querying technique achieves near-perfect
+  context recovery between sessions when applied systematically
+  (query → summarize → gap questions → repeat until saturation).
+
+  Evidence: Tested across 3 sessions with varying context loads.
+  Session 012 recovered 95%+ of prior session context through 4
+  query rounds. Session 015 achieved full recovery in 3 rounds with
+  a smaller corpus. Gap questions after initial summary consistently
+  surfaced 2-4 additional details per round.
+
+  Impact: Establishes exhaustive querying as the preferred context
+  recovery method for sessions requiring deep prior-session awareness.
+  Reduces dependency on comprehensive bootstraps for context-heavy
+  sessions.
+
+  Status: VALIDATED — Recommend codifying in manual Section 10.3.
+
+
+5.6.6 When to Generate Findings Reports
+-----------------------------------------
+
+Not every session produces findings. Findings Reports are appropriate
+when a session involves:
+
+RESEARCH OR EXPLORATION: Sessions dedicated to investigating tools,
+approaches, datasets, or methods. These sessions produce empirical
+observations that warrant structured capture.
+
+EVALUATION OR TESTING: Sessions where hypotheses are tested against
+reality — stress tests, validation runs, comparative assessments.
+The results are findings regardless of whether they confirm or
+contradict expectations.
+
+FIELD TESTING OR BETA TESTING: Sessions that apply a methodology or
+tool in practice and observe its real-world behavior. The gap between
+design intent and field reality is the primary source of findings.
+
+SIGNIFICANT INCIDENTAL DISCOVERY: Even in execution sessions, an
+unexpected observation may warrant a finding entry. In this case, the
+finding can be captured as a brief entry in the Session Log (with an
+F-## identifier) rather than requiring a standalone Findings Report.
+The finding is then incorporated into the next full Findings Report
+or the cumulative findings index.
+
+Sessions that are purely execution-focused (drafting, formatting,
+assembly) or purely administrative (file organization, project setup)
+typically do not generate findings.
+
+AI BEHAVIORAL GUIDANCE:
+
+The AI should recognize research and exploration contexts and propose
+Findings Report generation when the session produces empirical
+observations. The proposal should occur during the session — not only
+at closeout — so that findings are captured with full context rather
+than reconstructed from memory.
+
+When the AI observes a pattern of empirical discovery during a session,
+it should ask: "This session is producing findings that warrant
+structured capture. Shall I begin a Findings Report?"
+
+The user may approve, defer to closeout, or decline. If approved, the
+AI maintains the findings structure throughout the session, adding
+entries as discoveries emerge.
+
+
+5.6.7 Cumulative Findings Index
+---------------------------------
+
+For projects that generate multiple Findings Reports across many
+sessions, maintaining a cumulative findings index provides a master
+directory of all discoveries.
+
+The cumulative index is a simple table:
+
+| Finding ID | Discovery (brief) | Session | Status |
+|------------|--------------------|---------|--------|
+
+This index can be maintained as:
+- A standalone reference document updated periodically
+- A section within the Findings Report template (see TPL-0XX)
+- A section within the Project Roadmap (TPL-010) for projects where
+  findings drive the project trajectory
+
+The index is particularly valuable for notebook queryability — a single
+document containing all finding IDs and brief descriptions enables
+targeted retrieval across the full findings corpus.
+
+
+5.6.8 File Structure
+---------------------
+
+Findings Reports are maintained as individual files per session or
+per research cycle:
+
+File naming: [###]_findings.txt or [###]_findings_[topic].txt
+Examples:
+- 012_findings.txt
+- 032_findings_beta-test-review.txt
+
+For projects with extensive findings, a cumulative findings index may
+be maintained as a separate file:
+- [PROJECT]_cumulative-findings-index.txt
+
+Individual files per reporting session are recommended because:
+- Each file can be uploaded to notebooks independently
+- Individual files are easier to reference from Session Logs
+- Topical organization within each report keeps related findings together
+- The cumulative index provides cross-report navigation
+
+
+5.6.9 Template Reference
+--------------------------
+
+Template TPL-0XX (Findings Report) provides the standard structure
+including header, findings entries, cumulative index, and provenance
+tracking. See Appendix A.
+
+Cross-reference: Section 5.3 (Decision Logs) for the complementary
+choice record. Section 5.4 (Session Logs) for the complementary
+activity record. Section 10.3 (Notebook Connectivity) for queryability
+optimization. Section 5.8 (Artifact Relationships) for the Findings
+Report's place in the artifact ecosystem.
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+New Section 5.6, inserted after Section 5.5 (Bootstrap Files, new
+numbering) and before Section 5.7 (Supporting Artifacts, new numbering).
+This placement follows the Session A Integration Point 8 (TOC update)
+which reserved this slot.
+
+NUMBERING IMPACT:
+Per Session A's renumbering scheme:
+- 5.1 Project Guide (unchanged)
+- 5.2 Phase Protocol (Session A — new)
+- 5.3 Decision Logs (renumbered from 5.2)
+- 5.4 Session Logs (renumbered from 5.3, revised in Session B)
+- 5.5 Bootstrap Files (renumbered from 5.4)
+- 5.6 Findings Reports (THIS DRAFT — new)
+- 5.7 Supporting Artifacts (renumbered from 5.5)
+- 5.8 Artifact Relationships (renumbered from 5.6)
+- 5.9 Backlog Register (renumbered from 5.7, enhanced this session)
+- 5.10 Project Closure Report (renumbered from 5.8)
+
+CROSS-REFERENCES TO ESTABLISH IN SESSION G:
+- Section 5.8 (Artifact Relationships): Add Findings Reports to the
+  relationship map (integration point drafted this session)
+- Section 4.3.2 (Active Session Management): Reference findings
+  generation as a session activity type
+- Section 10.3.4 (Notebook Organization): F-## IDs noted as improving
+  queryability (already present in Session C draft)
+- Section 12.1 (Continuity): Findings Reports as part of the project
+  record uploaded to notebooks
+- Glossary (Section 17.2): Entries needed for Findings Report, F-##
+  index
+
+CONSISTENCY WITH PRIOR DRAFTS:
+- Session A Integration Point 8 (TOC) reserved Section 5.6 for this
+  content — confirmed consistent
+- Session B Section 5.4 (Session Logs) lists FINDINGS as a file class
+  value — confirmed consistent
+- Session C Section 10.3.4 references finding IDs (F##) as improving
+  queryability — confirmed consistent
+- The distinction between Findings (topical/discoveries) and Session
+  Logs (chronological/activities) parallels the distinction established
+  in the Findings document Category 5
+
+================================================================================
+END OF SECTION 5.6 DRAFT
+================================================================================

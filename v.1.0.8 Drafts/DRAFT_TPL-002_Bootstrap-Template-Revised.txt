@@ -1,0 +1,422 @@
+================================================================================
+DRAFT — TPL-002 BOOTSTRAP TEMPLATE (MAJOR REVISION)
+================================================================================
+Target:     TPL-002 in Appendix A (REPLACES existing template)
+Drafted:    Session 034
+Category:   3 (Enhanced Session Lifecycle) from Revision Findings
+Status:     DRAFT — pending user review
+================================================================================
+
+REVISION RATIONALE:
+
+The current TPL-002 is functional but does not reflect field-tested
+bootstrap practices. Key gaps identified in Session 033 quality audit:
+- No mention of Phase Protocol review as mandatory first action
+- No concept of stable vs. dynamic content
+- No behavioral reminder section
+- No notebook connectivity references
+- No response index continuity fields
+- Continuation type doesn't reflect current best practice
+
+This revision is informed by analysis of three field-tested bootstraps
+spanning different projects and complexity levels:
+- 034_bootstrap.txt (GOV-AIPM — high complexity, drafting session)
+- 015_bootstrap.txt (NLMINTA — medium complexity, testing session)
+- 024_bootstrap.txt (AWSNBLM — low-medium complexity, maintenance)
+
+These real-world examples demonstrate evolved patterns that the template
+should encode, including the mandatory first action block, dynamic state
+sections, headroom management, and the stable/dynamic content split.
+
+================================================================================
+BEGIN REVISED TEMPLATE
+================================================================================
+
+
+TPL-002: BOOTSTRAP TEMPLATE
+
+Template ID: GOV-AIPM-TPL-002
+Version: 2.0
+Purpose: Standard structure for session transitions; enables clean
+         handoff between AI instances with full context preservation,
+         behavioral continuity, and retrieval index maintenance.
+When to Use:
+- End of any chat session that will continue in a new chat
+- When branching to a parallel workstream
+- When approaching token limits
+- When shifting focus requires fresh context
+
+Cross-reference: Section 5.5 (Bootstrap Files), Section 4.3.3 (Session
+Closeout), Section 5.2 (Phase Protocol)
+
+--------------------------------------------------------------------------------
+INSTRUCTIONS
+--------------------------------------------------------------------------------
+
+Complete this Bootstrap at the end of a chat session before transitioning
+to a new chat. The Bootstrap captures everything the next AI instance
+needs to continue work without context loss.
+
+The Bootstrap serves two functions:
+
+1. Context Transfer — carrying forward the project state, decisions,
+   and working context that the next AI instance needs.
+
+2. Prompt List — explicit instructions telling the next AI what to do
+   at session start, beginning with mandatory behavioral alignment.
+
+WRITING PRINCIPLES:
+
+Write for an AI that has no memory of previous chats. Be explicit about
+what is decided versus what is still open. Include enough context to
+orient, but not so much that it consumes the token budget needed for
+substantive work.
+
+The Bootstrap contains two categories of content:
+
+STABLE CONTENT persists across multiple sessions within a phase. It
+changes only when the project's standing instructions, tools, or
+behavioral requirements change. Examples: mandatory first action,
+notebook connectivity references, recurring behavioral reminders,
+standing constraints.
+
+DYNAMIC CONTENT changes every session. It reflects the current state
+of work and must be freshly written at each closeout. Examples: prior
+session summary, next actions, open items, headroom notes, response
+index continuity.
+
+As a project matures, stable content tends to grow. This is expected.
+However, if stable content becomes unwieldy, consider consolidating some
+of it into a Phase Protocol addendum — moving standing behavioral
+instructions into the phase-stable document where they more naturally
+belong.
+
+DIALOG COMPLETION OPTION:
+This template can be completed through dialog with the AI. Say:
+"Help me complete TPL-002" or "Walk me through Bootstrap Template."
+More commonly, the AI generates the Bootstrap proactively as part of
+the Session Closeout Checklist (TPL-003) and the Continuity Assurance
+Duty (Section 2.7.6).
+
+Bootstrap Types:
+- CONTINUATION: Same project, sequential work, picking up where left off
+- BRANCH: Parallel workstream, may rejoin main trunk later
+- NEW INSTANCE: Fresh start with new AI instance, full context transfer
+
+--------------------------------------------------------------------------------
+BOOTSTRAP TEMPLATE
+--------------------------------------------------------------------------------
+
+================================================================================
+BOOTSTRAP — [Session Number]
+================================================================================
+Suggested Next Session Name: [### Project-Code (Session Purpose)]
+
+Project:        [Project Name]
+Source:         Session [###] ([Session Purpose])
+Target:         Session [###]
+Created:        [Date]
+Current Phase:  [Phase Name — Status Description]
+
+================================================================================
+MANDATORY FIRST ACTION
+================================================================================
+
+[STABLE CONTENT — Revise only when Phase Protocol changes]
+
+Review the AIPM Phase Protocol from Project Knowledge before proceeding
+with any other work this session.
+
+Document to review: [Phase Protocol filename in Project Knowledge]
+
+Confirm review in first response with:
+"Phase Protocol confirmed. I have reviewed the AIPM Phase Protocol from
+Project Knowledge and confirm adherence to all behavioral requirements."
+
+[If applicable, add supplementary protocol reviews here:]
+Also review: [Supplement filename, e.g., Connector Transparency Protocol]
+
+[If the session has a document-specific mandatory action, add it here:]
+[Example: "Review the Drafting Plan — specifically the Session B entry."]
+[Example: "Review the Findings document — specifically Category 3."]
+
+================================================================================
+PROJECT IDENTIFICATION
+================================================================================
+
+[STABLE CONTENT — Revise only when project parameters change]
+
+Project Name:   [Full project name]
+Description:    [2-3 sentence project description]
+Framework:      AIPM [version or adaptation note if applicable]
+Current Version: [If applicable — e.g., v1.0.7-DRAFT]
+Target Version: [If applicable — e.g., v1.0.8-DRAFT]
+Phase:          [Current phase — e.g., Phase 2 of 6 — Evaluation]
+Horizon View:   [1-2 sentences: where has the project been, where is it
+                 going? What is the broader trajectory beyond this session?]
+
+================================================================================
+PRIOR SESSION SUMMARY
+================================================================================
+
+[DYNAMIC CONTENT — Write fresh every session]
+
+Session [###] accomplished:
+- [Accomplishment 1]
+- [Accomplishment 2]
+- [Accomplishment 3]
+- [Continue as needed]
+
+What was NOT done:
+- [Deferred item 1]
+- [Deferred item 2]
+
+[Phase status summary — e.g., "Phase 2 Status: ~95% complete"]
+
+================================================================================
+SESSION [###] FOCUS
+================================================================================
+
+[DYNAMIC CONTENT — Write fresh every session]
+
+PRIMARY: [Primary objective for the target session]
+SECONDARY: [Secondary objective, if applicable]
+TERTIARY: [Tertiary objective, if headroom permits]
+
+[Optional: Expected Workflow]
+1. [First major work block]
+2. [Second major work block]
+3. [Continue as needed]
+4. Closeout
+
+================================================================================
+MATERIALS REQUIRED
+================================================================================
+
+[MIXED — Stable items persist; dynamic items change per session]
+
+UPLOADED:
+- [File 1 — describe what it is and why it's needed]
+- [File 2]
+
+FROM PROJECT KNOWLEDGE:
+- [Document 1 — e.g., Phase Protocol]
+- [Document 2 — e.g., Connector Transparency Protocol supplement]
+
+NOTEBOOK CONNECTIVITY:
+- [Notebook Name]: [Notebook ID]
+  ([Brief description of contents and purpose])
+- [Notebook Name]: [Notebook ID]
+  ([Brief description])
+
+RESEARCH NEEDS:
+- [Query 1 — what to look up and where]
+- [Query 2]
+
+================================================================================
+DYNAMIC STATE — DECISION LOG CONTINUITY
+================================================================================
+
+[DYNAMIC CONTENT — Update every session]
+
+Last decision recorded: [D-###]
+NEXT DECISION NUMBER:   [D-###]
+
+Active decisions carrying forward:
+- [D-###]: [Brief description]
+- [D-###]: [Brief description]
+
+================================================================================
+DYNAMIC STATE — RESPONSE INDEX CONTINUITY
+================================================================================
+
+[DYNAMIC CONTENT — Update every session]
+
+Last session ended at index: [####]
+NEXT SESSION STARTS AT INDEX: [####]
+
+================================================================================
+DYNAMIC STATE — PHASE COMPLETION CRITERIA
+================================================================================
+
+[DYNAMIC CONTENT — Update as criteria are met]
+
+Phase [N] completion criteria (current status):
+
+[✓] [Criterion 1] — COMPLETE
+[✓] [Criterion 2] — COMPLETE
+[~] [Criterion 3] — IN PROGRESS
+[ ] [Criterion 4] — NOT STARTED
+
+Assessment: Phase [N] approximately [XX]% complete.
+
+================================================================================
+HEADROOM MANAGEMENT
+================================================================================
+
+[DYNAMIC CONTENT — Assess per session]
+
+Estimated session complexity: [LOW / MEDIUM / MEDIUM-HIGH / HIGH]
+Token budget considerations:
+- [Note 1 — e.g., "Section 4.3 revision is substantial"]
+- [Note 2 — e.g., "Multiple templates to revise"]
+- [Note 3 — e.g., "Will need notebook queries before drafting"]
+
+Priority if headroom constrains:
+1. [Highest priority item]
+2. [Second priority]
+3. [Third priority]
+[Continue as needed — establishes a graceful degradation path]
+
+Monitor:
+- [Specific headroom concern — e.g., "TPL-002 revision alone could be
+  substantial — assess before starting"]
+
+================================================================================
+BEHAVIORAL REMINDERS
+================================================================================
+
+[STABLE CONTENT — Persists across sessions within phase]
+[Include only behaviors that field testing shows are prone to being
+forgotten or deprioritized, even when encoded in the Phase Protocol]
+
+- [Reminder 1 — e.g., "Connector transparency: narrate all tool calls
+  with tool ID, query details, intent, and result summary"]
+- [Reminder 2 — e.g., "Produce discrete draft files, not inline content"]
+- [Reminder 3 — e.g., "Maintain response indexing throughout session"]
+- [Reminder 4 — project-specific convention or constraint]
+
+These reminders reinforce Phase Protocol requirements that are critical
+but historically prone to drift during extended sessions.
+
+================================================================================
+CONSTRAINTS AND PARAMETERS
+================================================================================
+
+[MIXED — Some persist, some are session-specific]
+
+- [Constraint 1 — e.g., "Manual is 13,257 lines — work in targeted
+  sections, not whole document"]
+- [Constraint 2 — e.g., "Use Drafting Plan as authoritative scope guide"]
+- [Constraint 3 — e.g., "Maintain version discipline (v1.0.8-DRAFT)"]
+- [Constraint 4]
+
+================================================================================
+SESSION REQUIREMENTS
+================================================================================
+
+[STABLE CONTENT — Standard for all sessions]
+
+MANDATORY OUTPUTS:
+- [ ] Session Log (TPL-005) with embedded SFR generated at closeout
+- [ ] Bootstrap (TPL-002) generated if project continues
+- [ ] Decision Log generated if trigger criteria met
+
+DECISION LOG TRIGGER CRITERIA:
+Generate a dedicated Decision Log file when ANY of the following apply:
+- Three or more decisions were made during the session
+- Any decision affects project scope, timeline, or approach
+- Any decision changes template design or manual structure
+- Any decision will need to be referenced in future sessions
+- User explicitly requests decision documentation
+
+AI SELF-CHECK: Before closeout, evaluate: "Were decisions made this
+session that future sessions will need to reference, or that affect the
+project's direction?" If yes, generate Decision Log. If uncertain, ask
+the user.
+
+USER CLOSEOUT DUTIES (AI to prompt):
+- [ ] Export chat transcript
+- [ ] Download AI-produced files
+- [ ] Organize files per folder convention
+- [ ] Upload transcript and artifacts to project notebook (if applicable)
+- [ ] Update personal task tracking as needed
+
+================================================================================
+USER ACTIONS REQUIRED
+================================================================================
+
+[DYNAMIC CONTENT — Specific to each session transition]
+
+Before Session [###]:
+☐ [Action 1 — e.g., "Upload session transcript to notebook"]
+☐ [Action 2 — e.g., "Upload required files listed above"]
+☐ [Action 3]
+
+During Session [###]:
+☐ [Action 1 — e.g., "Confirm alignment on session scope"]
+☐ [Action 2 — e.g., "Review drafted sections before next block"]
+
+================================================================================
+END OF BOOTSTRAP
+================================================================================
+
+
+--------------------------------------------------------------------------------
+END OF TEMPLATE
+--------------------------------------------------------------------------------
+
+
+================================================================================
+TEMPLATE NOTES
+================================================================================
+
+COMPARISON WITH v1.1 (PREVIOUS VERSION):
+
+The following sections are NEW in v2.0:
+- MANDATORY FIRST ACTION block (field-tested as essential)
+- DYNAMIC STATE — RESPONSE INDEX CONTINUITY
+- DYNAMIC STATE — PHASE COMPLETION CRITERIA
+- HEADROOM MANAGEMENT (was implicit, now explicit)
+- BEHAVIORAL REMINDERS (stable content reinforcement)
+- NOTEBOOK CONNECTIVITY (within Materials Required)
+- Stable/dynamic content labeling throughout
+
+The following sections are REVISED in v2.0:
+- INSTRUCTIONS: Added prompt-list function, stable/dynamic concept,
+  addendum guidance
+- PROJECT IDENTIFICATION: Added Horizon View, version tracking
+- MATERIALS REQUIRED: Restructured with notebook connectivity
+- SESSION REQUIREMENTS: Updated with SFR reference, user closeout duties
+- CONSTRAINTS AND PARAMETERS: Simplified (token management moved to
+  Headroom Management)
+
+The following sections from v1.1 are REMOVED or CONSOLIDATED:
+- MINI PROJECT MAP: Consolidated into PROJECT IDENTIFICATION (Horizon
+  View) and PHASE COMPLETION CRITERIA
+- COMPLETED WORK: Renamed to PRIOR SESSION SUMMARY
+- END-OF-SESSION FILES FROM SOURCE CHAT: Consolidated into PRIOR
+  SESSION SUMMARY (artifacts listed there)
+- OPEN ITEMS: Consolidated into SESSION FOCUS (what was NOT done) and
+  HEADROOM MANAGEMENT (priority ordering)
+- IMMEDIATE NEXT ACTIONS: Consolidated into SESSION FOCUS
+- FILES TO REFERENCE: Renamed and restructured as MATERIALS REQUIRED
+- SPECIAL INSTRUCTIONS: Split between BEHAVIORAL REMINDERS (stable)
+  and CONSTRAINTS AND PARAMETERS (session-specific)
+- QUESTIONS TO ADDRESS AT SESSION START: Folded into alignment turn
+  protocol (the AI generates these proactively)
+- NEXT SESSION QUICK-START: Removed (the Bootstrap itself serves this
+  function; the quick-start copy-paste prompt was redundant)
+
+ADAPTATION GUIDANCE:
+
+Not every section is needed for every project or session. The template
+is designed to be comprehensive for complex projects; simpler projects
+may omit or compress sections as appropriate. The following sections
+should never be omitted:
+- MANDATORY FIRST ACTION
+- PROJECT IDENTIFICATION
+- PRIOR SESSION SUMMARY
+- SESSION FOCUS
+- DYNAMIC STATE — RESPONSE INDEX CONTINUITY
+- SESSION REQUIREMENTS
+
+The following may be compressed or omitted for simple sessions:
+- HEADROOM MANAGEMENT (if session complexity is LOW)
+- BEHAVIORAL REMINDERS (if no drift-prone behaviors apply)
+- PHASE COMPLETION CRITERIA (if single-phase project)
+- NOTEBOOK CONNECTIVITY within MATERIALS (if not using notebooks)
+
+================================================================================
+END OF TPL-002 REVISION DRAFT
+================================================================================

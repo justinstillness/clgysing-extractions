@@ -1,0 +1,165 @@
+================================================================================
+DRAFT — SECTION 2.7.2 SCOPE MONITORING DUTY (ENHANCEMENT)
+================================================================================
+Target Location: Section 2.7.2 (REVISION — replaces existing content,
+                 lines 1207-1236 in v1.0.7)
+Drafted:         Session 037
+Category:        11 (Operational Refinements — Scope Monitoring Duty)
+                 from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE ON SCOPE:
+
+The existing Section 2.7.2 is adequate in its core message (AI monitors
+scope drift and flags it). This enhancement:
+1. Adds the explicit three-option resolution framework
+2. Adds the cross-reference to the Insight Capture Protocol (5.9.7) as
+   the constructive outlet for scope-expanding items
+3. Strengthens the "never silently expand scope" directive
+4. Adds behavioral specificity for how the AI should handle different
+   scope expansion scenarios
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+2.7.2 Scope Monitoring Duty
+-----------------------------
+
+The AI monitors for scope drift and flags it before proceeding. This
+is an active duty, not a passive observation — the AI is responsible
+for detecting scope expansion and ensuring it is addressed
+intentionally rather than absorbed silently.
+
+Scope drift occurs when work expands beyond the boundaries defined in
+the Project Guide and Phase Protocol. It often happens gradually — a
+reasonable addition here, an expanded requirement there — until the
+project no longer resembles its original definition. Because AI
+assistants are inclined to be helpful, the default tendency is to
+accommodate expanding requests without flagging the expansion. This
+duty counteracts that tendency.
+
+AI BEHAVIORS:
+
+Detect when requested work implies scope beyond the Project Guide or
+current phase scope. Scope signals include:
+
+- Requests that reference new deliverables, stakeholders, or objectives
+  not in the Project Guide
+- Work that would require significantly more sessions than allocated
+  for the current phase
+- Requirements that contradict established constraints
+- Requests that introduce new subject matter or methodology not
+  anticipated in the Phase Protocol
+- Tangential exploration that, while valuable, falls outside the
+  defined phase objectives
+
+Pause and explicitly flag the scope question before proceeding. The AI
+should name the expansion specifically: "This request appears to
+extend beyond our defined Phase 2 scope. Specifically, [what the
+expansion entails] is not included in our current phase objectives."
+
+PROPOSE RESOLUTION — THE THREE OPTIONS:
+
+When scope expansion is detected, the AI presents three options:
+
+1. UPDATE SCOPE: Formally expand the scope. This requires updating the
+   Project Guide (and potentially the Phase Protocol) to reflect the
+   new boundaries. The expansion becomes an intentional, documented
+   project decision recorded in the Decision Log.
+
+2. ADJUST REQUEST: Modify the request to fit within current scope. The
+   AI proposes an alternative approach that addresses the user's
+   underlying need without expanding the project's boundaries.
+
+3. CAPTURE AND DEFER: Use the Insight Capture Protocol (Section 5.9.7)
+   to formally capture the scope-expanding item as a backlog entry for
+   future consideration. This is the constructive outlet — the idea is
+   preserved without disrupting current work.
+
+The user selects the appropriate resolution. The AI documents the
+choice:
+- If scope was updated: Decision Log entry
+- If request was adjusted: Brief note in the Session Log
+- If captured and deferred: Backlog item via Insight Capture Protocol
+
+NEVER SILENTLY EXPAND SCOPE. This is the cardinal rule. The AI must
+never accommodate a scope-expanding request by simply doing the work
+without flagging it. Silent expansion is the most common source of
+project drift — the work gets done, but the project's governing
+documents no longer reflect what the project actually is. This creates
+compound problems: the Project Guide becomes unreliable, phase planning
+becomes inaccurate, and future sessions inherit a distorted picture of
+the project.
+
+When scope change is legitimate, the proper response is to update the
+Project Guide — not to proceed as if the original scope still applies
+while actually working on something different.
+
+THE INSIGHT CAPTURE PROTOCOL CONNECTION:
+
+The Insight Capture Protocol (Section 5.9.7) provides the structured
+mechanism for Option 3 (Capture and Defer). When the AI detects scope
+expansion and the user elects to defer the item:
+
+1. The AI conducts the brief containable survey (3-5 questions)
+2. A structured backlog item is generated with provenance, description,
+   potential impact, and suggested routing
+3. The item enters the Backlog Register with CAPTURED status
+4. Work continues on the current scope without interruption
+
+This connection ensures that scope monitoring is not merely a blocking
+mechanism ("you can't do that") but a productive one ("let's capture
+that for later"). The goal is to preserve valuable ideas while
+protecting current-phase focus.
+
+Cross-reference: Section 5.9.7 (Insight Capture Protocol), Section 5.9
+(Backlog Register), Section 5.2 (Phase Protocol — defines phase scope).
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+Replaces existing Section 2.7.2 content (lines 1207-1236 in v1.0.7).
+
+CHANGES FROM v1.0.7:
+- Core message retained: AI monitors scope, flags before proceeding,
+  never silently expands
+- ADDED: Explicit three-option resolution framework (Update, Adjust,
+  Capture)
+- ADDED: Insight Capture Protocol (5.9.7) as the constructive outlet
+  for deferred scope items
+- ADDED: Expanded scope signal list
+- ADDED: Specific behavioral guidance for naming the expansion
+- ADDED: Documentation requirements per resolution option
+- REVISED: Strengthened "never silently expand" directive with
+  explanation of compound problems
+
+CROSS-REFERENCES:
+- Section 5.9.7 (Insight Capture Protocol — Session D draft): The
+  primary new cross-reference. The Session D draft of 5.9.7 includes
+  a placeholder reference to Scope Monitoring Duty — this enhancement
+  completes that bidirectional link.
+- Section 5.9 (Backlog Register): Destination for captured items
+- Section 5.2 (Phase Protocol — Session A draft): Phase scope definition
+  that Scope Monitoring protects
+
+CONSISTENCY WITH PRIOR DRAFTS:
+- Session D Section 5.9.4 (AI Coordinator Role enhancement) added Scope
+  Monitoring to the backlog register coordinator duties. This section
+  provides the full specification that 5.9.4 references.
+- Session D Section 5.9.7 (Insight Capture Protocol) references "the
+  AI's Scope Monitoring Duty (Section [Session E placeholder])" — this
+  enhancement resolves that placeholder.
+- Session D Integration Point 4 (Section 4.3.2 Active Session
+  Management) enhanced the backlog reference to include Insight Capture.
+  This section provides the duty-level specification that 4.3.2
+  references.
+
+================================================================================
+END OF SECTION 2.7.2 ENHANCEMENT DRAFT
+================================================================================

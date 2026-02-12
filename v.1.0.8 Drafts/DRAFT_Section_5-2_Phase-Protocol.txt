@@ -1,0 +1,500 @@
+================================================================================
+DRAFT SECTION — For integration into GOV-AIPM v1.0.8-DRAFT
+================================================================================
+Target Location: Section 5.2 (new — all subsequent sections renumber)
+Drafted:         Session 033
+Category:        1 (Phase Protocol) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+
+5.2 PHASE PROTOCOL
+------------------
+
+5.2.1 Definition
+----------------
+
+The Phase Protocol is a phase-stable governance document that tells the AI
+how to behave throughout a given project phase. It sits between the Project
+Guide and the Bootstrap in the document hierarchy, providing behavioral
+continuity that persists across every session within a phase while remaining
+specific enough to reflect the current phase's needs.
+
+Where the Project Guide defines what the project is and the Bootstrap
+defines where we left off, the Phase Protocol defines how work should be
+conducted. It is the behavioral constitution for a phase — stable enough
+to provide consistency, specific enough to provide relevance, and
+structured enough to be actionable from the first response of every
+session.
+
+
+5.2.2 Purpose
+-------------
+
+The Phase Protocol serves four essential functions:
+
+Behavioral Governance. It encodes the specific behaviors, protocols,
+conventions, and standards that the AI must follow during the current
+phase. Without it, each session begins with the AI operating from generic
+defaults, and the user must re-establish behavioral expectations through
+repeated instruction. The Phase Protocol eliminates this re-establishment
+cost by making expectations persistent and reviewable.
+
+Phase-Specific Context. Different phases of a project often require
+different AI behaviors. A research phase may emphasize exhaustive
+exploration and findings capture. A drafting phase may emphasize fidelity,
+voice preservation, and segmentation discipline. A validation phase may
+emphasize critical evaluation and gap detection. The Phase Protocol
+tailors behavioral governance to the phase at hand.
+
+Cross-Session Continuity. Because AI sessions are ephemeral, behavioral
+instructions given in one session do not carry forward to the next. The
+Phase Protocol solves this by encoding behavioral expectations in a
+persistent document stored in Project Knowledge, where it survives session
+boundaries and remains accessible to every session in the phase.
+
+Onboarding Efficiency. When a new session begins, the AI can review the
+Phase Protocol and immediately understand not just the project context
+(from the Bootstrap and Project Guide) but the behavioral framework it
+is expected to operate within. This dramatically reduces the orientation
+overhead that would otherwise consume the opening exchanges of each
+session.
+
+
+5.2.3 The Three-Layer Architecture
+----------------------------------
+
+A Phase Protocol is organized into three distinct layers, each serving a
+different scope of governance. This layered architecture enables reuse —
+Layer 1 remains largely constant across projects, while Layers 2 and 3
+adapt to specific contexts.
+
+LAYER 1: AIPM FRAMEWORK BEHAVIORS (Universal)
+
+Layer 1 contains the behavioral requirements that apply to every project
+using the AIPM framework, regardless of subject matter or methodology.
+These are the system-level behaviors that ensure continuity, quality, and
+coordination.
+
+Layer 1 typically includes:
+
+- Session initiation protocols (Phase Protocol review confirmation,
+  bootstrap acknowledgment, alignment turn sequence)
+- Response indexing system (sequential numbering, semantic titles)
+- Mandatory coordinator behaviors (scope monitoring, decision capture,
+  continuity assurance, proactive orientation, document awareness,
+  headroom opportunism)
+- Work product presentation standards (formatting, file class
+  designators, boundary markers)
+- Token management protocols (headroom monitoring, segmentation triggers
+  and methodology)
+- Closeout protocol (user-initiated only, loose ends assessment,
+  mandatory artifact generation)
+- Conflict resolution protocol (stop, flag, explain, propose, await,
+  document)
+- Instruction chain interpretation rules (sequential with alignment
+  checkpoints)
+
+Layer 1 content is derived from this manual. When creating a Phase
+Protocol for the first time, the AI draws these behaviors from its
+knowledge of the AIPM framework. Over time, a user may develop a standard
+Layer 1 block that can be reused across projects with minimal modification.
+
+LAYER 2: SYSTEM/METHODOLOGY CONTEXT (Project-Type-Specific)
+
+Layer 2 contains the methodology, knowledge management approach, or
+domain framework that applies to the type of project being executed. This
+layer bridges the universal AIPM behaviors and the specific project
+content.
+
+Examples of Layer 2 content:
+
+- For a research writing project: extraction methodology, thesis
+  architecture, argument block structure, voice and style parameters,
+  citation standards
+- For a software development project: coding standards, testing
+  requirements, documentation conventions, version control workflow
+- For a governance development project: document hierarchy, approval
+  workflows, compliance requirements, stakeholder communication patterns
+- For a consulting engagement: client communication standards, deliverable
+  formats, review cycles, confidentiality protocols
+
+Layer 2 is reusable across projects that share the same methodology. A
+user who regularly conducts research writing projects may reuse the same
+Layer 2 across multiple projects, modifying only the specifics.
+
+LAYER 3: PROJECT-SPECIFIC CONTEXT (Unique to the Project)
+
+Layer 3 contains the information unique to the specific project: its
+subject matter, thesis, terminology, constraints, and any project-specific
+behavioral requirements not covered by Layers 1 and 2.
+
+Layer 3 typically includes:
+
+- Project overview and core thesis/objective
+- Key terminology and definitions specific to this project
+- Subject matter frameworks or models being used
+- Audience definition and accessibility requirements
+- Project-specific conventions (naming, numbering, formatting)
+- Phase structure overview (all phases, current phase highlighted)
+- Integration points with other projects or systems
+- Any behavioral requirements unique to this project
+
+Layer 3 changes with every project. It is developed during rooting
+(Phase 0) as part of the project foundation work.
+
+
+5.2.4 Relationship to Other Documents
+--------------------------------------
+
+The Phase Protocol occupies a specific position in the document hierarchy,
+and understanding this position is essential to using it correctly.
+
+THE DOCUMENT STABILITY SPECTRUM:
+
+  Project Guide          Phase Protocol          Bootstrap
+  ─────────────────────  ─────────────────────  ─────────────────────
+  PROJECT-STABLE         PHASE-STABLE           SESSION-SPECIFIC
+  Changes rarely;        Static within a        Changes every session;
+  updated only for       phase; redrafted at    captures current state
+  material scope or      phase transitions      and forward-looking
+  direction changes                             instructions
+
+  Defines WHAT the       Defines HOW work       Defines WHERE we
+  project is             should be conducted    left off
+
+  Stored: Project        Stored: Project        Stored: Uploaded at
+  Knowledge or           Knowledge              session start
+  uploaded as needed
+
+Each document draws from the one to its left. The Phase Protocol draws
+from the Project Guide to create phase-specific behavioral guidance. The
+Bootstrap draws from both the Project Guide and Phase Protocol to create
+session-specific orientation.
+
+THE BOOTSTRAP-PHASE PROTOCOL RELATIONSHIP:
+
+The Bootstrap and Phase Protocol are complementary — sometimes described
+as "cousins" in the document family. They work together but serve
+distinct functions:
+
+The Phase Protocol holds phase-stable behavioral governance: the rules,
+standards, conventions, and protocols that remain constant throughout a
+phase. It tells the AI how to behave.
+
+The Bootstrap holds session-specific state and instructions: what happened
+last session, what to do next, and what files to review. It tells the AI
+where to look.
+
+Critically, the Bootstrap serves as the prompt list that instructs the AI
+to review files in Project Knowledge — including the Phase Protocol
+itself. Files stored in Project Knowledge are not automatically read by
+the AI; they must be explicitly referenced. The Bootstrap's mandatory
+first action typically includes an instruction to review the Phase
+Protocol.
+
+This means the Bootstrap contains two types of content:
+
+Dynamic elements that change every session: last session summary, next
+actions, open items, headroom notes, session-specific instructions.
+
+Stable elements that persist across the phase: instructions to review the
+Phase Protocol, notebook references, recurring behavioral reminders, and
+any standing instructions that apply to every session.
+
+The stable elements of the Bootstrap tend to accumulate as a project
+matures. When stable Bootstrap elements become numerous, this is often a
+signal that an update to the Phase Protocol (or an addendum) may be
+warranted — consolidating recurring instructions into the phase-stable
+document rather than relying on their presence in every Bootstrap.
+
+PROJECT KNOWLEDGE AND THE AUTO-READ REALITY:
+
+A critical operational reality: placing a document in Project Knowledge
+does not guarantee the AI will read it. The AI must be explicitly
+instructed to review Project Knowledge documents. This instruction
+typically lives in the Bootstrap as a mandatory first action.
+
+The standard pattern is:
+
+1. Phase Protocol is stored in Project Knowledge
+2. Bootstrap includes: "MANDATORY FIRST ACTION: Review the Phase Protocol
+   in Project Knowledge and confirm adherence to all behavioral
+   requirements"
+3. AI reviews Phase Protocol and confirms
+4. Session proceeds under Phase Protocol governance
+
+If the Bootstrap omits this instruction, the Phase Protocol may go
+unread, and behavioral governance for the session will default to
+whatever the AI infers from context — which may be incomplete or
+incorrect.
+
+
+5.2.5 Phase Protocol Lifecycle
+------------------------------
+
+CREATION (During Rooting — Phase 0):
+
+The Phase Protocol is created during rooting, the formal Phase 0 of every
+project. Rooting produces two foundational outputs: the Project Guide and
+the Base Phase Protocol.
+
+The creation process is collaborative:
+
+1. The user and AI establish the project's scope, deliverables, and phase
+   structure (this becomes the Project Guide)
+2. The AI drafts a Phase Protocol drawing from:
+   - Layer 1: AIPM framework behaviors (from this manual or established
+     templates)
+   - Layer 2: Methodology appropriate to the project type
+   - Layer 3: Project-specific context from the rooting conversation
+3. The user reviews the draft Phase Protocol
+4. Revisions are made until both parties are satisfied
+5. The finalized Base Phase Protocol is stored in Project Knowledge
+6. The first execution session's Bootstrap references the Phase Protocol
+   as a mandatory first-action review item
+
+The Base Phase Protocol is the "Phase 1 version" — it governs the first
+execution phase of the project. It may be updated at phase transitions
+or through addenda as the project evolves.
+
+Cross-reference: See Section 2.5.1 for the complete rooting (Phase 0)
+process.
+
+STABILITY (Within a Phase):
+
+Once created or redrafted, the Phase Protocol remains static for the
+duration of the phase. This stability is a design feature, not a
+limitation. It means that every session in a phase operates under the
+same behavioral governance, creating consistency and predictability.
+
+The Phase Protocol should not be casually modified mid-phase. If a
+behavioral change is needed, the addendum mechanism (see below) provides
+a controlled way to extend the protocol without destabilizing it.
+
+EVOLUTION (At Phase Transitions):
+
+When a project transitions from one phase to the next, the Phase Protocol
+is evaluated and potentially redrafted. The phase transition process
+(see Section 4.3.5) includes Phase Protocol evaluation as a formal step.
+
+Phase Protocol redrafting triggers:
+
+- Phase transition (mandatory evaluation; redraft if behaviors change)
+- Significant methodology shift within a phase
+- Accumulated addenda suggesting a clean redraft is warranted
+- Feedback indicating current protocol is inadequate or misaligned
+
+The redrafting process:
+
+1. Review the current Phase Protocol against upcoming phase requirements
+2. Identify which Layer 1 behaviors remain (typically all)
+3. Identify which Layer 2 elements carry forward vs. need modification
+4. Draft new Layer 3 content for the upcoming phase
+5. Incorporate any addenda from the current phase that should persist
+6. Remove any phase-specific content that no longer applies
+7. Review and approve the redrafted protocol
+8. Store the new Phase Protocol in Project Knowledge; archive the prior
+   version
+
+If behaviors do not change between phases, a full redraft may not be
+necessary. The existing protocol can carry forward with a version note
+indicating it has been reviewed and confirmed for the new phase. The
+decision to redraft vs. carry forward should be made explicitly during
+the phase transition, not assumed.
+
+RETIREMENT (At Project Completion):
+
+When the project concludes, the Phase Protocol is archived as part of
+the project record. It may serve as a reference or template for future
+projects using similar methodologies.
+
+
+5.2.6 The Addendum Pattern
+---------------------------
+
+Mid-phase behavioral changes happen. A user discovers that the AI needs
+a new behavior, or an existing behavior needs modification. Rather than
+redrafting the entire Phase Protocol — which could introduce unintended
+changes to stable content — the addendum pattern provides a controlled
+extension mechanism.
+
+WHEN TO USE AN ADDENDUM:
+
+- A new behavioral requirement emerges during a phase
+- An existing behavior needs modification but the change is narrow
+- A user wants to add a standing instruction that should persist beyond
+  the current session
+- A temporary behavioral override is needed for the remainder of a phase
+
+WHEN TO REDRAFT INSTEAD:
+
+- Multiple addenda have accumulated, making the protocol fragmented
+- The behavioral change is fundamental enough to affect multiple layers
+- A phase transition is imminent (incorporate the change into the new
+  phase's protocol)
+- The addendum would contradict existing protocol content
+
+THE ADDENDUM PROCESS:
+
+1. User identifies the behavioral change needed (or the AI detects that
+   a user instruction represents a persistent behavioral guideline)
+2. The AI drafts an addendum document specifying:
+   - What behavior is being added or modified
+   - Why the change is needed
+   - How it relates to existing protocol content
+   - Whether it supersedes, extends, or supplements existing guidance
+3. The addendum is stored in Project Knowledge alongside the Phase
+   Protocol
+4. The Bootstrap is updated to include the addendum in the mandatory
+   review list
+5. Subsequent sessions review both the Phase Protocol and its addenda
+
+AI DETECTION RESPONSIBILITY:
+
+The AI should be attentive to user instructions that imply persistent
+behavioral changes. Signals include:
+
+- "I want you to always [do X]"
+- "From now on, [behave in Y way]"
+- "Make sure you [do Z] every time"
+- Any instruction that extends beyond the current session's scope
+
+When the AI detects such a signal, it should surface the question:
+"That sounds like a behavioral guideline you want carried forward beyond
+this session. Should I draft a Phase Protocol addendum to capture this,
+or is this just for the current session?"
+
+This detection behavior is itself a Layer 1 AIPM framework behavior and
+should be included in every Phase Protocol.
+
+
+5.2.7 Phase Protocol Contents Reference
+----------------------------------------
+
+The following is a reference outline for Phase Protocol contents. Not
+every project requires every element — the protocol should be as
+comprehensive as the project demands and no more.
+
+PART A — AIPM Framework Behaviors (Layer 1):
+  - Session initiation sequence
+  - Alignment turn protocol
+  - Response indexing system
+  - Mandatory coordinator behaviors
+  - Work product presentation standards
+  - Token management protocols
+  - Closeout protocol
+  - Conflict resolution protocol
+  - Instruction chain interpretation
+  - Addendum detection behavior
+
+PART B — Methodology Context (Layer 2):
+  - Methodology overview
+  - Key processes and workflows
+  - Quality standards and conventions
+  - Domain-specific requirements
+  - Collaboration model (user role vs. AI role)
+
+PART C — Project Context (Layer 3):
+  - Project overview and objectives
+  - Core thesis or central purpose
+  - Key terminology and definitions
+  - Audience and accessibility requirements
+  - Project-specific conventions
+  - Integration points
+
+PART D — Phase Structure:
+  - All phases listed with descriptions
+  - Current phase highlighted
+  - Phase dependencies and sequencing
+
+PART E — Continuity Protocols:
+  - Bootstrap requirements
+  - Session log requirements
+  - Decision log requirements
+  - Notebook connectivity references
+  - Cross-branch awareness (if applicable)
+
+PART F — Templates and Quick Reference:
+  - Phase-specific templates
+  - Naming and versioning conventions
+  - Quick-reference summaries for frequently needed information
+
+PART G — Current Phase Specifics:
+  - Phase-specific objectives and scope
+  - Phase-specific behavioral requirements
+  - Phase-specific tools or resources
+  - Exit criteria for the current phase
+
+
+5.2.8 When to Create vs. When to Skip
+--------------------------------------
+
+Not every project requires a Phase Protocol. The decision depends on
+project complexity and duration:
+
+CREATE A PHASE PROTOCOL WHEN:
+
+- The project spans multiple sessions (more than 2-3)
+- The project has distinct phases with different behavioral requirements
+- Specific AI behaviors, conventions, or standards must be consistent
+  across sessions
+- The project involves a specialized methodology (Layer 2 content)
+- Multiple branches or parallel workstreams are anticipated
+- The project involves collaboration where behavioral consistency matters
+
+SKIP THE PHASE PROTOCOL WHEN:
+
+- The project is a single-session task
+- The project is simple enough that a Bootstrap alone provides adequate
+  behavioral guidance
+- No specialized behaviors beyond default AI operation are required
+- The project has no distinct phases
+
+When in doubt, create one. The cost of creating an unnecessary Phase
+Protocol is low (one collaborative session during rooting). The cost of
+not having one when needed is high (repeated behavioral re-establishment,
+inconsistency across sessions, behavioral drift).
+
+
+5.2.9 Maintenance Rules
+------------------------
+
+Update Triggers:
+- Phase transition (mandatory evaluation, optional redraft)
+- Addendum accumulation exceeding 3 addenda (consider clean redraft)
+- User-identified behavioral gap or misalignment
+- Methodology change affecting Layer 2 content
+- AI detection of persistent behavioral instruction from user
+
+Storage:
+- Current Phase Protocol stored in Project Knowledge
+- Superseded versions archived in /Phase Protocols/Old/ directory
+- Addenda stored in Project Knowledge alongside the Phase Protocol
+
+Naming Convention:
+- Base Protocol: [VERSION]_PP_[PROJECT-HANDLE]-PHASE_[N]_Base-Protocol
+- Addendum: [VERSION]_PP-SUPPLEMENT_[Descriptor]_(Session_[NNN])
+- Example: v1.2_PP_CLGYSING-PHASE_1_Base-Protocol
+- Example: v1.2_PP-SUPPLEMENT_Connector-Transparency-Protocol_(Session_010)
+
+Version Discipline:
+- New phase → new version number (v1.0 → v2.0)
+- Addenda → increment minor version of the base (v1.0 → v1.1)
+- Minor corrections → increment point version (v1.0 → v1.01)
+
+
+5.2.10 Template Reference
+--------------------------
+
+Template TPL-0XX (Phase Protocol Template) provides the structural
+framework for creating new Phase Protocols. The template includes all
+three layers with guidance notes indicating what type of content belongs
+in each section.
+
+Template TPL-0XX (Phase Protocol Addendum Template) provides the format
+for creating addenda to an existing Phase Protocol. The template includes
+fields for the behavioral change, rationale, relationship to existing
+protocol content, and effective scope.
+
+Cross-reference: See Appendix A for complete template text.

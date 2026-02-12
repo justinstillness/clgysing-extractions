@@ -1,0 +1,259 @@
+================================================================================
+DRAFT — SECTION 12.3 INTER-BRANCH COMMUNICATION (ENHANCEMENT)
+================================================================================
+Target Location: Section 12.3 (ADDITIONS to Session D Branch Management
+                 draft — enhances 12.3.6 and adds new 12.3.10)
+Drafted:         Session 038
+Category:        14 (Inter-Branch Communication) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE ON APPROACH:
+
+The Session D draft of Section 12.3 already includes:
+- 12.3.6 Cross-Branch Context Sharing (mechanisms overview)
+- 12.3.7 Cross-Branch Awareness Document (concept and reference)
+
+This Category 14 enhancement deepens the inter-branch communication
+guidance by:
+1. Enhancing 12.3.6 with formal communication patterns and protocols
+2. Adding a new 12.3.10 Inter-Branch Communication Protocol that
+   provides the operational specifics for how branches coordinate
+
+The Cross-Branch Awareness Document template (TPL-0XX) was already
+drafted in Session D and covers the structural artifact. This draft
+focuses on the operational communication patterns and protocols that
+the template supports.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+------------------------------------------------------------------------
+ENHANCEMENT 1: Section 12.3.6 Cross-Branch Context Sharing
+Action: ADD to existing Session D content, after the current mechanisms
+        list (Shared Main Notebook, Selective Artifact Upload, Bootstrap
+        Cross-References, Integration Sessions)
+------------------------------------------------------------------------
+
+INSERT after the existing mechanisms:
+
+COMMUNICATION PATTERNS:
+
+Cross-branch context sharing follows predictable patterns depending on
+the relationship between branches. Understanding these patterns helps
+determine the appropriate communication mechanism.
+
+Independent Parallel: Branches work on unrelated aspects of the project
+simultaneously. Communication needs are minimal — awareness-level
+context (via the Cross-Branch Awareness Document) is sufficient. Each
+branch operates within its own scope and produces deliverables that are
+integrated independently into the mainline.
+
+Communication mechanism: Cross-Branch Awareness Document (updated at
+natural checkpoints) + periodic mainline bootstrap references.
+
+Sequential Dependency: One branch's output is required by another
+branch before it can proceed. Communication needs are high at the
+handoff point and minimal otherwise.
+
+Communication mechanism: Explicit dependency mapping in the Awareness
+Document + direct artifact upload to the main notebook when the
+dependency is satisfied + notification in the dependent branch's
+bootstrap that the dependency is resolved.
+
+Convergent Work: Multiple branches are working toward outputs that
+must be compatible or integrated. Communication needs are ongoing — each
+branch must be aware of decisions and direction changes in the others
+to prevent incompatible approaches.
+
+Communication mechanism: Regular Awareness Document updates (more
+frequent than the default checkpoint cadence) + integration sessions
+at defined intervals + coordination flags in the Awareness Document's
+Coordination Needs section.
+
+Exploratory Divergence: Branches are deliberately exploring different
+approaches to the same problem, with a future decision point where
+one approach will be selected. Communication needs focus on ensuring
+fair comparison — both branches should be evaluated against the same
+criteria.
+
+Communication mechanism: Shared evaluation criteria established at
+branch creation + findings reports from each branch uploaded to the
+main notebook + a dedicated decision session where both branches'
+results are compared.
+
+
+------------------------------------------------------------------------
+ENHANCEMENT 2: NEW Section 12.3.10 Inter-Branch Communication Protocol
+Action: INSERT as new subsection after existing 12.3.9 (Anti-Patterns)
+------------------------------------------------------------------------
+
+12.3.10 Inter-Branch Communication Protocol
+---------------------------------------------
+
+When a project has active branches, communication between branches
+and the mainline requires intentional management. Without protocol,
+branches either become context silos (producing valuable work that the
+rest of the project never sees) or context floods (overwhelming every
+session with details from every branch).
+
+THE COMMUNICATION HIERARCHY:
+
+Communication flows through defined channels, ordered from lightest to
+heaviest:
+
+Level 1 — Passive Awareness (Default):
+Every session — mainline or branch — has access to the Cross-Branch
+Awareness Document in Project Knowledge. This provides baseline
+awareness of what other branches are doing without requiring any active
+communication. The document is maintained at natural checkpoints (branch
+creation, completion, major milestones).
+
+Level 2 — Artifact Sharing (As Needed):
+When a branch produces output that other branches or the mainline need
+to reference, the output is uploaded to the main project notebook. This
+makes it queryable by any session without requiring explicit handoff.
+Not every branch artifact is shared — only outputs that are cross-
+relevant: finalized deliverables, findings that inform mainline
+decisions, specifications that other branches depend on.
+
+Guidance for what to share:
+- Share: Findings reports, finalized specifications, deliverables,
+  decisions that affect scope or direction
+- Don't share: Working drafts, branch-internal exploration, session
+  logs (unless they contain cross-relevant content)
+
+Level 3 — Bootstrap Notification (For Dependencies):
+When a branch action affects another branch's work, the notification is
+embedded in the affected branch's next bootstrap. This ensures the
+information reaches the right session at the right time — when that
+branch resumes work.
+
+Examples:
+- "SECRES branch completed encryption evaluation. Results uploaded to
+  main notebook. Your implementation approach may need revision — query
+  the notebook for SECRES findings before proceeding."
+- "Mainline Session 042 changed the API specification. Updated spec
+  uploaded to main notebook. Review before continuing integration work."
+
+Level 4 — Integration Session (For Convergence):
+A dedicated session where branch outputs are consolidated, conflicts
+resolved, and the mainline updated. Integration sessions are scheduled
+when branches reach natural completion points or when accumulated
+divergence requires reconciliation.
+
+Integration session protocol:
+1. Load the Cross-Branch Awareness Document and all relevant branch
+   outputs
+2. Review each branch's deliverables against the mainline project scope
+3. Identify conflicts, overlaps, or gaps between branch outputs
+4. Resolve conflicts through the Decision Log
+5. Integrate accepted outputs into mainline artifacts
+6. Update the Awareness Document (move completed branches to the
+   Completed/Archived section)
+7. Generate updated bootstraps for any continuing branches that need
+   to know about integration outcomes
+
+COMMUNICATION TRIGGERS:
+
+Certain events should trigger inter-branch communication beyond the
+default checkpoint cadence:
+
+- A branch discovers something that invalidates another branch's
+  assumptions → Level 3 (bootstrap notification) or Level 4
+  (integration session) depending on severity
+- A branch completes its primary deliverable → Level 2 (artifact
+  sharing) + Level 1 (Awareness Document update)
+- A dependency is satisfied → Level 3 (bootstrap notification to the
+  dependent branch)
+- A branch changes direction significantly → Level 1 (Awareness
+  Document update) + Level 3 (notification to affected branches)
+- Scope changes in the mainline affect branch objectives → Level 3
+  (notification to all affected branches)
+
+THE USER'S COORDINATION ROLE:
+
+Inter-branch communication ultimately flows through the user. AI
+sessions cannot communicate with each other directly — each session
+exists in isolation. The user is the bridge:
+
+- The user updates the Cross-Branch Awareness Document based on session
+  outcomes
+- The user includes branch-relevant information in bootstraps
+- The user uploads cross-relevant artifacts to the appropriate notebooks
+- The user initiates integration sessions when convergence is needed
+
+This coordination work is part of the user's post-session housekeeping
+(see User Behaviors, Section 4.3.3). For projects with active branches,
+the post-session checklist expands to include:
+
+- Update the Cross-Branch Awareness Document if this session changed
+  branch status, dependencies, or coordination needs
+- Upload cross-relevant artifacts to the main notebook
+- Note any bootstrap notifications needed for other branches
+
+AI COORDINATOR SUPPORT:
+
+While the user performs the physical coordination, the AI assists by:
+
+- Proactively identifying cross-branch implications during session work
+  ("This finding may affect the SECRES branch — consider flagging it
+  in the Awareness Document")
+- Generating suggested Awareness Document updates as part of closeout
+- Drafting bootstrap notification language for affected branches
+- Flagging when integration may be needed ("We've accumulated three
+  sessions of parallel work — consider an integration checkpoint")
+
+Cross-reference: Section 12.3.7 (Cross-Branch Awareness Document),
+TPL-0XX (Cross-Branch Awareness Document Template), Section 12.3.8
+(Branch Integration & Completion), Section 5.5 (Bootstrap Files —
+cross-branch notification content).
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+- Enhancement 1: Additions to existing 12.3.6 (Session D draft)
+- Enhancement 2: New Section 12.3.10 after existing 12.3.9
+
+RELATIONSHIP TO SESSION D CONTENT:
+This enhancement builds on — not replaces — the Session D Branch
+Management draft. Specifically:
+- 12.3.6 already lists the four sharing mechanisms (notebook, artifact
+  upload, bootstrap cross-references, integration sessions). Enhancement
+  1 adds the communication patterns that help users select the right
+  mechanism.
+- 12.3.7 (Cross-Branch Awareness Document) and its template (TPL-0XX)
+  are unchanged — they provide the structural artifact that the
+  communication protocol references.
+- 12.3.8 (Branch Integration & Completion) covers the merge process.
+  Enhancement 2's integration session protocol provides the operational
+  specifics for how that session is conducted.
+
+RELATIONSHIP TO OTHER SESSION F CONTENT:
+- User Behavior Callouts (this session): The post-session housekeeping
+  callout should note branch-related duties for projects with active
+  branches. The callout as drafted focuses on single-branch projects;
+  Session G integration should verify that multi-branch duties are
+  referenced.
+- Failure Modes (this session): No direct cross-reference needed, but
+  the "context invisibility" failure mode is relevant when branch
+  communication relies on notebook queries.
+
+CROSS-REFERENCES TO ESTABLISH IN SESSION G:
+- Section 4.3.3 (Closeout): Note that post-session duties expand for
+  branched projects
+- Section 5.5 (Bootstrap): Note that bootstraps for branched projects
+  include cross-branch notification content
+- Section 2.7 (AI Coordinator Duties): The AI's proactive cross-branch
+  awareness is a coordination duty
+- Glossary: Entries for "Integration Session," "Cross-Branch
+  Communication"
+
+================================================================================
+END OF SECTION 12.3 INTER-BRANCH COMMUNICATION ENHANCEMENT DRAFT
+================================================================================

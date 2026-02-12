@@ -1,0 +1,254 @@
+================================================================================
+DRAFT SECTION — For integration into GOV-AIPM v1.0.8-DRAFT
+================================================================================
+Target Location: Section 5.4 (new numbering; currently 5.3 in v1.0.7)
+                 REVISION — replaces existing content
+Current Lines:   2836-2905 in v1.0.7
+Drafted:         Session 034
+Category:        3 (Enhanced Session Lifecycle) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE ON NUMBERING:
+
+Per the Structural Changes Overview in the Drafting Plan, Section 5 is
+being renumbered. The current Section 5.3 (Session Logs) becomes Section
+5.4 in v1.0.8. This draft uses the new numbering.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+5.4 SESSION LOGS
+-----------------
+
+5.4.1 Definition
+-----------------
+
+Session Logs record what occurred in each AI chat session: objectives,
+work accomplished, decisions made, issues encountered, outputs produced,
+response indexes used, and a structured fidelity assessment of the
+session's quality and handoff readiness.
+
+
+5.4.2 Purpose
+--------------
+
+Session Logs serve five purposes:
+
+Progress Tracking. Across a multi-session project, logs show what was
+accomplished when and whether objectives were met, partially met, or
+deferred. The Scope Observations section captures planned-vs-actual
+divergences that inform future session planning.
+
+Issue Documentation. Problems encountered and how they were resolved (or
+deferred) are captured for future reference. Recurring issues across
+multiple session logs signal systemic problems that may warrant process
+changes.
+
+Output Registry. Files produced in each session are listed with file
+class annotations, preventing loss and enabling retrieval. The file
+class system (LOG, DRAFT, SPEC, REF, PLAN, BOOTSTRAP, FINDINGS,
+TEMPLATE, DELIVERABLE) provides at-a-glance classification of session
+outputs.
+
+Retrieval Index. The Response Index Register maps every substantive AI
+response to a sequential index number and semantic title. This creates
+a structured lookup table: the log tells you which response index to
+look for, and the chat transcript contains the full content at that
+index. This is significantly faster than searching unindexed transcripts.
+
+Continuity Verification. The embedded Session Fidelity Report (SFR)
+provides a structured assessment of session quality, phase progress,
+identified gaps, and handoff readiness. This goes beyond recording what
+happened to evaluating how well it went and what the next session needs
+to know.
+
+
+5.4.3 Entry Structure
+----------------------
+
+Each Session Log includes the following sections:
+
+Header:
+- File Class (LOG)
+- Project name and description
+- Session identifier (matching chat name)
+- Date (or date range for extended sessions)
+- Session type (Phase name and activity type)
+
+Session Objective:
+- Primary and secondary objectives as stated at session start
+- Specific enough that achievement can be assessed
+
+Work Accomplished:
+- Numbered list of major activities and outputs
+- Objective achievement assessment (FULL / PARTIAL / MINIMAL)
+
+Decisions Made:
+- Table of decisions with IDs and brief descriptions
+- Reference to Decision Log for full rationale
+
+Scope Observations:
+- Planned vs. actual comparison
+- Emergent items (unplanned work, insights, concerns)
+- Scope expansions flagged (with decision references)
+
+Phase Progress:
+- Current phase status with completion criteria tracking
+- Checkmark status for each criterion ([✓] / [~] / [ ])
+- Estimated phase completion percentage
+
+Issues Encountered:
+- Table with status (Resolved / Open / Deferred / Noted)
+- Resolution notes or forward references
+
+Files Produced:
+- Table with file class annotation
+- Total artifact count
+
+Response Index Register:
+- Table mapping each response index to its semantic title
+- Session index range (start through end)
+- Next session start index
+- Compaction event notes (if applicable)
+
+Session Fidelity Report (embedded):
+- See Section 5.4.4 for SFR structure
+
+Bootstrap Status:
+- Whether generated, filename, target session, suggested next name
+
+Template TPL-005 (Session Log) provides the complete format.
+
+
+5.4.4 Session Fidelity Report (SFR)
+-------------------------------------
+
+The Session Fidelity Report is a structured assessment embedded in every
+Session Log. It is generated as part of the closeout sequence and
+provides a comprehensive evaluation that goes beyond "what happened" to
+address "how well did it go and what does the next session need."
+
+The SFR serves three purposes:
+
+Quality Verification. Honest assessment of whether objectives were met
+and to what degree. The SFR should report accurately, not optimistically
+— if objectives were only partially met, it says so. If performance
+degraded due to context exhaustion, it documents the degradation.
+
+Continuity Assurance. Explicit handoff context that the Bootstrap draws
+from. The Handoff Status section identifies what context must persist,
+what materials the next session needs, and what risks or warnings apply.
+
+Pattern Detection. Over multiple sessions, SFR entries reveal patterns
+in scope management, estimation accuracy, and recurring gaps. A project
+that consistently shows PARTIAL objective achievement may have a scoping
+problem. A project with recurring gaps in the same category has a
+systematic blind spot.
+
+SFR Structure:
+- Status: DRAFT (pending user verification) or CONFIRMED
+- Phase and date
+- Work Accomplished: planned objectives vs. actual completion
+- Objective Achievement: FULL / PARTIAL / MINIMAL
+- Phase Progress: completion criteria with checkmarks
+- Decisions Crystallized: summary of formal decisions
+- Gaps & Insights: missing information, discoveries, process improvements
+- Handoff Status: context carried forward, materials needed, risks
+- Next Session Projection: focus, success criteria, complexity estimate
+- Verification: user confirmation (PENDING / CONFIRMED)
+
+User Verification: The SFR is generated in DRAFT status. The user may
+review and confirm accuracy after the session. This verification is
+encouraged but not blocking — an unverified SFR retains its value for
+continuity.
+
+
+5.4.5 Relationship to Chat Exports
+-------------------------------------
+
+Session Logs are not chat transcripts. The full transcript (exported via
+Claude Exporter or equivalent) provides the complete verbatim record;
+the Session Log provides the structured summary. Both are valuable:
+
+Transcript: Complete but lengthy; useful for detailed reconstruction,
+retrieval of specific exchanges, and notebook upload for context recovery.
+
+Session Log: Condensed, structured, and assessable; useful for quick
+orientation, progress tracking, and pattern analysis across sessions.
+
+Standard practice: maintain both. Export transcripts for archive and
+notebook upload; maintain Session Logs for active reference and project
+governance.
+
+The Response Index Register bridges both artifacts: the register in the
+Session Log identifies what to look for, and the transcript contains the
+indexed content. Together, they provide both structured navigation and
+complete detail.
+
+
+5.4.6 File Structure
+---------------------
+
+Session Logs are maintained as individual files per session:
+
+File naming: [###]_session-log.txt
+Example: 034_session-log.txt
+
+For sessions with distinctive scope, a descriptive suffix may be added:
+Example: 013_session-log_(StressTest-SignalStrings).txt
+
+Individual files per session (rather than a single append-only file) are
+recommended because:
+- Each file can be uploaded to notebooks independently
+- Individual files are easier to reference from Bootstraps
+- File size remains manageable for long-running projects
+- Session identification is immediate from the filename
+
+For projects using notebook connectivity, individual session logs should
+be uploaded to the project notebook after each session to support context
+recovery through querying.
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+This content replaces the current Section 5.3 (lines 2836-2905) and is
+renumbered as Section 5.4 per the Drafting Plan structural changes.
+
+STRUCTURAL CHANGES:
+- 5.4.1 Definition: Expanded to mention response indexing and SFR
+- 5.4.2 Purpose: Expanded from 4 purposes to 5 (added Retrieval Index)
+- 5.4.3 Entry Structure: Substantially expanded to reflect all sections
+  in the revised TPL-005
+- 5.4.4 Session Fidelity Report: NEW subsection — full SFR specification
+- 5.4.5 Relationship to Chat Exports: Revised to reference Response
+  Index bridging function
+- 5.4.6 File Structure: NEW subsection — individual file per session
+  recommendation (replacing the v1.0 append-only guidance)
+
+CROSS-REFERENCES TO UPDATE IN SESSION G:
+- Section 4.3.3 (Session Closeout) references Session Log with embedded
+  SFR — this section provides the specification
+- Section 4.3.1.2 (Response Indexing System) references the Response
+  Index Register — this section confirms its home in the Session Log
+- Section 12.1 (Multi-Session Continuity) should reference the SFR as
+  a continuity verification tool
+- Glossary entries needed: Session Fidelity Report, Response Index
+  Register
+
+CONSISTENCY WITH SESSION B DRAFTS:
+- TPL-005 (Session Log template) mirrors this narrative section's
+  structure — the template is the implementation of what this section
+  describes
+- Section 4.3 (Session Lifecycle) references the Session Log and SFR
+  in the closeout protocol — this section provides the detailed
+  specification
+
+================================================================================
+END OF SECTION 5.4 REVISION DRAFT
+================================================================================

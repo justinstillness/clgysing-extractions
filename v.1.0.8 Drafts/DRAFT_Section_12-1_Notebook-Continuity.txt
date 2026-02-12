@@ -1,0 +1,142 @@
+================================================================================
+DRAFT — SECTION 12.1 MULTI-SESSION CONTINUITY (NOTEBOOK ENHANCEMENT)
+================================================================================
+Target Location: Section 12.1 (ADDITIONS to existing content + Session B
+                 additions)
+Drafted:         Session 035
+Category:        4 (NotebookLM / Notebook Integration) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE: This draft builds on the Session B additions to Section 12.1
+(DRAFT_Section_12-1_Multi-Session-Continuity-Refs.txt). Session B added
+Response Indexing System as the 4th mechanism and Session Fidelity
+Reports as the 5th. This draft adds Notebook Connectivity as the 6th
+and updates the introductory count accordingly.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+------------------------------------------------------------------------
+ADDITION 1: Update mechanism count — REPLACE Session B's introductory
+paragraph (which already changed "three" to "five")
+------------------------------------------------------------------------
+
+REPLACE:
+
+Multi-session continuity is the central challenge of extended AI work.
+Each new session begins with no memory of prior sessions. Without
+deliberate continuity mechanisms, every session restart imposes a
+reconstruction cost that compounds over time.
+
+The framework addresses this through six interconnected mechanisms:
+
+
+------------------------------------------------------------------------
+ADDITION 2: New continuity mechanism — INSERT after Session B's
+"Session Fidelity Reports" block and before "Continuity Anti-Patterns"
+------------------------------------------------------------------------
+
+INSERT:
+
+Notebook Connectivity (Section 10.3)
+
+Notebook connectivity provides the deep context recovery layer —
+comprehensive access to everything that has occurred across a project's
+history. While bootstraps carry forward what the next session needs to
+know immediately, and session logs provide structured summaries, the
+notebook contains the complete record: full transcripts, all artifacts,
+all research, all decisions.
+
+The notebook extends continuity beyond what any session-boundary artifact
+can achieve. A bootstrap captures current state; a session log captures
+structured history; but the notebook supports open-ended retrieval. A
+future session can query: "What did we decide about X in Phase 2?"
+"What research informed our approach to Y?" "What were the test results
+for Z?" — questions that no bootstrap or log would have anticipated.
+
+The exhaustive querying technique (Section 10.3.2) enables systematic
+context recovery from the notebook, achieving near-perfect fidelity
+between sessions. Combined with response indexing (which provides
+structured reference points the notebook can target), notebook
+connectivity transforms accumulated project history from a passive
+archive into an active resource.
+
+Notebook connectivity is a user-maintained mechanism: the user uploads
+transcripts and artifacts after each session (Section 10.3.3). The AI
+can prompt this maintenance during closeout, but the upload itself is a
+user responsibility. Like all continuity mechanisms, notebook
+connectivity degrades if not maintained — a notebook that falls several
+sessions behind provides correspondingly degraded retrieval.
+
+The six mechanisms form a complementary system:
+
+| Mechanism                | What It Preserves          | Cadence         |
+|--------------------------|----------------------------|-----------------|
+| Bootstrap Documents      | Current state, next actions| Every session   |
+| Decision Logs            | Choices and rationale      | As decisions occur |
+| Chat Transcript Archives | Complete verbatim record   | Every session   |
+| Response Indexing System | Structured retrieval points| Every response  |
+| Session Fidelity Reports | Quality and handoff assessment | Every session |
+| Notebook Connectivity    | Deep queryable context     | Cumulative      |
+
+No single mechanism is sufficient. Bootstraps without notebooks lose
+deep context. Notebooks without bootstraps lack orientation. Transcripts
+without response indexes are unsearchable. The system works because each
+mechanism addresses a different continuity dimension.
+
+
+------------------------------------------------------------------------
+ADDITION 3: Additional anti-pattern — INSERT after Session B's
+"Unindexed sessions" anti-pattern
+------------------------------------------------------------------------
+
+INSERT:
+
+Stale notebooks. A notebook that falls multiple sessions behind its
+project becomes a misleading resource — queries may return outdated
+context that contradicts current project state. Notebook maintenance is
+a lightweight post-session task (5-10 minutes); the cost of neglecting
+it compounds with every session. If notebook maintenance lapses, the AI
+should flag the gap when querying returns results that appear
+inconsistent with the Bootstrap's current state.
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+- Addition 1: Replaces the introductory count paragraph. Session B
+  changed "three" to "five"; this changes "five" to "six."
+- Addition 2: Inserts after Session B's SFR mechanism and before
+  anti-patterns. The summary table replaces any previous mechanism
+  listing.
+- Addition 3: Inserts after Session B's "Unindexed sessions"
+  anti-pattern.
+
+RELATIONSHIP TO SESSION B ADDITIONS:
+This draft is additive to Session B's additions, not a replacement.
+Session G integration should apply Session B's additions first, then
+layer this draft on top.
+
+Integration order:
+1. Session B: Update count to five, add Response Indexing and SFR
+   mechanisms, add "Unindexed sessions" anti-pattern
+2. Session C (this draft): Update count to six, add Notebook
+   Connectivity mechanism with summary table, add "Stale notebooks"
+   anti-pattern
+
+The six mechanisms in the revised section:
+1. Bootstrap Documents (existing in v1.0.7)
+2. Decision Logs (existing in v1.0.7)
+3. Chat Transcript Archives (existing in v1.0.7)
+4. Response Indexing System (Session B addition)
+5. Session Fidelity Reports (Session B addition)
+6. Notebook Connectivity (this draft)
+
+================================================================================
+END OF SECTION 12.1 NOTEBOOK ENHANCEMENT DRAFT
+================================================================================

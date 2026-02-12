@@ -1,0 +1,354 @@
+================================================================================
+DRAFT — SECTION 14 FAILURE MODES (ENHANCEMENT)
+================================================================================
+Target Location: Section 14.1 (ADDITIONS to existing content — extend
+                 existing categories with new failure modes)
+Drafted:         Session 038
+Category:        13 (Known Failure Modes & Workarounds) from Revision
+                 Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE ON APPROACH:
+
+Per the Session E quality audit (AUDIT_Section_14_Failure-Modes.txt),
+this enhancement follows Option A: extend the existing 14.1 category
+structure (Context, Communication, Process, Output failures) with new
+failure modes discovered through field testing. Each new entry follows
+the existing format: name, description, symptoms, prevention/mitigation
+with cross-references.
+
+Seven new failure modes are added, mapped to the existing categories:
+
+Process Failures (4 new entries):
+- Bootstrap Verification Failure (Category 13.1)
+- Behavioral Forgetfulness (Category 13.2)
+- Protocol Rigidity (new — cross-ref Section 4.5)
+- Silent Deviation (new — cross-ref Section 4.5)
+- Runaway Execution (new — cross-ref Section 3.8)
+
+Output Failures (1 new entry):
+- Cross-Contamination / Hallucinated Connections (Category 13.3)
+- Synthesis Layer Degradation (Category 13.4)
+
+Context Failures (1 new entry):
+- Context Invisibility / Transcript Gaps (Category 13.5)
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+------------------------------------------------------------------------
+PROCESS FAILURES — NEW ENTRIES
+(Insert after existing "Session overrun" entry in 14.1 Process Failures)
+------------------------------------------------------------------------
+
+**Bootstrap verification failure.** The AI acknowledges the Bootstrap
+but does not actually follow it. The Bootstrap is treated as context to
+be aware of rather than a set of instructions to execute. Symptoms
+include skipping the mandatory first action (Phase Protocol review),
+ignoring specified priorities, missing required materials, or beginning
+work that does not align with the Bootstrap's stated scope.
+
+A related mechanical failure: bootstraps generated during closeout
+may contain errors — session numbers that increment by two instead of
+one, wrong project handles when multiple branches share a Phase
+Protocol, or corrupted content when context compaction occurs late in
+a session. These errors propagate silently if the user does not verify
+the bootstrap before providing it to the next session.
+
+Prevention: The Phase Protocol's mandatory first action instruction
+creates a verifiable checkpoint — the AI must demonstrate it has read
+and is adhering to the Phase Protocol, not merely acknowledging its
+existence. The Alignment Turn (Section 4.3.1.1) provides a second
+verification layer where the user confirms the AI's understanding
+matches intent. For mechanical errors, user verification of every
+bootstrap during post-session housekeeping is essential.
+
+USER ACTION: Always verify bootstrap content before providing it to
+the next session. Check session numbers, project handles, and scope
+descriptions. Correct errors before they propagate.
+
+**Behavioral forgetfulness.** The AI "forgets" committed behaviors
+mid-session despite those behaviors being encoded in the Phase
+Protocol. This is distinct from session-boundary amnesia (which is
+expected and addressed by the Bootstrap/Phase Protocol system). Behavioral
+forgetfulness occurs within a single session — the AI follows a
+behavioral instruction for the first half of the session and then
+stops following it without any explicit decision to change.
+
+Root causes include: context window compaction in long sessions (the
+most common cause — as the context window fills, older instructions
+may be compressed or deprioritized), cached tool manifests that
+override behavioral instructions, and the AI's tendency to revert to
+default behaviors when not actively reminded.
+
+Symptoms include: stopping narration of tool calls (Connector
+Transparency Protocol drift), dropping formatting conventions
+established at session start, reverting to default response patterns
+that conflict with project-specific instructions, or ceasing to
+apply project-specific naming conventions.
+
+Prevention: Include explicit behavioral reminders in the Bootstrap's
+stable content section for behaviors that are critical and prone to
+being forgotten. Do not rely solely on the Phase Protocol for these
+behaviors — reinforce them in the session's initial prompt. The new
+chat notepad system (Section 4.3.1, User Behaviors) is the mechanism
+for ensuring these reminders are consistently provided. During long
+sessions, the user can periodically reinforce key behaviors: "Remember,
+we're narrating all tool calls per the CTP."
+
+Cross-reference: Section 5.2 (Phase Protocol), Section 5.5 (Bootstrap
+Files — behavioral reminder section), Section 4.4 (Connector
+Transparency Protocol — a frequently forgotten behavior).
+
+**Protocol rigidity.** The AI follows a protocol behavior rigidly when
+doing so harms the project's objectives. Rather than recognizing the
+conflict and flagging it, the AI continues executing the protocol
+as written, producing outcomes that satisfy process requirements but
+fail substantive goals.
+
+This failure mode is the opposite of silent deviation (below). Where
+silent deviation means the AI ignores protocols without telling the
+user, protocol rigidity means the AI follows protocols to the letter
+even when the letter conflicts with the spirit.
+
+Symptoms include: the AI consuming significant token headroom on
+ceremony when headroom is critically needed for deliverables, refusing
+to adapt standard procedures to unusual circumstances, or producing
+artifacts that satisfy template requirements but miss the point of the
+current session's actual needs.
+
+Mitigation: The Conflict Resolution Protocol (Section 4.5) provides
+the structured process for handling protocol-vs-objective conflicts.
+When the AI detects that following a protocol would produce a worse
+outcome than adapting it, the 6-step STOP/FLAG/EXPLAIN/PROPOSE/AWAIT/
+DOCUMENT sequence ensures the conflict is resolved intentionally
+rather than resolved by rigid adherence.
+
+Cross-reference: Section 4.5 (Conflict Resolution Protocol).
+
+**Silent deviation.** The AI deviates from an established protocol
+without flagging the deviation to the user. The deviation may be
+well-intentioned — the AI may be adapting to perceived needs — but the
+lack of transparency prevents the user from evaluating whether the
+deviation is appropriate.
+
+Silent deviation is particularly insidious because the user may not
+notice it. The work proceeds, the outputs look reasonable, but the
+behavioral governance that the Phase Protocol establishes is being
+eroded without the user's knowledge. Over multiple sessions, silent
+deviations accumulate into behavioral drift — the AI's actual behavior
+diverges from its documented behavior.
+
+Symptoms include: outputs that do not follow established formatting
+or structural conventions, scope expansion without flagging, skipped
+process steps without explanation, or the AI making judgment calls
+that the Phase Protocol assigns to the user.
+
+Mitigation: The Conflict Resolution Protocol (Section 4.5) requires
+that the AI FLAG deviations before executing them. If the AI
+determines that a protocol behavior should not be followed in a
+specific instance, the correct response is to flag the conflict,
+not to silently deviate. The Scope Monitoring Duty (Section 2.7.2)
+addresses the specific case of silent scope expansion.
+
+Cross-reference: Section 4.5 (Conflict Resolution Protocol), Section
+2.7.2 (Scope Monitoring Duty).
+
+**Runaway execution.** When given multi-step instructions, the AI
+interprets them as a batch command and executes all steps sequentially
+without pausing for verification. An error in an early step compounds
+through subsequent steps, and by the time the user sees the results,
+multiple steps of work may need to be undone.
+
+This failure mode is amplified when the multi-step instruction involves
+interpretive judgment rather than mechanical tasks. If step 1 requires
+the AI to make an interpretive choice, and that choice was wrong, steps
+2 and 3 build on the wrong foundation.
+
+Symptoms include: the AI producing a large batch of work without any
+intermediate check-ins, results where an early misinterpretation
+visibly propagates through subsequent outputs, or the user discovering
+that multiple steps need to be redone because the first step was
+misunderstood.
+
+Mitigation: The Instruction Chain Interpretation rules (Section 3.8)
+establish "sequential with alignment checkpoints" as the default
+interpretation for multi-step instructions. Each step's completion is
+a checkpoint where the user can verify the work before the next step
+begins. The exception is routine execution within explicitly aligned
+scope — mechanical, independent tasks where error propagation is not
+a risk.
+
+Cross-reference: Section 3.8 (Instruction Chain Interpretation).
+
+
+------------------------------------------------------------------------
+OUTPUT FAILURES — NEW ENTRIES
+(Insert after existing "Format compliance failures" entry in 14.1
+Output Failures)
+------------------------------------------------------------------------
+
+**Cross-contamination / hallucinated connections.** The AI creates
+connections between unrelated content — synthesizing across sources
+that should not be synthesized, attributing findings from one context
+to another, or generating relationships that do not exist in the source
+material. This is distinct from simple hallucination (fabricating
+information from nothing); cross-contamination involves real
+information from real sources being incorrectly linked or attributed.
+
+This failure mode is particularly relevant when the AI works with
+multiple sources (notebook queries, uploaded documents, prior session
+context) and must synthesize across them. The AI's inclination to find
+patterns and connections — normally a strength — becomes a liability
+when it produces connections that are plausible but not supported by
+the actual sources.
+
+Symptoms include: findings attributed to the wrong session or source,
+claims that "Source A supports the approach described in Source B" when
+the sources are unrelated, merged concepts that conflate distinct
+ideas from different contexts, or confident statements about
+relationships between project elements that do not actually exist.
+
+Prevention: Strict source boundary enforcement — when synthesizing
+across sources, the AI should explicitly attribute each claim to its
+specific source. The Connector Transparency Protocol (Section 4.4)
+supports this by requiring the AI to narrate what information came
+from which query. Users should verify cross-source claims,
+particularly in research and findings contexts.
+
+Cross-reference: Section 4.4 (Connector Transparency Protocol),
+Section 5.6 (Findings Reports — the provenance section enforces
+source attribution).
+
+**Synthesis layer degradation.** Errors introduced not during
+information extraction but during the synthesis of extracted
+information into coherent output. The AI retrieves correct information
+from its sources but introduces logical errors, incorrect inferences,
+or structural problems when combining that information into a
+deliverable.
+
+This failure mode is distinct from extraction errors (the source was
+read incorrectly) and from hallucination (the information was
+fabricated). Synthesis degradation means the raw inputs are correct
+but the assembly is flawed. It is particularly relevant for notebook-
+mediated context recovery, where the AI executes multiple queries and
+must synthesize the results into a coherent understanding of project
+state.
+
+Symptoms include: summaries that individually cite correct sources but
+draw incorrect conclusions, analysis where each data point is accurate
+but the relationships between them are wrong, or deliverables where
+sections are individually correct but the overall narrative or
+structure is incoherent.
+
+Prevention: Verification protocols that check not just whether
+individual claims are sourced but whether the relationships between
+claims are valid. The exhaustive querying technique (query, summarize,
+ask gap questions, repeat) for notebook context recovery provides
+natural verification checkpoints. For critical deliverables, the user
+should verify the synthesis — checking that the overall argument or
+structure holds, not just that individual facts are correct.
+
+Cross-reference: Section 10.3 (Notebook Connectivity — exhaustive
+querying technique), Section 12.1 (Multi-Session Continuity —
+context recovery verification).
+
+
+------------------------------------------------------------------------
+CONTEXT FAILURES — NEW ENTRY
+(Insert after existing "Stale context" entry in 14.1 Context Failures)
+------------------------------------------------------------------------
+
+**Context invisibility / transcript gaps.** When the AI uses MCP-
+connected tools (notebook queries, file operations, external service
+calls), the tool interaction may occur invisibly — the action and its
+results do not appear in the chat transcript. This creates a gap in the
+session record: the AI used information to produce its output, but the
+source and content of that information is not captured anywhere the
+user or future sessions can review.
+
+This failure mode has two consequences. First, the session transcript
+is incomplete — a future session querying the notebook for this
+session's content will miss the tool-mediated information. Second, the
+user cannot audit the AI's reasoning — if the output seems wrong, the
+user cannot trace which tool results led to the error.
+
+Symptoms include: the AI referencing information that does not appear
+anywhere in the visible conversation, transcripts that have logical
+gaps (conclusions without visible evidence), or future sessions unable
+to reconstruct how a decision was reached because the supporting
+information was invisible.
+
+Mitigation: The Connector Transparency Protocol (Section 4.4) directly
+addresses this failure mode. The CTP requires the AI to narrate every
+tool call in the conversation, including tool identification, query
+details, intent, result summary, and assessment. When the CTP is
+followed, tool interactions become visible in the transcript —
+eliminating the context invisibility problem.
+
+The primary risk is CTP drift — the AI following the protocol initially
+but gradually dropping narration as the session progresses (see
+"Behavioral forgetfulness" above). Reinforcement through the Bootstrap's
+behavioral reminder section mitigates this risk.
+
+Cross-reference: Section 4.4 (Connector Transparency Protocol),
+Section 5.5 (Bootstrap Files — behavioral reminder section).
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+All new entries are additions to existing Section 14.1 categories. No
+structural changes to Section 14's organization.
+
+- Process Failures: 5 new entries after existing "Session overrun"
+- Output Failures: 2 new entries after existing "Format compliance
+  failures"
+- Context Failures: 1 new entry after existing "Stale context"
+
+No changes to:
+- Section 14.2 (Recovery Strategies) — existing content adequate.
+  The new failure modes use existing recovery patterns (local recovery,
+  session-level recovery).
+- Section 14.3 (Cognitive Divergence Detection) — existing content
+  strong. No modifications needed.
+
+CROSS-REFERENCE WEB:
+Each new failure mode cross-references the specific manual section
+that provides its mitigation:
+- Bootstrap verification → 4.3.1.1 (Alignment Turn), 5.2 (Phase
+  Protocol), User Behaviors (post-session housekeeping)
+- Behavioral forgetfulness → 5.2, 5.5, 4.4, User Behaviors (notepad)
+- Protocol rigidity → 4.5 (Conflict Resolution)
+- Silent deviation → 4.5, 2.7.2 (Scope Monitoring)
+- Runaway execution → 3.8 (Instruction Chain Interpretation)
+- Cross-contamination → 4.4 (CTP), 5.6 (Findings Reports)
+- Synthesis degradation → 10.3 (Notebook Connectivity), 12.1
+- Context invisibility → 4.4 (CTP), 5.5 (Bootstrap)
+
+USER ACTION CALLOUTS:
+One USER ACTION callout is embedded (bootstrap verification). Additional
+user-facing guidance for these failure modes is covered by the Category
+7 User Behaviors callouts drafted separately this session.
+
+CONSISTENCY WITH PRIOR DRAFTS:
+- Session E Audit: All 7 gaps identified in the audit are addressed.
+  Option A structure (extend 14.1) implemented as recommended.
+- Session E Section 4.5 (Conflict Resolution): Protocol rigidity and
+  silent deviation reference Section 4.5 as mitigation — consistent.
+- Session E Section 3.8 (Instruction Chain): Runaway execution
+  references Section 3.8 as mitigation — consistent.
+- Session C Section 4.4 (CTP): Context invisibility and behavioral
+  forgetfulness reference Section 4.4 — consistent.
+- Session D Section 5.9.7 (Insight Capture): Not directly referenced
+  in failure modes, but the Conflict Resolution Protocol (referenced
+  by protocol rigidity) uses Insight Capture for systematic issues.
+
+================================================================================
+END OF SECTION 14 FAILURE MODES ENHANCEMENT DRAFT
+================================================================================

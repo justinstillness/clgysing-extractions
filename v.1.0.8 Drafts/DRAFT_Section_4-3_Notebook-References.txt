@@ -1,0 +1,103 @@
+================================================================================
+DRAFT — SECTION 4.3 SESSION LIFECYCLE (NOTEBOOK REFERENCES)
+================================================================================
+Target Location: Section 4.3 (ADDITIONS to Session B revised content)
+Drafted:         Session 035
+Category:        4 (NotebookLM / Notebook Integration) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE: These are lightweight additions to the Session B Section 4.3
+revision (DRAFT_Section_4-3_Session-Lifecycle-Revised.txt). Session B
+already includes:
+- "Upload the transcript and non-ephemeral artifacts to the project
+  notebook (if using notebook connectivity)" in USER CLOSEOUT DUTIES
+- "Materials — what documents, files, and notebook access are confirmed"
+  in the alignment turn checklist
+
+These additions strengthen the notebook references without duplicating
+what Session B already established.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+------------------------------------------------------------------------
+ADDITION 1: Section 4.3.1 Session Initiation — ADD to "For Continuation
+(Via Bootstrap)" sequence, after step 2 (AI executes Bootstrap mandatory
+first action)
+------------------------------------------------------------------------
+
+INSERT as new step (between current steps 2 and 3):
+
+   [New step]: If the Bootstrap specifies notebook connectivity
+   references, the AI confirms accessibility and notes available
+   notebooks. If pre-session notebook queries are indicated (e.g.,
+   "Will need notebook queries before drafting"), the AI plans query
+   strategy as part of alignment.
+
+
+------------------------------------------------------------------------
+ADDITION 2: Section 4.3.2 Active Session Management — ADD to the
+existing content or after Headroom Opportunism
+------------------------------------------------------------------------
+
+INSERT (as a brief paragraph within active session management guidance):
+
+NOTEBOOK QUERIES DURING ACTIVE WORK:
+
+When the AI queries a notebook connectivity tool during the session, the
+Connector Transparency Protocol (Section 4.4) applies. All queries must
+be narrated in the conversation with tool identification, query details,
+and result summary. This ensures the session transcript captures the
+full informational content of the session, supporting both immediate
+auditability and future context recovery through the notebook.
+
+
+------------------------------------------------------------------------
+ADDITION 3: Section 4.3.3 Session Closeout — ENHANCE existing user
+duties list
+------------------------------------------------------------------------
+
+The Session B draft already includes this bullet in USER CLOSEOUT DUTIES:
+
+  "- Upload the transcript and non-ephemeral artifacts to the project
+    notebook (if using notebook connectivity)"
+
+ADD a clarifying note after this bullet:
+
+   See Section 10.3.3 for the detailed upload workflow, including
+   guidance on what to upload versus skip. Notebook maintenance is a
+   lightweight post-session task (typically 5-10 minutes) but is
+   essential for maintaining the deep context recovery capability.
+   A notebook that falls behind the project provides degraded retrieval.
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+These additions layer onto the Session B Section 4.3 revision. They
+should be applied after Session B's content is integrated.
+
+- Addition 1: Insert into the continuation session initiation sequence
+  in 4.3.1
+- Addition 2: Insert into 4.3.2 (Active Session Management) or as a
+  brief subsection alongside Headroom Opportunism and Segmentation
+- Addition 3: Append to the existing notebook upload bullet in 4.3.3
+
+CROSS-REFERENCES:
+- Addition 1 references TPL-002 (Bootstrap) Notebook Connectivity block
+- Addition 2 references Section 4.4 (Connector Transparency Protocol)
+- Addition 3 references Section 10.3.3 (Upload Workflow)
+
+These are intentionally lightweight — the substantive content lives in
+Sections 10.3 and 4.4. These additions ensure Section 4.3 acknowledges
+notebook connectivity at the appropriate lifecycle touchpoints without
+duplicating the detailed guidance.
+
+================================================================================
+END OF SECTION 4.3 NOTEBOOK REFERENCES DRAFT
+================================================================================

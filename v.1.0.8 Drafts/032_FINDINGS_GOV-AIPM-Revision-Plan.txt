@@ -1,0 +1,899 @@
+================================================================================
+REVISION FINDINGS & PLAN — GOV-AIPM v1.0.8-DRAFT
+================================================================================
+File Class:     FINDINGS
+Project:        GOV-AIPM (AI Operations Manual)
+Session:        032 GOV-AIPM (Post-testing integration)
+Date:           February 10, 2026
+Phase:          Phase 6c — Beta Test Integration
+Source:         Field testing across CLGYSING, AWSNBLM, NLMINTA projects
+                NotebookLM queries across 3 notebooks (91 + 21 + 35 sources)
+                Phase Protocol document review (v1.2_PP_CLGYSING-PHASE_1)
+                User field observation transcript (~8,000 words)
+
+================================================================================
+PURPOSE
+================================================================================
+
+This document consolidates all findings from Session 032 alignment work.
+It serves as the working blueprint for drafting sessions that will produce
+GOV-AIPM v1.0.8-DRAFT. Each category below represents a distinct revision
+area with specific content requirements derived from field testing.
+
+Target Version: v1.0.8-DRAFT
+Approach:       Section-by-section revision with segmented drafting
+Volume Strategy: Split at logical points for drafting convenience
+                 (natural divisions, not fundamental restructure)
+
+================================================================================
+TABLE OF CONTENTS
+================================================================================
+
+CATEGORY 1:   Phase Protocol (NEW)
+CATEGORY 2:   Rooting as Phase 0 (NEW)
+CATEGORY 3:   Enhanced Session Lifecycle (REFINEMENT)
+CATEGORY 4:   NotebookLM / Notebook Integration (NEW)
+CATEGORY 5:   Findings Reports (NEW)
+CATEGORY 6:   Branch Management (NEW)
+CATEGORY 7:   User Behaviors & User Guide (NEW)
+CATEGORY 8:   Connector Transparency Protocol (NEW)
+CATEGORY 9:   Insight Capture / Out-of-Phase Backlog (NEW)
+CATEGORY 10:  Phase Transition Refinements (REFINEMENT)
+CATEGORY 11:  Operational Refinements (REFINEMENT)
+CATEGORY 12:  Three-Tier Documentation Architecture (NEW)
+CATEGORY 13:  Known Failure Modes & Workarounds (NEW/REFINEMENT)
+CATEGORY 14:  Inter-Branch Communication (NEW)
+
+APPENDIX A:   Priority Sequence
+APPENDIX B:   Volume Division Strategy
+APPENDIX C:   Source Reference Index
+APPENDIX D:   Decisions Made This Session
+
+================================================================================
+CATEGORY 1: PHASE PROTOCOL
+================================================================================
+Type: NEW — Manual has no equivalent
+
+CURRENT STATE IN v1.0.7:
+Manual discusses Project Guides and Bootstraps as primary continuity
+documents. No concept of a phase-stable governance document between them.
+
+FIELD FINDING:
+The Phase Protocol emerged as the most critical single improvement to the
+AIPM system. It is a layered document that serves as the "constitution" for
+a project phase.
+
+KEY CHARACTERISTICS:
+- PHASE-STABLE: Static within a phase (unlike bootstraps, which change
+  every session)
+- LAYERED ARCHITECTURE:
+  Layer 1: AIPM Framework Behaviors (universal across all projects)
+  Layer 2: System/Methodology Context (project-type-specific)
+  Layer 3: Project-Specific Context (unique to the project)
+- MANDATORY REVIEW: Must be reviewed at start of every session as first action
+- CREATED DURING ROOTING: Developed as Phase 0 output
+- EVOLVES AT TRANSITIONS: Redrafted when phases change (8-step process)
+- STORED IN PROJECT KNOWLEDGE: Persistent across sessions
+
+RELATIONSHIP TO OTHER DOCUMENTS:
+- Project Guide: Comprehensive canonical reference (stable across project)
+- Phase Protocol: Phase-specific governance (stable within a phase)
+- Bootstrap: Session-specific state handoff (changes every session)
+
+The Phase Protocol draws FROM the Project Guide to create phase-specific
+behavioral guidance. It tells the AI HOW to behave. The Bootstrap tells
+the AI WHERE we left off.
+
+CONTENT REQUIRED IN MANUAL:
+1. Dedicated section introducing the Phase Protocol concept
+2. Explanation of three-layer architecture
+3. Relationship diagram: Project Guide → Phase Protocol → Bootstrap
+4. Template for Phase Protocol creation
+5. Guidance on when to create vs. when to skip (if behaviors don't change)
+6. Phase Protocol redrafting triggers and process
+7. Integration throughout manual wherever session initiation, phase
+   transitions, and continuity are discussed
+8. The "ceremony is continuity" philosophy that underpins it
+
+VALIDATED BY:
+- Same Phase Protocol successfully used across 4 branches (CLGYSING
+  mainline, AWSNBLM, NLMINTA, and a fourth test branch)
+- 23+ sessions on AWSNBLM branch alone with same base protocol
+- External validation through notebook queries confirming effectiveness
+
+================================================================================
+CATEGORY 2: ROOTING AS PHASE 0
+================================================================================
+Type: NEW — Manual treats project initiation generically
+
+CURRENT STATE IN v1.0.7:
+Project initiation covered but not as a formalized, named phase with
+specific objectives and exit criteria.
+
+FIELD FINDING:
+Rooting is ALWAYS Phase 0 of any project. Its purpose is to create the
+Project Guide and Base Phase Protocol before execution begins.
+
+ROOTING PROCESS:
+1. User uploads AIPM manual to new project
+2. User describes what they want to accomplish
+3. AI uses AIPM framework to help organize the project
+4. Together they determine:
+   - Deliverables and objectives
+   - Methodological approach
+   - End result format (what form will output take?)
+   - Phase structure (grouping objectives into discrete phases)
+   - Templates needed (known now or anticipated for later)
+   - Dependencies between phases
+5. Output: Project Guide + Base Phase Protocol
+
+KEY PRINCIPLES:
+- "If rooting takes 10 sessions, take 10 sessions — this is the nervous
+  system of your project"
+- Knowing the end helps discern the means and process
+- AI should help anticipate future needs (e.g., if end-result format
+  unknown, note it for later resolution)
+- Rooting is not just planning — it's building the governance infrastructure
+
+SINE WAVE MODEL:
+Project rhythm visualized as sine wave:
+- Peaks = active phase work (high-output execution)
+- Zero-crossings = phase transitions (planning, scoping, protocol work)
+- Rooting is the first zero-crossing before the first peak
+
+CONTENT REQUIRED IN MANUAL:
+1. Formalize rooting as Phase 0 with defined activities, outputs, exit criteria
+2. Step-by-step rooting process guide
+3. Sine wave model as mental model for project rhythm
+4. Emphasis on not rushing rooting
+5. Example: research project rooting walkthrough
+6. Connection to Phase Protocol creation (rooting produces the first PP)
+
+================================================================================
+CATEGORY 3: ENHANCED SESSION LIFECYCLE
+================================================================================
+Type: REFINEMENT of existing manual content
+
+SUB-FINDING 3.1: RESPONSE INDEXING SYSTEM
+
+Format: **[####] | [Semantic Title]**
+Rules:
+- 4-digit sequential number (0001, 0002, 0003...)
+- Continues across ENTIRE project (never resets at phase boundaries)
+- Reset only at project level (new project = new sequence)
+- Semantic title describes primary content/action
+- Index appears at START of every response
+- Session Log records all indexes used
+- Bootstrap specifies: "Last response index: [####]"
+- Bootstrap specifies: "NEXT SESSION STARTS AT INDEX: [####]"
+
+Recovery Protocol: If bootstrap lacks index or sequence appears broken,
+AI asks user for recovery guidance.
+
+PURPOSE: Enables precise retrieval from transcripts. Session Log tells you
+which response index to look for; transcript has the content.
+
+SUB-FINDING 3.2: ALIGNMENT TURN AT SESSION START
+
+Mandatory sequence AFTER protocol review and bootstrap acknowledgment:
+1. Generate alignment checklist (scope, materials, workflow, outputs, gaps)
+2. Present to user for verification
+3. Wait for user confirmation before proceeding
+4. If misaligned, propose adjustments
+5. Request and verify dependencies
+
+Prevents three failure modes:
+- Evaporation (starting without shared understanding)
+- Missing context (beginning without required materials)
+- Misalignment (working toward different objectives)
+
+SUB-FINDING 3.3: CLOSEOUT PROTOCOL REFINEMENT
+
+"CLOSE OUT" is the ONLY keyword trigger. AI NEVER auto-initiates.
+
+User language interpretation:
+- "we can wrap up soon" → AI asks "Ready to close out?"
+- "do X then close out" → AI does X, then asks "Ready to close out?"
+- "close out" → AI initiates closeout sequence
+
+Closeout sequence (5 steps):
+1. Pause and assess loose ends (decisions, scope items, questions,
+   artifacts, handoffs, user action items)
+2. Present loose ends to user
+3. Resolve loose ends per user direction
+4. Confirm readiness — list artifacts to be generated
+5. Generate artifacts ONLY after user confirmation
+
+Mandatory closeout artifacts:
+- Session Log (with embedded SFR) — ALWAYS
+- Bootstrap (for next session) — ALWAYS
+- Decision Log (if decisions made outside planned scope) — CONDITIONAL
+
+SUB-FINDING 3.4: SESSION FIDELITY REPORT (SFR)
+
+Embedded in Session Log (not separate artifact).
+Generated at session closeout.
+
+Structure:
+- Objective Achievement: FULL / PARTIAL / MINIMAL
+- Phase Progress: Completion criteria status with checkmarks
+- Decisions Crystallized: Summary
+- Gaps & Insights: What was identified
+- Handoff Status: Context carried forward, materials needed, risks
+- Next Session Projection: Focus, success criteria, complexity estimate
+- Verification: User confirms accuracy
+
+SUB-FINDING 3.5: HEADROOM OPPORTUNISM
+
+Named duty for AI coordinator:
+- When primary objectives complete, assess remaining token headroom
+- Identify secondary objectives achievable with loaded context
+- Propose to user with specific options
+- User decides whether to proceed
+- This is optimization of loaded context, NOT scope creep
+
+SUB-FINDING 3.6: LARGE ARTIFACT SEGMENTATION PROTOCOL
+
+Already partially in manual but needs enhancement.
+Triggers:
+- Source material >5,000 words
+- Expected output >20 entries
+- Estimated output >10,000 characters
+- Token headroom <20%
+- Repository volume cap at 75 entries
+
+Methodology:
+1. Logical unit division (by source sections, conceptual clusters, etc.)
+2. Conservative chunk sizing (~10,000 chars per segment)
+3. Cross-segment continuity (sequential numbering, cross-references)
+4. User approval at each stage
+5. Completion verification
+
+CRITICAL RULE: Never abbreviate artifacts to avoid segmentation.
+Segmentation maintains complete generation while managing constraints.
+
+CONTENT REQUIRED IN MANUAL:
+1. Update session lifecycle sections with all sub-findings
+2. Add response indexing as core practice
+3. Update closeout protocol
+4. Update or add templates for alignment checklist, session log with
+   embedded SFR
+5. Add headroom opportunism as named coordinator duty
+6. Enhance segmentation protocol guidance
+
+================================================================================
+CATEGORY 4: NOTEBOOKLM / NOTEBOOK INTEGRATION
+================================================================================
+Type: NEW — Manual predates this capability
+
+CURRENT STATE IN v1.0.7:
+No mention of NotebookLM or external notebook/query system.
+
+FIELD FINDING:
+NotebookLM via MCP has become the deep context recovery layer, giving
+Claude "near-perfect fidelity capacity between sessions."
+
+RELATIONSHIP TO BOOTSTRAPS:
+- Bootstrap = lightweight orientation tool (WHERE we left off)
+- NotebookLM = deep context archive (EVERYTHING that happened)
+- Bootstrap SUPPLEMENTS, does not replace
+- Bootstrap tells AI what to look for; NotebookLM has the content
+
+UPLOAD WORKFLOW (post-session):
+1. Download transcript (via Claude Exporter or equivalent)
+2. Download all session artifacts
+3. Store in session folder locally
+4. Upload transcript to project NotebookLM notebook
+5. Upload non-ephemeral artifacts (specs, WIPs, findings — NOT bootstraps
+   or session logs that are purely ephemeral)
+6. Sync if using Google Docs as intermediary
+
+EXHAUSTIVE QUERYING TECHNIQUE:
+1. AI queries NotebookLM on a subject
+2. AI summarizes what it received
+3. AI asks gap question: "Is there anything else I'm missing?"
+4. Repeat until saturation (responses start returning similar content)
+5. AI then has comprehensive context without consuming full token budget
+
+NOTEBOOK ORGANIZATION STRATEGY:
+- GENERAL RULE: One notebook for the whole project (all branches access it)
+- ADJUNCT NOTEBOOKS: Per-branch, external research, spec documentation,
+  or other targeted purposes
+- SOURCE EFFICIENCY: For limited plans, consolidate transcripts into one
+  Google Doc with tabs per session, sync as single source
+- QUERYABILITY: Good naming, finding reports, status reports, and
+  consistent terminology create the queryable surface
+
+NOTEBOOK INDEX/DIRECTORY:
+A manifest document listing all notebook IDs, their contents/summaries,
+and purposes. Gives Claude a single reference file for knowing where to
+look without querying each notebook individually.
+
+Create by: Query each notebook for summary, compile into single directory doc.
+
+CONTENT REQUIRED IN MANUAL:
+1. New section on notebook integration as continuity enhancement
+2. Upload workflow with step-by-step guidance
+3. Exhaustive querying technique description
+4. Notebook organization strategy (one main + adjuncts)
+5. Source efficiency techniques for limited plans
+6. Notebook index/directory concept
+7. Reference "notebook connectivity tool" generically (tool-agnostic)
+   with concrete examples
+8. Guidance on what to upload vs. skip
+
+================================================================================
+CATEGORY 5: FINDINGS REPORTS
+================================================================================
+Type: NEW — Not currently in the manual as a distinct artifact
+
+CURRENT STATE IN v1.0.7:
+No findings report template or concept. Session logs capture what happened;
+decision logs capture choices. But empirical discoveries during research
+or exploration have no dedicated artifact.
+
+FIELD FINDING:
+Findings Reports are synthesis documents organized by TOPIC (not
+chronologically like session logs). They use F## indexing that accumulates
+across the project and are highly queryable via NotebookLM.
+
+STRUCTURED FINDING ENTRY:
+- Finding ID: F## (sequential, never resets)
+- Discovery: Concise statement of observation
+- Evidence: Specific data points or test results
+- Impact/Implication: How this affects project pipeline or methodology
+- Status/Verdict: Validates tool, identifies gap, requires further testing
+
+DISTINCTION FROM OTHER ARTIFACTS:
+- Session Log (LOG): Chronological record of WHAT HAPPENED
+- Decision Log (DECISION): Record of CHOICES MADE (D-###)
+- Findings Report (FINDINGS): Synthesis of DISCOVERIES (F-##)
+  Findings provide evidence → which informs Decisions
+
+CONTENT REQUIRED IN MANUAL:
+1. Findings Report as new artifact class
+2. Template with structured entry schema
+3. Indexing convention (F## accumulating across project)
+4. Behavioral guidance: when to generate (research/exploration sessions)
+5. Cumulative findings index tracking across sessions
+
+================================================================================
+CATEGORY 6: BRANCH MANAGEMENT
+================================================================================
+Type: NEW — Manual has no branching concept
+
+FIELD FINDING:
+Branching is a formal mechanism for managing parallel workstreams under
+one project. Branches inherit the parent Phase Protocol but adapt scope.
+
+BRANCH CREATION PROCESS:
+1. User decides to spin up a branch (in mainline or dedicated session)
+2. Mainline session generates a BRANCH STARTUP FILE with relevant context
+3. User takes startup file to new branch
+4. New branch conducts MINI-ROOTING CYCLE:
+   - What is this branch trying to accomplish?
+   - How does it connect to mainline?
+   - Do we need to update the Phase Protocol?
+   - Single-phase or multi-phase?
+   - What templates/conventions apply?
+5. Branch begins execution with its own session numbering
+
+BRANCH CHARACTERISTICS:
+- Own session numbering
+- Own NotebookLM notebook (adjunct to main project notebook)
+- Own bootstraps and session logs
+- Inherited Phase Protocol (potentially modified)
+- Fractal expression of rooting principles at branch level
+
+CONTENT REQUIRED IN MANUAL:
+1. Branching concept introduction
+2. Branch startup file template
+3. Mini-rooting process for branches
+4. Branch naming conventions
+5. Cross-branch context sharing patterns
+6. When to branch vs. when to stay in mainline
+
+================================================================================
+CATEGORY 7: USER BEHAVIORS & USER GUIDE
+================================================================================
+Type: NEW — Manual is primarily AI-facing
+
+THE 90/10 OBSERVATION:
+Manual provides ~90% coverage for AI behavior. Missing ~10% is user-facing
+guidance. Field testing revealed that even with perfect AI protocols,
+user behaviors are critical for system effectiveness.
+
+CRITICAL USER BEHAVIORS IDENTIFIED:
+
+7.1 PROJECT HANDLE NAMING
+- Short, consistent tag (3-10 characters)
+- Used in all naming conventions: files, sessions, folders
+- AI can help create during rooting
+- Examples: GOV-AIPM, CLGYSING, AWSNBLM
+
+7.2 NEW CHAT NOTEPAD SYSTEM
+External notepad (Google Keep or equivalent) containing:
+- Chat name field (copy-paste ready)
+- Standard opening line ("Please review and let me know if you have
+  any questions")
+- NotebookLM references (notebook IDs and descriptions)
+- Behavioral reminders (things Claude tends to forget)
+- Any between-session notes or context updates
+
+PURPOSE: Pre-prepared prompt for efficient session initiation.
+Updated after each session closeout.
+
+7.3 SESSION NAMING CONVENTION
+Format: [session#] [PROJECT-HANDLE] ([semantic descriptor])
+Examples:
+- 001 CLGYSING (Rooting and Project Architecture)
+- 023 AWSNBLM (File Fix and Index Alpha)
+
+CRITICAL: User must rename chat in Claude UI to match this convention.
+Default AI-generated name must be replaced.
+
+7.4 FILE ORGANIZATION
+Project folder structure:
+- /[Project Name]/
+  - /Chats/
+    - /[Branch Handle]/
+      - /[Session Name]/  (each session gets its own folder)
+        - Bootstrap, session log, all artifacts, transcript
+  - /Decision Logs/
+    - /[Branch Handle]/
+  - /Artifacts/
+    - Organized by phase, type, or function
+    - WIP reports, specs, research docs
+  - /Guides/
+    - Project guides, reference documents
+  - /Phase Protocols/
+    - Current phase protocol(s) at top level
+    - /Old/  (superseded versions archived here)
+  - /[Other as needed]/
+    - Source materials, raw notes, etc.
+
+7.5 POST-SESSION HOUSEKEEPING
+1. Download all artifacts (use Claude's "show all artifacts" button)
+2. Put all downloads in session folder
+3. Open bootstrap — verify:
+   - Session number correct (sometimes increments by 2)
+   - Branch handle name correct (sometimes confused across branches)
+   - If incorrect, note correction in new chat notepad
+4. Copy new chat name from bootstrap → new chat notepad
+5. Download transcript (via Claude Exporter or equivalent)
+6. Put transcript in session folder
+7. Upload to NotebookLM:
+   - Transcript → project notebook
+   - Non-ephemeral artifacts → project notebook
+   - Re-sync if using Google Docs consolidation
+
+7.6 PRE-SESSION HOUSEKEEPING
+1. New chat notepad has been updated with:
+   - Correct chat name
+   - Standard opening line
+   - Notebook references
+   - Behavioral reminders
+   - Any between-session context
+2. Copy entire notepad content
+3. Start new chat in project (with Phase Protocol in Project Knowledge)
+4. Paste notepad content
+5. Attach: bootstrap + session log + any needed files
+6. Copy chat name to clipboard
+7. Hit send
+8. Wait for response to begin loading
+9. Rename chat to match convention (paste from clipboard or notepad)
+10. Create new session folder in chats directory
+
+7.7 PROMPTING DISCIPLINE
+- Compose responses in external notepad (prevents accidental sends)
+- When providing input on decisions, use the formula:
+  [State your thinking] + [Provide direction] + "Let me know if you
+  think there's a better way or if my thinking is incorrect"
+- Explicitly invite AI to disagree/suggest alternatives
+- Without invitation, AI defaults to compliance
+
+7.8 NOTEBOOKLM MAINTENANCE
+- Upload transcripts and non-ephemeral artifacts between sessions
+- When Claude needs context not in loaded files, direct it:
+  "The information you're looking for is likely in the NotebookLM
+  notebook. Please begin targeted queries and ask as many questions
+  as you need."
+- Encourage exhaustive querying process
+
+CONTENT REQUIRED IN MANUAL:
+1. User behavior callouts embedded throughout relevant sections
+2. Potentially a companion User Guide document (separate deliverable)
+3. Quick-reference cheat sheet for pre/post session workflows
+4. Troubleshooting section for common user-side issues
+
+================================================================================
+CATEGORY 8: CONNECTOR TRANSPARENCY PROTOCOL
+================================================================================
+Type: NEW — Manual predates MCP tool usage
+
+FIELD FINDING:
+When Claude uses MCP tools (like NotebookLM queries), the actions happen
+behind the scenes and don't appear in the transcript. This creates
+"transcript gaps" that break auditability and backtracing.
+
+PROTOCOL REQUIREMENTS:
+For every MCP tool invocation, AI must narrate in the chat:
+1. TOOL IDENTIFICATION: Which tool is being called
+2. QUERY DETAILS: What parameters/prompts are being used
+3. INTENT: Why this query is being made
+4. RESULT SUMMARY: Representative sample of the output
+5. ASSESSMENT: Brief evaluation of result quality/relevance
+
+PURPOSE: Ensures transcript captures the full picture of what happened,
+enabling future context recovery and quality assessment.
+
+CONTENT REQUIRED IN MANUAL:
+1. New subsection in tools/adjunct section
+2. Behavioral requirement added to session lifecycle
+3. Example of proper transparency narration
+4. Connection to session log (tool calls recorded in response index)
+
+================================================================================
+CATEGORY 9: INSIGHT CAPTURE / OUT-OF-PHASE BACKLOG
+================================================================================
+Type: NEW — No equivalent in current manual
+
+FIELD FINDING:
+A formal mechanism for capturing valuable ideas that arise outside current
+phase scope. Prevents scope creep while ensuring nothing valuable is lost.
+
+TWO-PHASE WORKFLOW:
+Phase 1 — Capture (In-Session):
+1. Out-of-scope idea arises
+2. AI auto-detects or user flags
+3. Brief containable survey (3-5 questions)
+4. Generates Backlog Item Report with provenance data
+5. Work continues on current scope
+
+Phase 2 — Evaluation & Routing (Dedicated Session):
+1. Review accumulated backlog items
+2. Evaluate each item
+3. Route to appropriate place:
+   - New component/feature
+   - Future task
+   - Specific document update
+   - Discard (not actionable)
+
+BACKLOG ITEM SCHEMA:
+- Backlog-Item-[NNN]
+- Description
+- Context (what triggered it)
+- Potential impact
+- Suggested routing
+- Priority assessment
+- Status: CAPTURED → EVALUATED → ROUTED
+
+CONTENT REQUIRED IN MANUAL:
+1. New subsection in session management or advanced patterns
+2. Backlog Item template
+3. Behavioral guidance for AI (auto-detect scope expansion)
+4. Connection to scope monitoring duty
+
+================================================================================
+CATEGORY 10: PHASE TRANSITION REFINEMENTS
+================================================================================
+Type: REFINEMENT of existing manual content
+
+8-STEP PHASE TRANSITION PROCESS:
+1. ASSESS current position and readiness
+2. CONSOLIDATE completed scope (gather logs, SFRs, decision logs)
+3. SYNTHESIZE insights, decisions, outcomes (husk removal)
+4. REVIEW deferred items
+5. DEFINE upcoming phase scope
+6. UPDATE Phase Protocol (redraft if needed)
+7. UPDATE rolling records (decisions, terminology, cross-references)
+8. GENERATE transition artifacts (bootstrap, transition summary)
+
+HUSK VS. COCONUT PRINCIPLE:
+- HUSK: Conversational filler, rejected hypotheses, exploratory tangents,
+  unanswered questions, superseded options — REMOVE
+- COCONUT: Finalized decisions, crystallized conclusions, validated
+  methodologies, confirmed scope boundaries — KEEP
+
+SINE WAVE MODEL:
+- Peaks = active phase work
+- Zero-crossings = phase transitions
+- Transition sessions are planning-heavy, execution-light
+
+CONTENT REQUIRED IN MANUAL:
+1. Formalize 8-step process
+2. Husk/coconut filtering guidance
+3. Sine wave model as mental model
+4. Phase Protocol redrafting triggers
+5. Transition session expectations
+
+================================================================================
+CATEGORY 11: OPERATIONAL REFINEMENTS
+================================================================================
+Type: REFINEMENT — Integrate into appropriate existing sections
+
+11.1 CEREMONY IS CONTINUITY
+Philosophy: Formal artifact creation IS the continuity mechanism for AI
+work. Because AI resets every session, the ceremonial production of
+bootstraps, session logs, and SFRs creates the "external memory" that
+enables coherent multi-session projects.
+
+11.2 CONFLICT RESOLUTION PROTOCOL
+When protocol behaviors conflict with project objectives:
+1. STOP all work immediately
+2. FLAG the conflict explicitly to user
+3. EXPLAIN which protocol behavior creates the conflict
+4. PROPOSE resolution options (modify approach, segment work, defer)
+5. AWAIT user decision before proceeding
+6. DOCUMENT decision
+
+CRITICAL: Project objectives ALWAYS override protocol convenience.
+
+11.3 INSTRUCTION CHAIN INTERPRETATION
+Multi-step instructions interpreted as sequential with alignment checkpoints:
+- "Do X, then Y, then close out" means:
+  - Do X → Ask "X done. Proceed to Y?" → Do Y → Ask "Ready to close out?"
+- NOT: Execute X → Y → closeout automatically
+
+Exception: Within explicitly aligned scope, routine execution proceeds
+without per-step confirmation.
+
+11.4 SCOPE MONITORING DUTY
+AI must:
+- DETECT when requested work extends beyond defined phase scope
+- PAUSE and FLAG scope questions BEFORE proceeding
+- PROPOSE options: update scope, adjust request, or backlog item
+- NEVER silently expand scope
+
+11.5 ALIGNMENT OVER ASSUMPTION
+"Propose and pause beats assume and proceed"
+- Explicit confirmation over inferred continuation
+- User initiation for major transitions
+- AI proposes options, user decides direction
+
+CONTENT REQUIRED IN MANUAL:
+1. Weave ceremony/continuity philosophy into foundations
+2. Add conflict resolution as formal protocol
+3. Add instruction chain interpretation rules
+4. Enhance scope monitoring guidance
+5. Reinforce alignment over assumption throughout
+
+================================================================================
+CATEGORY 12: THREE-TIER DOCUMENTATION ARCHITECTURE
+================================================================================
+Type: NEW — Pattern for managing documentation in complex projects
+
+THREE TIERS:
+1. Architecture References (System Level):
+   - High-level blueprints, design philosophy, component interrelations
+   - Stable across project
+   - "Single source of truth"
+
+2. Per-Tool/Component References (Operational Level):
+   - Granular specs for specific tools, components, processes
+   - Bridges architecture to execution
+   - Updated when tools/components change
+
+3. CHANGELOGs (Temporal Level):
+   - Track evolution over time
+   - Version history, decisions, progression
+   - "Context continuity" for future sessions
+
+PURPOSE: Prevents information overload by separating concerns.
+AI agent executing a task needs only the relevant operational reference
+and current changelog, not the entire system history.
+
+CONTENT REQUIRED IN MANUAL:
+1. Introduce as a pattern for complex projects
+2. Guidance on when each tier is appropriate
+3. Examples of each tier
+4. Connection to file naming conventions
+
+================================================================================
+CATEGORY 13: KNOWN FAILURE MODES & WORKAROUNDS
+================================================================================
+Type: NEW/REFINEMENT — Extend existing failure mode catalog
+
+13.1 BOOTSTRAP VERIFICATION FAILURES
+- Session number incrementing by 2 instead of 1
+- Branch handle name confusion across branches sharing Phase Protocol
+- Context compaction errors in long sessions corrupting closeout artifacts
+
+Workaround: User verification of every bootstrap (see Category 7.5)
+
+13.2 AI BEHAVIORAL FORGETFULNESS
+Despite encoding in Phase Protocols, session logs, and dedicated documents,
+certain behaviors need explicit reminders in session startup message:
+- Connector transparency (narrating MCP tool calls)
+- Specific formatting requirements
+- Project-specific conventions
+
+Root cause: Session isolation (tabula rasa), cached tool manifests,
+context window compaction in long sessions.
+
+Workaround: Include behavioral reminders in new chat notepad startup
+message every session.
+
+13.3 EXTERNAL KNOWLEDGE CONTAMINATION
+AI draws from training data rather than specific source material.
+Hallucinated connections that aren't in the provided text.
+
+Workaround: Strict source boundary enforcement in prompts.
+
+13.4 SYNTHESIS LAYER DEGRADATION
+Extraction fidelity (NotebookLM layer) high, but synthesis errors
+(Claude layer) can introduce categorical errors during multi-query synthesis.
+
+Workaround: Verification protocols, cross-checking results.
+
+13.5 CONTEXT INVISIBILITY (TRANSCRIPT GAPS)
+MCP tool calls invisible in transcript. If session crashes before AI
+saves data, information permanently lost.
+
+Workaround: Connector Transparency Protocol (Category 8).
+
+CONTENT REQUIRED IN MANUAL:
+1. Extend failure mode catalog with field-tested failure modes
+2. User-side verification procedures
+3. Workaround documentation for each failure mode
+
+================================================================================
+CATEGORY 14: INTER-BRANCH COMMUNICATION
+================================================================================
+Type: NEW — Manual has no concept of cross-branch coordination
+
+FIELD FINDING:
+When multiple branches run under one project, they occasionally need to
+share information. One branch's outputs become another branch's inputs.
+
+CROSS-BRANCH AWARENESS DOCUMENT:
+A document that sits alongside the Phase Protocol in project knowledge:
+- Lists all active branches and their objectives
+- Notes coordination needs between branches
+- Updated when branches are created, completed, or when significant
+  cross-branch dependencies emerge
+- Gives every session awareness of what other branches are doing
+
+CROSS-BRANCH CONTEXT SHARING MECHANISMS:
+1. Upload relevant artifacts from one branch's notebook to another's
+2. Shared main project notebook (all branches can access)
+3. Cross-branch awareness document in project knowledge
+4. During rooting/branch-startup, explicitly map inter-branch dependencies
+
+CONTENT REQUIRED IN MANUAL:
+1. Cross-branch awareness document concept and template
+2. Coordination patterns between branches
+3. When to share context vs. when branches operate independently
+4. Connection to notebook organization strategy
+
+================================================================================
+APPENDIX A: PRIORITY SEQUENCE
+================================================================================
+
+Drafting will proceed in this order:
+
+ 1. Phase Protocol concept — new dedicated section + weave throughout
+ 2. Rooting as Phase 0 — formalize in project lifecycle
+ 3. Enhanced session lifecycle — response indexing, alignment turn,
+    closeout, SFR, headroom opportunism, segmentation
+ 4. NotebookLM / notebook integration — deep context recovery
+ 5. Findings Reports — new artifact class
+ 6. Branch management — formal concept, branch startup, mini-rooting
+ 7. User behaviors — all user-facing guidance
+ 8. Connector transparency protocol — new subsection
+ 9. Insight capture / out-of-phase backlog — new subsection
+10. Phase transition refinements — 8-step process, husk/coconut
+11. Operational refinements — ceremony, conflict resolution, instruction
+    chain, scope monitoring, alignment over assumption
+12. Three-tier documentation architecture — reference pattern
+13. Known failure modes — bootstrap verification, behavioral forgetfulness,
+    contamination, degradation, transcript gaps
+14. Inter-branch communication — cross-branch awareness
+
+================================================================================
+APPENDIX B: VOLUME DIVISION STRATEGY
+================================================================================
+
+For drafting convenience, the manual may be split at logical points.
+Proposed natural divisions (flexible, to emerge during drafting):
+
+Volume 1: Foundations & Philosophy
+- Parts I, core concepts, Three Cycles Framework
+- Ceremony is continuity philosophy
+- Alignment over assumption principle
+
+Volume 2: Project Management
+- Phase Protocol, Rooting, Session Lifecycle, Continuity
+- Response indexing, alignment turns, closeout
+- Phase transitions, branching
+
+Volume 3: Governance & Tools
+- Governance integration, tool patterns
+- Notebook integration, connector transparency
+- Findings reports, insight capture
+
+Volume 4: Advanced Patterns & Reference
+- Advanced patterns, failure modes
+- User guide / user behaviors
+- Templates, appendices
+
+These divisions are for DRAFTING CONVENIENCE and potentially user
+accessibility. They do NOT represent a fundamental restructure of the
+manual's content architecture.
+
+================================================================================
+APPENDIX C: SOURCE REFERENCE INDEX
+================================================================================
+
+NOTEBOOKS QUERIED:
+1. AIPM Review Material (a0a96d92-1e44-4907-85a7-09e286058fdf)
+   - 7 sources including AIPM manual v1.0.7 and sessions 020-022
+   - Queries: Manual structure, AIPM changes, gaps identified
+
+2. NLMINTA Sessions (b8fd3d1c-db62-40e6-bddf-6d8474a3733d)
+   - 91 sources spanning full NLMINTA project lifecycle
+   - Queries: Rooting process, phase protocol, NotebookLM integration,
+     session artifacts, branching, findings reports, phase transitions,
+     scope monitoring, segmentation
+
+3. AWSNBLM Session Transcripts (78ccac4a-4c28-4902-b721-0f77e25e1d59)
+   - 33 sources covering infrastructure development
+   - Queries: MCP tools, session folder workflow, behavioral forgetfulness,
+     transcript management, notebook organization
+
+DOCUMENTS REVIEWED:
+1. v1.2_PP_CLGYSING-PHASE_1_Base-Protocol (2,937 lines — full review)
+2. GOV-AIPM_Project_Roadmap_v1.1.txt
+3. GOV-AIPM_Bootstrap_Re-Entry.txt
+4. User field observation transcript (~8,000 words)
+
+TOTAL QUERIES EXECUTED: ~15 substantive notebook queries with
+transparent findings documentation.
+
+================================================================================
+APPENDIX D: DECISIONS MADE THIS SESSION
+================================================================================
+
+D-032-001: VERSION TARGET
+Decision: Target version is v1.0.8-DRAFT (not v1.1.0 or v2.0)
+Rationale: Significant improvements but want more testing before formal
+v1.1.0 crystallized beta. v1.0.8 reflects iterative refinement.
+Status: ACTIVE
+
+D-032-002: DRAFTING APPROACH
+Decision: Section-by-section revision with segmented drafting across
+multiple sessions, following priority sequence in Appendix A.
+Rationale: Manual is 13,257 lines; cannot be revised in single session.
+Segmentation prevents headroom exhaustion.
+Status: ACTIVE
+
+D-032-003: VOLUME SEGMENTATION
+Decision: Split manual at logical points for drafting convenience.
+Not a fundamental restructure — primarily for token management.
+Rationale: User requested; also potentially useful for user accessibility.
+Status: ACTIVE
+
+D-032-004: TOOL-AGNOSTIC APPROACH
+Decision: Manual references "notebook connectivity tool" generically
+rather than Majeston specifically. Tool-agnostic with concrete examples.
+Rationale: Manual should remain applicable regardless of specific
+MCP tool implementation.
+Status: ACTIVE
+
+D-032-005: USER GUIDE AS SEPARATE DELIVERABLE
+Decision: User behaviors embedded as callouts in manual revision;
+standalone User Guide deferred as separate deliverable.
+Rationale: Manual revision is primary scope; User Guide is substantial
+enough to warrant dedicated development.
+Status: ACTIVE
+
+D-032-006: FINDINGS REPORT AS ARTIFACT CLASS
+Decision: Formalize Findings Reports as a distinct artifact class
+with F## indexing, template, and behavioral guidance.
+Rationale: Field testing demonstrated clear need for synthesis-oriented
+discovery documentation distinct from session logs and decision logs.
+Status: ACTIVE
+
+================================================================================
+END OF REVISION FINDINGS & PLAN
+================================================================================

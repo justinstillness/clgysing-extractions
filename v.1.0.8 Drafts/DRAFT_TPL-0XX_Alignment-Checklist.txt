@@ -1,0 +1,152 @@
+================================================================================
+DRAFT — NEW TEMPLATE: ALIGNMENT CHECKLIST
+================================================================================
+Target:     New TPL-0XX in Appendix A
+Drafted:    Session 034
+Category:   3 (Enhanced Session Lifecycle) from Revision Findings
+Status:     DRAFT — pending user review
+================================================================================
+
+NOTE: This is a NEW template. Final TPL number to be assigned during
+Session G integration.
+
+
+================================================================================
+BEGIN TEMPLATE
+================================================================================
+
+
+TPL-0XX: ALIGNMENT CHECKLIST
+
+Template ID: GOV-AIPM-TPL-0XX
+Version: 1.0
+Purpose: Standard structure for the Alignment Turn at session start.
+         Ensures shared understanding of scope, materials, workflow, and
+         expected outputs before substantive work begins.
+When to Use: At the start of every continuation session, after the AI
+             has reviewed the Phase Protocol and acknowledged the Bootstrap.
+
+Cross-reference: Section 4.3.1.1 (The Alignment Turn), Section 4.3.1
+(Session Initiation)
+
+--------------------------------------------------------------------------------
+INSTRUCTIONS
+--------------------------------------------------------------------------------
+
+The AI generates this checklist proactively as part of the session
+initiation sequence. The user does not need to request it — the
+Alignment Turn is a mandatory step in the continuation protocol.
+
+The checklist should be adapted to match session complexity:
+- Simple continuation: Concise checklist covering scope and materials
+- Complex multi-deliverable session: Thorough checklist with detailed
+  workflow and dependency verification
+
+The AI draws checklist content from:
+- The Bootstrap (primary source for scope, materials, and priorities)
+- User input at session start (adjustments, additions, clarifications)
+- Phase Protocol (behavioral context and standing requirements)
+
+The user reviews the checklist and responds with confirmation, corrections,
+or additional context. Work proceeds only after explicit user confirmation.
+
+DIALOG COMPLETION OPTION:
+The AI generates this automatically. If the AI omits the alignment turn,
+the user can prompt: "Let's do the alignment checklist" or "Run through
+TPL-0XX before we start."
+
+--------------------------------------------------------------------------------
+ALIGNMENT CHECKLIST TEMPLATE
+--------------------------------------------------------------------------------
+
+ALIGNMENT CHECKLIST — Session [###]
+====================================
+
+SCOPE:
+[What this session aims to accomplish — stated as specific, assessable
+objectives derived from the Bootstrap and user input]
+
+- Objective 1: _______________________________________________________________
+- Objective 2: _______________________________________________________________
+- Objective 3 (if applicable): _______________________________________________
+
+MATERIALS:
+[What is confirmed present and what is still needed]
+
+Confirmed:
+- [ ] [Material 1 — e.g., "Bootstrap reviewed and acknowledged"]
+- [ ] [Material 2 — e.g., "Drafting Plan uploaded"]
+- [ ] [Material 3 — e.g., "Notebook access confirmed"]
+
+Still Needed:
+- [ ] [Material — e.g., "Findings document not yet uploaded"]
+- [ ] [Material — or "None — all materials present"]
+
+WORKFLOW:
+[Proposed sequence of work for the session, including priority ordering
+and natural breakpoints]
+
+1. [First work block]
+2. [Second work block]
+3. [Continue as needed]
+4. Closeout
+
+EXPECTED OUTPUTS:
+[Deliverables and artifacts this session should produce]
+
+- [Output 1 — e.g., "Revised Section 4.3 draft"]
+- [Output 2 — e.g., "Revised TPL-002 template"]
+- [Output 3]
+- Session Log and Bootstrap (standard closeout artifacts)
+
+GAPS OR QUESTIONS:
+[Anything unclear, potentially conflicting, or requiring user input
+before work begins]
+
+- [Question 1 — e.g., "Bootstrap references Session A drafts for
+  cross-reference — are those uploaded?"]
+- [Question 2 — or "No gaps identified — ready to proceed"]
+
+---
+
+Confirm alignment?
+
+
+--------------------------------------------------------------------------------
+END OF TEMPLATE
+--------------------------------------------------------------------------------
+
+
+================================================================================
+TEMPLATE NOTES
+================================================================================
+
+DESIGN RATIONALE:
+
+This template is intentionally lightweight. The Alignment Turn should
+feel like a brief, productive handshake — not a bureaucratic gate. The
+checklist verifies shared understanding without consuming excessive
+tokens.
+
+The template captures the minimum viable alignment check. The AI should
+expand depth where complexity warrants it (e.g., a session with 8
+deliverables needs more detailed workflow planning than a session with
+1), but the basic structure remains consistent.
+
+RELATIONSHIP TO OTHER TEMPLATES:
+
+The Alignment Checklist is generated by the AI, not completed by the
+user. It draws from:
+- TPL-002 (Bootstrap) — provides the raw material for scope, materials,
+  and priorities
+- Phase Protocol — provides behavioral context
+
+It feeds into:
+- TPL-005 (Session Log) — the session objective recorded in the log
+  should match the confirmed alignment scope
+- TPL-003 (Session Closeout Checklist) — the loose ends assessment at
+  closeout references back to the alignment scope to identify divergences
+
+================================================================================
+END OF ALIGNMENT CHECKLIST TEMPLATE DRAFT
+================================================================================

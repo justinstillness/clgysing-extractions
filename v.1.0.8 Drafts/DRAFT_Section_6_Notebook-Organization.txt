@@ -1,0 +1,138 @@
+================================================================================
+DRAFT — SECTION 6 EXTERNAL ORGANIZATION SYSTEM (NOTEBOOK ENHANCEMENT)
+================================================================================
+Target Location: Section 6 (ADDITIONS to existing content)
+Drafted:         Session 035
+Category:        4 (NotebookLM / Notebook Integration) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE: These are targeted additions to Section 6. The existing Section 6
+content (naming conventions, folder structure, duplication discipline,
+cloud storage, retrieval patterns, organization hygiene) is well-
+structured and adequate. These additions integrate notebook organization
+into the existing framework.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+------------------------------------------------------------------------
+ADDITION 1: Section 6.2 Folder Structure — ADD new subsection after
+6.2.3 Archive Structure (after approximately line 3493)
+------------------------------------------------------------------------
+
+INSERT as new subsection 6.2.4:
+
+6.2.4 Notebook Organization
+----------------------------
+
+For projects using notebook connectivity (Section 10.3), the notebook
+ecosystem is an extension of the project's organizational structure.
+Notebooks require the same intentional organization as folders and files.
+
+NAMING CONVENTION:
+
+Notebook names follow the project's naming conventions:
+
+  [PROJECT-HANDLE] [Purpose]
+
+Examples:
+- GOV-AIPM Review Material (main project notebook)
+- AWSNBLM Session Transcripts (branch-specific adjunct)
+- NLMINTA Research Sources (research adjunct)
+
+The project handle prefix enables quick identification across a user's
+full notebook inventory.
+
+ORGANIZATIONAL STRUCTURE:
+
+One main notebook per project. This is the central repository that all
+sessions and branches can access. It contains the cumulative project
+corpus: transcripts, artifacts, specifications, findings, and
+deliverables.
+
+Adjunct notebooks as warranted. Create dedicated notebooks for:
+- Branches that generate substantial independent context
+- External research or reference corpora
+- Specialized test or validation environments
+
+NOTEBOOK DIRECTORY:
+
+Maintain a notebook directory (Section 10.3.6) as part of the project's
+reference materials. This directory maps all project notebooks to their
+IDs, contents, and query purposes. Store the directory in the project's
+Guides or Reference folder and embed it in the Bootstrap template.
+
+RELATIONSHIP TO FOLDER STRUCTURE:
+
+Notebooks and folders serve complementary purposes:
+- Folders preserve files as discrete artifacts (browsable, versionable)
+- Notebooks preserve content as queryable knowledge (searchable,
+  retrievable by topic)
+
+A well-organized project maintains both: folders for file management
+and notebooks for context recovery. The same artifacts live in both
+systems — the folder stores the file, the notebook indexes its content.
+
+
+------------------------------------------------------------------------
+ADDITION 2: Section 6.6 Organization Hygiene — ADD to 6.6.1 Session-
+Level Hygiene (after approximately line 3642)
+------------------------------------------------------------------------
+
+INSERT (append to existing 6.6.1 content):
+
+If using notebook connectivity:
+- Upload session transcript to the project notebook
+- Upload non-ephemeral artifacts (specifications, findings, deliverables)
+- If using the consolidated document approach, update the master
+  document and re-sync
+
+See Section 10.3.3 for the detailed upload workflow.
+
+
+------------------------------------------------------------------------
+ADDITION 3: Section 6.6 Organization Hygiene — ADD to 6.6.2 Weekly
+Hygiene (after approximately line 3653)
+------------------------------------------------------------------------
+
+INSERT (append to existing 6.6.2 content):
+
+If using notebook connectivity:
+- Verify notebooks are current (no sessions missing from the corpus)
+- Review notebook source count against plan limits
+- Update the notebook directory if notebooks were added or reorganized
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+- Addition 1: New subsection 6.2.4 after Archive Structure
+- Addition 2: Append to 6.6.1 Session-Level Hygiene
+- Addition 3: Append to 6.6.2 Weekly Hygiene
+
+These additions are lightweight — the substantive notebook content lives
+in Section 10.3. Section 6 provides the organizational framework that
+notebooks fit within.
+
+CROSS-REFERENCES:
+- 6.2.4 references Section 10.3 (full notebook connectivity guidance)
+  and Section 10.3.6 (notebook directory)
+- 6.6.1 references Section 10.3.3 (upload workflow)
+- All additions use the same naming convention patterns established in
+  6.1 (project handle prefix)
+
+CONSISTENCY:
+- Aligns with Section 10.3.4 (Notebook Organization Strategy) which
+  covers the same concepts from the tools perspective
+- Aligns with TPL-003 v2.0 Part B (User Responsibilities) which
+  includes notebook sync
+- Aligns with Section 4.3.3 closeout protocol user duties
+
+================================================================================
+END OF SECTION 6 NOTEBOOK ENHANCEMENT DRAFT
+================================================================================

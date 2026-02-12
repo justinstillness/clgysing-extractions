@@ -1,0 +1,210 @@
+================================================================================
+DRAFT — INTEGRATION POINTS FOR SESSION E CONTENT
+================================================================================
+Target:     Multiple existing sections and prior drafts in GOV-AIPM
+Drafted:    Session 037
+Categories: 10 (Phase Transitions), 11 (Operational Refinements)
+            — integration weave
+Status:     DRAFT — pending user review
+================================================================================
+
+These are targeted insertions and modifications that create the
+cross-reference web connecting Session E content to the rest of the
+manual and to prior session drafts.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 1: Section 2.7.3 Phase Transition Orientation Duty
+Location: Existing Section 2.7.3 (lines 1239-1264 in v1.0.7)
+Action: ADD reference to the 8-step process
+------------------------------------------------------------------------
+
+ADD after the existing "AI Behaviors" list (after approximately
+line 1258):
+
+The full phase transition process — an 8-step protocol covering
+assessment, consolidation, synthesis, deferred item review, scope
+definition, Phase Protocol evaluation, rolling record updates, and
+artifact generation — is specified in Section 4.3.5.2. The AI leads
+this process, presenting each step's outputs for user review.
+
+REPLACE the existing cross-reference line (line 1264):
+
+Cross-reference: Section 4.3.5 provides the full Phase Transition
+Protocol including the 8-step process and the husk-vs-coconut
+synthesis principle.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 2: Section 2.7 AI Coordinator Duties — Summary
+Location: Section 2.7.8 "What Users Should Expect" (lines 1374-1398)
+Action: ADD Conflict Resolution awareness to the expectation list
+------------------------------------------------------------------------
+
+ADD to the existing expectation list (after "The AI will prompt for
+decision documentation", approximately line 1386):
+
+- The AI will flag conflicts between protocol behaviors and project
+  objectives, proposing resolution options rather than silently
+  deviating or rigidly adhering
+
+ADD to the sentence list in the explanation paragraph:
+
+If the AI follows a protocol rigidly when it clearly harms the
+project's objectives, or deviates from protocol without flagging the
+deviation, the Conflict Resolution Protocol (Section 4.5) has not been
+properly adopted.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 3: Section 5.2.5 Phase Protocol Lifecycle
+Location: Session A draft Section 5.2.5, "TRANSITION" block
+Action: ADD cross-reference to the 8-step process
+------------------------------------------------------------------------
+
+ADD at the end of the TRANSITION block (after "redraft is an
+intentional decision made during the phase transition, not assumed"):
+
+The phase transition process (Section 4.3.5.2) specifies the full
+8-step protocol that includes Phase Protocol evaluation as Step 6.
+The evaluation questions — behavioral change needs, methodology shifts,
+Layer 3 updates, addendum accumulation, and behavioral lessons — are
+executed as part of this structured transition process.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 4: Section 4.3.1 Session Initiation
+Location: Session B draft Section 4.3.1 (continuation sequence)
+Action: VERIFY Phase Protocol evaluation reference
+------------------------------------------------------------------------
+
+VERIFICATION: Session B's Section 4.3.1 already includes Phase Protocol
+review as the mandatory first action in the continuation sequence
+(Step 2). No additional modification needed for Session E content.
+
+However, Session B's Section 4.3.1 notes that the Branch Sessions
+sequence references "Section [Branch Management]" — this should be
+updated to "Section 12.3" per Session D's branch management draft.
+
+UPDATE in the Branch Sessions sequence:
+
+  1. User provides Branch Startup File (see Section 12.3)
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 5: Session D Backlog Register — Scope Monitoring
+         Placeholder Resolution
+Location: Session D draft Section 5.9.4 and 5.9.7
+Action: RESOLVE placeholder references to Scope Monitoring Duty
+------------------------------------------------------------------------
+
+Session D's Backlog Register enhancement includes placeholder
+references to the Scope Monitoring Duty:
+
+In Section 5.9.4 (enhanced AI Coordinator Role):
+REPLACE: "(Scope Monitoring Duty)" or similar placeholder
+WITH: "(Section 2.7.2)"
+
+In Section 5.9.7 (Insight Capture Protocol):
+REPLACE: "The AI's Scope Monitoring Duty (Section [Session E
+placeholder])"
+WITH: "The AI's Scope Monitoring Duty (Section 2.7.2)"
+
+REPLACE: "per Section [Scope Monitoring]"
+WITH: "per Section 2.7.2"
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 6: Section 2.2.3 Internal Cross-Reference
+Location: Session E draft Section 2.2.3 enhancement
+Action: NOTE for Session G — resolve "Section 3.X" placeholder
+------------------------------------------------------------------------
+
+The Session E Section 2.2.3 enhancement references "Section 3.X
+(Instruction Chain Interpretation)" with a placeholder number. During
+Session G integration:
+
+REPLACE: "Section 3.X"
+WITH: "Section 3.8" (or final number if Section 3 is reorganized)
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 7: Phase Protocol Template — Layer 1 Verification
+Location: Session A draft Templates (Phase Protocol Template, Part A)
+Action: VERIFY Layer 1 items match Session E specifications
+------------------------------------------------------------------------
+
+VERIFICATION: Session A's Phase Protocol Template (Part A — AIPM
+Framework Behaviors) lists:
+
+- Conflict resolution protocol (stop, flag, explain, propose, await,
+  document)
+- Instruction chain interpretation rules (sequential with alignment
+  checkpoints)
+
+Both now have full specifications:
+- Conflict Resolution → Section 4.5 (this session)
+- Instruction Chain → Section 3.8 (this session)
+
+No template modification needed — the Layer 1 references are already
+accurate. Session G should verify the cross-reference section numbers
+are correct in the template.
+
+
+------------------------------------------------------------------------
+INTEGRATION POINT 8: Table of Contents
+Location: Lines 1-160 (TOC in v1.0.7)
+Action: ADD new sections to TOC
+------------------------------------------------------------------------
+
+ADD to Section 3 TOC entries (after 3.7):
+    3.8 Instruction Chain Interpretation
+
+ADD to Section 4 TOC entries (after 4.4, accounting for Session C's
+CTP placement):
+    4.5 Conflict Resolution Protocol
+
+NOTE: Section numbering for the existing 4.4+ content will depend on
+Session G's renumbering decisions. The TOC additions here assume:
+- 4.4 = Connector Transparency Protocol (Session C)
+- 4.5 = Conflict Resolution Protocol (this session)
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+ORDERING:
+These integration points should be applied during Session G along with
+all integration points from Sessions A-D. They are non-destructive
+additions except where explicitly noted as replacements.
+
+Integration Point 5 resolves placeholders created in Session D — it
+should be applied after Session D's content is integrated.
+
+Integration Point 6 is a self-referential note about this session's own
+drafts — it reminds Session G to resolve the cross-reference.
+
+SESSION E DRAFT FILE CROSS-REFERENCE:
+| Integration Point | Related Draft File                              |
+|-------------------|-------------------------------------------------|
+| 1 (Phase Trans.)  | DRAFT_Section_4-3-5_Phase-Transitions-Revised   |
+| 2 (Coordinator)   | DRAFT_Section_4-5_Conflict-Resolution-Protocol  |
+| 3 (PP Lifecycle)  | DRAFT_Section_4-3-5_Phase-Transitions-Revised   |
+| 4 (Session Init.) | Session B DRAFT_Section_4-3 (verification only) |
+| 5 (Scope Monitor) | DRAFT_Section_2-7-2_Scope-Monitoring-Enhanced   |
+| 6 (Self-ref.)     | DRAFT_Section_2_Core-Philosophy-Enhancements    |
+| 7 (PP Template)   | Session A DRAFT_Templates_Phase-Protocol         |
+| 8 (TOC)           | All Session E drafts                            |
+
+CUMULATIVE INTEGRATION POINT COUNT:
+- Session A: 8 integration points
+- Session B: 0 (content was self-contained revisions)
+- Session C: 0 (content was self-contained additions)
+- Session D: 4 integration points
+- Session E: 8 integration points (this document)
+- Total: 20 integration points for Session G
+
+================================================================================
+END OF SESSION E INTEGRATION POINTS DRAFT
+================================================================================

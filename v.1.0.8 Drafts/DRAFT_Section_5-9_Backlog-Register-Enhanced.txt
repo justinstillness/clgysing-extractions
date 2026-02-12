@@ -1,0 +1,373 @@
+================================================================================
+DRAFT — SECTION 5.9 BACKLOG REGISTER (ENHANCEMENT — INSIGHT CAPTURE)
+================================================================================
+Target Location: Section 5.9 (renumbered from current 5.7 per v1.0.8
+                 structural changes)
+                 ENHANCEMENT — adds new subsections to existing content
+Current Lines:   3058-3166 in v1.0.7 (Section 5.7)
+Drafted:         Session 036
+Category:        9 (Insight Capture / Out-of-Phase Backlog) from
+                 Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE: The existing Section 5.7 content (now 5.9) is well-structured
+and adequate. This enhancement adds the Insight Capture Protocol as a
+formal mechanism for populating the Backlog Register — the "how items
+get captured" that complements the existing "how items are organized
+and tracked."
+
+The existing subsections are retained:
+- 5.9.1 Definition (current 5.7.1 — unchanged)
+- 5.9.2 The Reporting Triad (current 5.7.2 — unchanged)
+- 5.9.3 Register Sections (current 5.7.3 — unchanged)
+- 5.9.4 Maintenance Pattern (current 5.7.4 — enhanced)
+- 5.9.5 Phase Traceability (current 5.7.5 — unchanged)
+- 5.9.6 Template Reference (current 5.7.6 — updated ref)
+- 5.9.7 Insight Capture Protocol (NEW — this draft)
+- 5.9.8 Backlog Evaluation Sessions (NEW — this draft)
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+------------------------------------------------------------------------
+ENHANCEMENT 1: Section 5.9.4 Maintenance Pattern — ENHANCE existing
+"AI Coordinator Role" content
+------------------------------------------------------------------------
+
+REPLACE the existing "AI Coordinator Role" paragraph with expanded
+version:
+
+AI Coordinator Role:
+
+The AI maintains the Backlog Register as part of its coordinator duties.
+This includes both reactive capture (responding to user-flagged items)
+and proactive detection (identifying scope-adjacent content through the
+Insight Capture Protocol — see Section 5.9.7).
+
+Specific duties:
+- Proactively detects scope expansion and proposes backlog capture
+  (Scope Monitoring Duty)
+- Conducts the brief containable survey when backlog capture is
+  triggered
+- Generates Backlog Item entries with proper schema and provenance
+- Updates the register at session closeout
+- Reviews register contents at phase transitions
+- Flags patterns (e.g., excessive deferrals from one phase may indicate
+  scope problems; recurring items across sessions may indicate
+  unresolved needs)
+
+The AI's Scope Monitoring Duty (Section [Session E placeholder])
+requires continuous attention to whether emerging work falls within
+or outside the current phase scope. When work appears to cross scope
+boundaries, the AI does not silently expand scope — it pauses, flags
+the expansion, and offers the Insight Capture Protocol as a structured
+way to preserve the idea without disrupting current work.
+
+
+------------------------------------------------------------------------
+ENHANCEMENT 2: New Section 5.9.7 — INSERT after Section 5.9.6
+------------------------------------------------------------------------
+
+INSERT:
+
+5.9.7 Insight Capture Protocol
+---------------------------------
+
+The Insight Capture Protocol provides a formal mechanism for capturing
+valuable ideas, observations, and out-of-scope work items that arise
+during active sessions. It prevents two competing risks: scope creep
+(pursuing every interesting tangent) and idea loss (letting valuable
+observations disappear into transcript history).
+
+The protocol operates in two phases across different temporal contexts.
+
+PHASE 1 — CAPTURE (In-Session):
+
+Capture occurs in real-time when an out-of-scope item surfaces during
+active work. The process is designed to be minimally disruptive —
+typically 2-3 minutes of focused exchange before returning to current
+scope.
+
+Trigger: The capture protocol is triggered when:
+- The AI detects scope expansion through its Scope Monitoring Duty
+  (proactive detection)
+- The user flags an idea that falls outside current scope
+  ("That's a good idea for later" or "We should backlog that")
+- An unexpected discovery during research or execution has implications
+  beyond the current phase
+
+AI Detection Guidance: The AI should recognize scope expansion signals
+including:
+- Ideas that reference future phases or versions
+- Work items that depend on capabilities not yet established
+- Observations that are valuable but tangential to current objectives
+- User enthusiasm for a direction that diverges from agreed scope
+- Requests that would require new tools, templates, or processes not
+  in the current phase's scope
+
+Capture Sequence:
+
+1. PAUSE. The AI pauses current work and names the observation:
+   "This appears to extend beyond our current phase scope — [brief
+   characterization]. Shall I capture it as a backlog item?"
+
+2. USER DECISION. The user responds:
+   - "Yes, capture it" → proceed to step 3
+   - "No, let's pursue it now" → scope expansion (requires formal
+     decision per Section [Scope Monitoring])
+   - "No, discard" → return to current work
+   - "Let's discuss briefly" → brief exploration before deciding
+
+3. BRIEF CONTAINABLE SURVEY. If capturing, the AI asks 3-5 targeted
+   questions to document the item with enough context for future
+   evaluation. The survey is containable — it has a defined end point
+   and does not expand into full exploration.
+
+   Standard survey questions:
+   - What is the core idea or observation? (1-2 sentences)
+   - What triggered this insight? (provenance)
+   - How might this impact the project if pursued? (rough assessment)
+   - Where do you think this belongs? (initial routing suggestion)
+   - How urgent is this relative to current work? (priority signal)
+
+   The AI may adapt or reduce these questions based on context. If the
+   item is simple and well-understood, 2-3 questions may suffice.
+
+4. GENERATE BACKLOG ITEM. The AI creates a structured Backlog Item
+   entry using the schema below and confirms with the user.
+
+5. RETURN TO SCOPE. Work immediately returns to the current session's
+   objectives. The captured item is noted in the Session Log's Scope
+   Observations section and the Backlog Register is updated.
+
+BACKLOG ITEM SCHEMA:
+
+Each captured item follows a seven-field schema:
+
+| Field                | Content                                       |
+|----------------------|-----------------------------------------------|
+| Item ID              | Backlog-Item-[NNN] (sequential, project-wide)  |
+| Description          | Concise summary of the idea or observation     |
+| Context / Provenance | What triggered the insight — session, activity, |
+|                      | specific observation that surfaced the item     |
+| Potential Impact     | Rough assessment of value if pursued            |
+| Suggested Routing    | Initial thought on where the item belongs:      |
+|                      | new feature, future task, document update,      |
+|                      | process improvement, or uncertain               |
+| Priority Assessment  | HIGH / MEDIUM / LOW (initial estimate, subject  |
+|                      | to re-evaluation during Phase 2)                |
+| Status               | CAPTURED (initial status upon creation)         |
+
+STATUS LIFECYCLE:
+
+Backlog items progress through three statuses:
+
+CAPTURED: The item has been documented through the Insight Capture
+Protocol. It has provenance data and an initial assessment but has not
+been formally evaluated. All items begin here.
+
+EVALUATED: The item has been reviewed in a Backlog Evaluation Session
+(Section 5.9.8). Its priority has been confirmed or adjusted, its
+routing has been determined, and a decision has been made about whether
+and when to act on it.
+
+ROUTED: The item has been assigned to its destination — a specific
+phase, a branch, a document update, or discarded. Routed items leave
+the active backlog and are tracked in their destination context.
+
+The status lifecycle ensures that captured items do not languish
+indefinitely. Items that remain in CAPTURED status across multiple
+phases should be flagged for evaluation.
+
+
+PHASE 2 — EVALUATION AND ROUTING (Dedicated Session):
+
+Phase 2 occurs periodically — not in every session, but at natural
+review points in the project lifecycle.
+
+Evaluation Triggers:
+- Phase transitions (before planning the next phase, review accumulated
+  backlog items)
+- Dedicated backlog evaluation sessions (scheduled when items accumulate)
+- Project planning sessions that assess scope and priorities
+- Pre-closure reviews (before project completion, disposition all
+  remaining items)
+
+The evaluation process:
+1. Review all items in CAPTURED status
+2. For each item, assess:
+   - Is this still relevant given current project state?
+   - Has this already been addressed through other work?
+   - What is the revised priority given current context?
+   - Where should this be routed?
+3. Route each item to its destination:
+   - New component or feature → add to project scope (requires
+     formal decision)
+   - Future task → assign to a specific phase or session
+   - Document update → create a specific update task
+   - Process improvement → add to process improvement register
+   - Discard → mark as discarded with brief rationale
+4. Update status to EVALUATED, then ROUTED once assigned
+
+See Section 5.9.8 for guidance on structuring Backlog Evaluation
+Sessions.
+
+RELATIONSHIP TO EXISTING BACKLOG REGISTER SECTIONS:
+
+Items routed through the Insight Capture Protocol land in the existing
+Backlog Register sections (5.9.3):
+
+| Routing Destination   | Register Section          |
+|-----------------------|---------------------------|
+| New feature / scope   | Current Project Backlog   |
+| Future version item   | Version Backlog           |
+| Process improvement   | Process Improvements      |
+| Uncertain / deferred  | Parking Lot               |
+| Discarded             | Removed (with note)       |
+
+The Insight Capture Protocol is the input mechanism; the existing
+Register sections are the organizational structure. Together, they
+provide end-to-end lifecycle management for out-of-scope items.
+
+
+------------------------------------------------------------------------
+ENHANCEMENT 3: New Section 5.9.8 — INSERT after Section 5.9.7
+------------------------------------------------------------------------
+
+INSERT:
+
+5.9.8 Backlog Evaluation Sessions
+------------------------------------
+
+When accumulated backlog items warrant dedicated review, a Backlog
+Evaluation Session provides focused time to assess, prioritize, and
+route items.
+
+WHEN TO HOLD:
+
+Backlog Evaluation is not a standalone session type — it is typically
+a work block within a phase transition session, a planning session, or
+a dedicated maintenance session. It can also be combined with other
+review activities (Project Roadmap update, Phase Protocol evaluation).
+
+Triggers for scheduling evaluation:
+- 10+ items in CAPTURED status
+- A phase transition is approaching
+- Items have been in CAPTURED status for more than 3 sessions
+- The user requests a backlog review
+
+SESSION STRUCTURE:
+
+1. Load the Backlog Register (or the relevant section)
+2. Review items in CAPTURED status, oldest first
+3. For each item, the AI presents the item and facilitates a brief
+   assessment:
+   - Is it still relevant?
+   - Has the priority changed?
+   - Where should it be routed?
+4. User decides disposition for each item
+5. AI updates item statuses and routes items to their destinations
+6. Updated Register is saved as a session artifact
+
+EFFICIENCY GUIDANCE:
+
+Backlog evaluation should be efficient — spend proportional time on
+each item. Simple items (clear routing, obvious priority) need only
+a confirmation. Complex items (uncertain value, multiple possible
+destinations) warrant brief discussion.
+
+Target pace: 2-3 minutes per item for simple items, 5-10 minutes for
+complex items. A session reviewing 15 items should take roughly 30-60
+minutes, not an entire session.
+
+
+------------------------------------------------------------------------
+ENHANCEMENT 4: Section 5.9.6 Template Reference — UPDATE
+------------------------------------------------------------------------
+
+REPLACE existing template reference:
+
+5.9.6 Template Reference
+--------------------------
+
+Template TPL-023 (Backlog Register) provides the standard structure for
+the register itself. The register is a living document updated
+throughout the project lifecycle. At project closure, its contents
+transfer to the Closure Report (TPL-022) Section 4.
+
+The Insight Capture Protocol (Section 5.9.7) uses the Backlog Item
+schema to create structured entries. Items captured through the protocol
+are initially placed in the register's appropriate section based on
+suggested routing, then formally evaluated and routed during Backlog
+Evaluation Sessions (Section 5.9.8).
+
+Cross-reference: Section 5.10 (Project Closure Report) for end-of-
+project backlog disposition.
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+- Enhancement 1: Replaces the "AI Coordinator Role" paragraph in
+  existing Section 5.7.4 (renumbered to 5.9.4)
+- Enhancement 2: New Section 5.9.7 after 5.9.6
+- Enhancement 3: New Section 5.9.8 after 5.9.7
+- Enhancement 4: Updates existing 5.9.6 template reference
+
+NUMBERING:
+All existing subsection numbers shift from 5.7.x to 5.9.x per the
+v1.0.8 renumbering. Content within existing subsections is unchanged
+except as noted above.
+
+CROSS-REFERENCES TO ESTABLISH IN SESSION G:
+- Section 4.3.2 (Active Session Management): Already says "Defer
+  out-of-scope items to the Backlog Register" — enhance to reference
+  the Insight Capture Protocol (integration point drafted this session)
+- Section 2.7 or equivalent (AI Duties): Scope Monitoring Duty should
+  reference the Insight Capture Protocol as its constructive outlet
+- Session E: Scope Monitoring Duty section (Category 10/11) should
+  cross-reference 5.9.7 for the capture mechanism
+- Section 4.3.3 (Closeout): Session closeout already reviews backlog
+  items — consistent with 5.9.4 maintenance pattern
+- TPL-023 (Backlog Register template): May benefit from adding the
+  Backlog Item schema fields alongside the existing BL-### format.
+  Evaluate in Session G whether TPL-023 needs revision or whether
+  the schema in 5.9.7 is the authoritative specification.
+
+CONSISTENCY WITH PRIOR DRAFTS:
+- Session B Section 4.3.2 (Active Session Management): Contains
+  "Defer out-of-scope items to the Backlog Register or appropriate
+  future sessions" — the Insight Capture Protocol formalizes this
+  existing guidance with a structured mechanism
+- Session B TPL-003 v2.0 (Closeout Checklist): Step 1 Loose Ends
+  Assessment includes scope items review — consistent with backlog
+  capture at closeout
+- Session A Section 5.2 (Phase Protocol): Layer 1 behaviors include
+  scope management — the Scope Monitoring Duty is the implementation
+  of this behavioral requirement
+
+RELATIONSHIP TO CATEGORY 10 (SESSION E):
+Category 10 includes the Scope Monitoring Duty specification. The
+Insight Capture Protocol (this draft) is the constructive outlet for
+scope monitoring. Session E should cross-reference this section when
+drafting the Scope Monitoring Duty — the duty detects; the protocol
+captures.
+
+DESIGN DECISION — UNIFIED PLACEMENT:
+The Insight Capture Protocol is placed entirely within Section 5.9
+(Backlog Register) rather than split between Section 4 (behavioral
+protocol) and Section 5 (artifact structure). Rationale: the capture
+mechanism and the repository are tightly coupled — the protocol exists
+to populate the register. Splitting them would require readers to
+cross-reference two sections to understand a single workflow. Section 4
+receives a lightweight cross-reference (integration point) directing
+readers to 5.9.7 for the full protocol.
+
+================================================================================
+END OF SECTION 5.9 ENHANCEMENT DRAFT
+================================================================================

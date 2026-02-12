@@ -1,0 +1,581 @@
+================================================================================
+DRAFT SECTION — For integration into GOV-AIPM v1.0.8-DRAFT
+================================================================================
+Target Location: Section 4.3.5 (MAJOR REVISION — replaces existing
+                 4.3.5 content, lines 2454-2654 in v1.0.7)
+Drafted:         Session 037
+Categories:      10 (Phase Transition Refinements), 11 (Operational
+                 Refinements — partial) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE ON SESSION A INTEGRATION:
+
+This draft supersedes Session A Integration Point 2
+(DRAFT_Integration-Points_Phase-Protocol.txt), which established a stub
+for Phase Protocol evaluation within phase transitions. That stub's
+content — the evaluation questions and carry-forward documentation — is
+fully incorporated into Step 6 of the 8-step process below.
+
+This draft also supersedes the existing v1.0.7 Section 4.3.5 content.
+The existing content (recognition criteria, upload requirements, AI and
+user responsibilities, horizon view, checklist) is incorporated into the
+new structure rather than discarded.
+
+NOTE ON SESSION B CONTEXT:
+
+The Session B revision of Section 4.3 (DRAFT_Section_4-3_Session-
+Lifecycle-Revised.txt) explicitly retained 4.3.5 for Session E revision.
+This draft provides that revision. Section 4.3.5.2.1 (Token
+Considerations for Phase Transitions) content is retained and updated
+within the new structure.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+4.3.5 Phase Transition Sessions
+---------------------------------
+
+Phase transitions are not ordinary session boundaries. They are the
+zero-crossings in the project's sine wave rhythm — strategic pauses
+between execution peaks where the project consolidates completed work
+and prepares for the next phase. Understanding this character is
+essential: transition sessions are planning-heavy and execution-light
+by design, not because something has stalled.
+
+The sine wave model (introduced in Section 2.5.1) visualizes this
+rhythm:
+
+- Peaks represent active phase work — high-output execution sessions
+  where deliverables are produced and the project advances.
+- Zero-crossings represent transition work — consolidation, planning,
+  protocol revision, and preparation for the next execution peak.
+- The first zero-crossing is rooting (Phase 0), which occurs before the
+  first peak. Subsequent zero-crossings are the phase transitions
+  described in this section.
+
+Transition sessions consume their token budget primarily on planning,
+scoping, and administrative work rather than content production. Users
+and AI coordinators should expect this character and not interpret it
+as unproductive. The investment in a thorough transition pays dividends
+throughout the next execution phase.
+
+
+4.3.5.1 Recognizing Phase Boundaries
+--------------------------------------
+
+Phase transitions occur when:
+
+- Planned phase deliverables are complete or substantially complete
+- The project reaches a natural inflection point (e.g., research
+  complete, moving to execution; drafting complete, moving to review)
+- Work type shifts significantly enough that AI behaviors, methodology,
+  or coordination patterns need to change
+- Phase exit criteria (as defined in the Project Guide or Phase
+  Protocol) are met
+- The Bootstrap explicitly indicates phase completion
+
+Not every significant milestone is a phase boundary. Phases are major
+divisions of work with distinct objectives and behavioral requirements.
+If you are unsure whether a transition has occurred, consult the Project
+Guide — the phase structure defined there is authoritative.
+
+AI BEHAVIORAL NOTE: When the AI recognizes a phase boundary, it
+explicitly names it: "We've completed Phase X. Before beginning Phase Y,
+let's conduct the phase transition process." The AI should not treat
+phase transitions as ordinary sessions or proceed into new phase work
+without the transition protocol.
+
+Cross-reference: Section 2.7.3 details the AI's Phase Transition
+Orientation Duty.
+
+
+4.3.5.2 The 8-Step Phase Transition Process
+---------------------------------------------
+
+The phase transition process follows eight steps that move from
+assessment of completed work through preparation for upcoming work. The
+steps are sequential — each builds on the prior step's output.
+
+STEP 1 — ASSESS.
+
+Review the current position and readiness for transition:
+- Are phase exit criteria met? (Verify against the Project Guide or
+  Phase Protocol's exit criteria for the current phase.)
+- What is the state of each deliverable? (Complete, substantially
+  complete, or partially complete?)
+- Are there outstanding items that must be resolved before the
+  transition, or can they carry forward?
+
+If exit criteria are not met, the transition may be premature. The AI
+should flag this: "Phase exit criteria X and Y are not yet met. Should
+we continue the current phase, or proceed with the transition noting
+these as incomplete?"
+
+STEP 2 — CONSOLIDATE.
+
+Gather the project record from the completed phase:
+- Session Logs from all sessions in the phase
+- Session Fidelity Reports (embedded in Session Logs)
+- Decision Log entries made during the phase
+- Findings Reports generated during the phase
+- Backlog Register (current state)
+- Any other phase-specific artifacts
+
+For projects using notebook connectivity, the notebook provides access
+to the full phase record without requiring every document to be uploaded
+to the session. The AI may query the notebook for specific consolidation
+needs rather than loading all documents.
+
+STEP 3 — SYNTHESIZE.
+
+Extract the essential knowledge from the completed phase using
+husk-vs-coconut filtering.
+
+THE HUSK VS. COCONUT PRINCIPLE:
+
+Phase transitions require carrying forward what matters and leaving
+behind what does not. A project's conversational history accumulates
+both essential knowledge (coconut) and ephemeral content (husk). The
+synthesis step separates them.
+
+COCONUT — Keep and carry forward:
+- Finalized decisions and their rationale
+- Crystallized conclusions and validated findings
+- Validated methodologies and confirmed approaches
+- Confirmed scope boundaries and constraints
+- Terminology, conventions, and standards established
+- Lessons learned that affect future work
+- Dependencies and integration points
+
+HUSK — Leave behind:
+- Conversational filler and exploratory tangents
+- Rejected hypotheses and superseded options
+- Unanswered questions that were resolved later
+- Intermediate drafts that were replaced by final versions
+- Process discussion that informed decisions now captured elsewhere
+- Speculative analysis that did not lead to conclusions
+
+The synthesis output is a concise summary of what the completed phase
+accomplished and what knowledge persists into the next phase. This
+summary informs the Bootstrap and provides context for Phase Protocol
+evaluation.
+
+The husk-vs-coconut principle also applies to the Bootstrap itself.
+Phase transition bootstraps should carry forward coconut content and
+shed husk content that accumulated in session-to-session bootstraps
+during the phase. This is a natural decluttering point.
+
+STEP 4 — REVIEW DEFERRED ITEMS.
+
+Assess the Backlog Register and any items deferred during the completed
+phase:
+- Which deferred items belong in the upcoming phase?
+- Which should remain deferred to later phases?
+- Which are no longer relevant and should be retired?
+- Have any deferred items become urgent due to phase completion?
+
+If the project uses the Insight Capture Protocol (Section 5.9.7), review
+captured items that were routed to "future phase" during the completed
+phase. The transition is the natural evaluation point for these items.
+
+Cross-reference: Section 5.9.8 (Backlog Evaluation Sessions) provides
+the framework for systematic backlog review.
+
+STEP 5 — DEFINE UPCOMING PHASE SCOPE.
+
+Establish boundaries for the next execution phase:
+- Phase objectives: What will this phase accomplish?
+- Deliverables: What tangible outputs will it produce?
+- Success criteria: How will we know the phase is complete?
+- Estimated sessions: How many sessions should this phase require?
+- Required materials: What documents, tools, or external inputs are
+  needed?
+- Constraints: Timeline, resources, dependencies on other workstreams
+
+This is the Phase Execution Brief — a forward-looking plan for the
+upcoming phase. The AI generates this from the Project Guide's phase
+structure (which defined the phase at project inception) updated by
+current project state and any scope adjustments from the completed
+phase.
+
+THE HORIZON VIEW:
+
+As part of scope definition, the AI provides a horizon view — a
+deliberate pause to see both backward and forward:
+
+What We've Accomplished: Summary of the completed phase's deliverables,
+key decisions, and how the project has evolved through the phase.
+
+Where We're Going: Overview of the upcoming phase objectives, expected
+work, and how this phase connects to project completion.
+
+The horizon view prevents accumulating drift. When deep in execution,
+it is easy to lose sight of the larger trajectory. Phase transitions
+force a return to strategic visibility — verifying that the project
+remains on course and that upcoming work still serves the original
+objectives.
+
+The horizon view is not optional overhead — it is the mechanism that
+keeps multi-phase projects coherent across what may be weeks or months
+of work.
+
+STEP 6 — EVALUATE AND UPDATE THE PHASE PROTOCOL.
+
+At every phase transition, the Phase Protocol must be explicitly
+evaluated. This evaluation is mandatory — even if the conclusion is
+that no changes are needed, the evaluation must occur and the conclusion
+must be documented.
+
+EVALUATION QUESTIONS:
+
+- Do AI behaviors need to change for the upcoming phase? (e.g., shifting
+  from research behaviors to drafting behaviors, from exploration to
+  execution)
+- Has the methodology (Layer 2) shifted? (e.g., moving from a research
+  methodology to a writing methodology)
+- Have project-specific parameters (Layer 3) changed? (e.g., new
+  deliverable formats, new terminology, new constraints)
+- Have addenda accumulated during the completed phase that warrant a
+  clean redraft? (Guideline: more than three addenda suggests a
+  redraft.)
+- Are there behavioral lessons from the completed phase to incorporate?
+  (e.g., "the AI kept forgetting X" → add explicit instruction for X)
+
+IF NO CHANGES NEEDED: The existing Phase Protocol carries forward with
+a version note confirming it was reviewed at the transition and found
+adequate. Document the evaluation in the transition session's Session
+Log.
+
+IF CHANGES NEEDED: The AI redrafts the Phase Protocol for the upcoming
+phase. The redraft process:
+
+1. Begin with the existing Phase Protocol as a baseline
+2. Layer 1 (AIPM Framework Behaviors): Update if any framework-level
+   behaviors need adjustment (rare — usually stable)
+3. Layer 2 (Methodology Context): Update if the upcoming phase uses a
+   different methodology or approach than the completed phase
+4. Layer 3 (Project-Specific Context): Update for new phase objectives,
+   deliverables, conventions, and any project-specific behavioral
+   requirements
+5. Incorporate any addenda from the completed phase that should become
+   permanent
+6. Remove any behavioral guidance specific to the completed phase that
+   no longer applies
+7. User reviews and approves the new Phase Protocol
+8. Store the new Phase Protocol in Project Knowledge; archive the
+   prior version
+
+VERSION DISCIPLINE:
+- New phase → new major version (v1.0 → v2.0)
+- The new version's naming follows the convention in Section 5.2.9
+
+Cross-reference: Section 5.2.5 details the Phase Protocol lifecycle.
+Section 5.2.6 covers the addendum pattern.
+
+STEP 7 — UPDATE ROLLING RECORDS.
+
+Consolidate and update the project's rolling records:
+
+- Decision Log: Verify all phase decisions are captured with proper
+  numbering and rationale. The consolidated decision record should
+  reflect coconut content only — the decisions themselves and their
+  rationale, not the conversational context in which they were made.
+
+- Terminology and Conventions: If the project maintains a terminology
+  guide or conventions document, update it with any new terms or
+  standards established during the completed phase.
+
+- Cross-Reference Map: If the project maintains cross-reference maps
+  between documents, artifacts, or sections, verify they are current.
+
+- Project Roadmap (TPL-010): Mark the completed phase as done. Update
+  the current position indicator. Verify that the upcoming phase
+  definition still matches the Project Guide.
+
+- Project Guide: If scope changed materially during the completed phase,
+  update the Project Guide to reflect the current state. The Project
+  Guide should always reflect reality — not the original plan if the
+  plan has evolved.
+
+STEP 8 — GENERATE TRANSITION ARTIFACTS.
+
+Produce the artifacts that bridge the completed phase to the upcoming
+phase:
+
+- Bootstrap for the first session of the new phase. This Bootstrap
+  should be a clean document — not a copy of the last session's
+  Bootstrap with modifications, but a fresh document reflecting the
+  transition synthesis. It carries coconut content from the completed
+  phase and forward-looking context for the new phase, including a
+  mandatory first action to review the Phase Protocol (new or carried
+  forward).
+
+- Transition Summary (optional but recommended for complex projects):
+  A brief document capturing the transition's key outputs — what the
+  completed phase accomplished, what the upcoming phase will address,
+  any decisions made during the transition, and any items carried
+  forward or deferred. This is particularly useful when the transition
+  itself spans content that the Bootstrap alone cannot capture.
+
+- Updated Phase Protocol (if redrafted in Step 6), stored in Project
+  Knowledge.
+
+- Updated Project Roadmap (from Step 7).
+
+
+4.3.5.3 Phase Transition Upload Requirements
+----------------------------------------------
+
+At phase boundaries, provide the AI with strategic context — not just
+tactical state:
+
+Project Guide: The authoritative strategic plan. Phase transitions
+require returning to strategic context, not just tactical state. The
+Project Guide reminds both user and AI of the project's identity and
+intended trajectory.
+
+Project Roadmap (TPL-010): Shows the full phase structure, current
+position, and what the upcoming phase entails. The roadmap is the
+horizon-level view.
+
+Bootstrap from the final session of the prior phase: Carries forward
+tactical details and session state.
+
+Phase Protocol (from Project Knowledge): The behavioral governance
+document for the completed phase. Needed for the Step 6 evaluation.
+
+Phase-Specific Materials: If the upcoming phase requires reference
+materials not previously loaded — research outputs, stakeholder inputs,
+revised specifications — include them now.
+
+TOKEN CONSIDERATIONS:
+
+Phase transitions require heavier document loading than typical session
+continuations. This increased context consumption warrants explicit
+attention:
+
+1. Start a fresh session. Phase transitions should not occur
+   mid-session; the prior session should close out cleanly before the
+   transition begins.
+
+2. Request a headroom assessment before loading documents. Establish
+   baseline capacity to inform loading decisions.
+
+3. Load documents in priority order: Project Guide first, then Roadmap,
+   then Bootstrap, then Phase Protocol. This ensures strategic context
+   is established before tactical details.
+
+4. If materials are extensive, consider providing summaries rather than
+   full documents for reference items that will not require direct
+   editing.
+
+5. After loading, confirm remaining headroom before proceeding with
+   transition work. Do not assume sufficient capacity remains.
+
+For projects using notebook connectivity, the notebook can supplement
+in-session document loading. Rather than uploading the full phase record,
+query the notebook for specific consolidation needs during the
+transition process. This reserves session tokens for transition
+planning rather than document ingestion.
+
+Cross-reference: Section 4.2.2 (Headroom Discipline), Section 4.2.5
+(Token Exhaustion Recovery Protocol), Section 10.3 (Notebook
+Connectivity).
+
+
+4.3.5.4 AI Responsibilities at Phase Boundaries
+-------------------------------------------------
+
+When recognizing a phase transition, the AI should:
+
+Execute the 8-step transition process (Section 4.3.5.2). The AI leads
+the process, presenting each step's outputs for user review and
+approval. The process is collaborative — the AI drafts, the user
+validates — but the AI is responsible for ensuring no step is skipped.
+
+Name the transition explicitly. The AI should not slide from one phase
+to the next without acknowledgment: "We've completed Phase X. Before
+beginning Phase Y, let's conduct the phase transition process."
+
+Lead with assessment. Before planning forward, verify that the
+completed phase actually met its objectives. Premature transition —
+moving on before a phase is truly complete — is a significant failure
+mode.
+
+Provide the horizon view. The backward-and-forward summary (Step 5)
+orients the user to the project's trajectory. This is particularly
+important for long-running projects where the user may have lost
+sight of the strategic arc.
+
+Evaluate the Phase Protocol. Step 6 is mandatory. The AI should not
+carry the Phase Protocol forward without explicit evaluation, even if
+the evaluation concludes that no changes are needed.
+
+Confirm alignment. Phase transitions are natural checkpoints for
+verifying that the project remains on its intended trajectory. The AI
+should explicitly confirm with the user before proceeding to new phase
+work: "Does this phase plan align with your expectations? Ready to
+proceed?"
+
+
+4.3.5.5 User Responsibilities at Phase Boundaries
+---------------------------------------------------
+
+Before the transition session:
+
+- Ensure the Project Guide is current. If scope changed during the
+  prior phase, update the Guide before the transition session.
+- Gather all materials needed for the upcoming phase.
+- Review the prior phase's accomplishments and any open issues.
+- If using notebook connectivity, verify the notebook is current
+  (all transcripts and artifacts from the completed phase uploaded).
+
+During the transition session:
+
+- Provide all required documents (Project Guide, Roadmap, Bootstrap).
+- Engage substantively in the transition process — this is a strategic
+  conversation, not a formality.
+- Review and approve the Phase Protocol evaluation (carry-forward or
+  redraft).
+- Confirm the phase plan before the AI proceeds with new phase work.
+- Explicitly approve the transition: "Ready to proceed with Phase Y."
+
+After the transition session:
+
+- Download all transition artifacts (Bootstrap, updated Roadmap,
+  new Phase Protocol if redrafted).
+- Store the new or carried-forward Phase Protocol in Project Knowledge.
+- Archive the prior phase's Phase Protocol (if superseded).
+- Note the phase transition in project records.
+- Upload the transition session transcript to the project notebook.
+
+USER ACTION — PHASE PROTOCOL STORAGE:
+
+If the Phase Protocol was redrafted during the transition, the user
+must update Project Knowledge: remove or rename the prior version and
+store the new version. The Bootstrap for the next session will instruct
+the AI to review the Phase Protocol — if the old version remains in
+Project Knowledge, the AI will review outdated governance.
+
+
+4.3.5.6 Phase Transition Checklist
+------------------------------------
+
+Quick reference for phase boundary navigation:
+
+Before Transition Session:
+[ ] Project Guide is current (updated for any scope changes)
+[ ] Prior phase deliverables are complete or accounted for
+[ ] Upcoming phase materials are gathered
+[ ] Notebook is current (if using notebook connectivity)
+
+During Transition Session — 8-Step Process:
+[ ] Step 1: Assess — exit criteria verified, phase readiness confirmed
+[ ] Step 2: Consolidate — phase records gathered (logs, SFRs, decisions)
+[ ] Step 3: Synthesize — husk/coconut filtering applied, knowledge
+    distilled
+[ ] Step 4: Review Deferred Items — backlog assessed, items routed
+[ ] Step 5: Define Scope — upcoming phase plan, horizon view provided,
+    user confirmed
+[ ] Step 6: Evaluate Phase Protocol — evaluation conducted, carry-
+    forward or redraft decided, documented
+[ ] Step 7: Update Rolling Records — decisions, roadmap, Project Guide
+    (if needed) updated
+[ ] Step 8: Generate Artifacts — Bootstrap, Phase Protocol (if new),
+    Roadmap produced
+
+After Transition Session:
+[ ] All transition artifacts downloaded
+[ ] Phase Protocol stored in Project Knowledge (new or confirmed)
+[ ] Prior Phase Protocol archived (if superseded)
+[ ] Phase transition noted in project records
+[ ] Transition transcript uploaded to notebook (if applicable)
+[ ] Updated Roadmap saved
+
+Cross-reference: Section 1.4.6.4 provides the user workflow overview
+for phase transitions. Section 2.5.1 explains the Project Lifecycle
+(Macro Cycle) and the sine wave model. Section 2.7.3 details the AI's
+Phase Transition Orientation Duty. Section 5.2 details the Phase
+Protocol and its lifecycle. TPL-010 (Project Roadmap) is the primary
+document for phase tracking.
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+This content replaces the existing Section 4.3.5 (lines 2454-2654 in
+v1.0.7). All existing subsections (4.3.5.1 through 4.3.5.6) are
+replaced with the new versions.
+
+STRUCTURAL CHANGES:
+- 4.3.5 introductory text: NEW — establishes sine wave context and
+  transition session character
+- 4.3.5.1 Recognizing Phase Boundaries: REVISED — incorporates Phase
+  Protocol exit criteria, adds AI behavioral note
+- 4.3.5.2 The 8-Step Phase Transition Process: NEW — the primary new
+  content, incorporating husk/coconut filtering (Step 3), Phase Protocol
+  evaluation (Step 6), horizon view (Step 5), and deferred item review
+  (Step 4)
+- 4.3.5.3 Phase Transition Upload Requirements: REVISED from existing
+  4.3.5.2 — incorporates token considerations content, adds notebook
+  connectivity reference
+- 4.3.5.4 AI Responsibilities: REVISED from existing 4.3.5.3 — now
+  references the 8-step process rather than listing individual tasks
+- 4.3.5.5 User Responsibilities: REVISED from existing 4.3.5.4 — adds
+  Phase Protocol storage duties, notebook maintenance
+- 4.3.5.6 Phase Transition Checklist: REVISED from existing 4.3.5.6 —
+  restructured around the 8-step process
+
+CONTENT FROM v1.0.7 INCORPORATED:
+- Recognition criteria (4.3.5.1) → retained and enhanced
+- Upload requirements (4.3.5.2) → retained in 4.3.5.3
+- Token considerations (4.3.5.2.1) → retained in 4.3.5.3
+- AI responsibilities (4.3.5.3) → revised in 4.3.5.4
+- User responsibilities (4.3.5.4) → revised in 4.3.5.5
+- Horizon View (4.3.5.5) → incorporated into Step 5 of the 8-step
+  process and referenced in 4.3.5.4
+- Checklist (4.3.5.6) → restructured in 4.3.5.6
+
+CONTENT FROM v1.0.7 REMOVED:
+- "Phase Execution Brief" terminology in 4.3.5.3 (AI Responsibilities)
+  → replaced by the more comprehensive Step 5 scope definition. The
+  term "Phase Execution Brief" may be retained as an alias if desired.
+
+SUPERSEDES:
+- Session A Integration Point 2 (Phase Protocol evaluation stub) —
+  fully incorporated into Step 6
+- Existing v1.0.7 Section 4.3.5 content — replaced entirely
+
+CONSISTENCY WITH PRIOR DRAFTS:
+- Section 2.5.1 (Session A): Sine wave model introduced there is
+  referenced here consistently. The language ("peaks," "zero-crossings,"
+  "rooting is the first zero-crossing") aligns.
+- Section 5.2 (Session A): Phase Protocol lifecycle (5.2.5) describes
+  redrafting at phase transitions. This section provides the procedural
+  framework for when and how that redrafting occurs. Step 6 evaluation
+  questions match those in 5.2.5.
+- Section 4.3 (Session B): This draft fits within the Session B session
+  lifecycle revision. Session B explicitly retained 4.3.5 for Session E.
+- Section 5.9.7 (Session D): Insight Capture Protocol is cross-
+  referenced in Step 4 (Review Deferred Items).
+- Section 10.3 (Session C): Notebook connectivity referenced in upload
+  requirements and consolidation step.
+
+CROSS-REFERENCES TO ESTABLISH IN SESSION G:
+- Section 2.7.3 (Phase Transition Orientation Duty): Should reference
+  the 8-step process as the full protocol
+- Section 5.2.5 (Phase Protocol Lifecycle): Should cross-reference
+  Step 6 as the transition evaluation procedure
+- Section 12.1 (Multi-Session Continuity): Phase transitions as
+  continuity-critical events
+- Glossary (Section 17.2): Entries needed for Husk vs. Coconut,
+  Horizon View, Phase Transition Process
+
+================================================================================
+END OF SECTION 4.3.5 REVISION DRAFT
+================================================================================

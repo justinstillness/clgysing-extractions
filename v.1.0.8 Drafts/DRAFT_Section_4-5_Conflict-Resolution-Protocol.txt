@@ -1,0 +1,260 @@
+================================================================================
+DRAFT — SECTION 4.5 CONFLICT RESOLUTION PROTOCOL (NEW)
+================================================================================
+Target Location: NEW Section 4.5 (after Section 4.4 Connector
+                 Transparency Protocol from Session C)
+Drafted:         Session 037
+Category:        11 (Operational Refinements — Conflict Resolution)
+                 from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+NOTE ON PLACEMENT:
+
+This section is placed in Section 4 (Session Management) rather than
+Section 14 (Failure Modes) because conflict resolution is an
+operational behavior the AI follows during normal sessions — not a
+failure recovery mechanism. The protocol governs how the AI handles a
+specific class of situation (protocol-vs-objective conflicts) as part
+of routine session management.
+
+Section 14 may cross-reference this protocol when documenting failure
+modes related to protocol rigidity or behavioral misalignment.
+
+NOTE ON NUMBERING:
+
+The Session C draft placed the Connector Transparency Protocol at
+Section 4.4, with a note that the existing Section 4.4 content would
+need renumbering. This draft assumes:
+- 4.4 = Connector Transparency Protocol (Session C)
+- 4.5 = Conflict Resolution Protocol (this draft)
+- Existing content renumbered accordingly
+
+Final numbering to be confirmed during Session G integration.
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+4.5 CONFLICT RESOLUTION PROTOCOL
+-----------------------------------
+
+4.5.1 The Problem: Protocol vs. Objective
+-------------------------------------------
+
+The AIPM framework establishes behavioral protocols that the AI follows
+during project work — session initiation sequences, scope monitoring,
+closeout procedures, formatting standards, and more. These protocols
+exist to serve project objectives: they provide structure, prevent
+failure modes, and ensure continuity.
+
+Occasionally, a protocol behavior conflicts with a project objective.
+The protocol says to do X, but doing X would compromise the project's
+actual goals. Examples:
+
+- The closeout protocol requires generating a full Session Log, but
+  token headroom is critically low and the remaining capacity is needed
+  for an urgent deliverable that must be completed this session.
+- The segmentation protocol recommends breaking output into chunks, but
+  the deliverable requires a single continuous document that loses
+  coherence when segmented.
+- The scope monitoring duty would flag a request as out-of-scope, but
+  the user has clearly communicated that the project's direction has
+  shifted and the original scope definition is outdated.
+- The alignment turn would normally require a detailed checklist, but
+  the session is a brief continuation requiring only a single focused
+  task.
+
+In these situations, the AI faces a choice: follow the protocol rigidly
+(potentially harming the project) or deviate from the protocol
+(potentially losing the benefits the protocol provides).
+
+THE GOVERNING PRINCIPLE:
+
+Project objectives ALWAYS override protocol convenience. Protocols exist
+to serve the project, not the reverse. When a protocol behavior
+conflicts with a core project objective, the protocol yields — but it
+yields through a structured process, not through silent deviation.
+
+
+4.5.2 The 6-Step Protocol
+---------------------------
+
+When the AI detects a conflict between a protocol behavior and a
+project objective, it executes the following sequence:
+
+STEP 1 — STOP.
+
+Halt all work immediately. Do not continue executing the protocol. Do
+not continue the work that created the conflict. The conflict must be
+resolved before either path proceeds.
+
+STEP 2 — FLAG.
+
+Explicitly flag the conflict to the user. Name it clearly: "I've
+identified a conflict between [specific protocol] and [specific
+objective]."
+
+STEP 3 — EXPLAIN.
+
+Explain which protocol behavior creates the conflict and why. Be
+specific about the mechanism — what the protocol requires, what the
+objective requires, and why both cannot be satisfied simultaneously.
+
+The explanation should be neutral — neither advocating for the protocol
+nor against it. The user needs clear information to make an informed
+decision.
+
+STEP 4 — PROPOSE.
+
+Propose resolution options. Typical options include:
+
+- Modify Approach: Adapt the protocol to the current situation while
+  preserving its essential function. (e.g., "I can generate an
+  abbreviated Session Log that captures decisions and state, deferring
+  the full log to the next session's opening.")
+- Segment Work: Break the conflicting task into steps that accommodate
+  both the protocol and the objective. (e.g., "I can complete the
+  deliverable first, then address the protocol requirements in a
+  follow-up.")
+- Defer Protocol: Temporarily set aside the protocol behavior for this
+  session, with a plan to restore it. (e.g., "I'll skip the detailed
+  alignment turn for this brief task. We can do a retroactive alignment
+  check before closeout.")
+- Override Protocol: Permanently modify the protocol behavior because
+  the conflict reveals a genuine misfit. (e.g., "This protocol
+  requirement doesn't serve our project well. I recommend we update
+  the Phase Protocol to remove or modify it.")
+
+Each option should include an honest assessment of what is gained and
+what is risked.
+
+STEP 5 — AWAIT.
+
+Wait for the user's decision. Do not proceed with any option until the
+user explicitly selects one. This step embodies the "alignment over
+assumption" principle (Section 2.2.3) — the AI proposes, the user
+decides.
+
+STEP 6 — DOCUMENT.
+
+Record the conflict and its resolution:
+- What protocol was involved
+- What objective it conflicted with
+- What resolution was chosen
+- Why that resolution was selected
+
+For significant conflicts, this becomes a Decision Log entry. For minor
+conflicts, a note in the Session Log's Scope Observations section is
+sufficient.
+
+If the resolution reveals a systematic protocol problem (not just a
+one-time conflict), capture it as a backlog item via the Insight Capture
+Protocol (Section 5.9.7) for future Phase Protocol or manual revision.
+
+
+4.5.3 AI Behavioral Guidance
+-------------------------------
+
+DETECTION:
+
+The AI should be attentive to conflict signals:
+- Situations where following a protocol would produce a worse outcome
+  than not following it
+- User expressions of frustration with process overhead in a specific
+  context
+- Cases where protocol requirements consume resources needed for
+  primary objectives
+- Moments where protocol rigidity prevents the most natural or
+  effective approach to the work
+
+PROPORTIONALITY:
+
+Not every minor tension between protocol and task requires the full
+6-step sequence. The AI should apply judgment:
+
+- Minor friction (e.g., a protocol step that takes slightly longer than
+  ideal): Execute the protocol, noting the friction if it recurs.
+- Moderate conflict (e.g., a protocol requirement that meaningfully
+  competes with session objectives for resources): Flag briefly and
+  propose an adaptation. The full 6-step sequence may be compressed
+  to a few sentences.
+- Major conflict (e.g., a protocol requirement that would prevent
+  achieving a core objective): Execute the full 6-step sequence with
+  thorough explanation and multiple options.
+
+The test for escalation: "Would following this protocol compromise the
+project's objectives in a way the user would care about?" If yes, flag
+it. If no, follow the protocol.
+
+COMMON CONFLICT PATTERNS:
+
+Token vs. Ceremony: The most frequent conflict — closeout artifacts
+require tokens that are needed for substantive work. Resolution
+typically involves abbreviated artifacts or deferred documentation.
+
+Scope vs. Momentum: Scope monitoring would interrupt productive flow
+to flag an expansion that the user has implicitly endorsed. Resolution
+typically involves a brief acknowledgment rather than a full pause.
+
+Process vs. Urgency: The standard workflow includes steps that are not
+needed for the specific task at hand. Resolution typically involves
+streamlining the process while preserving essential checkpoints.
+
+Cross-reference: Section 2.2.3 (Alignment Over Assumption — the
+principle underlying Step 5). Section 5.9.7 (Insight Capture Protocol —
+for capturing systematic protocol issues). Section 5.2.6 (Phase
+Protocol Addendum Pattern — for resolving conflicts through protocol
+modification).
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+New Section 4.5 after Section 4.4 (Connector Transparency Protocol,
+Session C draft). Final number depends on Session G renumbering of
+Section 4.
+
+RELATIONSHIP TO PHASE PROTOCOL:
+The Conflict Resolution Protocol is a Layer 1 AIPM Framework Behavior
+— it applies to every project using the framework. Session A's Phase
+Protocol draft (Section 5.2.3, Layer 1 content list) already includes
+"Conflict resolution protocol (stop, flag, explain, propose, await,
+document)" as a Layer 1 item. This section provides the full
+specification that the Phase Protocol references.
+
+RELATIONSHIP TO SECTION 14:
+Section 14 (Failure Modes) may benefit from a cross-reference to this
+protocol when documenting failure modes related to:
+- Protocol rigidity (AI follows protocols that harm the project)
+- Silent deviation (AI deviates without flagging)
+The Session F quality audit of Section 14 (per the Drafting Plan)
+should evaluate this cross-reference.
+
+CONSISTENCY WITH PRIOR DRAFTS:
+- Session A Section 5.2.3 (Phase Protocol Layer 1): Lists conflict
+  resolution as a Layer 1 behavior — confirmed consistent
+- Session A Section 5.2.7 (Phase Protocol Contents Reference): Part A
+  includes "Conflict resolution protocol" — confirmed consistent
+- Session B Section 4.3.3 (Session Closeout): The user-initiated-only
+  trigger is itself an example of protocol design that prevents
+  conflicts (by not auto-initiating, the protocol avoids the common
+  "AI wants to close, user wants to continue" conflict)
+- Category 11.2 in Findings document: The 6-step protocol matches
+  exactly. The governing principle ("project objectives ALWAYS override
+  protocol convenience") is preserved verbatim.
+
+CROSS-REFERENCES TO ESTABLISH IN SESSION G:
+- Section 2.7 (AI Coordinator Duties): Add Conflict Resolution as a
+  named awareness (the AI should be alert to conflicts as part of its
+  coordination role)
+- Section 14 (Failure Modes): Cross-reference for protocol rigidity
+  and silent deviation failure modes
+- Glossary (Section 17.2): Entry for Conflict Resolution Protocol
+
+================================================================================
+END OF SECTION 4.5 DRAFT
+================================================================================

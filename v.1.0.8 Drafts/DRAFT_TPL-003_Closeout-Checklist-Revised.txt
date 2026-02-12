@@ -1,0 +1,238 @@
+================================================================================
+DRAFT — TPL-003 SESSION CLOSEOUT CHECKLIST (REVISION)
+================================================================================
+Target:     TPL-003 in Appendix A (REPLACES existing template)
+Drafted:    Session 034
+Category:   3 (Enhanced Session Lifecycle) from Revision Findings
+Status:     DRAFT — pending user review
+================================================================================
+
+REVISION RATIONALE:
+
+The current TPL-003 is a 10-section comprehensive checklist. The revised
+version aligns with the field-tested 5-step closeout protocol (Section
+4.3.3), clarifies the division between AI responsibilities and user
+responsibilities, and incorporates the user-initiation-only trigger and
+loose ends assessment.
+
+Key changes:
+- Restructured around the 5-step closeout sequence
+- Clear separation of AI-side and user-side responsibilities
+- Loose ends assessment as the first step (not just a checklist)
+- SFR embedded in Session Log (not a separate checklist item)
+- Simplified from 10 sections to a streamlined workflow
+
+================================================================================
+BEGIN REVISED TEMPLATE
+================================================================================
+
+
+TPL-003: SESSION CLOSEOUT CHECKLIST
+
+Template ID: GOV-AIPM-TPL-003
+Version: 2.0
+Purpose: Ensure consistent session endings with complete documentation,
+         proper handoff preparation, and no lost work or context.
+When to Use: At the end of every AI chat session, triggered by the user
+             saying "close out" or equivalent.
+
+Cross-reference: Section 4.3.3 (Session Closeout), TPL-005 (Session
+Log), TPL-002 (Bootstrap Template)
+
+--------------------------------------------------------------------------------
+INSTRUCTIONS
+--------------------------------------------------------------------------------
+
+This checklist structures the closeout sequence defined in Section 4.3.3.
+The AI initiates this checklist ONLY when the user triggers closeout.
+The AI never auto-initiates closeout.
+
+The checklist is divided into two parts:
+- Part A: AI Responsibilities (Steps 1-5 of the closeout protocol)
+- Part B: User Responsibilities (post-session actions)
+
+The AI works through Part A during the session. Part B is performed by
+the user after the session ends.
+
+Tip: Request this checklist from the AI near the end of a session:
+"Close out" or "Let's close out." The AI will work through the
+protocol, beginning with the loose ends assessment.
+
+DIALOG COMPLETION OPTION:
+The AI executes this checklist as part of the closeout sequence. No
+special prompt is needed beyond the closeout trigger.
+
+--------------------------------------------------------------------------------
+SESSION CLOSEOUT CHECKLIST
+--------------------------------------------------------------------------------
+
+SESSION IDENTIFICATION
+----------------------
+Chat Name: ___________________________________________________________
+Date: _______________
+
+
+================================================================================
+PART A: AI RESPONSIBILITIES
+================================================================================
+
+------------------------------------------------------------------------
+STEP 1: LOOSE ENDS ASSESSMENT
+------------------------------------------------------------------------
+
+[AI assesses all six categories before presenting to user]
+
+DECISIONS:
+- [ ] All decisions from this session identified
+- [ ] Unresolved decision points noted
+- Notes: _________________________________________________________________
+
+SCOPE ITEMS:
+- [ ] All planned objectives accounted for (completed or deferred)
+- [ ] Deferred items captured for Bootstrap
+- Notes: _________________________________________________________________
+
+QUESTIONS:
+- [ ] No unanswered questions that affect future sessions
+- [ ] Open questions documented for Bootstrap
+- Notes: _________________________________________________________________
+
+ARTIFACTS:
+- [ ] All produced files accounted for and saved
+- [ ] No work exists only in conversation (unsaved)
+- Notes: _________________________________________________________________
+
+HANDOFF CONTEXT:
+- [ ] Critical context for next session identified
+- [ ] Nothing will be lost when this session's context window closes
+- Notes: _________________________________________________________________
+
+USER ACTION ITEMS:
+- [ ] Post-session user actions identified (exports, uploads, etc.)
+- Notes: _________________________________________________________________
+
+
+------------------------------------------------------------------------
+STEP 2: PRESENT LOOSE ENDS
+------------------------------------------------------------------------
+
+- [ ] Loose ends assessment presented to user
+- [ ] User reviewed and confirmed (or identified additional items)
+
+User response: ___________________________________________________________
+Additional items noted: __________________________________________________
+
+
+------------------------------------------------------------------------
+STEP 3: RESOLVE LOOSE ENDS
+------------------------------------------------------------------------
+
+- [ ] All items requiring resolution addressed per user direction
+
+Resolution notes: ________________________________________________________
+_________________________________________________________________________
+
+
+------------------------------------------------------------------------
+STEP 4: CONFIRM READINESS
+------------------------------------------------------------------------
+
+Artifacts to generate:
+- [ ] Session Log (TPL-005) with embedded SFR — ALWAYS
+- [ ] Bootstrap (TPL-002) — ALWAYS
+- [ ] Decision Log — [REQUIRED / NOT REQUIRED]
+      Trigger assessment: ________________________________________________
+- [ ] Other: _____________________________________________________________
+
+- [ ] User confirmed: proceed with artifact generation
+
+
+------------------------------------------------------------------------
+STEP 5: GENERATE ARTIFACTS
+------------------------------------------------------------------------
+
+- [ ] Session Log generated (includes SFR, Response Index Register)
+      File name: _________________________________________________________
+- [ ] Bootstrap generated
+      File name: _________________________________________________________
+- [ ] Decision Log generated (if applicable)
+      File name: _________________________________________________________
+- [ ] Other artifacts generated (if applicable)
+      File name(s): ______________________________________________________
+
+- [ ] All artifacts produced as discrete files for download
+
+
+================================================================================
+PART B: USER RESPONSIBILITIES (Post-Session)
+================================================================================
+
+TRANSCRIPT EXPORT:
+- [ ] Chat exported via Claude Exporter (or equivalent)
+      Format(s): [ ] MD  [ ] TXT  [ ] PDF
+      File name: _________________________________________________________
+
+FILE MANAGEMENT:
+- [ ] All session files downloaded
+- [ ] Files organized per project folder convention
+
+NOTEBOOK SYNC (if using notebook connectivity):
+- [ ] Chat transcript uploaded to project notebook
+- [ ] Non-ephemeral artifacts uploaded (session log, decision log,
+      findings, deliverables)
+
+TASK TRACKING:
+- [ ] Personal task tracking updated
+- [ ] Any external action items noted for follow-up
+
+VERIFICATION:
+- [ ] Session Log SFR reviewed (mark CONFIRMED if accurate)
+- [ ] Bootstrap reviewed for completeness
+- [ ] Ready to close chat
+
+------------------------------------------------------------------------
+SESSION CLOSEOUT COMPLETE
+------------------------------------------------------------------------
+Chat may now be closed. All artifacts preserved for continuity.
+
+
+--------------------------------------------------------------------------------
+END OF TEMPLATE
+--------------------------------------------------------------------------------
+
+
+================================================================================
+TEMPLATE NOTES
+================================================================================
+
+COMPARISON WITH v1.0 (PREVIOUS VERSION):
+
+The v1.0 template had 10 flat sections mixing AI and user actions. The
+v2.0 template restructures around:
+- The 5-step closeout protocol from Section 4.3.3
+- Clear Part A (AI) / Part B (User) separation
+- Loose ends assessment as the entry point (not a deliverables checklist)
+
+Sections from v1.0 that are consolidated or relocated:
+- "Work Completed This Session" → now captured in Session Log, not the
+  checklist
+- "Decisions Made" → assessed in Step 1 (Loose Ends), documented in
+  Session Log
+- "Files Generated" → assessed in Step 1 (Artifacts), listed in
+  Session Log
+- "Chat Transcript Export" → moved to Part B (User Responsibilities)
+- "Bootstrap Status" → now Step 5 artifact generation
+- "File Management" → moved to Part B (User Responsibilities)
+- "Session Documentation" → now Step 5 (the checklist doesn't document
+  what the Session Log already documents)
+- "Next Session Preparation" → now captured in Bootstrap
+- "Quality Check" → replaced by the SFR in the Session Log
+- "Final Confirmation" → simplified to "User confirmed: proceed"
+
+The revised checklist is shorter and more action-oriented. The Session
+Log (TPL-005) now carries the documentation burden; the checklist
+focuses on ensuring the process executes correctly.
+
+================================================================================
+END OF TPL-003 REVISION DRAFT
+================================================================================

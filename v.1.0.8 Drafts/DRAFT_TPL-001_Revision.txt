@@ -1,0 +1,291 @@
+================================================================================
+DRAFT — TPL-001 REVISION NOTES AND NEW CONTENT
+================================================================================
+Target:     TPL-001 Project Initiation Form in Appendix A
+Drafted:    Session 033
+Category:   2 (Rooting as Phase 0) from Revision Findings
+Status:     DRAFT — pending user review
+================================================================================
+
+REVISION APPROACH:
+
+The current TPL-001 is functional and well-structured. Rather than a full
+rewrite, this revision makes targeted changes to align it with the
+rooting (Phase 0) formalization and Phase Protocol creation process.
+
+The core form fields (Sections 1-13) remain largely intact — they capture
+the right information. The revisions focus on:
+1. Reframing the form as part of the rooting process, not a standalone
+   prerequisite
+2. Adding Phase Protocol awareness
+3. Adding phase structure planning
+4. Updating the instructions and dialog completion guidance
+5. Adding rooting exit criteria
+
+================================================================================
+REVISION 1: UPDATE HEADER AND PURPOSE
+================================================================================
+
+REPLACE existing header block:
+
+TPL-001: PROJECT INITIATION FORM
+
+Template ID: GOV-AIPM-TPL-001
+Version: 2.0
+Purpose: Structures the rooting process (Phase 0) for new AI-assisted
+         projects. Captures project parameters and establishes shared
+         expectations. Serves as the foundation for Project Guide and
+         Phase Protocol creation.
+When to Use: At the start of any new AI-assisted project or major
+             workstream, as part of the rooting (Phase 0) process.
+
+Cross-reference: Section 2.5.1 (Rooting / Phase 0), Section 5.1
+(Project Guide), Section 5.2 (Phase Protocol)
+
+
+================================================================================
+REVISION 2: UPDATE INSTRUCTIONS
+================================================================================
+
+REPLACE existing instructions block:
+
+--------------------------------------------------------------------------------
+INSTRUCTIONS
+--------------------------------------------------------------------------------
+
+This form structures the rooting process for a new project. Rooting
+(Phase 0) is the deliberate process of establishing a project's
+foundation before execution begins. It produces two foundational
+outputs: a Project Guide and a Base Phase Protocol.
+
+HOW TO USE THIS FORM:
+
+Option A — Pre-Completion: Complete as much of this form as you can
+before your first AI session. Provide the partially or fully completed
+form along with this manual at session start. The AI will review your
+inputs and engage in collaborative dialog to fill gaps, probe
+assumptions, and refine the project definition.
+
+Option B — Collaborative Dialog: Provide this manual and any relevant
+materials at session start. Tell the AI: "I'd like to root a new
+project" or "Help me complete TPL-001." The AI will walk through each
+section collaboratively, asking targeted questions to build the project
+definition together.
+
+Either option leads to the same outcome: a verified Project Guide and
+Base Phase Protocol. Option B is recommended for complex projects where
+assumptions need testing through dialog.
+
+IMPORTANT: Rooting is design work, not form completion. Expect 10-20
+substantive exchanges where the AI probes your thinking, surfaces gaps,
+and proposes alternatives. This investment in foundation-building pays
+dividends throughout the project. If rooting takes multiple sessions,
+that is normal for complex projects.
+
+Tips:
+- Be specific about scope boundaries — what's OUT is as important as
+  what's IN
+- Define the destination before mapping the journey — what does "done"
+  look like?
+- Specify deliverable formats so the AI knows what to produce
+- Include any constraints the AI should know about
+- Think about phase structure — how does the work naturally divide?
+
+See Section 3.5 for the Dialog Intake System.
+
+
+================================================================================
+REVISION 3: ADD NEW SECTION — PHASE STRUCTURE (insert after Section 6)
+================================================================================
+
+ADD as new Section 6A (renumber subsequent sections):
+
+--------------------------------------------------------------------------------
+6A. PHASE STRUCTURE
+--------------------------------------------------------------------------------
+
+How does this project's work naturally divide into phases? Each phase
+should have distinct objectives and produce specific outputs.
+
+NOTE: This section may be developed collaboratively with the AI during
+rooting. You do not need to have phases fully defined before starting.
+
+Phase 0 — Rooting: [This phase — produces Project Guide and Phase
+Protocol. Already underway if you're completing this form.]
+
+Phase 1 — _______________________________________________
+Objectives: ______________________________________________
+Key Deliverables: ________________________________________
+Estimated Sessions: ______________________________________
+Exit Criteria: ___________________________________________
+
+Phase 2 — _______________________________________________
+Objectives: ______________________________________________
+Key Deliverables: ________________________________________
+Estimated Sessions: ______________________________________
+Exit Criteria: ___________________________________________
+
+Phase 3 — _______________________________________________
+Objectives: ______________________________________________
+Key Deliverables: ________________________________________
+Estimated Sessions: ______________________________________
+Exit Criteria: ___________________________________________
+
+[Add additional phases as needed]
+
+Dependencies between phases:
+_____________________________________________________________________________
+_____________________________________________________________________________
+
+If phases are unclear, note that here. The AI will help structure phases
+during the rooting dialog:
+_____________________________________________________________________________
+_____________________________________________________________________________
+
+
+================================================================================
+REVISION 4: ADD NEW SECTION — METHODOLOGY (insert after Phase Structure)
+================================================================================
+
+ADD as new Section 6B (renumber subsequent sections):
+
+--------------------------------------------------------------------------------
+6B. METHODOLOGY AND APPROACH
+--------------------------------------------------------------------------------
+
+What methodology or approach will this project use? This information
+feeds into Layer 2 of the Phase Protocol.
+
+Project Type:
+[ ] Research / Writing
+[ ] Software Development
+[ ] Governance / Policy Development
+[ ] Consulting / Advisory
+[ ] Creative
+[ ] Technical / Engineering
+[ ] Other: ___________________________________________________________________
+
+Known Methodology or Framework:
+(If you have a specific methodology in mind, describe it. If not, the AI
+will help identify an appropriate approach during rooting.)
+_____________________________________________________________________________
+_____________________________________________________________________________
+_____________________________________________________________________________
+
+Voice / Style Requirements (if applicable):
+_____________________________________________________________________________
+_____________________________________________________________________________
+
+Collaboration Model:
+What is your role vs. the AI's role in this project?
+Your role: __________________________________________________________________
+AI's role: __________________________________________________________________
+
+
+================================================================================
+REVISION 5: ADD NEW SECTION — NOTEBOOK CONNECTIVITY (insert in
+            appropriate location, likely near Reference Materials)
+================================================================================
+
+ADD as new section:
+
+--------------------------------------------------------------------------------
+XX. NOTEBOOK CONNECTIVITY
+--------------------------------------------------------------------------------
+
+Will this project use a notebook connectivity tool for deep context
+recovery between sessions?
+
+[ ] Yes — notebook already exists
+    Notebook ID: _____________________________________________________________
+    Contents: ________________________________________________________________
+
+[ ] Yes — will create during rooting
+[ ] No — not needed for this project
+[ ] Unsure — discuss during rooting
+
+If using notebook connectivity, note the upload plan:
+[ ] Upload transcripts after each session
+[ ] Upload non-ephemeral artifacts after each session
+[ ] Use consolidated Google Doc approach for source efficiency
+[ ] Other: ___________________________________________________________________
+
+
+================================================================================
+REVISION 6: UPDATE FORM COMPLETION SECTION
+================================================================================
+
+REPLACE existing "FORM COMPLETE" section:
+
+--------------------------------------------------------------------------------
+FORM COMPLETE — ROOTING OUTPUTS
+--------------------------------------------------------------------------------
+
+Provide this form to the AI at the start of your rooting session along
+with this manual and any relevant reference materials.
+
+ROOTING EXIT CRITERIA:
+Before rooting (Phase 0) is complete, verify:
+
+[ ] Project Guide exists and captures all essential project parameters
+[ ] Base Phase Protocol exists with all three layers:
+    [ ] Layer 1: AIPM Framework Behaviors
+    [ ] Layer 2: Methodology/Approach Context
+    [ ] Layer 3: Project-Specific Context
+[ ] Phase structure is defined with objectives and exit criteria
+[ ] First execution phase scope is clear
+[ ] Phase Protocol is stored in Project Knowledge
+[ ] Bootstrap for first execution session is generated
+[ ] Bootstrap includes mandatory first action to review Phase Protocol
+[ ] All foundational decisions are documented
+
+After rooting is complete, ask the AI:
+- "Have we covered everything needed to begin Phase 1?"
+- "Are there any open items or assumptions we should resolve first?"
+- "Please generate the Bootstrap for our first execution session."
+
+USER ACTION: After the rooting session:
+1. Download all artifacts (Project Guide, Phase Protocol, Bootstrap)
+2. Store Phase Protocol in Project Knowledge
+3. Upload transcript to project notebook (if using notebook connectivity)
+4. Verify Bootstrap includes Phase Protocol review instruction
+5. Update your new chat notepad with the next session name and
+   notebook references
+
+--------------------------------------------------------------------------------
+END OF TPL-001
+--------------------------------------------------------------------------------
+
+
+================================================================================
+REVISION SUMMARY
+================================================================================
+
+Changes made to TPL-001:
+1. Header: Updated purpose and cross-references for rooting/Phase 0
+2. Instructions: Reframed as rooting process; added collaborative dialog
+   emphasis; added "rooting is design work" guidance
+3. New Section 6A: Phase Structure planning
+4. New Section 6B: Methodology and Approach (feeds Phase Protocol Layer 2)
+5. New Section XX: Notebook Connectivity planning
+6. Form Complete: Replaced with Rooting Outputs section including exit
+   criteria checklist and post-rooting user actions
+
+Sections UNCHANGED (existing fields remain adequate):
+- Section 1: Project Identification
+- Section 2: Project Objective
+- Section 3: Scope
+- Section 4: Key Constraints
+- Section 5: Deliverables
+- Section 6: Success Criteria
+- Section 7: Naming Convention
+- Section 8: File Output Expectations
+- Section 9: Log & Bootstrap Requirements
+- Section 10: Special Instructions
+- Section 11: Reference Materials
+- Section 12: Quality Assurance Level
+- Section 13: Confidentiality Classification
+
+================================================================================
+END OF TPL-001 REVISION NOTES
+================================================================================

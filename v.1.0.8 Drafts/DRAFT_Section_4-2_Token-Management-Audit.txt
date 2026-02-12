@@ -1,0 +1,152 @@
+================================================================================
+DRAFT — SECTION 4.2 TOKEN MANAGEMENT (QUALITY AUDIT + ENHANCEMENTS)
+================================================================================
+Target Location: Section 4.2 (TARGETED ENHANCEMENTS — not a full rewrite)
+Current Lines:   2163-2355 in v1.0.7
+Drafted:         Session 034
+Category:        3 (Enhanced Session Lifecycle) from Revision Findings
+Status:          DRAFT — pending user review
+================================================================================
+
+QUALITY AUDIT ASSESSMENT:
+
+Section 4.2 was reviewed in full. The existing content is solid:
+- 4.2.1 Token Economics: Adequate — clear explanation of fundamentals
+- 4.2.2 Headroom Discipline: Adequate — correct principles, but needs
+  enhancement to reference Headroom Opportunism and the headroom floor
+  concept
+- 4.2.3 Token-Efficient Practices: Adequate — good tactical guidance
+- 4.2.4 Warning Signs of Context Exhaustion: STRONG — one of the best
+  subsections in the manual. No changes needed.
+- 4.2.5 Token Exhaustion Recovery Protocol: Adequate — comprehensive
+  recovery procedure with proper EXH tagging convention
+
+ENHANCEMENTS REQUIRED:
+
+1. Section 4.2.2: Add headroom floor concept and cross-reference to
+   Headroom Opportunism (Section 4.3.2.1)
+2. Section 4.2.2: Add proactive assessment guidance (before major work
+   blocks, not just at session boundaries)
+3. New Section 4.2.6: Segmentation triggers and methodology (or
+   cross-reference to 4.3.2.2 where this is now more fully specified)
+
+================================================================================
+BEGIN DRAFT CONTENT
+================================================================================
+
+
+------------------------------------------------------------------------
+ENHANCEMENT 1: Section 4.2.2 Headroom Discipline — ADD after existing
+"When Headroom is Marginal" block (after line 2220)
+------------------------------------------------------------------------
+
+INSERT:
+
+PROACTIVE HEADROOM ASSESSMENT:
+
+Do not wait for marginal indicators to appear. Assess headroom
+proactively at these checkpoints:
+- Before starting any major work block (drafting, analysis, revision)
+- After completing a deliverable, before beginning the next
+- When the session has consumed roughly half its expected capacity
+- Before beginning closeout artifact generation
+
+The AI should initiate these assessments as part of its Session
+Stewardship Duty. Users can also request an assessment at any time:
+"How's our headroom?" or "Assess headroom before we continue."
+
+THE HEADROOM FLOOR:
+
+The headroom floor is the minimum context capacity that must be reserved
+for mandatory closeout artifacts — Session Log (with SFR), Bootstrap,
+and conditional Decision Log. This floor is non-negotiable: no
+substantive work should consume tokens that would compromise closeout
+quality.
+
+The floor varies by project complexity but typically requires capacity
+for 3,000-5,000 words of output (log + bootstrap + potential decision
+log). When remaining headroom approaches this floor, the AI should
+recommend transitioning to closeout regardless of remaining work items.
+
+Headroom Opportunism (Section 4.3.2.1) operates in the space between
+primary work completion and the headroom floor. If primary objectives
+are met and remaining capacity exceeds the floor by a meaningful margin,
+secondary work may be proposed. The floor is never compromised for
+secondary work.
+
+Cross-reference: Section 4.3.2.1 (Headroom Opportunism), Section 4.3.3
+(Session Closeout).
+
+
+------------------------------------------------------------------------
+ENHANCEMENT 2: New Section 4.2.6 — ADD after Section 4.2.5
+------------------------------------------------------------------------
+
+INSERT:
+
+4.2.6 Segmentation and Token Planning
+--------------------------------------
+
+When a session involves producing large artifacts, proactive
+segmentation prevents token exhaustion mid-draft and maintains output
+quality throughout. This section provides the triggers; the full
+segmentation methodology is specified in Section 4.3.2.2.
+
+SEGMENTATION TRIGGERS:
+
+Plan for segmentation when any of the following conditions apply:
+- Source material exceeds 5,000 words
+- Expected output exceeds 20 discrete entries
+- Estimated output exceeds 10,000 characters
+- Token headroom is below 20% of estimated session capacity
+- A repository or collection approaches 75 entries
+
+CRITICAL RULE:
+
+Never abbreviate, truncate, or compress artifacts to avoid segmentation.
+Segmentation maintains complete, full-quality generation while managing
+constraints. If the AI finds itself reducing detail or omitting content
+to fit within a single response, it should stop and segment instead.
+
+This rule exists because field testing revealed a persistent failure
+mode: AIs will silently compress output quality to avoid the overhead
+of segmentation, producing technically complete but substantively
+degraded artifacts. Explicit segmentation prevents this.
+
+Cross-reference: Section 4.3.2.2 provides the full segmentation
+methodology including logical unit division, chunk sizing, cross-segment
+continuity, and completion verification.
+
+
+================================================================================
+INTEGRATION NOTES
+================================================================================
+
+PLACEMENT:
+- Enhancement 1: Insert into existing Section 4.2.2 after the "When
+  Headroom is Marginal" block (after approximately line 2220)
+- Enhancement 2: New Section 4.2.6, inserted after Section 4.2.5
+  (after approximately line 2355)
+
+RELATIONSHIP TO SECTION 4.3.2.2:
+Section 4.3.2.2 (Large Artifact Segmentation Protocol, drafted earlier
+this session) contains the full methodology. Section 4.2.6 provides the
+triggers and the critical rule, with a cross-reference to 4.3.2.2. This
+avoids duplication while ensuring that both the token management section
+and the session lifecycle section address segmentation from their
+respective angles.
+
+The existing segmentation guidance in Section 4.3.5.2.1 (Token
+Considerations for Phase Transitions) specifically addresses phase
+transition contexts and should be retained. Session G integration should
+ensure cross-references are consistent across all three locations.
+
+NO CHANGES TO:
+- Section 4.2.1 (Token Economics) — adequate
+- Section 4.2.3 (Token-Efficient Practices) — adequate
+- Section 4.2.4 (Warning Signs) — strong, no changes needed
+- Section 4.2.5 (Token Exhaustion Recovery) — adequate
+
+================================================================================
+END OF SECTION 4.2 QUALITY AUDIT DRAFT
+================================================================================
