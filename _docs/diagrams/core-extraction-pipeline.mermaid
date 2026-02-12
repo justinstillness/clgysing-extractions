@@ -1,0 +1,24 @@
+---
+title: "HA Suite — Core Extraction Pipeline"
+---
+flowchart TD
+    A["🔍 Claude sends query\n(via Majeston MCP)"] --> B["📡 SeraphRecorder\n(Port 8093/8094)\nCaptures request + response"]
+    B --> C["📋 JSONL Traffic Log\n(/home/ubuntu/mcp-logger/traffic-*.jsonl)"]
+    C --> D{"⚙️ extract.py\n--all flag"}
+    D --> E["Parse SERAPH signal\nfrom request metadata"]
+    E --> F{"Signal found?"}
+    F -->|Yes| G["Route to project folder\n(e.g., clgysing/phase2/VX/)"]
+    F -->|No| H["Route to _untagged/"]
+    G --> I["📄 .txt file created\non EC2 filesystem"]
+    H --> I
+    I --> J["🔄 push-to-github.sh\n(git add → commit → push)"]
+    J --> K["📦 GitHub Repo\n(clgysing-extractions)"]
+    K --> L["✅ Files accessible via\nChronicler MCP tools"]
+
+    style A fill:#2d3748,color:#e2e8f0,stroke:#4a5568
+    style B fill:#553c9a,color:#e9d8fd,stroke:#6b46c1
+    style C fill:#2c5282,color:#bee3f8,stroke:#3182ce
+    style D fill:#744210,color:#fefcbf,stroke:#d69e2e
+    style F fill:#744210,color:#fefcbf,stroke:#d69e2e
+    style K fill:#276749,color:#c6f6d5,stroke:#38a169
+    style L fill:#276749,color:#c6f6d5,stroke:#38a169
