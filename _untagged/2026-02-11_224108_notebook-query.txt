@@ -1,0 +1,74 @@
+================================================================================
+EXTRACTION: 2026-02-11_224108_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the current state of the HA Suite infrastructure? List all services, ports, and recent changes from the most recent sessions (S024, S025). Include flush_pipeline status, extract.py refactoring details, and any outstanding issues.
+Timestamp:       2026-02-11T22:41:08.000871+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: c601f267-b7d7-45ee-bcd2-535a4f7403d2
+Chat Configure:  default
+Response Chars:  4308
+Duration:        35999ms
+================================================================================
+
+Here is the current state of the Havona Anvil Suite (HA Suite) infrastructure, reflecting changes through Session 025.\
+\
+### 1. Infrastructure Snapshot\
+*   **Host:** AWS EC2 `t3.small` (Ubuntu 24.04 LTS) [1]\
+*   **Public IP:** `52.2.11.33` (Elastic IP) [1]\
+*   **Domain:** `mcp.justinstillness.com` [1]\
+*   **Access:** SSH via Tailscale (IP: `100.69.112.70`) or Port 2222 (Backup). Standard Port 22 is closed [2], [3].\
+\
+### 2. Service & Port Inventory\
+All internal services are routed via **Caddy** on Port 443 (HTTPS). Direct external access to internal ports is blocked by the firewall [4].\
+\
+| Service | Internal Port | Description | Status |\
+| :--- | :--- | :--- | :--- |\
+| **Caddy** | 80 / 443 | Reverse proxy, SSL, auth, routing. | Active |\
+| **Majeston** | 8100 | NotebookLM MCP (jacob-bd v0.2.18). | Active [5] |\
+| **SeraphRecorder**| 8000 | Traffic capture pipeline (socat wrapper). Forwards to Majeston. | Active [6] |\
+| **Caliper** | 8001 | Document Analysis MCP. | Active [7] |\
+| **Chronicler** | 8002 | GitHub Repository MCP. | Active [8] |\
+| **File Browser** | 8095 | Web UI for managing repo files. | Active [9] |\
+| **Transcript Receiver**| 8096 | **NEW (S025):** Web form for mobile transcript uploads. | Active [10] |\
+\
+### 3. Recent Changes (Sessions 024 & 025)\
+\
+**Session 024 (Maintenance)**\
+*   **Majeston Update:** Updated `jacob-bd` package from v0.2.15 to **v0.2.18** [11].\
+*   **Backup:** Created full source backup of the previous version (`jacob-bd-backup-v0.2.15.tar.gz`) before updating [12].\
+*   **Health Check:** Verified all 5 core services were active post-update [13].\
+\
+**Session 025 (Deployment & Fixes)**\
+*   **Transcript Receiver Deployed:** Built and deployed a web form tool (Port 8096) to allow pasting conversation transcripts from mobile devices. Added Caddy route `/transcripts` [10].\
+*   **Mobile Capture Strategy:** Determined that while the receiver tool works, copying full transcripts on mobile is difficult due to UI limitations. Future work will explore bookmarklets or automation [14].\
+*   **flush_pipeline Diagnosis:** Confirmed the `Chronicler:flush_pipeline` tool is correctly registered on the server. Failure to appear in Claude is a session-caching issue, not a code defect [15].\
+\
+### 4. Deep Dive: `flush_pipeline` Status\
+*   **Status:** **Operational.** The tool exists and works server-side.\
+*   **The Issue:** Claude caches the MCP tool manifest at the start of a conversation. If the Chronicler service restarts mid-session (which happens during updates), `flush_pipeline` disappears from the available tool list for *that specific session* [16].\
+*   **Resolution:**\
+    1.  **In new sessions:** The tool appears and works normally.\
+    2.  **Manual Override:** A convenience script (`~/flush.sh`) was installed on the EC2 instance. You can trigger a pipeline flush manually via Termius using the command `bash ~/flush.sh` [9].\
+\
+### 5. `extract.py` Refactoring Details (v6)\
+The extraction logic is now at version 6, featuring robust failure resilience [17]:\
+*   **Ghost Files:** If NotebookLM returns an empty response (common during rate limiting), the pipeline no longer silently drops data. It creates a `_FAILED` file in the `_failed/` directory containing the query and error details [18].\
+*   **SERAPH Signal Parsing:** Supports `[SERAPH: ...]` tags in queries to automatically route files to project-specific folders (Tier 1 routing) [19].\
+*   **Socat Artifact Stripping:** Includes regex logic to strip stray TCP chunk headers (`< YYYY/MM/DD...`) that occasionally pollute the output text [20].\
+\
+### 6. Outsta< 2026/02/11 22:41:44.000345412  length=731 from=8693 to=9423
+nding Issues & Loose Ends\
+*   **Mobile Paste Workflow:** The Transcript Receiver is live, but pasting long text on mobile is user-hostile. Needs a bookmarklet or \"fetch\" button solution [14].\
+*   **Documentation Sync:** The `v4.0 Architecture Reference` still lists Majeston at v0.2.15; it needs updating to v0.2.18 [21].\
+*   **Repo Sync:** The live `extract.py` on EC2 is newer than the copy in the GitHub repository (`_pipeline/extract.py`). The repo copy is currently outdated [21].\
+*   **Token Refresh:** Google auth tokens are working but will eventually need a refresh via the Mac `refresh-tokens.sh` script [22].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

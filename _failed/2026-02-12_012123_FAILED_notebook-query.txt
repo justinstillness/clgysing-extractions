@@ -1,0 +1,25 @@
+================================================================================
+EXTRACTION: 2026-02-12_012123_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          NO_RESPONSE
+Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Source Package:  N/A
+Pass Type:       N/A
+Would-Be Route:  Tier 3 (Untagged)
+Query:           What do we know from prior findings about NLM's variability between runs? Specifically, findings about semantic stability, whether NLM produces consistent results when given the same query twice, and any observations about how chat_configure or threading affects output consistency. Also include any findings about information compression or loss when NLM is given formatting constraints.
+Timestamp:       2026-02-12T01:21:23.000825+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 32533722-22b5-4938-8e20-8a06ea46b176
+Response Chars:  0
+Duration:        4292000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"prompts": []}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

@@ -1,0 +1,66 @@
+================================================================================
+EXTRACTION: 2026-02-11_224151_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What wishlist items exist for the HA Suite tools? List all W-numbered items and any informal improvement requests. Include Caliper recursion, NLM-to-repo ingestion, flush_pipeline registration, extract.py duplicate awareness, and any other tool improvement ideas discussed.
+Timestamp:       2026-02-11T22:41:51.000327+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: c601f267-b7d7-45ee-bcd2-535a4f7403d2
+Chat Configure:  default
+Response Chars:  5203
+Duration:        50000ms
+================================================================================
+
+Based on the project history and specifications, here is the consolidated wishlist for the Havona Anvil Suite (HA Suite) tools.\
+\
+### **W-Numbered Wishlist Items**\
+These items were formally tracked in the *Development Wishlist* and *Session Logs*.\
+\
+*   **W-001: File Routing Logic** ... Logic to organize files from `_untagged/` into project/phase/pass-type structures (partially implemented with SERAPH tags in v5, but requires Chronicler refinement) [1].\
+*   **W-002: GitHub Repo Interaction Tool** ... **COMPLETED** (Deployed as Chronicler) [1].\
+*   **W-003: Notebook Integration** ... Enable Claude to read files from GitHub via Chronicler and add them as sources to NotebookLM via Majeston (closing the loop) [2], [3].\
+*   **W-004: Extraction Tagging System** ... **PARTIAL** (SERAPH signal strings implemented in v5; post-extraction tagging/numbering pending) [2].\
+*   **W-005: Auto-Extraction** ... **COMPLETED** (Implemented via `daily-rotate.sh` cron job) [2].\
+*   **W-006: AIPM Repo Integration** ... Capability to write session logs, bootstraps, and decision logs directly to the GitHub repository to reduce manual file management [4], [3].\
+*   **W-042: jacob-bd Source Backup** ... Create a periodic snapshot/archive of the installed `jacob-bd` package source code on EC2 to protect against repository abandonment [5].\
+*   **W-046: Mobile Transcript Capture** ... A solution (bookmarklet or service) to capture Claude conversation transcripts on mobile devices where extensions like Claude Exporter do not work [6].\
+*   **W-047: Transcript Auto-Archive Pipeline** ... Automated routing of captured transcripts into the GitHub repo and subsequently into NLM notebooks [6].\
+*   **W-048: EC2 Configuration Backup** ... Periodic snapshot of the `/home/ubuntu/` directory (scripts, configs) to Google Drive or GitHub [6].\
+\
+### **Pipeline & Core Tool Improvements**\
+Specific technical improvements discussed for SeraphRecorder, extract.py, and Chronicler.\
+\
+*   **extract.py Duplicate Awareness (Idempotency Gap):** The current idempotency guard only checks the local EC2 filesystem. If Chronicler moves a file on GitHub, `extract.py` doesn't know and regenerates it in `_untagged/`. **Fix:** Sync GitHub repo state to EC2 before extraction or have `extract.py` check the git log/API [7], [8].\
+*   **flush_pipeline Tool Discovery:** The `Chronicler:flush_pipeline` tool works server-side but often fails to appear in Claude's tool list due to session caching issues when the service is restarted. **Fix:** Investigate forcing a manifest refresh or accepting the \"New Session\" constraint [9], [10].\
+*   **Socat Artifact Stripping (D-024):** `extract.py` needs a regex pass to strip stray `s< 2026/02/11 22:42:41.000841598  length=2529 from=8693 to=11221
+ocat` chunk headers (e.g., `< 2026/02/08...`) that occasionally split mid-token and appear in extraction text [11], [12].\
+*   **JSONL Archival (D-019):** Update `push-to-github.sh` to push daily JSONL logs to a `/raw/YYYY-MM/` directory in GitHub for permanent auditing [13], [14].\
+*   **Chronicler Batch Operations:** A `batch_move` or `batch_organize` tool to handle multiple files in a single git commit, saving tokens and API calls [15].\
+*   **Chronicler Patch/Update:** A `patch_file` or search-and-replace capability to edit documents (like the Architecture Reference) without re-writing the entire file, drastically reducing token costs [16].\
+\
+### **New Tooling & Architectural Extensions**\
+Proposed additions to the HA Suite ecosystem.\
+\
+*   **\"Conductor\" (Orchestration Service):** A proposed Python service on EC2 that shares auth with Majeston but runs multi-step workflows (e.g., \"Run theme saturation,\" \"Refresh ID registry\") autonomously to save tokens [17].\
+*   **Caliper Recursion:** `analyze_github_folder` currently targets a specific folder URL. Adding recursion would allow it to inventory entire repository trees in one pass [18].\
+*   **Shell MCP Connector:** A 5th MCP tool exposing safe shell commands (`exec`, `read`, `write`) to give Claude direct management of the EC2 filesystem, potentially replacing Termius for some tasks [19], [20].\
+*   **NLM-to-Repo Ingestion:**\
+    *   *Query Reporting:* A script to parse JSONL logs and generate reports (e.g., \"Show all queries from Session 020\") to solve the \"invisible query\" problem [21].\
+    *   *Registry Refresh:* A tool to auto-generate the `Notebook-Directory.txt` by querying the NLM API [22].\
+*   **File Browser Improvements:**\
+    *   **Custom Batch Select:** UI to select specific files for ZIP download (currently supports full folder or single file) [23].\
+    *   **Mobile Input Workflow:** Improve the Transcript Receiver input method (currently relies on pasting, which is difficult on mobile) [24].\
+\
+### **Deferred Maintenance**\
+*   **GitHub PAT Rotation:** Rotate the Personal Access Token used by Caliper and Chronicler (deferred to avoid disruption) [25].\
+*   **Health Check Update:** Update `health-check.sh` to include status checks for Caliper and Chronicler services [26].\
+*   **Concept Counter Reset:** Reset `concept-counter.json` from test data values to 0 before production numbering begins [27].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

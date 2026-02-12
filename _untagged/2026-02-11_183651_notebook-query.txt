@@ -1,0 +1,84 @@
+================================================================================
+EXTRACTION: 2026-02-11_183651_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Section 5 table of contents subsection structure 5.1 5.2 5.3 5.4 5.5 5.6 5.7 5.8 artifact types document hierarchy Section 12 multi-session management structure 12.1 12.2 12.3
+Timestamp:       2026-02-11T18:36:51.000707+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: fc55d1b9-42de-4a9d-bafb-5ee5775f492a
+Chat Configure:  default
+Response Chars:  4959
+Duration:        48000ms
+================================================================================
+
+Based on the **GOV-AIPM v1.0.8-DRAFT** revision plans and drafted sections, the structure for Section 5 and Section 12 has been updated to incorporate new artifact types (Phase Protocols, Findings Reports) and enhanced continuity mechanisms (Notebook Connectivity).\
+\
+### **Section 5: Canonical Project Artifacts**\
+\
+The Table of Contents for Section 5 has been restructured to insert the **Phase Protocol** as a high-level governance document and **Findings Reports** as a research artifact. The section renumbering reflects the document hierarchy from most stable (Project Guide) to most dynamic (Bootstrap).\
+\
+#### **Subsection Structure (v1.0.8)**\
+*   **5.1 Project Guide**\
+    *   The authoritative, project-stable document defining scope, deliverables, and execution plans. It evolves rarely, typically only when material scope changes.\
+*   **5.2 Phase Protocol (NEW)**\
+    *   A phase-stable governance document defining *how* the AI should behave during a specific phase. It bridges the strategic Project Guide and tactical Bootstrap.\
+    *   **Structure:** Layer 1 (AIPM Behaviors), Layer 2 (Methodology), Layer 3 (Project Context).\
+*   **5.3 Decision Logs (Renumbered)**\
+    *   Chronological record of significant choices, rationale, and alternatives. Numbered sequentially (D-001...).\
+*   **5.4 Session Logs (Renumbered)**\
+    *   Records of activity, outputs, and issues for each session. Now includes the **Session Fidelity Report (SFR)** embedded within it to assess quality and handoff readiness.\
+*   **5.5 Bootstrap Files (Renumbered)**\
+    *   Session-specific handoff documents containing the \"logic state\" for the next AI instance. Now distinguishes between **Stable Content** (persists across phase) and **Dynamic Content** (changes every session).\
+*   **5.6 Findings Reports (NEW)**\
+    *   A distinct artifact class (F-##) for research and exploration. Captures empirical observations organized by topic rather than chronology (e.g., discovery, evidence, implication).\
+*   **5.7 Supporting Artifacts (Renumbered)**\
+    *   Includes drafts, research notes, and working files not classified as canonical governance documents.\
+*   **5.8 Artifact Relationships (Renumbered)**\
+    *   Maps the connections between documents (e.g., Bootstrap references Phase Protocol; Phase Protocol draws from Project Guide).\
+\
+#### **Document Hierarchy & Artifact Types**\
+The hierarchy is defined by **stability** and **scope**, establishing a clear \"Chain of Governance\" [1, 2]:\
+\
+1.  **Project Guide (Project-Stable):** Defines **WHAT** the project is.\
+    *   *Update Frequency:* Rare (Scope changes).\
+    *   *Role:* Strategic Authority.\
+2.  **Phase Protocol (Phase-Stable):** Defines **HOW** work is conducted.\
+    *   *Update Frequency:* Phase Transitions (every 2-5 sessions).\
+    *   *Role:* Behavioral Governance.\
+3.  **Bootstrap (Session-Specific):** Defines **WHERE** the project is right now.\
+    *   *Upda< 2026/02/11 18:37:39.000961453  length=2045 from=10159 to=12203
+te Frequency:* Every Session.\
+    *   *Role:* Tactical Context & Prompt List.\
+\
+---\
+\
+### **Section 12: Extended Context**\
+\
+Section 12 focuses on managing context across long timelines. In v1.0.8, **Section 12.1** has been significantly expanded to include six continuity mechanisms (up from three in v1.0.7), and **Section 12.3** is proposed to address branching.\
+\
+#### **Multi-Session Management Structure**\
+\
+*   **12.1 Multi-Session Continuity (Enhanced)**\
+    *   This section now defines **six interconnected mechanisms** required to maintain continuity [3, 4]:\
+        1.  **Bootstrap Documents:** Carry current state and next actions.\
+        2.  **Decision Logs:** Preserve rationale to prevent decision churn.\
+        3.  **Chat Transcript Archives:** Raw record for verification.\
+        4.  **Response Indexing System (NEW):** Persistent `[####]` numbering across the project to allow precise retrieval of past AI outputs.\
+        5.  **Session Fidelity Reports (NEW):** Structured quality and handoff assessments embedded in Session Logs.\
+        6.  **Notebook Connectivity (NEW):** The deep context layer (using tools like NotebookLM) allowing the AI to query the full project history rather than loading it all into the context window.\
+\
+*   **12.2 Complex Project Management**\
+    *   Covers phase structure, workstream mapping, and cross-session dependency management. It defines how to manage parallel streams where Session N depends on outputs from Session M [5].\
+\
+*   **12.3 Branch Management / Inter-Branch Communication (NEW/Proposed)**\
+    *   Addresses the \"Branching\" concept where a project splits into parallel workstreams (e.g., a Tooling branch and a Testing branch) that share a root Phase Protocol but maintain separate session numbering and notebooks [6, 7].\
+    *   Includes the **Cross-Branch Awareness Document** to help separate sessions understand the broader project landscape.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

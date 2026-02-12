@@ -1,0 +1,26 @@
+================================================================================
+EXTRACTION: 2026-02-11_233529_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 3950 chars but answer extraction failed
+Source Package:  N/A
+Pass Type:       N/A
+Would-Be Route:  Tier 3 (Untagged)
+Query:           Section 12.3 branch management cross-branch context sharing 12.3.6 12.3.7 awareness document coordination mechanisms notebook strategy dependency mapping artifact injection
+Timestamp:       2026-02-11T23:35:29.000158+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: N/A
+Response Chars:  0
+Duration:        1446000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "notebook": {"id": "c871b8f3-1006-489c-9222-5d0727e98077", "title": "GOV-AIPM v1.0.8 Draft Corpus", "source_count": 36, "url": "https://notebooklm.google.com/notebook/c871b8f3-1006-489c-9222-5d0727e98077"}, "sources": [{"id": "af3ded14-8375-45e6-b309-a4cae2e24230", "title": "032_FINDINGS_GOV-AIPM-Revision-Plan.txt"}, {"id": "8ffdc658-d5b1-4c7a-ae9b-d077af9e0149", "title": "033_DRAFTING-PLAN_GOV-AIPM-v1_0_8.txt"}, {"id": "6e1feb4c-4634-4b6e-b4cc-95e408846691", "title": "AUDI
+... [3450 more chars]
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

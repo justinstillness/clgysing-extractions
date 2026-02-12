@@ -1,0 +1,79 @@
+================================================================================
+EXTRACTION: 2026-02-11_183532_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Branch Management branch startup file mini-rooting cycle branch creation process independent session numbering branch naming conventions cross-branch awareness document cross-branch context sharing when to branch fractal rooting
+Timestamp:       2026-02-11T18:35:32.000905+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: fc55d1b9-42de-4a9d-bafb-5ee5775f492a
+Chat Configure:  default
+Response Chars:  4874
+Duration:        39999ms
+================================================================================
+
+Based on the provided sources, particularly the Findings Report from Session 032 and the drafting plans for GOV-AIPM v1.0.8, here is a comprehensive overview of **Branch Management** within the AIPM framework.\
+\
+### **Branch Management Concept**\
+Branching is a formal mechanism for managing parallel workstreams under a single project umbrella. It allows sub-projects to operate with autonomy while remaining aligned with the main project's governance [1]. A branch is characterized as a **\"fractal expression\"** of the project structure...it inherits the DNA of the parent project but adapts the scope for its specific objectives [2].\
+\
+### **The Branch Creation Process**\
+The creation of a branch follows a defined five-step process designed to ensure the new workstream is properly properly scoped and connected to the mainline [1].\
+\
+1.  **Decision:** The user decides to spin up a branch, either during a mainline session or a dedicated session [1].\
+2.  **Startup File Generation:** The mainline session generates a **Branch Startup File**. This serves as a \"mini-rooting context packet\" containing relevant context for the new branch [1], [3].\
+3.  **Handoff:** The user takes the startup file to the new branch chat [1].\
+4.  **Mini-Rooting Cycle:** The new branch conducts an abbreviated rooting process (See *Mini-Rooting* below) [1].\
+5.  **Execution:** The branch begins execution using its own session numbering [2].\
+\
+### **Mini-Rooting and Fractal Rooting**\
+**Fractal Rooting** implies that the principles of \"Rooting\" (Phase 0)...establishing governance, scope, and deliverables before execution...apply at the branch level, just scaled down [2], [4].\
+\
+The **Mini-Rooting Cycle** asks specific questions to ground the branch [1]:\
+*   What is this branch trying to accomplish?\
+*   How does it connect to the mainline project?\
+*   Do we need to update or modify the inherited Phase Protocol?\
+*   Is this a single-phase or multi-phase branch?\
+*   What templates and conventions apply?\
+\
+### **Operational Characteristics**\
+\
+*   **Independent Session Numbering:** Branches maintain their own session numbering sequence separate from the mainline to prevent confusion [2].\
+*   **Inherited Phase Protocol:** Branches inherit the parent project's Phase Protocol but adapt the scope. They do not start from zero regarding behavioral governance [1].\
+*   **Distinct Notebooks:** A branch typically utilizes its own **adjunct notebook** in NotebookLM to avoid diluting the main project's context with branch-specific exploration [2], [5].\
+*   **Own Artifacts:** Branches generate their own bootstraps and session logs [2].\
+\
+### **Branch Naming Conventions**\
+To maintain navigability across project chats, branches use a specific naming convention that distinguishes them from execution or root chats [6].\
+\
+*   **Format:** `[###] [DEPT]-[PROJ]-[TYPE] ([notes])`\
+*   **Type Indicator:** `BR` is used for Branch chats (e.g., `004 GOV-AIPM-BR`).\
+*   **Example:** `004 GOV-AIPM-BR (security research)` [7].\\< 2026/02/11 18:36:12.000430425  length=1875 from=8693 to=10567
+n\
+This allows for chronological sorting while immediately signaling that the session is a parallel workstream rather than a mainline execution session [7].\
+\
+### **Cross-Branch Awareness and Context Sharing**\
+Because branches operate in parallel, the framework includes specific mechanisms to prevent silos.\
+\
+*   **Cross-Branch Awareness Document:** This document sits alongside the Phase Protocol in Project Knowledge. It lists all active branches, their current objectives, and any coordination needs between them. It ensures every session has \"awareness of what other branches are doing\" [8], [9].\
+*   **Context Sharing Mechanisms:** Context is shared by uploading relevant artifacts (like specs or findings) from one branch's notebook to another's, or by using a shared main project notebook that all branches can access [8].\
+*   **Inter-Branch Communication:** The manual requires explicit mapping of inter-branch dependencies during the rooting or branch-startup phase [10].\
+\
+### **When to Branch**\
+Branches are distinct from **Execution Chats**, which are narrowly scoped to specific deliverables and disposable once outputs are saved [11]. Branches are used for workstreams that need isolation or have their own lifecycle.\
+\
+**Common Use Cases for Branching:**\
+*   **Dependency Development:** Work needed before the main project can proceed [11].\
+*   **Research Threads:** Exploratory work that might clutter the main project context [11].\
+*   **Alternative Approach Exploration:** Testing a different methodology without committing the main project to it [11].\
+*   **Component Development:** Building a specific sub-component [11].\
+\
+Branches rejoin the main trunk via **Integration Sessions**, where outputs are reconciled and combined [12].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,60 @@
+================================================================================
+EXTRACTION: 2026-02-11_224707_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Section 14 failure modes workarounds current content bootstrap verification behavioral forgetfulness context loss
+Timestamp:       2026-02-11T22:47:07.000028+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 80c90677-d606-4797-ac36-24370be3d458
+Chat Configure:  default
+Response Chars:  3594
+Duration:        37000ms
+================================================================================
+
+Based on the **Revision Findings & Plan (Session 032)**, the following failure modes and workarounds regarding bootstrap verification, behavioral forgetfulness, and context loss have been identified for integration into **Section 14** of the **GOV-AIPM v1.0.8** manual.
+
+These additions reflect field-tested observations where standard protocols required reinforcement to handle specific AI behaviors.
+
+### 1. Bootstrap Verification Failures
+Field testing revealed specific mechanical failures in how AI generates the **Bootstrap** (the session-to-session handoff document).
+
+*   **Failure Modes:**
+    *   **Session Number Drift:** The AI frequently increments session numbers by 2 instead of 1 (e.g., jumping from Session 020 to 022) [1].
+    *   **Branch Handle Confusion:** When multiple branches share a Phase Protocol, the AI may confuse the branch handle (e.g., using "AWSNBLM" instead of "NLMINTA") [1].
+    *   **Context Compaction Corruption:** In long sessions, context compaction can corrupt the closeout artifacts, leading to incomplete or hallucinated data in the bootstrap [1].
+*   **Workaround:**
+    *   **User Verification:** The user must manually verify every bootstrap during the post-session housekeeping phase to ensure session numbers and project handles are correct before using them to initialize the next session [1].
+
+### 2. AI Behavioral Forgetfulness
+Despite behavioral instructions being encoded in the Phase Protocol, the AI exhibits "forgetfulness" regarding specific operational constraints due to session isolation.
+
+*   **Failure Modes:**
+    *   **Protocol Drift:** The AI tends to "forget" standing instructions such as the **Connector Transparency Protocol** (narrating tool calls), specific formatting requirements, or project-specific conventions [2].
+*   **Root Causes:**
+    *   Session isolation (Tabula Rasa state at start).
+    *   Cached tool manifests.
+    *   Context window compaction in long sessions [2].
+*   **Workaround:**
+    *   **Startup Reminders:** Include explicit behavioral reminders in the **new chat notepad startup message** for *every* session. Do not rely solely on the Phase Protocol in Project Knowledge; reinforce critical constraints (like "narrate all tool uses") in the initial prompt [2].
+
+### 3. Context Loss & Invisibility (Transcript Gaps)
+The integration of MCP tools (like NotebookLM connectivity) introduced a new category of context loss where actions occur invisibly.
+
+*   **Failure Mode:**
+    *   **Transcript Gaps:** When the AI uses MCP tools (e.g., querying a notebook), the action and the raw output happen "behind the scenes" and do not appear in the chat transcript. If the session crashes or if the user reviews the transcript later, there is no record of what information the AI accessed or used [3], [4].
+*   **Workaround:**
+    *   **Connector Transparency Protocol:** The AI must explicitly narrate every tool call in the chat window, including the **Tool Identification**, **Query Details**, **Intent**, **Result Summary**, and **Assessment**. This ensures the transcript captures the full informational reality of the session [3], [4].
+
+### 4. Other Related Failure Modes
+The revision plan also identifies these related failure modes for Section 14:
+*   **External Knowledge Contamination:** The AI drawing from its training data rather than the specific source material provided (Workaround: Strict source boundary enforcement) [2].
+*   **Synthesis Layer Degradation:** Errors introduced when synthesizing results from multiple queries (Workaround: Verification protocols and cross-checking) [4].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,63 @@
+================================================================================
+EXTRACTION: 2026-02-11_233300_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           three-tier documentation architecture Havona Anvil Suite SeraphRecorder Caliper architecture reference per-tool reference changelog D-027 session 021 implementation details
+Timestamp:       2026-02-11T23:33:00.000105+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 8c30d0dd-0c9c-426e-87b9-d7faa369be04
+Chat Configure:  default
+Response Chars:  2766
+Duration:        73000ms
+================================================================================
+
+Based on the `GOV-AIPM` v1.0.7 manual and the accumulated drafts from Sessions 034 (Session B), 035 (Session C), and 036 (Session D), here is the current structure and table of contents for Section 12 in the v1.0.8-DRAFT.
+
+### **Section 12: Extended Context**
+
+#### **12.1 Multi-Session Continuity (Revised)**
+*This section has been expanded from the original three mechanisms to six mechanisms via drafts produced in Sessions 034 and 035.*
+
+*   **Introduction**: Defines continuity challenges and the six interconnected mechanisms [1].
+*   **Bootstrap Documents**: (Existing) Captures project state and next actions [2].
+*   **Decision Logs**: (Existing) Records choices and rationale [3].
+*   **Chat Transcript Archives**: (Existing) Preserves raw records for verification [4].
+*   **Response Indexing System**: (Added Session 034) Numbering scheme for precise retrieval from transcripts [5].
+*   **Session Fidelity Reports**: (Added Session 034) Structured quality and handoff assessment embedded in logs [6].
+*   **Notebook Connectivity**: (Added Session 035) Deep context recovery layer containing full records [7].
+*   **Continuity Anti-Patterns**:
+    *   Relying on memory [8].
+    *   Verbal continuity [9].
+    *   Bootstrap-only handoffs [9].
+    *   Unindexed sessions (Added Session 034) [10].
+    *   Stale notebooks (Added Session 035) [11].
+
+#### **12.2 Complex Project Management (Existing)**
+*This section remains unchanged from v1.0.7.*
+
+*   **Project Architecture**: Phase structure, Workstream mapping, Deliverable registry [12].
+*   **Session Planning**: Scoping, respecting phase boundaries, buffering, tracking cumulative progress [13].
+*   **Cross-Session Dependency Management**: Explicit handoffs, verification, dependency documentation [14].
+*   **Parallel Workstream Coordination**: Workstream isolation, integration checkpoints, conflict resolution [15].
+
+#### **12.3 Branch Management (New)**
+*This section was newly drafted in Session 036 to address parallel workstreams under one project umbrella.*
+
+*   **12.3.1 Definition/Concept**: Parallel workstreams under project umbrella [16].
+*   **12.3.2 When to Branch**: Decision criteria for staying in mainline vs. branching [17].
+*   **12.3.3 Branch Creation Process**: 5-step process [17].
+*   **12.3.4 Operational Characteristics**: Independent numbering, own notebook, inherited Phase Protocol [16].
+*   **12.3.5 Naming Conventions**: Consistent with 4.1.3 standards [16].
+*   **12.3.6 Cross-Branch Context Sharing**: Mechanisms for sharing context between branches [16].
+*   **12.3.7 Cross-Branch Awareness Document**: Concept and usage [17].
+*   **12.3.8 Branch Integration & Completion**: Rejoin patterns [16].
+*   **12.3.9 Anti-Patterns**: Orphaned branches, context silos [16].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

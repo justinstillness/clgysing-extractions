@@ -1,0 +1,133 @@
+================================================================================
+EXTRACTION: 2026-02-11_213845_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Extract the 5 most important concepts from this source material. Follow all system instructions precisely.
+Timestamp:       2026-02-11T21:38:45.000771+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: b652d1d9-78ba-4738-a4ab-5e765f2877f5
+Chat Configure:  default
+Response Chars:  4375
+Duration:        28000ms
+================================================================================
+
+```json\
+{\
+  \"extraction_type\": \"conceptual_distillation\",\
+  \"source_analysis\": {\
+    \"fundamental_assumptions\": [\
+      {\
+        \"assumption\": \"An objective, knowable truth exists and its pursuit inevitably improves human organization.\",\
+        \"support_type\": \"assertion\"\
+      },\
+      {\
+        \"assumption\": \"All social systems function according to a binary moral and epistemic dichotomy of parasitism versus symbiosis.\",\
+        \"support_type\": \"argument\"\
+      },\
+      {\
+        \"assumption\": \"Human beings possess an innate drive for inquiry and growth that social structures either suppress or enhance.\",\
+        \"support_type\": \"assertion\"\
+      }\
+    ],\
+    \"logical_coherence_score\": 9,\
+    \"structural_observations\": \"The framework exhibits high internal consistency, building complex social theories from a core epistemological definition. A potential circularity exists where 'truth' defines the symbiotic system, yet the symbiotic system is the only valid mechanism for discerning truth. The concept of 'God' appears as an axiomatic anchor for truth without prior derivation.\"\
+  },\
+  \"entries\": [\
+    {\
+      \"id\": 1,\
+      \"term\": \"Omniology\",\
+      \"definition\": \"This discipline attempts to understand self, reality, and life's purpose to improve human organization from families to civilizations. It demands a commitment to following truth wherever it leads regardless of the destination's difficulty.\",\
+      \"category\": \"ONTOLOGY\",\
+      \"confidence\": 1.0,\
+      \"cross_references\": [],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 2,\
+      \"term\": \"Omniological Approach\",\
+      \"definition\": \"This research method builds intrinsic knowledge by modeling subjects from multiple angles within personal conceptual frameworks. It integrates various domains to enable reasoning independent of authoritative statements or surface-level explanations.\",\
+      \"category\": \"METHODOLOGY\",\
+      \"confidence\": 0.95,\
+      \"cross_references\": [\
+        1\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 3,\
+      \"term\": \"Cultology\",\
+      \"definition\": \"This unified field theory analyzes the mechanics of power, relationships, and belief systems across all scales of human activity. It investigates how parasitic systems obstruct the natural flow of truth and growth.\",\
+      \"category\": \"SOCIOLOGY\",\
+      \"confidence\": 0.98,\
+      \"cross_references\": [\
+        1,\
+        2\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 4,\
+      \"term\": \"Parasitic Modality\",\
+      \"definition\": \"This social order relies on extrinsic knowledge and rigid beliefs to suppress the human drive for inquiry. It hijacks potential by turning people into engines of labor, innovation, and extraction.\",\
+      \"category\": \"SOCIOLOGY\",\
+      \"confidence\": 0.95,\
+      \"cross_references\": [\
+        3\
+      ],\
+      \"qa_flags\": [\\< 2026/02/11 21:39:13.000981458  length=1301 from=8693 to=9993
+n        \"REQUIRES_CONTEXT\"\
+      ]\
+    },\
+    {\
+      \"id\": 5,\
+      \"term\": \"Symbiotic Modality\",\
+      \"definition\": \"This system cultivates an intrinsic path requiring continual inquiry and openness to all information. It fosters the ideal state of human relationships through freedom, honesty, and mutual benefit.\",\
+      \"category\": \"SOCIOLOGY\",\
+      \"confidence\": 0.95,\
+      \"cross_references\": [\
+        3,\
+        4\
+      ],\
+      \"qa_flags\": []\
+    },\
+    {\
+      \"id\": -1,\
+      \"term\": \"VERIFICATION_ANCHOR_REACHED\",\
+      \"definition\": \"This confirms the full custom prompt was processed including Section 10 of 10\",\
+      \"category\": \"METHODOLOGY\",\
+      \"confidence\": 1.0,\
+      \"cross_references\": []\
+    }\
+  ],\
+  \"metadata\": {\
+    \"total_entries\": 6,\
+    \"category_distribution\": {\
+      \"ONTOLOGY\": 1,\
+      \"METHODOLOGY\": 2,\
+      \"SOCIOLOGY\": 3\
+    },\
+    \"average_confidence\": 0.97,\
+    \"qa_flag_summary\": {\
+      \"NOVEL_TERM\": 3,\
+      \"REQUIRES_CONTEXT\": 1\
+    },\
+    \"extraction_timestamp\": \"2026-02-01T12:00:00Z\",\
+    \"source_word_count_estimate\": 2874\
+  }\
+}\
+```
+
+================================================================================
+END OF EXTRACTION
+================================================================================

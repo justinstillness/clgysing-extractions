@@ -1,0 +1,25 @@
+================================================================================
+EXTRACTION: 2026-02-12_031349_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          NO_RESPONSE
+Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Source Package:  N/A
+Pass Type:       N/A
+Would-Be Route:  Tier 3 (Untagged)
+Query:           How long is the DRAFT_Section_5-2_Phase-Protocol.txt file? How many sections does it contain? Give me the structure and subsection headings.
+Timestamp:       2026-02-12T03:13:49.000228+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      19c261c6-44df-448b-80ca-717ab3e01d09
+Conversation ID: N/A
+Response Chars:  0
+Duration:        11026000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"prompts": []}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

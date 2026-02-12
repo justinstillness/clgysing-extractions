@@ -1,0 +1,95 @@
+================================================================================
+EXTRACTION: 2026-02-11_224627_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Section 6 naming conventions file organization project handle session naming notebook organization hygiene
+Timestamp:       2026-02-11T22:46:27.000442+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 1f86014e-3da6-48fe-8798-6dfe1759f213
+Chat Configure:  default
+Response Chars:  4777
+Duration:        35000ms
+================================================================================
+
+Based on the source materials, particularly the **v1.0.7 Manual** and the **v1.0.8 Draft Revisions** produced in Session 035, Section 6 (\"External Organization System\") establishes the infrastructure for \"external memory.\"\
+\
+Here is the comprehensive breakdown of the naming conventions, organization, and hygiene protocols, incorporating the latest field-tested refinements (Category 7 and Category 4 from the findings).\
+\
+### 1. The Core Concept: The Project Handle\
+Field testing revealed that consistent naming requires a \"Project Handle\"...a short, consistent alphanumeric tag (3...10 characters) used across all files, folders, and sessions [1].\
+*   **Purpose:** Links disparate artifacts (chats, docs, notebooks) into a single retrieval scope.\
+*   **Examples:** `GOV-AIPM`, `CLGYSING`, `AWSNBLM`.\
+\
+### 2. Naming Conventions (Section 6.1)\
+The system uses strict naming to ensure files are retrievable without opening them.\
+\
+**Session Naming**\
+*   **Format:** `[session#] [PROJECT-HANDLE] ([semantic descriptor])`\
+*   **Example:** `001 CLGYSING (Rooting and Project Architecture)` [2].\
+*   **User Protocol:** The user must explicitly rename the chat in the AI interface to match this convention immediately after the session starts [3].\
+\
+**File Naming**\
+*   **Format:** `[PROJ]_[Artifact]_[Identifier].[ext]`\
+*   **Example:** `GOV-AIPM_Session_Log_002.txt` [4].\
+*   **Version Control:** Uses semantic versioning (v1.0, v1.1) or sequential numbering (`_001`, `_002`) for logs [5].\
+*   **File Classes:** Recent updates suggest using class designators in filenames (e.g., `SPEC`, `LOG`, `REF`) for immediate identification [6].\
+\
+### 3. File Organization (Section 6.2)\
+The framework employs a \"Dual Structure\" approach to organization: **Chronological** (Source of Truth) vs. **Functional** (Working View).\
+\
+**A. Chat-Based Organization (Source of Truth)**\
+Each session gets a dedicated folder containing everything produced in that context [7].\
+*   **Structure:** `/Projects/[HANDLE]/Chats/[Session Name]/`\
+*   **Contents:** The Bootstrap, Session Log, Chat Transcript, and all drafts/deliverables produced during that session.\
+*   **Why:** Ensures perfect auditability. You can always see exactly what context produced a specific output.\
+\
+**B. Functional Organization (Working View)**\
+A parallel structure organized by artifact type for quick access [8].\
+*   **Structure:**\
+    *   `/Guides` (Project Guide)\
+    *   `/Logs` (Accumulated Session/Decision logs)\
+    *   `/Artifacts` (Current drafts and specs)\
+    *   `/Phase Protocols` (Current protocols and `/Old` archives) [3].\
+*   **Protocol:** Files are duplicated here. The Chat folder is the origin; the Functional folder is the reference library.\
+\
+### 4. Notebook Organization (New Section 6.2.4)\
+Drafted in Session 035, this new section treats NotebookLM notebooks as an extension of the file system [9].\
+\
+**Structure**\
+*   **One Main Notebook:** The central repository containing the cumulative corpus (transcripts, specs, findings) [10].\
+*   **Adjunct Notebooks:** Created only for specific branc< 2026/02/11 22:47:03.000008176  length=1708 from=10159 to=11866
+hes or external research that would dilute the main notebook (e.g., `NLMINTA Research Sources`) [11].\
+\
+**Naming**\
+*   **Format:** `[PROJECT-HANDLE] [Purpose]`\
+*   **Example:** `GOV-AIPM Review Material` [10].\
+\
+**The Notebook Directory**\
+A reference document (Section 10.3.6) mapping notebook IDs to their contents and query purposes, embedded in the Bootstrap so the AI knows where to look for deep context [12].\
+\
+### 5. Organization Hygiene (Section 6.6)\
+Organization degrades without maintenance. The manual prescribes specific hygiene triggers.\
+\
+**Session-Level Hygiene (Post-Session)**\
+Performed immediately after the \"Close Out\" command [13], [14], [15]:\
+1.  **Download:** Save all AI-produced files to the Chat Folder.\
+2.  **Export:** Save the chat transcript (via Claude Exporter).\
+3.  **Upload:** Upload the transcript and non-ephemeral artifacts (specs, reports) to the **Project Notebook** for context recovery.\
+4.  **Update:** Copy relevant files to the Functional Folders (e.g., updating the latest Project Guide).\
+\
+**Weekly Hygiene**\
+Performed during the Weekly Review (TPL-006) [16], [17]:\
+1.  **Sync Check:** Verify functional folders match the latest chat outputs.\
+2.  **Notebook Audit:** Verify the project notebook contains all recent session transcripts (no \"stale\" notebooks).\
+3.  **Archive:** Move superseded drafts to archive folders.\
+\
+**Key Insight:** The \"90/10 Rule\" applies heavily here. The AI can generate the content (90%), but the user must perform the physical file organization and naming (10%) to maintain the external memory system [18].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

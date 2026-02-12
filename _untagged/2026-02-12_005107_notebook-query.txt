@@ -1,0 +1,33 @@
+================================================================================
+EXTRACTION: 2026-02-12_005107_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What automation plans existed before the JSON discovery? How was the extraction pipeline expected to work with respect to extract.py, SeraphRecorder capture, Chronicler organization, and concept-counter serialization? What role was JSON already anticipated to play, and what were the limitations of prose-based extraction for automation?
+Timestamp:       2026-02-12T00:51:07.000796+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 32533722-22b5-4938-8e20-8a06ea46b176
+Chat Configure:  default
+Response Chars:  995
+Duration:        332999ms
+================================================================================
+
+Based on the sources, there is **no specific preference** stated between Section 3.5 and Section 3.8 for the placement of Callout 7. The documentation provides multiple valid options without ranking them.\
+\
+According to the **Draft User Behavior Callouts** document, the placement instruction is flexible:\
+\
+*   **Placement:** \"Section 3 (Explicit Alignment Principle) ... INSERT at end of section, or as a callout within Section 3.5 (Dialog Intake System) or Section 3.8 (Instruction Chain Interpretation)\" [1].\
+\
+The **Master Assembly Blueprint** reiterates this flexibility without narrowing the recommendation:\
+\
+*   **User Behavior Callouts:** \"Callout 7 (Prompting Discipline) ... Section 3 (3.5 or 3.8)\" [2].\
+\
+Both locations are considered appropriate because the callout addresses how users should structure their inputs (relevant to **Dialog Intake**, Section 3.5) and how they should command multi-step actions (relevant to **Instruction Chain Interpretation**, Section 3.8).
+
+================================================================================
+END OF EXTRACTION
+================================================================================

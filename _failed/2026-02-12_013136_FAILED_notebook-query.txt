@@ -1,0 +1,25 @@
+================================================================================
+EXTRACTION: 2026-02-12_013136_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          NO_RESPONSE
+Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Source Package:  N/A
+Pass Type:       N/A
+Would-Be Route:  Tier 3 (Untagged)
+Query:           Show me the complete Section 4 from v1.0.7 baseline including all subsections 4.1 through 4.3.5. I need the full text of Section 4.1.1 Chat Types, Section 4.1.2 Chat Relationships, Section 4.2 Token Management through 4.2.5, Section 4.3 through 4.3.5.
+Timestamp:       2026-02-12T01:31:36.000191+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      6d47afc3-99a1-42b3-aa73-4488462870d7
+Conversation ID: N/A
+Response Chars:  0
+Duration:        12644000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"prompts": []}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

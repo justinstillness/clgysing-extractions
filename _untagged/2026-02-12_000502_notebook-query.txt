@@ -1,0 +1,69 @@
+================================================================================
+EXTRACTION: 2026-02-12_000502_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Integration Points Session F failure modes user behaviors three-tier inter-branch
+Timestamp:       2026-02-12T00:05:02.000592+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: cae8942f-7d7d-416f-8ece-2f48e2a29125
+Chat Configure:  default
+Response Chars:  6300
+Duration:        41999ms
+================================================================================
+
+Based on the revision findings and drafting plans, **Drafting Session F** is designated to address the human-centric and failure-mitigation aspects of the GOV-AIPM v1.0.8 framework.\
+\
+Here is a breakdown of the specific topics you requested...Integration Points, Failure Modes, User Behaviors, Three-Tier Architecture, and Inter-Branch Communication...drawing from the drafted sections and planning documents.\
+\
+### 1. Drafting Session F Scope\
+Drafting Session F focuses on \"User Behaviors + Three-Tier Architecture + Failure Modes + Inter-Branch Communication\" [1]. Its primary goal is to address the \"90/10 Observation\" from field testing: while the manual provides ~90% coverage for AI behavior, the missing 10% regarding **user-facing guidance** is critical for system effectiveness [2].\
+\
+### 2. Failure Modes (Category 13 & Audit)\
+Field testing identified specific failure modes that the previous manual version did not address. Session F adds these to **Section 14** (Failure Modes) and **Appendix F** [3, 4].\
+\
+*   **Bootstrap Verification Failures:** Occurs when the AI acknowledges a bootstrap but fails to actually follow its state instructions (e.g., incrementing session numbers by 2 instead of 1, or confusing branch handles). **Workaround:** User must strictly verify every bootstrap at closeout [3, 5].\
+*   **AI Behavioral Forgetfulness:** Despite Phase Protocols, the AI may \"forget\" committed behaviors (like narrating tool calls) during long sessions due to context compaction. **Workaround:** Include explicit behavioral reminders in the \"New Chat Notepad\" start< 2026/02/12 00:05:44.000439034  length=4744 from=10159 to=14902
+up message [3, 5].\
+*   **External Knowledge Contamination:** The AI draws on its general training data rather than the specific project source material, hallucinating connections not present in the text. **Workaround:** Strict source boundary enforcement in prompts [6, 7].\
+*   **Synthesis Layer Degradation:** While retrieval tools (like NotebookLM) have high fidelity, the AI's *synthesis* of that retrieved data can introduce errors. **Workaround:** Verification protocols and cross-checking results [7, 8].\
+*   **Context Invisibility (Transcript Gaps):** MCP tool calls (like reading a repository) happen \"behind the scenes\" and don't appear in the transcript, breaking auditability. **Workaround:** The **Connector Transparency Protocol** (Section 4.4), which mandates the AI narrate every tool call [9, 10].\
+*   **Protocol Rigidity & Silent Deviation:** Identified during the Section 14 audit, these are failures where the AI either follows protocol to the detriment of the project or deviates without warning. **Mitigation:** The **Conflict Resolution Protocol** (Section 4.5) [11].\
+\
+### 3. User Behaviors (Category 7)\
+Session F embeds user-specific \"callouts\" throughout the manual to address the human side of the workflow [12]. Key behaviors include:\
+\
+*   **New Chat Notepad System:** Users should maintain an external notepad (e.g., Google Keep) with a pre-written session startup prompt. This prompt includes the standard opening line, notebook IDs, and behavioral reminders, ensuring every session starts with perfect context [12, 13].\
+*   **Project Handle Naming:** Users must assign a short, consistent tag (3-10 chars) for all files and folders (e.g., `GOV-AIPM`) [13].\
+*   **Session Naming:** Users must manually rename chats in the interface to match the convention `[session#] [PROJECT-HANDLE] ([semantic descriptor])`, replacing default AI-generated names [14].\
+*   **Post-Session Housekeeping:** A rigid user workflow to download artifacts, verify the bootstrap, and upload the transcript to the project notebook immediately after closing [15].\
+\
+### 4. Three-Tier Documentation Architecture (Category 12)\
+This new pattern manages documentation in complex projects to prevent information overload [16, 17].\
+1.  **Architecture References (System Level):** High-level blueprints and design philosophy. Stable across the project; the \"Single Source of Truth.\"\
+2.  **Per-Tool/Component References (Operational Level):** Granular specs for specific tools or processes. Updated when components change.\
+3.  **CHANGELOGs (Temporal Level):** Tracks evolution, decisions, and version history over time. Provides \"context continuity\" for future sessions.\
+\
+### 5. Inter-Branch Communication (Category 14 & 6)\
+Branching manages parallel workstreams. The manual now formalizes how these branches share context without polluting the main line [18, 19].\
+\
+*   **Cross-Branch Awareness Document (TPL-0XX):** A document stored in Project Knowledge listing all active branches, their objectives, and any coordination needs. It ensures every session knows what other branches are doing [20, 21].\
+*   **Shared Main Notebook:** All branches feed into one main project notebook. This allows a branch session to query \"what happened in the main line?\" and vice versa [20, 22].\
+*   **Selective Upload:** Branch artifacts are usually kept in a branch-specific adjunct notebook, but finalized deliverables or significant findings are uploaded to the main notebook to share context [22].\
+\
+### 6. Integration Points (Session G)\
+\"Integration Points\" are specific targeted insertions that weave new concepts into existing manual sections. Rather than rewriting the whole manual, **Session G** will execute these integrations based on \"Draft Integration\" files produced in Sessions A-E [23, 24].\
+\
+Examples of confirmed Integration Points:\
+*   **Phase Protocol Integration:** Section 4.3.1 (Session Initiation) is revised to make **Phase Protocol Review** the mandatory first action for every session [25]. Section 5.8 (Artifact Relationships) is updated to show the hierarchy: Project Guide ... Phase Protocol ... Bootstrap [26].\
+*   **Findings Report Integration:** Section 5.8 is updated to link Findings Reports to Decision Logs (Findings provide evidence ... Decisions record choices) [27].\
+*   **Branching Integration:** Section 4.1.1 (Chat Types) is updated to cross-reference the new **Branch Management** protocol (Section 12.3) [28].\
+*   **Conflict Resolution Integration:** Section 2.7 (AI Coordinator Duties) is updated to include **Conflict Resolution** awareness as a core expectation [29].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

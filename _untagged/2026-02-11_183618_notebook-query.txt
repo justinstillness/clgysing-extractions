@@ -1,0 +1,60 @@
+================================================================================
+EXTRACTION: 2026-02-11_183618_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Insight Capture out-of-phase backlog two-phase workflow capture evaluate backlog item schema routing destinations CAPTURED EVALUATED ROUTED status tracking scope monitoring duty brief containable survey auto-detection scope expansion backlog register
+Timestamp:       2026-02-11T18:36:18.000154+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: fc55d1b9-42de-4a9d-bafb-5ee5775f492a
+Chat Configure:  default
+Response Chars:  2938
+Duration:        26000ms
+================================================================================
+
+Based on the sources, **Insight Capture** (also referred to as the **Out-of-Phase Backlog** mechanism) is a formal protocol designed to handle valuable ideas that arise during a session but fall outside the current phase's scope. Its primary purpose is to prevent scope creep while ensuring valuable insights are preserved for future use [1].
+
+The system operates on a **Two-Phase Workflow** involving specific capture, evaluation, and routing procedures [1].
+
+### Phase 1: Capture (In-Session)
+This phase occurs immediately when an out-of-scope idea surfaces during active work.
+*   **Trigger:** The AI auto-detects scope expansion (via its **Scope Monitoring Duty**) or the user flags an item [1], [2].
+*   **Action:** The AI pauses to conduct a **brief containable survey** (typically 3-5 questions) to document the idea without derailing the current session [1].
+*   **Output:** A **Backlog Item Report** is generated containing provenance data (source session, context) [1].
+*   **Result:** Work immediately returns to the current scope, minimizing distraction [1].
+
+### Phase 2: Evaluation & Routing (Dedicated Session)
+This phase occurs periodically (e.g., at phase transitions or dedicated planning sessions) to process accumulated items [1].
+*   **Action:** Review and evaluate each captured item [3].
+*   **Routing Destinations:** Items are assigned to one of several paths [3]:
+    *   New component/feature
+    *   Future task
+    *   Specific document update
+    *   Discard (if deemed not actionable)
+
+### Backlog Item Schema
+Captured items follow a specific structure to ensure actionable context is preserved [3]:
+*   **ID:** Backlog-Item-[NNN]
+*   **Description:** Concise summary of the idea.
+*   **Context:** What triggered the insight (provenance).
+*   **Potential Impact:** Value or consequence of the item.
+*   **Suggested Routing:** Initial thought on where it belongs.
+*   **Priority Assessment:** High/Medium/Low.
+*   **Status Tracking:** Follows the lifecycle **CAPTURED ... EVALUATED ... ROUTED** [3].
+
+### The Backlog Register (TPL-023)
+The **Backlog Register** serves as the repository for these items. It is integrated into the project lifecycle through a "Reporting Triad" alongside the Project Roadmap and Closure Report [4], [5]. It typically contains four sections [6], [7]:
+1.  **Current Project Backlog:** Items deferred from immediate work but intended for the current project.
+2.  **Version Backlog:** Items designated for future versions (e.g., v2.0).
+3.  **Process Improvements:** Observations about the workflow itself.
+4.  **Parking Lot:** Ideas of uncertain value saved for later review.
+
+This system ensures that the AI's **Scope Monitoring Duty**...which requires detecting and flagging scope expansion...has a constructive outlet, allowing the AI to say, "This appears to extend beyond our current phase scope... should we backlog this item?" rather than silently expanding the work [2], [8].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

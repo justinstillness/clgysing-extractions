@@ -1,0 +1,25 @@
+================================================================================
+EXTRACTION: 2026-02-12_005559_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          NO_RESPONSE
+Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Source Package:  N/A
+Pass Type:       N/A
+Would-Be Route:  Tier 3 (Untagged)
+Query:           From the v1.0.7 baseline, what is the exact text that begins Section 3 (the heading line) and what is the exact text of the last line of Section 3.7? I need to know the boundaries of Section 3 in the baseline document so I can extract it precisely.
+Timestamp:       2026-02-12T00:55:59.000503+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: N/A
+Response Chars:  0
+Duration:        1955000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"prompts": []}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

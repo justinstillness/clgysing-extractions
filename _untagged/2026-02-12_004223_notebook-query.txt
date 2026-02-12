@@ -1,0 +1,47 @@
+================================================================================
+EXTRACTION: 2026-02-12_004223_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What infrastructure issues were identified in Session 016 for the AWSNBLM branch? Include details about the flush_pipeline problem, the git rebase conflict, the Caliper recursion limitation, the AWSNBLM Wishlist Brief with its 4 tool improvements, and any engineering work needed to support JSON extraction in the pipeline.
+Timestamp:       2026-02-12T00:42:23.000311+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 32533722-22b5-4938-8e20-8a06ea46b176
+Chat Configure:  default
+Response Chars:  712
+Duration:        852999ms
+================================================================================
+
+Here is the complete, verbatim text of Section 3.1 from the v1.0.7 baseline manual:
+
+3.1 THE ALIGNMENT PROBLEM IN PRACTICE
+
+-------------------------------------
+
+Every AI interaction involves three mental models:
+
+1. What you think you know and want
+
+2. What the AI understands from your input
+
+3. What the AI assumes to fill gaps
+
+Misalignment between these models produces errors. Some errors are obvious
+
+and immediately correctable. Others are subtle...the AI proceeds confidently
+
+in the wrong direction, producing outputs that look correct but rest on
+
+flawed premises.
+
+The Explicit Alignment Principle addresses this: reduce the gap between
+
+models through deliberate, structured over-communication. [1]
+
+================================================================================
+END OF EXTRACTION
+================================================================================
