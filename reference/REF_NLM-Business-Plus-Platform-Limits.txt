@@ -1,0 +1,58 @@
+================================================================================
+NOTEBOOKLM BUSINESS PLUS — PLATFORM LIMITS REFERENCE
+================================================================================
+Version:    v1.0
+Created:    2026-02-13 (Session 019)
+Source:     Google AI search / Google Workspace documentation
+Status:     PRELIMINARY — deeper audit recommended
+
+================================================================================
+NOTEBOOK & SOURCE LIMITS
+================================================================================
+
+| Resource              | Business Plus | Free Tier |
+|-----------------------|---------------|-----------|
+| Notebooks (total)     | 500           | 100       |
+| Sources per notebook  | 300           | 50        |
+| Source size (max)     | 500,000 words / 200MB | Same |
+
+================================================================================
+STUDIO ARTIFACT DAILY LIMITS
+================================================================================
+
+Tracked as daily generation caps, NOT total saved count per notebook.
+
+| Artifact Type    | Daily Limit |
+|------------------|-------------|
+| Audio Overviews  | 20/day      |
+| Video Overviews  | 20/day      |
+| Reports          | 100/day     |
+| Quizzes          | 100/day     |
+| Flashcards       | 100/day     |
+| Deep Research    | 20/day      |
+
+================================================================================
+ADDITIONAL BUSINESS FEATURES
+================================================================================
+
+- Chat modes: Customize style and length of AI responses
+- Analytics: Usage analytics for shared team notebooks
+- Model access: Higher-level Gemini models for complex reasoning
+
+================================================================================
+KNOWN UNKNOWNS (FOR FUTURE AUDIT)
+================================================================================
+
+- Query limit per day (500 mentioned elsewhere — verify)
+- Maximum artifacts stored per notebook (if any cap exists)
+- Rate limiting on API calls (throttling behavior)
+- Report output size limits (max words per report)
+- Custom prompt character limit (believed to be 5,000 chars — verify)
+- Threading/conversation limits
+- Export-to-Docs rate limits
+- Source processing time limits
+- Any limits on source_add from Drive specifically
+
+================================================================================
+END OF REFERENCE
+================================================================================
