@@ -1,8 +1,8 @@
 {
   "notebook_name": "Havona Anvil Suite",
   "notebook_id": "430df618-e337-4971-abaa-6528e96bb1c4",
-  "last_synced": "2026-02-12",
-  "last_synced_session": "026",
+  "last_synced": "2026-02-13",
+  "last_synced_session": "027",
   "sources": {
     "CHANGELOG.txt": {
       "version": "v1.1",
@@ -11,11 +11,11 @@
       "nlm_source_type": "text_summary",
       "last_updated_session": "023"
     },
-    "v4.0_SPEC_HA-Suite-Architecture-Reference.txt": {
-      "version": "v4.0",
-      "repo_path": "_docs/v4.0_SPEC_HA-Suite-Architecture-Reference.txt",
-      "nlm_source_id": "c93315ab-689e-4a8e-a9d0-baca4f2024a9",
-      "last_updated_session": "021"
+    "v4.1_SPEC_HA-Suite-Architecture-Reference.txt": {
+      "version": "v4.1",
+      "repo_path": "_docs/v4.1_SPEC_HA-Suite-Architecture-Reference.txt",
+      "nlm_source_id": "2e7ac18e-ef1c-453b-8c31-3a2ab1d6e805",
+      "last_updated_session": "027"
     },
     "v1.0_REF_SeraphRecorder-Tool-Reference.txt": {
       "version": "v1.0",
