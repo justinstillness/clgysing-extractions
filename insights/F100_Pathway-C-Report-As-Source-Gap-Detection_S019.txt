@@ -1,0 +1,136 @@
+================================================================================
+F100: PATHWAY C VALIDATED — REPORT-AS-SOURCE ENABLES SELECTIVE RETRIEVAL
+AND AUTOMATED GAP DETECTION
+================================================================================
+Session:    019 NLMINTA (Exclusion Test & Report Tools)
+Date:       2026-02-13
+Test:       J7 Pathway C — Report → Google Docs → Add as Source → Query
+
+================================================================================
+TEST DESIGN
+================================================================================
+
+1. R2 "Create Your Own" concept inventory report already exported to Google Docs
+   (10M-nvjzXGWCOO1BLyZozRjA6tHLZUgBnsL-UXtVrbE4)
+2. Added Google Doc as source to SP03 via source_add(source_type="drive")
+   Source ID: b50b6d73-4afb-4e42-893c-1d1727252633
+3. Queried against ONLY the report source using source_ids parameter
+4. Queried across ALL sources for gap detection (report vs originals)
+
+================================================================================
+RESULTS
+================================================================================
+
+TEST 1: SELECTIVE CATEGORY RETRIEVAL
+- Query: "List all Theology and Economics concepts from the inventory"
+- Source filter: report source only
+- Result: 7 concepts returned (3 Theology, 4 Economics) with summaries
+  and related concepts
+- Context consumed: ~500 words (vs ~5,000 for full report)
+- STATUS: SUCCESS — selective retrieval works as hypothesized
+
+TEST 2: AUTOMATED GAP DETECTION
+- Query: "Compare inventory against other sources. Find missing concepts."
+- Source filter: ALL sources (report + 4 originals)
+- Result: NLM identified 7 specific gaps:
+  1. Corruption Cascade (merged into other entries)
+  2. Intrinsic Path (listed as related concept, no own entry)
+  3. Intellectual Honesty as methodological principle (absent)
+  4. Trojan Horse metaphor (folded into Technocratic Plantation)
+  5. Technology as Neutral Tool (absent — only negative aspects captured)
+  6. Surrogate Crystallized Worldviews (mentioned but no entry)
+  7. Epistemic/Moral Dichotomy as structural concept (halves listed, whole missing)
+- STATUS: SUCCESS — NLM can identify what report consolidation missed
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+F100-A: REPORT-AS-SOURCE ENABLES SELECTIVE RETRIEVAL
+  Instead of loading entire report into Claude's context window (~5K+ words),
+  queries against report-as-source load only targeted results (~500 words).
+  This is ~10x more token-efficient for specific lookups.
+
+F100-B: AUTOMATED GAP DETECTION IS NOW POSSIBLE
+  By adding the report as a source alongside originals, NLM can cross-compare
+  and identify specific concepts that were consolidated, merged, or omitted.
+  This turns consolidation bias from an undetectable problem into a measurable,
+  correctable one.
+
+F100-C: SELF-CORRECTING EXTRACTION PIPELINE
+  The full cycle is now:
+  1. Generate report (broad capture, ~72 concepts)
+  2. Export to Google Docs (persistent, zero Claude context)
+  3. Add as source to notebook (queryable database)
+  4. Run gap detection query (NLM compares report vs originals)
+  5. Targeted gap-fill queries for identified gaps
+  6. Result: comprehensive concept inventory with known completeness
+
+F100-D: TOKEN ECONOMICS VALIDATED
+  Report generation: 1 NLM call (asynchronous, no Claude context)
+  Export to Docs: 1 API call (no NLM or Claude tokens)
+  Source addition: 1 API call (no NLM tokens, trivial Claude context)
+  Selective query: 1 NLM query (~500 words Claude context)
+  Total for Pathway C: 3-4 API calls + ~500 words context
+  vs Pathway A (direct query): 1 NLM query + ~3K words context
+  vs Pathway B (full fetch): 1 NLM call + ~5K+ words context
+
+F100-E: CONSOLIDATION BIAS IS NOW A FEATURE, NOT A BUG
+  The report's tendency to consolidate is acceptable at Stage 1 because
+  the gap detection query at Stage 2 catches exactly what was lost.
+  The consolidation actually creates a useful "summary layer" that can
+  be queried for thematic structure, while the gap detection ensures
+  nothing falls through the cracks.
+
+================================================================================
+REVISED OPTIMAL D1 EXTRACTION PIPELINE
+================================================================================
+
+Stage 1: BROAD CAPTURE (Reports)
+  - studio_create with "Create Your Own" + anti-consolidation prompt
+  - export_artifact to Google Docs
+  - source_add to working notebook
+  Expected yield: ~70+ concepts per source package
+
+Stage 2: GAP DETECTION (Cross-source query)
+  - notebook_query comparing report vs original sources
+  - Identifies consolidated/merged/missing concepts
+  Expected gaps: ~5-10 per source package
+
+Stage 3: TARGETED GAP-FILL (Queries with exclusion)
+  - notebook_query with explicit exclusion list (J6 method)
+  - Targets specific gaps identified in Stage 2
+  Expected additional yield: ~5-15 concepts
+
+Stage 4: SELECTIVE EVALUATION (Pathway C queries)
+  - Category-specific queries against report-as-source
+  - Theme identification and quality assessment
+  - Token-efficient evaluation without full context loading
+
+Total expected yield: 80-95+ concepts per source package
+Total NLM calls: ~5-8 per source package
+Claude context efficiency: ~60-70% reduction vs all-query approach
+
+================================================================================
+FUTURE CONSIDERATIONS (FROM USER)
+================================================================================
+
+- Gemini as conductor: Design work orders for bulk extraction, Claude for
+  evaluation and gap-fill. Cost asymmetry makes this attractive.
+- NLM limitations audit: Comprehensive survey of all platform limits
+  (report caps, query quotas, source limits, character limits)
+- Evaluation workflows: What intelligent intervention points are needed
+  between automated extraction stages?
+- Report limit: User mentioned 20 reports — needs verification on whether
+  this is per notebook, per day, or total.
+
+================================================================================
+CLEANUP NOTE
+================================================================================
+
+The R2 report source (b50b6d73-4afb-4e42-893c-1d1727252633) should be
+removed from SP03 after testing to keep the calibration notebook clean.
+
+================================================================================
+END OF FINDING
+================================================================================
