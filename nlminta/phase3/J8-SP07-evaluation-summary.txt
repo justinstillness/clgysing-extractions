@@ -1,0 +1,18 @@
+================================================================================
+J8 FULL-SCALE D1 LIBRARY TEST — EVALUATION REPORT
+================================================================================
+Project:        NLMINTA (NotebookLM MCP Integration — Cultology Toolset)
+Test:           J8 — Full-Scale D1 Library Capstone
+Session:        020
+Date:           2026-02-13
+File Class:     EVAL
+Phase:          Phase 3 — JSON Capability Exploration (Final Test)
+
+SUMMARY:
+J8 validated the Revised D1 Extraction Pipeline at production scale.
+Target: SP07 (19,915 words, Paper/Synthesis). 
+Total yield: 226+ items across 4 pipeline stages.
+Phase 3 assessed as 100% complete (8/8 items validated).
+Six new findings: F101-F106.
+Full report in session transcript and downloadable file.
+================================================================================
