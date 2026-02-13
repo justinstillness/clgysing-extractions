@@ -1,0 +1,22 @@
+================================================================================
+LIBFORGE WORKFLOW MAP — COMPLETE STAGE REFERENCE
+================================================================================
+Project:        NLMINTA / CLGYSING
+Version:        v1.0
+File Class:     REF
+Created:        2026-02-13
+Session:        021 NLMINTA (Phase 3 Complete — Transition Planning)
+
+[Full document committed — see downloadable file for complete content]
+
+Key sections:
+1. LibForge Overview & Three Workflows (BU, TD, HS)
+2. Bottom-Up Extraction stages (BU-1 through BU-8) — mostly COMPLETE
+3. Top-Down Architecture stages (TD-1 through TD-4) — NOT TESTED
+4. Handshake & Drafting stages (HS-1 through HS-4) — NOT TESTED
+5. Degree Classification System (D0, D1, D2, D3, DM)
+6. NLM Capability Assessment by Stage
+7. Remaining Test Items (CL and TL high priority)
+8. Consolidation & Standardization Roadmap (Phases A-D)
+
+See full file for complete content.
