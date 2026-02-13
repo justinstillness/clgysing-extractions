@@ -59,6 +59,14 @@
       "repo_path": "_docs/v1.1_REF_Chronicler-Tool-Reference.txt",
       "nlm_source_id": "636b453c-34b2-4f15-9cf9-4fe993fc5353",
       "last_updated_session": "026"
+    },
+    "WISHLIST-ARCHIVE_Completed-Items.txt": {
+      "version": "v1.0",
+      "repo_path": "_docs/WISHLIST-ARCHIVE_Completed-Items.txt",
+      "nlm_source_id": "31a7de50-b699-4006-9a2c-df02a6f7eccf",
+      "nlm_notebook": "8b28827e-4051-4df7-ba55-43cf3df1041c",
+      "note": "Lives in HA Suite Wishlist notebook, not HA Suite docs notebook",
+      "last_updated_session": "028"
     }
   },
   "maintenance_note": "When any _docs/ file is updated: (1) commit new version via Chronicler, (2) delete old source from NLM notebook via Majeston:source_delete, (3) add updated file via Majeston:source_add, (4) update this manifest with new source_id and session number.",
@@ -68,6 +76,12 @@
       "name": "Havona Anvil Suite",
       "sync_type": "auto",
       "note": "Living docs — Claude syncs per protocol"
+    },
+    "ha_suite_wishlist": {
+      "id": "8b28827e-4051-4df7-ba55-43cf3df1041c",
+      "name": "HA Suite Wishlist",
+      "sync_type": "hybrid",
+      "note": "Individual text sources per active item. Archive source from GitHub URL. Claude manages item CRUD. Periodic snapshot export to _docs/ Wishlist file."
     },
     "session_transcripts": {
       "id": "78ccac4a-4c28-4902-b721-0f77e25e1d59",
