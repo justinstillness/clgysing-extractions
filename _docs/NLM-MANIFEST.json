@@ -5,11 +5,10 @@
   "last_synced_session": "027",
   "sources": {
     "CHANGELOG.txt": {
-      "version": "v1.1",
+      "version": "v1.2",
       "repo_path": "_docs/CHANGELOG.txt",
-      "nlm_source_id": "d5325ddc-8a59-44cf-9183-63db86496451",
-      "nlm_source_type": "text_summary",
-      "last_updated_session": "023"
+      "nlm_source_id": "37769835-126d-4879-939c-f8ab27dd21c0",
+      "last_updated_session": "027"
     },
     "v4.1_SPEC_HA-Suite-Architecture-Reference.txt": {
       "version": "v4.1",
@@ -49,12 +48,11 @@
       "nlm_source_type": "text_summary",
       "last_updated_session": "023"
     },
-    "v1.0_REF_Development-Wishlist.txt": {
-      "version": "v1.0",
-      "repo_path": "_docs/v1.0_REF_Development-Wishlist.txt",
-      "nlm_source_id": "dd3e257d-2af6-4330-97b6-115236c74007",
-      "nlm_source_type": "text_summary",
-      "last_updated_session": "023"
+    "v1.1_REF_Development-Wishlist.txt": {
+      "version": "v1.1",
+      "repo_path": "_docs/v1.1_REF_Development-Wishlist.txt",
+      "nlm_source_id": "5cbc6c2f-881d-4156-955d-79fc7ada848a",
+      "last_updated_session": "027"
     },
     "v1.1_REF_Chronicler-Tool-Reference.txt": {
       "version": "v1.1",
