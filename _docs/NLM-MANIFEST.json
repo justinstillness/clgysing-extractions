@@ -2,19 +2,23 @@
   "notebook_name": "Havona Anvil Suite",
   "notebook_id": "430df618-e337-4971-abaa-6528e96bb1c4",
   "last_synced": "2026-02-13",
-  "last_synced_session": "028",
+  "last_synced_session": "029",
   "sources": {
     "CHANGELOG.txt": {
-      "version": "v1.2",
+      "version": "v1.3",
       "repo_path": "_docs/CHANGELOG.txt",
-      "nlm_source_id": "37769835-126d-4879-939c-f8ab27dd21c0",
-      "last_updated_session": "027"
+      "nlm_source_id": "995b8365-b85f-4651-b714-d51129e5a695",
+      "nlm_source_type": "text_condensed",
+      "note": "Condensed version with latest S028 entry. Full file via Chronicler.",
+      "last_updated_session": "029"
     },
     "v4.1_SPEC_HA-Suite-Architecture-Reference.txt": {
       "version": "v4.1",
       "repo_path": "_docs/v4.1_SPEC_HA-Suite-Architecture-Reference.txt",
-      "nlm_source_id": "2e7ac18e-ef1c-453b-8c31-3a2ab1d6e805",
-      "last_updated_session": "027"
+      "nlm_source_id": "decd6e01-3833-4fe2-a777-d7c5145c0f65",
+      "nlm_source_type": "text_condensed",
+      "note": "Condensed version with key sections. Full file via Chronicler.",
+      "last_updated_session": "029"
     },
     "v1.0_REF_SeraphRecorder-Tool-Reference.txt": {
       "version": "v1.0",
@@ -51,8 +55,10 @@
     "v1.3_REF_Development-Wishlist.txt": {
       "version": "v1.3",
       "repo_path": "_docs/v1.3_REF_Development-Wishlist.txt",
-      "nlm_source_id": "fb55708e-2aa5-477e-98ee-1656846876e6",
-      "last_updated_session": "028"
+      "nlm_source_id": "96fac9ef-867c-43d4-ad96-7bb486a659da",
+      "nlm_source_type": "text_condensed",
+      "note": "Condensed version with section directory and key items. Full file via Chronicler.",
+      "last_updated_session": "029"
     },
     "v1.1_REF_Chronicler-Tool-Reference.txt": {
       "version": "v1.1",
@@ -69,13 +75,13 @@
       "last_updated_session": "028"
     }
   },
-  "maintenance_note": "When any _docs/ file is updated: (1) commit new version via Chronicler, (2) delete old source from NLM notebook via Majeston:source_delete, (3) add updated file via Majeston:source_add, (4) update this manifest with new source_id and session number.",
+  "maintenance_note": "When any _docs/ file is updated: (1) commit new version via Chronicler, (2) delete old source from NLM notebook via Majeston:source_delete, (3) add updated file via Majeston:source_add as TEXT source (not URL — URL imports capture GitHub page chrome instead of file content), (4) update this manifest with new source_id and session number. For large files (>20K chars), create a condensed version preserving key sections with a note pointing to full file via Chronicler.",
   "notebooks_maintained": {
     "ha_suite_docs": {
       "id": "430df618-e337-4971-abaa-6528e96bb1c4",
       "name": "Havona Anvil Suite",
       "sync_type": "auto",
-      "note": "Living docs — Claude syncs per protocol"
+      "note": "Living docs — Claude syncs per protocol. TEXT sources only (not URL)."
     },
     "ha_suite_wishlist": {
       "id": "8b28827e-4051-4df7-ba55-43cf3df1041c",
