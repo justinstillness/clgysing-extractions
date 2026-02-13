@@ -7,16 +7,252 @@ File Class:     REF
 Created:        2026-02-13
 Session:        021 NLMINTA (Phase 3 Complete — Transition Planning)
 
-[Full document committed — see downloadable file for complete content]
+PURPOSE:
+Comprehensive reference mapping all LibForge workflow stages from raw
+materials through publication-ready content. Documents NLM/Majeston testing
+relevance for each stage, current validation status, and remaining test
+items. Serves as the roadmap for continued NLMINTA integration testing
+and eventually feeds into the comprehensive LibForge methodology
+standardization.
 
-Key sections:
-1. LibForge Overview & Three Workflows (BU, TD, HS)
-2. Bottom-Up Extraction stages (BU-1 through BU-8) — mostly COMPLETE
-3. Top-Down Architecture stages (TD-1 through TD-4) — NOT TESTED
-4. Handshake & Drafting stages (HS-1 through HS-4) — NOT TESTED
-5. Degree Classification System (D0, D1, D2, D3, DM)
-6. NLM Capability Assessment by Stage
-7. Remaining Test Items (CL and TL high priority)
-8. Consolidation & Standardization Roadmap (Phases A-D)
+================================================================================
+TABLE OF CONTENTS
+================================================================================
 
-See full file for complete content.
+1. LibForge Overview & Three Workflows
+2. Bottom-Up Extraction (Workflow 1) — Stage Reference
+3. Top-Down Architecture (Workflow 2) — Stage Reference
+4. The Handshake & Drafting (Workflow 3) — Stage Reference
+5. Degree Classification System
+6. NLM/Majeston Capability Assessment by Stage
+7. Remaining Test Items
+8. Consolidation & Standardization Roadmap
+
+================================================================================
+1. LIBFORGE OVERVIEW & THREE WORKFLOWS
+================================================================================
+
+LibForge is the content production framework that transforms raw research
+materials into publication-ready content through three interconnected
+workflows:
+
+WORKFLOW 1: BOTTOM-UP EXTRACTION
+  Raw source materials -> organized, extracted, atomic concept data
+  "Mining the ore"
+
+WORKFLOW 2: TOP-DOWN ARCHITECTURE
+  Master thesis -> thesis tree -> series organization
+  "Designing the blueprint"
+
+WORKFLOW 3: THE HANDSHAKE & DRAFTING
+  Bottom-up data + top-down structure -> argument blocks -> prose
+  "Building the house"
+
+These workflows are not strictly sequential. Bottom-up extraction can
+proceed independently. Top-down architecture can begin with raw notebooks
+(validated by preliminary testing). However, the Handshake requires both
+workflows to have produced their outputs.
+
+The three workflows contain the following stages:
+
+  BOTTOM-UP (Workflow 1):
+    Stage BU-1: Source Package Preparation
+    Stage BU-2: Pre-Extraction Evaluation (PE)
+    Stage BU-3: Thematic Mapping (TM)
+    Stage BU-4: Core Extraction (TX, VX, TS)
+    Stage BU-5: Gap Detection & Fill (GD, GX)
+    Stage BU-6: Evaluation & Classification (EV, CL)
+    Stage BU-7: Glossary Generation (GL)
+    Stage BU-8: D1 Library Assembly
+
+  TOP-DOWN (Workflow 2):
+    Stage TD-1: Thesis Genesis (Master Thesis Formation)
+    Stage TD-2: Thesis Tree Development (Epistemic Regress)
+    Stage TD-3: Series Organization
+    Stage TD-4: Thesis-Lens Extraction (TL)
+
+  HANDSHAKE & DRAFTING (Workflow 3):
+    Stage HS-1: Argument Block Creation (ArgBlocks)
+    Stage HS-2: Editorial & Style Preparation
+    Stage HS-3: Drafting
+    Stage HS-4: Refinement & Publication
+
+================================================================================
+2. BOTTOM-UP EXTRACTION (WORKFLOW 1) — STAGE REFERENCE
+================================================================================
+
+------------------------------------------------------------------------
+Stage BU-1: Source Package Preparation
+------------------------------------------------------------------------
+Description:    Organize raw materials (voice memos, notes, ChatGPT
+                exchanges, research literature) into source packages
+                suitable for NLM notebook loading.
+Pass Types:     N/A (organizational)
+NLM Role:       Source loading via source_add
+Validation:     COMPLETE
+Notes:          source_add broken on exported Google Docs (F103).
+
+------------------------------------------------------------------------
+Stage BU-2: Pre-Extraction Evaluation (PE)
+------------------------------------------------------------------------
+Description:    Scan source packages for coherence, factual accuracy,
+                structural quality, and extraction readiness.
+Pass Types:     PE
+NLM Role:       Direct — notebook_query or report generation
+Validation:     COMPLETE
+
+------------------------------------------------------------------------
+Stage BU-3: Thematic Mapping (TM)
+------------------------------------------------------------------------
+Description:    Survey conceptual landscape. Identify major themes and
+                clusters without extracting individual concepts.
+Pass Types:     TM
+NLM Role:       Direct — leverages NLM consolidation bias (asset here)
+Validation:     COMPLETE
+
+------------------------------------------------------------------------
+Stage BU-4: Core Extraction (TX, VX, TS)
+------------------------------------------------------------------------
+Description:    Extract discrete concepts (TX), vocabulary (VX), and
+                thesis strings (TS) into atomic, modular units.
+Pass Types:     TX, VX, TS
+NLM Role:       Direct — primary extraction engine
+Validation:     COMPLETE
+Key Findings:   Pass Separation Principle (D-029), threading optimization,
+                report 3x yield (F99), quality-first schema, explicit
+                exclusion methodology, sub-linear yield scaling (F102).
+
+------------------------------------------------------------------------
+Stage BU-5: Gap Detection & Fill (GD, GX)
+------------------------------------------------------------------------
+Description:    Identify missing concepts, perform targeted extraction.
+Pass Types:     GD, GX
+NLM Role:       Direct — Pathway C self-correcting pipeline
+Validation:     COMPLETE — J8 capstone (S020)
+Key Findings:   100% targeted gap-fill success, hybrid Stage 3 validated
+                (F105), all 3 stages necessary (F106).
+
+------------------------------------------------------------------------
+Stage BU-6: Evaluation & Classification (EV, CL)
+------------------------------------------------------------------------
+Pass Types:     EV, CL
+Validation:     EV: COMPLETE | CL: NOT TESTED (gap)
+
+------------------------------------------------------------------------
+Stage BU-7: Glossary Generation (GL)
+------------------------------------------------------------------------
+Pass Types:     GL
+NLM Role:       Direct — consolidation is natural NLM strength
+Validation:     COMPLETE
+
+------------------------------------------------------------------------
+Stage BU-8: D1 Library Assembly
+------------------------------------------------------------------------
+NLM Role:       Indirect — Chronicler file organization
+Validation:     COMPLETE — 226+ items from SP07
+
+================================================================================
+3. TOP-DOWN ARCHITECTURE (WORKFLOW 2) — STAGE REFERENCE
+================================================================================
+
+------------------------------------------------------------------------
+Stage TD-1: Thesis Genesis (Master Thesis Formation)
+------------------------------------------------------------------------
+Two entry points: (a) User-driven crystallization, (b) AI library survey.
+NLM Role:       MODERATE (entry point b)
+Validation:     NOT TESTED
+
+------------------------------------------------------------------------
+Stage TD-2: Thesis Tree Development (Epistemic Regress)
+------------------------------------------------------------------------
+Interactive interview. Master thesis -> probing questions -> D1 thesis
+strings -> branch to D2 -> continue until fully expressed.
+NLM Role:       HYBRID — automated first pass from corpus, thesis string
+                discovery, validation against source material.
+Validation:     NOT TESTED
+
+------------------------------------------------------------------------
+Stage TD-3: Series Organization
+------------------------------------------------------------------------
+Organize thesis tree into coherent article series.
+NLM Role:       LOW — primarily Claude-user strategic work
+Validation:     NOT TESTED (may not need dedicated testing)
+
+------------------------------------------------------------------------
+Stage TD-4: Thesis-Lens Extraction (TL)
+------------------------------------------------------------------------
+Three applications:
+  TL-A: Analytical Extraction (model as lens on library)
+  TL-B: Current Event Analysis (model as lens on new data)
+  TL-C: Corpus Expansion (framework as self-expanding machine)
+NLM Role:       HIGH — fundamentally an NLM capability
+Validation:     PARTIALLY TESTED (promising preliminary results)
+
+================================================================================
+4. THE HANDSHAKE & DRAFTING (WORKFLOW 3) — STAGE REFERENCE
+================================================================================
+
+------------------------------------------------------------------------
+Stage HS-1: Argument Block Creation (ArgBlocks)
+------------------------------------------------------------------------
+Bottom-up + top-down converge into semantic blueprints.
+NLM Role:       MODERATE-HIGH (concept-to-thesis mapping)
+Validation:     NOT TESTED
+
+------------------------------------------------------------------------
+Stage HS-2: Editorial & Style Preparation
+------------------------------------------------------------------------
+Define voice guide, style spec, accessibility layers.
+NLM Role:       MODERATE (analyze published content for patterns)
+Validation:     NOT TESTED
+
+------------------------------------------------------------------------
+Stage HS-3: Drafting
+------------------------------------------------------------------------
+NLM Role:       NONE — Claude/drafting AI domain
+Validation:     N/A
+
+------------------------------------------------------------------------
+Stage HS-4: Refinement & Publication
+------------------------------------------------------------------------
+NLM Role:       LOW
+Validation:     N/A
+
+================================================================================
+5. DEGREE CLASSIFICATION SYSTEM
+================================================================================
+
+D0  Degree Zero    Master thesis (top-down origin)
+D1  First Degree   Raw extraction output ("ore")
+D2  Second Degree  Cleaned, organized, numbered
+D3  Third Degree   Consolidated across sources ("alloy")
+DM  Master Degree  Final production artifact
+
+================================================================================
+6. NLM CAPABILITY ASSESSMENT BY STAGE
+================================================================================
+
+HIGH PRIORITY TESTS:  CL (BU-6), TL (TD-4)
+MEDIUM PRIORITY:      TD-1, TD-2, HS-1, HS-2
+LOW PRIORITY:         TD-3
+
+================================================================================
+7. REMAINING TEST ITEMS
+================================================================================
+
+TEST 1 (CL): Taxonomy classification consistency. 1-2 test runs.
+TEST 2 (TL): All three applications (A/B/C). 2-4 test runs.
+TESTS 3-6:   Natural testing during top-down workflow execution.
+
+================================================================================
+8. CONSOLIDATION ROADMAP
+================================================================================
+
+Phase A: Complete Testing (current)
+Phase B: Comprehensive Standardization (methodology spec)
+Phase C: Alpha Test (small project)
+Phase D: Beta Test (full-scale production)
+
+================================================================================
+END OF LIBFORGE WORKFLOW MAP
+================================================================================
