@@ -1,0 +1,64 @@
+================================================================================
+HA SUITE WISHLIST — COMPLETED ITEMS ARCHIVE
+================================================================================
+Project:        AWSNBLM (Havona Anvil Suite)
+File Class:     REF
+Created:        2026-02-13 (S028)
+Updated:        2026-02-13 (S028)
+
+PURPOSE:
+Durable archive of all completed wishlist items. When an active item in
+the HA Suite Wishlist NLM notebook is completed, its full text is appended
+here with completion metadata, then the individual NLM source is deleted.
+
+This file lives in the GitHub repo (_docs/) as the source of truth.
+A copy is maintained as a source in the HA Suite Wishlist NLM notebook
+for queryability. Re-sync NLM source after each append.
+
+================================================================================
+COMPLETED ITEMS
+================================================================================
+
+--------------------------------------------------------------------------------
+W-002: GitHub Repo Interaction Tool (Chronicler)
+--------------------------------------------------------------------------------
+Status:      COMPLETE (S017)
+Completed:   S017
+Notes:       Deployed as Chronicler MCP tool with 10 tools.
+Archived:    S028 (initial archive creation — migrated from Wishlist v1.2)
+
+--------------------------------------------------------------------------------
+File Browser Auth Fix
+--------------------------------------------------------------------------------
+Status:      COMPLETE (S023, D-035)
+Completed:   S023
+Notes:       Bcrypt hash format mismatch resolved.
+Archived:    S028 (initial archive creation — migrated from Wishlist v1.2)
+
+--------------------------------------------------------------------------------
+Concept Counter Reset
+--------------------------------------------------------------------------------
+Status:      COMPLETE (S022)
+Completed:   S022
+Notes:       Reset to clean {} for production.
+Archived:    S028 (initial archive creation — migrated from Wishlist v1.2)
+
+--------------------------------------------------------------------------------
+Chronicler flush_pipeline Discovery Fix
+--------------------------------------------------------------------------------
+Status:      COMPLETE (S026)
+Completed:   S026
+Notes:       Function reordering before mcp.run() entry point.
+Archived:    S028 (initial archive creation — migrated from Wishlist v1.2)
+
+--------------------------------------------------------------------------------
+SERAPH Branch Tagging Directive
+--------------------------------------------------------------------------------
+Status:      COMPLETE (S026)
+Completed:   S026
+Notes:       v1.0 directive created, Tier 1 of W-023.
+Archived:    S028 (initial archive creation — migrated from Wishlist v1.2)
+
+================================================================================
+END OF ARCHIVE
+================================================================================
