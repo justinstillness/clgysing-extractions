@@ -1,0 +1,112 @@
+================================================================================
+DEVELOPMENT WISHLIST — SESSION 026 ADDENDUM
+================================================================================
+Date:      2026-02-12
+Session:   026
+Action:    Append these entries to Development Wishlist after Section 4
+
+Note on numbering: Earlier in S026, W-049 and W-050 were informally
+assigned to Caliper Recursion and NLM-to-Repo Ingestion. However, W-050
+is already assigned to Indexer Alpha Production Testing. Reassigning:
+
+  W-047: Mobile Transcript Capture
+  W-048: EC2 Configuration Backup  
+  W-049: Caliper Subdirectory Recursion (was informally W-049, confirmed)
+  W-061: NLM-to-Repo Ingestion Tool (was informally W-050, reassigned)
+
+Items W-047 and W-048 were identified in sessions S024-S025.
+Items W-049 and W-061 were formalized in session S026 from NLMINTA S016 brief.
+Transcript Auto-Archive is folded into W-047 as a stretch goal.
+
+================================================================================
+NEW ENTRIES — SECTION 4 (Infrastructure & Maintenance)
+================================================================================
+
+W-047: Mobile Transcript Capture
+Priority:    P3
+Status:      IDEA (S025, formalized S026)
+
+Description:
+A solution (bookmarklet, browser extension alternative, or service) to
+capture Claude conversation transcripts on mobile devices where Chrome
+extensions like Claude Exporter do not work. The Transcript Receiver
+(port 8096) was built in S025 as a paste-based workaround, but mobile
+copy-paste of full transcripts proved impractical due to UI limitations.
+
+Approaches to evaluate:
+- Bookmarklet that extracts conversation DOM and POSTs to receiver
+- Mobile browser automation (Shortcuts on iOS)
+- Claude API transcript export (if/when available)
+- Alternative: accept mobile sessions as lower-fidelity and prioritize
+  desktop for transcript-critical work
+
+Stretch: Automate routing of captured transcripts into GitHub repo and
+NLM notebooks (originally tracked as separate W-047/auto-archive concept,
+folded here as end-to-end pipeline).
+
+W-048: EC2 Configuration Backup
+Priority:    P3
+Status:      IDEA (S025, formalized S026)
+
+Description:
+Periodic snapshot of the /home/ubuntu/ directory structure (scripts,
+configs, .env files, service definitions) to GitHub or Google Drive.
+Currently, EC2 configuration is not backed up — if the instance is
+terminated, all custom scripts and configurations would need to be
+rebuilt from session transcripts.
+
+Approach options:
+- Chronicler-based: tar + push key directories to repo
+- rsync to Google Drive (via rclone)
+- Cron job: weekly snapshot to _backups/ in repo
+- Selective: only backup changed files (git diff approach)
+
+Excludes: Large binary files, node_modules, auth tokens (security)
+
+================================================================================
+NEW ENTRIES — SECTION 3 (Chronicler Enhancements)
+================================================================================
+
+W-049: Caliper Subdirectory Recursion
+Priority:    P3
+Status:      IDEA (S026, from NLMINTA S016 brief)
+
+Description:
+Add optional recursive parameter to Caliper's analyze_github_folder tool
+to scan all subdirectories and produce a unified inventory report. Currently
+requires separate calls per directory.
+
+Implementation: Add recursive flag that walks subdirectories, aggregating
+file metrics into a single structured response. Include directory path
+in per-file output for disambiguation.
+
+Build estimate: <1 session
+
+================================================================================
+NEW ENTRIES — SECTION 7 (File Browser) or NEW SECTION
+================================================================================
+
+W-061: NLM-to-Repo Ingestion Tool
+Priority:    P3
+Status:      IDEA (S026, from NLMINTA S016 brief)
+
+Description:
+Cross-service orchestration tool combining Majeston + Chronicler + Caliper
+to ingest NotebookLM source content to a repo staging folder with optional
+analysis. Claude triggers a single tool call; the pipeline reads NLM
+source content, writes it to the repo, and optionally runs Caliper
+analysis.
+
+Workflow:
+1. Majeston:source_get_content → retrieve raw text
+2. Chronicler:write_file → save to repo staging folder
+3. (Optional) Caliper:analyze_github_folder → generate metrics
+
+Could be a Conductor workflow (W-100 dependent) or a manual Claude
+multi-tool sequence documented as a standard operating procedure.
+
+Build estimate: 1 session (as Conductor workflow) or 0 sessions (as SOP)
+
+================================================================================
+END OF ADDENDUM
+================================================================================
