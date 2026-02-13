@@ -29,6 +29,65 @@ CHANGELOG
 ================================================================================
 
 --------------------------------------------------------------------------------
+2026-02-13 | Session 028 | Documentation, Indexer
+--------------------------------------------------------------------------------
+CHANGED: Wishlist restored from v1.2 (corrupted placeholders) to full content
+  - S027 had compressed Sections 1-7 and 9 to placeholders during update
+  - Chronicler lacks git history access — identified gap (→ W-064)
+  - User retrieved v1.1 content via SSH/Termius using git show
+  - Full rebuild completed, upgraded to v1.3 with new items
+
+CHANGED: Wishlist management transitioned to hybrid NLM/GitHub model (D-041)
+  - PRIMARY: HA Suite Wishlist NLM notebook (queryable, atomic item updates)
+  - SECONDARY: _docs/ snapshot file (archival, cross-notebook, human-readable)
+  - ARCHIVE: WISHLIST-ARCHIVE_Completed-Items.txt (repo = source of truth)
+  - Replaces monolithic single-file approach
+
+ADDED: HA Suite Wishlist NLM notebook (8b28827e-4051-4df7-ba55-43cf3df1041c)
+  - 41 sources total (37 existing active items + 3 new + 1 bundled LibForge)
+  - Each active wishlist item as individual text source for atomic updates
+  - Archive source linked to GitHub completed-items file
+  - Validation query confirmed full queryability
+
+ADDED: WISHLIST-ARCHIVE_Completed-Items.txt
+  - Initial population with 5 previously completed items
+  - Added as URL source in Wishlist notebook
+  - GitHub repo is source of truth for completed items
+
+ADDED: Three new wishlist items
+  - W-064: Chronicler Git History Access (Section 3, P3)
+  - W-065: Gemini-NLM Integration Research (new Section 10: Cross-AI, P4)
+  - W-066: Report-Based Extraction Pipeline (Section 2, P3)
+
+ADDED: Wishlist Section 10 — Cross-AI Integration
+  - New category for multi-AI workflow items
+  - Houses W-065 (Gemini-NLM) as first entry
+
+CHANGED: Wishlist updated to v1.3
+  - W-064, W-065, W-066 integrated
+  - Maintenance header updated to reflect hybrid model
+  - Completed items section redirects to archive file
+
+CHANGED: Archive workflow defined (D-042)
+  - Completions: Append to WISHLIST-ARCHIVE, delete individual NLM source
+  - Format: W-### | Title | Completed date | Session | Brief outcome
+
+CHANGED: Periodic snapshot export protocol established (D-043)
+  - _docs/ snapshot updated periodically, not on every change
+  - Triggers: structural changes, pre-session prep, quarterly maintenance
+
+CROSS-COMPONENT NOTES:
+  - NLM-MANIFEST.json updated 3x (Wishlist source swaps, new notebook,
+    archive cross-reference)
+  - NLM intermittent errors during rapid source addition — pacing
+    (10-15 second gaps) recommended for bulk operations
+  - Hybrid NLM/GitHub pattern may be applicable to other living docs
+  - CHANGELOG needs S028 entry (deferred — addressed in S029)
+
+DECISIONS: D-041 (hybrid architecture), D-042 (archive workflow),
+  D-043 (snapshot protocol)
+
+--------------------------------------------------------------------------------
 2026-02-13 | Session 027 | Documentation
 --------------------------------------------------------------------------------
 CHANGED: Architecture Reference updated from v4.0 to v4.1
