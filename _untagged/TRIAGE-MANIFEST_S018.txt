@@ -1,0 +1,96 @@
+================================================================================
+TRIAGE MANIFEST — _untagged File Analysis
+================================================================================
+Created:    2026-02-13 (Session 018 NLMINTA)
+Total Files: 221
+Purpose:    Branch identification for future automated organization
+
+================================================================================
+BRANCH IDENTIFICATION KEY
+================================================================================
+
+Files can be identified by Notebook ID embedded in each extraction file.
+Key notebook-to-branch mappings:
+
+NLMINTA Branch:
+  1e03c6b6-247d-4ddd-801d-8e435ac291b9  = SP03 Repositories (testing target)
+  b8fd3d1c-db62-40e6-bddf-6d8474a3733d  = NLMINTA Sessions (context queries)
+  cce3b796-03b4-4282-98ac-e572cf820c02  = CLGYSING Source Pkgs
+
+GOV-AIPM Branch:
+  a0a96d92-1e44-4907-85a7-09e286058fdf  = GOV-AIPM v1.0.8 assembly notebooks
+  c871b8f3-1006-489c-9222-5d0727e98077  = GOV-AIPM template notebook
+
+Other Branches (AWSNBLM, CLGYSING content, A47):
+  To be identified — check notebook IDs against directory
+
+================================================================================
+SESSION 018 FILES (NLMINTA — J5 Validation)
+================================================================================
+
+These files are from the current session's J5 schema validation testing.
+Target notebook: SP03 (1e03c6b6...)
+
+Confirmed NLMINTA S018 files (by timestamp + notebook ID match):
+  2026-02-12_234438_notebook-query.txt  — TX validation (14 entries, JSON)
+  2026-02-12_234553_notebook-query.txt  — TS validation (likely)
+  2026-02-12_234653_notebook-query.txt  — RX validation (likely)
+  2026-02-12_234800_notebook-query.txt  — VX validation (likely)
+  2026-02-12_235604_notebook-query.txt  — TM validation (likely)
+  2026-02-12_235654_notebook-query.txt  — CE-CARD validation (likely)
+  2026-02-12_235748_notebook-query.txt  — Context query or config (likely)
+
+Plus earlier S018 context queries on NLMINTA Sessions (b8fd3d1c):
+  Timestamps in 2026-02-12_22* range targeting b8fd3d1c
+
+================================================================================
+KNOWN GOV-AIPM FILES (by notebook ID a0a96d92 or c871b8f3)
+================================================================================
+
+Confirmed GOV-AIPM:
+  2026-02-13_001539_notebook-query.txt  — a0a96d92 (Volume 5 header)
+  2026-02-13_001715_notebook-query.txt  — c871b8f3 (TPL-015 Branch Startup)
+  2026-02-12_233210_notebook-query.txt  — a0a96d92 (TPL-006 Weekly Review)
+  2026-02-12_233255_notebook-query.txt  — likely GOV-AIPM (sequential)
+  2026-02-12_233328_notebook-query.txt  — likely GOV-AIPM
+  2026-02-12_233419_notebook-query.txt  — likely GOV-AIPM
+  2026-02-12_233500_notebook-query.txt  — likely GOV-AIPM
+
+Note: GOV-AIPM files from 2026-02-12_23* overlap temporally with
+NLMINTA S018 files — both branches were active on 2026-02-12.
+
+================================================================================
+METADATA AVAILABLE FOR AUTOMATED TRIAGE
+================================================================================
+
+Every extraction file contains these fields in its header:
+  - Notebook ID    → maps to branch via directory lookup
+  - Query text     → identifies pass type and purpose
+  - Timestamp      → maps to session timeline
+  - Conversation ID → groups related queries within one NLM session
+  - Chat Configure → identifies custom vs default configuration
+  - Response Chars → useful for quality filtering
+
+AUTOMATED TRIAGE APPROACH:
+1. Parse Notebook ID from each file
+2. Cross-reference against Notebook Directory (v1.0_REF)
+3. Route to branch-specific directories
+4. Within branch, use timestamp + query text for pass-type assignment
+
+This is feasible as a Python script on EC2 or as a Chronicler tool extension.
+
+================================================================================
+PRIORITY FOR FUTURE ORGANIZATION
+================================================================================
+
+HIGH: Implement branch tagging in Majeston/SeraphRecorder pipeline
+      (prevents future _untagged accumulation)
+
+MEDIUM: Write automated triage script for existing 221 files
+        (Python: parse headers, cross-ref notebook IDs, move files)
+
+LOW: Manual organization (token-expensive, better automated)
+
+================================================================================
+END OF TRIAGE MANIFEST
+================================================================================
