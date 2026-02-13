@@ -1,0 +1,88 @@
+================================================================================
+INSIGHT — Pipeline Organization & Query Archaeology
+================================================================================
+File Class:     INSIGHT
+Project:        NLMINTA / AWSNBLM
+Session:        018 (NLMINTA) / captured S026 (AWSNBLM)
+Date:           2026-02-12
+
+================================================================================
+INSIGHT 1: Project-Specific Automation Tool Calls
+================================================================================
+
+During alpha phase, when project rooting is complete and organizational
+frameworks are committed, it may be possible to create a single custom
+tool call per project that handles file organization automatically.
+
+Concept: During project rooting phase, define the extraction/organization
+taxonomy. Build that taxonomy into a dedicated tool call so that all
+subsequent extraction outputs are automatically routed to correct locations
+without per-file manual organization or documentation overhead.
+
+Key principle: If the organization framework is pre-committed, documenting
+individual file moves becomes unnecessary — the system handles it, and
+the user can always review the repo directly.
+
+Status: Future alpha consideration. Requires AWSNBLM branch discussion
+on feasibility of project-scoped Chronicler extensions.
+
+Relates to: W-100 (Conductor), W-001 (File Routing Logic)
+
+================================================================================
+INSIGHT 2: Query Archaeology — Extracting Test Queries from SeraphRecorder
+================================================================================
+
+Problem: Many NLMINTA testing sessions used specific query formulations
+and chat_configure prompts that were NOT explicitly documented in the
+chat transcript (pre-Connector Transparency Protocol). This means the
+actual query text that produced specific outputs is trapped in the
+SeraphRecorder extraction files, not in session logs.
+
+Need: When NLMINTA testing concludes and we want to standardize queries
+for production use, we need to recover those query formulations.
+
+Proposed solutions (in order of efficiency):
+1. SeraphRecorder files likely contain the query text — extract and index
+2. Cross-link Claude chat IDs (if embedded in tool calls) with file
+   timestamps to map files to sessions
+3. Upload extraction files to NotebookLM and query for query patterns
+   (lighter token cost than Claude analysis)
+
+Key question: What metadata does SeraphRecorder embed in extraction files?
+If chat ID or session context is present, automated cross-linking is feasible.
+
+Status: Deferred to AWSNBLM branch for investigation. Record for future
+methodology standardization phase.
+
+Relates to: W-102 (Query Data Reporter)
+
+================================================================================
+INSIGHT 3: Branch-Specific Tagging System
+================================================================================
+
+Current problem: 5 different branches all use Majeston, creating mixed
+extraction outputs in a single _untagged folder. No way to distinguish
+which branch generated which file without manual inspection.
+
+Proposed solution (two tiers):
+
+Tier 1 (Minimum viable): Branch naming conventions enforced. Claude
+understands branch name is a critical organizational component, not just
+a label. Session bootstraps include branch tag. Manual tagging at session
+start.
+
+Tier 2 (Ideal): Embed branch tag directly in the Majeston/Chronicler
+tool call itself. When a session boots, it must provide a branch tag
+to use the tool. SeraphRecorder captures the tag and routes files to
+branch-specific _untagged folders automatically.
+
+Implementation path: Discuss in AWSNBLM branch. May require tool-level
+modification or wrapper script.
+
+Status: Active — user moving to implement in AWSNBLM thread.
+
+Relates to: SERAPH signal string format, Indexer routing roadmap
+
+================================================================================
+END OF INSIGHT
+================================================================================
