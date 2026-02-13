@@ -1,0 +1,131 @@
+================================================================================
+F99: REPORT TOOL TESTING — CREATE YOUR OWN AS EXTRACTION TOOL
+================================================================================
+Session:    019 NLMINTA (Exclusion Test & Report Tools)
+Date:       2026-02-13
+Test:       J7 — Report Tool Testing
+Notebook:   SP03 Repositories (1e03c6b6-247d-4ddd-801d-8e435ac291b9)
+
+================================================================================
+TEST DESIGN
+================================================================================
+
+Three report types generated on SP03 via studio_create:
+- R1: Briefing Doc (default synthesis)
+- R2: Create Your Own (extraction-oriented custom prompt)
+- R3: Study Guide (educational format)
+
+All three exported to Google Docs via export_artifact:
+- R1: https://docs.google.com/document/d/1mdC7xse7vdHvEbD2PjjN16otiuI_w91dzloYxxmCdvQ
+- R2: https://docs.google.com/document/d/10M-nvjzXGWCOO1BLyZozRjA6tHLZUgBnsL-UXtVrbE4
+- R3: https://docs.google.com/document/d/183tS4K5jxVrV2_Ly18HMrokAi2HJheBIXybrXD_Wtdo
+
+R2 custom_prompt: "Create a comprehensive concept inventory from all sources.
+For every distinct concept, framework, model, or specialized term found in
+the sources, provide: (1) the concept title, (2) a direct quote from the
+source defining or describing it, (3) a one-sentence compressed summary,
+(4) the category it belongs to [...], and (5) related concepts. List every
+concept individually — do NOT consolidate or merge related concepts.
+Prioritize completeness over brevity."
+
+================================================================================
+RESULTS — R2 (CREATE YOUR OWN) vs QUERY-BASED EXTRACTION
+================================================================================
+
+| Metric                | Query TX (J6 Run 1) | Report R2 (Create Your Own) |
+|-----------------------|----------------------|-----------------------------|
+| Concept count         | 23                   | ~72                         |
+| Categories (of 10)    | 9                    | 10 (all)                    |
+| Granularity           | Major concepts       | Atomic decomposition        |
+| Format                | JSON                 | Structured Markdown         |
+| Quotes preserved      | Yes                  | Yes                         |
+| Generation time       | ~30s                 | ~60s                        |
+| Output size           | ~3,000 words         | ~5,000+ words               |
+| Unique concepts       | —                    | ~45+ not in query results   |
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+F99-A: REPORT TOOL PRODUCES 3X MORE CONCEPTS THAN QUERIES
+  The report engine's larger output budget allows dramatically more complete
+  extraction. 72 concepts vs 23 from the same source material.
+
+F99-B: ANTI-CONSOLIDATION PROMPTING WORKS
+  Explicit instructions to "list every concept individually" and "do NOT
+  consolidate" successfully overrode the natural consolidation bias. The
+  report decomposed composite frameworks into atomic entries (e.g., Structure
+  of Being broken into 5 component entries, Four Intimacies into 4).
+
+F99-C: REPORT OUTPUT IS MARKDOWN, NOT JSON
+  Unlike query-based extraction which can output JSON schemas, reports
+  produce structured Markdown. For pipeline integration, this requires
+  either (a) parsing the Markdown programmatically, or (b) a follow-up
+  query to convert to JSON. The Google Docs export pathway enables Claude
+  to fetch and process these via google_drive_fetch.
+
+F99-D: DIMINISHING GRANULARITY AT ATOMIC LEVEL
+  Some atomic entries are thin (e.g., "Soul" has only its position in the
+  hierarchy). This is a natural tradeoff of maximum granularity — the
+  deeper you decompose, the less content per entry. For pipeline purposes,
+  thin entries can be flagged for merge during D2/D3 processing.
+
+F99-E: REPORT + QUERY IS COMPLEMENTARY, NOT COMPETITIVE
+  Optimal extraction pipeline may use BOTH tools:
+  - Reports for broad, high-yield initial capture (D1 Stage 1)
+  - Queries for targeted gap-fill with explicit exclusion (D1 Stage 2)
+  - Reports for synthesis/survey (D2 Stage 2)
+
+F99-F: EXPORT-TO-DOCS PATHWAY VALIDATED
+  export_artifact successfully creates Google Docs readable by Claude via
+  google_drive_fetch. This creates a viable bridge for moving large report
+  outputs into the drafting pipeline without manual copy-paste.
+
+================================================================================
+R1 (BRIEFING DOC) ASSESSMENT
+================================================================================
+
+The Briefing Doc produced a coherent narrative synthesis (~2,500 words) covering
+all major themes. It organized content into logical sections (Core Philosophy,
+Central Framework, Civilizational Analysis, Applied Case Study, Methodology).
+
+Utility: Best for SURVEY work — understanding what's in a notebook before
+targeted extraction. NOT suitable for granular extraction due to heavy
+consolidation and synthesis orientation.
+
+Pipeline role: Pre-Extraction evaluation (PE pass equivalent).
+
+================================================================================
+R3 (STUDY GUIDE) STATUS
+================================================================================
+
+Exported but not yet analyzed in detail. Study Guide format may be useful
+for Six-Stage Argument Framework content generation. Deferred to future
+evaluation if pipeline relevance becomes clear.
+
+================================================================================
+METHODOLOGY RECOMMENDATION
+================================================================================
+
+OPTIMAL D1 EXTRACTION PIPELINE (REVISED):
+
+Stage 1: Generate "Create Your Own" report with anti-consolidation prompt
+  → Captures broadest concept inventory (~70+ concepts per source package)
+  → Export to Google Docs for Claude processing
+
+Stage 2: Parse report into concept list
+  → Convert Markdown entries to structured format (JSON or concept packets)
+  → Build exclusion list from Stage 1 titles
+
+Stage 3: Run query-based TX pass with explicit exclusion list
+  → Gap-fill for concepts the report missed
+  → JSON schema output ready for direct pipeline integration
+
+Stage 4: (If Stage 3 yields >3 new concepts) Additional exclusion passes
+
+Expected total yield: 80-90+ concepts per source package (vs ~25 from
+queries alone).
+
+================================================================================
+END OF FINDING
+================================================================================
