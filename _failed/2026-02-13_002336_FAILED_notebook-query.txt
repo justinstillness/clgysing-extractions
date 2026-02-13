@@ -1,0 +1,25 @@
+================================================================================
+EXTRACTION: 2026-02-13_002336_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 160 chars but answer extraction failed
+Source Package:  N/A
+Pass Type:       N/A
+Would-Be Route:  Tier 3 (Untagged)
+Query:           TPL-023 Backlog Register template complete full text all fields sections prioritization categories
+Timestamp:       2026-02-13T00:23:36.000194+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: N/A
+Response Chars:  0
+Duration:        31000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "notebook_id": "1e03c6b6-247d-4ddd-801d-8e435ac291b9", "goal": "custom", "response_length": "longer", "message": "Chat settings updated."}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

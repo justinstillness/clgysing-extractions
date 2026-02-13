@@ -1,0 +1,89 @@
+================================================================================
+EXTRACTION: 2026-02-12_171334_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Provide a comprehensive thematic survey of all the major topics, concepts, arguments, and subject areas covered across these source packages. What are the primary themes? What frameworks are developed? What is the scope and richness of the material?
+Timestamp:       2026-02-12T17:13:34.000914+00:00
+Notebook ID:     cce3b796-03b4-4282-98ac-e572cf820c02
+Source IDs:      all
+Conversation ID: 47b76a20-d017-45a3-ae1c-88e5406ed2ff
+Chat Configure:  default
+Response Chars:  3527
+Duration:        3268999ms
+================================================================================
+
+Based on the sources, specifically the **TPL-005 Session Log Template (v2.0)** revision, the required format structure and fields for a session log are as follows:
+
+### **1. Header Block**
+*   **File Class:** (e.g., LOG)
+*   **Project:** Project Name (Brief Description)
+*   **Session:** Session Number, Project Code, and Session Purpose (e.g., `034 GOV-AIPM (Session Lifecycle Drafting)`)
+*   **Date:** Date or date range
+*   **Session Type:** Phase Name ... Activity Type (e.g., `Phase 2 ... Execution`)
+
+### **2. Session Objective**
+*   **Primary:** The main goal stated at the start of the session.
+*   **Secondary:** Any additional goals, if applicable.
+
+### **3. Work Accomplished**
+*   **List of Activities:** Numbered list of major activities and outputs (specific document names, versions, or counts).
+*   **Objective Achieved:** Assessment field (`FULL` / `PARTIAL` / `MINIMAL`).
+*   **Variance Note:** If Partial or Minimal, an explanation of what was not completed and why.
+
+### **4. Decisions Made**
+*   **Decisions Table:** Columns for `Decision #` (e.g., D-001) and `Brief Description`.
+*   **Total Decisions:** Count of decisions made this session.
+*   *(Note: Full rationale belongs in the separate Decision Log; this is a summary/reference).*
+
+### **5. Scope Observations**
+*   **Planned vs. Actual:** Comparison of intended work versus actual execution.
+*   **Emerged:** Unplanned items, new insights, or concerns that surfaced.
+*   **Scope Expansions Flagged:** Any expansions noted (with decision references if formally decided).
+
+### **6. Phase Progress**
+*   **Phase Status:** Brief status (e.g., "~95% complete").
+*   **Completion Criteria:** Checklist of criteria with status marks (`[...]`, `[~]`, `[ ]`).
+*   **Estimated Phase Completion:** Percentage estimate.
+
+### **7. Issues Encountered**
+*   **Issues Table:** Columns for `Issue`, `Status` (Resolved/Open/Deferred/Noted), and `Resolution/Notes`.
+
+### **8. Files Produced**
+*   **Files Table:** Columns for `File Name`, `File Class` (e.g., DRAFT, SPEC, LOG), and `Description`.
+*   **Total Artifacts:** Count of files generated.
+
+### **9. Response Index Register**
+*   **Index Table:** Mapping of `Index` (e.g., `[1]`) to `Semantic Title`.
+*   **Session Index Range:** Start and end index numbers for the session.
+*   **Next Session Start Index:** The index number the next session should begin with.
+
+### **10. Session Fidelity Report (Embedded)**
+A structured assessment section containing:
+*   **Status:** `DRAFT` or `CONFIRMED`.
+*   **Work Accomplished:** Planned vs. Actual comparison.
+*   **Phase Progress:** Completion criteria status.
+*   **Decisions Crystallized:** Summary of formal decisions.
+*   **Gaps & Insights Identified:** Missing info, discoveries, process improvements.
+*   **Handoff Status:** Context carried forward, materials needed, risks/warnings.
+*   **Next Session Projection:** Focus, success criteria, and complexity estimate.
+*   **Verification:** User verification status.
+
+### **11. Bootstrap Status**
+*   **Generated:** `YES` / `NO`.
+*   **File Name:** Name of the generated bootstrap file.
+*   **Target Session:** Number of the next session.
+*   **Suggested Next Session Name:** Naming convention for the subsequent session.
+
+**File Naming Convention:**
+The manual specifies naming these files as `[###]_session-log.txt` (e.g., `034_session-log.txt`), maintained as individual files per session rather than a single appended document.
+
+Sources:
+[2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

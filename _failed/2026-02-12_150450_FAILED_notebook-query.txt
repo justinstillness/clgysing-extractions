@@ -1,0 +1,25 @@
+================================================================================
+EXTRACTION: 2026-02-12_150450_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 356 chars but answer extraction failed
+Source Package:  N/A
+Pass Type:       N/A
+Would-Be Route:  Tier 3 (Untagged)
+Query:           User Behavior Callouts Section 6 callout 1 2 6 project handle session naming file organization
+Timestamp:       2026-02-12T15:04:50.000639+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: N/A
+Response Chars:  0
+Duration:        3024999ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "notebook_id": "e61fbcff-d49f-42dc-920d-72ace7da79b4", "notebook": {"id": "e61fbcff-d49f-42dc-920d-72ace7da79b4", "title": "AUTOTEST ... Symbiotic Civilization Research", "url": "https://notebooklm.google.com/notebook/e61fbcff-d49f-42dc-920d-72ace7da79b4"}, "message": "Created notebook: AUTOTEST ... Symbiotic Civilization Research"}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

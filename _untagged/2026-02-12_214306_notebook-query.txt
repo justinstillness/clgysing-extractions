@@ -1,0 +1,54 @@
+================================================================================
+EXTRACTION: 2026-02-12_214306_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Appendix H Quick Start Guide updated v1.0.8 full text rooting Phase 0 complete
+Timestamp:       2026-02-12T21:43:06.000541+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 883e3615-fa7d-4dee-91be-8794fef2f59f
+Chat Configure:  default
+Response Chars:  2466
+Duration:        74000ms
+================================================================================
+
+Based on the **Master Assembly Blueprint** and the **Drafting Plan**, here are the remaining integration points (IPs) for **Volume 6** (Sections 15...17 and Appendices) that have not yet been applied.
+
+### Remaining Integration Points for Volume 6
+
+These IPs are explicitly scheduled for the Volume 6 assembly session (Session 043/044):
+
+*   **E-IP7 (Phase Protocol Template Verification):** Targets **Appendix A**. This involves verifying that the Layer 1 behaviors listed in the *Phase Protocol Template* (TPL-0XX) match the final specifications drafted in Session E (specifically Conflict Resolution and Instruction Chain Interpretation).
+*   **A-IP8 (Table of Contents Update):** Targets the **Master TOC** (to be finalized in Volume 6). This reflects the renumbering of Section 5 and the insertion of new sections throughout the manual.
+*   **E-IP8 (TOC Additions):** Targets the **Master TOC**. Adds entries for *3.8 Instruction Chain Interpretation* and *4.5 Conflict Resolution Protocol*.
+*   **F-IP7 (TOC Additions):** Targets the **Master TOC**. Adds the entry for *12.4 Three-Tier Documentation Architecture*.
+
+### IPs Targeting Sections 15, 16, and 17
+
+*   **Sections 15 (Email Integration) & 16 (External Communications):**
+    *   There are **no integration points** targeting these sections. They remain **unchanged** from v1.0.7.
+
+*   **Section 17 (Reference):**
+    *   **No specific "IP" number** targets Section 17, but the **Drafting Plan** assigns the following scope to the Volume 6 assembly:
+        *   **17.2 Glossary:** Add new terms defined in v1.0.8 (e.g., *Phase Protocol, Rooting, Branch Startup File, Session Fidelity Report, Headroom Opportunism*).
+        *   **17.3 Index:** Comprehensive update to reflect new content locations.
+
+### IPs Targeting Appendices
+
+*   **Appendix A (Template Reference):**
+    *   **E-IP7** (described above).
+    *   **Scope Task:** Assign final TPL numbers to the 9 new templates (Project Initiation revision, Phase Protocol, Findings Report, etc.) and integrate them into the appendix.
+*   **Appendix E (Version History):**
+    *   **Scope Task:** Add the v1.0.8-DRAFT entry documenting the "Phase 6c" integration.
+*   **Appendix G (Artifact Taxonomy):**
+    *   **Scope Task:** Add the new artifacts (*Phase Protocol, Findings Report, Branch Startup File*, etc.) to the taxonomy.
+*   **Appendix H (Quick Start Guide):**
+    *   **Scope Task:** Update to reflect the "Rooting as Phase 0" methodology.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

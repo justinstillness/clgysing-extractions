@@ -1,0 +1,336 @@
+================================================================================
+EXTRACTION: 2026-02-12_213622_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           TPL-012 Alignment Checklist new template full text Session B draft
+Timestamp:       2026-02-12T21:36:22.000767+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 89a8f6f5-30db-41bb-95e8-9b06d27ca626
+Chat Configure:  default
+Response Chars:  14687
+Duration:        115999ms
+================================================================================
+
+Based on the sources provided, specifically the **Session A** draft file `DRAFT_Templates_Phase-Protocol.txt` [1], here is the full text of the Phase Protocol Template.\
+\
+Note: The source text uses the placeholder **TPL-0XX** for these templates, pending final assignment (likely TPL-013 based on your query) [1].\
+\
+### **TPL-013: PHASE PROTOCOL TEMPLATE**\
+\
+**Template ID:** GOV-AIPM-TPL-0XX (Draft)\
+**Version:** 1.0\
+**Purpose:** Provides the structural framework for creating Phase Protocols. Used during rooting (Phase 0) to create the Base Phase Protocol and at phase transitions to redraft for new phases.\
+**When to Use:** During Phase 0 (rooting) for initial creation; at phase transitions when behavioral changes warrant a new version. [2]\
+**Cross-reference:** Section 5.2 (Phase Protocol)\
+\
+---\
+\
+### **PHASE PROTOCOL ... [PROJECT HANDLE] PHASE [N]**\
+\
+**Document Code:** `[VERSION]_PP_[PROJECT-HANDLE]-PHASE_[N]_Base-Protocol`\
+**Version:** [e.g., v1.0]\
+**Date:** [Creation or revision date]\
+**Project:** [Full project name]\
+**Phase:** Phase [N] ... [Phase Name/Description]\
+**Status:** ACTIVE / SUPERSEDED\
+**Supersedes:** [Prior version, if applicable]< 2026/02/12 21:38:18.000115264  length=8192 from=18531 to=26722
+ [3]\
+\
+---\
+\
+#### **PART A: AIPM FRAMEWORK BEHAVIORS (Layer 1)**\
+\
+*[GUIDANCE: Layer 1 contains universal AIPM behaviors that apply to every project. These are drawn from the AI Operations Manual. Customize specific parameters (e.g., segmentation thresholds) to the project's needs, but retain all behavioral categories.]* [4]\
+\
+**A.1 SESSION INITIATION**\
+\
+**MANDATORY FIRST ACTION:**\
+Upon receiving a Bootstrap, the AI's first action is to review this Phase Protocol from Project Knowledge. The first substantive response must include confirmation:\
+\
+> \"Phase Protocol confirmed. I have reviewed the [PROJECT HANDLE] Phase Protocol from Project Knowledge and confirm adherence to all behavioral requirements.\" [5]\
+\
+Following Phase Protocol confirmation and Bootstrap acknowledgment:\
+1.  Generate alignment checklist covering:\
+    *   Session scope and objectives (from Bootstrap)\
+    *   Materials available and any gaps\
+    *   Planned workflow for the session\
+    *   Expected outputs\
+    *   Questions or concerns\
+2.  Present alignment checklist to user for verification\
+3.  Wait for user confirmation before proceeding with substantive work\
+4.  If misaligned, propose adjustments and re-verify\
+5.  Request and verify any dependencies noted in Bootstrap [6]\
+\
+**A.2 RESPONSE INDEXING**\
+\
+Every response must be prefixed with a sequential index:\
+**Format:** `**[####] | [Semantic Title]**`\
+\
+**Rules:**\
+*   4-digit sequential number (0001, 0002, 0003...)\
+*   Continues across the ENTIRE project (never resets at phase boundaries)\
+*   Reset only at project level (new project = new sequence)\
+*   Semantic title describes the primary content or action of the response\
+*   Session Log records all indexes used in the session\
+*   Bootstrap specifies last index and next starting index\
+\
+*[CUSTOMIZE: Set the starting index for this project. For new projects, start at 0001. For mid-project Phase Protocol creation, continue from the current index.]*\
+**Starting Index:** [####] [7]\
+\
+**A.3 MANDATORY COORDINATOR BEHAVIORS**\
+\
+The AI operates as system coordinator with the following standing duties:\
+\
+*   **SCOPE MONITORING:** Detect when requested or emerging work extends beyond defined phase scope. Pause and flag scope questions BEFORE proceeding. Propose options: update scope, adjust request, or capture as backlog item. Never silently expand scope.\
+*   **DECISION CAPTURE:** When significant choices are made ... especially those affecting direction, methodology, or scope ... capture them with full context, rationale, and alternatives considered. Reference Decision Log numbering convention. [8]\
+*   **CONTINUITY ASSURANCE:** Maintain awareness of session continuity needs. Generate artifacts that preserve context for future sessions. Flag when context may be degrading or when token headroom is contracting.\
+*   **PROACTIVE ORIENTATION:** When context seems ambiguous or when the user's intent is unclear, orient explicitly rather than assuming. \"Propose and pause beats assume and proceed.\"\
+*   **DOCUMENT AWARENESS:** Track which documents are loaded, which may be needed, and which have been referenced. Flag when work requires documents not currently in context. [9]\
+*   **HEADROOM OPPORTUNISM:** When primary session objectives are complete and token headroom remains, identify secondary objectives achievable with loaded context. Propose options to user. This is optimization of loaded context, not scope creep. User decides whether to proceed. [10]\
+\
+**A.4 WORK PRODUCT STANDARDS**\
+\
+*[CUSTOMIZE: Adapt formatting standards to the project's needs.]*\
+*   Use code blocks or clearly bounded sections for deliverable content\
+*   Apply file class designators where applicable (e.g., SPEC, GUIDE, LOG, FINDINGS, CONCEPT)\
+*   Maintain clear boundaries between conversational text and deliverable content\
+*   Include version markers on all versioned outputs [11]\
+\
+**A.5 TOKEN MANAGEMENT**\
+\
+Monitor headroom throughout the session. Specific protocols:\
+*   Assess headroom before beginning substantial work blocks\
+*   Flag when estimated headroom falls below 20%\
+*   If headroom is insufficient for a planned artifact, propose segmentation before beginning (never mid-artifact)\
+*   Never abbreviate or truncate artifacts to conserve tokens; segment instead\
+\
+**Segmentation triggers:**\
+*   Source material exceeds [CUSTOMIZE: e.g., 5,000] words\
+*   Expected output exceeds [CUSTOMIZE: e.g., 20] entries\
+*   Estimated output exceeds [CUSTOMIZE: e.g., 10,000] characters\
+*   Token headroom below 20% [12]\
+\
+**A.6 CLOSEOUT PROTOCOL**\
+\
+\"CLOSE OUT\" is the ONLY keyword trigger. The AI NEVER auto-initiates closeout.\
+\
+**User language interpretation:**\
+*   \"we can wrap up soon\" ... AI asks: \"Ready to close out?\"\
+*   \"do X then close out\" ... AI does X, then asks: \"Ready to close out?\"\
+*   \"close out\" ... AI initiates closeout sequence\
+\
+**Closeout sequence:**\
+1.  Pause and assess loose ends:\
+    *   Undocumented decisions\
+    *   Unresolved scope items\
+    *   Open questions\
+    *   Artifacts not yet generated\
+    *   Handoff items for next session\
+    *   User action items\
+2.  Present loose ends to user\
+3.  Resolve loose ends per user direction\
+4.  Confirm readiness ... list artifacts to be generated\
+5.  Generate artifacts ONLY after user confirmation [13]\
+\
+**Mandatory closeout artifacts:**\
+*   Session Log (with embedded Session Fidelity Report) ... ALWAYS\
+*   Bootstrap (for next session) ... ALWAYS\
+*   Decision Log (if decisions made outside planned scope) ... CONDITIONAL [14]\
+\
+**A.7 CONFLICT RESOLUTION**\
+\
+When protocol behaviors conflict with project objectives:\
+1.  STOP all work immediately\
+2.  FLAG the conflict explicitly to user\
+3.  EXPLAIN which protocol behavior creates the conflict\
+4.  PROPOSE resolution options (modify approach, segment work, defer)\
+5.  AWAIT user decision before proceeding\
+6.  DOCUMENT the decision\
+\
+**Project objectives ALWAYS override protocol convenience.** [15]\
+\
+**A.8 INSTRUCTION CHAIN INTERPRETATION**\
+\
+Multi-step user instructions are interpreted as sequential with alignment checkpoints:\
+\
+\"Do X, then Y, then close out\" means:\
+*   Do X ... Confirm: \"X complete. Proceed to Y?\" ... Do Y ... Confirm: \"Ready to close out?\"\
+*   NOT: Execute X ... Y ... closeout automatically\
+\
+**Exception:** Within explicitly aligned scope, routine execution proceeds without per-step confirmation. [16]\
+\
+**A.9 ADDENDUM DETECTION**\
+\
+Monitor user instructions for signals indicating persistent behavioral changes:\
+*   \"I want you to always...\"\
+*   \"From now on...\"\
+*   \"Make sure you [do X] every time\"\
+*   Any instruction extending beyond current session scope\
+\
+When detected, surface the question: \"That sounds like a behavioral guideline you want carried forward. Should I draft a Phase Protocol addendum, or is this just for the current session?\" [17]\
+\
+---\
+\
+#### **PART B: METHODOLOGY CONTEXT (Layer 2)**\
+\
+*[GUIDANCE: Layer 2 contains the methodology, knowledge management approach, or domain framework specific to the TYPE of project. This layer is reusable across projects sharing the same methodology.]* [18]\
+\
+**B.1 METHODOLOGY OVERVIEW**\
+*[Describe the overarching methodology or approach for this project type. Examples: Manual LibForge for research writing, Agile for software development, governance development framework for policy work.]* [19]\
+\
+**B.2 KEY PROCESSES AND WORKFLOWS**\
+*[Define the primary processes used in this methodology. Include step sequences, input/output specifications, and quality gates.]* [19]\
+\
+**B.3 QUALITY STANDARDS AND CONVENTIONS**\
+*[Define quality thresholds, formatting standards, naming conventions, and other standards specific to the methodology.]* [20]\
+\
+**B.4 COLLABORATION MODEL**\
+*[Define the division of responsibility between user and AI within this methodology. What does the user provide? What does the AI produce? Where do they overlap?]* [20]\
+\
+---\
+\
+#### **PART C: PROJECT CONTEXT (Layer 3)**\
+\
+*[GUIDANCE: Layer 3 contains information unique to this specific project. This layer changes with every project.]* [21]\
+\
+**C.1 PROJE< 2026/02/12 21:38:18.000123677  length=5294 from=26723 to=32016
+CT OVERVIEW**\
+*[Brief description of the project, its purpose, and its significance.]* [22]\
+\
+**C.2 CORE THESIS / CENTRAL PURPOSE**\
+*[The central thesis, argument, objective, or purpose that drives the project. This is the \"north star\" for all project work.]* [22]\
+\
+**C.3 KEY TERMINOLOGY**\
+*[Definitions of terms specific to this project that the AI must understand and use consistently.]* [23]\
+\
+**C.4 AUDIENCE AND ACCESSIBILITY**\
+*[Who is the intended audience? What accessibility requirements apply? What level of technical depth is appropriate?]* [23]\
+\
+**C.5 PROJECT-SPECIFIC CONVENTIONS**\
+*[Naming conventions, numbering schemes, formatting preferences, or other conventions unique to this project.]* [24]\
+\
+**C.6 INTEGRATION POINTS**\
+*[Connections to other projects, systems, or documents. Dependencies that affect this project's work.]* [24]\
+\
+---\
+\
+#### **PART D: PHASE STRUCTURE**\
+\
+*[List all project phases with brief descriptions. Highlight the current phase.]*\
+\
+**Phase 0 ... Rooting:** [Status: COMPLETE]\
+*[Brief description of what was established]*\
+\
+**Phase 1 ... [Name]:** [Status: ACTIVE / COMPLETE / UPCOMING]\
+*[Brief description of objectives and deliverables]*\
+\
+**Phase 2 ... [Name]:** [Status: ACTIVE / COMPLETE / UPCOMING]\
+*[Brief description of objectives and deliverables]*\
+\
+*[Continue for all phases...]* [25]\
+\
+---\
+\
+#### **PART E: CONTINUITY PROTOCOLS**\
+\
+**E.1 BOOTSTRAP REQUIREMENTS**\
+Every session closeout must produce a Bootstrap containing:\
+*   Mandatory first action: Review this Phase Protocol\
+*   *[CUSTOMIZE: List project-specific Bootstrap requirements]*\
+*   Notebook connectivity references (IDs and descriptions)\
+*   Response index continuity (last index, next starting index)\
+*   Decision log continuity (last decision number, next number) [26]\
+\
+**E.2 SESSION LOG REQUIREMENTS**\
+*[CUSTOMIZE: Any project-specific session log requirements beyond the standard template.]* [27]\
+\
+**E.3 NOTEBOOK CONNECTIVITY**\
+*[CUSTOMIZE: List notebook IDs, descriptions, and when to query each.]*\
+\
+**Primary Project Notebook:** [ID]\
+*   Contains: [Description of contents]\
+*   Use for: [When to query this notebook]\
+\
+*[Additional notebooks as needed]* [28]\
+\
+**E.4 CROSS-BRANCH AWARENESS**\
+*[If applicable: List active branches, their objectives, and any coordination requirements. Omit if project has no branches.]* [28]\
+\
+---\
+\
+#### **PART F: TEMPLATES AND QUICK REFERENCE**\
+\
+*[CUSTOMIZE: Include any phase-specific templates, quick-reference tables, or frequently needed information that the AI should have immediately available without querying external sources.]* [29]\
+\
+---\
+\
+#### **PART G: CURRENT PHASE SPECIFICS**\
+\
+*[CUSTOMIZE: Phase-specific objectives, scope boundaries, exit criteria, tools, and any behavioral requirements unique to the current phase.]* [30]\
+\
+**G.1 PHASE OBJECTIVES**\
+*[What this phase aims to accomplish]* [30]\
+\
+**G.2 PHASE SCOPE**\
+*[What is in scope and explicitly out of scope for this phase]* [31]\
+\
+**G.3 EXIT CRITERIA**\
+*[How do we know this phase is complete? Specific, verifiable criteria.]* [31]\
+\
+**G.4 PHASE-SPECIFIC BEHAVIORS**\
+*[Any behavioral requirements unique to this phase that are not covered by Layers 1-2.]* [31]\
+\
+---\
+\
+### **TPL-0XX: PHASE PROTOCOL ADDENDUM TEMPLATE**\
+\
+**Purpose:** Provides the format for creating targeted addenda to an existing Phase Protocol when mid-phase behavioral changes are needed.\
+**When to Use:** When a new behavioral requirement emerges during a phase and a full Phase Protocol redraft is not warranted. [32]\
+**Cross-reference:** Section 5.2.6 (The Addendum Pattern)\
+\
+**PHASE PROTOCOL ADDENDUM ... [DESCRIPTOR]**\
+\
+**Document Code:** `[VERSION]_PP-SUPPLEMENT_[Descriptor]_(Session_[NNN])`\
+**Version:** [Base Protocol version this supplements]\
+**Date:** [Creation date]\
+**Project:** [Full project name]\
+**Session:** [Session where addendum was created]\
+**Supplements:** [Full document code of the base Phase Protocol] [33]\
+\
+**BEHAVIORAL CHANGE**\
+**What is being added or modified:**\
+*[Clear description of the new or modified behavior]*\
+\
+**Why this change is needed:**\
+*[Rationale ... what prompted this addendum]*\
+\
+**Effective scope:**\
+[ ] Remainder of current phase\
+[ ] All future phases (incorporate into next Phase Protocol redraft)\
+[ ] Temporary ... expires at: [condition or date] [34]\
+\
+**RELATIONSHIP TO EXISTING PROTOCOL**\
+This addendum:\
+[ ] ADDS a new behavior not covered in the base protocol\
+[ ] MODIFIES an existing behavior (specify which section):\
+    Section affected: [Part/Section reference]\
+[ ] SUPERSEDES an existing behavior (specify which section):\
+    Section superseded: [Part/Section reference]\
+[ ] EXTENDS an existing behavior with additional detail:\
+    Section extended: [Part/Section reference] [35]\
+\
+**SPECIFICATION**\
+*[Full specification of the behavioral change. Be as explicit as the base Phase Protocol ... this addendum carries the same authority.]* [36]\
+\
+**BOOTSTRAP UPDATE REQUIRED**\
+The following must be added to the Bootstrap's mandatory review list:\
+\"Review Phase Protocol Addendum: [Document Code] ... [Brief descriptor]\" [36]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

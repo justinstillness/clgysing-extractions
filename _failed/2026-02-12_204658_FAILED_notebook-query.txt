@@ -1,0 +1,25 @@
+================================================================================
+EXTRACTION: 2026-02-12_204658_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 350 chars but answer extraction failed
+Source Package:  N/A
+Pass Type:       N/A
+Would-Be Route:  Tier 3 (Untagged)
+Query:           Section 13 Specialized Use Cases change status any modifications revisions from v1.0.7
+Timestamp:       2026-02-12T20:46:58.000884+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: N/A
+Response Chars:  0
+Duration:        188999ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "notebook_id": "b6cc21e5-94f7-4eac-9da4-dcfdcddfaab2", "notebook": {"id": "b6cc21e5-94f7-4eac-9da4-dcfdcddfaab2", "title": "Degree 1 Datasets ... NLMINTA Extractions", "url": "https://notebooklm.google.com/notebook/b6cc21e5-94f7-4eac-9da4-dcfdcddfaab2"}, "message": "Created notebook: Degree 1 Datasets ... NLMINTA Extractions"}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

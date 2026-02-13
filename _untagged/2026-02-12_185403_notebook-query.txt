@@ -1,0 +1,42 @@
+================================================================================
+EXTRACTION: 2026-02-12_185403_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           In the Section 10.3 Notebook Connectivity draft, where exactly should Callout 8 (Notebook Maintenance) be placed? What is the rationale for placing it in 10.3.3 versus elsewhere in 10.3? Is there any discussion in session transcripts about optimal placement?
+Timestamp:       2026-02-12T18:54:03.000252+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 68873df6-3af3-4c33-b534-e4007ea66a6e
+Chat Configure:  default
+Response Chars:  750
+Duration:        128000ms
+================================================================================
+
+Based on **GOV-AIPM v1.0.7-DRAFT** [1], the complete structure for Sections 9 and 10 is as follows:
+
+**Section 9: AI Role Separation** [2]
+*   **9.1** The Case for Role Separation
+*   **9.2** Primary Execution Role
+*   **9.3** Secondary Validation Role
+*   **9.4** Specialized Function Role
+*   **9.5** Multi-AI Workflow Patterns
+*   **9.6** Platform Selection Considerations
+*   **9.7** Role Separation and Governance
+
+**Section 10: Adjunct Tools** [2]
+*   **10.1** Capture Tools
+*   **10.2** Calendar and Scheduling
+*   **10.3** Retrieval and Query Tools
+*   **10.4** Conversion and Utility Tools
+*   **10.5** Storage and Sync Tools
+*   **10.6** Chat Export and Archival Tools
+*   **10.7** Golden Prompt Library
+*   **10.8** User-Side Workflow Tips
+
+================================================================================
+END OF EXTRACTION
+================================================================================

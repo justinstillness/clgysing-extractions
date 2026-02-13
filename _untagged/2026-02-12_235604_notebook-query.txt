@@ -1,0 +1,58 @@
+================================================================================
+EXTRACTION: 2026-02-12_235604_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Session 047 Volume 6a assembly decisions segmentation plan changes three segments
+Timestamp:       2026-02-12T23:56:04.000169+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: f3db324b-462f-4f67-8620-dfac333554c3
+Chat Configure:  default
+Response Chars:  2900
+Duration:        46000ms
+================================================================================
+
+Based on the sources provided, here is the information regarding the assembly decisions and segmentation plan changes for **Session 047**:
+
+### **Session 047: Volume 6a Assembly & Segmentation Decisions**
+
+In **Session 047**, the primary objective was the assembly of **Volume 6** (Communications, Reference, & Templates). A key operational decision was made to alter the segmentation plan established in the previous session (Session 046), reducing the total number of segments for Volume 6 from **four** down to **three**.
+
+#### **1. Segmentation Plan Change**
+*   **Original Plan (from Session 046 Assembly Kit):** The work was originally scoped into **4 segments** to manage token limits:
+    *   *Segment 6a:* Sections 15...17 (Communications & Reference).
+    *   *Segment 6b:* Appendix A, Part 1 (Core Templates).
+    *   *Segment 6c:* Appendix A, Part 2 (Specialized Templates).
+    *   *Segment 6d:* Appendices B...H.
+*   **Revised Plan (Executed in Session 047):** The session successfully combined the original Segment 6a and Segment 6b into a single volume.
+    *   **Volume 6a:** Sections 15...17 **+** Appendix A (Part 1).
+    *   **Volume 6b:** Appendix A (Part 2).
+    *   **Volume 6c:** Appendices B...H.
+
+**Rationale:** The bootstrap for Session 047 explicitly provided guidance to "continue into 6b if headroom permits." The session successfully consolidated the introductory sections (15...17) with the first batch of templates, resulting in a more efficient 3-part structure for the final volume.
+
+#### **2. Volume 6a Content (Assembled in Session 047)**
+The resulting artifact, **GOV-AIPM_v1_0_8_Volume-6a**, contains:
+*   **Part VI (Mail & External Communications):**
+    *   **Section 15:** Email Integration (15.1 Email-to-AI, 15.2 AI-to-Email).
+    *   **Section 16:** External Communications (16.1 Client, 16.2 Stakeholder).
+*   **Section 17 (Reference):**
+    *   17.1 Quick Reference Guide (Checklists for session start, closeout, and verification).
+    *   17.2 Glossary (Canonical definitions for terms like *Alignment Turn*, *Bootstrap*, *Cognitive Divergence*, *Headroom Opportunism*).
+    *   17.3 Index (Placeholder).
+*   **Appendix A (Template Reference) - Part 1:**
+    *   **Core Operations Templates:** TPL-001 (Project Initiation), TPL-002 (Bootstrap), TPL-003 (Closeout), TPL-005 (Session Log), TPL-012 (Alignment Checklist), TPL-013 (Phase Protocol), TPL-014 (PP Addendum).
+    *   **Ongoing Management Templates:** TPL-004 (Decision Log), TPL-006 (Weekly Review).
+
+#### **3. Upcoming Assembly (Volumes 6b & 6c)**
+The boundary note at the end of Volume 6a defines the remaining scope:
+*   **Volume 6b:** Will contain the remainder of Appendix A (TPL-007 through TPL-023).
+*   **Volume 6c:** Will contain Appendices B through H (Prompt Library, Tool Configuration, Troubleshooting, Version History, Failure Mode Catalog, Artifact Taxonomy, Quick Start Guide).
+
+================================================================================
+END OF EXTRACTION
+================================================================================

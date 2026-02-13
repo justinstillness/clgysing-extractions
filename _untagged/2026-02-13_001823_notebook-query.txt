@@ -1,0 +1,194 @@
+================================================================================
+EXTRACTION: 2026-02-13_001823_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           TPL-017 Findings Report template complete full text all sections fields discovery evidence impact verdict
+Timestamp:       2026-02-13T00:18:23.000333+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 1ea6c1a6-43ed-4b94-8db1-2c771c72ccd2
+Chat Configure:  default
+Response Chars:  8476
+Duration:        30999ms
+================================================================================
+
+Based on the sources, the Findings Report template is currently designated with the placeholder **TPL-0XX** in the draft artifacts (specifically in `DRAFT_TPL-0XX_Findings-Report.txt` and `GOV-AIPM_v1_0_8_Volume-3a_Canonical-Artifacts.txt`).\
+\
+Here is the complete full text of the Findings Report template as defined in the source material.\
+\
+***\
+\
+**TPL-0XX: FINDINGS REPORT**\
+\
+**Template ID:** GOV-AIPM-TPL-0XX\
+**Version:** 1.0\
+**Purpose:** Structured capture of empirical discoveries organized by topic. Preserves observations, evidence, and implications in a format designed for high queryability and evidence-to-decision tracing.\
+**When to Use:** During or after sessions involving research, exploration, evaluation, testing, or any work producing empirical observations that warrant structured capture.\
+**Cross-reference:** Section 5.6 (Findings Reports), Section 5.3 (Decision Logs), Section 10.3 (Notebook Connectivity)\
+\
+---\
+\
+### **INSTRUCTIONS**\
+\
+Complete a Findings Report when a session produces empirical discoveries that go beyond routine execution. The report captures what was observed, what evidence supports it, and what it means for the project.\
+\
+**WHEN TO USE:**\
+*   Research or exploration sessions\
+*   Evaluation, testing, or validation sessions\
+*   Field testing or beta testing sessions\
+*   Any session producing significant empirical observations\
+\
+**WHEN NOT NEEDED:**\
+*   Pure execution sessions (drafting, formatting, assembly)\
+*   Administrative sessions (file organization, project setup)\
+*   Sessions where no empirical observations emerged\
+\
+The AI may propose Findings Report generation mid-session when it recognizes a pattern of empirical discovery. The user approves, defers to closeout, or declines.\
+\
+**INDEXING:**\
+Finding IDs (F-##) accumulate across the entire project and never reset. Check the prior Findings Report or Session Log for the last used F-## number. If this is the project's first Findings Report, begin at F-01.\
+\
+**FILE NAMING:**\
+`[###]_findings.txt` or `[###]_findings_[topic].txt`\
+Examples: `012_findings.txt`, `032_findings_beta-test-review.txt`\
+\
+**DIALOG COMPLETION OPTION:**\
+The AI generates this template as part of the session workflow. Say: \"Let's capture findings\" or \"Start a Findings Report\" to initiate. The AI may also propose generation proactively.\
+\
+**Tips:**\
+*   Write discoveries as standalone statements ... a reader should understand each finding without additional context\
+*   Be specific in evidence ... reference sessions, response indexes, or external sources\
+*   Separate observation (Discovery) from interpretation (Impact)\
+*   Use standard verdicts where they fit; create custom verdicts when needed\
+\
+---\
+\
+### **FINDINGS REPORT TEMPLATE**\
+\
+================================================================================\
+**FINDINGS REPORT ... Session [###]**\
+================================================================================\
+\
+**File Class:** FINDINGS\
+**Project:** [Project Name (Brief Description)]\
+**Session:** [### Project-Code (Session Purpose)]\
+**Date:** [Date]\
+**Session Type:** [Phase Name ... Activity Type]\
+**Finding Range:** F-[##] through F-[##]\
+\
+================================================================================\
+**REPORT CONTEXT**\
+================================================================================\
+\
+[Brief description of the research, exploration, or testing activity that produced these findings. What was being investigated and why? 2-4 sentences providing enough context for a reader encountering this report independently.]\
+\
+================================================================================\
+**FINDINGS**\
+================================================================================\
+\
+------------------------------------------------------------------------\
+**F-[##]**\
+------------------------------------------------------------------------\
+\
+**Discovery:**\
+[Concise statement of the observation or insight. Specific enough to stand alone. 1-3 sentences.]\
+\
+**Evidence:**\
+[Specific data points, test results, source references, or observations that support the discovery. Reference sessions, response indexes, or external sources as appropriate.]\
+\
+**Impact / Implication:**\
+[How this finding affects the project ... its pipeline, methodology, deliverables, or thesis. What changes or should change because of this discovery?]\
+\
+**Status / Verdict:**\
+[VALIDATED | GAP IDENTIFIED | REQUIRES FURTHER TESTING | CONTRADICTS | INFORMS DECISION | NOTED | or custom verdict]\
+\
+------------------------------------------------------------------------\
+**F-[##]**\
+------------------------------------------------------------------------\
+\
+**Discovery:**\
+[...]\
+\
+**Evidence:**\
+[...]\
+\
+**Impact / Implication:**\
+[...]\
+\
+**Status / Verdict:**\
+[...]\
+\
+------------------------------------------------------------------------\
+[Continue for each finding]\
+------------------------------------------------------------------------\
+\
+================================================================================\
+**CUMULATIVE FINDINGS INDEX**\
+================================================================================\
+\
+[Running index of ALL findings across the project, not just this report. Update this section with each new Findings Report.]\
+\
+| Finding ID | Discovery (brief) | Session | Status |\
+| :--- | :--- | :--- | :--- |\
+| F-01 | [One-line summary] | [###] | [Verdict] |\
+| F-02 | [One-line summary] | [###] | [Verdict] |\
+| ... | ... | ... | ... |\
+| F-[##] | [One-line summary] | [###] | [Verdict] |\
+\
+**Total findings to date:** [#]\
+\
+================================================================================\
+**PROVENANCE**\
+================================================================================\
+\
+**Research Method:** [How discoveries were made ... testing, comparative analysis, field observation, literature review, etc.]\
+**Sources Consulted:** [Notebooks queried, documents reviewed, tools tested]\
+**Sessions Spanned:** [If findings draw from multiple sessions, list them]\
+**Related Decisions:** [Any D-### decisions that these findings informed or were informed by]\
+\
+================================================================================\
+**END OF FINDINGS REPORT**\
+================================================================================\
+\
+---\
+\
+### **TEMPLATE NOTES**\
+\
+**DESIGN RATIONALE:**\
+The template prioritizes queryability. Each finding is a self-contained block with a unique ID, making it highly effective as a notebook source. A query for \"F-14\" or \"findings about token exhaustion\" returns precisely structured results.\
+\
+The five-field schema separates observation from interpretation:\
+*   **Discovery** and **Evidence** are empirical (what was seen)\
+*   **Impact/Implication** is analytical (what it means)\
+*   **Status/Verdict** is evaluative (what to do about it)\
+\
+This separation prevents a common failure mode where observations are conflated with conclusions, making it difficult to re-evaluate findings when project context changes.\
+\
+**CUMULATIVE INDEX:**\
+The cumulative index at the bottom of each report serves two purposes:\
+1.  Running directory of all project findings for quick reference\
+2.  High-value notebook source ... a single document that enables targeted retrieval across the entire findings corpus\
+\
+For long-running projects, the cumulative index ma< 2026/02/13 00:18:54.000225207  length=1001 from=16885 to=17885
+y be maintained as a separate standalone file (`[PROJECT]_cumulative-findings-index.txt`) to avoid excessive growth within individual reports. In this case, individual reports may omit the cumulative index section and cross-reference the standalone file.\
+\
+**STANDARD VERDICTS:**\
+\
+| Verdict | Meaning |\
+| :--- | :--- |\
+| **VALIDATED** | Confirms an approach, tool, or hypothesis |\
+| **GAP IDENTIFIED** | Reveals a missing capability or content |\
+| **REQUIRES FURTHER TESTING** | Promising but inconclusive |\
+| **CONTRADICTS** | Contradicts a prior assumption or approach |\
+| **INFORMS DECISION** | Provides evidence for a pending choice |\
+| **NOTED** | Recorded for reference, no immediate action |\
+\
+Custom verdicts are acceptable when standard options do not fit the finding's nature. [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

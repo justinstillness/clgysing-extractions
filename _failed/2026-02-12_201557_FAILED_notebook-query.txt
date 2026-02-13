@@ -1,0 +1,25 @@
+================================================================================
+EXTRACTION: 2026-02-12_201557_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Status was 'error'. Response size: 78 chars
+Source Package:  N/A
+Pass Type:       N/A
+Would-Be Route:  Tier 3 (Untagged)
+Query:           What is the complete volume breakdown in the Assembly Blueprint? List every volume number, its section coverage, and whether it includes templates or appendices. I need the full assembly plan to reconcile with session log tracking.
+Timestamp:       2026-02-12T20:15:57.000937+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: N/A
+Response Chars:  0
+Duration:        71999ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "error", "error": "File not found: /home/claude/volume4_draft.txt"}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

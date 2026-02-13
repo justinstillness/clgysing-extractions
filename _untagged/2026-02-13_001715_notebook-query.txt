@@ -1,0 +1,207 @@
+================================================================================
+EXTRACTION: 2026-02-13_001715_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           TPL-015 Branch Startup File template complete full text all sections fields
+Timestamp:       2026-02-13T00:17:15.000306+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: b02afd6e-6ab8-464d-97be-a95443efd132
+Chat Configure:  default
+Response Chars:  9986
+Duration:        33000ms
+================================================================================
+
+Here is the complete full text of the Branch Startup File template (designated TPL-0XX in the draft, often assigned TPL-015 in final numbering), as defined in the source material.\
+\
+### TPL-015: BRANCH STARTUP FILE\
+\
+**Template ID:** GOV-AIPM-TPL-015\
+**Version:** 1.0\
+**Purpose:** Provides the context packet for initializing a new branch workstream. Functions as a specialized Bootstrap for branch creation, containing inherited project context, branch scope, and mini-rooting questions to establish the branch's foundation.\
+**When to Use:** When creating a new branch from a mainline session or planning session.\
+**Cross-reference:** Section 12.3 (Branch Management), Section 12.3.3 (Branch Creation Process), TPL-002 (Bootstrap Template)\
+\
+---\
+\
+#### INSTRUCTIONS\
+\
+Generate this Startup File in the mainline session when the decision to branch has been made. The file provides everything the new branch's AI instance needs to orient and begin work.\
+\
+The Startup File is a specialized derivative of the Bootstrap (TPL-002). It shares the Bootstrap's function ... context transfer to a new AI instance ... but is structured for branch initialization rather than session continuation. Key differences:\
+*   Includes mini-rooting questions (a Bootstrap assumes rooting is already complete)\
+*   Specifies the relationship to the mainline (a Bootstrap assumes continuity within a single workstream)\
+*   May specify Phase Protocol modifications (a Bootstrap references the existing Phase Protocol as-is)\
+\
+**WRITING PRINCIPLES:**\
+Write for an AI that has no memory of the parent project. Be explicit about what the branch inherits, what it does not, and what it needs to establish on its own. Include enough mainline context to orient, but not so much that it overwhelms the branch's specific scope.\
+\
+The user will provide this file to the branch AI along with this manual (if the branch AI needs AIPM framework orientation). The branch AI reviews the Startup File and conducts the mini-rooting cycle before beginning any substantive work.\
+\
+**FILE NAMING:**\
+`[###]_branch-startup_[branch-handle].txt`\
+*Example:* `001_branch-startup_SECRES.txt`\
+\
+**DIALOG COMPLETION OPTION:**\
+The mainline AI generates this file when instructed: \"Generate a branch startup file for [purpose]\" or \"Spin up a branch for [scope].\"\
+\
+---\
+\
+#### BRANCH STARTUP FILE TEMPLATE\
+\
+**BRANCH STARTUP FILE ... [Branch Name]**\
+\
+**Branch Handle:** [SHORT-HANDLE]\
+**Parent Project:** [Project Name ... Project Code]\
+**Created By:** Session [###] (Mainline)\
+**Date:** [Date]\
+\
+***\
+\
+**BRANCH IDENTIFICATION**\
+\
+*   **Branch Name:** [Descriptive name for the branch]\
+*   **Branch Handle:** [Short handle for cross-references, e.g., SECRES]\
+*   **Branch Purpose:** [1-2 sentence summary of why this branch exists]\
+*   **Chat Naming:** [###] [DEPT]-[PROJ]-BR ([branch purpose])\
+    *   *Example:* 001 GOV-AIPM-BR (security research)\
+\
+***\
+\
+**MANDATORY FIRST ACTION**\
+\
+1.  Review the Phase Protocol from Project Knowledge. The branch inherits the parent project's Phase Protocol [with modifications noted below / as-is].\
+2.  Review this Startup File in full.\
+3.  Conduct the mini-rooting cycle (Section: MINI-ROOTING below).\
+4.  Generate an Alignment Checklist for the branch's first session.\
+\
+***\
+\
+**PARENT PROJECT CONTEXT**\
+\
+*[Provide enough context for the branch AI to understand the parent project's identity, current state, and how this branch fits.]*\
+\
+*   **Project Summary:** [2-4 sentences describing the parent project ... what it is, what it aims to accomplish, and its current phase.]\
+*   **Current Phase:** Phase [N] ... [Phase Name]\
+*   **Overall Progress:** [Brief status]\
+*   **Why This Branch:** [Why was branching chosen over other approaches? What criteria from Section 12.3.2 does this workstream meet?]\
+\
+***\
+\
+**BRANCH SCOPE**\
+\
+**Objectives:**\
+*[What this branch aims to accomplish. Be specific and assessable.]*\
+*   Objective 1: \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+*   Objective 2: \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+*   Objective 3 (if applicable): \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+**Deliverables:**\
+*[What the branch should produce.]*\
+*   [Deliverable 1]\
+*   [Deliverable 2]\
+*   [Continue as needed]\
+\
+**Scope Boundaries:**\
+*[What is explicitly OUT of scope for this branch.]*\
+*   NOT in scope: \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+*   NOT in scope: \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+**Integration Expectations:**\
+*[How branch outputs will rejoin the mainline.]*\
+*   **Integration method:** [Mainline session review / Dedicated integration session / Direct deliverable handoff]\
+*   **Expected integration timing:** [After branch completion / At specific milestone / Periodically]\
+*   **Mainline contact point:** [Which mainline session or phase will integrate branch outputs]\
+\
+***\
+\
+**INHERITED CONTEXT**\
+\
+**Phase Protocol:**\
+*[Reference to the inherited Phase Protocol. Note any modifications needed for the branch.]*\
+*   **Phase Protocol location:** Project Knowledge\
+*   **Modifications for branch:** [None ... use as-is / Specific modifications listed below]\
+*   *[If modifications needed, list them here]*\
+\
+**Relevant Decisions:**\
+*[Mainline decisions (D-###) that the branch needs to know ab< 2026/02/13 00:17:48.000347667  length=3210 from=16705 to=19914
+out.]*\
+\
+| Decision # | Brief Description | Relevance to Branch |\
+| :--- | :--- | :--- |\
+| | | |\
+\
+**Key Context:**\
+*[Any other mainline context the branch needs ... methodology decisions, constraints, dependencies, terminology, conventions.]*\
+\
+***\
+\
+**BRANCH STRUCTURE**\
+\
+*   **Estimated Complexity:** [LOW / MEDIUM / HIGH]\
+*   **Estimated Sessions:** [Range]\
+*   **Single-Phase or Multi-Phase:** [Single / Multi]\
+\
+*[If multi-phase, outline the branch's phase structure:]*\
+*   Branch Phase 1: \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+*   Branch Phase 2: \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+***\
+\
+**NOTEBOOK CONNECTIVITY**\
+\
+**Main Project Notebook:**\
+*   **Name:** [Notebook name]\
+*   **ID:** [Notebook ID]\
+*   **Use:** [What to query the main notebook for]\
+\
+**Branch Adjunct Notebook:**\
+*   **Name:** [Notebook name ... or \"To be created\"]\
+*   **ID:** [Notebook ID ... or \"TBD\"]\
+*   **Use:** [Branch transcripts, branch-specific research and artifacts]\
+\
+**Upload Plan:**\
+*   [ ] Upload branch transcripts to branch adjunct notebook\
+*   [ ] Upload significant branch artifacts to main project notebook\
+*   [ ] Maintain both notebooks per Section 10.3.3 workflow\
+\
+***\
+\
+**MINI-ROOTING QUESTIONS**\
+\
+*[The branch AI should address these questions collaboratively with the user at the start of the first branch session. This is the abbreviated rooting cycle for branches.]*\
+\
+1.  **SCOPE CONFIRMATION:** The branch objectives above are [confirmed / need adjustment]. Any refinements?\
+2.  **MAINLINE CONNECTION:** How tightly coupled is this branch to mainline progress? Does the mainline depend on branch outputs, or can they proceed independently?\
+3.  **PHASE PROTOCOL REVIEW:** Having reviewed the inherited Phase Protocol, do any behaviors need modification for this branch's work? (e.g., different methodology, different output standards, different coordination requirements)\
+4.  **BRANCH STRUCTURE:** Is this a single-phase branch (execute and integrate) or multi-phase (requiring its own phase transitions)?\
+5.  **CONVENTIONS CONFIRMATION:** Will this branch use the same naming conventions, file classes, and artifact templates as the mainline? Any branch-specific conventions needed?\
+\
+***\
+\
+**DYNAMIC STATE**\
+\
+**Decision Log Continuity:**\
+*   Last mainline decision: D-[###]\
+*   Branch decisions: Begin at D-[###]-BR-001 [or continue mainline sequence ... specify approach]\
+\
+**Response Index:**\
+*   Branch response index: Starts at [1] [or continues mainline sequence at [####] ... specify approach]\
+\
+**Finding Index:**\
+*   Last project finding: F-[##]\
+*   Branch findings: Continue project sequence at F-[##]\
+\
+***\
+\
+**END OF BRANCH STARTUP FILE**\
+\
+[2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

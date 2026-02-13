@@ -1,0 +1,497 @@
+================================================================================
+EXTRACTION: 2026-02-12_222601_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           TPL-006 Weekly Review Agenda template full text v1.0.7
+Timestamp:       2026-02-12T22:26:01.000413+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 09912c01-2a99-4150-8113-c8b8b0d7208c
+Chat Configure:  default
+Response Chars:  12201
+Duration:        27999ms
+================================================================================
+
+Here is the full text of the **TPL-006 Weekly Review Agenda** template from version 1.0.7 of the manual [1-22].\
+\
+```text\
+================================================================================\
+\
+TPL-006: WEEKLY REVIEW AGENDA\
+\
+Template ID: GOV-AIPM-TPL-006\
+\
+Version: 1.0\
+\
+Purpose: Structured weekly reflection on AI-assisted work; ensures\
+\
+cognitive sustainability, process improvement, and strategic\
+\
+alignment\
+\
+When to Use: Weekly, at a consistent time (recommended: end of week)\
+\
+--------------------------------------------------------------------------------\
+\
+INSTRUCTIONS\
+\
+--------------------------------------------------------------------------------\
+\
+Conduct a weekly review to step back from tactical work and assess patterns,\
+\
+progress, and process health. This review can be done solo or with AI\
+\
+assistance.\
+\
+The weekly review serves multiple purposes:\
+\
+- Prevents cognitive fatigue through enforced reflection\
+\
+- Identifies process improvements while details are fresh\
+\
+- Ensures projects stay aligned with objectives\
+\
+- Catches drift before it becomes problematic\
+\
+- Maintains sustainable work pace\
+\
+Tips:\
+\
+- Schedule this as a recurring calendar event\
+\
+- Keep it consistent...same day/time each week builds habit\
+\
+- Be honest in the cognitive state check; fatigue compounds\
+\
+- Use insights to adjust next week's approach\
+\
+DIALOG COMPLETION OPTION:\
+\
+This template can be completed through dialog with the AI. Say:\
+\
+\"Help me complete TPL-006\" or \"Walk me through Weekly Review\"\
+\
+See Section 3.5 for the Dialog Intake System.\
+\
+--------------------------------------------------------------------------------\
+\
+WEEKLY REVIEW AGENDA\
+\
+--------------------------------------------------------------------------------\
+\
+WEEK ENDING: ___________________________________________________________\
+\
+REVIEW DATE: ___________________________________________________________\
+\
+REVIEWED BY: ___________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+\
+1. PROJECTS ACTIVE THIS WEEK\
+\
+--------------------------------------------------------------------------------\
+\
+[List all projects with AI-assisted activity this week]\
+\
+| Project Code | Project Name | Status | Sessions This Week |\
+\
+|--------------|--------------|--------|--------------------|\
+\
+| | | | |\
+\
+| | | | |\
+\
+| | | | |\
+\
+| | | | |\
+\
+Status options: Active / On Hold / Completed / Blocked\
+\
+Total active projects: _____\
+\
+--------------------------------------------------------------------------------\
+\
+PROJECT HEALTH CHECK\
+\
+--------------------------------------------------------------------------------\
+\
+Any projects at risk? [ ] Yes [ ] No\
+\
+If yes, which and why:\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+Any projects requiring scope adjustment? [ ] Yes [ ] No\
+\
+If yes, which and why:\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+\
+2. MAJOR DECISIONS MADE\
+\
+--------------------------------------------------------------------------------\
+\
+[Review decision logs from this week; note significant decisions]\
+\
+| Date | Project | Decision Summary | Impact Level |\
+\
+|------|--< 2026/02/12 22:26:29.000182535  length=8192 from=18351 to=26542
+-------|------------------|--------------|\
+\
+| | | | |\
+\
+| | | | |\
+\
+| | | | |\
+\
+Impact Level: High / Medium / Low\
+\
+Any decisions requiring follow-up or reconsideration?\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+\
+3. ISSUES & BLOCKERS\
+\
+--------------------------------------------------------------------------------\
+\
+[Review session logs; consolidate issues encountered]\
+\
+RESOLVED THIS WEEK:\
+\
+| Issue | Resolution | Lessons Learned |\
+\
+|-------|------------|-----------------|\
+\
+| | | |\
+\
+| | | |\
+\
+STILL OPEN:\
+\
+| Issue | Owner | Next Action | Target Date |\
+\
+|-------|-------|-------------|-------------|\
+\
+| | | | |\
+\
+| | | | |\
+\
+ESCALATIONS NEEDED:\
+\
+| Issue | Escalate To | Reason |\
+\
+|-------|-------------|--------|\
+\
+| | | |\
+\
+--------------------------------------------------------------------------------\
+\
+4. UPCOMING PRIORITIES\
+\
+--------------------------------------------------------------------------------\
+\
+[Plan focus for next week]\
+\
+PRIORITY 1 (Must complete):\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+PRIORITY 2 (Should complete):\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+PRIORITY 3 (Nice to complete):\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+DEPENDENCIES OR INPUTS NEEDED:\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+\
+5. SOP & GOVERNANCE ITEMS\
+\
+--------------------------------------------------------------------------------\
+\
+[Note any governance-related activities triggered or needed]\
+\
+ITEMS TRIGGERED THIS WEEK:\
+\
+| Item Type | Description | Status |\
+\
+|-----------|-------------|--------|\
+\
+| | | |\
+\
+| | | |\
+\
+Item types: Resolution needed / SOP update / Policy review / KB entry / Other\
+\
+ITEMS PENDING:\
+\
+| Item | Due Date | Notes |\
+\
+|------|----------|-------|\
+\
+| | | |\
+\
+| | | |\
+\
+Any governance gaps identified?\
+\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+\
+6. COGNITIVE STATE CHECK\
+\
+--------------------------------------------------------------------------------\
+\
+[Honest self-assessment of cognitive sustainability]\
+\
+FATIGUE INDICATORS:\
+\
+[ ] Feeling well-rested and focused\
+\
+[ ] Mild fatigue...manageable\
+\
+[ ] Moderate fatigue...affecting quality\
+\
+[ ] Significant fatigue...need recovery time\
+\
+Signs observed:\
+\
+_____________________________________________________________________________\
+\
+OVERLOAD INDICATORS:\
+\
+[ ] Workload sustainable\
+\
+[ ] Slightly stretched but manageable\
+\
+[ ] Overloaded...quality suffering\
+\
+[ ] Critical...unsustainable pace\
+\
+Signs observed:\
+\
+_____________________________________________________________________________\
+\
+QUALITY CONCERNS:\
+\
+[ ] Quality maintained throughout week\
+\
+[ ] Some quality slippage noted\
+\
+[ ] Significant quality issues\
+\
+[ ] Rework required on deliverables\
+\
+Specific concerns:\
+\
+_____________________________________________________________________________\
+\
+Based on the above, what adjustments are needed?\
+\
+[ ] No adjustments needed...sustainable pace\
+\
+[ ] Reduce workload next week\
+\
+[ ] Schedule recovery time\
+\
+[ ] Delegate or defer items\
+\
+[ ] Seek support/assistance\
+\
+[ ] Other: ___________________________________________________________________\
+\
+Specific actions:\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+\
+7. PROCESS & TOOL OBSERVATIONS\
+\
+--------------------------------------------------------------------------------\
+\
+[Note any insights about AI-assisted work process]\
+\
+WHAT WORKED WELL:\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+WHAT DIDN'T WORK WELL:\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+PROCESS IMPROVEMENTS TO CONSIDER:\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+TOOL OBSERVATIONS:\
+\
+[Any notes on AI tool behavior, new capabilities, issues]\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+\
+8. METRICS SUMMARY (Optional)\
+\
+--------------------------------------------------------------------------------\
+\
+[If tracking metrics, summarize here]\
+\
+| Metric | This Week | Target | Trend |\
+\
+|--------|-----------|--------|-------|\
+\
+| Sessions conducted | | | |\
+\
+| Decisions logged | | | |\
+\
+| Bootstrap success rate | | | |\
+\
+| Files produced | | | |\
+\
+| Issues resolved | | | |\
+\
+--------------------------------------------------------------------------------\
+\
+9. ADJUSTMENTS FOR NEXT WEEK\
+\
+--------------------------------------------------------------------------------\
+\
+[Based on this review, what changes for next week?]\
+\
+PROCESS ADJUSTMENTS:\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+PRIORITY ADJUSTMENTS:\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+RESOURCE ADJUSTMENTS:\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+SCHEDULE ADJUSTMENTS:\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+\
+10. REVIEW COMPLETE\
+\
+--------------------------------------------------------------------------------\
+\
+[ ] All sections reviewed\
+\
+[ ] Action items identified\
+\
+[ ] Next week priorities set\
+\
+[ ] Cognitive state addressed\
+\
+REVIEW DURATION: ___________________________________________________________\
+\
+NEXT REVIEW DATE: ___________________________________________________________\
+\
+Notes for next review:\
+\
+_____________________________________________________________________________\
+\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+\
+END OF WEEKLY REVIEW\
+\
+--------------------------------------------------------------------------------\
+\
+--------------------------------------------------------------------------------\
+\
+TEMPLATE USAGE NOTES\
+\
+--------------------------------------------------------------------------------\
+\
+FILE NAMING:\
+\
+Weekly_Review_[YYYY-MM-DD].txt\
+\
+Example: Weekly_Review_2025-12-20.txt\
+\
+STORAGE:\
+\
+Store in a dedicated Reviews folder or within project folder if\
+\
+project-specific.\
+\
+FREQUENCY:\
+\
+- Standard: Weekly\
+\
+- High-intensity periods: Consider bi-weekly check-ins\
+\
+- Low-activity periods: Can extend to bi-weekly reviews\
+\
+INTEGRAT< 2026/02/12 22:26:29.000212022  length=425 from=26543 to=26967
+ION:\
+\
+- Input: Session logs, decision logs from the week\
+\
+- Output: Priority adjustments, process improvements, action items\
+\
+--------------------------------------------------------------------------------\
+\
+END OF TPL-006\
+\
+--------------------------------------------------------------------------------\
+```
+
+================================================================================
+END OF EXTRACTION
+================================================================================

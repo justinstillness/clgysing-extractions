@@ -1,0 +1,47 @@
+================================================================================
+EXTRACTION: 2026-02-12_213330_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the difference between the VX (Vocabulary Extraction) pass type and the GL (Glossary) pass type? How are they defined and when was each introduced? Are they distinct or overlapping?
+Timestamp:       2026-02-12T21:33:30.000612+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 2584354c-93c2-4250-aba1-07606eb85b12
+Chat Configure:  default
+Response Chars:  3162
+Duration:        34999ms
+================================================================================
+
+Based on the sources provided, the **VX** (Vocabulary Extraction) and **GL** (Glossary Generation) pass types are **distinct** components within the LibForge/NLMINTA extraction pipeline. They serve different stages of the data lifecycle: VX is an *extraction* tool (gathering raw data), while GL is a *consolidation* or *administrative* tool (organizing extracted data).\
+\
+### 1. VX (Vocabulary Extraction)\
+*   **Definition:** VX is an extraction pass designed to identify and extract specialized terms, jargon, and definitions directly from a source package [1]. Unlike Concept Extraction (TX), which focuses on broad ideas and frameworks, VX focuses on \"terminology precision\"...capturing exactly how terms are defined and used in context [2].\
+*   **Introduction:** VX was introduced and validated during **Session 010**. It was developed as a \"New Pass Type\" alongside Thesis Strings (TS) and Evaluation (EV) to ensure distinct data output classes rather than combining them into single queries [3], [4].\
+*   **Output:** It produces structured entries containing the term, definition, usage context, and related terms [3]. These outputs are considered \"Degree 1\" (raw extraction) artifacts [5], [6].\
+\
+### 2. GL (Glossary Generation)\
+*   **Definition:** GL is classified as an \"Administrative / Non-Extraction Pass\" [7]. Its purpose is to generate a consolidated glossary from vocabulary that has *already* been extracted (usually via VX passes) [8]. It functions as a refinement step to create a unified terminology reference across the corpus [9].\
+*   **Introduction:** GL was formally introduced in **Session 013** within the *Signal String Initial Conventions* specification (and the parallel *Signal String Format Considerations* document) [10], [11]. It was added to the \"Pass Type Registry\" as part of the infrastructure for organizing files, rather than as a primary extraction test in the earlier sessions [8].\
+*   **Output:** It produces a consolidated, harmonized terminology reference, often classified as a \"Degree 2\" (refined) or \"Degree 3\" (consolidated) artifact [8], [12].\
+\
+### Key Differences and Relationship\
+The relationship between the two is hierarchical and sequential:\
+\
+| Feature | **VX (Vocabulary Extraction)** | **GL (Glossary Generation)** |\
+| :--- | :--- | :--- |\
+| **Type** | Extraction Pass [7] | Administrative Pass [7] |\
+| **Function** | Extracts raw terms from specific sources. | Consolidates extracted terms into a master list. |\
+| **Input** | Raw Source Material (e.g., source packages). | Extracted VX outputs (Degree 1 artifacts). |\
+| **Stage** | Phase 2 (Extraction) [13]. | Phase 2/3 (Harmonization/Maintenance) [14]. |\
+| **Defined In** | Session 010 [15]. | Session 013 [7]. |\
+\
+**Are they overlapping?**\
+They do not overlap in function; they are complementary. **VX** provides the raw input that **GL** organizes. For example, the sources indicate that GL is often a \"product of VX passes\" [8]. The confusion may arise because VX produces \"glossary entries\" [1], but the GL pass type is reserved for the *act* of generating the consolidated master glossary document itself [9].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

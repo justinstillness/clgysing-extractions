@@ -1,0 +1,148 @@
+================================================================================
+EXTRACTION: 2026-02-12_234800_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Extract all significant relationships between concepts in the source material.
+Timestamp:       2026-02-12T23:48:00.000821+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: 9b69ecd4-2e2d-4a0c-b2d7-973909c14507
+Chat Configure:  default
+Response Chars:  6061
+Duration:        38999ms
+================================================================================
+
+```json\
+{\
+  \"pass_type\": \"RX\",\
+  \"source_notebook\": \"Package 03\",\
+  \"entries\": [\
+    {\
+      \"source_concept\": \"Omniological approach\",\
+      \"relationship_type\": \"causes\",\
+      \"target_concept\": \"intrinsic knowledge\",\
+      \"evidence\": \"The method I use...what I call an omniological approach...requires understanding a subject from as many angles as possible, modeling it within my own conceptual frameworks (building intrinsic knowledge)\",\
+      \"directionality\": \"unidirectional\",\
+      \"strength\": \"explicit\"\
+    },\
+    {\
+      \"source_concept\": \"Cultology\",\
+      \"relationship_type\": \"extends\",\
+      \"target_concept\": \"Omniology\",\
+      \"evidence\": \"Cultology... is the pathology of Omniology (how everything can be affected when parasitic systems gain control)\",\
+      \"directionality\": \"unidirectional\",\
+      \"strength\": \"explicit\"\
+    },\
+    {\
+      \"source_concept\": \"Parasitic systems\",\
+      \"relationship_type\": \"hijacks\",\
+      \"target_concept\": \"human potential\",\
+      \"evidence\": \"para< 2026/02/12 23:48:39.000287559  length=4999 from=9228 to=14226
+sitic systems can be used to hijack human potential...turning people into engines of labor, innovation, knowledge, and technology extraction.\",\
+      \"directionality\": \"unidirectional\",\
+      \"strength\": \"explicit\"\
+    },\
+    {\
+      \"source_concept\": \"Parasitic systems\",\
+      \"relationship_type\": \"prevents\",\
+      \"target_concept\": \"natural flow of truth and growth\",\
+      \"evidence\": \"any system that interrupts the natural flow of truth and growth is cult-like, and therefore parasitic.\",\
+      \"directionality\": \"unidirectional\",\
+      \"strength\": \"strongly_implied\"\
+    },\
+    {\
+      \"source_concept\": \"Epistemic closure\",\
+      \"relationship_type\": \"prevents\",\
+      \"target_concept\": \"human drive for inquiry\",\
+      \"evidence\": \"This epistemic closure (rigid dogmatic thinking) suppresses the human drive for inquiry and leads to the parasitic extraction of benefits and energy.\",\
+      \"directionality\": \"unidirectional\",\
+      \"strength\": \"explicit\"\
+    },\
+    {\
+      \"source_concept\": \"Parasitic social order\",\
+      \"relationship_type\": \"hijacks\",\
+      \"target_concept\": \"transcendence\",\
+      \"evidence\": \"Every parasitic social order is essentially a counterfeit transcendence mechanism.\",\
+      \"directionality\": \"unidirectional\",\
+      \"strength\": \"strongly_implied\"\
+    },\
+    {\
+      \"source_concept\": \"Symbiotic systems\",\
+      \"relationship_type\": \"enables\",\
+      \"target_concept\": \"intrinsic path\",\
+      \"evidence\": \"The opposite of a cult is a symbiotic system. These systems are truth-centered and cultivate what I call the intrinsic path, which demands continual inquiry\",\
+      \"directionality\": \"unidirectional\",\
+      \"strength\": \"explicit\"\
+    },\
+    {\
+      \"source_concept\": \"Agenda 47 Explained\",\
+      \"relationship_type\": \"requires\",\
+      \"target_concept\": \"Cultology\",\
+      \"evidence\": \"Agenda 47 Explained sits on top of the Cultology framework and is designed to look at much of the same foundational research\",\
+      \"directionality\": \"unidirectional\",\
+      \"strength\": \"explicit\"\
+    },\
+    {\
+      \"source_concept\": \"Intellectual intimacy\",\
+      \"relationship_type\": \"enables\",\
+      \"target_concept\": \"The Four Intimacies\",\
+      \"evidence\": \"Intellectual intimacy is the keystone and immune system for the others [intimacies].\",\
+      \"directionality\": \"asymmetric\",\
+      \"strength\": \"explicit\"\
+    },\
+    {\
+      \"source_concept\": \"Cults\",\
+      \"relationship_type\": \"hijacks\",\
+      \"target_concept\": \"core personality spark\",\
+      \"evidence\": \"Cults execute what I call a corruption cascade, hijacking the core personality spark and inverting the entire value system.\",\
+      \"directionality\": \"unidirectional\",\
+      \"strength\": \"explicit\"\
+    },\
+    {\
+      \"source_concept\": \"Symbiotic systems\",\
+      \"relationship_type\": \"requires\",\
+      \"target_concept\": \"honorable contracts\",\
+      \"evidence\": \"Symbiotic systems rely on honorable contracts that are mutual, transparent, and revocable\",\
+      \"directionality\": \"unidirectional\",\
+      \"strength\": \"explicit\"\
+    },\
+    {\
+      \"source_concept\": \"Technocratic plantation\",\
+      \"relationship_type\": \"hijacks\",\
+      \"target_concept\": \"modern conveniences\",\
+      \"evidence\": \"This plantation adorns itself in modern conveniences... These benefits act as the shell of a Trojan horse, concealing the much more toxic and freedom-destroying payload\",\
+      \"directionality\": \"unidirectional\",\
+      \"strength\": \"inferred\"\
+    },\
+    {\
+      \"source_concept\": \"Pedagogical spiral staircase\",\
+      \"relationship_type\": \"enables\",\
+      \"target_concept\": \"accessibility\",\
+      \"evidence\": \"pedagogical spiral staircase approach... allows me to introduce concepts accessibly and then deepen them recursively... so that readers at different levels of familiarity can all find value.\",\
+      \"directionality\": \"unidirectional\",\
+      \"strength\": \"explicit\"\
+    }\
+  ],\
+  \"metadata\": {\
+    \"total_entries\": \"13\",\
+    \"relationship_types_used\": [\
+      \"causes\",\
+      \"extends\",\
+      \"hijacks\",\
+      \"prevents\",\
+      \"enables\",\
+      \"requires\"\
+    ],\
+    \"novel_types\": [],\
+    \"extraction_notes\": \"The source material demonstrates a highly structured relational ontology where 'Parasitic' and 'Symbiotic' concepts function as opposing poles. 'Hijacking' and 'Preventing' are dominant relationships for parasitic systems, while 'Enabling' and 'Requiring' characterize symbiotic ones. The 'Cultology' framework serves as a central hub from which other models (Agenda 47, Ontology of Being) extend.\"\
+  }\
+}\
+```
+
+================================================================================
+END OF EXTRACTION
+================================================================================

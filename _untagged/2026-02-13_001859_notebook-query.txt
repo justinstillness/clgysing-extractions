@@ -1,0 +1,300 @@
+================================================================================
+EXTRACTION: 2026-02-13_001859_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           TPL-007 Re-Entry Checklist template complete full text all fields sections instructions
+Timestamp:       2026-02-13T00:18:59.000988+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 0e56b0b5-1e23-470a-94db-da7cc5879fe4
+Chat Configure:  default
+Response Chars:  11205
+Duration:        28999ms
+================================================================================
+
+The complete text of the TPL-007 Re-Entry Checklist template, including all instructions and fields, is provided below.\
+\
+**TPL-007: RE-ENTRY CHECKLIST**\
+\
+**Template ID:** GOV-AIPM-TPL-007\
+**Version:** 1.0\
+**Purpose:** Protocol for returning to AI-assisted work after extended absence; prevents regression and ensures proper reorientation\
+**When to Use:** After any absence long enough to cause context loss (typically 2+ weeks, but use judgment)\
+\
+***\
+\
+**INSTRUCTIONS**\
+\
+Use this checklist when returning to AI-assisted work after an extended absence. The goal is to rebuild context systematically rather than jumping back in and risking confusion, contradictory work, or wheel reinvention.\
+\
+**When to use this checklist:**\
+*   After vacation or extended time away\
+*   After working on other projects exclusively\
+*   When picking up a dormant project\
+*   Whenever you feel \"out of the loop\" on a project\
+\
+The principle: If your absence caused context loss, invest in re-entry before resuming work. This investment pays off in avoided rework and confusion.\
+\
+**Tips:**\
+*   Don't skip steps even if you feel confident...memory is unreliable\
+*   Use NotebookLM or similar tools to query your own documents\
+*   The reorientation chat is not optional; it catches gaps\
+\
+**DIALOG COMPLETION OPTION:**\
+This template can be completed through dialog with the AI. Say:\
+\"Help me complete TPL-007\" or \"Walk me through Re-Entry Checklist\"\
+See Section 3.5 for the Dialog Intake System.\
+\
+***\
+\
+**RE-ENTRY CHECKLIST**\
+\
+**PROJECT:** `____________________________________________________________________`\
+**PROJECT CODE:** `_______________________________________________________________`\
+**LAST ACTIVE DATE:** `___________________________________________________________`\
+**TODAY'S DATE:** `_______________________________________________________________`\
+**TIME ELAPSED:** `_______________________________________________________________`\
+**RE-ENTRY INITIATED BY:** `______________________________________________________`\
+\
+***\
+\
+**1. ABSENCE ASSESSMENT**\
+\
+**Duration of absence:**\
+[ ] Less than 1 week ... Re-entry checklist optional\
+[ ] 1-2 weeks ... Abbreviated re-entry recommended\
+[ ] 2-4 weeks ... Full re-entry required\
+[ ] 1+ month ... Extended re-entry required\
+[ ] 3+ months ... Project resumption protocol (see Section 5)\
+\
+**Context retention self-assessment:**\
+[ ] High ... Remember most details clearly\
+[ ] Medium ... Remember general direction, fuzzy on details\
+[ ] Low ... Remember project exists, little detail\
+[ ] Minimal ... Need full reorientation\
+\
+**What changed during absence?**\
+[ ] Nothing significant expected\
+[ ] External factors may have changed (regulations, market, etc.)\
+[ ] Team/stakeholder changes\
+[ ] Related projects progressed\
+[ ] Unknown...need to investigate\
+\
+***\
+\
+**2. MATERIALS TO REVIEW**\
+\
+*[Check off as you review each item]*\
+\
+**ESSENTIAL REVIEW:**\
+*   [ ] Project Guide (current version)\
+    Notes: `________________________________________________________________`\
+*   [ ] Recent Session Logs (last 3-5 sessions)\
+    Notes: `________________________________________________________________`\
+*   [ ] Recent Decision Logs (last 2 weeks before absence)\
+    Notes: `________________________________________________________________`\
+*   [ ] Last Bootstrap (if applicable)\
+    Notes: `________________________________________________________________`\
+*   [ ] Last Session Closeout Checklist\
+    Notes: `________________________________________________________________`\
+\
+**EXTENDED REVIEW (for longer absences):**\
+*   [ ] Full Decision Log scan\
+    Notes: `________________________________________________________________`\
+*   [ ] Project deliverables produced\
+    Notes: `________________________________________________________________`\
+*   [ ] Related project updates\
+    Notes: `________________________________________________________________`\
+*   [ ] External updates (if applicable)\
+    Notes: `________________________________________________________________`\
+\
+**REVIEW COMPLETE:** [ ] Yes [ ] Partial (note gaps below)\
+\
+**Gaps or missing materials:**\
+`_____________________________________________________________________________`\
+`_____________________________________________________________________________`\
+\
+***\
+\
+**3. NOTEBOOKLM / RETRIEVAL QUERIES**\
+\
+*[Use NotebookLM or similar tool to query project documents]*\
+\
+**QUERIES TO RUN:**\
+*   [ ] \"What is the current status of [project]?\"\
+    Result summary: `________________________________________________________`\
+*   [ ] \"What were the most recent d< 2026/02/13 00:19:28.000803146  length=6597 from=18351 to=24947
+ecisions made?\"\
+    Result summary: `________________________________________________________`\
+*   [ ] \"What are the open items or blockers?\"\
+    Result summary: `________________________________________________________`\
+*   [ ] \"What was the last work completed?\"\
+    Result summary: `________________________________________________________`\
+*   [ ] Custom query: `__________________________________________________________`\
+    Result summary: `________________________________________________________`\
+*   [ ] Custom query: `__________________________________________________________`\
+    Result summary: `________________________________________________________`\
+\
+**INSIGHTS FROM QUERIES:**\
+`_____________________________________________________________________________`\
+`_____________________________________________________________________________`\
+`_____________________________________________________________________________`\
+\
+***\
+\
+**4. REORIENTATION CHAT**\
+\
+Conduct a dedicated reorientation chat with AI before resuming work.\
+\
+**REORIENTATION OBJECTIVES:**\
+*   [ ] Verify understanding of project status\
+*   [ ] Confirm active parameters and constraints\
+*   [ ] Identify any changes needed based on time elapsed\
+*   [ ] Establish focus for resumption\
+\
+**CHAT SETUP:**\
+*   Chat name: [###] [DEPT]-[PROJ]-RD (reorientation)\
+*   Provide: Project Guide, recent logs, last bootstrap\
+\
+**PROMPTS TO USE:**\
+\"I'm returning to this project after [time period]. Based on the materials I've provided, please summarize:\
+1. Current project status\
+2. Last completed work\
+3. Immediate next steps\
+4. Any decisions that may need revisiting given the time elapsed\"\
+\
+\"What assumptions are currently in effect that I should reconfirm?\"\
+\
+\"Are there any time-sensitive elements I should be aware of?\"\
+\
+**REORIENTATION CHAT COMPLETED:** [ ] Yes [ ] No\
+\
+**Chat name used:** `_____________________________________________________________`\
+\
+**Key insights from reorientation:**\
+`_____________________________________________________________________________`\
+`_____________________________________________________________________________`\
+`_____________________________________________________________________________`\
+\
+***\
+\
+**5. VERIFICATION QUESTIONS**\
+\
+*[Answer these questions to confirm you're ready to resume]*\
+\
+**Can you clearly state the project objective?**\
+[ ] Yes [ ] No ... Review Project Guide Section 1\
+`_____________________________________________________________________________`\
+\
+**Can you identify the current phase and immediate next actions?**\
+[ ] Yes [ ] No ... Review last bootstrap and session log\
+`_____________________________________________________________________________`\
+\
+**Do you know what decisions have been made and their rationale?**\
+[ ] Yes [ ] No ... Review decision log\
+`_____________________________________________________________________________`\
+\
+**Are you aware of any open issues or blockers?**\
+[ ] Yes [ ] No ... Review session logs for issues\
+`_____________________________________________________________________________`\
+\
+**Do you understand the project constraints and parameters?**\
+[ ] Yes [ ] No ... Review Project Guide constraints section\
+`_____________________________________________________________________________`\
+\
+**Has anything changed externally that affects this project?**\
+[ ] Yes ... Document below [ ] No [ ] Unknown ... Investigate\
+\
+**External changes:**\
+`_____________________________________________________________________________`\
+`_____________________________________________________________________________`\
+\
+***\
+\
+**6. RESUME CRITERIA**\
+\
+*[All criteria must be met before resuming substantive work]*\
+\
+*   [ ] Materials review complete\
+*   [ ] Retrieval queries run\
+*   [ ] Reorientation chat completed\
+*   [ ] All verification questions answered \"Yes\"\
+*   [ ] External changes assessed (if applicable)\
+*   [ ] Cognitive state appropriate (not fatigued, focused)\
+\
+**READY TO RESUME:** [ ] Yes [ ] No ... Address gaps first\
+\
+**If No, what's needed before resuming:**\
+`_____________________________________________________________________________`\
+`_____________________________________________________________________________`\
+\
+***\
+\
+**7. RESUMPTION PLAN**\
+\
+**First session focus:**\
+`_____________________________________________________________________________`\
+`_____________________________________________________________________________`\
+\
+**Priority items:**\
+1. `___________________________________________________________________________`\
+2. `___________________________________________________________________________`\
+3. `___________________________________________________________________________`\
+\
+**Any adjustments needed based on time elapsed:**\
+`_____________________________________________________________________________`\
+`_____________________________________________________________________________`\
+\
+***\
+\
+**8. RE-ENTRY COMPLETE**\
+\
+*   [ ] All checklist sections complete\
+*   [ ] Ready to resume work\
+*   [ ] First session planned\
+\
+**RE-ENTRY DURATION:** `_____________________________________________________`\
+\
+**RESUMPTION CHAT:** `_____________________________________________________`\
+(Name of first working session after re-entry)\
+\
+**Notes for future re-entries:**\
+`_____________________________________________________________________________`\
+`_____________________________________________________________________________`\
+\
+***\
+\
+**ABBREVIATED RE-ENTRY (1-2 week absence)**\
+\
+For shorter absences, use this abbreviated version:\
+*   [ ] Review last session log\
+*   [ ] Review last bootstrap\
+*   [ ] Scan recent decisions\
+*   [ ] Quick reorientation prompt to AI\
+*   [ ] Confirm immediate next actions\
+*   [ ] Resume work\
+\
+***\
+\
+**EXTENDED RE-ENTRY (3+ months / Project Resumption)**\
+\
+For very long absences or dormant project resumption:\
+1. Treat as near-new project initiation\
+2. Review ALL project materials, not just recent\
+3. Conduct comprehensive NotebookLM audit\
+4. Consider whether project parameters are still valid\
+5. May require updated Project Initiation Form\
+6. Reorientation chat should be extensive\
+7. First session should include explicit \"project health check\"\
+\
+***\
+\
+**END OF TPL-007** [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20], [21], [22], [23], [24]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

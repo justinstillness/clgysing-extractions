@@ -1,0 +1,29 @@
+================================================================================
+EXTRACTION: 2026-02-12_150622_nlminta_JT-01_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Status was 'error'. Response size: 115 chars
+Source Package:  N/A
+Pass Type:       JT (JT)
+Pass Number:     01
+Theme/Focus:     N/A
+Project:         nlminta
+Session:         017
+Would-Be Route:  Tier 2 (Tagged + Unknown: JT)
+Query:           Extract all significant concepts from the source material in this notebook. Focus on the core theoretical frameworks, key distinctions, and analytical models presented across all sources.
+Timestamp:       2026-02-12T15:06:22.000974+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: N/A
+Response Chars:  0
+Duration:        2941999ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "error", "error": "File not found: /mnt/user-data/uploads/Trust_and_Civilization_Analysis_otter_ai.txt"}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

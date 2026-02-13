@@ -1,0 +1,58 @@
+================================================================================
+EXTRACTION: 2026-02-12_204428_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Assembly Blueprint Volume 5 Sections 12 13 14 pre-assembled text Advanced Patterns
+Timestamp:       2026-02-12T20:44:28.000241+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: cd3fa2b1-e78f-4e7e-bb9d-09d4f68804b8
+Chat Configure:  default
+Response Chars:  2744
+Duration:        143000ms
+================================================================================
+
+Based on the sources provided, here are the details regarding Integration Point F-IP7 and the scope of the new Section 12.4 Three-Tier Documentation Architecture.
+
+### F-IP7 Integration Point: Table of Contents
+**Integration Point F-IP7** is a specific instruction to update the Table of Contents in the GOV-AIPM v1.0.8 manual to reflect the addition of the new **Section 12.4**.
+
+*   **Location:** Table of Contents (Section 12 entries).
+*   **Action:** Add `12.4 Three-Tier Documentation Architecture` immediately after Section 12.3.
+*   **Status:** This integration point ensures the new section is discoverable within the "Advanced Patterns" part of the manual (Volume 5).
+
+### Section 12.4: Three-Tier Architecture Scope Details
+Section 12.4 introduces a pattern for managing documentation in complex projects to prevent "documentation sprawl" (monolithic files that are hard to navigate) and "scattered fragments" (files with no hierarchy).
+
+The section defines the **Three-Tier Documentation Architecture** as follows:
+
+1.  **Tier 1: Architecture References (System Level)**
+    *   **Purpose:** High-level blueprint capturing design philosophy and component relationships.
+    *   **Stability:** High (changes rarely).
+    *   **Naming Convention:** `[VERSION]_SPEC_[System]-Architecture-Reference.[ext]`
+    *   **Content:** System topology, component inventory, design principles.
+
+2.  **Tier 2: Per-Tool / Component References (Operational Level)**
+    *   **Purpose:** Detailed specifications for individual tools or components. Bridges architecture to execution.
+    *   **Stability:** Medium (updates when specific components change, isolated from other components).
+    *   **Naming Convention:** `[VERSION]_REF_[Component]-Reference.[ext]`
+    *   **Content:** Configuration details, operational procedures, known issues.
+
+3.  **Tier 3: CHANGELOG (Temporal Level)**
+    *   **Purpose:** Sequential record of what changed, when, and why.
+    *   **Stability:** Continuously updated (append-only).
+    *   **Naming Convention:** `CHANGELOG.[ext]` or `[PROJECT]_CHANGELOG.[ext]`
+    *   **Content:** Reverse-chronological entries linking changes to decisions and sessions.
+
+**Additional Scope Covered in Section 12.4:**
+*   **When to Apply:** Recommended for projects producing systems with multiple components, software development, or complex governance frameworks. Not recommended for short (<5 sessions) or single-deliverable projects.
+*   **Implementation Guidance:** Steps for creating the architecture from scratch or retrofitting existing projects, including folder organization.
+*   **Relationships:** Integrates with File Naming (Section 6.1), Notebook Organization (Section 6.2.4), and Phase Transitions (Section 4.3.5).
+
+================================================================================
+END OF EXTRACTION
+================================================================================

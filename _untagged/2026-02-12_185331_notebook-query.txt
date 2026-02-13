@@ -1,0 +1,41 @@
+================================================================================
+EXTRACTION: 2026-02-12_185331_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Was User Behavior Callout 7 (Prompting Discipline) applied in Volume 2a during Session 040? Check the session 040 transcript or Volume 2a assembly for evidence of Callout 7 being embedded in Section 3.
+Timestamp:       2026-02-12T18:53:31.000354+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: e7d9ad37-ecc1-45dd-8116-d85faf888a6b
+Chat Configure:  default
+Response Chars:  693
+Duration:        136000ms
+================================================================================
+
+Based on the v1.0.7 manual, here is the complete structure of Section 7: The Governance Stack:
+
+**Section 7: The Governance Stack**
+
+*   **7.1 Governing Documents** [1]
+    *   7.1.1 Document Hierarchy [2]
+    *   7.1.2 AI's Role at Each Level [3]
+*   **7.2 Resolutions** [4]
+    *   7.2.1 Resolution Anatomy [5]
+    *   7.2.2 Common Resolution Types [6]
+    *   7.2.3 Resolution Register Maintenance [7]
+*   **7.3 SOPs & Policies** [8]
+    *   7.3.1 Policy Development [9]
+    *   7.3.2 SOP Development [10]
+    *   7.3.3 Policy vs. SOP Maintenance [11]
+*   **7.4 Governance Maintenance** [12]
+    *   7.4.1 Review Cycles [13]
+    *   7.4.2 Change Control [14]
+    *   7.4.3 Gap Analysis [15]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

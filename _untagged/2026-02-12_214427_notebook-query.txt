@@ -1,0 +1,35 @@
+================================================================================
+EXTRACTION: 2026-02-12_214427_notebook-query
+================================================================================
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           TPL-004 Decision Log Entry template full text v1.0.7
+Timestamp:       2026-02-12T21:44:27.000278+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 2584354c-93c2-4250-aba1-07606eb85b12
+Chat Configure:  default
+Response Chars:  1873
+Duration:        1444999ms
+================================================================================
+
+Based on your project history and the source materials, the terms for the completed set of extraction passes on a single source package have evolved, but **"Library File"** and **"Extraction Product"** are the most prominent established terms.
+
+Here is the breakdown of how these terms are used in your system:
+
+*   **"Library File"**: This is the term you explicitly gravitated toward in the **NLMINTA Session 001** conversation. You corrected yourself to use this term when describing the "cleaned source package" or "concept repository" generated from a source ("...generate the concept repositories that I need, or the **library files**, I should probably say...").
+*   **"Extraction Product"**: This is the functional term used for the actual text files generated during the **CLGYSING Phase 1 validation (Session 011)**. The artifacts produced by Gemini and Grok containing the concepts, thesis strings, and glossary for Source Package 03 were named `Extraction Product (Concepts, Thesis, Glossary)...`.
+*   **"First-Degree (D1) Library"**: In **Session 012** (F60), the output of a full extraction on a corpus was referred to as a "**first-degree concept library**." The **Indexer Specification** (v0.1) creates a formal taxonomy where raw extraction outputs are classified as **Degree 1 (D1)** artifacts (the "ore"), which are then refined into D2 and D3 levels.
+*   **"Concept Repository"**: While often used to refer to the master aggregation, you have also used this term (e.g., "concept repository for that source package") to refer to the extraction output of a single source, though "Library File" was your preferred correction.
+
+**Summary:**
+*   **Conversational/Conceptual Term:** **"Library File"**
+*   **Operational/Filename Term:** **"Extraction Product"**
+*   **Architectural Classification:** **"Degree 1 (D1) Artifacts"** or **"First-Degree Library"**
+
+================================================================================
+END OF EXTRACTION
+================================================================================

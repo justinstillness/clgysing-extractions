@@ -1,0 +1,25 @@
+================================================================================
+EXTRACTION: 2026-02-12_061934_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 160 chars but answer extraction failed
+Source Package:  N/A
+Pass Type:       N/A
+Would-Be Route:  Tier 3 (Untagged)
+Query:           Show me the Volume 1 header format, assembly notes footer, and formatting conventions used including section heading style, line separators, and indentation patterns
+Timestamp:       2026-02-12T06:19:34.000620+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      cc214534-132d-40bc-9b77-33a0a1d61afd
+Conversation ID: N/A
+Response Chars:  0
+Duration:        31600999ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "notebook_id": "1e03c6b6-247d-4ddd-801d-8e435ac291b9", "goal": "custom", "response_length": "longer", "message": "Chat settings updated."}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================
