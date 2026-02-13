@@ -1,0 +1,92 @@
+================================================================================
+SERAPH BRANCH TAGGING DIRECTIVE
+================================================================================
+File Class:     REF
+Project:        AWSNBLM (Havona Anvil Suite)
+Version:        v1.0
+Created:        2026-02-12
+Session:        026
+
+Effective:      2026-02-12 (all branches, all sessions, until further notice)
+
+PURPOSE:
+Standardized directive for embedding branch identity into all Majeston
+notebook_query calls. Ensures SeraphRecorder can route extraction outputs
+to branch-specific folders in the GitHub repository.
+
+CONTEXT:
+With 5+ active branches generating Majeston queries (AWSNBLM, NLMINTA,
+CLGYSING, A47, and external testers), untagged queries create
+organizational debt in the _untagged/ folder. This directive eliminates
+that problem by requiring branch attribution on every query.
+
+================================================================================
+DIRECTIVE TEXT (for bootstrap templates)
+================================================================================
+
+All Majeston notebook_query calls in this session MUST include a SERAPH
+signal string prepended to the query text. This is non-negotiable and
+applies to every query without exception until further notice.
+
+Format:
+  [SERAPH: BRANCH={branch_name}, SESSION={session_number}]
+
+Example:
+  [SERAPH: BRANCH=AWSNBLM, SESSION=026]
+
+Extended format (when targeting specific extraction work):
+  [SERAPH: BRANCH=AWSNBLM, SESSION=026, PROJECT=clgysing, PASS=VX, SP=03]
+
+Rules:
+1. The SERAPH tag is the FIRST content in every query string, before
+   the actual query text.
+2. BRANCH is the project branch name (e.g., AWSNBLM, NLMINTA, CLGYSING, A47).
+3. SESSION is the zero-padded session number within that branch (e.g., 026).
+4. PROJECT, PASS, SP, and NUM fields are optional — include when the
+   query targets a specific extraction pass or source package.
+5. If you are uncertain about the branch name or session number, ASK
+   before sending the query. Never send a Majeston query without a
+   SERAPH tag.
+6. This tag is captured by SeraphRecorder and used for automated file
+   routing. Missing tags cause files to land in _untagged/ with no
+   branch attribution, creating organizational debt.
+
+Purpose: SeraphRecorder parses this tag to route extraction outputs to
+branch-specific folders in the GitHub repository. With 5+ active branches
+generating queries, branch tagging is essential for file organization
+and provenance tracking.
+
+================================================================================
+KNOWN BRANCH NAMES
+================================================================================
+
+  AWSNBLM   — AWS/NotebookLM infrastructure (Havona Anvil Suite)
+  NLMINTA   — NotebookLM MCP Integration testing and methodology
+  CLGYSING  — Cultology Singles content production
+  A47       — Agenda 47 Explained series
+  LIBFORGE  — LibForge methodology development
+
+Additional branches may be added. Use consistent naming — once a branch
+name is established, do not vary spelling or abbreviation.
+
+================================================================================
+IMPLEMENTATION NOTES
+================================================================================
+
+extract.py (SeraphRecorder) parses SERAPH tags from query text embedded
+in traffic logs. The BRANCH field is used for top-level folder routing.
+SESSION provides provenance tracking. PROJECT/PASS/SP/NUM enable
+granular sub-folder routing when present.
+
+Routing logic (current):
+  Tagged with PROJECT+PASS → {PROJECT}/{phase}/{PASS}/
+  Tagged with BRANCH only  → {BRANCH}/_untagged/ (future)
+  No tag                   → _untagged/ (root, organizational debt)
+
+Note: BRANCH-level routing in extract.py requires a minor code update
+(W-023, Tier 1). Until implemented, the BRANCH field is captured in
+file headers for manual/retrospective organization.
+
+================================================================================
+END OF DIRECTIVE
+================================================================================
