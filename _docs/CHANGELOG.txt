@@ -20,12 +20,97 @@ COMPONENTS:
   Chronicler      — GitHub repository tool (read/write/organize)
   Caliper         — Document analysis MCP (GitHub file inventory)
   File Browser    — Web UI for repo browsing/download (user-facing)
+  Transcript Receiver — Web form for mobile transcript capture
   Indexer         — File organization protocol (naming, manifest, routing)
   Infrastructure  — EC2, Caddy, networking, security, systemd
 
 ================================================================================
 CHANGELOG
 ================================================================================
+
+--------------------------------------------------------------------------------
+2026-02-13 | Session 027 | Documentation
+--------------------------------------------------------------------------------
+CHANGED: Architecture Reference updated from v4.0 to v4.1
+  - Incorporates all changes from Sessions 022-026
+  - EC2 t3.micro → t3.small, cost $8 → $15/month
+  - Majeston v0.2.15 → v0.2.18
+  - File Browser and Transcript Receiver added as components
+  - Port map expanded (8095 File Browser, 8096 Transcript Receiver)
+  - Caddy routing updated with /files* and /transcripts* routes
+  - flush_pipeline fix documented, Chronicler discovery issue resolved
+  - SeraphRecorder idempotency guards and pull-before-push logic
+  - Decisions D-028 through D-040 added
+  - Known Issues updated with resolved section
+  - Updated to HA Suite NLM notebook (source swap)
+
+CHANGED: Wishlist updated to v1.1
+  - Merged S026 addendum items: W-023, W-047, W-048, W-049, W-061
+  - Added W-062 (Comprehensive Diagram Suite)
+  - Updated completed items section
+
+CHANGED: CHANGELOG S026 addendum merged into main CHANGELOG
+
+REMOVED: Addendum files superseded by merges
+  - CHANGELOG-S026-addendum.txt (merged)
+  - wishlist-S026-addendum.txt (merged)
+  - wishlist-S026-addendum-pt2.txt (merged)
+
+CROSS-COMPONENT NOTES:
+  - HA Suite NLM notebook: Architecture Reference source swapped v4.0→v4.1
+  - NLM-MANIFEST.json updated with new source ID and sync date
+
+--------------------------------------------------------------------------------
+2026-02-12 | Session 026 | Chronicler, Documentation, Infrastructure
+--------------------------------------------------------------------------------
+FIXED: Chronicler flush_pipeline tool discovery issue resolved
+  - Root cause: flush_pipeline function defined AFTER mcp.run() entry point
+    in chronicler.py. FastMCP builds tool manifest before mcp.run() blocks,
+    so the tool was never included in the client-facing MCP handshake.
+  - Fix: Moved flush_pipeline definition (with import asyncio) above the
+    entry point block. Backup created as chronicler.py.bak.flush_move.
+  - Verification: Confirmed working in fresh NLMINTA session — 83
+    successful extractions, 94 files pushed to GitHub.
+  - This resolves the "Chronicler tools may not appear in Claude UI"
+    known issue for flush_pipeline specifically.
+
+ADDED: Pipeline visualization diagrams
+  - _docs/diagrams/core-extraction-pipeline.mermaid
+  - _docs/diagrams/pipeline-trigger-paths.mermaid
+  - Both rendered via Mermaid Chart MCP tool, vertical (mobile-friendly)
+
+ADDED: Chronicler fix log (_tools/chronicler-fix-log.md)
+  - Documents the flush_pipeline ordering fix for future reference
+
+ADDED: Chronicler Quick Reference v1.1 to HA Suite NLM notebook
+  - Source ID: 636b453c-34b2-4f15-9cf9-4fe993fc5353
+  - Updated to include flush_pipeline as tool #10
+  - Updated tool discovery note to reflect fix
+
+ADDED: SERAPH Branch Tagging Directive v1.0
+  - Cross-branch standard for all Majeston queries
+  - Format: [SERAPH: BRANCH=..., SESSION=...]
+  - Committed to repo, added to bootstrap templates
+
+ADDED: Wishlist items formalized
+  - W-047: Mobile Transcript Capture (P3)
+  - W-048: EC2 Configuration Backup (P3)
+  - W-049: Caliper Subdirectory Recursion (P3)
+  - W-061: NLM-to-Repo Ingestion Tool (P3)
+  - W-023: Branch-Aware Extraction Routing (P2)
+
+ADDED: NLMINTA S018 Insight document captured and committed
+  - Pipeline organization, query archaeology, branch tagging insights
+
+ASSESSED: JSON Engineering Brief from NLMINTA S017
+  - Items A-G reviewed against current pipeline maturity
+  - Conclusion: No immediate AWSNBLM engineering work needed
+  - JSON capabilities documented for when NLMINTA Phase 3 validates schemas
+
+CROSS-COMPONENT NOTES:
+  - HA Suite NLM notebook now has 9 sources (added Chronicler reference)
+  - _docs/diagrams/ directory established for visual documentation assets
+  - extract.py repo sync still needed (live version diverged from repo copy)
 
 --------------------------------------------------------------------------------
 2026-02-10 | Session 023 | File Browser, Indexer, Infrastructure
@@ -407,10 +492,12 @@ here for visibility and will move to dated entries when addressed.
 
 INFRASTRUCTURE:
   [ ] GitHub PAT rotation (deferred since S011 — avoiding service disruption)
-  [ ] health-check.sh update to include Caliper + Chronicler + File Browser
-  [ ] jacob-bd package update check (non-urgent)
+  [ ] health-check.sh update to include all 6 services
   [ ] Tailscale stability monitoring (dropped in S022, restarted)
   [ ] EC2 t3.small cost review — is upgrade still needed? (~$15/month)
+  [ ] Transcript Receiver basic auth (currently open)
+  [ ] Google auth token refresh (needs Mac)
+  [ ] extract.py repo sync (live version diverged from repo copy)
   [x] Counter reset — concept-counter.json (DONE S022)
 
 SERAPHRECORDER:
@@ -434,6 +521,11 @@ FEATURE BACKLOG:
   [ ] Notebook integration — read from GitHub, add to NLM (W-003, S017)
   [ ] AIPM repo integration — session logs to GitHub (W-006, S018)
   [ ] NLM full-file upload method (text summary workaround used, S022)
+
+RESOLVED (since last update):
+  [x] Chronicler tool discovery — flush_pipeline fix (S026)
+  [x] File Browser auth loop — bcrypt hash fix (S023, D-035)
+  [x] Git conflict loop in pipeline — pull-before-push (S025)
 
 ================================================================================
 END OF CHANGELOG
