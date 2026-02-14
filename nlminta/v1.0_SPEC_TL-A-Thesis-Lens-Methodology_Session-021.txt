@@ -1,0 +1,23 @@
+================================================================================
+TL-A THESIS-LENS EXTRACTION — METHODOLOGY SPEC
+================================================================================
+Project:        NLMINTA / LibForge
+Version:        v1.0
+File Class:     SPEC
+Created:        2026-02-13
+Session:        021 NLMINTA (Phase 3 Complete — Transition Planning)
+Validated:      Session 021 — Four Intimacies lens on Hassan x Singer
+
+See downloadable file for full content. Key sections:
+1. Overview — what TL-A is and how it works
+2. Prerequisites — notebook setup, lens preparation, quality criteria
+3. Query Template — validated template with bracketed adaptation points
+4. Expected Output Format — structure and quality indicators
+5. Variations & Scaling — larger lens, model-as-source, targeted, multi-pass
+6. Evaluation Criteria — 8-point quality checklist
+7. Applications — TL-A (validated), TL-B and TL-C (theorized)
+8. Known Findings — F108 observations
+
+================================================================================
+END
+================================================================================
