@@ -1,0 +1,89 @@
+================================================================================
+FINDING F109: TD-1 (Thesis Genesis from Library Survey) — VALIDATED
+================================================================================
+Date:           2026-02-14
+Session:        022 NLMINTA (Top-Down LibForge Testing)
+Stage:          TD-1 (Top-Down Workflow, Stage 1: Thesis Genesis)
+Status:         PRODUCTION-VIABLE
+
+================================================================================
+TEST SUMMARY
+================================================================================
+
+Test A: D1 Library Survey (SP03 Repositories, 4 sources, 99 concepts)
+Test B: Raw Corpus Survey (CLGYSING Source Pkgs, 15 raw sources)
+
+Both tests used identical structured query template requesting:
+- Thesis statements (declarative claims, not topic lists)
+- Thesis typing (MECHANISTIC / COMPARATIVE / DIAGNOSTIC / PRESCRIPTIVE)
+- Evidence base with corpus citations
+- Gap flags (missing material for full argumentation)
+- Self-assessment (THESIS-WORTHY vs. OBSERVATIONAL)
+- Unexplored intersections and thematic gaps
+
+================================================================================
+RESULTS
+================================================================================
+
+Test A (D1 Library): 9 thesis candidates, 2 unexplored intersections, 2 gaps
+Test B (Raw Corpus): 10 thesis candidates, 2 unexplored intersections, 3 gaps
+
+QUALITY MARKERS:
+- Declarative thesis statements (not questions/topics): PASS both tests
+- Thesis typing applied consistently: PASS both tests
+- Evidence citation to specific corpus content: PASS both tests
+- Gap flags identify genuinely missing material: PASS both tests
+- Self-assessment discriminates thesis-worthy from observational:
+  PASS both (Test A: 7/9 thesis-worthy, 2 observational with defensible flags;
+  Test B: 8/10 thesis-worthy, 2 observational with defensible flags)
+- Unexplored intersections show genuine synthesis: PASS both tests
+- Thematic gaps are actionable: Test B stronger than Test A
+
+COMPARATIVE FINDING:
+- D1 library produces more focused, framework-aligned thesis candidates
+- Raw corpus surfaces wider conceptual territory including economics, law,
+  governance, and applied mechanisms not visible in D1 library
+- Both entry points are strategically useful for different purposes:
+  D1 for framework-aligned work, raw for discovery/exploration
+
+================================================================================
+QUERY TEMPLATE (Production-Ready)
+================================================================================
+
+TASK: Thesis Genesis from Library Survey
+
+You are surveying this library of [extracted concepts / raw source materials]
+to identify thesis candidates — specific, arguable claims that could anchor
+a sustained analytical essay or article series. Do NOT produce a topic list
+or summary of contents.
+
+For each thesis candidate you identify:
+
+1. THESIS STATEMENT: A single declarative claim (not a question, not a topic)
+2. THESIS TYPE: Classify as one of:
+   - MECHANISTIC (explains how something works)
+   - COMPARATIVE (argues one thing differs from/relates to another)
+   - DIAGNOSTIC (identifies a problem or pathology)
+   - PRESCRIPTIVE (argues for a solution or approach)
+3. EVIDENCE BASE: Which specific concepts from the library support this thesis?
+4. GAP FLAG: What is NOT in the library that would need to be developed?
+5. THESIS QUALITY SELF-ASSESSMENT: THESIS-WORTHY or OBSERVATIONAL
+
+Additionally, after listing individual candidates, identify:
+- UNEXPLORED INTERSECTIONS
+- THEMATIC GAPS
+
+Aim for 8-12 thesis candidates.
+
+================================================================================
+RECOMMENDATION
+================================================================================
+
+TD-1 is validated and production-ready. Strategic guidance:
+- Use D1 library survey for framework-aligned thesis generation
+- Use raw corpus survey for full conceptual terrain discovery
+- Query template above is replicable across notebooks and projects
+
+================================================================================
+END OF FINDING F109
+================================================================================
