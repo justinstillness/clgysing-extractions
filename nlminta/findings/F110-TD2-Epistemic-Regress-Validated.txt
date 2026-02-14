@@ -1,0 +1,122 @@
+================================================================================
+FINDING F110: TD-2 (Hybrid Epistemic Regress) — VALIDATED
+================================================================================
+Date:           2026-02-14
+Session:        022 NLMINTA (Top-Down LibForge Testing)
+Stage:          TD-2 (Top-Down Workflow, Stage 2: Thesis Tree Development)
+Status:         PRODUCTION-VIABLE
+
+================================================================================
+TEST SUMMARY
+================================================================================
+
+Target: CLGYSING Source Pkgs (cce3b796, 15 raw sources)
+
+Test 1: Mechanistic thesis regress (Degrees 0 -> 1 -> 2 -> 3)
+  Thesis: "Intellectual intimacy functions as the critical immune system
+  for all human relationships..."
+  - Degree 0->1: 7 thesis strings (4 critical path, 3 supporting)
+  - Degree 1->2: 6 thesis strings (3 critical path, 3 supporting) + 1 gap
+  - Degree 2->3: 6 thesis strings via threading (2 high novelty,
+    1 moderate, 3 convergent) + 2 bedrock flags
+
+Test 2: Prescriptive thesis regress (Degree 0 -> 1)
+  Thesis: "The transition from parasitic to symbiotic civilization requires
+  Triadic Oversight..."
+  - Degree 0->1: 7 thesis strings (4 critical path, 3 supporting)
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+1. HIERARCHICAL LOGIC IS SOUND
+   Each degree genuinely answers "what must be true" — not restatement
+   of parent claims. Real logical decomposition across all tested degrees.
+
+2. CRITICAL PATH vs. SUPPORTING DISCRIMINATION
+   NLM makes defensible calls. Examples:
+   - Four Intimacies as integrated system: correctly CRITICAL PATH
+   - Truth as order-making force: correctly SUPPORTING (metaphysical
+     strengthening, not logically necessary)
+   - False Symbiosis: correctly SUPPORTING (explains resilience, not
+     core mechanism)
+
+3. EVIDENCE STRENGTH ASSESSMENT IS HONEST
+   Moderate ratings include genuine reasons (e.g., "link between trauma
+   and intellectual intimacy specifically is implicit rather than explicit").
+   Not blanket STRONG ratings.
+
+4. THREADING ENABLES DEGREE 3 CONTINUATION
+   conversation_id parameter allows NLM to build on prior regress output.
+   NLM selected appropriate critical-path claims to deepen and maintained
+   logical continuity with prior degrees.
+
+5. DEPTH CEILING ANALYSIS
+   - Degrees 0-2: High quality, high novelty (NLM autonomous)
+   - Degree 3: ~33% high novelty, ~50% convergent (NLM hybrid with
+     human curation)
+   - Degree 4+: Likely convergence/repetition (human/Claude takes over)
+
+6. BEDROCK DETECTION
+   NLM correctly distinguishes between:
+   - Researchable gaps (more data would help)
+   - Axiomatic foundations (metaphysical premises of the framework)
+   Example: "truth as entrainment mechanism" flagged as metaphysical
+   axiom, not researchable gap. Sophisticated distinction.
+
+7. THESIS TYPE AFFECTS REGRESS STRUCTURE
+   Mechanistic thesis -> sub-claims are predominantly definitional and
+   causal (chains of causation, deep and narrow)
+   Prescriptive thesis -> sub-claims are structural, pragmatic, and
+   teleological (design requirements, wide and networked)
+   Implication: Different thesis types generate different article
+   architectures. Interpretation should be thesis-type-aware.
+
+================================================================================
+QUERY TEMPLATE (Production-Ready)
+================================================================================
+
+TASK: Epistemic Regress — Degree [N] to Degree [N+1]
+
+[DEGREE N THESIS STRING]:
+"[Thesis being regressed]"
+
+For this claim to hold, what must be true? Identify the necessary
+supporting claims (Degree [N+1] thesis strings). For each:
+
+1. THESIS STRING: A single declarative supporting claim
+2. DEPENDENCY TYPE: DEFINITIONAL / CAUSAL / EVIDENTIAL / STRUCTURAL
+3. EVIDENCE IN CORPUS: What specific content supports this?
+4. EVIDENCE STRENGTH: STRONG / MODERATE / WEAK with brief citation
+5. CRITICAL PATH (master thesis fails without it) or SUPPORTING?
+
+[For Degree 3+, add:]
+6. NOVELTY CHECK: Genuinely new ground, or convergent with Degrees 1-2?
+
+Flag any point where the corpus runs out of supporting material —
+these are bedrock assumptions or genuine research gaps.
+
+Aim for 5-8 thesis strings per degree.
+
+THREADING GUIDANCE:
+- Use conversation_id for Degree 2+ to maintain regress continuity
+- If threading errors, retry without conversation_id (NLM sometimes
+  rejects threading on retry)
+- At Degree 3+, explicitly ask NLM to select critical-path claims
+  from prior degree for deepening
+
+================================================================================
+RECOMMENDED WORKFLOW
+================================================================================
+
+1. TD-1 to survey corpus -> identify thesis candidates
+2. Select thesis -> TD-2 Degree 0->1 regress (autonomous)
+3. Select critical path D1 claims -> Degree 1->2 (autonomous)
+4. Select critical path D2 claims -> Degree 2->3 (threading, hybrid)
+5. Human/Claude review D3 output: curate high-novelty, discard convergent
+6. Human/Claude push to D4+ where genuine philosophical extension needed
+7. Gap flags from regress become extraction priorities
+
+================================================================================
+END OF FINDING F110
+================================================================================
