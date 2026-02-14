@@ -1,0 +1,48 @@
+================================================================================
+EXTRACTION: 2026-02-13_152303_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix H Quick Start Guide updated complete full text Rooting Phase 0
+Timestamp:       2026-02-13T15:23:03.000305+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 36683484-80ff-43e8-a8ad-6a3515eca5f9
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  2534
+Duration:        379000ms
+================================================================================
+
+Based on the session logs and findings reports, here are the details regarding the J8 test and the CLGYSING notebook state:
+
+### J8 Full-Scale D1 Library Test
+
+*   **Target Selection:** The proposed target for the J8 test is **Source Package 12** ("Cultology Series ... Qs & Cs, CTGY Editor"), located within the *14 CLGYSING Source Pkgs* notebook [1]. This specific source was selected because it is a massive (~140,000 words) ChatGPT dialogue, making it a robust candidate for testing the pipeline's performance at scale [2], [3].
+*   **Scope and Purpose:** J8 is designated as the "End of Phase 3" validation or capstone test [1], [4]. Its objective is to run **all extraction pass types** (TM, TX, VX, TS, RX, etc.) against a single source package to produce a complete, unified "D1 Library" (Degree 1 extraction product) [5], [1]. This differs from previous tests that focused on validating individual schemas or tools in isolation.
+*   **Differentiation from SP03:**
+    *   **Scale:** SP03 calibration testing used a small source package (~3,443 words) or existing extraction repositories to validate schemas and tools [6], [7]. J8 targets a raw source approximately 40x larger (140k words) to test production scalability [1], [3].
+    *   **Goal:** SP03 focused on *calibration* (schema compliance, repeatability, exclusions) [8], [9]. J8 focuses on *production* (generating a comprehensive library file from raw "ore") [1].
+    *   **Methodology:** J8 integrates the "reports-first" approach for broad capture to manage token economics on large files, reserving queries for surgical gap-filling, whereas SP03 testing relied heavily on query-based extraction [10], [11].
+
+### Current State of CLGYSING Source Pkgs Notebook (cce3b796)
+
+*   **Total Sources:** **16 sources** (15 content source packages + 1 Material Inventory specification document) [12], [13].
+*   **Total Volume:** Approximately **362,000 words** [14], [15].
+*   **Material Types:** The notebook contains a diverse range of materials including:
+    *   **Published Articles:** e.g., Source 01 ("Wound, Then Rule") [14], [16].
+    *   **Research Syntheses:** Compiled research documents [12].
+    *   **Framework Deep-Dives:** e.g., Source 06 (Unified Model), Source 10 (Purpose of Life), Source 14 (Consciousness Models) [17], [18].
+    *   **Dialogues:** Extensive ChatGPT and Claude dialogue exports (e.g., Source 12) [12], [15].
+    *   **Operational Specs:** Source 16 is the "Material Inventory" document uploaded to act as metadata-as-source [19], [12].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

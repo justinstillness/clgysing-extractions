@@ -1,0 +1,308 @@
+================================================================================
+EXTRACTION: 2026-02-13_060754_clgysing_SP03_TX-J6-RUN1-BASELINE_notebook-query
+================================================================================
+Branch:          NLMINTA
+Source Package:  SP03
+Pass Type:       TX (Thematic Extraction)
+Pass Number:     J6-RUN1-BASELINE
+Theme/Focus:     N/A
+Project:         clgysing
+Session:         019
+Routing:         Tier 1a (NLMINTA/clgysing/TX)
+Query:           Extract every distinct concept from all sources in this notebook. Output as the JSON schema specified in your instructions.
+Timestamp:       2026-02-13T06:07:54.000625+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: d4bfdd7a-77d1-442b-97e0-ef62c4c324bf
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  21371
+Duration:        62000ms
+================================================================================
+
+```json\
+{\
+  \"pass_type\": \"TX\",\
+  \"source_notebook\": \"SP03 Repositories\",\
+  \"entries\": [\
+    {\
+      \"title\": \"Omniology\",\
+      \"original_quote\": \"At the core of everything I do is what I call Omniology...an attempt to understand myself, the nature of reality, the purpose of life, and how the understanding of truth in all its forms can improve everything from living with your family to running a business to organizing civilization itself.\",\
+      \"compressed_notation\": \"[Omniology]: attempt to understand self, [nature of reality], purpose of life + how understanding [truth] in all forms improves everything (family, business, civilization).\",\
+      \"context_synthesis\": \"This serves as the foundational meta-framework for the author's entire body of work, positioning the search for truth as a practical tool for improvement across all scales of existence.\",\
+      \"related_concepts\": [\
+        \"Omniological Approach\",\
+        \"Cultology\"\
+      ],\
+      \"category\": \"ontology\"\
+    },\
+    {\
+      \"title\": \"Omniological Approach\",\
+      \"original_quote\": \"The method I use...what I call an omniological approach...requires understanding a subject from as many angles as possible, modeling it within my own conceptual frameworks (building intrinsic knowledge), and then integrating it with other domains until I can reason about it intrinsically rather than relying on authoritative statements or surface-level explanations.\",\
+      \"compressed_notation\": \"[Omniological approach]: understand sub< 2026/02/13 06:08:56.000684131  length=8192 from=48899 to=57090
+ject from many angles; model within personal [conceptual frameworks] (build [intrinsic knowledge]); integrate with other domains to reason intrinsically vs. relying on [authoritative statements] or surface-level explanations.\",\
+      \"context_synthesis\": \"The methodological application of Omniology, prioritizing deep internal modeling over external authority. This approach is cited as the cause for both the robustness of the frameworks and the delays in production.\",\
+      \"related_concepts\": [\
+        \"Omniology\",\
+        \"Intrinsic Knowledge\"\
+      ],\
+      \"category\": \"methodology\"\
+    },\
+    {\
+      \"title\": \"Intrinsic Knowledge\",\
+      \"original_quote\": \"modeling it within my own conceptual frameworks (building intrinsic knowledge), and then integrating it with other domains until I can reason about it intrinsically rather than relying on authoritative statements or surface-level explanations.\",\
+      \"compressed_notation\": \"[Intrinsic knowledge]: built by modeling subjects within [conceptual frameworks] + domain integration; allows for [intrinsic reasoning] vs. reliance on [authoritative statements].\",\
+      \"context_synthesis\": \"Represents the epistemic goal of the author's research; defined in opposition to 'extrinsic knowledge' or reliance on authority.\",\
+      \"related_concepts\": [\
+        \"Omniological Approach\",\
+        \"The Parasitic Modality\"\
+      ],\
+      \"category\": \"epistemology\"\
+    },\
+    {\
+      \"title\": \"Cultology\",\
+      \"original_quote\": \"Cultology is the name I gave the project that serves as a unified field theory for analyzing the mechanics of relationships, power, and belief systems across all scales of human activity. It is the pathology of Omniology (how everything can be affected when parasitic systems gain control), investigating what happens when relationships are hijacked and the flow of truth is obstructed.\",\
+      \"compressed_notation\": \"[Cultology]: [unified field theory] analyzing mechanics of relationships, power, and belief systems across all scales. [Pathology of Omniology]: investigates hijacked relationships + obstructed [flow of truth].\",\
+      \"context_synthesis\": \"The primary investigative framework derived from Omniology, focusing on the mechanics of social pathology and power dynamics.\",\
+      \"related_concepts\": [\
+        \"Omniology\",\
+        \"Parasitic Systems\",\
+        \"Macro-cult\"\
+      ],\
+      \"category\": \"sociology\"\
+    },\
+    {\
+      \"title\": \"Parasitic Systems\",\
+      \"original_quote\": \"I...ve come to understand how parasitic systems can be used to hijack human potential...turning people into engines of labor, innovation, knowledge, and technology extraction. All of the things a human being has the potential to offer can be parasitically drained by an ever-advancing and increasingly sophisticated control architecture, one that hides itself within a cloak of false freedom and prosperity.\",\
+      \"compressed_notation\": \"[Parasitic systems]: hijack [human potential] ... turn people into engines of labor/innovation/knowledge/[technology extraction]. Human offerings [parasitically drained] by sophisticated [control architecture] cloaked in [false freedom].\",\
+      \"context_synthesis\": \"Describes the central problem addressed by Cultology; systems designed to extract value from humans while masquerading as beneficial.\",\
+      \"related_concepts\": [\
+        \"Cultology\",\
+        \"The Parasitic Modality\",\
+        \"Globalist Development Projects\"\
+      ],\
+      \"category\": \"sociology\"\
+    },\
+    {\
+      \"title\": \"The Parasitic Modality\",\
+      \"original_quote\": \"The Parasitic Modality ... A cult is defined not by size or ritual, but by its reliance on extrinsic knowledge: rigid beliefs enforced by social pressure and fear of exclusion. This epistemic closure (rigid dogmatic thinking) suppresses the human drive for inquiry and leads to the parasitic extraction of benefits and energy. ... Every parasitic social order is essentially a counterfeit transcendence mechanism.\",\
+      \"compressed_notation\": \"[Parasitic Modality]: cult defined by reliance on [extrinsic knowledge] (rigid beliefs/social pressure/fear of exclusion). [Epistemic closure] suppresses inquiry ... [parasitic extraction]. [Parasitic social order] = [counterfeit transcendence mechanism].\",\
+      \"context_synthesis\": \"The operational definition of a cult within the framework, shifting the focus from rituals to epistemic control and extraction.\",\
+      \"related_concepts\": [\
+        \"Parasitic Systems\",\
+        \"Epistemic Closure\",\
+        \"Counterfeit Transcendence Mechanism\"\
+      ],\
+      \"category\": \"sociology\"\
+    },\
+    {\
+      \"title\": \"Symbiotic Systems\",\
+      \"original_quote\": \"I...ve also been able to understand what a truly symbiotic system actually looks like...not just painting dreams or alluding vaguely to a brighter future, but being able to describe in granular, actionable detail what that future looks like, how we get there, and what the atomic components of such a civilization would be.\",\
+      \"compressed_notation\": \"[Symbiotic system]: granular/actionable [civilization] model; defined by [atomic components] and specific path to achievement vs. vague dreams.\",\
+      \"context_synthesis\": \"The positive counterpart to Parasitic Systems, emphasizing that a non-parasitic civilization is structurally definable and actionable.\",\
+      \"related_concepts\": [\
+        \"The Symbiotic Modality\",\
+        \"Parasitic Systems\"\
+      ],\
+      \"category\": \"sociology\"\
+    },\
+    {\
+      \"title\": \"The Symbiotic Modality\",\
+      \"original_quote\": \"The Symbiotic Modality ... The opposite of a cult is a symbiotic system. These systems are truth-centered and cultivate what I call the intrinsic path, which demands continual inquiry and openness to all information, empowering individuals through discernment rather than control. Symbiosis is defined by the full flourishing of human relationships into their ideal state, marked by freedom, honesty, creativity, and mutual benefit.\",\
+      \"compressed_notation\": \"[Symbiotic Modality]: opposite of cult; [truth-centered] system cultivating [intrinsic path] (continual inquiry/openness/empowerment via discernment). [Symbiosis] = full flourishing of human relationships (freedom/honesty/creativity/mutual benefit).\",\
+      \"context_synthesis\": \"Defines the ethical and epistemic opposite of a cult, focusing on individual empowerment and truth-seeking.\",\
+      \"related_concepts\": [\
+        \"Symbiotic Systems\",\
+        \"Intrinsic Knowledge\"\
+      ],\
+      \"category\": \"ethics\"\
+    },\
+    {\
+      \"title\": \"Macro-cult\",\
+      \"original_quote\": \"The series argues that modern civilization is itself a macro-cult (an advanced parasitic system), functioning as a distributed cultic architecture that operates across families, businesses, governments, and global institutions.\",\
+      \"compressed_notation\": \"[Macro-cult]: modern civilization as [advanced parasitic system]; functions as [distributed cultic architecture] across families/businesses/governments/global institutions.\",\
+      \"context_synthesis\": \"Scales the concept of the cult/parasitic system to the level of global civilization, arguing that modern society is structurally identical to a cult.\",\
+      \"related_concepts\": [\
+        \"Cultology\",\
+        \"Parasitic Systems\",\
+        \"Technocratic Plantation\"\
+      ],\
+      \"category\": \"sociology\"\
+    },\
+    {\
+      \"title\": \"The Four Intimacies\",\
+      \"original_quote\": \"The Four Intimacies define the total field of human interaction and value exchange: Physical, Emotional, Intellectual, and Spiritual. Intellectual intimacy is the keystone and immune system for the others. Cults systematically corrupt these intimacies, turning authentic connection into extrinsic dependency.\",\
+      \"compressed_notation\": \"[The Four Intimacies]: total field of interaction/[value exchange] (Physical, Emotional, Intellectual< 2026/02/13 06:08:56.000691927  length=8192 from=57091 to=65282
+, Spiritual). [Intellectual intimacy] = [keystone]/[immune system]. Cults corrupt these into [extrinsic dependency].\",\
+      \"context_synthesis\": \"A psychological model within Cultology used to analyze how systems interact with human needs and how cults exploit them.\",\
+      \"related_concepts\": [\
+        \"Cultology\",\
+        \"Parasitic Systems\"\
+      ],\
+      \"category\": \"psychology\"\
+    },\
+    {\
+      \"title\": \"Ontology of Being\",\
+      \"original_quote\": \"Ontology of Being describes the structure of being from Personality ... Soul ... Mind ... Emotion ... Physical Expression. Cults execute what I call a corruption cascade, hijacking the core personality spark and inverting the entire value system.\",\
+      \"compressed_notation\": \"[Ontology of Being]: [structure of being] (Personality ... Soul ... Mind ... Emotion ... Physical Expression). Cults use [corruption cascade] to hijack [core personality spark] + [invert value system].\",\
+      \"context_synthesis\": \"An ontological model describing the internal human structure that parasitic systems target and invert.\",\
+      \"related_concepts\": [\
+        \"Corruption Cascade\",\
+        \"Cultology\"\
+      ],\
+      \"category\": \"ontology\"\
+    },\
+    {\
+      \"title\": \"Corruption Cascade\",\
+      \"original_quote\": \"Cults execute what I call a corruption cascade, hijacking the core personality spark and inverting the entire value system.\",\
+      \"compressed_notation\": \"[Corruption cascade]: process where cults hijack [core personality spark] and invert the entire [value system].\",\
+      \"context_synthesis\": \"The mechanism by which parasitic systems degrade the human ontology.\",\
+      \"related_concepts\": [\
+        \"Ontology of Being\",\
+        \"Parasitic Systems\"\
+      ],\
+      \"category\": \"psychology\"\
+    },\
+    {\
+      \"title\": \"Contractual Formalism\",\
+      \"original_quote\": \"Contractual Formalism recognizes that all relationships are energetic, epistemic, and moral contracts. Symbiotic systems rely on honorable contracts that are mutual, transparent, and revocable, while cults use counterfeit contracts that hollow out genuine consent.\",\
+      \"compressed_notation\": \"[Contractual Formalism]: relationships as energetic/epistemic/moral [contracts]. Symbiotic = [honorable contracts] (mutual/transparent/revocable). Cultic = [counterfeit contracts] hollowing out [genuine consent].\",\
+      \"context_synthesis\": \"A framework for evaluating the morality of relationships based on the nature of the implicit or explicit agreements involved.\",\
+      \"related_concepts\": [\
+        \"Symbiotic Systems\",\
+        \"Parasitic Systems\"\
+      ],\
+      \"category\": \"ethics\"\
+    },\
+    {\
+      \"title\": \"Counterfeit Transcendence Mechanism\",\
+      \"original_quote\": \"Every parasitic social order is essentially a counterfeit transcendence mechanism.\",\
+      \"compressed_notation\": \"[Parasitic social order] = [counterfeit transcendence mechanism].\",\
+      \"context_synthesis\": \"Identifies the ultimate theological or teleological fraud of parasitic systems: they promise spiritual or existential fulfillment but cannot deliver it.\",\
+      \"related_concepts\": [\
+        \"The Parasitic Modality\",\
+        \"Parasitic Systems\"\
+      ],\
+      \"category\": \"theology\"\
+    },\
+    {\
+      \"title\": \"Agenda 47 Explained\",\
+      \"original_quote\": \"Agenda 47 Explained sits on top of the Cultology framework and is designed to look at much of the same foundational research, but through a different lens: the hypothesis that Donald Trump might represent...though we cannot know for certain...the public face of an elite group attempting to transform society from parasitic to symbiotic.\",\
+      \"compressed_notation\": \"[Agenda 47 Explained]: hypothesis that Trump = public face of [elite group] attempting [civilizational transformation] (parasitic to symbiotic). Sits on top of [Cultology] framework.\",\
+      \"context_synthesis\": \"The specific application of the theoretical frameworks to current events, positing a potential transition away from the macro-cult.\",\
+      \"related_concepts\": [\
+        \"Cultology\",\
+        \"Symbiotic Systems\",\
+        \"Parasitic Systems\"\
+      ],\
+      \"category\": \"political_systems\"\
+    },\
+    {\
+      \"title\": \"Globalist Development Projects (The Plantation)\",\
+      \"original_quote\": \"Trump...s stated agenda... appears designed to reverse decades, if not centuries, of what I call globalist development projects that were crafted to entice humanity onto a technocratic plantation. This plantation adorns itself in modern conveniences and quality of life improvements... while simultaneously causing participants to become dependent on the system...s control mechanisms.\",\
+      \"compressed_notation\": \"[Globalist development projects]: crafted to entice humanity onto [technocratic plantation]. [Technocratic plantation] = modern conveniences ([Trojan horse]) concealing [control mechanisms] + dependency.\",\
+      \"context_synthesis\": \"Describes the historical trajectory that created the current 'macro-cult', using the metaphor of a plantation to describe modern dependency.\",\
+      \"related_concepts\": [\
+        \"Trojan Horse\",\
+        \"Technocratic Plantation\",\
+        \"Agenda 47 Explained\"\
+      ],\
+      \"category\": \"political_systems\"\
+    },\
+    {\
+      \"title\": \"Trojan Horse\",\
+      \"original_quote\": \"These benefits act as the shell of a Trojan horse, concealing the much more toxic and freedom-destroying payload of the parasitic vision.\",\
+      \"compressed_notation\": \"Modern benefits = shell of [Trojan horse] concealing toxic/freedom-destroying [payload] of [parasitic vision].\",\
+      \"context_synthesis\": \"Metaphor for how parasitic systems gain entry and acceptance by offering superficial benefits.\",\
+      \"related_concepts\": [\
+        \"Globalist Development Projects\",\
+        \"Technocratic Plantation\"\
+      ],\
+      \"category\": \"strategy\"\
+    },\
+    {\
+      \"title\": \"Semantic Rehabilitation\",\
+      \"original_quote\": \"the term ...cult... is retained as a highly recognizable memetic handle, but it is immediately redefined via semantic rehabilitation to function as a precise investigative lens for social pathology rather than a pejorative label.\",\
+      \"compressed_notation\": \"[Semantic rehabilitation]: redefine \\\\\"cult\\\\\" ([memetic handle]) from [pejorative label] to [precise investigative lens] for [social pathology].\",\
+      \"context_synthesis\": \"The linguistic strategy of the author to reclaim the word 'cult' for technical analysis rather than just insults.\",\
+      \"related_concepts\": [\
+        \"Cultology\"\
+      ],\
+      \"category\": \"methodology\"\
+    },\
+    {\
+      \"title\": \"Pedagogical Spiral Staircase\",\
+      \"original_quote\": \"The pedagogical spiral staircase approach I use allows me to introduce concepts accessibly and then deepen them recursively (layer after layer), so that readers at different levels of familiarity can all find value.\",\
+      \"compressed_notation\": \"[Pedagogical spiral staircase]: introduce concepts accessibly + [recursive deepening] (layer after layer) so readers at different familiarity levels find value.\",\
+      \"context_synthesis\": \"The communication strategy used to handle the complexity of the material.\",\
+      \"related_concepts\": [\
+        \"Omniological Approach\"\
+      ],\
+      \"category\": \"methodology\"\
+    },\
+    {\
+      \"title\": \"Third Generation Research System\",\
+      \"original_quote\": \"Over the past three months, I...ve been developing and testing what is now the third generation of my research organization and content production system... this latest version has finally solved several major structural problems: Managing massive data libraries... Allowing AI assistance without surrendering accuracy... Preserving conceptual depth...\",\
+      \"compressed_notation\": \"[Third generation research/production system]: solves structural problems (mana< 2026/02/13 06:08:56.000699578  length=3326 from=65283 to=68608
+ging massive data libraries, AI assistance w/o losing accuracy, preserving conceptual depth, consistent workflows).\",\
+      \"context_synthesis\": \"The operational solution to the production bottlenecks previously experienced by the author.\",\
+      \"related_concepts\": [\
+        \"Omniological Approach\",\
+        \"AI as Force Multiplier\"\
+      ],\
+      \"category\": \"methodology\"\
+    },\
+    {\
+      \"title\": \"AI as Force Multiplier\",\
+      \"original_quote\": \"The goal isn't to automate content creation...it's to leverage AI as a force multiplier while maintaining human involvement, oversight, verification, and the irreplaceable elements of voice and judgment that can't be delegated to algorithms.\",\
+      \"compressed_notation\": \"Leverage [AI] as [force multiplier] vs automation; maintain human involvement/oversight/verification/[voice and judgment].\",\
+      \"context_synthesis\": \"Defines the specific, limited role of AI in the author's new workflow, distinguishing it from automated generation.\",\
+      \"related_concepts\": [\
+        \"Third Generation Research System\"\
+      ],\
+      \"category\": \"methodology\"\
+    },\
+    {\
+      \"title\": \"Birthright\",\
+      \"original_quote\": \"We have been robbed of our birthright...the very knowledge and wisdom our forefathers gave their lives to discover and safeguard, the wisdom God poured out in the form of truth for all who will claim it as their own.\",\
+      \"compressed_notation\": \"Robbed of [birthright]: knowledge/wisdom forefathers safeguarded + wisdom [God] poured out as [truth].\",\
+      \"context_synthesis\": \"Frames the loss of truth and freedom not just as a political misfortune but as the theft of a spiritual and ancestral inheritance.\",\
+      \"related_concepts\": [\
+        \"Eternal Vigilance\",\
+        \"Omniology\"\
+      ],\
+      \"category\": \"theology\"\
+    },\
+    {\
+      \"title\": \"Eternal Vigilance\",\
+      \"original_quote\": \"Once we fully rediscover and reclaim the truth about what a free and rule-of-law-based society actually is, the enslavers... will never again be able to deceive us, provided we remain eternally vigilant.\",\
+      \"compressed_notation\": \"[Eternal vigilance]: requirement to prevent deception by [enslavers] once [truth] about [free society] is reclaimed.\",\
+      \"context_synthesis\": \"The necessary condition for maintaining a symbiotic society after it has been achieved.\",\
+      \"related_concepts\": [\
+        \"Symbiotic Systems\"\
+      ],\
+      \"category\": \"strategy\"\
+    }\
+  ],\
+  \"metadata\": {\
+    \"total_entries\": 23,\
+    \"categories_used\": [\
+      \"ontology\",\
+      \"methodology\",\
+      \"epistemology\",\
+      \"sociology\",\
+      \"ethics\",\
+      \"psychology\",\
+      \"theology\",\
+      \"political_systems\",\
+      \"strategy\"\
+    ],\
+    \"extraction_notes\": \"Consolidated concepts from multiple extraction models (Gemini, Grok, GPT, Claude) based on Source Package 03. Selected most representative quotes where duplicates existed. 'Agenda 47 Explained' placed in political_systems due to its focus on Trump/Government, though it uses sociological frameworks.\"\
+  }\
+}\
+```
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,34 @@
+================================================================================
+EXTRACTION: 2026-02-13_170333_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 602 chars but answer extraction failed
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         049
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix F Dialog Intake Failure Mode Catalog complete full text all failure modes all entries
+Timestamp:       2026-02-13T17:03:33.000822+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: N/A
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  0
+Duration:        63999ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "notebook_id": "53748c05-a2d8-45f3-a73c-048494010c34", "summary": {"total": 1, "completed": 0, "in_progress": 1}, "artifacts": [{"artifact_id": "ba47139a-9562-4955-8e12-17ea801ee0e4", "title": "SP07", "type": "report", "status": "in_progress", "created_at": "2026-02-13T17:04:31Z", "custom_instructions": null, "audio_url": null, "video_url": null, "infographic_url": null, "slide_deck_url": null, "report_content": "Custom Report", "flashcard_count": null, "duration_seconds": 
+... [102 more chars]
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

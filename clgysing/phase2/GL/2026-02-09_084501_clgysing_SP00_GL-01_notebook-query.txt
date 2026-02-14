@@ -1,13 +1,14 @@
 ================================================================================
 EXTRACTION: 2026-02-09_084501_clgysing_SP00_GL-01_notebook-query
 ================================================================================
+Branch:          N/A
 Source Package:  SP00
 Pass Type:       GL (Glossary Generation)
 Pass Number:     01
 Theme/Focus:     batch-test
 Project:         clgysing
 Session:         020
-Routing:         Tier 1 (Tagged + Known)
+Routing:         Tier 1c (clgysing/GL)
 Query:           List 5 key technical terms used in this notebook with brief definitions.
 Timestamp:       2026-02-09T08:45:01.000551+00:00
 Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59

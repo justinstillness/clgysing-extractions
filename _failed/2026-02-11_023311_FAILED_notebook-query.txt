@@ -3,14 +3,18 @@ EXTRACTION: 2026-02-11_023311_FAILED_notebook-query [FAILED]
 ================================================================================
 Status:          NO_RESPONSE
 Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Branch:          N/A
 Source Package:  N/A
-Pass Type:       N/A
-Would-Be Route:  Tier 3 (Untagged)
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           What are the wishlist items for tool development? Find any references to a wishlist, W-numbers, feature requests, or development backlog items for the HA Suite or MCP tools.
 Timestamp:       2026-02-11T02:33:11.000502+00:00
 Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
 Source IDs:      all
 Conversation ID: N/A
+Chat Configure:  default
 Response Chars:  0
 Duration:        3756999ms
 ================================================================================

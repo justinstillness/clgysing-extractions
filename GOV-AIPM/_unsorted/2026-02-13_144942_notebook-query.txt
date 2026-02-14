@@ -1,0 +1,195 @@
+================================================================================
+EXTRACTION: 2026-02-13_144942_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix F Dialog Intake Failure Mode Catalog complete full text
+Timestamp:       2026-02-13T14:49:42.000631+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: bb8a77cd-11cd-4108-b32b-467c170dda7c
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  10877
+Duration:        166999ms
+================================================================================
+
+Based on the revision requirements outlined in the drafting plan and the new artifacts established in v1.0.8 (Phase Protocol, Findings Reports, Branch Management), here is the updated complete full text for Appendix G.\
+\
+***\
+\
+**[SERAPH: BRANCH=GOV-AIPM, SESSION=048]**\
+**ARTIFACT: Appendix G - Artifact Taxonomy Reference (v1.0.8)**\
+\
+================================================================================\
+\
+**APPENDIX G: ARTIFACT TAXONOMY REFERENCE**\
+\
+================================================================================\
+\
+**G.1 INTRODUCTION**\
+\
+This appendix provides a systematic classification framework for project artifacts, explaining why each artifact exists and how they relate to universal project functions. Users seeking practical guidance should reference Section 5 (Canonical Project Artifacts); this appendix provides deeper theoretical grounding for those who want to understand the system's design rationale.\
+\
+The framework presented here emerged from taxonomy exploration work analyzing universal project functions that any structured work requires. Understanding these functions illuminates why certain artifacts exist and prevents the creation of redundant documentation.\
+\
+**G.2 THE TWELVE UNIVERSAL PROJECT FUNCTIONS**\
+\
+Every project, regardless of domain, must address twelve core functions. These functions exist whether explicitly managed or handled ad hoc. The GOV-AIPM system addresses each through specific artifacts and workflows.\
+\
+**FUNCTION 1: PROJECT DEFINITION**\
+*   **What:** Establishing boundaries, objectives, and identity.\
+*   **Why:** Without clear definition, work lacks direction and scope creep is inevitable.\
+*   **GOV-AIPM Artifacts:** Project Guide, TPL-001 (Project Initiation Form), Phase Protocol (Layer 3), Branch Startup File.\
+\
+**FUNCTION 2: CONTEXT MANAGEMENT**\
+*   **What:** Maintaining and transferring project knowledge across sessions.\
+*   **Why:** AI context windows are finite; external memory enables continuity.\
+*   **GOV-AIPM Artifacts:** Bootstrap files (TPL-002), Project Guide, Session Logs, Phase Protocol, NotebookLM Corpus.\
+\
+**FUNCTION 3: SCOPE MONITORING**\
+*   **What:** Tracking what's in-scope, out-of-scope, and deferred.\
+*   **Why:** Prevents scope creep; ensures intentional decisions about exclusions.\
+*   **GOV-AIPM Artifacts:** Project Guide, Backlog Register (TPL-023), Phase Protocol (Layer 3).\
+\
+**FUNCTION 4: DECISION CAPTURE**\
+*   **What:** Recording decisions with rationale and alternatives considered.\
+*   **Why:** Enables learning, prevents revisitation, supports auditability.\
+*   **GOV-AIPM Artifacts:** Decision Log (TPL-004), Findings Reports (evidence layer).\
+\
+**FUNCTION 5: PROGRESS TRACKING**\
+*   **What:** Monitoring work completion against plan.\
+*   **Why:** Provides visibility; enables adjustment; demonstrates advancement.\
+*   **GOV-AIPM Artifacts:** Project Roadmap (TPL-010), Session Logs (TPL-005), Cross-Branch Awareness Document.\
+\
+**FUNCTION 6: SESSION ORCHESTRATION**\
+*   **What:** Managing individual work sessions...initiation, execution, closeout.\
+*   **Why:** Each session must accomplish meaningful work within constraints.\
+*   **GOV-AIPM Artifacts:** Bootstrap (TPL-002), Session Closeout (TPL-003), Session Log (TPL-005), Phase Protocol (Layer 1).\
+\
+**FUNCTION 7: PHASE MANAGEMENT**\
+*   **What:** Organizing work into coherent phases with transitions.\
+*   **Why:** Complex projects require structured progression; phases enable planning.\
+*   **GOV-AIPM Artifacts:** Project Roadmap (TPL-010), Phase Execution Briefs, Phase Protocol (Lifecycle).\
+\
+**FUNCTION 8: QUALITY ASSURANCE**\
+*   **What:** Verifying work meets standards and requirements.\
+*   **Why:** Prevents error accumulation; maintains deliverable quality.\
+*   **GOV-AIPM Artifacts:** Cross-AI Validation Protocol (TPL-008), Phase Protocol (Layer 2), Findings Reports.\
+\
+**FUNCTION 9: ACCUMULATION HANDLING**\
+*   **What:** Managing deferred items, insights, and out-of-phase discoveries.\
+*   **Why:** Not everything fits the current phase; systematic handling prevents loss.\
+*   **GOV-AIPM Artifacts:** Backlog Register (TPL-023), Findings Reports (TPL-017).\
+\
+**FUNCTION 10: RECOVERY SUPPORT**\
+*   **What:** Handling failures, errors, and unexpected situations.\
+*   **Why:** Problems occur; systematic recovery prevents cascading failures.\
+*   **GOV-AIPM Artifacts:** Failure Recovery Worksheet (TPL-009), Token Exhaustion Recovery Protocol.\
+\
+**FUNCTION 11: KNOWLEDGE TRANSFER**\
+*   **What:** Moving information between contexts, sessions, and stakeholders.\
+*   **Why:** AI instances don't share memory; humans need structured briefings.\
+*   **GOV-AIPM Artifacts:** Bootstrap files, Closure Report Section 7, Re-Entry Checklist (TPL-007), Branch Startup File.\
+\
+**FUNCTION 12: PROJECT CLOSURE**\
+*   **What:** Validating completion, documenting outcomes, preparing successors.\
+*   **Why:** Projects must end cleanly; lessons must transfer forward.\
+*   **GOV-AIPM Artifacts:** Project Closure Report (TPL-022).\
+\
+**G.3 ARTIFACT-TO-FUNCTION MAPPING**\
+\
+The following tabl< 2026/02/13 14:52:29.000081955  length=5787 from=16885 to=22671
+e shows which artifacts serve which functions. Most artifacts serve multiple functions by design to avoid fragmentation.\
+\
+| ARTIFACT | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |\
+| :--- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |\
+| **Project Guide** | ... | ... | ... | | | | | | | | ... | |\
+| **Phase Protocol** | ... | ... | ... | | | ... | ... | ... | | | | |\
+| **Bootstrap** | | ... | | | | ... | | | | | ... | |\
+| **Session Log** | | ... | | | ... | ... | | | | | | |\
+| **Decision Log** | | | | ... | | | | | | | | |\
+| **Findings Report** | | ... | | ... | | | | ... | ... | | | |\
+| **Backlog Register** | | | ... | | | | | | ... | | | ... |\
+| **Project Roadmap** | | | ... | | ... | | ... | | | | | |\
+| **Branch Startup File**| ... | ... | | | | | | | | | ... | |\
+| **Branch Awareness** | | ... | | | ... | | ... | | | | | |\
+| **Closure Report** | | | | | | | | | | | ... | ... |\
+| **Re-Entry Checklist** | | ... | | | | | | | | ... | ... | |\
+| **Failure Recovery** | | | | | | | | | | ... | | |\
+\
+*Legend: ... = Primary function served by this artifact*\
+\
+**G.4 LIFECYCLE MAPPING**\
+\
+Different artifacts become relevant at different project phases. This mapping shows when each artifact is typically created, actively used, or primarily referenced.\
+\
+| PHASE | ARTIFACTS CREATED/UPDATED | ACTIVE REFERENCES |\
+| :--- | :--- | :--- |\
+| **ROOTING (Phase 0)** | TPL-001 ... Project Guide<br>Base Phase Protocol<br>Initial Roadmap<br>Initial Bootstrap | Manual (Foundation) |\
+| **ACTIVE EXECUTION** | Session Logs<br>Decision Log<br>Findings Reports<br>Bootstraps (per session)<br>Backlog Register (ongoing) | Project Guide<br>Phase Protocol<br>Project Roadmap<br>Prior Findings |\
+| **BRANCHING** | Branch Startup File<br>Cross-Branch Awareness Doc | Phase Protocol<br>Main Project Notebook |\
+| **PHASE TRANSITIONS** | Updated Roadmap<br>Redrafted Phase Protocol<br>New Phase Bootstrap | Prior Phase Record<br>Backlog Register<br>Project Guide |\
+| **RE-ENTRY** | Re-Entry Checklist<br>Fresh Bootstrap | Project Guide<br>Recent Session Logs<br>Decision Log |\
+| **RECOVERY** | Failure Recovery Worksheet<br>Recovery Bootstrap | All relevant artifacts<br>(Triage determines which) |\
+| **CLOSURE** | Project Closure Report<br>Final Backlog Register | ALL project artifacts<br>Archive preparation |\
+\
+**G.5 ARTIFACT ECOSYSTEM PRINCIPLES**\
+\
+**PRINCIPLE 1: MINIMUM SUFFICIENT DOCUMENTATION**\
+Create only artifacts that serve identified functions. Resist the urge to document for documentation's sake. Every artifact should answer: \"What function does this serve that isn't already served?\"\
+\
+**PRINCIPLE 2: INFORMATION LIVES IN ONE PLACE**\
+Avoid duplicating information across artifacts. Cross-reference instead. When information must appear in multiple places, designate one as authoritative and others as references.\
+\
+**PRINCIPLE 3: ARTIFACTS CONNECT**\
+Artifacts reference each other. The Bootstrap points to the Phase Protocol; the Findings Report informs the Decision Log; the Closure Report draws from the Backlog Register. These connections form a coherent system.\
+\
+**PRINCIPLE 4: ARTIFACTS EVOLVE**\
+Some artifacts (Project Guide, Backlog Register, Cross-Branch Awareness) are living documents updated throughout the project. Others (Decision Log entries, Session Logs, Findings Reports) are append-only records. Know which type each artifact is.\
+\
+**PRINCIPLE 5: ARTIFACTS SERVE TRANSFER**\
+Every artifact should support handoff...to a new AI session, to a future human reader, or to a follow-on project. Write for someone who has no context beyond what the artifact provides.\
+\
+**G.6 WHEN TO CREATE NEW ARTIFACTS**\
+\
+Before creating a new artifact type, verify:\
+\
+1.  **FUNCTION GAP:** Does an unserved function exist? If all twelve functions are adequately addressed, new artifacts risk redundancy.\
+2.  **EXISTING COVERAGE:** Can an existing artifact be extended? Often a new section or field addition is preferable to a new artifact.\
+3.  **INTEGRATION PATH:** How will the new artifact connect to existing ones? Orphaned artifacts create maintenance burden.\
+4.  **LIFECYCLE FIT:** When is this artifact created, updated, and referenced? If the lifecycle is unclear, the artifact may not be needed.\
+5.  **TOKEN ECONOMICS:** What's the context cost? Heavy artifacts that must be loaded frequently may not justify their value.\
+\
+**G.7 SCOPE BOUNDARIES**\
+\
+This framework deliberately excludes certain domains:\
+\
+*   **Multi-Team Coordination:** RACI matrices and team protocols assume multiple humans. GOV-AIPM targets the single user/AI pair.\
+*   **Formal Project Management:** WBS and Gantt charts add overhead inappropriate for the target use case. The system handles decomposition implicitly through phases and sessions.\
+*   **Multi-Agent Systems:** Coordination between autonomous agents. The framework assumes a human-in-the-loop primary workflow.\
+\
+**G.8 GLOSSARY INTEGRATION**\
+\
+The following terms from this appendix appear in Section 17.2 (Glossary):\
+\
+*   **Artifact** - A project document with defined purpose and structure.\
+*   **Artifact Ecosystem** - The interconnected set of project artifacts.\
+*   **Function (Project)** - A universal capability that projects require.\
+*   **Reporting Triad** - The integrated Backlog/Roadmap/Closure system.\
+*   **Lifecycle Mapping** - Assignment of artifacts to project phases.\
+\
+**G.9 FURTHER DEVELOPMENT**\
+\
+This appendix represents v1.1 of the taxonomy reference (updated for GOV-AIPM v1.0.8). Future versions may include visual artifact relationship diagrams and extended integration patterns for governance documentation.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

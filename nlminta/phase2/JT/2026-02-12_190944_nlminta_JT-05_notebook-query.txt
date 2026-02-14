@@ -1,0 +1,344 @@
+================================================================================
+EXTRACTION: 2026-02-12_190944_nlminta_JT-05_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       JT (JSON Test)
+Pass Number:     05
+Theme/Focus:     N/A
+Project:         nlminta
+Session:         017
+Routing:         Tier 1c (nlminta/JT)
+Query:           Now extract any significant concepts NOT covered in your previous response. Focus on secondary frameworks, supporting distinctions, applied concepts, and any analytical models that were not included in the first pass.
+Timestamp:       2026-02-12T19:09:44.000978+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: 6b2b59e6-0da7-49c6-904c-fbc685823693
+Chat Configure:  json-quality
+Thread:          continue
+Notes:           J3-threading-run-2-gap-fill
+Response Chars:  26477
+Duration:        287999ms
+================================================================================
+
+{\
+  \"extraction_type\": \"concept_extraction\",\
+  \"source_notebook\": \"CLGYSING Source Pkgs\",\
+  \"entries\": [\
+    {\
+      \"id\": 1,\
+      \"title\": \"Parasitic vs. Symbiotic Systems\",\
+      \"category\": \"meta_framework\",\
+      \"definition\": \"The fundamental distinction governing social, relational, and civilizational architectures. Parasitic systems operate on the extrinsic path, extracting value (labor, loyalty, resources) while suppressing truth and blocking member competence to ensure dependency. They rely on deception, coercion, and the restriction of information. Symbiotic systems operate on the intrinsic path, where freedom and value are multiplied through cooperation, truth-seeking, and honest trust-based relationships. They prioritize mutual benefit, open communication, and the cultivation of autonomy in all participants.\",\
+      \"evidence\": \"Parasitic Systems are built on the extrinsic path, which acts as the lever that allows them to extract value from members...whether labor, loyalty, resources, or reverence...while providing less in return. They block members from gaining the competence needed to become autonomous, ensuring permanent dependency. Symbiotic Systems are built on the intrinsic path, where freedom multiplies rather than being hoarded because cooperation in truth-seeking and honest trust-based relationships funnel energy toward genuine abundance, innovation, and flourishing. ... Parasitic systems operate on a lie... Symbiotic systems operate on truth.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Intrinsic vs. Extrinsic Path\",\
+        \"False Symbiosis\",\
+        \"The Four Intimacies\"\
+      ],\
+      \"qa_flags\": []\
+    },\
+    {\
+      \"id\": 2,\
+      \"title\": \"Intrinsic vs. Extrinsic Path\",\
+      \"category\": \"epistemology\",\
+      \"definition\": \"The two divergent orientations toward knowledge, identity, and truth. The intrinsic path involves a commitment to reality as it is, characterized by openness to discovery, ongoing inquiry, and the internalization of truth through personal verification (epistemic regress). It fosters autonomy and resilience. The extrinsic path relies on external authority, dogma, and social validation, resisting new information that threatens established stability. It leads to dependency and rigidity.\",\
+      \"evidence\": \"The critical distinction is that while some inquiry happens on the extrinsic path, it doesn...t remain open for long. But on the intrinsic path, openness to discovery, inquiry, and investigation is ongoing. ... Thus, intrinsic knowledge places the proof, the basis of why something is true, in the hands of the individual, transforming it into autonomy instead of dependency. ... The intrinsic path means I...m committed to reality as it is, not as I wish it to be.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Parasitic vs. Symbiotic Systems\",\
+        \"Epistemic Regress\",\
+        \"Omniological Method\"\
+      ],\
+      \"qa_flags\": []\
+    },\
+    {\
+      \"id\": 3,\
+      \"title\": \"The Four Intimacies\",\
+      \"category\": \"social_systems\",\
+      \"definition\": \"A comprehensive framework defining the total field of human interaction and value exchange across four domains: Physical (embodied relationship and resources), Emotional (affective resonance and bonds), Intellectual (exchange of ideas and models), and Spiritual (alignment of will and purpose). Intellectual intimacy is identified as the keystone and immune system for the others. Parasitic systems systematically hijack these intimacies to create dependency.\",\
+      \"evidence\": \"The Four Intimacies define the total field of human interaction and value exchange: Physical, Emotional, Intellectual, and Spiritual. Intellectual intimacy is the keystone and immune system for the others. Cults systematically corrupt these intimacies, turning authentic connection into extrinsic dependency. ... The four intimacies...physical, emotional, intellectual, spiritual...are the channels through which these waveforms propagate, interact, and shape us as individuals and the collective world we live in.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Parasitic vs. Symbiotic Systems\",\
+        \"Wound-Then-Rule\"\
+      ],\
+      \"qa_flags\": []\
+    },\
+    {\
+      \"id\": 4,\
+      \"title\": \"Reasonable Person Under Full Information (RPFI)\",\
+      \"category\": \"methodology\",\
+      \"definitio< 2026/02/12 19:14:32.000148129  length=8192 from=33269 to=41460
+n\": \"A normative diagnostic standard used to evaluate the legitimacy of consent, contracts, and social systems. An RPFI is an idealized agent who possesses access to all materially relevant information, is free from all forms of duress (internal and external), has the competence to integrate that information, and understands the causal consequences of their choices. A system is defined as parasitic if it depends on preventing participants from becoming RPFIs.\",\
+      \"evidence\": \"A Reasonable Person Under Full Information is a hypothetical agent who: 1. Has access to all materially relevant facts. 2. Is free from external coercion and internal duress. 3. Understands causal consequences across time and scale. 4. Acts with awareness of effects on self, others, and future generations. ... The RPFI Test: If an agreement, system, or outcome would be rejected by an RPFI, it fails the symbiotic legitimacy threshold. ... A system is parasitic if its functioning depends on preventing individuals from becoming RPFIs.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Parasitic vs. Symbiotic Systems\",\
+        \"Cognitive Duress\",\
+        \"Reasonable Person Under Partial Information (RPPI)\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 5,\
+      \"title\": \"False Symbiosis\",\
+      \"category\": \"social_systems\",\
+      \"definition\": \"An advanced form of parasitism (also called 'Simulated Symbiosis' or 'The Grand Con') that mimics the appearance of symbiotic negotiation and freedom while suppressing genuine agency. It employs simulated negotiation channels (e.g., voting without influence, bureaucratic theater) to satisfy the psychological need for participation while maintaining elite control and information asymmetry. It acts as the immune system of a parasitic civilization.\",\
+      \"evidence\": \"Advanced Parasitic Systems: 'They do not merely block negotiation - they simulate it'. ... False Symbiosis is the immune system of parasitic civilization. It neutralizes the intrinsic-path impulse by providing a counterfeit version of it. ... Ten Defining Features: Illusion of voice, Ritualized participation, Symbolic rights, Mock transparency, Controlled pluralism, Epistemic throttling, Theatrical accountability, Manufactured consent, 'Freedom' with no systemic leverage, Sophisticated fa..ade.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Parasitic vs. Symbiotic Systems\",\
+        \"Reasonable Person Under Full Information (RPFI)\"\
+      ],\
+      \"qa_flags\": []\
+    },\
+    {\
+      \"id\": 6,\
+      \"title\": \"Omniological Method\",\
+      \"category\": \"methodology\",\
+      \"definition\": \"A disciplined research approach that attempts to see all things in relation to all other things. It involves gathering threads of information from diverse domains (science, philosophy, spirituality, history), identifying patterns, and synthesizing them into a grand explanatory map. It explicitly includes the examination of 'incorrect' maps or falsehoods as valuable data points for understanding the whole territory.\",\
+      \"evidence\": \"The approach I use is what I call the Omniological Method...the disciplined attempt to see all things in relation to all other things. ... It reframes science and its disciplines within a system where all data and information...whether confirming or challenging prevailing theories...can contribute to the expansion of human knowledge. ... The omniological method means I...m constantly cross-checking across domains...psychology, politics, spirituality, economics, history, etc....to see what consistently holds up.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Intrinsic vs. Extrinsic Path\",\
+        \"Epistemic Regress\"\
+      ],\
+      \"qa_flags\": []\
+    },\
+    {\
+      \"id\": 7,\
+      \"title\": \"Causal Economy\",\
+      \"category\": \"economics\",\
+      \"definition\": \"The foundational economic reality consisting of the aggregate system of choices, actions, and their initiated causes and effects. Unlike the monetary economy, which is a symbolic accounting system, the causal economy tracks actual positive contributions (optimizing actions) and negative contributions (entropic/destructive actions) to the civilizational enterprise. Legitimate currency must function as an accounting mechanism for this causal substrate.\",\
+      \"evidence\": \"The real economy of a civilization is causal, not monetary. Every choice initiates causes. Every cause produces effects that are either: Optimizing (positive contributions), or Entropic / degrading (negative contributions). ... A legitimate civilizational currency must function as an accounting mechanism for causality, not merely for money, time, or abstraction. ... Parasitic civilizations intentionally obscure the causal economy.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Symbiotic Monetary Architecture\",\
+        \"Trusteeship\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 8,\
+      \"title\": \"Discretionary Competence Scale (DCS)\",\
+      \"category\": \"psychology\",\
+      \"definition\": \"A scale measuring the capacity of an agent to initiate choices that approximate the 'Symbiosis Vector' by integrating self-interest, others' interests, teleology, and objective reality under constraint. It ranges from D0 (Reflexive/Pre-Discretionary) to D6 (Asymptotic/Ideal). Cults and parasitic systems operate by inducing cognitive duress to collapse agents downward on this scale, substituting authority for judgment.\",\
+      \"evidence\": \"Discretionary Competence: The capacity of an agent to initiate choices that approximate the Symbiosis Vector by integrating self-interest, others... interests, teleology, and objective reality under bounded knowledge and pressure. ... Under cognitive duress, agents collapse downward on the scale. ... Cults recruit not by persuasion but by discretionary collapse. They induce cognitive duress, degrade choice competence, and substitute authority for judgment.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Reasonable Person Under Full Information (RPFI)\",\
+        \"Cognitive Duress\",\
+        \"Cult Alignment Ladder\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 9,\
+      \"title\": \"Divine Trusteeship\",\
+      \"category\": \"theology\",\
+      \"definition\": \"A model of responsibility where individuals act as fiduciaries for the civilization and the divine purpose. A trustee is one who has matured sufficiently to handle transparency and power, acting to maximize benefit and minimize harm across all domains (self, others, civilization, God). The Divine Trust encompasses all agents and rights, orienting causality toward symbiotic optimization, while permitting parasitic error for the sake of epistemic learning and free will.\",\
+      \"evidence\": \"In a symbiotic system, each participant is expected to act as a trustee for: the shared venture, the other participants, themselves, and ultimately the divine purpose embedded in cause-and-effect. ... The Divine Trust is the maximal causal trust that encompasses all agents, rights, domains, and timelines. It authorizes the existence of agency (including error), while orienting all causality toward ultimate symbiotic optimization across time.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Triadic Oversight\",\
+        \"Symbiotic Monetary Architecture\"\
+      ],\
+      \"qa_flags\": []\
+    },\
+    {\
+      \"id\": 10,\
+      \"title\": \"Ontological Singularity\",\
+      \"category\": \"epistemology\",\
+      \"definition\": \"A dual concept referring to (1) the personal development process of abstracting identity inward toward a core center of being, and (2) the epistemic anchor point where epistemic regress terminates in an encounter with the infinite/irreducible categorical structure of reality (God). It acts as a gravity well f< 2026/02/12 19:14:32.000161160  length=8192 from=41461 to=49652
+or meaning, capable of destabilizing and reorganizing pre-existing ontological frameworks.\",\
+      \"evidence\": \"Ontological Singularity (Dual Meaning): Personal development - natural abstraction cascade within individuals; personal cosmological taxonomy. Epistemic anchor - point where epistemic regress terminates in encounter with infinite/irreducible categorical structure. ... The ontological singularity, by it's ability to blend categories and impart transcendence... acts as a gravity well for this effect, which naturally destablizes and reorganizes the meaning frameworks in a person's mind.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Circumpunct Model of Consciousness\",\
+        \"Truth as Carrier Wave\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 11,\
+      \"title\": \"Cult Alignment Ladder\",\
+      \"category\": \"social_systems\",\
+      \"definition\": \"A formal model describing how an individual moves from passive narrative consumption to active enforcement of a belief regime. It consists of rungs ranging from Ambient Exposure (R0) to Enforcer (R8) and Operator (R9). Ascent is driven by the acceptance of unvetted claims, escalating costs of belonging, and the policing of others to stabilize one's own position within the parasitic status economy.\",\
+      \"evidence\": \"The Cult Alignment Ladder (CAL) is a formal model for how a person moves from passive narrative consumption to active enforcement of a belief regime... Promotion up the ladder happens when the person: 1. accepts unvetted claims, then 2. pays escalating costs to keep belonging, then 3. begins policing others to stabilize their own position. ... Rungs include: Casual Consumer, Sympathizer, Believer, Identity-Fused Believer, Social Signaler, Gatekeeper, Rationalizer, Enforcer.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Discretionary Competence Scale (DCS)\",\
+        \"Consent Integrity Test (CIT)\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 12,\
+      \"title\": \"Circumpunct Model of Consciousness\",\
+      \"category\": \"identity_mechanics\",\
+      \"definition\": \"A structural model of consciousness and being where the outer circle represents granular, moment-to-moment experiences and the center (dot) represents the ontological singularity or divine core (personality/will). Between them lie layers of categorical and taxonomical frameworks. The model maps how external experiences are processed inward and how internal will directs attention outward.\",\
+      \"evidence\": \"I developed years ago called the circumpunct model of consciousness. What I did is I placed on the outer surface of the circumpunct or the outer circle individual sense experiences... And below the surface, in some level of depth where the center of the circumpunct is the ontological singularity or the place where all potential category frameworks can find their emanation origin... The Divine Core is the personality, it is that infinitely unique component of God the Father, which I like to place with the capacity for will... Surrounding that (the circle) is the soul.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Ontological Singularity\",\
+        \"Divine Trusteeship\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 13,\
+      \"title\": \"Truth as Carrier Wave\",\
+      \"category\": \"theology\",\
+      \"definition\": \"The concept that truth is not merely a set of facts but a coherent, divinely unified meta-reality acting as a broadcast signal. This signal organizes and entrains the internal conceptual frameworks of individuals who align with it. The more accurate a person's models of reality, the more they resonate with this order-making power, facilitating characterological development and alignment with the divine.\",\
+      \"evidence\": \"Truth as a carrier wave... The Creator uses truth to act as a causal carrier wave to advance characterological development of individuals... Broadcast signal of God via truth entrains individual people... Truth is the living signal of reality, and entrainment is the process by which a finite being learns to hear, decode, and embody that signal without distortion.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Ontological Singularity\",\
+        \"Intrinsic vs. Extrinsic Path\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 14,\
+      \"title\": \"Toroidal Invisible Plantation\",\
+      \"category\": \"social_systems\",\
+      \"definition\": \"A model of omnidirectional control in parasitic civilizations. The individual sits at the center of a torus, surrounded by influencing vectors (media, culture, education, finance) that subtly guide behavior like 'cattle rutters'. The system relies on engineering reality illiteracy, ensuring citizens lack the epistemological tools to decode their environment or understand the mechanics of their own exploitation.\",\
+      \"evidence\": \"The toroidal invisible plantation system... citizens in the center, and they are surrounded by various influencing vectors that influence them in a very subtle way... like cattle rutters guide cattle towards the slaughter. ... The individual is reality illiterate... they lack the epistemological skillset to decode/interpret reality accurately. ... This invisible plantation Taurus system is an Omni directional system.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Reality Literacy\",\
+        \"Waterline Model\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 15,\
+      \"title\": \"Waterline Model\",\
+      \"category\": \"economics\",\
+      \"definition\": \"A socio-economic stratification model describing the threshold of financial self-sufficiency. Below the waterline, individuals are trapped in survival mode, renting their lives through debt and wage suppression, with zero bargaining power. Above the waterline, individuals possess surplus capacity and assets, allowing them to accumulate financial momentum. Parasitic systems engineer this stratification to maintain control and extract value.\",\
+      \"evidence\": \"The waterline concept is the idea that below the waterline... it requires a tremendous amount of energy to maintain basic survival... Above the waterline... you earn more money than you can spend on your basic resources. And now you have surplus... That allows you to accumulate what we might think of as a kind of financial momentum... The parasitic system rewards those who conform to its values... with social capital and financial momentum.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Causal Economy\",\
+        \"Parasitic vs. Symbiotic Systems\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 16,\
+      \"title\": \"Triadic Oversight\",\
+      \"category\": \"social_systems\",\
+      \"definition\": \"A governance mechanism in symbiotic civilizations designed to maintain transparency and accountability without overwhelming any single individual. It involves overlapping chains of oversight where every specialized role is monitored by peers, cross-domain overseers, and higher-level meta-overseers. This creates a mesh of 'conglomerate RPFI' (Reasonable Person Under Full Information) where the civilization as a whole maintains full awareness.\",\
+      \"evidence\": \"Triadic oversight is the mechanism by which symbiotic civilizations maintain effective transparency without overwhelming any individual... Each specialized role is overseen by at least three individuals...directly or indirectly...forming a triad: Peer-Level Oversight... Cross-Domain Oversight... Higher-Level or Meta Oversight. ... The trusteeship class as a whole achieves what may be called a Conglomerate RPFI.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Reasonable Pers< 2026/02/12 19:14:32.000169190  length=5450 from=49653 to=55102
+on Under Full Information (RPFI)\",\
+        \"Divine Trusteeship\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 17,\
+      \"title\": \"Wound-Then-Rule\",\
+      \"category\": \"psychology\",\
+      \"definition\": \"The operational formula of parasitic systems, wherein trauma is used to create dependency. By wounding the individual (physically, emotionally, or epistemically), the system fragments identity and suppresses the intrinsic urge to seek truth. The system then positions itself as the source of relief, safety, or order, binding the individual to it through trauma bonds and extrinsic authority.\",\
+      \"evidence\": \"Cultology | Part I: Introduction ... Wound, Then Rule ... If parasitic systems depend on suppressing the intrinsic path and maintaining dependency, then trauma is their primary tool. ... It is the biological and psychological engine through which control sustains itself. ... Trauma suppresses the urge to seek truth. It creates an emotional wall around an experience that kills the very systems we need to pursue the intrinsic path.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Parasitic vs. Symbiotic Systems\",\
+        \"Identity-State Steering\"\
+      ],\
+      \"qa_flags\": []\
+    },\
+    {\
+      \"id\": 18,\
+      \"title\": \"Consent Integrity Test (CIT)\",\
+      \"category\": \"methodology\",\
+      \"definition\": \"A formal model for evaluating the legitimacy of belief-adoption and consent. It assesses whether consent is revocable, informed, identity-independent, and free from emotional exploitation. It distinguishes between CIFI (Consent with Full Integrity) and CIFI- (Consent with False Integrity), the latter being a hallmark of parasitic systems where consent is manufactured or illusory.\",\
+      \"evidence\": \"Consent Integrity Test (CIT): A Formal Model for Evaluating Whether Belief-Adoption Is Legitimate. ... Criteria: C1 ... Information Access... C2 ... Epistemic Non-Retaliation... C3 ... Identity Independence... C4 ... Emotional Non-Exploitation... C6 ... Reversibility... CIFI... ... Consent with False Integrity: System claims consent but structurally prevents it.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Reasonable Person Under Full Information (RPFI)\",\
+        \"Cult Alignment Ladder\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 19,\
+      \"title\": \"Cognitive Duress\",\
+      \"category\": \"psychology\",\
+      \"definition\": \"Any internal or external force vector that materially compromises an agent's capacity to choose as a Reasonable Person Under Full Information (RPFI) would. It operates by constraining information, attention, valuation, or agency, often by locking the individual into non-ideal identity states (e.g., Survival-Self, Belonging-Self). It includes physical, economic, social, informational, and internal vectors.\",\
+      \"evidence\": \"Duress is any internal or external force vector that materially compromises an agent...s capacity to choose as an RPFI would choose... Duress operates by locking the individual into non-ideal identity states... Vectors include: Physical Duress, Economic Duress, Social Duress, Informational Duress, Temporal Duress, Cognitive/Epistemic Duress, Moral/Spiritual Duress, Institutional/Legal Duress, Identity Duress.\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Reasonable Person Under Full Information (RPFI)\",\
+        \"Identity-State Steering\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    },\
+    {\
+      \"id\": 20,\
+      \"title\": \"Symbiotic Monetary Architecture\",\
+      \"category\": \"economics\",\
+      \"definition\": \"An economic design where currency functions as a trust-encoded proof-of-work system tracking value created, preserved, and harmed. It distinguishes between 'Survival Units' (for basic needs) and 'Thriving Units' (for discretionary growth). Money issuance is tied to verified positive contributions (pre-value or post-value) aligned with a civilizational mission registry, preventing rent extraction and aligning financial power with trusteeship.\",\
+      \"evidence\": \"A symbiotic monetary system is a civilization-scale accounting and routing tool that: Rewards verified positive contribution... Funds maintenance + risk buffers... Prevents rent extraction... Currency should track: Contribution (Proof-of-Work), Mission Alignment, Externalities, Scarcity & Time, Trusteeship Standing. ... Two-currency core: Subsistence Currency (S-credits) and Discretionary / Thriving Currency (T-credits).\",\
+      \"confidence\": \"HIGH\",\
+      \"related_concepts\": [\
+        \"Causal Economy\",\
+        \"Waterline Model\"\
+      ],\
+      \"qa_flags\": [\
+        \"NOVEL_TERM\"\
+      ]\
+    }\
+  ],\
+  \"metadata\": {\
+    \"total_entries\": 20,\
+    \"category_distribution\": {\
+      \"meta_framework\": 1,\
+      \"epistemology\": 2,\
+      \"social_systems\": 5,\
+      \"methodology\": 3,\
+      \"economics\": 2,\
+      \"psychology\": 3,\
+      \"theology\": 4\
+    },\
+    \"confidence_distribution\": {\
+      \"HIGH\": 20,\
+      \"MEDIUM\": 0,\
+      \"LOW\": 0\
+    },\
+    \"flagged_entries\": 0\
+  }\
+}
+
+================================================================================
+END OF EXTRACTION
+================================================================================

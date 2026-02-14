@@ -1,0 +1,33 @@
+================================================================================
+EXTRACTION: 2026-02-13_061103_clgysing_SP03_TX-J6-RUN3-GENERIC_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 162 chars but answer extraction failed
+Branch:          NLMINTA
+Source Package:  SP03
+Pass Type:       TX (Thematic Extraction)
+Pass Number:     J6-RUN3-GENERIC
+Theme/Focus:     N/A
+Project:         clgysing
+Session:         019
+Routing:         Tier 1a (NLMINTA/clgysing/TX)
+Query:           Extract every distinct concept from all sources in this notebook. Output as the JSON schema specified in your instructions.\n\nIMPORTANT: A previous extraction pass has already been completed on this notebook. Do not repeat concepts that have already been extracted. Focus only on NEW concepts that were not captured in the previous pass. Avoid any repetition of previously found material.
+Timestamp:       2026-02-13T06:11:03.000264+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: N/A
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  0
+Duration:        122999ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "notebook_id": "1e03c6b6-247d-4ddd-801d-8e435ac291b9", "goal": "default", "response_length": "default", "message": "Chat settings updated."}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

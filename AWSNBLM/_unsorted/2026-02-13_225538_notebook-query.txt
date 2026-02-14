@@ -1,0 +1,67 @@
+================================================================================
+EXTRACTION: 2026-02-13_225538_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         021
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           Summarize the current state of the NLMINTA project: what has been accomplished across all 3 phases, what the D1 pipeline methodology is, and what open items or infrastructure issues remain unresolved.
+Timestamp:       2026-02-13T22:55:38.000112+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: d1cf5a68-e5cc-40e6-bb9c-d6151af3d8fd
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  4376
+Duration:        51000ms
+================================================================================
+
+Based on the sources provided, here is the summary of the NLMINTA project state, the D1 pipeline methodology, and open infrastructure items.\
+\
+### NLMINTA Project State & Accomplishments\
+\
+The **NLMINTA** project functions as the testing and protocol development branch for the **LibForge** content production framework [1, 2]. Its primary accomplishments across phases include:\
+\
+*   **Phase 1 (Foundation & Exploration):** While specific Phase 1 documents are not explicitly detailed in the provided text, the architecture reference notes that the initial infrastructure deployment and concept proofs occurred in early sessions (001...002), establishing the capability to query NotebookLM remotely [3, 4].\
+*   **Phase 2 (Protocol Validation):** This phase successfully validated the **Extraction Pass Taxonomy**. Through stress testing, the project defined and codified 8 specific extraction pass types (e.g., **TX** for Thematic Extraction, **VX** for Vocabulary Extraction, **TS** for Thesis Strings) and 5 administrative pass types [5, 6]. It also established the **Pass Separation Principle** (Decision D-029), determining that combined queries degrade yield by 29...56% and that passes must be run separately [7].\
+*   **Phase 3 (JSON & Schema Exploration):** Currently in the scoping and validation stage, this phase is exploring **NotebookLM's JSON capability**. Discoveries include the ability to generate parseable JSON via `chat_configure` [8]. Objectives for this phase include validating schema repeatability, designing the **Concept Ledger** (a machine-readable index of extracted concepts), and testing automated ID assignment [9, 10].\
+\
+### D1 Pipeline Methodology\
+\
+The **D1 (First Degree)** pipeline methodology refers to the automated capture and routing of \"raw\" extraction output...the \"ore\" of the research process...before any human refinement [11]. The workflow operates as follows:\
+\
+1.  **Signal Injection:** Claude sends a `notebook_query` to Majeston with a **[SERAPH]** signal string appended to the text (e.g., `[SERAPH: PROJECT=clgysing, PASS=VX...]`) [12, 13].\
+2.  **Traffic Capture:** The **SeraphRecorder** component (via `socat`) transparently intercepts the request and the full text response from NotebookLM, logging it to the EC2 filesystem [14].\
+3.  **Automated Extraction:** The `extract.py` script parses the log, identifies the SERAPH tag, and generates a text file. It creates a filename that includes the **D1** degree designator (e.g., `VX-SP03-D1-S025.txt`) to indicate it is raw output [15, 16].\
+4.  **Routing:** Based on the signal string data, the file is automatically routed to the correct project directory (e.g., `clgysing/phase2/VX/`) in the staging area [16].\
+5.  **Delivery:** The `push-to-github.sh` script syncs these D1 artifacts to the **clgysing-extractions** GitHub repository, making them visible to the **Chronicler** tool for future refinement [17, 18].\
+\
+### Open Items & Infrastructure Issues\
+\
+Several infrastructure tasks and wishlist items remain unresolved or deferred:\
+\
+**Immediate Maintenance:**\
+*   **Repo Sync:** The live `extract.py` on the EC2 server has diverged from the repository version and needs to be synced [19, 20].\
+*   **Auth Refresh:** Google authentication tokens for Majeston require a manual refresh via a Mac terminal (deferred) [19].\
+*   **Transcripts Security:** The `/transcripts` endpoint currently lacks basic authentication [19].\
+\
+**Deferred Infrastructure Items:**\
+*   **GitHub PAT Rot< 2026/02/13 22:56:29.000523983  length=910 from=8462 to=9371
+ation:** Rotation of the Personal Access Token has been deferred since Session 011 to avoid service disruption [21].\
+*   **JSONL Archival (D-019):** The mechanism to push raw JSONL logs to GitHub (`push-to-github.sh` update) has been decided but not yet implemented [17, 22].\
+*   **Counter Reset:** The `concept-counter.json` file still contains test data and needs to be reset before production use [21, 23].\
+*   **Health Check Update:** The `health-check.sh` script needs to be updated to include checks for the Caliper and Chronicler services [21].\
+\
+**Future Development (Wishlist):**\
+*   **W-064:** Tooling for Chronicler to access Git history [24].\
+*   **W-065:** Research into deep Gemini-NotebookLM integration [24].\
+*   **W-066:** Formalization of a report-based extraction pipeline [24].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

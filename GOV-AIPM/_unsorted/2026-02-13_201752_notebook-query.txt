@@ -1,0 +1,36 @@
+================================================================================
+EXTRACTION: 2026-02-13_201752_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         050
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Which source file contains Section 3 (Interaction Framework)? Confirm file name and that all subsections 3.1 through 3.8 are present including the new 3.8 Instruction Chain Interpretation.
+Timestamp:       2026-02-13T20:17:52.000751+00:00
+Notebook ID:     4f9034b9-35d5-4e65-b89d-7e3ddd5d6fa2
+Source IDs:      all
+Conversation ID: 95f52490-a40c-4b5b-940e-66d9aed2f34d
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  759
+Duration:        71999ms
+================================================================================
+
+Section 4, including subsections 4.1 through 4.5 and the specified protocols, is located in **GOV-AIPM_v1_0_8_Volume-2b_Session-Architecture.txt** [1, 2].
+
+This volume contains **Section 4: Project Architecture & Session Management**, which includes the following subsections:
+
+*   **4.1 Chat Architecture** (Root, Branch, and Execution chats) [3]
+*   **4.2 Token Management** (Token economics, headroom discipline, and exhaustion recovery) [4]
+*   **4.3 Session Lifecycle** (Initiation, active management, closeout, and phase transitions) [5]
+*   **4.4 Connector Transparency Protocol** (Addressing transcript gaps and tool transparency) [6]
+*   **4.5 Conflict Resolution Protocol** (Resolving conflicts between protocol behaviors and project objectives) [7]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

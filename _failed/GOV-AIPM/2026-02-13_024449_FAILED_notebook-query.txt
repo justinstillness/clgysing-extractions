@@ -1,0 +1,33 @@
+================================================================================
+EXTRACTION: 2026-02-13_024449_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          NO_RESPONSE
+Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Volume 6c assembly instructions from the Assembly Kit or Blueprint, including the volume header format, END markers, and appendix ordering for Volume 6c
+Timestamp:       2026-02-13T02:44:49.000711+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      8385e103-4630-4cde-acc6-c55d5b7555cb
+Conversation ID: N/A
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  0
+Duration:        1093000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"prompts": []}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

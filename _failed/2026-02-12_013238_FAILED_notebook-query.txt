@@ -3,14 +3,18 @@ EXTRACTION: 2026-02-12_013238_FAILED_notebook-query [FAILED]
 ================================================================================
 Status:          NO_RESPONSE
 Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Branch:          N/A
 Source Package:  N/A
-Pass Type:       N/A
-Would-Be Route:  Tier 3 (Untagged)
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           Show me the first 100 lines of Volume 1 Foundations file including the volume header, formatting conventions, and the beginning of content so I can match formatting patterns exactly.
 Timestamp:       2026-02-12T01:32:38.000891+00:00
 Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
 Source IDs:      cc214534-132d-40bc-9b77-33a0a1d61afd
 Conversation ID: N/A
+Chat Configure:  default
 Response Chars:  0
 Duration:        12581999ms
 ================================================================================

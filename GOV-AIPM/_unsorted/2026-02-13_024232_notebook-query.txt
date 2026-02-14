@@ -1,0 +1,238 @@
+================================================================================
+EXTRACTION: 2026-02-13_024232_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix E Version History complete full text including the v1.0.8 entry and all prior version entries
+Timestamp:       2026-02-13T02:42:32.000330+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 87395478-6b35-4ad1-83da-d3872dee4918
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  9614
+Duration:        130000ms
+================================================================================
+
+Here is the complete, updated full text of **Appendix H: Quick Start Guide** for GOV-AIPM v1.0.8-DRAFT.\
+\
+This version incorporates the **Rooting (Phase 0)** methodology, the creation of the **Phase Protocol**, and the updated **TPL-001 v2.0** workflow defined in the revision findings and drafting sessions.\
+\
+***\
+\
+# APPENDIX H: QUICK START GUIDE\
+\
+**Version:** 1.1 (Updated for v1.0.8-DRAFT)\
+**Date:** February 10, 2026\
+\
+This appendix contains the complete Quick Start Guide, also available as a standalone document for distribution. New users should begin here before engaging the full manual.\
+\
+***\
+\
+## GOV-AIPM QUICK START GUIDE\
+\
+### WHAT IS THIS?\
+\
+The AI Operations Manual is a comprehensive framework for AI-assisted project management. It enables structured collaboration between you and AI across multi-session projects while maintaining quality, continuity, and governance.\
+\
+This Quick Start Guide gets you from \"I just downloaded this\" to \"I'm working on my first project\" in about 30 minutes.\
+\
+### BEFORE YOU BEGIN: ARE YOU READY?\
+\
+Not every task needs this framework. Quick questions, single-session tasks, and casual exploration work fine without it. Use GOV-AIPM when:\
+\
+*   Your work will span multiple AI sessions\
+*   You need to maintain continuity across days or weeks\
+*   Quality and accuracy matter (business, legal, technical work)\
+*   You want structured decision tracking\
+*   Multiple deliverables or phases are involved\
+\
+If you're unsure, that's fine...start with an Exploration Session (see below).\
+\
+#### READINESS CHECK\
+\
+Before initiating a formal project (entering Rooting), you should be able to answer:\
+\
+1.  **What am I trying to produce?** (State in one sentence)\
+2.  **Who will use or receive the output?**\
+3.  **How will I know when it's done?**\
+4.  **Do I have the inputs I need, or know how to get them?**\
+5.  **Is this one project or several?**\
+\
+*   If these answers are clear ... Proceed to \"Starting Your First Project (Rooting)\"\
+*   If these answers are unclear ... Start with an Exploration Session\
+\
+#### EXPLORATION SESSIONS (When You're Not Ready Yet)\
+\
+Some ideas need development before structured execution. An Exploration Session uses AI to clarify your thinking.\
+\
+**To run an Exploration Session:**\
+\
+1.  Open a new AI chat\
+2.  Upload the AI Operations Manual\
+3.  Say: *\"I have an idea I'd like to explore before committing to a formal project. Help me think through [describe your idea].\"*\
+\
+**Useful exploration prompts:**\
+*   \"What questions should I be able to answer before starting this?\"\
+*   \"What are the components of this? Which should I tackle first?\"\
+*   \"What would success look like?\"\
+*   \"What am I assuming that might not be true?\"\
+\
+Exploration sessions are low-stakes. Their output helps you complete the Readiness Check when you're ready.\
+\
+---\
+\
+### STARTING YOUR FIRST PROJECT (ROOTING)\
+\
+In the GOV-AIPM framework, starting a project is called **Rooting** (or Phase 0). It is the deliberate process of establishing the project's foundation before execution begins.\
+\
+**Rooting produces two essential outputs:**\
+1.  **The Project Guide:** Defines *what* the project is (scope, deliverables, timeline).\
+2.  **The Base Phase Protocol:** Defines *how* the AI should behave (methodology, rules, format).\
+\
+Follow these steps exactly.\
+\
+#### STEP 1: GATHER YOUR FILES\
+\
+You need two files:\
+*   **GOV-AIPM Manual** (or relevant volume)\
+*   **TPL-001 Project Initiation Form** (v2.0)\
+\
+**IMPORTANT:** You do NOT need to complete TPL-001 before uploading. Partial or blank forms are normal. The form is a conversation starter, not a prerequisite. You will develop it through dialog with the AI.\
+\
+#### STEP 2: OPEN A NEW AI CHAT AND UPLOAD\
+\
+Start a fresh AI chat session. Upload both files.\
+\
+#### STEP 3: INITIATE THE ROOTING DIALOG\
+\
+Send a message like:\
+\
+> \"I'm starting a new project using the GOV-AIPM framework. I've uploaded the manual and my TPL-001 [partial/blank]. Please initiate the Rooting process (Phase 0). Let's engage in collaborative design to establish the Project Guide and Base Phase Protocol.\"\
+\
+Then **STOP**. Wait for the AI to respond.\
+\
+#### STEP 4: ENGAGE IN COLLABORATIVE PROJECT DESIGN\
+\
+**THIS IS THE CRITICAL STEP.** Read carefully.\
+\
+Rooting is not \"fill out form ... AI tells you what to do.\" It is a collaborative design session consisting of 10-20 exchanges of substantive back-and-forth.\
+\
+**WHAT THE AI WILL DO:**\
+The AI will actively probe your project definition:\
+*   **Ask clarifying questions** about your objective.\
+*   **Surface assumptions** you haven't stated.\
+*   **Probe scope boundaries** (\"What is explicitly OUT of scope?\").\
+*   **Propose phasing options** (breaking the work into Phase 1, Phase 2, etc.).\
+*   **Determine methodology** (which feeds Layer 2 of the Phase Protocol).\
+\
+**WHAT YOU SHOULD DO:**\
+*   **Answer thoughtfully.** The goal is clarity, not speed.\
+*   **Push back** if the AI misunderstands (\"No, that's not what I meant.\").\
+*   **Raise constraints** (\"We can't use external data sources.\").\
+*   **Be honest about uncertainty** (\"I don't know yet. Can we decide later?\").\
+\
+*If rooting takes multiple sessions, that is fine. This is the nervous system of your project. Do not rush to \"real work\"...this IS the work that makes execution possible.*\
+\
+#### STEP 5: REVIEW THE FOUNDATIONAL ARTIFACTS\
+\
+After the dialog, the AI will draft two documents for your approval:\
+\
+1.  **The Project Guide:** Confirm it captures the scope, objectives, and phase structure accurately.\
+2.  **The Base Phase Protocol:** Confirm it captures the behavioral rules, formatting standards, and methodology you expect the AI to follow.\
+\
+Iterate until both documents accurately reflect your intent.\
+\
+#### STEP 6: CONFIRM ALIGNMENT AND BEGIN\
+\
+When the documents are right, confirm:\
+> \"These documents capture my intent. I approve the Project Guide and Phase Protocol. Please generate the Bootstrap for the first execution session.\"\
+\
+**USER ACTION ... POST-ROOTING SETUP:**\
+1.  **Download** the Project Guide, Phase Protocol, and Bootstrap.\
+2.  **Store the Phase Protocol** in your Project Knowledge (or a dedicated folder).\
+3.  **Upload*< 2026/02/13 02:44:42.000368408  length=3372 from=111421 to=114792
+* the transcript to your project notebook (if using NotebookLM).\
+4.  **Verify** the Bootstrap includes the mandatory first action to review the Phase Protocol.\
+\
+You are now ready to begin Phase 1.\
+\
+---\
+\
+### WHAT HAPPENS NEXT\
+\
+After your first session, you will use different workflows:\
+\
+**CONTINUING A PROJECT (Session to Session):**\
+*   Start a new chat.\
+*   Upload the **Bootstrap** from your prior session.\
+*   The AI will review the **Phase Protocol** (from Project Knowledge) and the Bootstrap to reorient.\
+*   See Manual Section 1.4.6.2.\
+\
+**RESUMING AFTER A BREAK (Days or Weeks Away):**\
+*   Use the **Re-Entry Protocol** (TPL-007).\
+*   See Manual Section 1.4.6.3.\
+\
+**TRANSITIONING BETWEEN PHASES:**\
+*   Use the **Phase Transition Protocol** (Section 4.3.5).\
+*   You will evaluate and potential redraft the Phase Protocol for the new phase.\
+*   See Manual Section 1.4.6.4.\
+\
+---\
+\
+### KEY CONCEPTS TO UNDERSTAND\
+\
+**ROOTING (Phase 0):** The dedicated phase for defining the project before execution begins.\
+\
+**PROJECT GUIDE:** The strategic definition of *what* the project is (scope, objectives).\
+\
+**PHASE PROTOCOL:** The behavioral definition of *how* the AI works (rules, format, tone). Stable within a phase.\
+\
+**BOOTSTRAP:** A handoff document generated at the end of each session. Contains current state and next actions. **Always save it. Always upload it next session.**\
+\
+**SESSION CLOSEOUT:** The discipline of ending sessions cleanly...saving files, generating bootstrap, logging decisions. Non-negotiable.\
+\
+**DECISION LOG:** Record of significant choices made during the project.\
+\
+---\
+\
+### COMMON MISTAKES TO AVOID\
+\
+1.  **SKIPPING THE INTAKE DIALOG:** Uploading a form and expecting instant output. The dialog is where alignment happens.\
+2.  **RUSHING ROOTING:** Trying to start execution before the Phase Protocol is defined. This leads to behavioral drift.\
+3.  **NOT SAVING THE BOOTSTRAP:** Ending a session without saving the bootstrap. You will lose context and waste time reconstructing.\
+4.  **IGNORING THE PHASE PROTOCOL:** Failing to store it in Project Knowledge, causing the AI to revert to generic behaviors in the next session.\
+5.  **TREATING AI OUTPUT AS FINAL:** Accepting what the AI produces without review. AI is a capable assistant, not an oracle. You remain accountable.\
+\
+---\
+\
+### GETTING HELP\
+\
+**If you get stuck:**\
+*   Upload the manual and ask: *\"I'm having trouble with [X]. What does the framework say about this?\"*\
+\
+**If something isn't working:**\
+*   Check the **Troubleshooting Guide** (Manual Appendix D).\
+*   Review the **Failure Mode Catalog** (Manual Appendix F).\
+\
+---\
+\
+### SUMMARY: YOUR FIRST PROJECT IN 6 STEPS\
+\
+1.  **GATHER FILES:** Manual + TPL-001 (partial/blank is normal).\
+2.  **UPLOAD:** New AI chat, attach both files.\
+3.  **INITIATE:** *\"I'm starting a new project. Initiate Rooting (Phase 0). Let's design the Project Guide and Phase Protocol collaboratively.\"*\
+4.  **ENGAGE:** 10-20 exchanges of back-and-forth. Answer thoughtfully. Push back.\
+5.  **REVIEW:** Check the Project Guide and Phase Protocol drafts. Iterate until right.\
+6.  **CONFIRM:** *\"Approved. Generate the Bootstrap for Phase 1.\"* Download and store your artifacts.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

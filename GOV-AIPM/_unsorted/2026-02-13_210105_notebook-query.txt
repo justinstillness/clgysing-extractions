@@ -1,0 +1,90 @@
+================================================================================
+EXTRACTION: 2026-02-13_210105_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         050
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Section 2.5 The Three Cycles of AI-Assisted Work. Give me the complete description of all three cycles (Project Lifecycle, Session Lifecycle, Interaction Cycle) plus the User Support Track, including their phases and how they nest.
+Timestamp:       2026-02-13T21:01:05.000336+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: f4319d05-cf18-402d-a770-4fda3a2bc0b3
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  4724
+Duration:        29999ms
+================================================================================
+
+Based on Section 2.5 of the **GOV-AIPM v1.0.8-DRAFT** (Volume 1: Foundations), here is the complete description of the Three Cycles of AI-Assisted Work and the Parallel Support Track.\
+\
+These cycles are nested temporal structures that provide a mental map for navigating the system...helping users identify which tools apply when and how to maintain orientation across different scales of work [1].\
+\
+### 1. Project Lifecycle (Macro Cycle)\
+**Scope:** The strategic level spanning the entire arc from conception to completion [2].\
+**Temporal Scope:** Days to months.\
+**Key Question:** \"Where is this project in its overall journey?\"\
+\
+**The Sine Wave Model:**\
+The project rhythm alternates between **Peaks** (active phase work/execution) and **Zero-crossings** (transition work/planning) [3].\
+\
+**Phases:**\
+*   **Phase 0 ... Rooting:** The deliberate process of establishing the project's foundation before execution begins [4]. It produces the **Project Guide** and **Base Phase Protocol**. Rooting is collaborative design work, not form completion [5], and includes establishing context, defining the destination, determining scope, structuring phases, and preparing for execution [5, 6].\
+*   **Execution Phases (Phases 1 through N):** The bulk of project work. Each phase operates under its Phase Protocol and advances through defined milestones toward exit criteria [7].\
+*   **Completion:** Final deliverables are produced, reviewed, and accepted. Artifacts are archived, and the **Project Closure Report** (TPL-022) formalizes the process [8].\
+\
+### 2. Session Lifecycle (Meso Cycle)\
+**Scope:** The tactical level encompassing what happens each time you sit down to work...from preparation to closeout [9].\
+**Temporal Scope:** Minutes to hours per session.\
+**Key Question:** \"What do I need to do before, during, and after this session?\"\
+\
+**Phases:**\
+*   **Preparation:** Gathering materials, reviewing prior state, and identifying objectives before opening the chat [10].\
+*   **Initiation:** Establishing context at session start using the **Bootstrap** (TPL-002) and confirming alignment via the Phase Protocol [10].\
+*   **Active Work:** The productive core (drafting, analysis, iteration). Token awareness and alignment maintenance are critical here [11].\
+*   **Closeout:** The discipline of ending sessions cleanly to enable resumption. Includes generating the next Bootstrap, updating the **Session Log** (TPL-005), and exporting the transcript [11].\
+\
+### 3. Interaction Cycle (Micro Cycle)\
+**Scope:** The operational level of moment-to-moment dialogue between human and AI [12].\
+**Temporal Scope:** Seconds to minutes per interaction.\
+**Key Question:** \"How do I work effectively with AI moment to moment?\"\
+\
+**Phases:**\
+*   **Prompt Formulation:** Crafting the input with clear requests, context, and constraints. Governed by the **Explicit Alignment Principle** [12].\
+*   **AI Response:** The model generates output based on the prompt and accumulated context [13].\
+*   **Verification:** Evaluating the response for accuracy, reasoning, and address of the request. Intensity scales with stakes [13].\
+*   **Adjustment:** Accepting, refi< 2026/02/13 21:01:35.000288197  length=1582 from=8693 to=10274
+ning, redirecting, or resetting based on verification. This feeds the next prompt formulation [13].\
+\
+### 4. The Parallel Support Track\
+**Scope:** Activities outside the AI environment that enable success within it [14].\
+**Key Question:** \"What do I need to do outside of AI chat to make this work?\"\
+\
+**Activities:**\
+*   **File Management:** Organizing folders and maintaining naming conventions [14].\
+*   **Cross-AI Validation:** Using secondary platforms for independent review [14].\
+*   **Weekly Review:** Periodic assessment of status and system health (TPL-006) [15].\
+*   **Tool Maintenance:** Keeping capture and export tools functional [15].\
+*   **Context Preparation:** Assembling documents and questions before sessions [15].\
+\
+### How They Nest\
+The cycles are nested containers, not just adjacent phases [16]:\
+*   **Projects** contain **Sessions**.\
+*   **Sessions** contain **Interactions**.\
+\
+**Navigation & Diagnosis:**\
+Problems should be diagnosed by their cycle level [16]:\
+*   **Interaction-level:** Bad output or misunderstanding ... Fix with prompt refinement and verification.\
+*   **Session-level:** Lost context or decision drift ... Fix with better Bootstraps and closeout discipline.\
+*   **Project-level:** Scope drift or unclear objectives ... Fix by revisiting the Project Guide and Phase definitions.\
+\
+Tool selection is also determined by cycle location (e.g., TPL-001 for Macro, TPL-002 for Meso, Prompt Library for Micro) [17].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,90 @@
+================================================================================
+EXTRACTION: 2026-02-13_024314_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix G Artifact Taxonomy Reference complete full text updated version with all artifact entries including new artifacts added for v1.0.8
+Timestamp:       2026-02-13T02:43:14.000595+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 6f4dae53-2d2e-47f4-a944-5a11623bd6ac
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  3382
+Duration:        133000ms
+================================================================================
+
+Based on the provided source **"GOV-AIPM_v1_0_8_Assembly-Blueprint.txt"**, there is no explicit definition or specific assembly instruction for a subdivided **"Volume 6c"**. The Blueprint defines a single, consolidated **Volume 6** covering Sections 15...17 and all Appendices [1, 2].
+
+However, the Blueprint provides the necessary components to assemble Volume 6, which contains the content (Appendices and Templates) that would typically constitute the latter portion (or "c" segment) of a split volume. Below are the assembly instructions for **Volume 6** as detailed in the Blueprint.
+
+### **Volume 6 Assembly Instructions**
+**Scope:** Sections 15...17 + Appendices (Communications, Reference, Templates) [1, 2]
+**Status:** Not Started
+**Complexity:** Medium (Template heavy) [2]
+
+#### **1. Volume Header Format (Inferred)**
+While the Blueprint does not provide a specific literal header for "Volume 6c," the standard format established in Volume 1 [1] and the Volume 6 description [2] suggests the following header for the volume:
+
+```text
+================================================================================
+VOLUME 6: SECTIONS 15-17 + APPENDICES ... COMMUNICATIONS, REFERENCE, TEMPLATES
+================================================================================
+```
+
+#### **2. Content & Ordering**
+The Blueprint specifies the following content updates and ordering for Volume 6 [2, 3]:
+
+**A. Core Sections (Unchanged or Updated):**
+*   **Sections 15...16:** Unchanged from v1.0.7 [2].
+*   **Section 17.2 (Glossary):** Add new terms (Session G2 scope) [2].
+*   **Section 17.3 (Index):** Update (Session G2 scope) [2].
+
+**B. Appendices (Ordering & Changes):**
+1.  **Appendix A (Template Reference):** Add all new templates [2].
+2.  **Appendix B (Prompt Reference):** Add any new "golden prompts" [3].
+3.  **Appendix E (Version History):** Add v1.0.8 entry [3].
+4.  **Appendix G (Artifact Taxonomy):** Add the following new artifacts [3]:
+    *   Phase Protocol
+    *   Findings Report
+    *   Branch Startup File
+    *   Backlog Item Report
+    *   Cross-Branch Awareness Doc
+5.  **Appendix H (Quick Start Guide):** Update for Phase 0 / Rooting [3].
+
+#### **3. Required Draft Files**
+You must assemble the following draft files into the volume (specifically for the Template Reference section) [3, 4]:
+*   `DRAFT_TPL-001_Revision.txt`
+*   `DRAFT_TPL-002_Bootstrap-Template-Revised.txt`
+*   `DRAFT_TPL-003_Closeout-Checklist-Revised.txt`
+*   `DRAFT_TPL-005_Session-Log-Revised.txt`
+*   `DRAFT_TPL-0XX_Alignment-Checklist.txt`
+*   `DRAFT_TPL-0XX_Findings-Report.txt`
+*   `DRAFT_TPL-0XX_Branch-Startup-File.txt`
+*   `DRAFT_TPL-0XX_Cross-Branch-Awareness.txt`
+*   `DRAFT_Templates_Phase-Protocol.txt`
+
+#### **4. Integration Points**
+Ensure the following integration points are addressed during assembly [4]:
+*   **E-IP7:** Verify Phase Protocol Template Layer 1.
+*   **A-IP8 + E-IP8 + F-IP7:** Update the combined TOC (Table of Contents).
+
+#### **5. END Markers**
+The Blueprint does not explicitly define an "END" marker for Volume 6c. However, the standard blueprint termination marker used is:
+```text
+================================================================================
+END OF VOLUME
+================================================================================
+```
+*(Note: The blueprint itself ends with "END OF MASTER ASSEMBLY BLUEPRINT" [5].)*
+
+================================================================================
+END OF EXTRACTION
+================================================================================

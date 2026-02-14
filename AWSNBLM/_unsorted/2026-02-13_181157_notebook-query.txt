@@ -1,0 +1,124 @@
+================================================================================
+EXTRACTION: 2026-02-13_181157_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         028
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What wishlist items relate to Conductor? List them with their priority and status.
+Timestamp:       2026-02-13T18:11:57.000268+00:00
+Notebook ID:     8b28827e-4051-4df7-ba55-43cf3df1041c
+Source IDs:      all
+Conversation ID: c22d13b9-9f64-4df3-b33e-d6dd935e894a
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  7070
+Duration:        180000ms
+================================================================================
+
+Based on the assembly of **GOV-AIPM v1.0.8-DRAFT** across Sessions 039...050, here is the confirmed Master Table of Contents format, structure, section numbering, and appendix listing order.\
+\
+### **Master Table of Contents Structure**\
+\
+The manual is divided into **six parts** containing **17 sections**, followed by **eight appendices**.\
+\
+#### **PART I: FOUNDATIONS**\
+*   **Section 1: Purpose & Scope**\
+    *   1.1 Purpose\
+    *   1.2 Intended Audience\
+    *   1.3 Scope\
+    *   1.4 How to Use This Manual (Updated 1.4.6 for Rooting) [1]\
+    *   1.5 Document Conventions\
+    *   1.6 Relationship to Other Documents\
+*   **Section 2: Core Philosophy**\
+    *   2.1 Foundational Principles (Added 2.1.5 \"Ceremony is Continuity\") [2], [3]\
+    *   2.2 Operational Stance (Updated 2.2.3 \"Explicit Over Implicit ... Alignment Over Assumption\") [3]\
+    *   2.3 What This System Is Not\
+    *   2.4 The Compound Effect\
+    *   2.5 The Three Cycles of AI-Assisted Work (Updated 2.5.1 for Phase 0/Rooting) [4]\
+    *   2.6 The Orientation Principle\
+    *   2.7 AI as System Coordinator (Updated 2.7.2 Scope Monitoring) [5]< 2026/02/13 18:14:57.000680753  length=270 from=0 to=269
+\\HnT\\TnP#/#1#.#1  *2*0P0A ROTK I
+Id:a tPeR:O JFErCiT,  M1A3N AFGeEbM E2N0T2*6* \\1n8*: 1 4 :*1*9S eGcMtTio
+ns e3r:v eIrn:t eurvaicctoironn 
+Fcraacmheew-ocrokn*t*r o[l6:] \
+no - c a c*h e ,  3n.o1-.t.r.a3n.s7f orm(U
+nccohnannegcetdi ofnr:o mk eve1p.-0a.l7i)v\\en 
+ c o n*t e n t3-.t8y pIen:s ttreuxctt/ieovne nCth-asitnr eIanmte
+rmpcrpe-tsaetsisoino n(-*i*dN:E W2*8*a)5 d[96a]3\\ana*5 a 4 d*7*6S8efc0t7i9obn0 e4a:e bS2eas7s5i6on
+ xA-racchcietle-cbtuufrfee*r*i n(go:r  nPoro
+jTercatn sAfrecrh-iEtneccotduirneg :&  cSheusnskieodn 
+Ma
+nagement) [7]\
+    *   4.1 Chat Architecture (Updated 4.1.3 Naming Conventions) [7]\
+    *   4.2 Token Management (Enhanced with Headroom Floor) [8]\
+    *   4.3 Session Lifecycle (Major Revision: Alignment Turn, Response Indexing, Closeout) [9]\
+    *   4.4 Connector Transparency Protocol (**NEW**) [10]\
+    *   4.5 Conflict Resolution Protocol (**NEW**) [11]\
+*   **Section 5: Canonical Project Artifacts** (Renumbered) [12]\
+    *   5.1 Project Guide\
+    *   **5.2 Phase Protocol (NEW)**\
+    *   5.3 Decision Logs (Renumbered)\
+    *   **5.4 Session Logs (Renumbered & Revised with SFR)** [13]\
+    *   5.5 Bootstrap Files (Renumbered & Enhanced)\
+    *   **5.6 Findings Reports (NEW)** [14]\
+    *   5.7 Supporting Artifacts (Renumbered)\
+    *   5.8 Artifact R< 2026/02/13 18:14:57.000682010  length=1191 from=270 to=1460
+e4laa0ti
+oenvsehnitp:s  m(eRsesnaugmebe
+rdeadt)a\\:n  { " j s*o n r p5c."9: "B2a.c0k"l,o"gi dR"e:g0i,s"treers u(lRte"n:u{m"bperroetdo c&o lEVnehrasnicoend" :w"i2t0h2 5I-n1s1i-g2h5t" ,C"acpatpuarbei)l i[t1i5e]s\"n: { " e x*p e r i5m.e1n0t aPlr"o:j{e}c,t" pCrloomsputrse" :R{e"ploirstt C(hRaennguemdb"e:rterdu)e\\}n,*" r e s*o*uSreccetsi"o:n{ "6s:u bEsxctreirbnea"l: fOarlgsaen,i"zlaitsitoCnh aSnygsetde"m:*t*r u[e1}6,]"\\tno o l s "*: { " l6i.s1t CNhaamnignegd "C:true},"tasks":{"list":{},"cancel":{},"requests":{"tools":{"call":{}},"prompts":{"get< 2026/02/13 18:14:57.000682425  length=3115 from=8693 to=11807
+"o:n{v}e}n,t"iroensso u(rAcdedse"d: {T"hrreeaed-"T:i{e}r} }N}a}m,i"nsge)r v[e1r7I]n\\fno " : { "*n a m e":"not6e.b2o oFkollmd"e,r" vSetrrsuicotnu"r:e" 2(.A1d4d.e5d" }6,."2i.n4s trNuoctteiboonosk" :O"rNgoatneibzoaotkiLoMn )M C[P1 8-] \\Anc c e s s*  N o t6e.b3o.o.k.L6M. 5( n(oUtnecbhoaonkglemd.)g\\ono g l e .*c o m )6..\\6n \\Onr*g*aAnuitzhati:o*n*  HIyfg iyeonue  g(eEtn haauntcheedn)t i[c1a9t]i\\onn\\ ne#r#r#o#r s*,* PrAuRnT  `InIlIm:  lGoOgViEnR`N AvNiCaE  yIoNuTrE GBRATIONa*s*\
+h*/ t e r*m*iSneaclt itoono l7.:  TThhies  Giosv etrhnea nacuet oSmtaatcekd* *a u(tUhnecnhtaincged) [a2t0i]o\
+n *m e t h*o*dS etchtaito nh a8n:d lAeIs- Aeverything. Only use savessisted Governance Development** (Unchanged) [20]\
+\
+#### **PART IV: TOOLS & FORMATS**\
+*   **Section 9: AI Role Separation** (Unchanged) [21]\
+*   **Section 10: Adjunct Tools**\
+    *   10.1...10.2 (Unchanged)\
+    *   **10.3 Retrieval and Query Tools (Major Revision: Notebook Connectivity)** [22]\
+    *   10.4...10.8 (Unchanged)\
+*   **Section 11: File Types and Formatting** (Unchanged) [23]\
+\
+#### **PART V: ADVANCED PATTERNS**\
+*   **Section 12: Extended Context**\
+    *   12.1 Multi-Session Continuity (Enhanced: 6 Mechanisms) [24]\
+    *   12.2 Complex Project Management\
+    *   **12.3 Branch Management (NEW)** [25]\
+    *   **12.4 Three-Tier Documentation Architecture (NEW)** [26]\
+*   **Section 13: Specialized Use Cases** (Unchanged) [27]\
+*   **Section 14: Failure Modes**\
+    *   14.1 Common Pitfalls (Enhanced with 8 new modes) [28]\
+    *   14.2...14.3 (Unchanged)\
+\
+#### **PART VI: MAIL & EXTERNAL COMMUNICATIONS**\
+*   **Section 15: Email Integration** (Unchanged) [29]\
+*   **Section 16: External Communications** (Unchanged) [29]\
+*   **Section 17: Reference** (Updated) [29]\
+\
+---\
+\
+### **Appendix Listing Order**\
+\
+Appendices are listed A...H. **Appendix A** is now organized internally by function rather than strictly sequential template number [30], [31].\
+\
+*   **Appendix A: Template Reference**\
+    *   *Core Operations:* TPL-001 (Init), TPL-002 (Bootstrap), TPL-003 (Closeout), TPL-005 (Log), TPL-012 (Alignment), TPL-013 (Phase Protocol), TPL-014 (PP Addendum).\
+    *   *Ongoing Management:* TPL-004 (Decision), TPL-006 (Weekly), TPL-010 (Roadmap), TPL-017 (Findings), TPL-022 (Closure), TPL-023 (Backlog).\
+    *   *Specialized/Advanced:* TPL-007 (Re-entry), TPL-008 (Validation), TPL-009 (Recovery), TPL-011 (Intake), TPL-015 (Branch Startup), TPL-016 (Cross-Branch Awareness).\
+*_ a u t*h*_Atpopkeenndsi xa sB :a  Pfraolmlpbta cRke fiefr etnhcee *C*L I( Gfolden Proamipt Llisb.r\\anr*y*)C o[n3f2i]r\\mna*t i o n*:**A*p pTeonodlisx  wCi:t hT ocooln fCiornmf ipgaurraamt iroenq uGiuried eu*s*e r[ 3a2p]p\no*v a l  *b*eAfpopreen dsiext tDi:n gT rcoounbfliersmh=oTortuien.g\\ n**Studio:** After creating audio/video/infogrGaupihdiec*/*s l[i3d2e]s\\,n *p o l l* *sAtpupdeinod_isxt aEt:u sV efrosri ocno mHpilsettoiroyn*.*\\ n(\\UnpCdoantseodl ifdoart evd1 .t0o.o8l)s :[\\3n2-] \\sno*u r c e*_*aAdpdp(etnydpiex= uFr:l |Dtieaxlto|gd rIinvtea|kfei lFea)i:l uArded  Maondye  sCoautracleo gt*y*p e[\\3n2-] \\snt*u d i o*_*cArpepaetned(itxy pGe:= aAurdtiiof|avcitd eToa|x.o.n.o)m:y  CRreefaetree nacney* *a r(tUipfdaactte dt)y p[e3\\2n]-\\ nd*o wnl o a*d*_Aaprpteinfdaicxt (Ht:y pQeu=iacukd iSot|avritd eGou|i.d.e.*)*:  (DUopwdnaltoeadd  faonry  Raorottiifnagc)t  [t3y2p]e\\\
+n\\-n #n#o#t e*_*cSreecattieo/nn oNtuem_bleirsitn/gn oFtoer_muaptd*a*t\\en/*n o t e*_*dHeileertaer:c hMya:n*a*g e` Pnaortte`s  >i n` Sneoctteiboono kXs`" }>} `
+X.
+Y`
+ > `X.Y.Z`\
+*   **Example:** Section **5.2.5** (Phase Protocol Lifecycle) is nested under **5.2** (Phase Protocol), which is in **Section 5** (Canonical Project Artifacts).\
+*   **New Sections:** Defined clearly with unique integers (e.g., 4.4, 4.5, 5.6, 12.3).\
+*   **Renumbering:** Existing subsections in Section 5 shifted down to accommodate 5.2 and 5.6 [12].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

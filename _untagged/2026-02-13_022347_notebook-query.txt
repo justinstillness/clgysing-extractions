@@ -1,0 +1,60 @@
+================================================================================
+EXTRACTION: 2026-02-13_022347_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What has been discussed about NotebookLM report generation tools for extraction purposes? Any mention of studio_create, Briefing Doc, Study Guide, Blog Post, or Create Your Own report formats as potential extraction or synthesis tools? What expectations or hypotheses exist about report tool utility?
+Timestamp:       2026-02-13T02:23:47.000882+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: d486f8e1-b131-45d5-ad1c-77917b4fd75f
+Chat Configure:  default
+Response Chars:  4226
+Duration:        35999ms
+================================================================================
+
+Based on the provided sources, particularly the findings from NLMINTA Sessions 001...003 and the Tool Capability Matrix, here is a summary of the discussions regarding NotebookLM report generation tools for extraction and synthesis.\
+\
+### **Overview: `studio_create` as the Primary Generation Tool**\
+The tool **`studio_create`** is identified as the primary mechanism for generating extended extraction outputs. While `notebook_query` is used for interactive probing, `studio_create` allows for batch generation of long-form content (up to ~18,000 words) [1, 2].\
+\
+### **Report Formats and Their Utility**\
+The `studio_create` tool supports several specific report formats. Discussions distinguish between preset formats and the highly flexible \"Create Your Own\" option:\
+\
+*   **Create Your Own:** This is considered the critical format for LibForge extraction purposes [2]. It accepts a **`custom_prompt`**, allowing the user to dictate specific structures (e.g., \"Create a detailed catalog of every distinct concept...\"). It is hypothesized to be the \"single most powerful lever\" for extraction quality [3].\
+    *   **Use Case:** \"Concept Basket Generation\" ... creating a categorized inventory of concepts with definitions and quotes [4].\
+    *   **Finding:** When used with structured prompts, it can achieve 100% extraction fidelity from structured sources [5, 6].\
+*   **Briefing Doc:** This format is viewed as a tool for **structural surveys** or broad summaries [7].\
+    *   **Finding:** In testing (Session 003), the default \"Briefing Doc\" format synthesized information across *all* loaded sources, failing to discriminate between them without explicit filtering. It is considered better for synthesis than granular extraction [5].\
+*   **Study Guide / Blog Post:** These are listed as \"Preset formats\" (educational or article-style) [2]. They are considered less relevant for raw data extraction compared to the custom option, though \"Study Guide\" is noted as potentially useful for generating explanatory content mapped to the Six-Stage Argument Framework [8].\
+\
+### **Key Hypotheses and Findings on Report Utility**\
+\
+**1. Reports Enable \"Extended Extraction\"**\
+A primary hypothesis is that reports can bypass the output token limits of standard chat queries. While chat responses are typically ~1,000...2,000 words, reports have been observed to produce outputs as large as 18,000 words, making them essential for \"bulk\" extraction workflows [1, 2].\
+\
+**2. The \"Consolidation Bias\" Finding**\
+Testing revealed that NotebookLM's report engine has a \"systematic tendency to CONSOLIDATE related concepts\" rather than listing them individually [9].\
+*   **Implication:** Reports are naturally \"synthesis-oriented.\" To use them for extraction (inventories), prompts must include aggressive \"anti-consolidation\" instructions [10, 11].\
+*   **Hypothesis:** This bias is a liability for extraction (Stage 1) but an asset for semantic surveys (Stage 2), where finding connections across files is desirable [12, 13].\
+\
+**3. Source Isolation Requires `source_ids`**\
+A critical operational finding is that natural language prompts (e.g., \"Only use source X\") are unreliable for filtering content in reports. The **`source_ids` parameter** is non-negotiable for generating source-specific reports; without it, the tool synthesizes across the entire notebook [6, 11].\
+\
+**4. The \"Concept Basket\" Workflow**\
+The sources articulate a specific workflow hypothesis involving reports:\
+1.  **Identify:** Use `notebook_query` to identify a list of concepts.\
+2.  **Compile:** Feed that list into `studio_create` (\"Cre< 2026/02/13 02:24:23.000065732  length=612 from=8693 to=9304
+ate Your Own\") with instructions to compile definitions and quotes for each.\
+3.  **Export:** Download the resulting report for processing [4].\
+\
+**5. Exportability and Persistence**\
+Unlike other artifacts that might stay trapped in the ecosystem, reports can be exported to **Google Docs** via `export_artifact`. This makes them readable by Claude (via `google_drive_fetch`), creating a viable bridge for moving large amounts of extracted text out of NotebookLM and into the drafting pipeline [14, 15].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

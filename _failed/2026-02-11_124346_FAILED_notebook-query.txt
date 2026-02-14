@@ -3,14 +3,18 @@ EXTRACTION: 2026-02-11_124346_FAILED_notebook-query [FAILED]
 ================================================================================
 Status:          NO_RESPONSE
 Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Branch:          N/A
 Source Package:  N/A
-Pass Type:       N/A
-Would-Be Route:  Tier 3 (Untagged)
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           You identified 13 typed relationships in your previous response. Review the sources again and identify any significant relationships between concepts that were NOT captured. Consider especially:\n- Relationships involving the Ontology of Being, Corruption Cascade, and identity mechanics\n- Cross-domain relationships (e.g., methodology concepts relating to framework concepts)\n- CAUSES and REQUIRES relationships that describe dependencies or preconditions\n- Any CONTRADICTS relationships beyond the ones already identified\n\nFor each new relationship, provide: Concept A, Relationship Type, Concept B, and Evidence with citation.
 Timestamp:       2026-02-11T12:43:46.000694+00:00
 Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
 Source IDs:      all
 Conversation ID: 5d35fe3b-5770-4c5b-8715-f9dbc4df3898
+Chat Configure:  default
 Response Chars:  0
 Duration:        681000ms
 ================================================================================

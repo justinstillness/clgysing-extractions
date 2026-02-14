@@ -1,0 +1,63 @@
+================================================================================
+EXTRACTION: 2026-02-13_221910_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         029
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What are the latest changes from Session 028? What is the current Wishlist version and maintenance model?
+Timestamp:       2026-02-13T22:19:10.000950+00:00
+Notebook ID:     430df618-e337-4971-abaa-6528e96bb1c4
+Source IDs:      all
+Conversation ID: 6c423a84-4465-4285-9742-719535f99135
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  2908
+Duration:        25999ms
+================================================================================
+
+Based on the **Session 028** records and the **v1.3 Wishlist** documentation, here are the latest changes and the current maintenance protocols.
+
+### Latest Changes (Session 028)
+
+Session 028 (2026-02-13) focused primarily on **Documentation** and **Indexer** updates, specifically correcting a corruption issue with the development wishlist and establishing new architectural workflows [1].
+
+*   **Wishlist Restoration & Upgrade:** The wishlist had been corrupted in Session 027 (compressed to placeholders); it was successfully recovered using `git show` via SSH and rebuilt as **v1.3** [2].
+*   **New Wishlist Items Added:**
+    *   **W-064 (Chronicler Git History Access):** Acknowledged the need for git history tools after the wishlist recovery required manual CLI intervention [2, 3].
+    *   **W-065 (Gemini-NLM Integration Research):** A new research initiative for Cross-AI workflows, housed in a newly created **Section 10** [3].
+    *   **W-066 (Report-Based Extraction Pipeline):** Formalized the concept of using NLM reports for token-efficient data extraction [3, 4].
+*   **Indexer v0.2 Update:** The Indexer File Organization System was updated to v0.2. Key changes included adding a `purpose` field to the query manifest schema, updating the folder structure to reflect a `testing/` directory (clearing `_untagged/`), and refining combined pass classification guidance [5].
+*   **Archive Workflow Defined (D-042):** A formal protocol was established for completed items: they are appended to `WISHLIST-ARCHIVE_Completed-Items.txt` in the repo and deleted from the NLM source to maintain hygiene [6].
+
+### Current Wishlist Status
+
+*   **Current Version:** **v1.3** [2, 7].
+*   **Active Items:** 37 active items across 10 sections [8, 9].
+
+### Maintenance Model (Hybrid Architecture)
+
+Following decision **D-041**, the wishlist is no longer managed as a monolithic text file. It now operates on a **Hybrid NLM/GitHub Model** designed to balance queryability with archival safety [2, 7].
+
+1.  **PRIMARY (Active Management):**
+    *   **Location:** HA Suite Wishlist NLM Notebook (UUID: `8b28...041c`) [2].
+    *   **Format:** Each active wishlist item exists as an individual text source.
+    *   **Function:** This is the interactive layer used for querying and atomic updates [8].
+
+2.  **SECONDARY (Snapshot/Reference):**
+    *   **Location:** `_docs/v1.3_REF_Development-Wishlist.txt` [2, 7].
+    *   **Format:** A single, human-readable text file.
+    *   **Function:** Serves as a periodic snapshot. It is **not** updated on every change, but rather during structural updates or quarterly maintenance (Decision D-043) [6].
+
+3.  **ARCHIVE (Source of Truth):**
+    *   **Location:** `WISHLIST-ARCHIVE_Completed-Items.txt` in the GitHub repository [2].
+    *   **Function:** The permanent record for completed work. The repository remains the ultimate source of truth for completed items [3].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

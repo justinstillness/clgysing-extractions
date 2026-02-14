@@ -1,0 +1,38 @@
+================================================================================
+EXTRACTION: 2026-02-13_202403_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         050
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Show the exact header at the very top of Volume-1_Foundations.txt including all equal sign lines, document code, version, date, status lines. This is the master header that will be kept for the final assembled document.
+Timestamp:       2026-02-13T20:24:03.000685+00:00
+Notebook ID:     4f9034b9-35d5-4e65-b89d-7e3ddd5d6fa2
+Source IDs:      all
+Conversation ID: bd622a03-128e-4621-9da2-0e48d8dbbdd3
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  677
+Duration:        43999ms
+================================================================================
+
+Based on **Volume 6a, Section 17.2 (Glossary)**, here are the existing terms that would alphabetically surround the insertion points for "Loose Ends Assessment" and "Response Index Register":
+
+**1. For "Loose Ends Assessment"**
+This term falls alphabetically between the 'I' and 'N' entries.
+*   **Preceding Term:** `INSIGHT CAPTURE PROTOCOL` [1]
+*   **Following Term:** `NOTEBOOK CONNECTIVITY` [1]
+
+**2. For "Response Index Register"**
+This term falls alphabetically after 'P' and before "Response Indexing" (treating the space in "Index Register" as preceding the 'i' in "Indexing").
+*   **Preceding Term:** `PROJECT GUIDE` [2]
+*   **Following Term:** `RESPONSE INDEXING` [2]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,268 @@
+================================================================================
+EXTRACTION: 2026-02-13_144831_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix D Troubleshooting Guide complete full text
+Timestamp:       2026-02-13T14:48:31.000137+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: d3fca43e-0588-4593-9c09-22162e4a3426
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  9389
+Duration:        177000ms
+================================================================================
+
+Here is the complete full text of **Appendix E: Version History** for GOV-AIPM v1.0.8, incorporating the historical entries from v1.0.7 and the new entry for the v1.0.8 release based on the Session 032 Findings and subsequent drafting sessions.\
+\
+***\
+\
+**APPENDIX E: VERSION HISTORY**\
+\
+This appendix tracks the revision history of the AI Operations Manual and establishes procedures for document versioning and amendments.\
+\
+### E.1 VERSION NUMBERING CONVENTION\
+\
+**VERSION FORMAT:** `[Major].[Minor].[Patch]`\
+\
+**MAJOR VERSION (X.0.0):**\
+*   Significant structural changes\
+*   New sections or parts added\
+*   Fundamental approach changes\
+*   Breaking changes to templates or processes\
+\
+**MINOR VERSION (0.X.0):**\
+*   New content within existing structure\
+*   Template updates\
+*   Process refinements\
+*   Non-breaking additions\
+\
+**PATCH VERSION (0.0.X):**\
+*   Corrections and clarifications\
+*   Typo fixes\
+*   Minor wording improvements\
+*   Cross-reference updates\
+\
+**EXAMPLES:**\
+*   1.0.0 ... Initial release\
+*   1.1.0 ... Added new section on project tracking\
+*   1.1.1 ... Fixed cross-reference errors\
+*   2.0.0 ... Major restructure of Part III\
+\
+### E.2 CHANGE LOG FORMAT\
+\
+Each version entry should include:\
+\
+| Field | Description |\
+| :--- | :--- |\
+| **Version** | Version number |\
+| **Date** | Release date |\
+| **Author** | Who made the changes |\
+| **Type** | Major / Minor / Patch |\
+| **Summary** | Brief description of changes |\
+| **Sections Affected** | List of modified sections |\
+| **Migration Notes** | Any actions needed for users of prior version |\
+\
+### E.3 AMENDMENT PROCEDURES\
+\
+**PROPOSING CHANGES:**\
+1.  Document proposed change with rationale\
+2.  Identify sections affected\
+3.  Assess version impact (major/minor/patch)\
+4.  Draft revised content\
+5.  Review against existing content for consistency\
+\
+**REVIEW PROCESS:**\
+*   **Patch changes:** Self-review, implement directly\
+*   **Minor changes:** Review for unintended impacts, test templates\
+*   **Major changes:** Full review of affected sections, consider user impact\
+\
+**IMPLEMENTATION:**\
+1.  Update affected sections\
+2.  Update all cross-references\
+3.  Update version number in document header\
+4.  Add entry to Version History (this appendix)\
+5.  Update any external references (Project Guides, etc.)\
+\
+**POST-IMPLEMENTATION:**\
+*   Notify stakeholders of changes (if applicable)\
+*   Update NotebookLM/retrieval systems with new version\
+*   Archive prior version (do not delete)\
+\
+### E.4 DOCUMENT REVISION HISTORY\
+\
+***\
+\
+**VERSION:** 1.0.0\
+**DATE:** December 2025\
+**AUTHOR:** [Organization]\
+**TYPE:** Major (Initial Release)\
+\
+**SUMMARY:**\
+Initial release of the AI Operations Manual documenting a comprehensive system for AI-assisted business operations, governance, and project management.\
+\
+**CONTENTS:**\
+*   **Part I: Foundation** (Sections 1-3)\
+*   **Part II: Project & Session Management** (Sections 4-7)\
+*   **Part III: Governance Integration** (Sections 7-8)\
+*   **Part IV: Tools & Formats** (Sections 9-11)\
+*   **Part V: Advanced Patterns** (Sections 12-14)\
+*   **Part VI: Mail & External Communications** (Sections 15-17)\
+*   **Appendices A-H** (Templates, Prompts, Tools, Troubleshooting, Version History, Failure Modes, Taxonomy, Quick Start)\
+\
+**TEMPLATES INCLUDED:**\
+TPL-001 through TPL-009.\
+\
+**MIGRATION NOTES:**\
+Not applicable (initial release).\
+\
+***\
+\
+**VERSION:** 1.0.3\
+**DATE:** December 26, 2025\
+**AUTHOR:** [Organization]\
+**TYPE:** Minor (Content Addition)\
+\
+**SUMMARY:**\
+Addition of Dialog Intake System completing Issue #16 from Phase 6a.\
+\
+**CHANGES:**\
+*   **Section 3 Restructured:** Added Section 3.5 (Dialog Intake System). Renumbered subsequent sections.\
+*   **Appendix Additions:** Added Appendix F (Dialog Intake Failure Mode Catalog).\
+*   **Template Additions:** Added TPL-011 (Dialog Intake Quick Reference).\
+\
+**MIGRATION NOTES:**\
+*   Section 3.5/3.6 references in external documents should be updated.\
+\
+***\
+\
+**VERSION:** 1.0.6\
+**DATE:** December 28, 2025\
+**AUTHOR:** Session 029\
+**TYPE:** Patch (Cross-reference updates)\
+\
+**SUMMARY:**\
+Phase 6b review identified and corrected missing cross-references to newly added content (Backlog Register, Appendix G).\
+\
+**CHANGES:**\
+*   **Section 1.4.4:** Added reference to Appendix G.\
+*   **Section 2.7.2:** Added guidance to capture scope-expanding items.\
+*   **Section 4.3.3:** Added Backlog Register review step.\
+*   **Section 4.3.5.3:** Added Backlog Register review at phase transitions.\
+\
+**MIGRATION NOTES:**\
+*   No breaking changes.\
+\
+***\
+\
+**VERSION:** 1.0.8-DRAFT\
+**DATE:** February 2026\
+**AUTHOR:** Session 048 (Seraph)\
+**TYPE:** Minor (Beta Test Integration)\
+\
+**SUMMARY:**\
+Integration of Phase 6c beta test findings (CLGYSING, AWSNBLM, NLMINTA branches). Formalizes the Phase Protocol, Rooting (Phase 0), Branch Management, and Notebook Connectivity. Enhances session continuity via Response Indexing and Session Fidelity Reports.\
+\
+**CHANGES:**\
+\
+**Structural Changes (Section 5 Renumbering):**\
+*   Section 5 resequenced to accommodate Phase Protocol (5.2) and Findings Reports (5.6).\
+*   Old 5.2 (Decision Logs) ... 5.3\
+*   Old 5.3 (Session Logs) ... 5.4\
+*   Old 5.4 (Bootstrap) ... 5.5\
+*   Old 5.5+ shifted accordingly.\
+\
+**New Sections:**\
+*   **Section 2.1.5:** Ceremony is Continuity (Principle)\
+*   **Section 3.8:** Instruction Chain Interpretation\
+*   **Section 4.4:** Connector Transparency Protocol\
+*   **Section 4.5:** Conflict Resolution Protocol\
+*   **Section 5.2:** Phase Protocol (Governance)\
+*   **Section 5.6:** Findings Reports (Artifact)\
+*   **Section 12.3:** Branch Management\
+*   **Section 12.4:** Three-Tier Documentation Architecture\
+\
+**Major Revisions:**\
+*   **Section 1.4.6 & 2.5.1:** Formalized Rooting as Phase 0.\
+*   **Section 4.3:** Enhanced Session Lifecycle (Alignment Turn, Response Indexing, Headroom Opportunism, 5-Step Closeout).\
+*   **Section 4.3.5:** 8-Step Phase Transition Process.\
+*   **Section 5.9:** Backlog Register enhanced with Insight Capture Protocol.\
+*   **Section 10.3:** Comprehensive Notebook Connectivity and Exhaustive Querying.\
+*   **Section 14:** Extended Failure Modes (Bootstrap verification, Behavioral forgetfulness, etc.).\
+\
+**Templates:**\
+*   **New:** TPL-012 (Alignment Checklist), TPL-013 (Phase Protocol), TPL-014 (Addendum), TPL-015 (Branch Startup), TPL-016 (Awareness Doc), TPL-017 (Findings).\
+*   **Revised (v2.0):** TPL-001 (Rooting), TPL-002 (Mandatory First A< 2026/02/13 14:51:28.000226776  length=2888 from=16885 to=19772
+ction), TPL-003 (5-Step Protocol), TPL-005 (Embedded SFR).\
+\
+**MIGRATION NOTES:**\
+*   **Bootstraps:** Must now include \"Mandatory First Action\" block reviewing Phase Protocol.\
+*   **Naming:** File naming convention updated to `[HANDLE]_...` format.\
+*   **Session Start:** \"Alignment Turn\" is now mandatory for all sessions.\
+*   **Renumbering:** Update internal references to Section 5 subsections.\
+\
+***\
+\
+### E.5 TEMPLATE VERSION TRACKING\
+\
+Templates are versioned independently of the manual.\
+\
+| Template | Current Version | Last Updated | Changes |\
+| :--- | :--- | :--- | :--- |\
+| TPL-001 | **2.0** | Feb 2026 | Reframed for Rooting/Phase 0 |\
+| TPL-002 | **2.0** | Feb 2026 | Added Mandatory First Action, Dynamic/Stable blocks |\
+| TPL-003 | **2.0** | Feb 2026 | Aligned to 5-step closeout protocol |\
+| TPL-004 | 1.0 | Dec 2025 | Initial release |\
+| TPL-005 | **2.0** | Feb 2026 | Added Session Fidelity Report (SFR) |\
+| TPL-006 | 1.0 | Dec 2025 | Initial release |\
+| TPL-007 | 1.0 | Dec 2025 | Initial release |\
+| TPL-008 | 1.0 | Dec 2025 | Initial release |\
+| TPL-009 | 1.0 | Dec 2025 | Initial release |\
+| TPL-010 | 1.0 | Dec 2025 | Initial release |\
+| TPL-011 | 1.0 | Dec 2025 | Initial release |\
+| TPL-012 | **1.0** | Feb 2026 | NEW: Alignment Checklist |\
+| TPL-013 | **1.0** | Feb 2026 | NEW: Phase Protocol Template |\
+| TPL-014 | **1.0** | Feb 2026 | NEW: Phase Protocol Addendum |\
+| TPL-015 | **1.0** | Feb 2026 | NEW: Branch Startup File |\
+| TPL-016 | **1.0** | Feb 2026 | NEW: Cross-Branch Awareness Document |\
+| TPL-017 | **1.0** | Feb 2026 | NEW: Findings Report |\
+| TPL-022 | 1.0 | Dec 2025 | Initial release |\
+| TPL-023 | 1.0 | Dec 2025 | Initial release |\
+\
+### E.6 PROMPT LIBRARY VERSION TRACKING\
+\
+The Golden Prompt Library (Appendix B) is versioned separately.\
+\
+| Library Version | Date | Prompts Added | Prompts Updated |\
+| :--- | :--- | :--- | :--- |\
+| 1.0 | Dec 2025 | ALIGN-001, RECOV-001, QA-001, VERIF-001 | ... |\
+\
+**Note:** v1.0.8 behavioral updates (e.g., CTP narration) are codified as protocols in Sections 4.4 and 4.5 rather than standalone prompts.\
+\
+### E.7 RELATED DOCUMENT VERSIONS\
+\
+The AI Operations Manual may reference or be referenced by other documents. Track key related documents here.\
+\
+| Document | Relationship | Current Version | Compatibility |\
+| :--- | :--- | :--- | :--- |\
+| [Project-specific Project Guides] | References manual | Varies | Verify on use |\
+| [Organization SOP Manual] | Parent governance | Varies | Verify on use |\
+\
+**COMPATIBILITY NOTES:**\
+When the AI Operations Manual is updated:\
+1.  Check Project Guides for outdated references\
+2.  Verify SOP alignment if governance sections changed\
+3.  Update NotebookLM sources\
+4.  Communicate changes to active projects
+
+================================================================================
+END OF EXTRACTION
+================================================================================

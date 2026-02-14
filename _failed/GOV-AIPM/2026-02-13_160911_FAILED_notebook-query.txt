@@ -1,0 +1,33 @@
+================================================================================
+EXTRACTION: 2026-02-13_160911_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 314 chars but answer extraction failed
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         049
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix B Prompt Reference Golden Prompt Library complete full text all prompts all categories
+Timestamp:       2026-02-13T16:09:11.000974+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: N/A
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  0
+Duration:        86999ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "notebook_id": "b89fa74b-4c75-497b-9734-5caaace01c39", "notebook": {"id": "b89fa74b-4c75-497b-9734-5caaace01c39", "title": "J8 SP07 D1 Library Test", "url": "https://notebooklm.google.com/notebook/b89fa74b-4c75-497b-9734-5caaace01c39"}, "message": "Created notebook: J8 SP07 D1 Library Test"}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

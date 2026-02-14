@@ -1,0 +1,44 @@
+================================================================================
+EXTRACTION: 2026-02-13_142150_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix H Quick Start Guide complete full text updated with Rooting Phase 0 from start to end of appendix
+Timestamp:       2026-02-13T14:21:50.000716+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 0d7c0d29-61ad-4443-8f9d-6fa6b2fd1019
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  1199
+Duration:        102999ms
+================================================================================
+
+Based on the sources provided, specifically the v1.0.7 baseline manual and the v1.0.8 drafting documents, here is the status of the version entries in Appendix E:
+
+**There is no v1.0.7 entry in Appendix E.**
+
+In the **GOV-AIPM v1.0.7-DRAFT** manual, Appendix E (Version History) lists the following entries:
+*   **v1.0.0** (Initial Release) [1]
+*   **v1.0.3** (December 26, 2025) - Added Dialog Intake System and Appendix F [2]
+*   **v1.0.6** (December 28, 2025) - Cross-reference audit and corrections [3]
+
+The text immediately following the v1.0.6 entry reads: `[FUTURE ENTRIES WILL BE APPENDED BELOW]` [4].
+
+However, the **v1.0.7 changes** are documented in the **"Revisions Integrated During Assembly"** section at the very end of the manual, rather than in Appendix E itself. These changes (dated December 28, 2025, Session 030) included:
+*   New Section 4.3.5.2.1 (Token Considerations for Phase Transitions)
+*   New Appendix H (Quick Start Guide) [5, 6]
+
+**Drafting Status for v1.0.8:**
+The drafting plan for **v1.0.8** explicitly includes an action to "Appendix E: Version History (add v1.0.8 entry)" [7, 8], but it does not mention retroactively adding a v1.0.7 entry to the appendix table.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

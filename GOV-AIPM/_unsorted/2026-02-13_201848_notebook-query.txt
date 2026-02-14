@@ -1,0 +1,41 @@
+================================================================================
+EXTRACTION: 2026-02-13_201848_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         050
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Which source file contains Section 4 with subsections 4.1 through 4.5 including Connector Transparency Protocol and Conflict Resolution Protocol?
+Timestamp:       2026-02-13T20:18:48.000509+00:00
+Notebook ID:     4f9034b9-35d5-4e65-b89d-7e3ddd5d6fa2
+Source IDs:      all
+Conversation ID: c50c9149-1c90-46de-9d4d-7d9c16887ec9
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  1658
+Duration:        35000ms
+================================================================================
+
+Based on the sources provided, Section 5 (Canonical Project Artifacts) and its subsections 5.1 through 5.10 are contained in **GOV-AIPM_v1_0_8_Volume-3a_Canonical-Artifacts.txt**.
+
+This volume explicitly covers the following structure:
+
+*   **5.1 Project Guide** (Definition, Contents, Maintenance Rules, Template Reference) [1]
+*   **5.2 Phase Protocol** (Definition, Purpose, The Three-Layer Architecture, Relationship to Other Documents, Phase Protocol Lifecycle, The Addendum Pattern, Contents Reference, When to Create vs. Skip, Maintenance Rules, Template Reference) [2]
+*   **5.3 Decision Logs** (Definition, Purpose, Entry Structure, Maintenance Rules) [3]
+*   **5.4 Session Logs** (Definition, Purpose, Entry Structure, Session Fidelity Report, Relationship to Chat Exports, File Structure) [3]
+*   **5.5 Bootstrap Files** (Definition, Purpose, Bootstrap Principles, Bootstrap Types, Bootstrap Structure, The Bootstrap-Phase Protocol Relationship, Bootstrap Discipline) [3, 4]
+*   **5.6 Findings Reports** (Definition, Purpose, Distinction from Other Artifacts, Indexing Convention, Structured Finding Entry, When to Generate Findings Reports, Cumulative Findings Index, File Structure, Template Reference) [4]
+*   **5.7 Supporting Artifacts** [4]
+*   **5.8 Artifact Relationships** [4]
+*   **5.9 Backlog Register** (Definition, The Reporting Triad, Register Sections, Maintenance Pattern, Phase Traceability, Template Reference, Insight Capture Protocol, Backlog Evaluation Sessions) [4, 5]
+*   **5.10 Project Closure Report** (Definition, Purpose, Report Sections, When to Complete, Integration Points, AI Coordinator Role, Template Reference) [5]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

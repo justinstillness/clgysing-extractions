@@ -3,14 +3,18 @@ EXTRACTION: 2026-02-12_171002_FAILED_notebook-query [FAILED]
 ================================================================================
 Status:          NO_RESPONSE
 Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Branch:          N/A
 Source Package:  N/A
-Pass Type:       N/A
-Would-Be Route:  Tier 3 (Untagged)
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           What is the practical workflow for running the threaded saturation loop? How exactly does one use conversation_id to chain queries for thematic extraction? What was the recommended sequence of passes for processing a notebook ... the order in which TM, TX, VX, TS, EV, GD passes should be run? Also, what is the semantic resonance model and how does it affect query design for proprietary concepts?
 Timestamp:       2026-02-12T17:10:02.000430+00:00
 Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
 Source IDs:      all
 Conversation ID: 3490f438-27fc-4592-aba5-8ccfbbc0aabc
+Chat Configure:  default
 Response Chars:  0
 Duration:        323999ms
 ================================================================================

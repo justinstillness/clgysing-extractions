@@ -1,0 +1,235 @@
+================================================================================
+EXTRACTION: 2026-02-13_024035_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix D Troubleshooting Guide complete full text from beginning to end, all problem-solution entries and sections
+Timestamp:       2026-02-13T02:40:35.000357+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      27b5193d-d3e9-4612-825a-ecc01b862d3b
+Conversation ID: e507886c-a58d-4159-8997-daf85e3d3be3
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  8312
+Duration:        154999ms
+================================================================================
+
+Based on the provided source materials, here is the complete text for **Appendix E: Version History** for the GOV-AIPM v1.0.8 manual. This includes the constructed entry for v1.0.8 (derived from the revision plans and drafted volumes) and all prior entries sourced from the v1.0.7 manual.\
+\
+***\
+\
+### APPENDIX E: VERSION HISTORY\
+\
+This appendix tracks the revision history of the AI Operations Manual and establishes procedures for document versioning and amendments.\
+\
+#### E.1 VERSION NUMBERING CONVENTION\
+\
+**VERSION FORMAT:** `[Major].[Minor].[Patch]`\
+\
+**MAJOR VERSION (X.0.0):**\
+- Significant structural changes\
+- New sections or parts added\
+- Fundamental approach changes\
+- Breaking changes to templates or processes\
+\
+**MINOR VERSION (0.X.0):**\
+- New content within existing structure\
+- Template updates\
+- Process refinements\
+- Non-breaking additions\
+\
+**PATCH VERSION (0.0.X):**\
+- Corrections and clarifications\
+- Typo fixes\
+- Minor wording improvements\
+- Cross-reference updates\
+\
+#### E.2 CHANGE LOG FORMAT\
+\
+Each version entry should include:\
+- **Version:** Version number\
+- **Date:** Release date\
+- **Author:** Who made the changes\
+- **Type:** Major / Minor / Patch\
+- **Summary:** Brief description of changes\
+- **Sections Affected:** List of modified sections\
+- **Migration Notes:** Any actions needed for users of prior versions\
+\
+#### E.3 AMENDMENT PROCEDURES\
+\
+**PROPOSING CHANGES:**\
+1. Document proposed change with rationale\
+2. Identify sections affected\
+3. Assess version impact (major/minor/patch)\
+4. Draft revised content\
+5. Review against existing content for consistency\
+\
+**IMPLEMENTATION:**\
+1. Update affected sections\
+2. Update all cross-references\
+3. Update version number in document header\
+4. Add entry to Version History (this appendix)\
+5. Update any external references (Project Guides, etc.)\
+\
+#### E.4 DOCUMENT REVISION HISTORY\
+\
+================================================================================\
+\
+**VERSION:** 1.0.8-DRAFT\
+**DATE:** February 10, 2026\
+**AUTHOR:** Session 032-043 (Phase 6c Integration)\
+**TYPE:** Minor (Feature Release)\
+\
+**SUMMARY:**\
+Comprehensive update integrating field-tested patterns from the CLGYSING, AWSNBLM, and NLMINTA projects. Formalizes the Phase Protocol as a core governance artifact, establishes the Branch Management system, and overhauls the Session Lifecycle with enhanced continuity mechanisms (Response Indexing, Alignment Turns).\
+\
+**CHANGES:**\
+\
+**New Core Concepts:**\
+- **Phase Protocol (Section 5.2):** New canonical artifact for phase-stable behavioral governance.\
+- **Rooting as Phase 0 (Section 2.5.1):** Formalized project initiation phase.\
+- **Branch Management (Section 12.3):** Protocols for managing parallel workstreams.\
+- **Three-Tier Documentation (Section 12.4):** Architecture for managing complex specifications.\
+\
+**Session Architecture (Section 4):**\
+- **Enhanced Lifecycle (4.3):** Added mandatory Alignment Turn (4.3.1.1), Response Indexing System (4.3.1.2), and Headroom Opportunism (4.3.2.1).\
+- **Closeout Protocol (4.3.3):** Revised to user-initiated 5-step sequence.\
+- **Connector Transparency (4.4):** New protocol for narrating tool usage to prevent transcript gaps.\
+- **Conflict Resolution (4.5):** New protocol for handling protocol-vs-objective conflicts.\
+\
+**Artifacts & Tools:**\
+- **Section 5 Renumbering:** Artifacts reorganized to accommodate new types.\
+- **Findings Reports (Section 5.6):** New artifact for structured discovery tracking.\
+- **Notebook Connectivity (Section 10.3):** Major revision defining deep context recovery workflows.\
+\
+**Template Suite Updates:**\
+- **New Templates:** TPL-012 (Alignment Checklist), TPL-013 (Phase Protocol), TPL-014 (PP Addendum), TPL-015 (Branch Startup), TPL-016 (Cross-Branch Awareness), TPL-017 (Findings Report).\
+- **Revised Templates (v2.0):** TPL-001 (Rooting focus), TPL-002 (Stable/Dynamic split), TPL-003 (Loose ends assessment), TPL-005 (Embedded SFR).\
+\
+**MIGRATION NOTES:**\
+- **Project Guides:** Update Section 5 references to match new numbering.\
+- **Bootstraps:** Adopt v2.0 template with \"Mandatory First Action\" block immediately.\
+- **Session naming:** Adopt `[session#] [PROJECT-HANDLE]` convention.\
+\
+================================================================================\
+\
+**VERSION:** 1.0.7\
+**DATE:** December 28, 2025\
+**AUTHOR:** Session 030\
+**TYPE:** Patch (Content Addition)\
+\
+**SUMMARY:**\
+Added token management guidance for phase transitions and a standalone Quick Start Guide for new users.\
+\
+**CHANGES:**\
+- **Section 4.3.5.2.1:** Added \"Token Considerations for Phase Transitions\" covering headroom assessment and segmentation strategies.\
+- **Appendix H:** Added Quick Start Guide with collaborative dialog intake workflow.\
+\
+**MIGRATION NOTES:**\
+- None.\
+\
+================================================================================\
+\
+**VERSION:** 1.0.6\
+**DATE:** December 28, 2025\
+**AUTHOR:** Session 029\
+**TYPE:** Patch (Cross-reference updates)\
+\
+**SUMMARY:**\
+Phase 6b review identified and corrected missing cross-references to newly added content (Backlog Register, Appendix G).\
+\
+**CHANGES:**\
+- **Section 1.4.4:** Added reference to Appendix G: Artifact Taxonomy Reference.\
+- **Section 2.7.2:** Added guidance to capture scope-expanding items in Backlog Register.\
+- **Section 4.3.3:** Added step to review Backlog Register during closeout.\
+- **Section 4.3.5.3:** Added Backlog Register review requirement at phase transitions.\
+\
+**MIGRATION NOTES:**\
+- Enhanced cross-referencing improves document navigability; no breaking changes.\
+\
+================================================================================\
+\
+**VERSION:** 1.0.5\
+**DATE:** December 28, 2025\
+**AUTHOR:** Sessions 028B-028C\
+**TYPE:** Minor (Content Addition)\
+\
+**SUMMARY:**\
+Formalization of project closure and backlog management artifacts.\
+\
+**CHANGES:**\
+- **TPL-022:** Added Project Closure Report template.\
+- **TPL-023:** Added Backlog Register template.\
+- **Appendix G:** Added Artifact Taxonomy Reference.\
+- **Template Index:** Updated to include new templates.\
+\
+================================================================================\
+\
+**VERSION:** 1.0.4\
+**DATE:** December 27, 2025\
+**AUTHOR:** Sessions 027-028A\
+**TYPE:** Minor (Content Addition)\
+\
+**SUMMARY:**\
+Added structural sections for Backlog Register and Project Closure Report within Part II.\
+\
+**CHANGES:**\
+- **Section 5.7:** Added Backlog Register definition and maintenance patterns.\
+- **Section 5.8:** Added Project Closure Report definition and structure.\
+- **Cross-references:** Updated throughout Section 5.\
+\
+================================================================================\
+\
+**VERSION:** 1.0.3\
+**DATE:** December 26, 2025\
+**AUTHOR:** Sessions 015-021\
+**TYPE:** Minor (System Addition)\
+\
+**SUMMARY:**\
+Addition of Dialog Intake System completing Issue #16 from Phase 6a.\
+\
+**CHANGES:**\
+- **Section 3.5:** Added The Dialog Intake System (6 subsections).\
+- **Renumbering:** Old Sections 3.5/3.6 renumbered to 3.6/3.7.\
+- **Appendix F:** Added Dialog Intake Failure Mode Catalog.\
+- **TPL-011:** Added Dialog Intake Quick Reference.\
+\
+**MIGRATION NOTES:**\
+- Section 3.5/3.6 references in external documents should be updated.\
+\
+================================================================================\
+\
+**VERSION:** 1.0.0\
+**DATE:** December 2025\
+**AUTHOR:** [Organization]\
+**TYPE:** Major (Initial Release)\
+\
+**SUMMARY:**\
+Initial release of the AI Operations Manual doc< 2026/02/13 02:43:10.000336773  length=754 from=18300 to=19053
+umenting a comprehensive system for AI-assisted business operations, governance, and project management.\
+\
+**CONTENTS:**\
+- **Part I:** Foundations (Sections 1-3)\
+- **Part II:** Project Management (Sections 4-6)\
+- **Part III:** Governance Integration (Sections 7-8)\
+- **Part IV:** Tools & Formats (Sections 9-11)\
+- **Part V:** Advanced Patterns (Sections 12-14)\
+- **Part VI:** Mail & External Communications (Sections 15-17)\
+- **Appendices:** A through E (Templates, Prompts, Config, Troubleshooting, History)\
+\
+**TEMPLATES INCLUDED:**\
+- TPL-001 through TPL-009.\
+\
+**MIGRATION NOTES:**\
+- Not applicable (initial release). [1] [2] [3] [4]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

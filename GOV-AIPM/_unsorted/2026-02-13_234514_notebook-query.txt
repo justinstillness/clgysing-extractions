@@ -1,0 +1,61 @@
+================================================================================
+EXTRACTION: 2026-02-13_234514_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         051
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           List all template numbers (TPL-001 through the last one) with their names, and all appendix letters (A through H) with their titles.
+Timestamp:       2026-02-13T23:45:14.000288+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 6cfd7bc7-0224-427e-86b2-fff7560c5a6e
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  1537
+Duration:        26000ms
+================================================================================
+
+Based on the sources, here are the template numbers and names, followed by the appendix letters and titles for the GOV-AIPM v1.0.8-DRAFT manual.
+
+### **Templates (Appendix A)**
+The template suite contains 19 templates. There is a numbering gap between TPL-017 and TPL-022.
+
+*   **TPL-001**: Project Initiation Form [1]
+*   **TPL-002**: Bootstrap Template [1]
+*   **TPL-003**: Session Closeout Checklist [1]
+*   **TPL-004**: Decision Log Entry [1]
+*   **TPL-005**: Session Log [1]
+*   **TPL-006**: Weekly Review Agenda [1]
+*   **TPL-007**: Re-Entry Checklist [2]
+*   **TPL-008**: Cross-AI Validation Protocol [2]
+*   **TPL-009**: Failure Recovery Worksheet [2]
+*   **TPL-010**: Project Roadmap [1]
+*   **TPL-011**: Dialog Intake Quick Reference [2]
+*   **TPL-012**: Alignment Checklist [1]
+*   **TPL-013**: Phase Protocol Template [1]
+*   **TPL-014**: Phase Protocol Addendum Template [1]
+*   **TPL-015**: Branch Startup File [2]
+*   **TPL-016**: Cross-Branch Awareness Document [2]
+*   **TPL-017**: Findings Report [1]
+*   **TPL-022**: Project Closure Report [1]
+*   **TPL-023**: Backlog Register [2]
+
+### **Appendices**
+*   **Appendix A**: Template Reference [1]
+*   **Appendix B**: Prompt Reference (Golden Prompt Library) [3, 4]
+*   **Appendix C**: Tool Configuration Guide [3, 4]
+*   **Appendix D**: Troubleshooting Guide [3, 4]
+*   **Appendix E**: Version History [3, 4]
+*   **Appendix F**: Dialog Intake Failure Mode Catalog [3, 4]
+*   **Appendix G**: Artifact Taxonomy Reference [3, 4]
+*   **Appendix H**: Quick Start Guide [3, 4]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

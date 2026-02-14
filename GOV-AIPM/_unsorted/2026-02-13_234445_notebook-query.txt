@@ -1,0 +1,59 @@
+================================================================================
+EXTRACTION: 2026-02-13_234445_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         051
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           What are the six Parts of the manual and which sections belong to each Part? List the Part names and section numbers with titles.
+Timestamp:       2026-02-13T23:44:45.000830+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: bda4bb81-74d4-44a0-942e-fb20914aee8f
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  1149
+Duration:        23999ms
+================================================================================
+
+Based on the **GOV-AIPM v1.0.7-DRAFT** and the **v1.0.8-DRAFT** assembly documents, the manual is organized into six Parts. Here are the Part names and the sections that belong to each:
+
+**Part I: Foundations**
+*   **Section 1:** Purpose & Scope
+*   **Section 2:** Core Philosophy
+*   **Section 3:** The Explicit Alignment Principle
+
+**Part II: Project Management**
+*   **Section 4:** Project Architecture & Token Management
+*   **Section 5:** Canonical Project Artifacts
+*   **Section 6:** External Organization System
+
+**Part III: Governance Integration**
+*   **Section 7:** The Governance Stack
+*   **Section 8:** AI-Assisted Governance Development
+
+**Part IV: Tools & Formats**
+*   **Section 9:** AI Role Separation
+*   **Section 10:** Adjunct Tools
+*   **Section 11:** File Types and Formatting
+
+**Part V: Advanced Patterns**
+*   **Section 12:** Extended Context
+*   **Section 13:** Specialized Use Cases
+*   **Section 14:** Failure Modes
+
+**Part VI: Mail & External Communications**
+*   **Section 15:** Email Integration
+*   **Section 16:** External Communications
+*   **Section 17:** Reference
+
+Sources: [1], [2], [3], [4], [5], [6], [7], [8]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,215 @@
+================================================================================
+EXTRACTION: 2026-02-13_061003_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         027
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What is the exact port number for the File Browser service? What is its Caddy route path? What is the systemd service name? Is there basicauth configured on it? What is the directory path on EC2 where the File Browser code lives?
+Timestamp:       2026-02-13T06:10:03.000145+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: 43220286-6e1d-4553-9eb5-5c8f6c657553
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  15208
+Duration:        126000ms
+================================================================================
+
+```json\
+{\
+  \"pass_type\": \"TX\",\
+  \"source_notebook\": \"SP03 Repositories\",\
+  \"entries\": [\
+    {\
+      \"title\": \"Failure to Meet Stated Publishing Commitments\",\
+      \"original_quote\": \"Let me start with what needs to be said plainly: I made promises about the Agenda 47 Explained series that I didn...t keep. A year ago, I committed to delivering the fuller series in a timely way, and that simply didn...t happen. The reasons are real...the birth of my son in March 2025, the demands of supporting my family, the necessity of work outside this project...but reasons aren...t excuses, and I take full responsibility for not meeting the expectations I set.\",\
+      \"compressed_notation\": \"Author admits failure to keep promises re: [Agenda 47 Explained] series delivery; cites real reasons (son's birth, family support, outside work) but rejects them as excuses; takes [full responsibility] for missed expectations.\",\
+      \"context_synthesis\": \"This meta-concept establishes the author's accountability and sets the trust-repair framing for the entire update artifact. It distinguishes between valid life reasons and the moral obligation of keeping one's word.\",\
+      \"related_concepts\": [\
+        \"Delay as Productive Research\",\
+        \"Third-Generation Research System\"\
+      ],\
+      \"category\": \"methodology\"\
+    },\
+    {\
+      \"title\": \"Delay as Productive Research\",\
+      \"original_quote\": \"At the same time, I want you to know that the delay hasn...t been wasted time. While I wasn...t publishing, I was continuing my research and greatly expanding and refining the models that undergird both Agenda 47 Explained and Cultology. What you...ll eventually receive will be substantially richer, deeper, and more comprehensive because of this work.\",\
+      \"compressed_notation\": \"Delay reframed as non-wasted time; continued research + expansion/refinement of [Cultology]/[Agenda 47] models; future output to be substantially richer/deeper/more comprehensive.\",\
+      \"context_synthesis\": \"Reframes the operational failure (delay) as a qualitative investment in the intellectual product. Posits a tradeoff between speed and depth.\",\
+      \"related_concepts\": [\
+        \"Failure to Meet Stated Publishing Commitments\",\
+        \"Omniological Approach\"\
+      ],\
+      \"category\": \"methodology\"\
+    },\
+    {\
+      \"title\": \"Third-Generation Research System\",\
+      \"original_quote\": \"Over the past three months, I...ve been developing and testing what is now the third generation of my research organization and content production system. [...] this latest version has finally solved several major structural problems: Managing massive data libraries [...] Allowing AI assistance without surrendering accuracy or losing my voice [...] Preserving conceptual depth while dramatically improving accessibility [...] Creating workflows that can produce consistent output...\",\
+      \"compressed_notation\": \"[Third-generation system]: solves structural problems of managing massive [data libraries], allowing [AI assistance] without losing voice/accuracy, preserving [conceptual depth] w/ accessibility, and enabling consistent output workflows.\",\
+      \"context_synthesis\": \"The operational solution to the 'Translation Bottleneck'. Describes a specific infrastructure built to operationalize the Omniological Approach at scale.\",\
+      \"related_concepts\": [\
+        \"AI as Force Multiplier\",\
+        \"Translation Bottleneck\"\
+      ],\
+      \"category\": \"methodology\"\
+    },\
+    {\
+      \"title\": \"AI as Force Multiplier\",\
+      \"original_quote\": \"The goal isn't to automate content creation...it's to leverage AI as a force multiplier while maintaining human involvement, oversight, verification, and the irreplaceable elements of voice and judgment that can't be delegated to algorithms.\",\
+      \"compressed_notation\": \"Goal: leverage [AI] as [force multiplier] vs automation; maintain human involvement/oversight/verification + irreplaceable elements of [voice and judgment].\",\
+      \"context_synthesis\": \"Defines the author's specific philosophy of technology use: AI amplifies human capability but does not replace epistemic authority or stylistic authenticity.\",\
+      \"related_concepts\": [\
+        \"Third-Generation Research System\",\
+        \"Intrinsic Knowledge\"\
+      ],\
+      \"category\": \"methodology\"\
+    },\
+    {\
+      \"title\": \"Translation Bottleneck\",\
+      \"original_quote\": \"The benefit of this methodology is that it produces extremely robust frameworks with the capacity to model and explain almost anything. The downside is that it takes substantial time, and translating that depth into accessible, readable content has always been the bottleneck.\",\
+      \"compressed_notation\": \"Benefit of methodology: [robust frameworks]; Downside: substantial time + [translation bottleneck] (converting depth into accessible/readable content).\",\
+      \"context_synthesis\": \"Identifies the core constraint in the author's previous workflow that necessitated the new system.\",\
+      \"related_concepts\": [\
+        \"Omniological Approach\",\
+        \"Pedagogical Spiral Staircase\"\
+      ],\
+      \"category\": \"methodology\"\
+    },\
+    {\
+      \"title\": \"Semantic Rehabilitation\",\
+      \"original_quote\": \"the term ...cult... is retained as a highly recognizable memetic handle, but it is immediately redefined via semantic rehabilitation to function as a precise investigative lens for social pathology rather than a pejorative label.\",\
+      \"compressed_notation\": \"Retain 'cult' as [memetic handle]; immediately redefine via [semantic rehabilitation] to function as [precise investigative lens] for [social pathology] vs pejorative label.\",\
+      \"context_synthesis\": \"A linguistic strategy to repurpose loaded language for analytical precision. Essential for the 'Cultology' project's academic validity.\",\
+      \"related_concepts\": [\
+        \"Cultology\",\
+        \"The Parasitic Modality\"\
+      ],\
+      \"category\": \"strategy\"\
+    },\
+    {\
+      \"title\": \"West Virginia Coal Miners (Historical Illustration)\",\
+      \"original_quote\": \"In the late 19th and early 20th centuries, for instance, the coal miners of West Virginia lived in decentralized independent communities where barter, trade, and freedom from centralized government were the norm. Within a generation, wealthy industrialists had invaded and conquered these peaceful communities, and today their descendants have almost entirely forgotten their once-idyllic lives, believing instead that modern industrial dependency represents progress.\",\
+      \"compressed_notation\": \"Historical illustration: [West Virginia coal miners] (late 19th/early 20th C) lived in [decentralized independent communities] (barter/trade/freedom); conquered by [industrialists] within one generation; descendants forgot freedom, viewing [industrial dependency] as progress.\",\
+      \"context_synthesis\": \"Specific historical case study used to illustrate the 'Generational Amnesia' and 'Technocratic Plantation' concepts.\",\
+      \"related_concepts\": [\
+        \"Free-range Plantation\",\
+        \"Technocratic Plantation\"\
+      ],\
+      \"category\": \"sociology\"\
+    },\
+    {\
+      \"title\": \"The Birthright of Knowledge\",\
+      \"original_quote\": \"We have been robbed of our birthright...the very knowledge and wisdom our forefathers gave their lives to discover and safeguard, the wisdom God poured out in the form of truth for all who will claim it as their own.\",\
+      \"compressed_notation\": \"Humanity robbed of [birthright]: [knowledge] and [wisdom] forefathers safeguarded + wisdom [God] poured out as [truth] for all to claim.\",\
+      \"context_synthesis\": \"Frames the loss of truth/freedom not just as a political grievance but as a spiritual and ancestral theft. Connects the project to a restorationist theology.\",\
+      \"related_concepts\": [\
+        \"Omniology\",\
+        \"Eternal Vigilan< 2026/02/13 06:12:09.000382765  length=7125 from=49299 to=56423
+ce\"\
+      ],\
+      \"category\": \"theology\"\
+    },\
+    {\
+      \"title\": \"Intellectual Honesty (Methodology)\",\
+      \"original_quote\": \"I maintain intellectual honesty throughout this exploration. [...] It...s entirely possible that Trump represents a competing parasitic group rather than a symbiotic one. However, there are good reasons to believe he might not be, and the series explores that possibility most thoroughly while remaining intellectually honest about the uncertainty.\",\
+      \"compressed_notation\": \"Maintain [intellectual honesty]: acknowledge possibility Trump represents competing [parasitic group] vs symbiotic; explore symbiotic hypothesis thoroughly while admitting [uncertainty].\",\
+      \"context_synthesis\": \"A crucial epistemic hedge for the 'Agenda 47 Explained' series, distinguishing it from partisan propaganda by explicitly acknowledging the 'competing parasite' hypothesis.\",\
+      \"related_concepts\": [\
+        \"Agenda 47 Explained\",\
+        \"Symbiotic Transformation Hypothesis\"\
+      ],\
+      \"category\": \"epistemology\"\
+    },\
+    {\
+      \"title\": \"Pedagogical Spiral Staircase\",\
+      \"original_quote\": \"The pedagogical spiral staircase approach I use allows me to introduce concepts accessibly and then deepen them recursively (layer after layer), so that readers at different levels of familiarity can all find value.\",\
+      \"compressed_notation\": \"[Pedagogical spiral staircase]: introduce concepts accessibly -> deepen [recursively] (layer after layer); ensures value for readers at different familiarity levels.\",\
+      \"context_synthesis\": \"The specific teaching method enabling the 'dual standard' of high sophistication and high accessibility.\",\
+      \"related_concepts\": [\
+        \"Translation Bottleneck\",\
+        \"Third-Generation Research System\"\
+      ],\
+      \"category\": \"methodology\"\
+    },\
+    {\
+      \"title\": \"The Four Intimacies\",\
+      \"original_quote\": \"The Four Intimacies define the total field of human interaction and value exchange: Physical, Emotional, Intellectual, and Spiritual. Intellectual intimacy is the keystone and immune system for the others.\",\
+      \"compressed_notation\": \"[Four Intimacies]: Physical, Emotional, Intellectual, Spiritual; define total field of [human interaction]/[value exchange]. [Intellectual intimacy] = [keystone]/[immune system].\",\
+      \"context_synthesis\": \"A structural model within Cultology identifying the domains of human connection. The priority of 'Intellectual Intimacy' as an immune system is key to the author's focus on truth.\",\
+      \"related_concepts\": [\
+        \"Cultology\",\
+        \"Parasitic Systems\"\
+      ],\
+      \"category\": \"psychology\"\
+    },\
+    {\
+      \"title\": \"Ontology of Being\",\
+      \"original_quote\": \"Ontology of Being describes the structure of being from Personality ... Soul ... Mind ... Emotion ... Physical Expression. Cults execute what I call a corruption cascade, hijacking the core personality spark and inverting the entire value system.\",\
+      \"compressed_notation\": \"[Ontology of Being]: structure = Personality -> Soul -> Mind -> Emotion -> Physical Expression. Cults execute [corruption cascade]: hijack [core personality spark] -> invert value system.\",\
+      \"context_synthesis\": \"A metaphysical model describing the human person's structure, used to map how 'corruption cascades' function.\",\
+      \"related_concepts\": [\
+        \"Corruption Cascade\",\
+        \"Parasitic Systems\"\
+      ],\
+      \"category\": \"ontology\"\
+    },\
+    {\
+      \"title\": \"Contractual Formalism\",\
+      \"original_quote\": \"Contractual Formalism recognizes that all relationships are energetic, epistemic, and moral contracts. Symbiotic systems rely on honorable contracts that are mutual, transparent, and revocable, while cults use counterfeit contracts that hollow out genuine consent.\",\
+      \"compressed_notation\": \"[Contractual Formalism]: relationships as energetic/epistemic/moral [contracts]. Symbiotic = [honorable contracts] (mutual/transparent/revocable). Cults = [counterfeit contracts] (hollow out [genuine consent]).\",\
+      \"context_synthesis\": \"A legalistic/moral framework for evaluating the legitimacy of relationships. Distinguishes 'cults' not by belief content but by contract structure (revocability/transparency).\",\
+      \"related_concepts\": [\
+        \"Symbiotic System\",\
+        \"Parasitic Systems\"\
+      ],\
+      \"category\": \"ethics\"\
+    },\
+    {\
+      \"title\": \"The Trojan Horse Model (Modern Conveniences)\",\
+      \"original_quote\": \"These benefits act as the shell of a Trojan horse, concealing the much more toxic and freedom-destroying payload of the parasitic vision. While we enjoy modern amenities, we become reliant on hidden hands who supply them...\",\
+      \"compressed_notation\": \"Modern amenities/benefits = shell of [Trojan horse]; conceal toxic/freedom-destroying payload of [parasitic vision]; create reliance on [hidden hands].\",\
+      \"context_synthesis\": \"Metaphor explaining why populations accept parasitic systems: the trade-off of convenience for control.\",\
+      \"related_concepts\": [\
+        \"Technocratic Plantation\",\
+        \"Parasitic Systems\"\
+      ],\
+      \"category\": \"sociology\"\
+    },\
+    {\
+      \"title\": \"Agenda 47 Explained (Project)\",\
+      \"original_quote\": \"Agenda 47 Explained sits on top of the Cultology framework and is designed to look at much of the same foundational research, but through a different lens: the hypothesis that Donald Trump might represent...though we cannot know for certain...the public face of an elite group attempting to transform society from parasitic to symbiotic.\",\
+      \"compressed_notation\": \"[Agenda 47 Explained]: sits atop [Cultology] framework; tests hypothesis that [Donald Trump] = public face of [elite group] attempting [parasitic] -> [symbiotic] transformation.\",\
+      \"context_synthesis\": \"Application of the theoretical framework to current events. Explicitly framed as hypothesis-testing rather than advocacy.\",\
+      \"related_concepts\": [\
+        \"Cultology\",\
+        \"Symbiotic Transformation Hypothesis\"\
+      ],\
+      \"category\": \"strategy\"\
+    }\
+  ],\
+  \"metadata\": {\
+    \"total_entries\": 15,\
+    \"categories_used\": [\
+      \"methodology\",\
+      \"strategy\",\
+      \"sociology\",\
+      \"theology\",\
+      \"epistemology\",\
+      \"psychology\",\
+      \"ontology\",\
+      \"ethics\"\
+    ],\
+    \"extraction_notes\": \"This pass focused on consolidating distinct concepts from the provided extraction reports (Gemini, Grok, GPT, Claude). It prioritized unique meta-concepts regarding the project's delays and methodology (Source 3/4) and specific theoretical models (Sources 1/2) that define the system's architecture. Duplicates across sources were merged into single robust entries.\"\
+  }\
+}\
+```
+
+================================================================================
+END OF EXTRACTION
+================================================================================

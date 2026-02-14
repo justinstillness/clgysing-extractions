@@ -1,0 +1,60 @@
+================================================================================
+EXTRACTION: 2026-02-13_152220_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         028
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What is the current state of all living documents in the HA Suite? List each document, its version, and whether it needs any updates or restoration.
+Timestamp:       2026-02-13T15:22:20.000941+00:00
+Notebook ID:     430df618-e337-4971-abaa-6528e96bb1c4
+Source IDs:      all
+Conversation ID: 36683484-80ff-43e8-a8ad-6a3515eca5f9
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  4726
+Duration:        372999ms
+================================================================================
+
+Based on the results from Session 019, here are the key findings from tests J6 and J7, including the validated pipeline, Pathway C details, and implications for the J8 capstone design.\
+\
+### **Key Findings from J6: Explicit Exclusion Testing**\
+Test J6 definitively validated that explicit exclusion lists act as hard constraints, whereas generic instructions act only as soft suggestions.\
+*   **Generic vs. Explicit:** When given a generic instruction to \"avoid repeating previously extracted concepts\" (Run 3), NotebookLM (NLM) produced results with a **~53% overlap** (8 direct repeats) [1]. Conversely, when provided with an explicit list of concept titles to exclude (Run 2), NLM produced **0% overlap** [1].\
+*   **Forced Novelty:** The explicit exclusion method forced NLM to dig deeper into the source material, surfacing 8 genuinely new concepts (e.g., \"Generational Amnesia,\" \"Elite Group Competition\") that were missed in the baseline run [2].\
+*   **Methodology Validation:** This confirms that the optimal gap-fill methodology requires an agent to compile title lists from prior passes and feed them back as hard constraints, converting a memory task into a comparison task for the AI [3], [4].\
+\
+### **Key Findings from J7: Report Tool Testing**\
+Test J7 demonstrated that the `studio_create` report tool is a superior engine for bulk extraction compared to standard chat queries.\
+*   **Yield & Efficiency:** The \"Create Your Own\" report format produced approximately **72 discrete concepts** in a single pass, compared to ~23 concepts via standard query extraction...a **3x yield increase** [5].\
+*   **Anti-Consolidation Prompting:** To counter NLM's natural tendency to synthesize and merge related ideas, the test used a custom prompt specifically requesting **\"atomic decomposition.\"** This successfully forced NLM to break down composite concepts (e.g., splitting \"Structure of Being\" into separate entries for Personality Spark, Soul, Mind, and Emotion) rather than lumping them together [6].\
+*   **Format:** Unlike the JSON output from queries, reports generate structured Markdown (prose). While this requires different parsing, it ensures full category coverage (hitting all 10 domains) [6].\
+\
+### **Pathway C: The \"Self-Correcting\" Methodology**\
+Pathway C was established as a high-efficiency protocol for verifying extraction completeness and reducing token overhead. It functions as a self-correcting loop:\
+1.  **Generate & Export:** Create a full extraction report using `studio_create` and export it to Google Docs via `export_artifact` [7].\
+2.  **Ingest as Source:** Add the exported Google Doc back into the notebook as a new source using `source_add` [7].\
+3.  **Gap Detection Query:** Query the notebook to compare the **Report Source** against the **Original Sources**. NLM audits its own work, identifying concepts present in the originals but missing or consolidated in the report [8].\
+4.  **Token Savings:** This method allows Claude to query specific sections of the report-as-source (consuming ~500 words of context) rather than loading the full 5,000+ word report into context [9].\
+\
+### **Validated D1 Extraction Pipeline Stages**\
+Ba< 2026/02/13 15:28:33.000899104  length=1568 from=8693 to=10260
+sed on J6 and J7, the recommended D1 (Degree 1) extraction pipeline for production is:\
+1.  **Stage 1 (Bulk Capture):** Use `studio_create` (Pathway C) with anti-consolidation prompts to generate a massive initial inventory [10], [11].\
+2.  **Stage 2 (Audit):** Add the report as a source and run **Non-Explicit Gap Detection** (Pathway C) to have NLM identify what it missed [12].\
+3.  **Stage 3 (Targeted Fill):** Use `notebook_query` with **Explicit Exclusion** lists (J6 methodology) to surgically extract the specific gaps identified in Stage 2 [12], [10].\
+\
+### **Caveats & Limitations for J8 Capstone Design**\
+*   **Artifact Limits:** Notebooks appear to have a limit of **20 artifacts** (reports, audio, etc.). J8 must account for cleanup or multiple notebooks if the artifact count exceeds this ceiling [13].\
+*   **Character Limits:** Custom prompts have a limit (nominally 5,000 characters in UI, potentially higher via API). Extremely long explicit exclusion lists (e.g., 70+ titles) could hit this limit, requiring batching [14].\
+*   **Download Failure:** The `download_artifact` tool is confirmed broken in the current environment. The workflow must rely on `export_artifact` to Google Docs as the bridge for retrieving report content [15], [14].\
+*   **Consolidation Bias:** Even with anti-consolidation prompts, reports still show some bias toward merging. Pathway C's gap detection is a mandatory quality control step, not optional [8], [16].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

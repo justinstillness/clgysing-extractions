@@ -1,0 +1,50 @@
+================================================================================
+EXTRACTION: 2026-02-13_202153_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         050
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Confirm the three Volume 6c segment files: which appendices does each segment contain? Seg1 should have Appendix B, Seg2 should have Appendices C D F, Seg3 should have Appendices E G H.
+Timestamp:       2026-02-13T20:21:53.000637+00:00
+Notebook ID:     4f9034b9-35d5-4e65-b89d-7e3ddd5d6fa2
+Source IDs:      all
+Conversation ID: d58117da-5ee2-4085-ad15-b55dc3a4f6a9
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  590
+Duration:        140999ms
+================================================================================
+
+Here is the exact header from the top of **Volume-1_Foundations.txt** [1]:
+
+```text
+================================================================================
+
+================================================================================
+
+AI OPERATIONS MANUAL
+
+A Practical System for AI-Assisted Business Operations
+
+================================================================================
+
+================================================================================
+
+Document Code: GOV-AIPM
+
+Version: 1.0.8-DRAFT
+
+Date: February 2026
+
+Status: Phase 6c Integration
+```
+
+================================================================================
+END OF EXTRACTION
+================================================================================

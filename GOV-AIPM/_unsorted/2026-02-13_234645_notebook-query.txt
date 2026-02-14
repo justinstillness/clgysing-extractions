@@ -1,0 +1,85 @@
+================================================================================
+EXTRACTION: 2026-02-13_234645_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         051
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           What are the canonical project artifacts and how do they relate to each other? Describe the relationships between bootstrap, session log, decision log, findings report, project guide, phase protocol, and other key artifacts from Section 5.
+Timestamp:       2026-02-13T23:46:45.000709+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 1482ee64-5941-41a0-8b78-19182c19b540
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  5081
+Duration:        38000ms
+================================================================================
+
+Based on the **GOV-AIPM v1.0.8-DRAFT** manual and associated drafting documents, the **Canonical Project Artifacts** (Section 5) form the \"external memory\" system that enables AI projects to maintain continuity, coherence, and integrity across multiple sessions.\
+\
+These artifacts are designed to overcome the \"amnesia\" of AI sessions by externalizing state, logic, and governance. They function as a coherent ecosystem where **\"Ceremony is Continuity\"** [1, 2].\
+\
+### **1. The Document Stability Spectrum**\
+The relationship between the three primary continuity documents is defined by their stability and scope [3-6]. They form a hierarchy from strategic to tactical:\
+\
+*   **Project Guide (Section 5.1):** *Project-Stable*. Defines **WHAT** the project is (scope, objectives, deliverables). Changes rarely.\
+*   **Phase Protocol (Section 5.2):** *Phase-Stable*. Defines **HOW** work should be conducted (behavioral governance, methodology). Changes only at phase transitions.\
+*   **Bootstrap (Section 5.5):** *Session-Specific*. Defines **WHERE** the project is right now (current state, next actions). Changes every session.\
+\
+### **2. Key Artifact Definitions & Relationships**\
+\
+#### **Project Guide (5.1)**\
+The authoritative definition of the project's identity.\
+*   **Function:** Strategic authority. It defines the \"North Star\" for all work.\
+*   **Relationship:** It informs the **Phase Protocol** (which extracts phase-specific context from it) and is referenced during **Phase Transitions** to verify strategic alignment [7, 8].\
+\
+#### **Phase Protocol (5.2)**\
+The \"behavioral constitution\" for a specific phase [9].\
+*   **Function:** Tells the AI how to behave (e.g., \"Use 100% fidelity extraction,\" \"Stop and verify before drafting\"). It contains three layers: **AIPM Behaviors**, **Methodology**, and **Project Context** [10].\
+*   **Relationship:**\
+    *   **To Project Guide:** Draws its scope boundaries from the Project Guide.\
+    *   **To Bootstrap:** The Bootstrap acts as a \"prompt list\" that explicitly instructs the AI to read the Phase Protocol at the start of every session [6]. They are \"cousins\": the Bootstrap provides the *context*, and the Phase Protocol provides the *governance* [11].\
+\
+#### **Bootstrap File (5.5)**\
+The tactical handoff packet [12].\
+*   **Function:** Solves the \"blank slate\" problem at session start. It contains **dynamic state** (what happened last session, what to do next) and **stable instructions** (pointers to the Phase Protocol and notebooks) [13].\
+*   **Relationship:** Generated at the end of a session (from the **Session Log** context) and uploaded at the start of the next. It triggers the **Alignment Turn**, where the AI confirms it understands the scope before working [14].\
+\
+#### **Session Log (< 2026/02/13 23:47:23.000999785  length=2319 from=8513 to=10831
+5.4)**\
+The chronological record of *what happened* [15].\
+*   **Function:** Records activities, outputs, and issues. Crucially, it now includes an embedded **Session Fidelity Report (SFR)**, which assesses *how well* the session went (objective achievement, gaps, handoff readiness) [16, 17].\
+*   **Relationship:**\
+    *   **To Bootstrap:** The SFR section of the log directly feeds the content of the next session's Bootstrap.\
+    *   **To Transcript:** It contains the **Response Index Register** [18], allowing users to locate specific content in the raw transcript.\
+\
+#### **Decision Log (5.3)**\
+The chronological record of *choices made* [15].\
+*   **Function:** Captures decisions with rationale (\"Why did we choose X over Y?\"). Distinct from the Session Log, which captures activity.\
+*   **Relationship:** Prevents decision churn (re-litigating settled issues). High-impact decisions recorded here may trigger updates to the **Project Guide** [8].\
+\
+#### **Findings Report (5.6)**\
+The record of *empirical discoveries* [19].\
+*   **Function:** A synthesis document organized by **topic** (not chronology). Used during research or exploration phases to capture observations, evidence, and implications (indexed as **F-##**).\
+*   **Relationship:** Findings provide the *evidence* that informs the *choices* recorded in the **Decision Log** [15].\
+\
+### **3. Other Key Artifacts**\
+\
+*   **Backlog Register (5.9):** Captures out-of-scope ideas and deferred tasks. It integrates with the **Insight Capture Protocol**...when scope drift is detected, the item is routed here rather than distracting the current session [20, 21].\
+*   **Project Closure Report (5.10):** The final synthesis document that validates success criteria, captures lessons learned, and formally closes the project [22].\
+\
+### **Summary of Data Flow**\
+1.  **Rooting (Phase 0)** creates the **Project Guide** and **Phase Protocol**.\
+2.  **Active Work** generates **Findings** (discoveries) and **Decisions** (choices).\
+3.  **Session Closeout** produces a **Session Log** (record) and a **Bootstrap** (handoff).\
+4.  **Next Session Start** uses the **Bootstrap** to load context and the **Phase Protocol** to load behaviors.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

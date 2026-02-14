@@ -1,0 +1,55 @@
+================================================================================
+EXTRACTION: 2026-02-13_202125_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         050
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Which source file contains the remaining templates (Appendix A part 2, specialized and advanced templates TPL-007 through TPL-016)? Confirm file name and which templates are included.
+Timestamp:       2026-02-13T20:21:25.000286+00:00
+Notebook ID:     4f9034b9-35d5-4e65-b89d-7e3ddd5d6fa2
+Source IDs:      all
+Conversation ID: 1308911d-d563-47f8-8766-8ceed29ecab2
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  1919
+Duration:        52000ms
+================================================================================
+
+Based on the source text provided for Volume 6c, I can confirm that your hypothesis regarding the segmentation is correct.
+
+Here is the breakdown of the three Volume 6c segment files and their contents:
+
+**Segment 1 (Seg1)**
+*   **File:** `GOV-AIPM_v1_0_8_Volume-6c-Seg1_Appendix-B.txt`
+*   **Contents:** **Appendix B**
+    *   **Appendix B: Prompt Reference** (Golden Prompt Library including ALIGN-001, RECOV-001, QA-001, VERIF-001) [1], [2].
+*   **Boundary:** Ends with "END OF VOLUME 6c -- SEGMENT 1 of 3" [3].
+
+**Segment 2 (Seg2)**
+*   **File:** `GOV-AIPM_v1_0_8_Volume-6c-Seg2_Appendices-CDF.txt`
+*   **Contents:** **Appendices C, D, and F**
+    *   **Appendix C: Tool Configuration Guide** (Primary AI, Retrieval Tools, Chat Export, File Organization, etc.) [4].
+    *   **Appendix D: Troubleshooting Guide** (Session Management, Alignment Issues, Output Quality, etc.) [5].
+    *   **Appendix F: Dialog Intake Failure Mode Catalog** (Entry Point Failures, Artifact Creation Failures, etc.) [6].
+*   **Boundary:** Ends with "END OF VOLUME 6c -- SEGMENT 2 of 3" [7].
+
+**Segment 3 (Seg3)**
+*   **File:** `GOV-AIPM_v1_0_8_Volume-6c-Seg3_Appendices-EGH.txt`
+*   **Contents:** **Appendices E, G, and H**
+    *   **Appendix E: Version History** (Version Numbering, Change Log, Template Version Tracking) [8].
+    *   **Appendix G: Artifact Taxonomy Reference** (Universal Project Functions, Artifact-to-Function Mapping) [9].
+    *   **Appendix H: Quick Start Guide** (Readiness Check, Rooting Steps) [10].
+*   **Boundary:** Ends with "END OF VOLUME 6c -- SEGMENT 3 of 3" followed by "END OF VOLUME 6c" and "END OF GOV-AIPM v1.0.8-DRAFT" [11], [12].
+
+**Assembly Note:**
+To form the complete Volume 6c, you must concatenate these three segments in numerical order (Seg1 + Seg2 + Seg3) [1]. Volume 6 as a whole consists of Volume 6a (Templates Part 1), Volume 6b (Templates Part 2), and Volume 6c (Appendices) [13], [1].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

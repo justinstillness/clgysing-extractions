@@ -1,13 +1,14 @@
 ================================================================================
 EXTRACTION: 2026-02-09_213028_clgysing_SP03_TM-01_notebook-query
 ================================================================================
+Branch:          N/A
 Source Package:  SP03
 Pass Type:       TM (Theme Mapping)
 Pass Number:     01
 Theme/Focus:     N/A
 Project:         clgysing
 Session:         014
-Routing:         Tier 1 (Tagged + Known)
+Routing:         Tier 1c (clgysing/TM)
 Query:           What are the major conceptual themes across all sources in this notebook?
 Timestamp:       2026-02-09T21:30:28.000752+00:00
 Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9

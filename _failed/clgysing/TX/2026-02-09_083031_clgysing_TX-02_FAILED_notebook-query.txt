@@ -3,18 +3,22 @@ EXTRACTION: 2026-02-09_083031_clgysing_TX-02_FAILED_notebook-query [FAILED]
 ================================================================================
 Status:          NO_RESPONSE
 Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Branch:          N/A
 Source Package:  N/A
 Pass Type:       TX (Thematic Extraction)
 Pass Number:     02
 Theme/Focus:     parasitic-vs-symbiotic-framework
 Project:         clgysing
 Session:         013
-Would-Be Route:  Tier 1 (Tagged + Known)
+Routing:         Tier 1c (clgysing/TX)
 Query:           \n\nExtract all discrete concepts from the theme of 'The Symbiotic vs. Parasitic Civilizational Framework' as structured concept packets. For each concept, provide: a descriptive title, a detailed definition, direct quotes from the source material demonstrating the concept, which sources contribute to this concept, relationships to other concepts, and any observable evolution of the concept across different sources (earlier vs. later formulations).
 Timestamp:       2026-02-09T08:30:31.000694+00:00
 Notebook ID:     05dbf2cc-4060-42d0-97f1-65d38ea90204
 Source IDs:      all
 Conversation ID: N/A
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
 Response Chars:  0
 Duration:        190999ms
 ================================================================================

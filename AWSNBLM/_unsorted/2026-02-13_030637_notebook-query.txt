@@ -1,0 +1,72 @@
+================================================================================
+EXTRACTION: 2026-02-13_030637_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         027
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What is the current state of the Architecture Reference? List the version, last verified date, EC2 instance type, Majeston version, port map entries, known issues, and sessions covered. Also list any items mentioned in the CHANGELOG or Wishlist that would affect the Architecture Reference.
+Timestamp:       2026-02-13T03:06:37.000259+00:00
+Notebook ID:     430df618-e337-4971-abaa-6528e96bb1c4
+Source IDs:      all
+Conversation ID: 11f57208-c635-4843-a74a-276f218df459
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  2972
+Duration:        31999ms
+================================================================================
+
+Based on the sources provided, here is the current state of the **Architecture Reference** (v4.0) and the items from the Changelog and Wishlist that require updates to the documentation.
+
+### **Current State: HA Suite Architecture Reference**
+
+*   **Version:** v4.0 [1]
+*   **Last Verified Date:** 2026-02-09 (Session 020) [2]
+*   **Sessions Covered:** 001...021 (Cumulative) [1]
+*   **EC2 Instance Type:** `t3.micro` (1 vCPU, 1 GB RAM) [3]
+*   **Majeston Version:** `jacob-bd notebooklm-mcp-cli` v0.2.15 [4]
+*   **Port Map Entries:**
+    *   **443:** Caddy (HTTPS, External) [5]
+    *   **80:** Caddy (HTTP, Redirects) [5]
+    *   **8000:** socat wrapper (Internal, SeraphRecorder capture) [5]
+    *   **8001:** Caliper (Internal, Document Analysis) [5]
+    *   **8002:** Chronicler (Internal, GitHub Repo Tool) [5]
+    *   **8100:** Majeston (Internal, NotebookLM MCP behind socat) [5]
+*   **Known Issues (listed in v4.0):**
+    *   GitHub PAT rotation deferred [6].
+    *   `push-to-github.sh` JSONL archival not implemented (Decision D-019) [6].
+    *   `health-check.sh` needs Caliper and Chronicler checks [6].
+    *   Chronicler tools may not appear in Claude UI auto-discovery [6].
+    *   FastMCP 3.0 compatibility [6].
+    *   `concept-counter.json` holds test data and needs a reset [7].
+
+---
+
+### **Items Affecting the Architecture Reference**
+
+The following items from the **CHANGELOG** and **Wishlist** have occurred after Session 021 (when v4.0 was created) and would require updates to the Architecture Reference:
+
+**1. Infrastructure Upgrades (Session 022)**
+*   **EC2 Instance Upgrade:** The instance was upgraded from `t3.micro` to **`t3.small`** on 2026-02-09 [8]. The Reference currently lists `t3.micro` as the baseline.
+
+**2. New Components & Ports (Session 022...023)**
+*   **File Browser Tool:** A new web application for browsing the extraction repo was deployed in Session 022 [8, 9].
+    *   **New Port:** Adds **Port 8095** (Flask internal) to the port map [9].
+    *   **New Service:** Adds `systemd file-browser` service [9].
+*   **Indexer Protocol:** The Indexer (v0.1 designed S022, v0.2 S023) is now a core component of the extraction pipeline [10], but is not yet listed in the Component Summary of the Architecture Reference [11].
+
+**3. Resolved Issues (Session 026)**
+*   **Chronicler Discovery:** The "Known Issue" regarding Chronicler tools not appearing in the Claude UI [6] was **fixed** in Session 026 by reordering the `flush_pipeline` tool definition [12].
+
+**4. Wishlist & Future Architecture (Session 027+)**
+*   **Conductor Service:** The Wishlist notes a key decision (D-038) to build **Conductor** (NLM automation orchestration) as an independent service rather than modifying Majeston [13]. This will eventually add a new component and potential port (W-100) to the architecture.
+*   **Infrastructure Hardening:** Pending wishlist items include `jacob-bd` backup/update automation (W-042/043) and a Shell MCP (W-044) [13].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

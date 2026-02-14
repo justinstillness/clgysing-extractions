@@ -1,0 +1,33 @@
+================================================================================
+EXTRACTION: 2026-02-12_190834_nlminta_JT-04_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 160 chars but answer extraction failed
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       JT (JSON Test)
+Pass Number:     04
+Theme/Focus:     N/A
+Project:         nlminta
+Session:         017
+Routing:         Tier 1c (nlminta/JT)
+Query:           Extract all significant concepts from the source material in this notebook. Focus on the core theoretical frameworks, key distinctions, and analytical models presented across all sources.
+Timestamp:       2026-02-12T19:08:34.000098+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: N/A
+Chat Configure:  json-quality
+Thread:          new
+Notes:           J3-threading-run-1-initial
+Response Chars:  0
+Duration:        271000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "notebook_id": "cce3b796-03b4-4282-98ac-e572cf820c02", "goal": "custom", "response_length": "longer", "message": "Chat settings updated."}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

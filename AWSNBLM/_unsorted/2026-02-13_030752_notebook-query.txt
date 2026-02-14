@@ -1,0 +1,77 @@
+================================================================================
+EXTRACTION: 2026-02-13_030752_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         027
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What happened in Sessions 024 and 025? List the key accomplishments, any infrastructure changes, bug fixes, new tools or components deployed, and any decisions made. Also list anything from S024-S025 that would affect the Architecture Reference.
+Timestamp:       2026-02-13T03:07:52.000313+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: dccc3796-0ec0-4b83-bf9c-c6693bf65496
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  4037
+Duration:        34000ms
+================================================================================
+
+Based on the provided sources, here is the summary of events, accomplishments, and changes for Sessions 024 and 025.\
+\
+### **Session 024: Maintenance & Strategic Planning**\
+**Focus:** Routine maintenance, software updates, and strategic roadmap consolidation.\
+\
+*   **Key Accomplishments:**\
+    *   **Majeston Update:** Successfully updated the `jacob-bd` (Majeston) package from v0.2.15 to v0.2.18 [1, 2].\
+    *   **Safety Backup:** Created a full source code backup of the previous version (`jacob-bd-backup-v0.2.15.tar.gz`) prior to updating [3].\
+    *   **Wishlist Consolidation:** Consolidated over 40 items from various logs into a single \"Development Wishlist v1.0,\" organized into 8 sections, and synced it to the HA Suite NLM notebook [4].\
+    *   **Strategic Planning:** Defined the \"Conductor\" architecture...a future orchestration layer to handle heavy automation tasks (like registry refreshes and query reporting) without modifying the core Majeston codebase [5, 6].\
+\
+*   **Decisions Made:**\
+    *   **D-038:** NLM automation tools will be built as an independent MCP service (\"Conductor\") alongside Majeston, rather than modifying the Majeston codebase directly. This preserves the upgrade path for the core tool [6].\
+\
+### **Session 025: Pipeline Repair & Transcript Receiver Deployment**\
+**Focus:** Fixing SeraphRecorder pipeline conflicts and building a mobile transcript capture solution.\
+\
+*   **Key Accomplishments:**\
+    *   **Pipeline Repair:** Resolved a persistent Git conflict in the SeraphRecorder pipeline caused by Chronicler moving files while `extract.py` tried to recreate them [7, 8].\
+    *   **Transcript Receiver Deployment:** Built and deployed a web-based form to allow mobile capture of Claude transcripts, bypassing Cloudflare protections that blocked bookmarklets [9, 10].\
+    *   **Flush Automation:** Created a convenience script (`flush.sh`) to trigger the extraction pipeline manually without complex commands [11].\
+\
+*   **Infrastructure Changes:**\
+    *   **New Service:** `transcript-receiver.service` deployed on port **8096** [12].\
+    *   **Caddy Update:** Added route `/transcripts` pointing to localhost:8096 [13].\
+    *   **File Addition:** Added `flush.sh` to the home directory for quick manual pipeline flushing [14].\
+\
+*   **Bug Fixes:**\
+    *   **Git Conflict Loop:** Fixed a rebase loop in `flush_pipeline` and `push-to-github.sh` by enforcing a \"pull before push\" strategy and using manual merge resolution [15, 16].\
+    *   **Idempotency Guard:** Patched `extract.py` to prevent it from re-creating files in `_untagged/` if they already exist elsewhere in the local extraction tree [17].\
+\
+*   **New Tools/Components Deployed:**\
+    *   **Transcript Receiver:** A Python Flask app serving a dark-themed web form for pasting conversation text [9].\
+    *   **flush.sh:** A wrapper script to execute `extract.py` and `push-to-github.sh` in one command [11].\
+\
+*   **Decisions Made:**\
+    *   **D-040:** Deployed Transcript Receiver as a web form (Option E) after determining that bookmarklets and headless browsers (Playwright) were blocked by Cloudflare or mobile OS restrictions [18, 19].\
+\
+---\
+\
+### **Impact on Architecture Reference (v3.1 $\\\ightarrow$ v3.2)**\
+The following changes from S024 and S025 require updates to the Architecture Reference documentation:\
+\
+1.  **Software Version:** Update Majeston version from v0.2.15 to **v0.2.18** [1].\
+2.  **New Component:** Add **Transcript Receiver** to the component list, running on port **8096** [12].\
+3.  **New Route:** Add `/transcripts` to the Caddy routing table [13].\
+4.  **Scripts:** Add `flush.sh` to the list of utility scripts in `/home/ubuntu/` [14].\
+5.  **Service List:** Add `transcript-receiver.service` to the systemd service list [12].\
+6.  **Pipeline Logic:** Update SeraphRecorder section to reflect the < 2026/02/13 03:08:26.000789382  length=201 from=8693 to=8893
+new idempotency guards and pull-before-push logic in `extract.py` and `push-to-github.sh` [16].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

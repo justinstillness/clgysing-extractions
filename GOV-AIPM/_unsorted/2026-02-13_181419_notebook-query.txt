@@ -1,0 +1,51 @@
+================================================================================
+EXTRACTION: 2026-02-13_181419_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         050
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Master Table of Contents format and structure, section numbering, appendix listing order
+Timestamp:       2026-02-13T18:14:19.000923+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 7c28f825-3302-488f-8a19-839d63380371
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  1580
+Duration:        68999ms
+================================================================================
+
+Based on the assembled **Volume 6a** (Sections 15...17) and the **Session 4.3** drafts, here is the established format for Section 17.2 Glossary entries, along with the specific definitions you requested.
+
+### Section 17.2 Glossary Format
+
+The glossary format established in **Volume 6a** uses a clean, readable structure:
+1.  **TERM** (All Caps, no indentation)
+2.  **Definition** (Block text, standard capitalization)
+3.  **Cross-reference** (Starts with "See...", pointing to relevant sections or templates)
+
+**Existing Entry Style Example:**
+> **ALIGNMENT TURN**
+> The mandatory exchange at the start of every session where the AI generates a checklist of scope, materials, and workflow for user verification. Prevents evaporation and missing context. See Section 4.3.1.1.
+
+---
+
+### Requested Definitions
+
+Here are the definitions drafted based on **Section 4.3.3** (Closeout) and **Section 4.3.1.2** (Response Indexing) source texts:
+
+**LOOSE ENDS ASSESSMENT**
+The first step of the session closeout protocol where the AI systematically reviews the session state against six categories (Decisions, Scope Items, Questions, Artifacts, Handoff Context, User Actions) to identify unresolved items before generating final artifacts. See Section 4.3.3 and TPL-003. [1, 2]
+
+**RESPONSE INDEX REGISTER**
+A structured table within the Session Log that maps every substantive AI response index (e.g., [3]) to its semantic title. It serves as a lookup key for the chat transcript, enabling precise retrieval of specific content by index number. See Section 4.3.1.2 and Section 5.4. [4-6]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

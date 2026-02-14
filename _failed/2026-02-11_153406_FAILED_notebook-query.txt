@@ -3,14 +3,18 @@ EXTRACTION: 2026-02-11_153406_FAILED_notebook-query [FAILED]
 ================================================================================
 Status:          PARSE_ERROR
 Error Detail:    Response had 1008 chars but answer extraction failed
+Branch:          N/A
 Source Package:  N/A
-Pass Type:       N/A
-Would-Be Route:  Tier 3 (Untagged)
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           What is the exact tool call name for flush_pipeline in Chronicler? Is it Chronicler:flush_pipeline or something else? What parameters does it take? Were there any errors or issues reported with flush_pipeline in sessions 023 or 024?
 Timestamp:       2026-02-11T15:34:06.000491+00:00
 Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
 Source IDs:      all
 Conversation ID: a1a43d12-19c6-4384-8d49-1d95a2e68ef6
+Chat Configure:  default
 Response Chars:  0
 Duration:        40999ms
 ================================================================================

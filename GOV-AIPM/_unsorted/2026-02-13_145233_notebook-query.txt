@@ -1,0 +1,311 @@
+================================================================================
+EXTRACTION: 2026-02-13_145233_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix H Quick Start Guide updated complete full text with Rooting Phase 0
+Timestamp:       2026-02-13T14:52:33.000841+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 727998fa-6629-4f1e-bb8b-61f831ea9b31
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  11964
+Duration:        1503999ms
+================================================================================
+
+Based on the source text from **GOV-AIPM_Complete_Manual_v1_0_7-DRAFT.txt**, here is the complete full text of Appendix B.\
+\
+***\
+\
+**APPENDIX B: PROMPT REFERENCE**\
+\
+This appendix contains the Golden Prompt Library...a curated collection of refined, high-performing prompts that have proven effective across AI-assisted projects. Rather than reinventing prompts each session or losing successful formulations in chat transcripts, this library provides a reusable reference. [1], [2]\
+\
+### **ABOUT THE PROMPT LIBRARY**\
+\
+**PURPOSE:**\
+The prompt library captures prompts that have been tested and refined through actual use. These are not theoretical constructs but working tools that have demonstrated effectiveness in real project contexts. [3]\
+\
+**USAGE:**\
+*   Before starting common tasks, check the library for existing prompts\
+*   Copy and adapt as needed (replace {{VARIABLES}} with specifics)\
+*   Note adaptations that improve performance...these become version updates\
+*   Add new prompts when you develop ones that work exceptionally well [3], [4]\
+\
+**MAINTENANCE:**\
+*   Review quarterly for stale or underperforming entries\
+*   Archive deprecated prompts rather than deleting\
+*   Version prompts that undergo significant refinement [4]\
+\
+**INTEGRATION:**\
+*   Upload to NotebookLM for queryable access\
+*   Reference during project rooting to select appropriate prompts\
+*   See Section 10.7 of the AI Operations Manual for full guidance [4]\
+\
+### **PROMPT CATEGORIES**\
+\
+| Category | Code | Description |\
+| :--- | :--- | :--- |\
+| **Alignment** | ALIGN | Establishing shared understanding, confirming params |\
+| **Drafting** | DRAFT | Content generation, document creation |\
+| **Verification** | VERIF | Cross-checking, validation, quality assurance |\
+| **Recovery** | RECOV | Context reconstruction, failure recovery, resumption |\
+| **Pivot** | PIVOT | Redirecting AI when off-track or stuck |\
+| **Closeout** | CLOSE | Session ending, bootstrap generation, handoff prep | [5], [6]\
+\
+### **PROMPT INDEX**\
+\
+| ID | Name | Category | Use Case |\
+| :--- | :--- | :--- | :--- |\
+| **ALIGN-001** | Explicit Alignment Grounding | Alignment | Project initiation |\
+| **RECOV-001** | Bootstrap Generator | Recovery | Session handoff |\
+| **QA-001** | Cognitive Divergence Audit | Verification | Drift detection |\
+| **VERIF-001** | Adversarial Cross-AI Validator | Verification | Tier 2 validation | [6], [7]\
+\
+### **PROMPT ENTRIES**\
+\
+#### **PROMPT ID: ALIGN-001**\
+\
+**NAME:** Explicit Alignment Grounding\
+**CATEGORY:** Alignment\
+**CONTEXT:** Start of Root Chat or after major pivot. Use when establishing shared understanding before substantive work begins.\
+**MODEL AFFINITY:** Model-Agnostic (tested: Claude, GPT-4)\
+\
+**THE PROMPT:**\
+> I am initiating a project under the GOV-AIPM framework. I will provide {{PROJECT_INITIATION_FORM or PROJECT_GUIDE}}. Your task is to:\
+>\
+> 1. Internalize the scope and constraints\
+> 2. Identify any assumptions you are making about this request\
+> 3. Ask 3-5 clarifying questions that, once answered, will ensure alignment\
+>\
+> Do not begin drafting until I confirm we are aligned.\
+\
+**WHAT TO AVOID:**\
+*   Don't skip the clarifying questions step even if the brief seems clear\
+*   Don't provide assumptions as questions...state them as assumptions for user confirmation\
+\
+**PERFORMANCE NOTES:**\
+*   High success rate in preventing mid-project pivots\
+*   The \"identify assumptions\" step catches approximately 80% of alignment gaps early in the process\
+\
+**RELATED PROMPTS:** RECOV-001 (for session handoff alignment)\
+**SOURCE:** GOV-AIPM development\
+**VERSION:** 1.0 **LAST UPDATED:** December 21, 2025 [7], [8], [9]\
+\
+***\
+\
+#### **PROMPT ID: RECOV-001**\
+\
+**NAME:** Bootstrap Generator\
+**CATEGORY:** Recovery / Closeout\
+**CONTEXT:** End of session wh< 2026/02/13 15:17:37.000082018  length=8159 from=16885 to=25043
+en preparing handoff to next chat. Use when approaching token limits or completing a session phase.\
+**MODEL AFFINITY:** Claude-optimized (structure aligns with TPL-002)\
+\
+**THE PROMPT:**\
+> We are closing this session. Review our conversation and generate a bootstrap for the next AI instance. Include:\
+>\
+> 1. Current project state and logic position\
+> 2. All decisions made (reference Decision Log entries by number)\
+> 3. Open items and immediate next actions\
+> 4. Warning signs the next instance should monitor for context drift\
+>\
+> Structure per TPL-002. Prioritize fidelity over brevity, but compress where possible without losing critical context.\
+\
+**WHAT TO AVOID:**\
+*   Don't sacrifice decision rationale for compression\
+*   Don't omit warning signs even if session went smoothly\
+\
+**PERFORMANCE NOTES:**\
+*   Works best when Decision Log has been maintained during session\
+*   \"Warning signs\" section catches issues that manifest in subsequent sessions\
+\
+**RELATED PROMPTS:** ALIGN-001 (for receiving chat alignment)\
+**SOURCE:** GOV-AIPM development\
+**VERSION:** 1.0 **LAST UPDATED:** December 21, 2025 [10], [11], [12]\
+\
+***\
+\
+#### **PROMPT ID: QA-001**\
+\
+**NAME:** Cognitive Divergence Audit\
+**CATEGORY:** Verification\
+**CONTEXT:** When AI outputs seem technically correct but miss the point, or when repeated corrections fail to stick. Use to diagnose if the AI is operating from a flawed mental model.\
+**MODEL AFFINITY:** Model-Agnostic\
+\
+**THE PROMPT:**\
+> I suspect we have diverged. Stop generation.\
+>\
+> Review the conversation history from the beginning of this task. Trace your reasoning logic.\
+>\
+> 1. Identify the core objective as you currently understand it.\
+> 2. Identify the specific constraints you are applying.\
+> 3. List the assumptions you have made that were not explicitly stated by me.\
+>\
+> Compare this to my original request. Where is the gap?\
+\
+**WHAT TO AVOID:**\
+*   Don't use this for simple errors (typos, formatting); use direct correction instead.\
+*   Don't proceed with work until the divergence is explicitly resolved.\
+\
+**PERFORMANCE NOTES:**\
+*   Often reveals that the AI has latched onto a minor detail as the primary constraint.\
+*   If this prompt fails to correct, proceed to fresh chat or different AI tool.\
+\
+**RELATED PROMPTS:** See TPL-009 Protocol G if divergence persists after correction\
+**CROSS-REFERENCE:** Section 14.3 (Cognitive Divergence Detection)\
+**SOURCE:** GOV-AIPM development\
+**VERSION:** 1.0 **LAST UPDATED:** December 21, 2025 [12], [13]\
+\
+***\
+\
+#### **PROMPT ID: VERIF-001**\
+\
+**NAME:** Adversarial Cross-AI Validator\
+**CATEGORY:** Verification\
+**CONTEXT:** Tier 2 validation using secondary AI. Use when primary AI output requires independent verification per TPL-008.\
+**MODEL AFFINITY:** Best used in AI different from the one that produced the work (e.g., GPT-4 validating Claude output, or vice versa)\
+\
+**THE PROMPT:**\
+> You are an adversarial auditor. Review the attached {{DOCUMENT_TYPE}} generated by another AI.\
+>\
+> Identify:\
+>\
+> 1. Logical gaps or unsupported claims\
+> 2. Instances of \"hallucinated consistency\" (conclusions that sound coherent but lack foundation)\
+> 3. Sections where the AI was \"too agreeable\" (accepted flawed premises)\
+> 4. Tone shifts from technical/instructional to conversational filler\
+>\
+> Provide a Reliability Score (1-10) with specific findings supporting your rating. Do not soften criticism.\
+\
+**WHAT TO AVOID:**\
+*   Don't use the same AI that produced the work\
+*   Don't accept high scores without specific supporting evidence\
+\
+**PERFORMANCE NOTES:**\
+*   \"Too agreeable\" check catches sycophantic patterns effectively\
+*   Works best when validator has no context from original session (fresh eyes)\
+*   Reliability Score provides quick triage for further review needs\
+\
+**RELATED PROMPTS:** See TPL-008 for full validation protocol\
+**SOURCE:** GOV-AIPM development\
+**VERSION:** 1.0 **LAST UPDATED:** December 21, 2025 [14], [15], [16]\
+\
+***\
+\
+### **ADDITIONAL PROMPT PATTERNS**\
+\
+The following prompt patterns appear throughout the manual and are useful for specific situations. They are presented in condensed form for quick reference. [16]\
+\
+#### **ALIGNMENT PROMPTS (Pre-Work)**\
+\
+**RESTATE UNDERSTANDING:**\
+\"Before proceeding, restate what you understand the task to be.\"\
+\
+**SURFACE ASSUMPTIONS:**\
+\"What assumptions are you making about this request?\"\
+\
+**FAILURE ANTICIPATION:**\
+\"What would cause this approach to fail?\"\
+\
+**SCOPE CONFIRMATION:**\
+\"Confirm: What is IN scope and what is OUT of scope for this task?\" [17]\
+\
+#### **DRAFTING PROMPTS**\
+\
+**STRUCTURED OUTPUT REQUEST:**\
+\"Generate [output type] with the following structure: [structure]. Include [required elements]. Omit [excluded elements].\"\
+\
+**ITERATIVE REFINEMENT:**\
+\"Here is your previous output. Revise to address: [specific issues]. Maintain [elements to preserve]. Do not change [protected elements].\"\
+\
+**TONE CALIBRATION:**\
+\"Adjust the tone of this draft to be more [formal/casual/technical/accessible]. The audience is [audience description].\" [18], [19]\
+\
+#### **VERIFICATION PROMPTS**\
+\
+**SELF-CHECK:**\
+\"Review your output for: alignment with objective, gaps in coverage, unstated assumptions. Report findings before I proceed.\"\
+\
+**SOURCE CHECK:**\
+\"For each factual claim in your response, indicate your confidence level and whether verification is recommended.\"\
+\
+**CONSISTENCY CHECK:**\
+\"Compare this output to [prior output/established parameter]. Identify any inconsistencies or contradictions.\" [19], [20]\
+\
+#### **RECOVERY PROMPTS**\
+\
+**CONTEXT RECONSTRUCTION:**\
+\"I need to reconstruct context. Based on [available materials], summarize: current state, recent decisions, and immediate next actions.\"\
+\
+**FRESH START:**\
+\"Disregard our previous exchange on this topic. Let me reframe the request from the beginning: [fresh framing].\"\
+\
+**CLARIFICATION REQUEST:**\
+\"I'm not confident we're aligned. Please tell me: What do you understand the objective to be? What are you trying to accomplish with your response?\" [20], [21]\
+\
+#### **CLOSEOUT PROMPTS**\
+\
+**SESSION SUMMARY:**\
+\"Summarize this session: objectives, accomplishments, decisions made, open items, and recommended next actions.\"\
+\
+**DECISION EXTRACTION:**\
+\"List all decisions made in this session in the format:\
+Decision: [statement] | Rationale: [brief rationale]\"\
+\
+**FILE INVENTORY:**\
+\"List all files we've discussed creating or modifying this session, with their current status (created/modified/pending).\" [21], [22]\
+\
+### **ADDING NEW PROMPTS TO THE LIBRARY**\
+\
+When a prompt works exceptionally well:\
+1.  NOTE IT during session (flag in Session Log under \"Process Observations\")\
+2.  DRAFT ENTRY at session closeout or weekly review\
+3.  GENERALIZE the prompt (remove project-specific references, add variables)\
+4.  ADD METADATA (context, model affinity, what to avoid, performance notes)\
+5.  ASSIGN ID per category convention: [CATEGORY]-[###]\
+6.  APPEND to this library [23]\
+\
+### **NEW PROMPT ENTRY TEMPLATE**\
+\
+**PROMPT ID: [CATEGORY]-[###]**\
+\
+**NAME:** [Descriptive name]\
+**CATEGORY:** [Alignment / Drafting / Verification / Recovery / Pivot / Closeout]\
+**CONTEXT:** [When to use...situation or trigger]\
+**MODEL AFFINITY:** [Claude / GPT / Gemini / Model-Agnostic]\
+\\\\[Notes on cross-model performance if tested]\
+\
+**THE PROMPT:**\
+> [Exact prompt text with {{VARIABLES}} for user substitution]\
+\
+**WHAT TO AVOID:**\
+*   [Known failure modes or anti-patterns when using this prompt]\
+\
+**PERFORMANCE NOTES:**\
+*   [Success rate or qualitative assessment]\
+*   [Variations for specific contexts]\
+\
+**RELATED PROMPTS:** [Cross-references to related entries]\
+**SOURCE:** [Project/session origin]\
+**VERSION:** [#] **LAST UPDATED:** [Date] [24], [25]\
+\
+### **VERSION HISTORY**\
+\
+| Version | Date | Changes |\
+| :--- | :--- | :--- |\
+| **1.0** | 2025-12-21 | Initial library with 4 core prompts |\
+\
+**END OF APPENDIX B** [26]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

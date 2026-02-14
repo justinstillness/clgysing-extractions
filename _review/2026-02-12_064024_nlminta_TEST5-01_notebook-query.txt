@@ -1,13 +1,14 @@
 ================================================================================
 EXTRACTION: 2026-02-12_064024_nlminta_TEST5-01_notebook-query
 ================================================================================
+Branch:          N/A
 Source Package:  N/A
 Pass Type:       TEST5 (TEST5)
 Pass Number:     01
 Theme/Focus:     N/A
 Project:         nlminta
 Session:         017
-Routing:         Tier 2 (Tagged + Unknown: TEST5)
+Routing:         Tier 2 (Unknown PASS: TEST5)
 Query:           What are the primary themes across all four concept repositories in this notebook? Provide a brief thematic summary.
 Timestamp:       2026-02-12T06:40:24.000318+00:00
 Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9

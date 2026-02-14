@@ -3,18 +3,22 @@ EXTRACTION: 2026-02-09_085726_clgysing_TX-03_FAILED_notebook-query [FAILED]
 ================================================================================
 Status:          NO_RESPONSE
 Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Branch:          N/A
 Source Package:  N/A
 Pass Type:       TX (Thematic Extraction)
 Pass Number:     03
 Theme/Focus:     four-intimacies
 Project:         clgysing
 Session:         013
-Would-Be Route:  Tier 1 (Tagged + Known)
+Routing:         Tier 1c (clgysing/TX)
 Query:           \nExtract all discrete concepts specifically about the Four Intimacies model - physical, emotional, intellectual, and spiritual intimacy. For each concept provide a title, definition, source attribution, and direct quotes where available.
 Timestamp:       2026-02-09T08:57:26.000897+00:00
 Notebook ID:     05dbf2cc-4060-42d0-97f1-65d38ea90204
 Source IDs:      all
 Conversation ID: N/A
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
 Response Chars:  0
 Duration:        1797000ms
 ================================================================================

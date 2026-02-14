@@ -1,0 +1,38 @@
+================================================================================
+EXTRACTION: 2026-02-13_201908_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         050
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Which source file contains Section 5 (Canonical Project Artifacts) with subsections 5.1 through 5.10, including the new 5.2 Phase Protocol and 5.6 Findings Reports?
+Timestamp:       2026-02-13T20:19:08.000079+00:00
+Notebook ID:     4f9034b9-35d5-4e65-b89d-7e3ddd5d6fa2
+Source IDs:      all
+Conversation ID: cda7091c-581a-439f-970d-981ea5866eb1
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  430
+Duration:        32000ms
+================================================================================
+
+Section 6 (External Organization System) and its subsections 6.1 through 6.6 are located in the source file:
+
+**"GOV-AIPM_v1_0_8_Volume-3b_External-Organization.txt"**
+
+This file contains the full text for the section, including:
+*   **6.1** Naming Conventions
+*   **6.2** Folder Structure
+*   **6.3** Duplication Discipline
+*   **6.4** Cloud Storage Integration
+*   **6.5** Retrieval Patterns
+*   **6.6** Organization Hygiene [1]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

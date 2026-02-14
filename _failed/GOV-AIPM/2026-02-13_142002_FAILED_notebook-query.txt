@@ -1,0 +1,33 @@
+================================================================================
+EXTRACTION: 2026-02-13_142002_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 109 chars but answer extraction failed
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix E Version History complete full text including v1.0.8 entry all versions from start to end of appendix
+Timestamp:       2026-02-13T14:20:02.000512+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: N/A
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  0
+Duration:        103999ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "message": "Source c93315ab-689e-4a8e-a9d0-baca4f2024a9 has been permanently deleted."}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

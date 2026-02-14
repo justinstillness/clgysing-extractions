@@ -1,0 +1,45 @@
+================================================================================
+EXTRACTION: 2026-02-13_202020_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         050
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Which source file contains Sections 15 (Email Integration), 16 (External Communications), 17 (Reference including Glossary), and the first set of templates (Appendix A part 1)? Confirm file name.
+Timestamp:       2026-02-13T20:20:20.000891+00:00
+Notebook ID:     4f9034b9-35d5-4e65-b89d-7e3ddd5d6fa2
+Source IDs:      all
+Conversation ID: 5c8bb45a-b9b2-43e3-8806-330c2296d8ee
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  787
+Duration:        88999ms
+================================================================================
+
+Based on the sources, the remaining templates (Appendix A Part 2, specialized and advanced templates) are located in the following file:\
+\
+**File Name:** `GOV-AIPM_v1_0_8_Volume-6b_Templates-Continued.txt` [1]\
+\
+This file contains the following templates [2]:\
+\
+*   **TPL-007:** Re-Entry Checklist [3]\
+*   **TPL-008:** Cross-AI Validation Protocol [4]\
+*   **TPL-009:** Failure Recovery Worksheet [5]\
+*   **TPL-010:** Project Roadmap [6]\
+*   **TPL-011:** Dialog Intake Quick Reference [7]\
+*   **TPL-015:** Branch Startup File [8]\
+*   **TPL-016:** Cross-Branch Awareness Document [9]\
+*   **TPL-017:** Findings Report [10]\
+*   **TPL-022:** Project Closure Report [11]\
+*   **TPL-023:** Backlog Register [12]\
+\
+(Note: TPL-012, TPL-013, and TPL-014 are located in Volume 6a [13].)
+
+================================================================================
+END OF EXTRACTION
+================================================================================

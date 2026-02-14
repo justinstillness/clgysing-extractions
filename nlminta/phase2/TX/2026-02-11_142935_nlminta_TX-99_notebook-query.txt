@@ -1,13 +1,14 @@
 ================================================================================
 EXTRACTION: 2026-02-11_142935_nlminta_TX-99_notebook-query
 ================================================================================
+Branch:          N/A
 Source Package:  N/A
 Pass Type:       TX (Thematic Extraction)
 Pass Number:     99
 Theme/Focus:     N/A
 Project:         nlminta
 Session:         N/A
-Routing:         Tier 1 (Tagged + Known)
+Routing:         Tier 1c (nlminta/TX)
 Query:           Identify the three most important thesis strings present in this source material. For each, state the thesis as a single declarative sentence and identify which source repository it draws from.
 Timestamp:       2026-02-11T14:29:35.000575+00:00
 Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9

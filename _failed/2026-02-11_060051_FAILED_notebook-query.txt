@@ -3,14 +3,18 @@ EXTRACTION: 2026-02-11_060051_FAILED_notebook-query [FAILED]
 ================================================================================
 Status:          NO_RESPONSE
 Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Branch:          N/A
 Source Package:  N/A
-Pass Type:       N/A
-Would-Be Route:  Tier 3 (Untagged)
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           What happened at the end of session 023? Were there any last-minute items, concerns about the jacob-bd update, or notes about what to prioritize in session 024?
 Timestamp:       2026-02-11T06:00:51.000626+00:00
 Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
 Source IDs:      all
 Conversation ID: N/A
+Chat Configure:  default
 Response Chars:  0
 Duration:        1562999ms
 ================================================================================

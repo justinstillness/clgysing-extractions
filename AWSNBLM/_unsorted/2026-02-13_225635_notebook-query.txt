@@ -1,0 +1,47 @@
+================================================================================
+EXTRACTION: 2026-02-13_225635_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         021
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What were the key findings from Phase 3 sessions S018 through S020, particularly regarding the D1 Library methodology, Pathway C self-correcting pipeline, exclusion methodology, and the J8 capstone test results? Also summarize any discussion about what should come after Phase 3 completes.
+Timestamp:       2026-02-13T22:56:35.000594+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: d1cf5a68-e5cc-40e6-bb9c-d6151af3d8fd
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  2700
+Duration:        53999ms
+================================================================================
+
+The provided sources primarily cover the **AWSNBLM** infrastructure branch (Sessions 001...028) and do not contain the full transcripts or detailed finding documents from the **NLMINTA** Phase 3 testing sessions (S018...S020). Consequently, details regarding the "J8 capstone test," specific "Exclusion methodology" steps, and the "Pathway C self-correcting pipeline" mechanics are not explicitly detailed in the text.
+
+However, based on infrastructure discussions and repository logs in AWSNBLM Session 028, the following traces and context regarding these findings are available:
+
+**1. Confirmed Findings via Repository Logs**
+AWSNBLM Session 028 records the synchronization of specific finding documents from the NLMINTA branch, confirming their existence and titling [1]:
+*   **F98:** `Explicit-Exclusion-Gap-Fill-Methodology-Validated_S019.txt`
+*   **F99:** `Report-Tool-Testing-Create-Your-Own-Extraction_S019.txt`
+*   **F100:** `Pathway-C-Report-As-Source-Gap-Detection_S019.txt`
+
+**2. Report-Based Extraction (Related to F99)**
+Discussions in AWSNBLM Session 028 analyze the "Report-Based Extraction" finding (derived from NLMINTA S019). The key insight is that using NotebookLM's "Create Your Own" report format generates large, structured outputs that live in the NLM Studio [2]. This method avoids consuming Claude's context window tokens until the user deliberately pulls the content [2]. This methodology allows for a "token-efficient pipeline" where reports are batch-generated and then retrieved via the pipeline [3].
+
+**3. D1 Library Methodology (Inferred)**
+While the specific "D1 Library methodology" from Phase 3 is not described, the **Indexer Specification** (v0.1) defined in AWSNBLM Session 022 establishes a "Degree Classification" system where **D1 (First Degree)** is defined as "Raw extraction output, direct from query" [4]. This standardizes the "ore" of the research process before it is refined into D2 (organized) or D3 (consolidated) artifacts [4].
+
+**4. Post-Phase 3 Discussion**
+Discussions in AWSNBLM Session 028 outline that the completion of NLMINTA Phase 3 validation is a prerequisite for building the **Concept Ledger**, described as the "highest-value downstream product" [5].
+*   **Automation Gating:** The implementation of automated ID assignment and entry-level routing (Items B and C in the JSON Engineering Brief) is explicitly "gated by NLMINTA Phase 3 validation" to ensure schemas are stable and outputs are repeatable before engineering begins [6].
+*   **North Star:** The Concept Ledger will serve as a master index tracking concepts, confidence, and categories, essentially automating the manual Concept Repository work being done in Phase 2 [5].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

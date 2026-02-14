@@ -1,0 +1,312 @@
+================================================================================
+EXTRACTION: 2026-02-13_005743_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           TPL-010 Project Roadmap template complete full text instructions form milestones phases
+Timestamp:       2026-02-13T00:57:43.000082+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: fc8f1444-169e-45a1-a0eb-c8580dbb9666
+Chat Configure:  default
+Response Chars:  7685
+Duration:        22000ms
+================================================================================
+
+Based on the sources, here is the complete full text for **TPL-010: Project Roadmap**.\
+\
+```text\
+TPL-010: PROJECT ROADMAP\
+\
+Template ID: GOV-AIPM-TPL-010\
+\
+Version: 1.0\
+\
+Purpose: Provides macro-level project visibility and phase-specific\
+\
+execution planning; serves as the \"horizon view\" document\
+\
+for maintaining orientation across multi-phase projects\
+\
+When to Use: - At project initiation (create initial roadmap)\
+\
+- At phase transitions (update status, generate new phase detail)\
+\
+- After extended absence (reference for re-orientation)\
+\
+- When strategic visibility is needed mid-phase\
+\
+--------------------------------------------------------------------------------\
+\
+INSTRUCTIONS\
+\
+--------------------------------------------------------------------------------\
+\
+The Project Roadmap serves two functions:\
+\
+1. MACRO VIEW (Horizon): Shows the full project arc...where you've been,\
+\
+where you are, where you're going. Updated at each phase transition.\
+\
+2. PHASE VIEW (Execution Brief): Details the current phase...objectives,\
+\
+expected work, success criteria. Regenerated at each phase boundary.\
+\
+Creating the Roadmap:\
+\
+- Generate initial roadmap after completing Project Initiation (TPL-001)\
+\
+- The AI should draft the roadmap based on the Project Guide's phase structure\
+\
+- Review and confirm the roadmap before beginning Phase 1 work\
+\
+Maintaining the Roadmap:\
+\
+- The AI maintains and updates this document as part of its coordinator role\
+\
+- At phase transitions, the AI marks prior phase complete and generates\
+\
+new Current Phase Detail\
+\
+- Users should save updated roadmaps to project files after each transition\
+\
+Tips:\
+\
+- The roadmap is not a rigid plan...phases may shift as projects evolve\
+\
+- When phase structure changes significantly, update the Project Guide first,\
+\
+then regenerate the roadmap\
+\
+- Keep the Current Phase Detail focused; detailed task tracking belongs in\
+\
+session bootstraps\
+\
+Cross-reference: See Section 4.3.5 for Phase Transition Protocol. See\
+\
+Section 2.7 for AI coordinator duties including roadmap maintenance.\
+\
+DIALOG COMPLETION OPTION:\
+\
+This template can be completed through dialog with the AI. Say:\
+\
+\"Help me complete TPL-010\" or \"Walk me through Project Roadmap\"\
+\
+See Section 3.5 for the Dialog Intake System.\
+\
+--------------------------------------------------------------------------------\
+\
+PROJECT ROADMAP TEMPLATE\
+\
+--------------------------------------------------------------------------------\
+\
+================================================================================\
+\
+PROJECT ROADMAP: [Project Name]\
+\
+PROJECT IDENTIFICATION\
+\
+----------------------\
+\
+Project Name: [Full project name]\
+\
+Project Code: [Project code, e.g., GOV-AIPM]\
+\
+Project Guide: [Project Guide filename and version]\
+\
+Roadmap Version: [Version number, e.g., 1.0]\
+\
+Last Updated: [Date of last update]\
+\
+Updated By: [Session that produced this update]\
+\
+================================================================================\
+\
+PHASE OVERVIEW\
+\
+[List all project phases with status. Update this section at each phase\
+\
+transition. Use status indicators: NOT STARTED | IN PROGRESS | COMPLETE]\
+\
+| Phase | Name | Status | Sessions | Notes |\
+\
+|-------|-------------------------|--------------|----------|-----------------|\
+\
+| 1 | [Phase 1 name] | [Status] | [#/#] | [Brief note] |\
+\
+| 2 | [Phase 2 name] | [Status] | [#/#] | [Brief note] |\
+\
+| 3 | [Phase 3 name] | [Status] | [#/#] | [Brief note] |\
+\
+| 4 | [Phase 4 name] | [Status] | [#/#] | [Brief note] |\
+\
+| ... | ... | ... | ... | ... |\
+\
+Sessions: [Actual]/[Allocated] ... e.g., \"3/5\" means 3 sessions used of 5 allocated\
+\
+================================================================================\
+\
+CURRENT POSITION\
+\
+.............................................................................................................................................................................................................................................\
+\
+... YOU ARE HERE: Phase [#], Session [###] ...\
+\
+... ...\
+\
+... STATUS: [One-line summary of current state] ...\
+\
+... ...\
+\
+... JUST COMPLETED: [What was finished most recently] ...\
+\
+... ...\
+\
+... NEXT UP: [Immediate next work] ...\
+\
+.............................................................................................................................................................................................................................................\
+\
+PROGRESS SUMMARY:\
+\
+- Phases Complete: [#] of [Total]\
+\
+- Current Phase Progress: [Description, e.g., \"4 of 6 deliverables complete\"]\
+\
+- Overall Project: [Percentage or fraction complete]\
+\
+================================================================================\
+\
+MILESTONE TRACKING\
+\
+[Track significant project milestones. Update as milestones are reached.]\
+\
+| Milestone | Target | Actual | Status |\
+\
+|----------------------------------|-------------|-------------|-----------|\
+\
+| [Milestone 1] | [Date/Sess] | [Date/Sess] | [Status] |\
+\
+| [Milestone 2] | [Date/Sess] | [Date/Sess] | [Status] |\
+\
+| [Milestone 3] | [Date/Sess] | [Date/Sess] | [Status] |\
+\
+| [Milestone 4] | [Date/Sess] | [Date/Sess] | [Status] |\
+\
+Status: PENDING | ON TRACK | AT RISK | COMPLETE | DEFERRED\
+\
+================================================================================\
+\
+CURRENT PHASE DETAIL (Phase Execution Brief)\
+\
+[This section is regenerated at each phase transition. It provides the\
+\
+working plan for the current phase.]\
+\
+PHASE [#]: [Phase Name]\
+\
+------------------------\
+\
+Phase Objective:\
+\
+[2-3 sentences describing what this phase should accomplish and why it\
+\
+matters to the overall project.]\
+\
+Session Allocation:\
+\
+- Estimated Sessions: [#]\
+\
+- Sessions Used: [#]\
+\
+- Sessions Remaining: [#]\
+\
+Expected Deliverables:\
+\
+[ ] [Deliverable 1]\
+\
+[ ] [Deliverable 2]\
+\
+[ ] [Deliverable 3]\
+\
+[ ] [Deliverable 4]\
+\
+Success Criteria:\
+\
+The phase is complete when:\
+\
+- [Criterion 1]\
+\
+- [Criterion 2]\
+\
+- [Criterion 3]\
+\
+Key Considerations:\
+\
+- [Consideration 1 ... dependencies, risks, or notes for this phase]\
+\
+- [Consideration 2]\
+\
+- [Consideration 3]\
+\
+Phase Transition Trigger:\
+\
+[Describe what signals that this phase is complete and the next should begin]\
+\
+================================================================================\
+\
+HORIZON VIEW\
+\
+[Updated at phase transitions. Provides strategic orientation.]\
+\
+WHERE WE'VE BEEN:\
+\
+[Summary of completed phases, key decisions made, and how the project has\
+\
+evolved from its original conception.]\
+\
+WHERE WE ARE:\
+\
+[Current phase focus, what's being accomplished, key challenges or\
+\
+opportunities in the current work.]\
+\
+WHERE WE'RE GOING:\
+\
+[Upcoming phases, what remains to complete the project, anticipated\
+\
+challenges or decision points ahead.]\
+\
+================================================================================\
+\
+ROADMAP HISTORY\
+\
+[Track significant roadmap updates for audit trail.]\
+\
+| Version | Date | Session | Change Summary |\
+\
+|---------|------------|---------|-------------------------------------------|\
+\
+| 1.0 | [Date] | [###] | Initial roadmap created |\
+\
+| 1.1 | [Date] | [###] | [Change description] |\
+\
+| 1.2 | [Date] | [###] | [Change description] |\
+\
+================================================================================\
+\
+END OF PROJECT ROADMAP\
+\
+--------------------------------------------------------------------------------\
+\
+END OF TPL-010\
+```\
+\
+Source: [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

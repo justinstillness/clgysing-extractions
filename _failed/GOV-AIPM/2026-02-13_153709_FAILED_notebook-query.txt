@@ -1,0 +1,34 @@
+================================================================================
+EXTRACTION: 2026-02-13_153709_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 1362 chars but answer extraction failed
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix G Artifact Taxonomy Reference updated complete full text
+Timestamp:       2026-02-13T15:37:09.000328+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: N/A
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  0
+Duration:        640000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "notebook": {"id": "430df618-e337-4971-abaa-6528e96bb1c4", "title": "Havona Anvil Suite", "source_count": 9, "url": "https://notebooklm.google.com/notebook/430df618-e337-4971-abaa-6528e96bb1c4"}, "sources": [{"id": "37769835-126d-4879-939c-f8ab27dd21c0", "title": "clgysing-extractions/_docs/CHANGELOG.txt at main .. justinstillness/clgysing-extractions .. GitHub"}, {"id": "5cbc6c2f-881d-4156-955d-79fc7ada848a", "title": "clgysing-extractions/_docs/v1.1_REF_Development-Wishli
+... [862 more chars]
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

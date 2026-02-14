@@ -3,14 +3,18 @@ EXTRACTION: 2026-02-12_023548_FAILED_notebook-query [FAILED]
 ================================================================================
 Status:          NO_RESPONSE
 Error Detail:    Response was 15 chars -- likely timeout or NotebookLM failure
+Branch:          N/A
 Source Package:  N/A
-Pass Type:       N/A
-Would-Be Route:  Tier 3 (Untagged)
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
 Query:           Section 4.4 AI Coordinator Duties. Is there any content in the v1.0.7 manual after Section 4.3.5.6? What comes after the phase transition checklist in Section 4?
 Timestamp:       2026-02-12T02:35:48.000500+00:00
 Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
 Source IDs:      6d47afc3-99a1-42b3-aa73-4488462870d7
 Conversation ID: N/A
+Chat Configure:  default
 Response Chars:  0
 Duration:        9036999ms
 ================================================================================

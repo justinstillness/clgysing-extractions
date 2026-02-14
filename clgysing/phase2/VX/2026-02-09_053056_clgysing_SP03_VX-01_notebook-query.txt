@@ -1,13 +1,14 @@
 ================================================================================
 EXTRACTION: 2026-02-09_053056_clgysing_SP03_VX-01_notebook-query
 ================================================================================
+Branch:          N/A
 Source Package:  SP03
 Pass Type:       VX (Vocabulary Extraction)
 Pass Number:     01
 Theme/Focus:     signal-test
 Project:         clgysing
 Session:         019
-Routing:         Tier 1 (Tagged + Known)
+Routing:         Tier 1c (clgysing/VX)
 Query:           Identify the top 3 most distinctive vocabulary terms used across the concept repositories in this notebook, providing brief definitions for each.
 Timestamp:       2026-02-09T05:30:56.000584+00:00
 Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9

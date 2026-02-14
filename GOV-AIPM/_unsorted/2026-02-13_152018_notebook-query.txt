@@ -1,0 +1,99 @@
+================================================================================
+EXTRACTION: 2026-02-13_152018_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix E Version History complete full text including v1.0.8 entry
+Timestamp:       2026-02-13T15:20:18.000068+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: b51e8a52-00f0-485c-a264-0b8b28ccb66c
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  4354
+Duration:        165000ms
+================================================================================
+
+Based on the sources provided, here is the current state of the living documents in the HA Suite (Havona Anvil Suite) as of Session 028.\
+\
+### **Specifications (SPEC)**\
+\
+*   **`v4.1_SPEC_HA-Suite-Architecture-Reference.txt`**\
+    *   **Version:** v4.1 [1]\
+    *   **Status:** **Active / Current.**\
+    *   **Update Needs:** This appears to be the most recent architecture specification. However, several Tool Reference documents (Majeston, Caliper, SeraphRecorder) still point to **v4.0** in their \"System Context\" sections [2-4]. These references should eventually be updated to align with v4.1.\
+\
+*   **`v0.2_SPEC_Indexer-File-Organization-System.txt`**\
+    *   **Version:** v0.2 [5]\
+    *   **Status:** **Active.**\
+    *   **Update Needs:** Specifies the file organization protocol, pass codes (PE, CE, VX, etc.), and routing logic. It was updated to include \"purpose\" fields in manifests and new folder structures [5].\
+\
+### **Tool References (REF)**\
+\
+*   **`v1.1_REF_Chronicler-Tool-Reference.txt`**\
+    *   **Version:** v1.1 [6]\
+    *   **Status:** **Current (Updated Session 026).**\
+    *   **Update Needs:** None. This is the freshest reference document, updated on 2026-02-12 to fix a tool discovery bug (flush_pipeline visibility) [7].\
+\
+*   **`v1.0_REF_Majeston-Tool-Reference.txt`**\
+    *   **Version:** v1.0 [8]\
+    *   **Status:** **Stable** (Created Session 021).\
+    *   **Update Needs:** Minor update recommended.\
+        1.  It references `v4.0_SPEC_HA-Suite-Architecture-Reference.txt` [3], which is now at v4.1.\
+        2.  It lists `notebook_query` behavior and tool inventory which are currently stable, but the document itself hasn't changed since Session 013 features were hardened [9].\
+\
+*   **`v1.0_REF_SeraphRecorder-Tool-Reference.txt`**\
+    *   **Version:** v1.0 [10]\
+    *   **Status:** **Stable** (Created Session 021).\
+    *   **Update Needs:** Minor update recommended.\
+        1.  References `v4.0_SPEC_HA-Suite-Architecture-Reference.txt` [4].\
+        2.  Documents `extract.py` v6 [11]. If the pipeline has advanced beyond v6 in Session 028, this document requires an update.\
+        3.  Mentions \"PENDING: D-019 ... add JSONL archival\" [12]; if this has been implemented, the doc is out of date.\
+\
+*   **`v1.0_REF_Caliper-Tool-Reference.txt`**\
+    *   **Version:** v1.0 [13]\
+    *   **Status:** **Stable** (Created Session 021).\
+    *   **Update Needs:** Minor update recommended. References `v4.0_SPEC_HA-Suite-Architecture-Reference.txt` [2]. The tool itself is stable with no changes since Session 011 [14].\
+\
+*   **`v1.0_REF_File-Browser-Tool-Reference.txt`**\
+    *   **Version:** v1.0 [15]\
+    *   **Status:** **Active.**\
+    *   **Update Needs:** None explicitly noted. Deployed Session 022, auth fixed Session 023.\
+\
+### **Administrative & Operational Documents**\
+\
+*   **`v1.1_REF_Development-Wishlist.txt`**\
+    *   **Version:** v1.1 [16]\
+    *   **Status:** **Active.**\
+    *   **Update Needs:** Routine updates as items are completed or prioritized.\
+\
+*   **`SERAPH-Signal-String-Reference.txt`**\
+    *   **Version:** N/A (Live Reference)\
+    *   **Status:** **Active.**\
+    *   **Update Needs:** Must be kept in sync with the `PASS_TYPE_NAMES` dictionary in `extract.py` [17]. If new pass types (like the \"Tier 2\" types mentioned in [18]) are formalized, this document must be updated.\
+\
+*   **`v1.0_REF_NotebookLM-Notebook-Directory.txt`**\
+    *   **Version:** v1.0 [3]\
+    *   **Status:** **Active.**\
+    *   **Update Needs:** Reference< 2026/02/13 15:23:03.000189324  length=851 from=31449 to=32299
+d by Majeston [3]. As the suite currently contains 87 notebooks [8], this document likely requires frequent updates to remain accurate.\
+\
+*   **`CHANGELOG.txt`**\
+    *   **Version:** N/A\
+    *   **Status:** **Active.**\
+    *   **Update Needs:** Continuous. References to this file appear in almost all REF docs [2-4], identifying it as the source of truth for recent changes.\
+\
+### **Summary of Restoration/Update Needs**\
+*   **Restoration:** No documents appear to be missing or in need of restoration from backups.\
+*   **Updates:** The primary maintenance task is harmonizing the **Architecture Reference version**. The Tool References (Majeston, Caliper, SeraphRecorder) cite **v4.0**, but the actual architecture spec is now **v4.1**.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,63 @@
+================================================================================
+EXTRACTION: 2026-02-13_201431_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         029
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What are the current sources in this notebook and their versions? What is the latest state of the HA Suite architecture and any recent changes?
+Timestamp:       2026-02-13T20:14:31.000769+00:00
+Notebook ID:     430df618-e337-4971-abaa-6528e96bb1c4
+Source IDs:      all
+Conversation ID: c8c15e01-19a4-4a1a-9504-627830cc42c9
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  3745
+Duration:        25999ms
+================================================================================
+
+Based on the sources provided, here is the status of the current notebook content and the latest state of the HA Suite architecture.
+
+### 1. Current Sources and Versions
+The following sources are successfully loaded with their content available for analysis:
+
+*   **`v1.1_REF_Chronicler-Tool-Reference.txt`** (Version 1.1, Updated 2026-02-12, Session 026) [1, 2]
+*   **`v1.0_REF_Majeston-Tool-Reference.txt`** (Version 1.0, Created Session 021) [3]
+*   **`v1.0_REF_SeraphRecorder-Tool-Reference.txt`** (Version 1.0, documents `extract.py` v6, Created Session 021) [4]
+*   **`v1.0_REF_Caliper-Tool-Reference.txt`** (Version 1.0, Created Session 021) [5]
+*   **`v1.0_REF_File-Browser-Tool-Reference.txt`** (Version 1.0, Deployed Session 022) [6]
+*   **`v0.2_SPEC_Indexer-File-Organization-System.txt`** (Version 0.2) [7]
+
+**Important Note on Source Quality:**
+Three sources appears to contain **GitHub interface text** (navigation menus, footers) rather than the actual file content. This likely occurred during the import process. Consequently, I cannot directly cite the content of these specific files, though their titles imply their intended purpose:
+*   `_docs/CHANGELOG.txt` [8-12]
+*   `_docs/v1.3_REF_Development-Wishlist.txt` [13-17]
+*   `_docs/v4.1_SPEC_HA-Suite-Architecture-Reference.txt` [18-22]
+
+### 2. Latest HA Suite Architecture State
+Drawing from the detailed tool references, the HA Suite (Havona Anvil Suite) architecture is currently defined by five distinct components running on an EC2 instance [1]:
+
+*   **Majeston (NotebookLM MCP):** The core research engine. It bridges Claude to Google's NotebookLM, allowing queries against 87+ notebooks (~6,000 pages of source material) [23]. It runs on internal port 8100 [24].
+*   **SeraphRecorder (Traffic Pipeline):** A transparent capture system that solves the "double-wire cost" problem. It sits on port 8000, intercepts traffic to Majeston, extracts query/response pairs, and automatically pushes them to the GitHub repository [25, 26]. It uses a 3-tier routing system to organize files based on "SERAPH signal strings" [27].
+*   **Chronicler (Repository MCP):** Provides Claude with direct read/write/move access to the `clgysing-extractions` GitHub repository [1]. It allows for organizing files, assigning concept IDs, and triggering the pipeline flush on demand [28].
+*   **Caliper (Analysis MCP):** A "precision measurement" tool that scans GitHub folders to provide word counts and token estimates, flagging files that exceed the 5,000-word segmentation threshold [29].
+*   **File Browser (Web App):** A user-facing web interface (port 8095) for browsing and downloading files from the extraction repository without using CLI tools [6].
+
+### 3. Recent Changes & Updates
+The sources highlight several critical updates up to **Session 026 (Feb 12, 2026)**:
+
+*   **Chronicler v1.1 Update (Session 026):** A bug was fixed where the `flush_pipeline` tool was invisible to Claude due to ordering in the Python definition. All 10 Chronicler tools are now discoverable [2].
+*   **SeraphRecorder v6 (Session 020):** 
+    *   **Failure Resilience:** The pipeline now creates "ghost files" (suffixed `_FAILED`) for failed extractions instead of silently dropping them. This creates an audit trail for rate-limiting errors [30].
+    *   **Extraction Summary:** `extract.py` now outputs a summary of successful vs. failed extractions to the console [31].
+*   **File Browser Auth Fix (Session 023):** Login loops were resolved by correcting the `bcrypt` hash format (switching from `$2a$` to `$2y$`) [6].
+*   **Indexer v0.2:** The file organization protocol was updated to include a "purpose" field in the manifest and cleared the `_untagged/` directory to reflect better sorting [7].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,13 +1,14 @@
 ================================================================================
 EXTRACTION: 2026-02-09_213130_clgysing_SPPvS_TX-01_notebook-query
 ================================================================================
+Branch:          N/A
 Source Package:  SPPvS
 Pass Type:       TX (Thematic Extraction)
 Pass Number:     01
 Theme/Focus:     N/A
 Project:         clgysing
 Session:         014
-Routing:         Tier 1 (Tagged + Known)
+Routing:         Tier 1c (clgysing/TX)
 Query:           How is the role of negotiation framed in social and civil relationships in the source material?
 Timestamp:       2026-02-09T21:31:30.000992+00:00
 Notebook ID:     05dbf2cc-4060-42d0-97f1-65d38ea90204

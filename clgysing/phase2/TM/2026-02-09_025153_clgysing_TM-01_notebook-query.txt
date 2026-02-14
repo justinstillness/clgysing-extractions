@@ -1,13 +1,14 @@
 ================================================================================
 EXTRACTION: 2026-02-09_025153_clgysing_TM-01_notebook-query
 ================================================================================
+Branch:          N/A
 Source Package:  N/A
 Pass Type:       TM (Theme Mapping)
 Pass Number:     01
 Theme/Focus:     N/A
 Project:         clgysing
 Session:         013
-Routing:         Tier 1 (Tagged + Known)
+Routing:         Tier 1c (clgysing/TM)
 Query:           Identify and organize all major themes and conceptual clusters present across all sources in this notebook. For each major theme, provide: a descriptive title, sub-themes or conceptual branches, which sources contribute to this theme, and the extent of coverage (how deeply the theme is explored). Organize hierarchically from broadest themes to most specific sub-themes.\n\n
 Timestamp:       2026-02-09T02:51:53.000053+00:00
 Notebook ID:     05dbf2cc-4060-42d0-97f1-65d38ea90204

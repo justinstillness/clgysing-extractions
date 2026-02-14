@@ -1,0 +1,442 @@
+================================================================================
+EXTRACTION: 2026-02-13_005842_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           TPL-022 Project Closure Report template complete full text instructions form
+Timestamp:       2026-02-13T00:58:42.000511+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: ab9303f4-8dd9-457c-b5a6-3cb54384d7ca
+Chat Configure:  default
+Response Chars:  15373
+Duration:        40999ms
+================================================================================
+
+Here is the complete full text, instructions, and form for **TPL-022: Project Closure Report**, based on the GOV-AIPM manual sources [1-36].\
+\
+***\
+\
+**TPL-022: PROJECT CLOSURE REPORT**\
+\
+**PURPOSE:**\
+Comprehensive documentation template for formally closing AI-assisted projects, capturing lessons learned, final metrics, asset disposition, and knowledge transfer requirements. Ensures systematic closure that preserves institutional know< 2026/02/13 00:59:23.000059332  length=8192 from=61807 to=69998
+ledge and informs future projects.\
+\
+**WHEN TO USE:**\
+*   Project completion (successful delivery)\
+*   Project termination (early ending, strategic pivot)\
+*   Phase completion requiring formal closure before next phase\
+*   Annual/periodic review requiring project status formalization\
+\
+**RELATED SECTIONS:**\
+*   Section 5.8: Project Closure Report (lifecycle integration)\
+*   Section 3.2: Phase Transition Standards\
+*   Section 4.4: Decision Logs\
+*   TPL-002: Decision Log Template (for final decisions)\
+*   TPL-003: Session Log Template (for final session)\
+\
+***\
+\
+### **TEMPLATE CONTENT**\
+\
+**PROJECT CLOSURE REPORT**\
+\
+#### **PROJECT IDENTIFICATION**\
+*   **Project Name:** `[Full project name]`\
+*   **Project Code:** `[Internal reference code if applicable]`\
+*   **Project Manager:** `[Name/role]`\
+*   **AI Collaborator:** `[Model/version used]`\
+*   **Report Date:** `[YYYY-MM-DD]`\
+*   **Report Author:** `[Name]`\
+*   **Report Version:** `[e.g., v1.0]`\
+\
+#### **CLOSURE CLASSIFICATION**\
+**Closure Type:**\
+[ ] Successful Completion\
+[ ] Early Termination\
+[ ] Strategic Pivot\
+[ ] Phase Completion\
+[ ] Administrative Closure\
+\
+*   **Closure Date:** `[YYYY-MM-DD]`\
+*   **Original Target:** `[YYYY-MM-DD]`\
+*   **Variance:** `[+/- days, explanation if significant]`\
+\
+---\
+\
+#### **SECTION 1: EXECUTIVE SUMMARY**\
+\
+**1.1 PROJECT OVERVIEW**\
+`[2-3 paragraph summary of what the project was, why it was undertaken, and what it accomplished. Write for stakeholders who may not have been involved in day-to-day operations.]`\
+\
+**Original Objectives:**\
+1.  `[Primary objective]`\
+2.  `[Secondary objective]`\
+3.  `[Additional objectives as applicable]`\
+\
+**Final Status:**\
+`[Brief statement of achievement level - e.g., \"All primary objectives achieved, one secondary objective deferred to future project.\"]`\
+\
+**1.2 KEY OUTCOMES**\
+*   `[Outcome 1]`\
+*   `[Outcome 2]`\
+*   `[Outcome 3]`\
+*   `[Additional outcomes]`\
+\
+**1.3 RECOMMENDATION SUMMARY**\
+`[2-3 sentences capturing the most important recommendations for future similar projects, extracted from detailed lessons learned below]`\
+\
+---\
+\
+#### **SECTION 2: SCOPE ANALYSIS**\
+\
+**2.1 ORIGINAL VS. FINAL SCOPE**\
+\
+**ORIGINAL SCOPE (from project charter/initiation):**\
+`[Copy or summarize original scope statement]`\
+\
+**FINAL SCOPE (as delivered):**\
+`[Document actual scope delivered]`\
+\
+**SCOPE CHANGES:**\
+| Change # | Description | Reason | Impact | Approved |\
+| :--- | :--- | :--- | :--- | :--- |\
+| SC-001 | `[Change description]` | `[Why changed]` | `[Impact]` | [Y/N/NA] |\
+| SC-002 | `[Change description]` | `[Why changed]` | `[Impact]` | [Y/N/NA] |\
+\
+**2.2 SCOPE VARIANCE ANALYSIS**\
+*   **Added Items:** `[List items added to scope during project]`\
+*   **Removed Items:** `[List items removed from scope]`\
+*   **Modified Items:** `[List items significantly modified]`\
+\
+**Net Assessment:**\
+[ ] Scope Maintained\
+[ ] Scope Expanded (controlled)\
+[ ] Scope Reduced (controlled)\
+[ ] Scope Creep Occurred\
+\
+**Lessons for Scope Management:**\
+`[What would you do differently regarding scope definition and control?]`\
+\
+---\
+\
+#### **SECTION 3: TIMELINE ANALYSIS**\
+\
+**3.1 MILESTONE ACHIEVEMENT**\
+| Milestone | Planned | Actual | Variance | Notes |\
+| :--- | :--- | :--- | :--- | :--- |\
+| Project Kickoff | `[Date]` | `[Date]` | `[Days]` | `[Notes]` |\
+| `[Phase 1 Complete]` | `[Date]` | `[Date]` | `[Days]` | `[Notes]` |\
+| `[Phase 2 Complete]` | `[Date]` | `[Date]` | `[Days]` | `[Notes]` |\
+| `[Key Deliverable]` | `[Date]` | `[Date]` | `[Days]` | `[Notes]` |\
+| Project Closure | `[Date]` | `[Date]` | `[Days]` | `[Notes]` |\
+\
+**3.2 TIMELINE VARIANCE ANALYSIS**\
+*   **Total Planned Duration:** `[X days/weeks/months]`\
+*   **Total Actual Duration:** `[X days/weeks/months]`\
+*   **Overall Variance:** `[+/- X days] ([X]%)`\
+\
+**Primary Delay Factors:**\
+1.  `[Factor and impact]`\
+2.  `[Factor and impact]`\
+\
+**Primary Acceleration Factors:**\
+1.  `[Factor and impact]`\
+2.  `[Factor and impact]`\
+\
+**Lessons for Timeline Management:**\
+`[What would you do differently regarding scheduling and time estimation?]`\
+\
+---\
+\
+#### **SECTION 4: RESOURCE UTILIZATION**\
+\
+**4.1 HUMAN RESOURCES**\
+| Role | Planned Hours | Actual Hours | Variance | Notes |\
+| :--- | :--- | :--- | :--- | :--- |\
+| Project Manager | `[Hours]` | `[Hours]` | `[%]` | `[Notes]` |\
+| `[Role 2]` | `[Hours]` | `[Hours]` | `[%]` | `[Notes]` |\
+| `[Role 3]` | `[Hours]` | `[Hours]` | `[%]` | `[Notes]` |\
+\
+**4.2 AI RESOURCES**\
+| Resource Type | Planned | Actual | Variance | Notes |\
+| :--- | :--- | :--- | :--- | :--- |\
+| Total Sessions | `[Count]` | `[Count]` | `[%]` | `[Notes]` |\
+| Tokens Consumed | `[Estimate]` | `[Actual]` | `[%]` | `[Notes]` |\
+| Branch Sessions | `[Count]` | `[Count]` | `[%]` | `[Notes]` |\
+\
+**AI Utilization Patterns:**\
+`[Describe how AI was used - phases of heavy use, light use, etc.]`\
+\
+**4.3 FINANCIAL RESOURCES (if applicable)**\
+| Category | Budgeted | Actual | Variance | Notes |\
+| :--- | :--- | :--- | :--- | :--- |\
+| `[Category 1]` | `[$Amount]` | `[$Amount]` | `[%]` | `[Notes]` |\
+| `[Category 2]` | `[$Amount]` | `[$Amount]` | `[%]` | `[Notes]` |\
+| **Total** | **`[$Amount]`** | **`[$Amount]`** | **`[%]`** | **`[Notes]`** |\
+\
+**4.4 RESOURCE LESSONS LEARNED**\
+`[What would you do differently regarding resource planning and allocation?]`\
+\
+---\
+\
+#### **SECTION 5: DELIVERABLES ACCEPTANCE**\
+\
+**5.1 DELIVERABLE STATUS**\
+| Deliverable ID | Name | Status | Accepted By | Date |\
+| :--- | :--- | :--- | :--- | :--- |\
+| DEL-001 | `[Deliverable name]` | `[Status]` | `[Name]` | `[Date]` |\
+| DEL-002 | `[Deliverable name]` | `[Status]` | `[Name]` | `[Date]` |\
+| DEL-003 | `[Deliverable name]` | `[Status]` | `[Name]` | `[Date]` |\
+\
+*Status Options: Accepted / Accepted with Conditions / Rejected / Deferred / N/A*\
+\
+**5.2 ACCEPTANCE CRITERIA VERIFICATION**\
+**Deliverable:** `[DEL-001 Name]`\
+| Criterion | Met? | Evidence/Notes |\
+| :--- | :--- | :--- |\
+| `[Criterion 1]` | Y/N | `[Evidence]` |\
+| `[Criterion 2]` | Y/N | `[Evidence]` |\
+\
+`[Repeat for each major deliverable]`\
+\
+**5.3 OUTSTANDING ITEMS**\
+`[List any items not delivered, with explanation and disposition]`\
+| Item | Reason Not Delivered | Disposition |\
+| :--- | :--- | :--- |\
+| `[Item]` | `[Reason]` | `[Transferred to X / Cancelled]` |\
+\
+---\
+\
+#### **SECTION 6: QUALITY ASSESSMENT**\
+\
+**6.1 QUALITY METRICS**\
+| Metric | Target | Actual | Assessment |\
+| :--- | :--- | :--- | :--- |\
+| Defect Rate | `[Target]` | `[Actual]` | `[Met/Not Met]` |\
+| Rework Percentage | `[Target]` | `[Actual]` | `[Met/Not Met]` |\
+| Stakeholder Satisfaction | `[Target]` | `[Actual]` | `[Met/Not Met]` |\
+| `[Custom Metric]` | `[Target]` | `[Actual]` | `[Met/Not Met]` |\
+\
+**6.2 QUALITY ISSUES LOG**\
+| Issue ID | Description | Severity | Resolution | Prevented By |\
+| :--- | :--- | :--- | :--- | :--- |\
+| QI-001 | `[Issue description]` | H/M/L | `[How resolved]` | `[Future prevent]` |\
+| QI-002 | `[Issue description]` | H/M/L | `[How resolved]` | `[Future prevent]` |\
+\
+**6.3 AI-SPECIFIC QUALITY OBSERVATIONS**\
+`[Document quality patterns specific to AI collaboration]`\
+\
+**Strengths Observed:**\
+*   `[AI capability that enhanced quality]`\
+*   `[AI capability that enhanced quality]`\
+\
+**Challenges Observed:**\
+*   `[AI limitation that affected quality]`\
+*   `[AI limitation that affected quality]`\
+\
+**Mitigation Effectiveness:**\
+`[How well did your quality controls work for AI-generated content?]`\
+\
+---\
+\
+#### **SECTION 7: RISK AND ISSUE RESOLUTION**\
+\
+**7.1 RISK REGISTER FINAL STATUS**\
+| Risk ID | Description | Initial | Final | Resolution |\
+| :--- | :--- | :--- | :--- | :--- |\
+| R-001 | `[Risk description]` | `[Rating]` | `[Status]` | `[How resolved/avoided]` |\
+| R-002 | `[Risk description]` | `[Rating]` | `[Status]` | `[How resolved/avoided]` |\
+\
+*Final Status Options: Closed-Avoided / Closed-Mitigated / Closed-Accepted / Occurred-Managed / Occurred-Impact / Transferred*\
+\
+**7.2 ISSUE LOG FINAL STATUS**\
+| Issue ID | Description | Severity | Status | Resolution |\
+| :--- | :--- | :--- | :--- | :--- |\
+| I-001 | `[Issue description]` | H/M/L | < 2026/02/13 00:59:23.000087784  length=6715 from=69999 to=76713
+`[Status]` | `[Resolution summary]` |\
+| I-002 | `[Issue description]` | H/M/L | `[Status]` | `[Resolution summary]` |\
+\
+**7.3 UNRESOLVED ITEMS**\
+`[Document any risks or issues being transferred or remaining open]`\
+| Item | Type | Current Status | Transfer To | Notes |\
+| :--- | :--- | :--- | :--- | :--- |\
+| `[ID]` | Risk/Issue | `[Status]` | `[Project/Owner]` | `[Transition notes]` |\
+\
+---\
+\
+#### **SECTION 8: LESSONS LEARNED**\
+\
+**8.1 WHAT WORKED WELL**\
+**Category: Project Management**\
+*   `[Lesson - what specifically worked and why]`\
+*   `[Lesson - what specifically worked and why]`\
+\
+**Category: AI Collaboration**\
+*   `[Lesson - what specifically worked and why]`\
+*   `[Lesson - what specifically worked and why]`\
+\
+**Category: Technical Execution**\
+*   `[Lesson - what specifically worked and why]`\
+*   `[Lesson - what specifically worked and why]`\
+\
+**Category: Stakeholder Management**\
+*   `[Lesson - what specifically worked and why]`\
+*   `[Lesson - what specifically worked and why]`\
+\
+**8.2 WHAT COULD BE IMPROVED**\
+**Category: Project Management**\
+*   `[Issue]` ... `[Recommended improvement]`\
+*   `[Issue]` ... `[Recommended improvement]`\
+\
+**Category: AI Collaboration**\
+*   `[Issue]` ... `[Recommended improvement]`\
+\
+**Quality Control:**\
+`[Lessons about verifying AI output, catching errors, validation approaches]`\
+\
+**Collaboration Patterns:**\
+`[Lessons about human-AI workflow, handoffs, decision boundaries]`\
+\
+**8.4 RECOMMENDATIONS FOR FUTURE PROJECTS**\
+**Must Do (Critical):**\
+1.  `[Recommendation that future projects must adopt]`\
+2.  `[Recommendation that future projects must adopt]`\
+\
+**Should Do (High Value):**\
+1.  `[Recommendation that would significantly benefit future projects]`\
+2.  `[Recommendation that would significantly benefit future projects]`\
+\
+**Consider (Situational):**\
+1.  `[Recommendation that may help depending on context]`\
+2.  `[Recommendation that may help depending on context]`\
+\
+---\
+\
+#### **SECTION 9: ASSET DISPOSITION**\
+\
+**9.1 DOCUMENT ARCHIVE**\
+| Asset Type | Location | Retention | Owner |\
+| :--- | :--- | :--- | :--- |\
+| Project Charter | `[Path/URL]` | `[Period]` | `[Owner]` |\
+| Session Logs | `[Path/URL]` | `[Period]` | `[Owner]` |\
+| Decision Logs | `[Path/URL]` | `[Period]` | `[Owner]` |\
+| Deliverables | `[Path/URL]` | `[Period]` | `[Owner]` |\
+| Chat Transcripts | `[Path/URL]` | `[Period]` | `[Owner]` |\
+| Bootstrap Docs | `[Path/URL]` | `[Period]` | `[Owner]` |\
+| `[Other Assets]` | `[Path/URL]` | `[Period]` | `[Owner]` |\
+\
+**9.2 KNOWLEDGE ASSETS**\
+**Templates Produced:**\
+`[List any reusable templates created during project]`\
+*   `[Template name]` - `[Description]` - `[Location]`\
+\
+**Prompts Developed:**\
+`[List any effective prompts worth preserving]`\
+*   `[Prompt name/purpose]` - `[Location in Golden Prompt Library or other]`\
+\
+**Patterns Documented:**\
+`[List any new patterns or approaches worth capturing]`\
+*   `[Pattern name]` - `[Description]` - `[Location]`\
+\
+**9.3 SYSTEM/ACCESS DISPOSITION**\
+| System/Access | Current Status | Disposition Action | Completion Date |\
+| :--- | :--- | :--- | :--- |\
+| `[System access 1]` | `[Status]` | `[Revoke/Maintain]` | `[Date]` |\
+| `[API keys]` | `[Status]` | `[Rotate/Revoke]` | `[Date]` |\
+| `[Shared folders]` | `[Status]` | `[Archive/Delete]` | `[Date]` |\
+\
+---\
+\
+#### **SECTION 10: STAKEHOLDER SIGN-OFF**\
+\
+**10.1 FORMAL ACCEPTANCE**\
+**Project Closure Acceptance:**\
+By signing below, stakeholders acknowledge:\
+*   All deliverables have been reviewed\
+*   Outstanding items have been documented and dispositioned\
+*   The project may be formally closed\
+\
+| Role | Name | Signature | Date |\
+| :--- | :--- | :--- | :--- |\
+| Project Sponsor | `______________` | `____________` | `_________________` |\
+| Project Manager | `______________` | `____________` | `_________________` |\
+| Key Stakeholder | `______________` | `____________` | `_________________` |\
+| `[Additional]` | `______________` | `____________` | `_________________` |\
+\
+**10.2 CLOSURE NOTES**\
+`[Any final notes, conditions, or comments from stakeholders]`\
+\
+---\
+\
+#### **SECTION 11: APPENDICES (as needed)**\
+\
+**Appendix A: Final Project Metrics Dashboard**\
+`[Include or reference final metrics visualization]`\
+\
+**Appendix B: Complete Session Log Index**\
+`[List all sessions with links/references]`\
+\
+**Appendix C: Decision Log Summary**\
+`[Major decisions made during project]`\
+\
+**Appendix D: [Project-Specific Appendix]**\
+`[Any additional documentation needed]`\
+\
+***\
+\
+### **USAGE INSTRUCTIONS**\
+\
+**COMPLETING THIS TEMPLATE:**\
+\
+1.  **START EARLY:** Begin populating this template during the final phase, not after. Gather metrics and lessons while they're fresh.\
+2.  **BE HONEST:** The value is in accurate assessment, not positive spin. Future projects benefit from candid lessons learned.\
+3.  **QUANTIFY WHERE POSSIBLE:** Metrics tell the story better than narrative alone. Include actual numbers, dates, and measurements.\
+4.  **FOCUS ON ACTIONABLE LESSONS:** \"Communication could improve\" is not actionable. \"Weekly stakeholder email with standard format\" is actionable.\
+5.  **OBTAIN SIGN-OFF:** Formal closure prevents project resurrection and scope disputes. Get signatures before archiving.\
+\
+**SCALING GUIDANCE:**\
+\
+*   **Small Projects (< 10 sessions):**\
+    *   Sections 1, 5, 8, 10 required\
+    *   Other sections abbreviated or omitted\
+    *   Single-page executive summary may suffice\
+*   **Medium Projects (10-50 sessions):**\
+    *   All sections recommended\
+    *   Detail level moderate\
+    *   Focus on lessons learned\
+*   **Large Projects (50+ sessions):**\
+    *   All sections required\
+    *   High detail level\
+    *   Consider separate lessons learned workshop\
+    *   May require multiple reviewers\
+\
+**AI-ASSISTED COMPLETION:**\
+This template can be partially completed by AI using:\
+*   Session logs as source material\
+*   Decision logs for Section 7 and lessons\
+*   Project artifacts for deliverables list\
+\
+**Human verification required for:**\
+*   Stakeholder satisfaction assessment\
+*   Political/organizational lessons\
+*   Sign-off sections\
+*   Final recommendations\
+\
+**CROSS-REFERENCES:**\
+*   **TPL-001:** Project Charter (original scope reference)\
+*   **TPL-002:** Decision Log (decision history)\
+*   **TPL-003:** Session Log (session details)\
+*   **TPL-023:** Backlog Register (deferred items)\
+*   **Section 5.8:** Project Closure Report (process guidance)\
+*   **Section 3.2:** Phase Transition Standards\
+*   **Section 6.3:** Knowledge Preservation
+
+================================================================================
+END OF EXTRACTION
+================================================================================

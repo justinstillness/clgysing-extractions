@@ -1,0 +1,89 @@
+================================================================================
+EXTRACTION: 2026-02-13_005203_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Volume 5 header format document code version date status volume line structure first 30 lines
+Timestamp:       2026-02-13T00:52:03.000359+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: a07c4802-129a-4f02-a42b-8fe81ef22be7
+Chat Configure:  default
+Response Chars:  2050
+Duration:        32999ms
+================================================================================
+
+Based on the assembly patterns established in **Session 039** (Volume 1) [1] and **Session 045** (Volume 5) [2], and the standard header format found in the source text for Volume 1 [3] and Volume 6a [4], the first 30 lines of **Volume 5** follow this specific structure:
+
+```text
+================================================================================
+
+================================================================================
+
+AI OPERATIONS MANUAL
+
+A Practical System for AI-Assisted Business Operations
+
+================================================================================
+
+================================================================================
+
+Document Code: GOV-AIPM
+
+Version: 1.0.8-DRAFT
+
+Date: February 2026
+
+Status: Phase 6c Integration
+
+Volume: 5 of 6 ... ADVANCED PATTERNS (Sections 12-14)
+
+================================================================================
+
+VOLUME 5 TABLE OF CONTENTS
+
+================================================================================
+
+PART V: ADVANCED PATTERNS
+
+Section 12: Extended Context
+
+12.1 Multi-Session Continuity
+
+12.2 Complex Project Management
+
+12.3 Branch Management
+
+12.4 Three-Tier Documentation Architecture
+
+Section 13: Specialized Use Cases
+
+13.1 Long-Running Projects
+
+13.2 Creative & Exploratory Work
+
+Section 14: Failure Modes & Recovery
+
+14.1 Common Failure Mode Catalog
+
+14.2 Recovery Strategies
+
+14.3 Cognitive Divergence Detection
+```
+
+### Key Formatting Details
+*   **Document Code:** GOV-AIPM [3]
+*   **Version:** 1.0.8-DRAFT [3]
+*   **Date:** February 2026 [3]
+*   **Status:** Phase 6c Integration [3]
+*   **Volume Identification:** Volume 5 of 6 ... ADVANCED PATTERNS (Sections 12-14) [5, 6]
+*   **Content:** Covers **Part V** (Advanced Patterns), specifically **Sections 12, 13, and 14** [7, 8].
+*   **New Sections:** Includes **12.3 Branch Management** and **12.4 Three-Tier Documentation Architecture**, which were drafted in Session 036 and Session 038 respectively and integrated into Volume 5 during Session 045 [7, 9].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

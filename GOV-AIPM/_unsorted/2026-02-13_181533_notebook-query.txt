@@ -1,0 +1,187 @@
+================================================================================
+EXTRACTION: 2026-02-13_181533_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         050
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Volume header format, volume footer END marker format, segment boundary markers used in volume files, exact text patterns for headers and footers across all volumes
+Timestamp:       2026-02-13T18:15:33.000549+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: dfeb659d-4fb1-46bb-aee7-8eff43ae012b
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  6340
+Duration:        38999ms
+================================================================================
+
+Based on the source files for GOV-AIPM v1.0.8-DRAFT, here are the exact specifications for volume headers, footers, segment markers, and text patterns.\
+\
+### 1. Volume Header Formats\
+\
+The project uses two distinct header formats: a **Standard Double-Block Header** (used for Volumes 1, 2a, 2b, 3a, 3b, 5, 6a, and 6b) and a **Simplified Header** (used for Volumes 4 and 6c).\
+\
+#### **Format A: Standard Double-Block Header (80 characters)**\
+*Used in Volumes 1, 2a, 2b, 3a, 3b, 5, 6a, 6b*\
+\
+This format consists of two blocks of `================================================================================` (80 characters).\
+\
+**Exact Text Pattern:**\
+```text\
+================================================================================\
+================================================================================\
+AI OPERATIONS MANUAL\
+A Practical System for AI-Assisted Business Operations\
+================================================================================\
+================================================================================\
+Document Code: GOV-AIPM\
+Version: 1.0.8-DRAFT\
+Date: February 2026\
+Status: Phase 6c Integration\
+Volume: [Volume Number] ... [Volume Title]\
+================================================================================\
+```\
+\
+#### **Format B: Simplified Header**\
+*Used in Volumes 4 and 6c*\
+\
+**Volume 4 Header (72 characters):**\
+```text\
+==================================================================< 2026/02/13 18:16:12.000033464  length=4893 from=39210 to=44102
+======\
+GOV-AIPM v1.0.8-DRAFT\
+Volume 4: Governance, Tools, & Formats\
+Sections 7-11\
+========================================================================\
+```\
+\
+**Volume 6c Header (70 characters):**\
+```text\
+======================================================================\
+GOV-AIPM v1.0.8-DRAFT\
+VOLUME 6c of 6 -- APPENDICES\
+======================================================================\
+```\
+\
+---\
+\
+### 2. Volume Footer END Marker Format\
+\
+The footer format generally matches the width of the header used in that specific volume. The text pattern typically follows `END OF VOLUME [Number] [Optional Description]`.\
+\
+**Exact Text Patterns by Volume:**\
+\
+*   **Volume 1:**\
+    ```text\
+    ================================================================================\
+    END OF VOLUME 1 ... FOUNDATIONS (Sections 1-2)\
+    ================================================================================\
+    ```\
+*   **Volume 2a:**\
+    ```text\
+    ================================================================================\
+    END OF VOLUME 2a ... INTERACTION FRAMEWORK (Section 3)\
+    ================================================================================\
+    ```\
+*   **Volume 2b:**\
+    ```text\
+    ================================================================================\
+    END OF VOLUME 2b\
+    ================================================================================\
+    ```\
+*   **Volume 3a:**\
+    ```text\
+    ================================================================================\
+    END OF VOLUME 3a ... CANONICAL PROJECT ARTIFACTS (Section 5)\
+    ================================================================================\
+    ```\
+*   **Volume 3b:**\
+    ```text\
+    ================================================================================\
+    END OF VOLUME 3b ... EXTERNAL ORGANIZATION SYSTEM (Section 6)\
+    ================================================================================\
+    ```\
+*   **Volume 4** (72 chars):\
+    ```text\
+    ========================================================================\
+    END OF VOLUME 4: GOVERNANCE, TOOLS, & FORMATS\
+    ========================================================================\
+    ```\
+*   **Volume 5:**\
+    ```text\
+    ================================================================================\
+    END OF VOLUME 5 -- ADVANCED PATTERNS\
+    ================================================================================\
+    ```\
+*   **Volume 6a:**\
+    ```text\
+    ================================================================================\
+    END OF VOLUME 6a\
+    ================================================================================\
+    ```\
+*   **Volume 6b:**\
+    ```text\
+    ================================================================================\
+    END OF VOLUME 6b\
+    ================================================================================\
+    ```\
+\
+---\
+\
+### 3. Segment Boundary Markers (Volume 6c)\
+\
+Volume 6c is split into three segments. These boundaries are marked using a 70-character separator line.\
+\
+*   **Segment 1 Footer:**\
+    ```text\
+    ======================================================================\
+    END OF VOLUME 6c -- SEGMENT 1 of 3\
+    ======================================================================\
+    ```\
+*   **Segment 2 Footer:**\
+    ```text\
+    ======================================================================\
+    END OF VOLUME 6c -- SEGMENT 2 of 3\
+    ======================================================================\
+    ```\
+*   **Segment 3 Footer (Final Volume End):**\
+    ```text\
+    ======================================================================\
+    END OF VOLUME 6c -- SEGMENT 3 of 3\
+    ======================================================================\
+    ```\
+    *Followed immediately by:*\
+    ```text\
+    ======================================================================\
+    END OF VOLUME 6c\
+    ======================================================================\
+    ```\
+\
+---\
+\
+### 4. Global End-of-Document Marker\
+\
+At the very end of the final volume (Volume 6c, Segment 3), the project is closed with the following marker (70 chars):\
+\
+```text\
+======================================================================\
+END OF GOV-AIPM v1.0.8-DRAFT\
+======================================================================\
+```\
+\
+Prior versions (e.g., v1.0.7) used an 80-character width for this final marker:\
+```text\
+================================================================================\
+END OF AI OPERATIONS MANUAL\
+================================================================================\
+```
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,353 @@
+================================================================================
+EXTRACTION: 2026-02-13_152846_notebook-query
+================================================================================
+Branch:          NLMINTA
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         020
+Routing:         Tier 1b (NLMINTA/_unsorted)
+Query:           What was discussed about the J8 full-scale D1 Library test in terms of target selection? Was there any discussion about which source package or notebook to use, scope constraints, or how J8 differs from SP03 calibration testing? Also, what is the current state of the CLGYSING Source Pkgs notebook (cce3b796) ... how many sources, what types of material?
+Timestamp:       2026-02-13T15:28:46.000683+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 36683484-80ff-43e8-a8ad-6a3515eca5f9
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  11369
+Duration:        327000ms
+================================================================================
+
+Here is the complete full text of **Appendix C: Tool Configuration Guide** from the GOV-AIPM Manual (v1.0.7/v1.0.8), as requested.\
+\
+***\
+\
+**APPENDIX C: TOOL CONFIGURATION GUIDE**\
+\
+This appendix provides setup guidance for tools commonly used in AI-assisted project management. The guidance is tool-agnostic in principle...focusing on capabilities needed rather than specific products...with concrete examples for commonly used platforms.\
+\
+### CONFIGURATION PHILOSOPHY\
+\
+The GOV-AIPM framework does not mandate specific tools. Tool selection should be based on:\
+\
+1.  **CAPABILITY MATCH:** Does the tool provide the needed functionality?\
+2.  **INTEGRATION:** Does it work with your existing workflow?\
+3.  **SUSTAINABILITY:** Will it be available and maintained long-term?\
+4.  **SECURITY:** Does it meet your data handling requirements?\
+\
+When configuring any tool, establish these elements:\
+*   Clear purpose (what this tool does in your workflow)\
+*   Integration points (how it connects with other tools)\
+*   Data flow (what information goes in/out)\
+*   Retention policy (how long data is kept)\
+\
+---\
+\
+### C.1 PRIMARY AI PLATFORM\
+\
+**PURPOSE:**\
+The primary AI platform handles core project work: drafting, analysis, problem-solving, and interactive development.\
+\
+**REQUIRED CAPABILITIES:**\
+*   Extended conversation context (ability to maintain context across a session)\
+*   File handling (upload, reference, generate)\
+*   Structured output generation\
+*   Conversation export or transcript access\
+\
+#### CLAUDE CONFIGURATION\
+\
+**PLATFORM:** Claude (claude.ai or Claude app)\
+\
+**SETUP:**\
+1.  Create account at claude.ai\
+2.  Configure conversation settings:\
+    *   Enable conversation history (for continuity)\
+    *   Review data retention settings per your security requirements\
+\
+**WORKFLOW INTEGRATION:**\
+*   Use Claude Projects for persistent context across sessions on related work\
+*   Upload Project Guide and key documents to Project Knowledge\
+*   Establish naming convention for chats within projects\
+\
+**PROJECT KNOWLEDGE SETUP:**\
+For ongoing projects, upload to Project Knowledge:\
+*   Project Guide (primary reference)\
+*   Current templates being used\
+*   Governing documents (for governance-related work)\
+*   Recent decision logs\
+\
+This enables Claude to reference these materials without re-uploading each session.\
+\
+**SESSION MANAGEMENT:**\
+*   Name chats per naming convention: `[###] [DEPT]-[PROJ]-[PHASE] ([notes])`\
+*   Monitor response quality for signs of context degradation\
+*   Generate bootstrap when approaching context limits\
+*   Export transcripts before closing chats\
+\
+**DATA CONSIDERATIONS:**\
+*   Review Anthropic's data usage policies\
+*   Apply data classification framework (Section 15)\
+*   Never share Tier 4 (Restricted) data\
+\
+#### ALTERNATIVE PLATFORMS\
+\
+**GPT-4 / ChatGPT:**\
+*   Similar capabilities to Claude\
+*   Use Custom GPTs for persistent instructions (analogous to Claude Projects)\
+*   Export via conversation sharing or third-party tools\
+\
+**Gemini:**\
+*   Strong integration with Google Workspace\
+*   Use for validation as secondary AI (see Tier 2 QA)\
+*   Different training may catch errors Claude misses\
+\
+---\
+\
+### C.2 RETRIEVAL & QUERY TOOLS\
+\
+**PURPOSE:**\
+Retrieval tools enable querying your own documents and knowledge base, providing grounded responses based on uploaded source material.\
+\
+**REQUIRED CAPABILITIES:**\
+*   Document upload and indexing\
+*   Natural language query interface\
+*   Source citation in responses\
+*   Multiple document handling\
+\
+#### NOTEBOOKLM CONFIGURATION\
+\
+**PLATFORM:** Google NotebookLM (notebooklm.google.com)\
+\
+**SETUP:**\
+1.  Access via Google account at notebooklm.google.com\
+2.  Create notebooks organized by project or domain\
+\
+**NOTEBOOK ORGANIZATION:**\
+Create separate notebooks for:\
+*   Project-specific sources (per major project)\
+*   Governance documents (governing docs, resolutions, SOPs)\
+*   Reference libraries (industry standards, technical manuals)\
+\
+**INTEGRATION WITH WORKFLOW:**\
+Use NotebookLM when:\
+*   Context requirement exceeds Primary AI token limits\
+*   Specific citations are required from large corpora\
+*   Governance check: Verify alignment with established policies\
+\
+**QUERY STRATEGIES:**\
+*   Be specific: \"What does Section 4.2 say about token management?\"\
+*   Request citations: \"Quote the relevant passage from the source\"\
+*   Cross-reference: \"Do any sourc< 2026/02/13 15:34:13.000778692  length=6945 from=16885 to=23829
+es contradict this statement?\"\
+\
+**LIMITATIONS:**\
+*   Responses limited to uploaded content (by design)\
+*   Cannot access real-time information\
+*   Quality depends on quality of uploaded sources\
+\
+---\
+\
+### C.3 CHAT EXPORT & ARCHIVAL\
+\
+**PURPOSE:**\
+Chat export tools create permanent records of AI conversations, enabling audit trails, re-entry support, and knowledge preservation.\
+\
+**REQUIRED CAPABILITIES:**\
+*   Full conversation capture (both user and AI messages)\
+*   Multiple export formats\
+*   Metadata preservation (dates, context)\
+*   Ease of use within workflow\
+\
+#### CLAUDE EXPORTER CONFIGURATION\
+\
+**TOOL:** Claude Exporter\
+**URL:** https://www.claudexporter.com\
+\
+**SETUP:**\
+1.  Visit claudexporter.com\
+2.  Install browser extension (if applicable) or use web interface\
+3.  Authorize access to Claude conversations\
+\
+**EXPORT FORMATS:**\
+\
+| Format | Use Case | Notes |\
+| :--- | :--- | :--- |\
+| **MD** | Primary archive | Preserves structure, readable, searchable |\
+| **TXT** | Universal compatibility | Plain text, maximum portability |\
+| **PDF** | Formal records | Presentation-ready, archival quality |\
+\
+**RECOMMENDED PRACTICE:**\
+*   Export at end of every session (per Session Closeout Checklist)\
+*   Primary format: Markdown (MD) for readability and searchability\
+*   Secondary format: PDF for formal project records\
+*   Save to chat folder per file organization conventions\
+\
+**NAMING CONVENTION:**\
+`[Platform]-[ChatName].[format]`\
+Example: `Claude-001_GOV-AIPM-RD__root_alignment_.md`\
+\
+**STORAGE:**\
+*   Save to chat folder immediately after export\
+*   Include in NotebookLM notebook for queryable access\
+*   Backup to cloud storage per retention policy\
+\
+**INTEGRATION WITH RE-ENTRY:**\
+Exported transcripts support re-entry by providing:\
+*   Complete conversation record for context reconstruction\
+*   Searchable history for finding past discussions\
+*   Source material for NotebookLM queries\
+\
+---\
+\
+### C.4 FILE ORGANIZATION & STORAGE\
+\
+**PURPOSE:**\
+Cloud storage provides backup, sync, and access across devices for all project materials.\
+\
+**REQUIRED CAPABILITIES:**\
+*   Folder hierarchy support\
+*   File versioning\
+*   Sync reliability\
+*   Sharing controls\
+\
+#### CONFIGURATION TIPS\
+\
+**FOLDER STRUCTURE:**\
+Implement the structure defined in Section 6.2:\
+*   `/Projects/[Code]/Chats` (chronological)\
+*   `/Projects/[Code]/[Functional]` (guides, logs, drafts)\
+\
+**SYNC DISCIPLINE:**\
+*   Ensure sync client is running and up-to-date\
+*   Verify sync status before closing work sessions\
+\
+**VERSION MANAGEMENT:**\
+*   Use meaningful file names with version indicators\
+*   Enable version history for key documents\
+*   Periodically clean up obsolete versions\
+\
+---\
+\
+### C.5 CAPTURE & QUICK NOTE TOOLS\
+\
+**PURPOSE:**\
+Capture tools enable quick preservation of thoughts, tasks, and observations without interrupting primary workflow.\
+\
+**REQUIRED CAPABILITIES:**\
+*   Quick capture (minimal friction)\
+*   Searchability\
+*   Export/integration options\
+\
+#### GOOGLE KEEP / APPLE NOTES CONFIGURATION\
+\
+**SETUP:**\
+*   Create a \"Project Capture\" label or folder\
+*   Pin to home screen or set up shortcut key\
+\
+**WORKFLOW:**\
+*   Capture ideas immediately: \"Note for Project X: consider Y\"\
+*   Review capture inbox during weekly review\
+*   Convert tasks to project action items\
+*   Archive or delete processed notes\
+\
+---\
+\
+### C.6 CALENDAR & SCHEDULING\
+\
+**PURPOSE:**\
+Calendar tools enforce cadences (weekly reviews, project checkpoints) and manage time-based commitments.\
+\
+**REQUIRED CAPABILITIES:**\
+*   Recurring event support\
+*   Reminder/notification system\
+*   Integration with workflow\
+\
+#### CALENDAR CONFIGURATION\
+\
+**RECURRING EVENTS:**\
+*   Weekly Review (Friday PM or Monday AM)\
+*   Project Status Check (Bi-weekly or Monthly)\
+*   Governance Review (Quarterly)\
+\
+**TIME BLOCKING:**\
+*   Set reminders for recurring reviews\
+*   Use calendar blocks for focused AI work sessions\
+*   Schedule buffer time between intensive AI sessions\
+\
+**INTEGRATION:**\
+*   Link calendar events to relevant project folders\
+*   Include document links in event descriptions\
+*   Track review completion in session logs\
+\
+---\
+\
+### C.7 TOOL INTEGRATION SUMMARY\
+\
+#### RECOMMENDED TOOL STACK\
+\
+| Function | Tool Category | Example | Integration Point |\
+| :--- | :--- | :--- | :--- |\
+| **Primary AI** | Conversational AI | Claude | Core work execution |\
+| **Validation AI** | Secondary AI | GPT-4, Gemini | Tier 2 QA |\
+| **Retrieval** | RAG Tool | NotebookLM | Verification, re-entry |\
+| **Export** | Chat Archive | Claude Exporter | Session closeout |\
+| **Storage** | Cloud Drive | Google Drive | File organization |\
+| **Capture** | Quick Notes | Google Keep | Insight preservation |\
+| **Scheduling** | Calendar | Google Calendar | Cadence enforcement |\
+\
+#### DATA FLOW DIAGRAM\
+\
+```text\
+      .........................................................\
+      ...   Primary AI    ...\
+      ...    (Claude)     ...\
+      .........................................................\
+               ...\
+   ....................................................................................\
+   ...           ...              ...\
+   ...           ...              ...\
+....................................... ....................................... .......................................\
+...  Export   ... ...Validation ... ...  Capture  ...\
+...  (Claude  ... ...    AI     ... ...  (Keep)   ...\
+... Exporter) ... ...(GPT/Gemini... ...           ...\
+....................................... ....................................... .......................................\
+      ...             ...              ...\
+      ...             ...              ...\
+.......................................       ...              ...\
+...  Storage  ........................................................................\
+...  (Drive)  ...\
+.......................................\
+      ...\
+      ...\
+.......................................\
+... Retrieval ...\
+...(NotebookLM...\
+.......................................\
+```\
+\
+#### CONFIGURATION CHECKLIST\
+\
+**Initial Setup:**\
+- [ ] Primary AI platform account created and configured\
+- [ ] Claude Projects set up for ongoing work\
+- [ ] NotebookLM notebooks created for key domains\
+- [ ] Claude Exporter installed and tested\
+- [ ] Cloud storage folder structure established\
+- [ ] Capture tool configured with relevant labels\
+- [ ] Calendar recurring events created\
+\
+**Per-Project Setup:**\
+- [ ] Project folder created in cloud storage\
+- [ ] Chat folder structure established\
+- [ ] Project documents uploaded to NotebookLM\
+- [ ] Project Guide uploaded to Claude Project Knowledge\
+- [ ] Calendar events for project checkpoints scheduled\
+\
+[1], [2]-[3], [4]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

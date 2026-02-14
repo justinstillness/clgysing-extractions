@@ -1,0 +1,63 @@
+================================================================================
+EXTRACTION: 2026-02-13_030715_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         027
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What are the most recent CHANGELOG entries after Session 021? List all session entries from S022 through S026 with their key items. Also list the current wishlist items that are at P2 priority or higher, and any items marked DONE or RESOLVED recently.
+Timestamp:       2026-02-13T03:07:15.000092+00:00
+Notebook ID:     430df618-e337-4971-abaa-6528e96bb1c4
+Source IDs:      all
+Conversation ID: 11f57208-c635-4843-a74a-276f218df459
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  2623
+Duration:        32000ms
+================================================================================
+
+Based on the `CHANGELOG.txt` and tool reference updates, here are the entries for Sessions 022 through 026, followed by the priority wishlist and resolved items.
+
+### Session Log: S022 ... S026
+
+The following entries cover the period from February 9, 2026, to February 12, 2026. Note that specific log entries for Sessions 024 and 025 do not appear in the provided excerpts, but S026 is documented in the Chronicler reference.
+
+*   **Session 026 (2026-02-12)**
+    *   **Chronicler Fix:** Resolved a tool ordering bug in `chronicler.py` where `flush_pipeline` was defined after `mcp.run()`, making it invisible to Claude's auto-discovery [1]. All 10 Chronicler tools are now discoverable [1].
+*   **Session 023 (2026-02-10)**
+    *   **File Browser Auth Fixed (D-035):** Corrected the bcrypt hash format ($2y$ vs $2a$ mismatch) that was causing login loops. Users must generate hashes via `caddy hash-password` [2, 3].
+    *   **Indexer v0.2 (D-036):** Updated organizational protocol to include a "purpose" field in the manifest and guidance for combined pass classification [2, 4].
+    *   **Documentation:** Created `v1.0_REF_File-Browser-Tool-Reference.txt` (D-037) [2].
+    *   **Maintenance:** Performed NotebookLM (NLM) housekeeping [2].
+*   **Session 022 (2026-02-09)**
+    *   **Indexer v0.1:** Designed the file organization system (Decisions D-028 through D-034) [2].
+    *   **File Browser Deployment:** Deployed the web-based File Browser service [2, 3].
+    *   **Infrastructure Upgrade:** Upgraded EC2 instance type from `t3.micro` to `t3.small` to better support the tool suite [2].
+    *   **Briefing:** Received NLMINTA briefing [2].
+
+### Priority Wishlist Items (P2+)
+
+The following items are explicitly marked as "Priority items" in the `Development-Wishlist` [5].
+
+*   **W-100 (Conductor Foundation):** Development of the base service for the NLM automation orchestration system [5].
+*   **W-101 (Registry):** NLM registry auto-refresh capability for Conductor [5].
+*   **W-102 (Query Reporter):** Automated reporting on query data [5].
+*   **W-042 (Infrastructure):** Backup system for the `jacob-bd` component [5].
+
+### Recently DONE or RESOLVED Items
+
+*   **RESOLVED:** Chronicler `flush_pipeline` tool visibility bug (Fixed S026) [1].
+*   **DONE:** File Browser Authentication logic repair (D-035, Fixed S023) [2, 3].
+*   **DONE:** Indexer v0.2 specification and protocol design (D-036, S023) [2, 4].
+*   **DONE:** File Browser Reference documentation (D-037, S023) [2].
+*   **DONE:** EC2 Instance Upgrade (t3.micro ... t3.small, S022) [2].
+*   **DONE:** File Browser Service Deployment (S022) [2].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

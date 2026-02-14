@@ -1,0 +1,33 @@
+================================================================================
+EXTRACTION: 2026-02-13_142250_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 358 chars but answer extraction failed
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         048
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Appendix E Version History what version entries exist between v1.0.6 and v1.0.8 is there a v1.0.7 entry
+Timestamp:       2026-02-13T14:22:50.000313+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: N/A
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  0
+Duration:        976000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "source_type": "url", "source_id": "5cbc6c2f-881d-4156-955d-79fc7ada848a", "title": "clgysing-extractions/_docs/v1.1_REF_Development-Wishlist.txt at main .. justinstillness/clgysing-extractions .. GitHub", "url": "https://github.com/justinstillness/clgysing-extractions/blob/main/_docs/v1.1_REF_Development-Wishlist.txt", "ready": true}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

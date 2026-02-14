@@ -1,0 +1,33 @@
+================================================================================
+EXTRACTION: 2026-02-13_063855_clgysing_SP03_J7_FAILED_notebook-query [FAILED]
+================================================================================
+Status:          PARSE_ERROR
+Error Detail:    Response had 363 chars but answer extraction failed
+Branch:          NLMINTA
+Source Package:  SP03
+Pass Type:       J7 (J7)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         clgysing
+Session:         019
+Routing:         Tier 2 (Unknown PASS: J7)
+Query:           This is a meta-query. I just generated a Briefing Doc report on this notebook. Can you provide a comprehensive summary of the key themes, structure, and concepts covered across all four source repositories? I want to understand what a synthesis across all sources looks like.
+Timestamp:       2026-02-13T06:38:55.000263+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: N/A
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  0
+Duration:        57000ms
+================================================================================
+
+NO CONTENT EXTRACTED -- SEE ERROR DETAIL ABOVE
+
+Raw Response Preview:
+{"status": "success", "notebook_id": "1e03c6b6-247d-4ddd-801d-8e435ac291b9", "artifact_id": "e646e3c1-628c-4b8d-8cf3-18325ca99707", "export_type": "docs", "url": "https://docs.google.com/document/d/10M-nvjzXGWCOO1BLyZozRjA6tHLZUgBnsL-UXtVrbE4", "message": "Exported to Google Docs: https://docs.google.com/document/d/10M-nvjzXGWCOO1BLyZozRjA6tHLZUgBnsL-UXtVrbE4"}
+
+================================================================================
+END OF GHOST EXTRACTION
+================================================================================

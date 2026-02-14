@@ -1,0 +1,41 @@
+================================================================================
+EXTRACTION: 2026-02-13_210009_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         050
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Was a standalone user guide, quick start kit, or newcomer onboarding document created as a separate deliverable? Is Appendix H the Quick Start Guide that serves this purpose, or was there a separate standalone document planned?
+Timestamp:       2026-02-13T21:00:09.000784+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 92643c99-ed46-4bb0-8aa6-b0c9f5e7d36f
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  1819
+Duration:        34000ms
+================================================================================
+
+Based on the GOV-AIPM project records, specifically the findings and drafting plans for v1.0.8, the answer involves a distinction between the **Quick Start Guide** and a broader **User Guide**.
+
+**1. Was a standalone user guide created?**
+**No, a comprehensive standalone User Guide was explicitly deferred.**
+During Session 032, Decision **D-032-005** established that the "standalone User Guide" would be deferred as a separate deliverable for a future phase (likely Phase 7). The rationale was that the manual revision was the primary scope, and a full User Guide was substantial enough to warrant dedicated development [1, 2]. Instead, critical user behaviors were embedded directly into the manual as "USER ACTION" or "USER BEHAVIOR" callout boxes throughout relevant sections [3, 4].
+
+**2. Is Appendix H the Quick Start Guide?**
+**Yes, Appendix H is the Quick Start Guide.**
+Appendix H was originally added in v1.0.7 and updated in v1.0.8. It is explicitly designed to serve as a "standalone onboarding guide for new users" that can be distributed separately from the full manual [5, 6]. Its purpose is to get a new user from "I just downloaded this" to "I'm working on my first project" in about 30 minutes [6].
+
+**Summary of the Plan:**
+*   **Appendix H (Quick Start Guide):** Created and included in the manual (Volume 6c). It provides immediate orientation and can be pulled out as a standalone document [7, 8].
+*   **User Guide (Comprehensive):** Planned but deferred. This would cover the ~10% of system operations that are user-facing (as opposed to AI-facing) in greater depth than the Quick Start Guide [1, 9].
+*   **User Behavior Callouts:** Implemented in v1.0.8 as an intermediate solution, embedding user instructions directly into the AI-facing manual sections (e.g., Sections 3, 4, 6, 10) [10, 11].
+
+================================================================================
+END OF EXTRACTION
+================================================================================
