@@ -1,0 +1,121 @@
+================================================================================
+FINDING F112: HS-2 (Editorial/Style Analysis) — VALIDATED
+================================================================================
+Date:           2026-02-14
+Session:        022 NLMINTA (Top-Down LibForge Testing)
+Stage:          HS-2 (Handshake Workflow, Stage 2: Editorial Preparation)
+Status:         PRODUCTION-VIABLE
+
+================================================================================
+TEST SUMMARY
+================================================================================
+
+Target: Cultology Series notebook (20326c31, 36 sources)
+Two queries: Voice pattern analysis + Treatment pattern analysis
+
+================================================================================
+KEY FINDINGS
+================================================================================
+
+1. VOICE PATTERN RECOGNITION: STRONG
+   NLM identified 3 distinctive voice modes with prose-level specificity:
+   - Integrative Architect (~50%): definition by negation, em-dash expansion,
+     triadic listing, mechanical/spatial metaphors
+   - Empathetic Guide (~30%): direct second-person address, process
+     transparency, epistemic humility, invitation over instruction
+   - Incisive Diagnostician (~20%): reversal hooks, italicized emphasis,
+     aphoristic summary, short punchy declarations
+
+   CALIBRATION NOTE: Phase Protocol defines target voice as 40% analytical,
+   30% prophetic, 20% personal, 10% polemical. NLM's data-driven analysis
+   of actual published content shows different proportions and more
+   descriptively precise categories. This discrepancy is itself valuable —
+   it reveals whether published output matches intended voice targets.
+
+2. TREATMENT PATTERN EXTRACTION: STRONG
+   Identified specific authorial techniques:
+   - Concept introduction: Memetic handle -> semantic rehabilitation ->
+     recursive redefinition (spiral staircase in practice)
+   - Argument ramp: Provocation -> Diagnosis -> Mechanism -> Theological
+     Implication
+   - Controversial claim preparation: "Reluctant discoverer" posture
+   - Cross-referencing: Fractal linking (micro to macro), forward promises,
+     backward anchoring
+   - Example preference hierarchy: Mechanical/biological > cultural/mythic
+     > historical
+
+3. SIX-STAGE PATTERN OBSERVED IN PRACTICE
+   NLM extracted observable six-stage progression from published content:
+   1. Hook/Provocation
+   2. Reframing (Semantic Rehabilitation)
+   3. Mechanism (The Physics)
+   4. Diagnosis (The Pathology)
+   5. Theological Anchor (The Source)
+   6. Symbiotic Solution (The Redemption)
+   This is data-driven observation of how the framework actually manifests,
+   valuable for calibrating theoretical framework against real output.
+
+4. PRACTICAL VALUE FOR CLGYSING PIPELINE: HIGH
+   Output serves as foundation for Editorial and Style Guide (Phase Protocol
+   H.2). Single NLM query produces structured starting point requiring
+   human validation rather than human generation from scratch.
+
+5. LIMITATION: SOURCE SCOPE
+   NLM analyzed all 36 sources including working notes and ChatGPT
+   exchanges. For purer published-voice signal, restrict via source_ids
+   to published articles only. This is a refinement for production use,
+   not a capability limitation.
+
+================================================================================
+QUERY TEMPLATES (Production-Ready)
+================================================================================
+
+VOICE PATTERN ANALYSIS:
+
+TASK: Voice Pattern Analysis for Editorial Guide
+
+Analyze the PUBLISHED content in this notebook to identify and document
+the author's distinctive voice characteristics.
+
+For each voice mode identified, provide:
+1. VOICE MODE NAME and estimated percentage of overall prose
+2. DEFINING CHARACTERISTICS (sentence structure, word choice, rhetorical
+   moves, tone markers)
+3. REPRESENTATIVE PATTERNS (describe specific prose patterns)
+4. WHEN DEPLOYED (what triggers this voice mode?)
+5. TRANSITION MARKERS (how does the author shift between modes?)
+
+Additionally analyze: sentence structure tendencies, paragraph
+architecture, rhetorical question usage, accessibility layering,
+reader address patterns.
+
+---
+
+TREATMENT PATTERN ANALYSIS:
+
+TASK: Treatment Pattern and Terminology Analysis
+
+Analyze the published content to document HOW concepts are introduced
+and handled — not what the concepts are, but the authorial technique.
+
+Analyze:
+1. CONCEPT INTRODUCTION PATTERNS
+2. ARGUMENT ESCALATION PATTERNS
+3. CROSS-REFERENCE HANDLING
+4. EXAMPLE AND ANALOGY DEPLOYMENT
+5. SIX-STAGE ARGUMENT FRAMEWORK OBSERVATION
+
+================================================================================
+RECOMMENDATION
+================================================================================
+
+HS-2 is validated and production-viable. For production use:
+- Restrict source_ids to published content only for purer voice signal
+- Use voice analysis output as foundation for Editorial Guide (H.2)
+- Use treatment pattern output as drafting instructions for prose generation
+- Validate NLM's observed voice ratios against intended targets to
+  calibrate future drafting
+
+================================================================================
+END OF FINDING F112
+================================================================================
