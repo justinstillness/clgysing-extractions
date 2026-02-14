@@ -1,0 +1,53 @@
+================================================================================
+FINDING F111: Thesis-Type Classification Enables Omniological Axiomatic Mapping
+================================================================================
+Date:           2026-02-14
+Session:        022 NLMINTA (Top-Down LibForge Testing)
+Stage:          TD-2 (Methodological Extension)
+Status:         INSIGHT — Methodological
+
+================================================================================
+FINDING
+================================================================================
+
+The TD-2 discovery that different thesis types (mechanistic, prescriptive,
+diagnostic, comparative) generate structurally different sub-claim
+architectures has implications beyond article organization. It enables
+systematic axiomatic floor mapping for the omniological method.
+
+KEY INSIGHT:
+By classifying regress outputs by dependency type (definitional, causal,
+evidential, structural), axiomatic floors become systematically identifiable
+and categorizable. NLM's bedrock detection capability (distinguishing
+researchable gaps from metaphysical axioms) directly serves this purpose.
+
+OMNIOLOGICAL APPLICATION:
+1. Regress any thesis to its axiomatic floors via TD-2 methodology
+2. Classify the floor type (what kind of "given" is being assumed?)
+3. Attempt cross-domain resolution: link one domain's axiomatic floor
+   to another domain's explanatory framework
+4. Continue until absolute foundations are reached
+5. At absolute foundation: evaluate which orientation (theistic,
+   materialist, etc.) provides deepest regressive power
+
+EXAMPLE (from user's omniological work):
+- Materialist axiom: Big Bang as given (cosmological floor)
+- Regression attempt: What explains the Big Bang's emergence?
+- Fork: Theistic origination vs. multiverse hypothesis
+- Multiverse floor: Either eternal initial state (axiomatic given,
+  cannot regress further) or some other beginning point
+- Theistic explanation: Provides deeper regressive power because it
+  can explain non-material attributes (mind, personality, consciousness)
+  without reducing them to artifacts of material emanation
+- Materialist floor: Cannot regress past the reduction of mind to matter
+  without circular reasoning
+
+PRACTICAL VALUE:
+The thesis-type classification + NLM bedrock detection creates a
+systematized version of what was previously an intuitive omniological
+process. Research can now be organized around identified axiomatic floors
+and their cross-domain resolution attempts.
+
+================================================================================
+END OF FINDING F111
+================================================================================
