@@ -1,49 +1,65 @@
 ================================================================================
 SERAPH SIGNAL STRING — QUICK REFERENCE
 ================================================================================
-Project:        NLMINTA / CLGYSING (SeraphRecorder Pipeline)
-Version:        v1.1
+Project:        NLMINTA / CLGYSING / AWSNBLM (SeraphRecorder Pipeline)
+Version:        v1.2
 File Class:     REF
 Created:        2026-02-09
-Updated:        2026-02-12 (Session 017 — added RX, DM, HR, CE-CARD)
-Session:        019/020 (SSH Recovery + Signal String Implementation)
+Updated:        2026-02-14 (Session 030 — added BRANCH field, 5-tier routing)
+Session:        030 AWSNBLM (SERAPH Docs & Backlog Cleanup)
 
 PURPOSE:
 The SERAPH signal string is a metadata tag embedded in NotebookLM queries
-that enables the SeraphRecorder pipeline (extract.py v5+) to automatically
+that enables the SeraphRecorder pipeline (extract.py v7+) to automatically
 classify, route, and label extracted content.
 
 When Claude sends a notebook_query via Majeston with a SERAPH tag, the
 pipeline parses the tag fields and uses them to:
   1. Generate semantic filenames
-  2. Route files to project-specific directories
+  2. Route files to branch-specific and project-specific directories
   3. Populate extraction metadata headers
 
 Without a SERAPH tag, extractions land in _untagged/ with timestamp-only
-filenames (Tier 3 fallback).
+filenames (Tier 5 fallback).
 
 ================================================================================
 SIGNAL STRING FORMAT
 ================================================================================
 
-[SERAPH: PROJECT=value, SP=value, PASS=XX, NUM=value, THEME=value, SESSION=value]
+[SERAPH: FIELD1=value, FIELD2=value, ...]
 
 The tag is placed at the BEGINNING of the query text, before the actual
 query content. extract.py strips it from the clean query display.
 
-EXAMPLE:
-  [SERAPH: PROJECT=clgysing, SP=03, PASS=VX, NUM=01, THEME=identity-mechanics, SESSION=013]
-  Identify and extract all significant specialized vocabulary terms...
+MINIMUM VIABLE TAG (for branch routing):
+  [SERAPH: BRANCH=AWSNBLM, SESSION=030]
+
+FULL EXTRACTION TAG (for pipeline routing):
+  [SERAPH: BRANCH=NLMINTA, SESSION=030, PROJECT=clgysing, SP=03, PASS=VX, NUM=01, THEME=identity-mechanics]
 
 ================================================================================
 FIELD REFERENCE
 ================================================================================
 
-REQUIRED FIELDS (extraction fails to Tier 3 without these):
+BRANCH ROUTING FIELDS:
+
+  BRANCH      Project branch name (uppercase by convention)
+              Examples: AWSNBLM, NLMINTA, CLGYSING, A47, GOV-AIPM, AUTOTEST
+              Used in: top-level directory routing (Tier 1, Tier 2)
+              Required for: branch-aware routing (v7+)
+              NOTE: This is the project BRANCH, not the project name.
+              Multiple branches may work on the same PROJECT (e.g., both
+              NLMINTA and CLGYSING branches may target PROJECT=clgysing).
+
+  SESSION     Session number within the branch (zero-padded)
+              Examples: 013, 026, 030
+              Used in: header metadata, provenance tracking
+
+PROJECT/PASS ROUTING FIELDS:
 
   PROJECT     Project identifier (lowercase)
-              Examples: clgysing, nlminta
-              Used in: filename, directory routing
+              Examples: clgysing, nlminta, a47
+              Used in: filename, sub-directory routing (Tier 1a)
 
   PASS        Pass type code (2-letter uppercase, or hyphenated compound)
               Must match codebook below
@@ -53,7 +69,7 @@ REQUIRED FIELDS (extraction fails to Tier 3 without these):
               Examples: 01, 02, 15
               Used in: filename, header metadata
 
-OPTIONAL FIELDS:
+OPTIONAL METADATA FIELDS:
 
   SP          Source Package number (digits only, no "SP" prefix)
               Examples: 03, 14
@@ -62,10 +78,6 @@ OPTIONAL FIELDS:
 
   THEME       Thematic focus descriptor (hyphen-separated)
               Examples: identity-mechanics, four-intimacies, bite-model
-              Used in: header metadata
-
-  SESSION     Session number reference
-              Examples: 013, 019
               Used in: header metadata
 
   CONFIG      Chat configuration state
@@ -78,7 +90,7 @@ OPTIONAL FIELDS:
               Used in: header metadata
 
   NOTES       Freeform notes
-              Examples: first-pass, retest-after-config-change, json-test-run-3
+              Examples: first-pass, retest-after-config-change, context-gather
               Used in: header metadata
 
 ================================================================================
@@ -108,6 +120,7 @@ ADMINISTRATIVE / NON-EXTRACTION PASSES:
   NB    Notebook Administration
   GL    Glossary Generation
   CR    Cross-Reference Mapping
+  CG    Context Gathering (ad-hoc queries for session context loading)
 
 LEGACY CODES (backward compatibility):
   CE    Concept Extraction (deprecated — use TX)
@@ -117,50 +130,80 @@ RESERVED FOR PHASE 3 JSON TESTING:
   JT    JSON Test (for repeatability, info loss, and schema validation runs)
 
 NEW CODES:
-When a new pass type is needed, add it to PASS_TYPE_NAMES in extract.py
-and update this document. Unknown codes route to _review/ (Tier 2) rather
-than failing, so new codes work immediately — they just need registration
-for Tier 1 routing.
+When a new pass type is needed, add it and its full name to
+PASS_TYPE_NAMES in extract.py and update this document's codebook section.
+Unknown codes route to _review/ (Tier 4) rather than failing, so new codes
+work immediately — they just need registration for Tier 1 routing.
 
 ================================================================================
-3-TIER ROUTING LOGIC
+5-TIER ROUTING LOGIC (extract.py v7)
 ================================================================================
 
-extract.py v5 routes extracted files based on signal string presence and
-pass type recognition:
+extract.py v7 routes extracted files using a 5-tier hierarchy based on
+SERAPH tag fields. Routing resolves top-down (first matching tier wins).
 
-TIER 1 — TAGGED + KNOWN
-  Condition:  SERAPH tag present AND PASS code in codebook
-  Route:      extracted/{PROJECT}/phase2/{PASS}/
+TIER 1a — BRANCH + PROJECT + KNOWN PASS
+  Condition:  BRANCH present AND PROJECT present AND PASS in codebook
+  Route:      {BRANCH}/clgysing/phase2/{PASS}/
+              (or {BRANCH}/{PROJECT}/phase2/{PASS}/ for non-clgysing projects)
   Filename:   {DATE}_{TIME}_{PROJECT}_SP{SP}_{PASS}-{NUM}_notebook-query.txt
-  Example:    extracted/clgysing/phase2/VX/2026-02-09_053056_clgysing_SP03_VX-01_notebook-query.txt
+  Example:    NLMINTA/clgysing/phase2/VX/2026-02-14_053056_clgysing_SP03_VX-01_notebook-query.txt
 
-TIER 2 — TAGGED + UNKNOWN
-  Condition:  SERAPH tag present BUT PASS code NOT in codebook
-  Route:      extracted/_review/
-  Filename:   Same as Tier 1
-  Purpose:    Holds extractions with unrecognized pass types for review
-
-TIER 3 — UNTAGGED
-  Condition:  No SERAPH tag (and no legacy META tag)
-  Route:      extracted/_untagged/
+TIER 1b — BRANCH ONLY (no PROJECT/PASS)
+  Condition:  BRANCH present BUT no PROJECT or PASS fields
+  Route:      {BRANCH}/_unsorted/
   Filename:   {DATE}_{TIME}_notebook-query.txt
-  Purpose:    Catches all untagged queries (ad-hoc, testing, etc.)
+  Example:    AWSNBLM/_unsorted/2026-02-14_180000_notebook-query.txt
+  Purpose:    Catches ad-hoc administrative/context queries that have branch
+              attribution but no extraction pass metadata.
+
+TIER 1c — LEGACY PROJECT + KNOWN PASS (no BRANCH)
+  Condition:  PROJECT present AND PASS in codebook BUT no BRANCH
+  Route:      {PROJECT}/phase2/{PASS}/
+  Filename:   {DATE}_{TIME}_{PROJECT}_SP{SP}_{PASS}-{NUM}_notebook-query.txt
+  Example:    clgysing/phase2/VX/2026-02-14_053056_clgysing_SP03_VX-01_notebook-query.txt
+  Purpose:    Backward compatibility with pre-BRANCH-directive tags.
+
+TIER 4 — TAGGED + UNKNOWN PASS
+  Condition:  SERAPH tag present BUT PASS code NOT in codebook
+  Route:      _review/
+  Filename:   Same as Tier 1
+  Purpose:    Holds extractions with unrecognized pass types for review.
+              (Note: Tier numbers 2-3 reserved for future intermediate tiers.)
+
+TIER 5 — UNTAGGED
+  Condition:  No SERAPH tag detected (and no legacy META tag)
+  Route:      _untagged/
+  Filename:   {DATE}_{TIME}_notebook-query.txt
+  Purpose:    Catches all untagged queries (legacy, pre-directive, ad-hoc).
 
 LEGACY META:
   Condition:  Old [META:SP##|TYPE|SEQ|Descriptor] format detected
-  Route:      extracted/_untagged/ (no project routing)
-  Purpose:    Backward compatibility with pre-v5 extractions
+  Route:      _untagged/ (no project routing)
+  Purpose:    Backward compatibility with pre-v5 extractions.
+
+BRANCH DIRECTORY CREATION:
+  Branch directories are created dynamically. No pre-registration needed.
+  When a new BRANCH value appears, extract.py creates the directory
+  automatically on first encounter.
+
+RETENTION POLICY:
+  Branch-based retention is governed by branch name convention:
+  - Named branches (AWSNBLM, NLMINTA, CLGYSING, etc.) = permanent
+  - If ephemeral branches are needed in future, naming convention
+    (e.g., TEMP-xxx) would signal cleanup eligibility
+  - No capture toggle needed — branch name itself signals intent
 
 ================================================================================
 EXTRACTION FILE HEADER FORMAT
 ================================================================================
 
-Files produced by extract.py v5 include this metadata header:
+Files produced by extract.py v7 include this metadata header:
 
   ================================================================================
   EXTRACTION: {filename without .txt}
   ================================================================================
+  Branch:          {BRANCH} or N/A
   Source Package:  SP{nn} or N/A
   Pass Type:       {CODE} ({Full Name})
   Pass Number:     {nn}
@@ -184,29 +227,41 @@ Files produced by extract.py v5 include this metadata header:
 USAGE EXAMPLES
 ================================================================================
 
-BASIC (required fields only):
-  [SERAPH: PROJECT=clgysing, PASS=TX, NUM=01]
-  Extract all concepts related to identity formation...
+BRANCH-ONLY (context gathering, admin queries):
+  [SERAPH: BRANCH=AWSNBLM, SESSION=030]
+  What documents are currently loaded in this notebook?
+
+BRANCH + PROJECT (extraction pass):
+  [SERAPH: BRANCH=NLMINTA, SESSION=030, PROJECT=clgysing, SP=03, PASS=VX, NUM=01, THEME=identity-mechanics]
+  Identify and extract all significant specialized vocabulary terms...
 
 FULL (all fields):
-  [SERAPH: PROJECT=clgysing, SP=03, PASS=VX, NUM=05, THEME=four-intimacies, SESSION=020, CONFIG=custom-depth, THREAD=continue, NOTES=second-iteration]
+  [SERAPH: BRANCH=NLMINTA, SESSION=030, PROJECT=clgysing, SP=03, PASS=VX, NUM=05, THEME=four-intimacies, CONFIG=custom-depth, THREAD=continue, NOTES=second-iteration]
   Identify specialized vocabulary related to the Four Intimacies framework...
 
+CONTEXT GATHERING (marked as non-extraction):
+  [SERAPH: BRANCH=AWSNBLM, SESSION=030, PASS=CG, NUM=01, NOTES=context-gather]
+  Summarize recent session decisions about branch routing...
+
 RELATIONSHIP EXTRACTION:
-  [SERAPH: PROJECT=clgysing, SP=03, PASS=RX, NUM=01, THEME=concept-relationships]
+  [SERAPH: BRANCH=CLGYSING, SESSION=005, PROJECT=clgysing, SP=03, PASS=RX, NUM=01, THEME=concept-relationships]
   Identify and describe the relationships between major concepts...
 
 CARD ENTRY EXTRACTION:
-  [SERAPH: PROJECT=clgysing, SP=03, PASS=CE-CARD, NUM=01, THEME=rhetorical-moves]
+  [SERAPH: BRANCH=CLGYSING, SESSION=005, PROJECT=clgysing, SP=03, PASS=CE-CARD, NUM=01, THEME=rhetorical-moves]
   Extract atomic rhetorical moves and argument units...
 
 JSON TEST RUN:
-  [SERAPH: PROJECT=nlminta, PASS=JT, NUM=03, SESSION=017, CONFIG=json-schema, NOTES=repeatability-run-3]
+  [SERAPH: BRANCH=NLMINTA, SESSION=017, PROJECT=nlminta, PASS=JT, NUM=03, CONFIG=json-schema, NOTES=repeatability-run-3]
   Extract all significant concepts as structured JSON entries...
 
 ADMINISTRATIVE QUERY:
-  [SERAPH: PROJECT=clgysing, PASS=PE, NUM=01, THEME=corpus-overview]
+  [SERAPH: BRANCH=CLGYSING, SESSION=005, PROJECT=clgysing, PASS=PE, NUM=01, THEME=corpus-overview]
   Provide a high-level summary of the topics covered in this notebook...
+
+LEGACY (no BRANCH — still works via Tier 1c):
+  [SERAPH: PROJECT=clgysing, PASS=TX, NUM=01]
+  Extract all concepts related to identity formation...
 
 ================================================================================
 PIPELINE ARCHITECTURE
@@ -217,25 +272,29 @@ Flow: Claude -> Majeston (MCP) -> NotebookLM -> socat capture -> extract.py
   1. Claude includes [SERAPH: ...] at start of notebook_query
   2. Majeston sends query to NotebookLM API
   3. socat captures full request/response traffic to daily log
-  4. extract.py parses traffic log:
+  4. extract.py (v7) parses traffic log:
      a. Extracts JSON-RPC tool calls
      b. Correlates requests with responses
      c. For notebook_query results:
         - Parses SERAPH tag from query text
         - Strips socat artifacts from answer (D-024 fix)
+        - Evaluates 5-tier routing hierarchy
+        - Creates branch directories dynamically if needed
         - Routes file to appropriate directory
         - Writes extraction with full metadata header
-  5. Chronicler:flush_pipeline pushes extractions to repo (or nightly cycle)
+  5. Chronicler:flush_pipeline pushes extractions to repo (or nightly cron)
 
 FILES:
-  extract.py location:     /home/ubuntu/mcp-logger/extract.py
+  extract.py location:     /home/ubuntu/mcp-logger/extract.py (v7 live)
+  Backup:                  /home/ubuntu/mcp-logger/extract_v6_backup.py
   Traffic logs:            /home/ubuntu/mcp-logs/traffic/{YYYY-MM-DD}.log
   JSONL output (Stream 1): /home/ubuntu/mcp-logs/raw/{YYYY-MM-DD}.jsonl
   Extracted files:         /home/ubuntu/mcp-logs/extracted/{routing path}/
 
 GITHUB REPO:
   Repository:  justinstillness/clgysing-extractions (private)
-  Pipeline:    _pipeline/extract.py (v4), _pipeline/extract_v5.py (current)
+  Pipeline:    _pipeline/extract.py (v7 — canonical copy synced with EC2)
+  Archives:    _pipeline/extract_v5.py, _pipeline/extract_v6.py (historical)
 
 ================================================================================
 MAINTENANCE
@@ -244,13 +303,28 @@ MAINTENANCE
 ADDING NEW PASS TYPES:
   1. Add code and name to PASS_TYPE_NAMES dict in extract.py
   2. Update this document's codebook section
-  3. New code works immediately (Tier 2) even before registration
+  3. New code works immediately (Tier 4 _review/) even before registration
+
+ADDING NEW BRANCHES:
+  No action needed. Branch directories are created dynamically by extract.py.
+  Just use the new BRANCH name in the SERAPH tag.
 
 MODIFYING ROUTING:
-  Routing logic is in write_extracted_files() in extract.py.
-  Directory structure pattern: {PROJECT}/phase2/{PASS}/
+  Routing logic is in write_extracted_files() in extract.py v7.
+  5-tier hierarchy documented above.
+
+NLM SOURCE MAINTENANCE:
+  This document is a source in the HA Suite Docs notebook
+  (430df618-e337-4971-abaa-6528e96bb1c4). When updated, the old source
+  must be removed and the new version added to keep the notebook current.
 
 VERSION HISTORY:
+  v1.2 (2026-02-14): Added BRANCH field documentation. Updated routing
+                       from 3-tier to 5-tier matching extract_v7 behavior.
+                       Added CG (Context Gathering) pass type. Updated all
+                       examples to include BRANCH. Updated pipeline section
+                       to reference v7. Added retention policy docs.
+                       Added NLM source maintenance note. (Session 030)
   v1.1 (2026-02-12): Added RX, DM, HR, CE-CARD pass types. Added JT
                        reserved code for Phase 3 JSON testing. Updated
                        examples. Updated flush_pipeline reference.
