@@ -1,0 +1,59 @@
+================================================================================
+HAVONA ANVIL SUITE — CHANGELOG (continued)
+================================================================================
+
+--------------------------------------------------------------------------------
+2026-02-14 | Session 029 | SeraphRecorder, Indexer
+--------------------------------------------------------------------------------
+CHANGED: extract.py upgraded from v6 to v7 (D-044, W-023)
+  - BRANCH field parsed from SERAPH signal string
+  - BRANCH becomes top-level routing directory for extracted files
+  - New 5-tier routing hierarchy:
+      Tier 1a: BRANCH + PROJECT + PASS → {BRANCH}/{PROJECT}/phase2/{PASS}/
+      Tier 1b: BRANCH only             → {BRANCH}/_unsorted/
+      Tier 1c: PROJECT + PASS (legacy) → {PROJECT}/phase2/{PASS}/
+      Tier 2:  Unknown/insufficient     → _review/ (or {BRANCH}/_review/)
+      Tier 3:  No SERAPH tag            → _untagged/
+  - Dynamic branch directory creation (any branch name auto-creates)
+  - PROJECT/PASS/NUM no longer required when BRANCH is present
+  - Branch: field added to extraction file headers
+  - Routing summary in process_log output (per-branch file counts)
+  - Added RX, DM, HR, JT to PASS_TYPE_NAMES
+  - is_known_pass() handles compound codes (e.g., CE-CARD)
+  - Refactored inline header generation into _build_header()
+
+DEPLOYED: extract_v7.py to EC2 production
+  - Repo copy committed: _pipeline/extract_v7.py
+  - Live deployment: cp to /home/ubuntu/mcp-logger/extract.py
+  - Backup preserved: extract_v6_backup.py on EC2
+  - Full reprocess (--all) completed across 7 days of traffic logs
+
+VALIDATED: BRANCH routing confirmed working
+  - Test date (2026-02-13): 99 successful, 18 failed
+  - Routing: AWSNBLM=12, GOV-AIPM=55, NLMINTA=6, tier3=26
+  - Three branch directories auto-created: AWSNBLM/, GOV-AIPM/, NLMINTA/
+  - Sub-routing confirmed: AWSNBLM/clgysing/ (Tier 1a), _unsorted/ (Tier 1b)
+  - Full reprocess showed pre-directive days correctly staying in tier3
+
+CHANGED: NLM source repair completed
+  - 14 CLGYSING Source Pkgs notebook: 2 orphaned sources deleted, 2 re-added
+  - Healing the Unimaginable notebook: source re-uploaded (known filtering issue)
+  - NLM-MANIFEST.json updated 2x with corrected source IDs
+
+IDENTIFIED: Root cause of BRANCH tag → Tier 3 routing failure
+  - parse_seraph_string() in v5/v6 required PROJECT, PASS, NUM fields
+  - Tags with only BRANCH + SESSION returned None → fell to Tier 3
+  - v7 fix: Accept BRANCH-only tags as valid SERAPH strings
+
+CROSS-COMPONENT NOTES:
+  - Repo sync resolved: extract_v7.py is now canonical in repo AND live on EC2
+  - Midnight cron (daily-rotate.sh) will use v7 automatically going forward
+  - 222 pre-existing _untagged/ files remain — backlog cleanup deferred
+  - SERAPH Signal String Reference not yet updated to reflect BRANCH field
+  - SERAPH Branch Tagging Directive (Project Knowledge) not yet updated
+
+DECISIONS: D-044 (BRANCH-aware routing architecture)
+
+WISHLIST ITEMS:
+  - W-023 Branch-Aware Extraction Routing: COMPLETED
+  - extract.py repo sync: COMPLETED (long-carried deferred item)
