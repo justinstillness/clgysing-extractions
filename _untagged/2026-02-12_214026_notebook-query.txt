@@ -1,0 +1,582 @@
+================================================================================
+EXTRACTION: 2026-02-12_214026_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Appendix D Troubleshooting Guide complete full text
+Timestamp:       2026-02-12T21:40:26.000056+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: fa8ce015-5543-4cf5-baea-f5a796b4db82
+Chat Configure:  default
+Response Chars:  18894
+Duration:        103000ms
+================================================================================
+
+Here is the complete full text of Appendix F from the AI Operations Manual v1.0.7-DRAFT [1].\
+\
+***\
+\
+**APPENDIX F: DIALOG INTAKE FAILURE MODE CATALOG**\
+\
+This appendix catalogs failure modes for the Dialog Intake System documented in Section 3.5. Each failure mode includes detection signals, severity classification, and recovery paths.\
+\
+For orientation to this catalog, see Section 3.5.6. [1]\
+\
+**F.1 ENTRY POINT FAILURES**\
+\
+Failures occurring when users initiate contact and the AI must determine their needs. [2]\
+\
+**F.1.1 TOUCHPOINT 1.1: First Contact / System Initiation**\
+\
+**FAILURE: VAGUE PROJECT OBJECTIVE**\
+**Severity:** HIGH\
+**Detection Signals:**\
+- Circular answers to \"what are you trying to accomplish?\"\
+- \"I'll know it when I see it\" responses\
+- Inability to state a deliverable\
+- Objectives that change with each restatement\
+\
+**Recovery Path:**\
+1. Route to Exploration Session (Section 1.4.5)\
+2. Use readiness assessment questions\
+3. Help user clarify thinking before formalizing as project\
+4. Do not create Project Guide until objective is articulable\
+\
+**Prevention:** Never skip readiness assessment for new projects [3]\
+\
+**FAILURE: SCOPE CONFUSION (ONE PROJECT IS ACTUALLY MULTIPLE)**\
+**Severity:** HIGH\
+**Detection Signals:**\
+- Objectives that don't connect logically\
+- Sprawling scope that keeps expanding\
+- Multiple distinct deliverables for different purposes\
+\
+**Recovery Path:**\
+1. Pause and acknowledge: \"This sounds like it might be several things...\"\
+2. Help user decompose into distinct projects\
+3. Establish relationships between projects if linked\
+4. Create separate Project Guides for each\
+\
+**Prevention:** Watch for scope breadth early; question broad objectives [4]\
+\
+**FAILURE: PREMATURE INITIATION**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- Frequent \"I don't know\" to readiness questions\
+- Can't answer what success looks like\
+- Dependencies on information user doesn't have\
+\
+**Recovery Path:**\
+1. Redirect to Exploration Session\
+2. Identify what needs to happen before project can start\
+3. Offer to help gather prerequisites\
+4. Document as \"pre-project\" work\
+\
+**Prevention:** Complete readiness assessment before creating Project Guide [5]\
+\
+**FAILURE: MISIDENTIFIED NEED (SAYS NEW BUT ACTUALLY CONTINUING)**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- References to prior work in \"new project\" framing\
+- \"We were working on...\" language\
+- Asks for continuation of something AI doesn't recognize\
+\
+**Recovery Path:**\
+1. Probe for prior context: \"Have you worked on this before?\"\
+2. Request any prior materials (bootstrap, notes, outputs)\
+3. Route to Re-Entry (1.3) if prior work exists\
+\
+**Prevention:** Always check for continuation signals in initiation requests [6]\
+\
+**FAILURE: FRAMEWORK REJECTION**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- Impatience with intake questions\
+- \"Can't you just...\" requests to skip process\
+- Resistance to documentation\
+\
+**Recovery Path:**\
+1. Acknowledge preference for speed\
+2. Explain value briefly (not defensively)\
+3. Offer lightweight entry: \"Three quick questions, then we start\"\
+4. If resistance persists, note in session log and proceed minimally\
+\
+**Prevention:** Frame intake as enabling speed, not creating overhead [7]\
+\
+**F.1.2 TOUCHPOINT 1.2: Session Continuation**\
+\
+**FAILURE: BOOTSTRAP NOT PROVIDED**\
+**Severity:** HIGH\
+**Detection Signals:**\
+- User says \"continue\" but provides no context file\
+- Assumes AI remembers prior sessions\
+- References decisions/work AI has no record of\
+\
+**Recovery Path:**\
+1. Request bootstrap explicitly\
+2. If unavailable, attempt reconstruction: \"What do you remember?\"\
+3. Route to abbreviated Re-Entry if gap is significant\
+4. Document bootstrap absence in session log [8]\
+\
+**Prevention:** Reinforce bootstrap requirement at every session closeout\
+\
+**FAILURE: BOOTSTRAP CONTEXT MISMATCH**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- Bootstrap state doesn't match user's stated current state\
+- User describes work not in bootstrap\
+- Confusion about \"where we were\"\
+\
+**Recovery Path:**\
+1. Name the mismatch explicitly\
+2. Determine which is accurate (bootstrap or user statement)\
+3. Update context accordingly\
+4. Note discrepancy in session log\
+\
+**Prevention:** Verify bootstrap at session start; don't assume accuracy [9]\
+\
+**F.1.3 TOUCHPOINT 1.3: Re-Entry After Extended Absence**\
+\
+**FAILURE: UNDERESTIMATED CONTEXT LOSS**\
+**Severity:** HIGH\
+**Detection Signals:**\
+- User believes they remember more than they do\
+- Quick answers to re-entry questions that prove incomplete\
+- Confusion surfacing mid-session about prior decisions\
+\
+**Recovery Path:**\
+1. When confusion surfaces, pause work [10]\
+2. Conduct fuller re-entry assessment\
+3. < 2026/02/12 21:42:09.000614320  length=8192 from=25077 to=33268
+Review prior artifacts together\
+4. Rebuild context before resuming\
+\
+**Prevention:** Calibrate re-entry depth to absence duration; err on side of more\
+\
+**FAILURE: MISSING PRIOR ARTIFACTS**\
+**Severity:** HIGH\
+**Detection Signals:**\
+- User can't locate bootstrap, Project Guide, or Decision Log\
+- References to files that aren't available\
+- Incomplete project record\
+\
+**Recovery Path:**\
+1. Inventory what IS available\
+2. Reconstruct critical context from available sources\
+3. Note gaps explicitly [11]\
+4. Consider reconstruction session before resuming work\
+\
+**Prevention:** Reinforce external organization system; user actions checklist\
+\
+**F.1.4 TOUCHPOINT 1.4: Phase Transition**\
+\
+**FAILURE: PREMATURE PHASE TRANSITION**\
+**Severity:** HIGH\
+**Detection Signals:**\
+- Phase completion criteria not verified\
+- Open items from current phase unaddressed\
+- Rush to \"move on\" without closure [12]\
+\
+**Recovery Path:**\
+1. Stop transition\
+2. Review phase completion criteria\
+3. Identify what remains\
+4. Complete or explicitly defer remaining items\
+5. Then transition properly\
+\
+**Prevention:** Always verify completion criteria before phase transition\
+\
+**FAILURE: TRANSITION WITHOUT REORIENTATION**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- Move to new phase without reviewing updated context\
+- New phase work begins with stale understanding\
+- Decisions appropriate for old phase applied to new\
+\
+**Recovery Path:**\
+1. Pause new phase work [13]\
+2. Conduct Phase Transition Session (Section 4.3.5)\
+3. Reorient to new phase requirements\
+4. Then proceed with appropriate context\
+\
+**Prevention:** Mandatory reorientation at every phase boundary\
+\
+**F.2 ARTIFACT CREATION FAILURES**\
+\
+Failures occurring when AI gathers information to populate framework artifacts. [14]\
+\
+**F.2.1 TOUCHPOINT 2.1: Project Guide Creation/Major Update**\
+\
+**FAILURE: INCOMPLETE CONSTRAINTS CAPTURED**\
+**Severity:** HIGH\
+**Detection Signals:**\
+- Timeline surprises (\"Oh, I needed this by Friday\")\
+- Format requirements surfacing late\
+- Dependencies discovered mid-project\
+\
+**Recovery Path:**\
+1. Update Project Guide immediately when constraints surface\
+2. Assess impact on work already done\
+3. Adjust plan as needed\
+4. Add constraint discovery to lessons learned\
+\
+**Prevention:** Comprehensive constraint elicitation at initiation; probing questions [15]\
+\
+**FAILURE: SCOPE DOCUMENTED BUT NOT BOUNDED**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- Project Guide describes what's included but not what's excluded\
+- Scope creep occurs with \"I thought that was included\"\
+- Ambiguity about boundaries\
+\
+**Recovery Path:**\
+1. Add explicit \"Out of Scope\" section to Project Guide\
+2. Review boundaries with user\
+3. Log as scope clarification decision\
+\
+**Prevention:** Always document both in-scope AND out-of-scope [16]\
+\
+**F.2.2 TOUCHPOINT 2.2: Decision Capture**\
+\
+**FAILURE: DECISION MADE BUT NOT RECOGNIZED**\
+**Severity:** HIGH\
+**Detection Signals:**\
+- Conversation moves past choice without capture\
+- User later references \"the decision\" AI didn't record\
+- Choices embedded in action without explicit acknowledgment\
+\
+**Recovery Path:**\
+1. Retroactive capture: \"I realize we decided [X] earlier...let me log that\"\
+2. Reconstruct rationale from conversation context [17]\
+3. Get user confirmation of reconstruction\
+\
+**Prevention:** AI proactively flags apparent decisions; \"Should I capture that?\"\
+\
+**FAILURE: RATIONALE NOT DOCUMENTED**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- Decision recorded without \"why\"\
+- User says \"it just felt right\" without elaboration\
+- No alternatives documented\
+\
+**Recovery Path:**\
+1. Ask explicitly: \"What made you choose this over alternatives?\"\
+2. AI can offer to articulate reasoning: \"Let me try to put words to it...\"\
+3. If no rationale available, note as \"rationale not captured\" [18]\
+\
+**Prevention:** Always ask \"why\" for significant decisions\
+\
+**F.2.3 TOUCHPOINT 2.3: Bootstrap Generation**\
+\
+**FAILURE: NO BOOTSTRAP GENERATED**\
+**Severity:** CRITICAL\
+**Detection Signals:**\
+- Session ends without bootstrap file\
+- User departs without closeout\
+- Next session has no continuity document\
+\
+**Recovery Path:**\
+1. If discovered same session: Generate immediately, even if basic [19]\
+2. If discovered next session: Reconstruct from transcript (if available)\
+3. If no transcript: Document gap; rebuild context manually\
+\
+**Prevention:** Never end session without bootstrap; use emergency if rushed\
+\
+**FAILURE: INCOMPLETE BOOTSTRAP**\
+**Severity:** HIGH\
+**Detection Signals:**\
+- Bootstrap missing key sections (decisions, next actions, concerns)\
+- Critical context not carried forward\
+- Next session starts with confusion\
+\
+**Recovery Path:**\
+1. Supplement bootstrap from memory/transcript\
+2. Start next session with context verification [20]\
+3. Note incomplete closeout in session log\
+\
+**Prevention:** Use TPL-002 checklist completely; don't skip sections\
+\
+**F.2.4 TOUCHPOINT 2.4: Session Log Entry**\
+\
+**FAILURE: SESSION LOG SKIPPED**\
+**Severity:** LOW\
+**Detection Signals:**\
+- No session log produced at closeout\
+- Project history has gaps\
+\
+**Recovery Path:**\
+1. Reconstruct from transcript if available\
+2. Create abbreviated log from memory [21]\
+3. Note as incomplete record\
+\
+**Prevention:** Session log is part of standard closeout; don't skip\
+\
+**F.2.5 TOUCHPOINT 2.5: Re-Entry Checklist Completion**\
+\
+**FAILURE: ABBREVIATED RE-ENTRY WHEN FULL REQUIRED**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- Confusion surfaces mid-session after abbreviated re-entry\
+- User's actual context gap larger than assessed [22]\
+\
+**Recovery Path:**\
+1. Stop work when confusion surfaces\
+2. Conduct fuller re-entry\
+3. Rebuild context properly before continuing\
+\
+**Prevention:** Err on side of more thorough re-entry; watch for uncertainty signals\
+\
+**F.2.6 TOUCHPOINT 2.6: Failure Recovery Intake**\
+\
+**FAILURE: WRONG FAILURE TYPE IDENTIFIED**\
+**Severity:** HIGH\
+**Detection Signals:**\
+- Recovery actions don't address actual problem [23]\
+- Repeated recovery attempts fail\
+- Problem persists or worsens despite protocol\
+\
+**Recovery Path:**\
+1. Acknowledge recovery isn't working\
+2. Re-diagnose from scratch\
+3. Consider alternative failure types\
+4. Try different recovery path\
+\
+**Prevention:** Verify failure type before executing recovery; get user agreement\
+\
+**FAILURE: USER IN DENIAL ABOUT FAILURE**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- \"It's fine, just continue\" despite clear problems\
+- Minimization of issues\
+- Resistance to recovery process\
+\
+**Recovery Path:** [24]\
+1. Express concern respectfully but clearly\
+2. Offer brief assessment: \"5 minutes to check could save hours later\"\
+3. If user insists, note concern in session log\
+4. Monitor for escalation\
+\
+**Prevention:** Frame recovery as protection, not criticism\
+\
+**F.3 PROCESS EXECUTION FAILURES**\
+\
+Failures occurring when ongoing processes require user input. [25]\
+\
+**F.3.1 TOUCHPOINT 3.1: Scope Change Detection and Resolution**\
+\
+**FAILURE: SCOPE CREEP UNDETECTED**\
+**Severity:** CRITICAL\
+**Detection Signals:**\
+- Work requested outside defined scope not flagged\
+- Project expands without explicit acknowledgment\
+- \"While we're at it...\" additions accumulate\
+\
+**Recovery Path:**\
+1. Stop and inventory what's been added\
+2. Formalize each addition as scope change\
+3. Update Project Guide\
+4. Assess impact on timeline/resources [26]\
+\
+**Prevention:** AI must flag ALL out-of-scope requests; no silent additions\
+\
+**FAILURE: SCOPE CHANGE FORCED WITHOUT RESOLUTION**\
+**Severity:** HIGH\
+**Detection Signals:**\
+- User insists on addition without acknowledging it's scope change\
+- \"Just add it\" without discussion\
+- Change implemented without documentation\
+\
+**Recovery Path:**\
+1. Implement if user insists\
+2. Document as unacknowledged scope change in session log\
+3. Flag in bootstrap for future attention\
+4. Note in Decision Log as \"forced scope change\"\
+\
+**Prevention:** Gentle persistence on acknowledgment; clear explanation of why it matters [27]\
+\
+**F.3.2 TOUCHPOINT 3.2: Verif< 2026/02/12 21:42:09.000622149  length=5865 from=33269 to=39133
+ication and Quality Assurance**\
+\
+**FAILURE: VERIFICATION FATIGUE**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- Declining engagement with verification findings\
+- \"Looks fine\" responses without review\
+- Minimal responses to detailed questions\
+\
+**Recovery Path:**\
+1. Reduce verification depth for lower-stakes items\
+2. Batch verifications where possible [28]\
+3. Offer to highlight only critical items\
+4. Note pattern in session log\
+\
+**Prevention:** Calibrate verification to stakes; don't over-verify low-risk items\
+\
+**F.3.3 TOUCHPOINT 3.3: Weekly Review Facilitation**\
+\
+**FAILURE: RUSHED WEEKLY REVIEW**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- Review compressed significantly from standard\
+- Key sections skipped [29]\
+- Action items not captured\
+\
+**Recovery Path:**\
+1. Note incomplete review in session log\
+2. Carry unaddressed items to next review\
+3. Consider scheduling catch-up session\
+\
+**Prevention:** Protect review time; better to reschedule than rush\
+\
+**F.4 EDGE CASE FAILURES**\
+\
+Failures in non-standard situations requiring specialized handling. [30]\
+\
+**F.4.1 TOUCHPOINT 4.1: Ambiguous User Intent**\
+\
+**FAILURE: FALSE CLASSIFICATION**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- User corrects AI routing\
+- Work proceeds in wrong direction\
+- Confusion about what session was supposed to accomplish\
+\
+**Recovery Path:**\
+1. Acknowledge misclassification\
+2. Redirect to correct touchpoint\
+3. Salvage any usable work\
+4. Proceed on correct path\
+\
+**Prevention:** Ask clarifying questions when intent genuinely unclear [31]\
+\
+**F.4.2 TOUCHPOINT 4.2: Contradictory Information**\
+\
+**FAILURE: CONTRADICTION PROPAGATED**\
+**Severity:** HIGH\
+**Detection Signals:**\
+- Artifacts contain conflicting information\
+- Downstream problems from unresolved inconsistency\
+- User confusion about \"what we decided\"\
+\
+**Recovery Path:**\
+1. Surface the contradiction explicitly\
+2. Stop forward progress until resolved\
+3. Update all affected artifacts\
+4. Log resolution as decision\
+\
+**Prevention:** Never proceed past unresolved contradictions; flag immediately [32]\
+\
+**F.4.3 TOUCHPOINT 4.3: User Resistance to Process**\
+\
+**FAILURE: LOST BENEFITS FROM ABANDONMENT**\
+**Severity:** LOW-MEDIUM\
+**Detection Signals:**\
+- Process elements skipped at user insistence\
+- Gaps in documentation/governance\
+- Problems emerge that process would have prevented\
+\
+**Recovery Path:**\
+1. When problems emerge, note connection to skipped process [33]\
+2. Offer to retroactively apply (if salvageable)\
+3. Use as teaching moment (gently)\
+\
+**Prevention:** Explain value clearly; offer lightweight alternatives rather than all-or-nothing\
+\
+**F.4.4 TOUCHPOINT 4.4: Multi-Project Confusion**\
+\
+**FAILURE: CROSS-CONTAMINATION**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- Artifacts mixed between projects\
+- Decisions applied to wrong project [34]\
+- Context from one project bleeds into another\
+\
+**Recovery Path:**\
+1. Identify contamination points\
+2. Separate artifacts\
+3. Verify each project's integrity\
+4. Add explicit project identifiers\
+\
+**Prevention:** Strict project naming; separate chats when possible; explicit project reference\
+\
+**F.4.5 TOUCHPOINT 4.5: External Stakeholder Information**\
+\
+**FAILURE: UNVERIFIED DATA INCORPORATED**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- Third-party input treated as verified without checking\
+- Scope changes from external sources accepted uncritically\
+\
+**Recovery Path:**\
+1. Flag unverified data in artifacts\
+2. Verify with user before incorporating\
+3. Note source limitations\
+\
+**Prevention:** Always mark external input as \"per [source]\"; verify significant items [35]\
+\
+**F.4.6 TOUCHPOINT 4.6: User Inertia / Passive Acquiescence**\
+\
+**FAILURE: RUBBER-STAMPING (Error Propagation)**\
+**Severity:** MEDIUM\
+**Detection Signals:**\
+- Repeated minimal acknowledgments: \"ok\", \"k\", \"yes\", \"fine\", \"sure\"\
+- Three or more such responses in sequence\
+- Decreasing response length over time\
+- Responses don't engage with substance presented\
+\
+**Recovery Path:**\
+1. Pause forward progress\
+2. Name the pattern: \"I notice we're moving quickly with brief confirmations\"\
+3. Offer options:\
+- \"Would you like to take a brief break?\"\
+- \"Should I walk through recent content in more detail?\" [36]\
+- \"Are you confident in what we've covered, or would a summary help?\"\
+4. If user confirms engagement, proceed with heightened verification\
+5. If user is fatigued, suggest session break or abbreviated closeout\
+6. Note pattern in session log if significant\
+\
+**Prevention:** Calibrate confirmation to stakes; batch lower-stakes confirmations\
+\
+**F.5 CROSS-CUTTING FAILURES**\
+\
+Failures that can occur across multiple touchpoints. [37]\
+\
+**FAILURE: CONTEXT DEGRADATION UNDETECTED**\
+**Severity:** HIGH\
+**Applies to:** All touchpoints\
+**Detection Signals:**\
+- AI loses track of earlier session content\
+- Repeated questions about already-discussed topics\
+- Inconsistencies between early and late session responses\
+\
+**Recovery Path:**\
+1. Acknowledge degradation\
+2. Conduct context refresh\
+3. Consider session closeout if severe\
+4. Note in bootstrap\
+\
+**Prevention:** Regular freshness checks; monitor for warning signs (Section 4.2.4)\
+\
+**FAILURE: CONFIRMATION TIER MISCALIBRATED**\
+**Severity:** LOW-MEDIUM\
+**Applies to:** All touchpoints requiring confirmation [38]\
+**Detection Signals:**\
+- Over-confirming low-stakes items (user frustration)\
+- Under-confirming high-stakes items (errors slip through)\
+\
+**Recovery Path:**\
+1. Adjust tier based on feedback\
+2. Note preference in project context\
+\
+**Prevention:** Use Confirmation Calibration Framework (Section 3.5.3)\
+\
+**END OF APPENDIX F** [39]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,524 @@
+================================================================================
+EXTRACTION: 2026-02-12_213949_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Appendix C Tool Configuration Guide complete full text
+Timestamp:       2026-02-12T21:39:49.000519+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 7e40559d-4aba-4af2-adad-f08d8cac6805
+Chat Configure:  default
+Response Chars:  19024
+Duration:        82999ms
+================================================================================
+
+Based on the sources, here is the complete full text of **Appendix D: Troubleshooting Guide** from the *GOV-AIPM Complete Manual v1.0.7-DRAFT*.\
+\
+***\
+\
+**APPENDIX D: TROUBLESHOOTING GUIDE**\
+\
+This appendix provides problem-to-solution guidance for common issues encountered in AI-assisted work. Use this guide when something isn't working as expected before escalating to more intensive recovery protocols.\
+\
+Organization: Problems are grouped by category. Each entry includes symptoms, likely causes, and recommended solutions. Cross-references to relevant manual sections and templates are provided for deeper guidance.\
+\
+**HOW TO USE THIS GUIDE**\
+\
+1.  Identify the category that best matches your issue\
+2.  Find the specific problem description\
+3.  Verify symptoms match your situation\
+4.  Apply the recommended solution\
+5.  If unresolved, escalate per the guidance provided\
+\
+**Severity Indicators:**\
+*   **QUICK FIX:** Resolvable in minutes with simple action\
+*   **MODERATE:** Requires deliberate effort, possibly 15-30 minutes\
+*   **INVOLVED:** May require significant time or new session\
+*   **ESCALATE:** Use formal recovery protocol (TPL-009)\
+\
+---\
+\
+**D.1 SESSION MANAGEMENT ISSUES**\
+\
+**PROBLEM: AI seems to have forgotten earlier context**\
+\
+**SYMPTOMS:**\
+*   AI asks questions already answered\
+*   AI contradicts earlier statements\
+*   Responses become generic or less specific\
+*   AI doesn't reference established decisions\
+\
+**LIKELY CAUSES:**\
+*   Approaching token limits\
+*   Context window overflow\
+*   Long session without reinforcement\
+\
+**SOLUTIONS:**\
+*   **[QUICK FIX] Restate key context:**\
+    \"To confirm our parameters: [restate 2-3 key points]. Please acknowledge and continue with this context in mind.\"\
+*   **[MODERATE] Provide context summary:**\
+    \"Here's a summary of our established context: [bulleted summary]. Please confirm understanding before we proceed.\"\
+*   **[INVOLVED] Bootstrap and restart:**\
+    If context loss is severe, generate a bootstrap (TPL-002) capturing current state and continue in a fresh chat.\
+\
+*CROSS-REFERENCE: Section 6 (Session Lifecycle), TPL-002 (Bootstrap)*\
+\
+**PROBLEM: AI responses are becoming slow or degraded**\
+\
+**SYMPTOMS:**\
+*   Longer response times\
+*   Incomplete responses\
+*   Responses cut off mid-sentence\
+*   Declining response quality\
+\
+**LIKELY CAUSES:**\
+*   Token limit approaching\
+*   Complex context accumulation\
+*   Platform performance issues\
+\
+**SOLUTIONS:**\
+*   **[QUICK FIX] Check token status:**\
+    Ask: \"Approximately how much of your context window have we used?\" (Note: AI estimates may be rough but directionally useful)\
+*   **[MODERATE] Reduce active context:**\
+    \"Let's focus narrowly on [specific task]. You don't need to reference [earlier topics] for this.\"\
+*   **[INVOLVED] Emergency bootstrap:**\
+    Generate bootstrap immediately, save all files, continue in new chat. See Section 14.4 (Token Collapse) for detailed protocol.\
+\
+*CROSS-REFERENCE: Section 6.4 (Token Management), Section 14.4 (Token Collapse)*\
+\
+**PROBLEM: Session ended unexpectedly without closeout**\
+\
+**SYMPTOMS:**\
+*   Chat closed without generating artifacts\
+*   No bootstrap created\
+*   No session log\
+*   Work potentially lost\
+\
+**LIKELY CAUSES:**\
+*   Token exhaustion\
+*   Platform timeout\
+*   User error (closed tab)\
+*   Browser/app crash\
+\
+**SOLUTIONS:**\
+*   **[MODERATE] Recover from chat history:**\
+    1. Access chat history/transcript if available\
+    2. Export using Claude Exporter if chat is still accessible\
+    3. Manually reconstruct key outputs from transcript\
+*   **[INVOLVED] Reconstruct from memory:**\
+    1. Document what you remember immediately\
+    2. List decisions made (mark as [RECONSTRUCTED])\
+    3. Note uncertainties explicitly\
+    4. Create reconstruction log for audit trail\
+*   **[ESCALATE] If significant work lost:**\
+    Use TPL-009 (Failure Recovery Worksheet), Protocol D (Token Collapse)\
+\
+*CROSS-REFERENCE: Section 14.4 (Token Collapse), TPL-009*\
+\
+**PROBLEM: Bootstrap didn't transfer context effectively**\
+\
+**SYMPTOMS:**\
+*   New session AI seems confused\
+*   AI asks questions answered in bootstrap\
+*   Work direction doesn't match expectations\
+*   AI makes different assumptions than previous session\
+\
+**LIKELY CAUSES:**\
+*   Bootstrap too compressed\
+*   Key context omitted\
+*   Ambiguous language in bootstrap\
+*   AI interpretation differs\
+\
+**SOLUTIONS:**\
+*   **[QUICK FIX] Clarify specific points:**\
+    \"The bootstrap mentioned [X]. To clarify: [explicit clarification]. Please confirm understanding.\"\
+*   **[MODERATE] Supplement bootstrap:**\
+    Provide additional context files referenced in bootstrap.\
+    Ask: \"What questions do you have about the bootstrap before we pr< 2026/02/12 21:41:12.000443816  length=8192 from=25077 to=33268
+oceed?\"\
+*   **[INVOLVED] Conduct alignment check:**\
+    \"Based on the bootstrap, please summarize: (1) project objective, (2) current state, (3) immediate next actions, (4) key constraints.\"\
+    Correct any misalignments before proceeding.\
+\
+*PREVENTION: Use \"Questions to Address at Session Start\" section in bootstrap.*\
+*CROSS-REFERENCE: Section 6.3 (Bootstrap Protocol), TPL-002*\
+\
+---\
+\
+**D.2 ALIGNMENT ISSUES**\
+\
+**PROBLEM: AI keeps going in the wrong direction**\
+\
+**SYMPTOMS:**\
+*   Outputs don't match expectations\
+*   Repeated corrections don't stick\
+*   AI seems to understand but produces wrong results\
+*   Feeling of talking past each other\
+\
+**LIKELY CAUSES:**\
+*   Fundamental misalignment on objective\
+*   Ambiguous instructions\
+*   AI making unstated assumptions\
+*   Scope confusion\
+\
+**SOLUTIONS:**\
+*   **[QUICK FIX] Reframe the request:**\
+    \"Let me reframe this differently: [new framing]. Does this change your understanding of what I'm asking for?\"\
+*   **[MODERATE] Surface assumptions:**\
+    \"Before your next attempt, list the assumptions you're making about: (1) what I want, (2) the format, (3) the constraints.\"\
+*   **[INVOLVED] Use QA-001 (Cognitive Divergence Audit):**\
+    If Three-Strike threshold reached (3 failed corrections), deploy the formal divergence audit prompt from Appendix B.\
+*   **[ESCALATE] If divergence persists:**\
+    Use TPL-009 (Failure Recovery Worksheet), Protocol G (Cognitive Divergence)\
+\
+*CROSS-REFERENCE: Section 14.7 (Cognitive Divergence), QA-001 prompt*\
+\
+**PROBLEM: AI outputs are inconsistent with prior work**\
+\
+**SYMPTOMS:**\
+*   New outputs contradict earlier outputs\
+*   Terminology changes without reason\
+*   Style/tone inconsistent\
+*   Decisions seem to be re-made differently\
+\
+**LIKELY CAUSES:**\
+*   Context not carried forward\
+*   Decision log not referenced\
+*   Multiple sessions without continuity\
+*   AI doesn't have access to prior work\
+\
+**SOLUTIONS:**\
+*   **[QUICK FIX] Provide prior work as reference:**\
+    \"Here is the previous output: [paste or attach]. Ensure consistency with this in your new output.\"\
+*   **[MODERATE] Reference decision log:**\
+    \"Per Decision #[X], we established [decision]. Ensure your output aligns with this.\"\
+*   **[INVOLVED] Conduct consistency audit:**\
+    Upload both outputs to a validation AI. Ask: \"Compare these two outputs. Identify inconsistencies in terminology, approach, or conclusions.\"\
+\
+*PREVENTION: Maintain decision log, reference it in bootstraps, provide prior deliverables to new sessions.*\
+*CROSS-REFERENCE: Section 5.2 (Decision Logs), TPL-004*\
+\
+---\
+\
+**D.3 OUTPUT QUALITY ISSUES**\
+\
+**PROBLEM: AI output contains obvious errors or hallucinations**\
+\
+**SYMPTOMS:**\
+*   Factually incorrect statements\
+*   Made-up references or citations\
+*   Confident claims that feel wrong\
+*   Internal contradictions in output\
+\
+**LIKELY CAUSES:**\
+*   AI hallucination (generating plausible but false content)\
+*   Training data errors\
+*   Extrapolation beyond knowledge\
+*   No verification performed\
+\
+**SOLUTIONS:**\
+*   **[QUICK FIX] Direct correction:**\
+    \"This statement is incorrect: [quote]. The correct information is [X]. Please revise.\"\
+*   **[MODERATE] Request source verification:**\
+    \"For each factual claim in this output, indicate your confidence level and whether I should verify independently.\"\
+*   **[INVOLVED] Cross-AI validation:**\
+    Submit output to different AI platform using VERIF-001 prompt for independent review.\
+*   **[ESCALATE] If pattern persists:**\
+    Use TPL-009, Protocol C (Unchecked AI Assumptions)\
+\
+*PREVENTION: Apply Tier 2 validation for important deliverables. Maintain skepticism on factual claims.*\
+*CROSS-REFERENCE: Section 13.1 (Hallucination Risks), Section 11.2 (QA Tiers)*\
+\
+**PROBLEM: Output is too generic / not specific enough**\
+\
+**SYMPTOMS:**\
+*   Boilerplate language\
+*   Lacks project-specific detail\
+*   Could apply to anything\
+*   Missing concrete examples\
+\
+**LIKELY CAUSES:**\
+*   Insufficient context provided\
+*   Instructions too vague\
+*   AI defaulting to safe/general responses\
+*   No examples to anchor on\
+\
+**SOLUTIONS:**\
+*   **[QUICK FIX] Request specificity:**\
+    \"This is too generic. Revise to include: [specific elements]. Reference [specific context].\"\
+*   **[MODERATE] Provide examples:**\
+    \"Here's an example of the specificity I need: [example]. Match this level of detail.\"\
+*   **[MODERATE] Add constraints:**\
+    \"Include at least [N] specific examples. Reference [specific documents]. Use [specific terminology].\"\
+\
+*CROSS-REFERENCE: Section 5 (Alignment Principles)*\
+\
+**PROBLEM: Output is too long / verbose**\
+\
+**SYMPTOMS:**\
+*   Excessive length\
+*   Repetitive content\
+*   Padding with unnecessary detail\
+*   Buries key points in verbiage\
+\
+**LIKELY CAUSES:**\
+*   No length constraint specified\
+*   AI defaulting to comprehensive\
+*   Mistaking thoroughness for quality\
+\
+**SOLUTIONS:**\
+*   **[QUICK FIX] Request compression:**\
+    \"Reduce this by 50%. Keep only essential content. Remove redundancy.\"\
+*   **[MODERATE] Specify constraints upfront:**\
+    \"Maximum [N] words/paragraphs. Prioritize [key elements]. Omit [unnecessary elements].\"\
+*   **[MODERATE] Request executive summary:**\
+    \"Provide a 3-sentence summary first, then the full content. I may only need the summary.\"\
+\
+*CROSS-REFERENCE: Section 5.3 (Clear Communication)*\
+\
+**PROBLEM: Output doesn't match requested format**\
+\
+**SYMPTOMS:**\
+*   Wrong structure\
+*   Missing required sections\
+*   Format inconsistent with examples\
+*   Ignores template specifications\
+\
+**LIKELY CAUSES:**\
+*   Format instructions unclear\
+*   Template not provided\
+*   AI substituted own judgment\
+*   Instructions buried in long prompt\
+\
+**SOLUTIONS:**\
+*   **[QUICK FIX] Restate format requirement:**\
+    \"The format must be: [explicit structure]. Revise to match exactly.\"\
+*   **[MODERATE] Provide template:**\
+    \"Use this exact template: [template]. Fill in each section as specified.\"\
+*   **[MODERATE] Break into steps:**\
+    \"First, create the outline matching [structure]. Show me the outline. Then I'll confirm before you draft content.\"\
+\
+*CROSS-REFERENCE: Section 5.2 (Constraint Communication)*\
+\
+---\
+\
+**D.4 PROCESS ISSUES**\
+\
+**PROBLEM: Decisions keep getting re-debated**\
+\
+**SYMPTOMS:**\
+*   Same issues discussed repeatedly\
+*   Contradictory decisions in different sessions\
+*   Feeling of \"didn't we already decide this?\"\
+*   Progress stalls on settled issues\
+\
+**LIKELY CAUSES:**\
+*   No decision log maintained\
+*   Decision log not referenced\
+*   Decisions not communicated to new sessions\
+*   Rationale not documented\
+\
+**SOLUTIONS:**\
+*   **[MODERATE] Establish decision as settled:**\
+    \"This was decided in Decision #[X]: [decision]. The rationale was [Y]. This is not open for re-debate. Proceed accordingly.\"\
+*   **[INVOLVED] Reconstruct decision history:**\
+    Review chat transcripts to identify decisions made. Document with [RECONSTRUCTED] tag. Create decision log going forward.\
+*   **[ESCALATE] If pattern systematic:**\
+    Use TPL-009, Protocol A (No Logs ... Decision Churn)\
+\
+*PREVENTION: Maintain decision log from project start. Include key decisions in every bootstrap. Reference decision numbers when relevant.*\
+*CROSS-REFERENCE: Section 5.2 (Decision Logs), Section 14.1 (Decision Churn)*\
+\
+**PROBLEM: Actual practice has drifted from documented process**\
+\
+**SYMPTOMS:**\
+*   Doing things differently than SOP specifies\
+*   Can't remember last time you followed the process\
+*   Documentation feels outdated\
+*   New habits developed without documentation\
+\
+**LIKELY CAUSES:**\
+*   Process evolved through practice\
+*   Documentation not updated\
+*   Workarounds became standard\
+*   Process was impractical as designed\
+\
+**SOLUTIONS:**\
+*   **[MODERATE] Conduct SOP audit:**\
+    Compare documented procedure to actual practice. List specific divergences.\
+*   **[INVOLVED] Determine resolution:**\
+    For each divergence, decide:\
+    *   Update SOP to match reality (practice is better)\
+    *   Retrain to match SO< 2026/02/12 21:41:12.000451629  length=6007 from=33269 to=39275
+P (procedure is better)\
+    *   Hybrid approach\
+*   **[INVOLVED] Update documentation:**\
+    Document the resolution. Update SOP. Communicate changes.\
+*   **[ESCALATE] If drift is significant:**\
+    Use TPL-009, Protocol B (SOP Drift)\
+\
+*PREVENTION: Include process check in weekly review (TPL-006). Update documentation when practices change.*\
+*CROSS-REFERENCE: Section 14.2 (SOP Drift), TPL-006 (Weekly Review)*\
+\
+**PROBLEM: Returning to project after absence - feeling lost**\
+\
+**SYMPTOMS:**\
+*   Can't remember where you left off\
+*   Context feels stale\
+*   Unsure what's been decided\
+*   Risk of contradicting prior work\
+\
+**LIKELY CAUSES:**\
+*   Extended time away from project\
+*   Context decay (normal human memory)\
+*   No re-entry protocol followed\
+\
+**SOLUTIONS:**\
+*   **[MODERATE] Abbreviated re-entry (1-2 weeks away):**\
+    1. Review last session log\
+    2. Review last bootstrap\
+    3. Scan recent decisions\
+    4. Quick reorientation prompt to AI\
+    5. Resume\
+*   **[INVOLVED] Full re-entry (2+ weeks away):**\
+    Use TPL-007 (Re-Entry Checklist) completely.\
+    Conduct dedicated reorientation chat before resuming work.\
+*   **[ESCALATE] If already produced contradictory work:**\
+    Use TPL-009, Protocol F (No Re-Entry ... Regression)\
+\
+*PREVENTION: Always create bootstrap at session end. Follow re-entry protocol after any significant absence.*\
+*CROSS-REFERENCE: Section 9 (Re-Entry Protocol), TPL-007*\
+\
+---\
+\
+**D.5 TOOL ISSUES**\
+\
+**PROBLEM: Claude Exporter not capturing chat properly**\
+\
+**SYMPTOMS:**\
+*   Export is incomplete\
+*   Formatting is broken\
+*   Images/files not included\
+*   Export fails entirely\
+\
+**SOLUTIONS:**\
+*   **[QUICK FIX] Try different format:**\
+    If MD fails, try TXT. If TXT fails, try PDF.\
+*   **[MODERATE] Manual backup:**\
+    Select all chat content manually, paste into document. Less elegant but preserves content.\
+*   **[MODERATE] Check extension status:**\
+    Verify Claude Exporter is enabled and updated. Try disabling/re-enabling extension.\
+*   **[INVOLVED] Export in sections:**\
+    For very long chats, export may fail. Try scrolling to load all content first, or accept partial export and note gaps.\
+\
+*CROSS-REFERENCE: Appendix C.3 (Chat Archive Configuration)*\
+\
+**PROBLEM: NotebookLM not finding relevant content**\
+\
+**SYMPTOMS:**\
+*   Queries return irrelevant results\
+*   Known content not surfaced\
+*   \"I couldn't find information about that\" responses\
+\
+**SOLUTIONS:**\
+*   **[QUICK FIX] Rephrase query:**\
+    Try different terminology. Use exact phrases from documents.\
+*   **[MODERATE] Check document upload:**\
+    Verify all relevant documents are uploaded to the notebook. Check that documents processed successfully.\
+*   **[MODERATE] Query more specifically:**\
+    Instead of broad queries, ask about specific sections or documents. \"What does the Project Guide say about [X]?\"\
+*   **[INVOLVED] Rebuild notebook:**\
+    If persistent issues, create fresh notebook and re-upload documents.\
+\
+*CROSS-REFERENCE: Appendix C.2 (NotebookLM Configuration)*\
+\
+**PROBLEM: Files not syncing or organizing properly**\
+\
+**SYMPTOMS:**\
+*   Files missing from expected locations\
+*   Sync conflicts\
+*   Duplicate files\
+*   Folder structure inconsistent\
+\
+**SOLUTIONS:**\
+*   **[QUICK FIX] Manual verification:**\
+    Check cloud storage directly (web interface) to verify actual state.\
+*   **[MODERATE] Force sync:**\
+    Trigger manual sync. Check sync client status. Resolve any conflicts by choosing correct version.\
+*   **[MODERATE] Clean up duplicates:**\
+    Identify authoritative version. Remove or archive duplicates. Document resolution in session log.\
+*   **[INVOLVED] Audit folder structure:**\
+    Compare actual structure to documented convention. Reorganize if necessary. Update any broken references.\
+\
+*CROSS-REFERENCE: Appendix C.4 (File Organization)*\
+\
+---\
+\
+**D.6 ESCALATION GUIDE**\
+\
+When troubleshooting steps don't resolve the issue, escalate using the appropriate protocol.\
+\
+**WHEN TO ESCALATE**\
+\
+**ESCALATE IMMEDIATELY if:**\
+*   Work quality is actively degrading\
+*   Decisions are being made on faulty basis\
+*   Significant rework may be required\
+*   Pattern is systematic, not isolated\
+\
+**ESCALATE AFTER TROUBLESHOOTING if:**\
+*   Quick fixes and moderate solutions haven't worked\
+*   Issue has recurred multiple times\
+*   Root cause is unclear\
+*   Process gap may exist\
+\
+**ESCALATION PATHS**\
+\
+| Issue Type | Escalation Protocol | Template |\
+| :--- | :--- | :--- |\
+| Decision churn | Protocol A | TPL-009 |\
+| SOP drift | Protocol B | TPL-009 |\
+| AI assumptions | Protocol C | TPL-009 |\
+| Token collapse | Protocol D | TPL-009 |\
+| Cognitive fatigue | Protocol E | TPL-009 |\
+| Post-absence regression | Protocol F | TPL-009 |\
+| Cognitive divergence | Protocol G | TPL-009 |\
+\
+**POST-ESCALATION**\
+\
+After using TPL-009 (Failure Recovery Worksheet):\
+1.  Complete the full worksheet including lessons learned\
+2.  Identify prevention measures\
+3.  Update documentation if process gaps identified\
+4.  Note in weekly review (TPL-006) for pattern tracking\
+5.  Consider whether manual updates needed\
+\
+*CROSS-REFERENCE: Section 14 (Failure Modes), TPL-009*\
+\
+---\
+\
+**D.7 QUICK REFERENCE: FIRST ACTIONS**\
+\
+| Problem Category | First Action |\
+| :--- | :--- |\
+| AI forgot context | Restate key parameters |\
+| Session degrading | Check token status |\
+| Wrong direction | Reframe the request |\
+| Too agreeable | Explicitly request criticism |\
+| Obvious errors | Direct correction + verification request |\
+| Too generic | Request specifics with examples |\
+| Decisions re-debated | Reference decision log |\
+| Lost after absence | Follow re-entry checklist |\
+| Tool not working | Try alternative approach |\
+\
+**UNIVERSAL PRINCIPLE:**\
+PAUSE ... DIAGNOSE ... APPLY FIX ... VERIFY ... ESCALATE IF NEEDED [1-41]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

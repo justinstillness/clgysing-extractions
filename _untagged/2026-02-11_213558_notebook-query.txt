@@ -1,0 +1,66 @@
+================================================================================
+EXTRACTION: 2026-02-11_213558_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What field-tested patterns exist for phase transitions? Describe the 8-step phase transition process, husk vs coconut filtering, Phase Protocol redrafting triggers, and transition session expectations from field testing.
+Timestamp:       2026-02-11T21:35:58.000326+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: df348076-b957-4069-9d59-71b8e25ded7f
+Chat Configure:  default
+Response Chars:  4118
+Duration:        71000ms
+================================================================================
+
+Operational refinements derived from field testing across the CLGYSING, AWSNBLM, and NLMINTA projects have established five key patterns for maintaining project coherence and integrity. These patterns address the specific constraints of working with AI (context amnesia, assumption drift) by formalizing behaviors that prioritize explicit state over implicit understanding.\
+\
+### 1. \"Ceremony is Continuity\" Philosophy\
+This philosophy reframes administrative overhead as the essential survival mechanism for AI-assisted work. Because AI sessions are ephemeral and reset completely between interactions, \"formal artifact creation IS the continuity mechanism\" [1].\
+\
+*   **Concept:** The \"ceremonial production\" of artifacts...specifically Bootstraps, Session Logs, and Session Fidelity Reports (SFRs)...creates an \"external memory\" that allows a multi-session project to remain coherent [1].\
+*   **Operational Reality:** Without these ceremonies, the project dies when the context window closes. The artifacts are not bureaucratic paperwork; they are the bridge that carries the project's soul from one session to the next [1].\
+\
+### 2. \"Alignment Over Assumption\" Principle\
+This principle governs how the AI interacts with user intent, summarized by the maxim: **\"Propose and pause beats assume and proceed\"** [2].\
+\
+*   **Core Behavior:** The AI prioritizes explicit confirmation over inferred continuation. Even if a path seems obvious, the AI must propose it and wait for validation rather than executing it silently [2].\
+*   **Application:** This manifests in the **Alignment Turn** at the start of every session, where the AI generates a checklist of its understanding (scope, materials, workflow) and waits for user verification before beginning substantive work [3], [2].\
+\
+### 3. Conflict Resolution Protocol\
+Field testing revealed that rigid adherence to protocols can sometimes hinder project goals. This protocol establishes a hierarchy where **\"Project objectives ALWAYS override protocol convenience\"** [4].\
+\
+When a protocol behavior conflicts with a core project objective, the AI must execute the following 6-step sequence [1], [5]:\
+1.  **STOP** all work immediately.\
+2.  **FLAG** the conflict explicitly to the user.\
+3.  **EXPLAIN** which protocol behavior creates the conflict and why.\
+4.  **PROPOSE** resolution options (e.g., modify approach, segment work, defer).\
+5.  **AWAIT** user decision before proceeding.\
+6.  **DOCUMENT** the decision in the session record.\
+\
+### 4. Instruction Chain Interpretation\
+This pattern changes how the AI interprets multi-step commands to prevent \"runaway execution\" where early errors compound through subsequent steps [4].\
+\
+*   **The Rule:** Multi-step instructions are interpreted as **sequential with alignment checkpoints**, not as a batch execution command [4], [6].\
+*   **Example:** If a user says \"Do X, then Y, then close out,\" the AI interprets this as:\
+    1.  Execute X ... **Stop and Confirm** (\"X is done. Proceed to Y?\").\
+    2.  Execute Y ... **Stop and Confirm** (\"Y is done. Ready to close out?\").\
+    3.  Initiate Closeout only after explicit confirmation [4].\
+*   **Exception:** Routine execution within an explicitly aligned scope (e.g., \"extract concepts from this entire file\") proceeds without per-step confirmation [4].\
+\
+### 5. Scope Monitoring Duty\
+This is an active coordinator behavior rather than a passive responder role. The AI is responsible for detecting when work is drifting outside the agreed-upon boundaries [2], [7].\
+\
+*   **Duty:** The AI must **DETECT** when a request or emerging task extends beyond the defined phase scope [2].\
+*   **Action:** It must **PAUSE and FLAG** the scope question *before* proceeding [2].\
+*   **Res< 2026/02/11 21:37:09.000378262  length=386 from=8693 to=9078
+olution:** The AI must propose options: update the scope (Project Guide), adjust the request to fit current boundaries, or capture the item in the Backlog Register for future phases [2].\
+*   **Prohibition:** The AI must **NEVER** silently expand the scope just to be helpful [2].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

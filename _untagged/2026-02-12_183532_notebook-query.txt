@@ -1,0 +1,45 @@
+================================================================================
+EXTRACTION: 2026-02-12_183532_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Which integration points from the Assembly Blueprint target Sections 7 through 11? List any remaining IPs that have not yet been applied, specifically for Volume 4.
+Timestamp:       2026-02-12T18:35:32.000742+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: a7fbb3a7-1d0c-4ece-99b0-0df43cb4fcbe
+Chat Configure:  default
+Response Chars:  2383
+Duration:        1141999ms
+================================================================================
+
+Based on the **Draft User Behavior Callouts** and **Section 10.3 Revision Draft**, here is the information regarding the placement of Callout 8:
+
+### Exact Placement
+Callout 8 (Notebook Maintenance) is explicitly instructed to be placed **within or after Section 10.3.3 (Upload Workflow)**.
+
+*   **Source Instruction:** "Placement: Section 10.3 (Notebook Connectivity) ... INSERT within or after the upload workflow subsection (10.3.3)" [1].
+
+### Rationale for Placement in 10.3.3
+The rationale is **contextual relevance**: placing the user's maintenance duties directly alongside the system description of those same processes.
+
+*   **Content Alignment:** Section 10.3.3 describes the **"Upload Workflow"** and provides the rules for **"What to Upload vs. Skip"** [2, 3]. Callout 8 contains the corresponding user checklist: "After each session: Upload the session transcript... Upload non-ephemeral artifacts..." [1].
+*   **Workflow Integration:** Other subsections of 10.3 cover different topics where maintenance is less relevant:
+    *   **10.3.1** defines the concept and query models [4].
+    *   **10.3.2** covers the querying technique (AI behavior) [5].
+    *   **10.3.4** covers organization strategy (folders/structure) [6].
+    *   **10.3.3** is the specific operational procedure for keeping the notebook current, making it the logical home for the user's maintenance checklist.
+
+### Discussion in Session Transcripts
+While the provided sources do not contain raw chat transcripts of the debate, the **Integration Notes** in the drafting files document the design philosophy that drove this decision:
+
+*   **Visibility Strategy:** The notes state that callouts are "embedded within AI-facing sections to make user responsibilities visible. The surrounding AI-facing content explains what the AI does; the callouts explain what the user does at the same workflow point" [7].
+*   **Consolidation Debate:** The drafting notes for Section 10.3 discuss whether to consolidate user tips into Section 10.3 or keep them in Section 10.8 (User-Side Workflow Tips). The decision was to retain 10.8 as a quick reference but **also** embed the guidance in 10.3 because "Section 10.3 is the comprehensive treatment for understanding" [8]. Placing Callout 8 in 10.3.3 ensures the user sees the maintenance requirement while reading the comprehensive definition of the upload workflow.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

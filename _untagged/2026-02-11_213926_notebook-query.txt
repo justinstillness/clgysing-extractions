@@ -1,0 +1,245 @@
+================================================================================
+EXTRACTION: 2026-02-11_213926_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the core thesis of this material? Follow all system instructions.
+Timestamp:       2026-02-11T21:39:26.000763+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: 51afcc74-c1ea-47f0-a817-7d27017f984d
+Chat Configure:  default
+Response Chars:  6542
+Duration:        40999ms
+================================================================================
+
+{\
+\"extraction_type\": \"core_thesis_extraction\",\
+\"source_analysis\": {\
+\"concept_analysis\": [\
+{\
+\"term\": \"Omniology\",\
+\"assumptions\": [\
+{\
+\"assumption\": \"Truth is an objective, accessible reality that humans can know intrinsically.\",\
+\"support_type\": \"ASSERTION\"\
+},\
+{\
+\"assumption\": \"Understanding the nature of reality directly improves practical life outcomes like business and family.\",\
+\"support_type\": \"ASSERTION\"\
+},\
+{\
+\"as< 2026/02/11 21:40:07.000139605  length=6119 from=10159 to=16277
+sumption\": \"Current societal structures obscure truth, necessitating a new study.\",\
+\"support_type\": \"ARGUMENT\"\
+}\
+],\
+\"coherence_rating\": 9,\
+\"logic_flags\": [\
+\"Possible circularity in defining truth via the lens of the system itself.\"\
+]\
+},\
+{\
+\"term\": \"Omniological Approach\",\
+\"assumptions\": [\
+{\
+\"assumption\": \"Intrinsic reasoning is superior to authoritative or extrinsic knowledge.\",\
+\"support_type\": \"ARGUMENT\"\
+},\
+{\
+\"assumption\": \"Individuals can build accurate conceptual frameworks independent of established institutions.\",\
+\"support_type\": \"ASSERTION\"\
+},\
+{\
+\"assumption\": \"Integration across all domains allows for a 'unified field theory' of understanding.\",\
+\"support_type\": \"ASSERTION\"\
+}\
+],\
+\"coherence_rating\": 8,\
+\"logic_flags\": [\
+\"Undefined metric for verifying 'intrinsic' accuracy without external validation.\"\
+]\
+},\
+{\
+\"term\": \"Cultology\",\
+\"assumptions\": [\
+{\
+\"assumption\": \"All social systems function either as parasitic or symbiotic entities.\",\
+\"support_type\": \"ASSERTION\"\
+},\
+{\
+\"assumption\": \"Social pathology stems from the interruption of truth flow.\",\
+\"support_type\": \"ARGUMENT\"\
+},\
+{\
+\"assumption\": \"Human relationships have an ideal state of 'full flourishing'.\",\
+\"support_type\": \"ASSERTION\"\
+}\
+],\
+\"coherence_rating\": 9,\
+\"logic_flags\": [\
+\"Binary classification (parasitic/symbiotic) may exclude neutral or mixed systems.\"\
+]\
+},\
+{\
+\"term\": \"Parasitic Modality\",\
+\"assumptions\": [\
+{\
+\"assumption\": \"Extrinsic knowledge systems are inherently manipulative.\",\
+\"support_type\": \"ARGUMENT\"\
+},\
+{\
+\"assumption\": \"Modern societal structures differ from 'cults' only in scale, not mechanism.\",\
+\"support_type\": \"EVIDENCE\"\
+},\
+{\
+\"assumption\": \"Humans have a natural drive for inquiry that systems must actively suppress.\",\
+\"support_type\": \"ASSERTION\"\
+}\
+],\
+\"coherence_rating\": 10,\
+\"logic_flags\": []\
+},\
+{\
+\"term\": \"Symbiotic Modality\",\
+\"assumptions\": [\
+{\
+\"assumption\": \"A system based on total openness and truth is practically achievable.\",\
+\"support_type\": \"ASSERTION\"\
+},\
+{\
+\"assumption\": \"Mutual benefit is the natural outcome of unrestrained human inquiry.\",\
+\"support_type\": \"ARGUMENT\"\
+},\
+{\
+\"assumption\": \"Governance can exist without control mechanisms.\",\
+\"support_type\": \"ASSERTION\"\
+}\
+],\
+\"coherence_rating\": 7,\
+\"logic_flags\": [\
+\"Utopian gap regarding conflict resolution in 'free' systems.\"\
+]\
+}\
+]\
+},\
+\"entries\": [\
+{\
+\"id\": 1,\
+\"term\": \"Omniology\",\
+\"definition\": \"This concept defines the foundational pursuit of absolute truth across all reality to optimize human existence. It integrates self-knowledge with civilizational design to replace abstract philosophy with actionable understanding.\",\
+\"category\": \"ONTOLOGY\",\
+\"confidence\": 1.0,\
+\"cross_references\": [],\
+\"qa_flags\": []\
+},\
+{\
+\"id\": 2,\
+\"term\": \"Omniological Approach\",\
+\"definition\": \"This methodology constructs intrinsic knowledge by modeling subjects from multiple angles rather than accepting authoritative explanations. Researchers integrate these independent models across domains to reason from first principles.\",\
+\"category\": \"METHODOLOGY\",\
+\"confidence\": 0.95,\
+\"cross_references\": [\
+1\
+],\
+\"qa_flags\": []\
+},\
+{\
+\"id\": 3,\
+\"term\": \"Cultology\",\
+\"definition\": \"This field analyzes social mechanics through a binary framework of parasitic versus symbiotic functioning. It diagnoses how power structures either cultivate human potential or extract energy through deception.\",\
+\"category\": \"SOCIOLOGY\",\
+\"confidence\": 0.98,\
+\"cross_references\": [\
+1,\
+2\
+],\
+\"qa_flags\": []\
+},\
+{\
+\"id\": 4,\
+\"term\": \"Parasitic Modality\",\
+\"definition\": \"This system type relies on extrinsic knowledge and social pressure to suppress individual inquiry. It hijacks human drives for truth to create dependency on counterfeit control structures.\",\
+\"category\": \"SOCIOLOGY\",\
+\"confidence\": 0.95,\
+\"cross_references\": [\
+3\
+],\
+\"qa_flags\": []\
+},\
+{\
+\"id\": 5,\
+\"term\": \"Symbiotic Modality\",\
+\"definition\": \"This system type prioritizes the intrinsic path and open inquiry to foster mutual benefit. It empowers individuals through discernment rather than controlling them through dogmatic restriction.\",\
+\"category\": \"SOCIOLOGY\",\
+\"confidence\": 0.95,\
+\"cross_references\": [\
+3,\
+4\
+],\
+\"qa_flags\": []\
+},\
+{\
+\"id\": 6,\
+\"term\": \"Macro-cult\",\
+\"definition\": \"This concept frames modern civilization as a distributed parasitic architecture operating at a global scale. It asserts that current institutions function as a net to entrap human consciousness.\",\
+\"category\": \"SOCIOLOGY\",\
+\"confidence\": 0.90,\
+\"cross_references\": [\
+3,\
+4\
+],\
+\"qa_flags\": [\
+\"NOVEL_TERM\"\
+]\
+},\
+{\
+\"id\": 7,\
+\"term\": \"Agenda 47 Explained\",\
+\"definition\": \"This project applies the Cultology framework to the political hypothesis of a transition toward symbiosis. It tests whether current leadership represents a genuine shift away from parasitic globalist structures.\",\
+\"category\": \"GOVERNANCE\",\
+\"confidence\": 0.85,\
+\"cross_references\": [\
+3,\
+5,\
+6\
+],\
+\"qa_flags\": [\
+\"REQUIRES_CONTEXT\"\
+]\
+},\
+{\
+\"id\": -1,\
+\"term\": \"VERIFICATION_ANCHOR_REACHED\",\
+\"definition\": \"This confirms the full custom prompt was processed including Section 10 of 10. Verification implies the system followed all negative constraints and formatting rules.\",\
+\"category\": \"METHODOLOGY\",\
+\"confidence\": 1.0,\
+\"cross_references\": [],\
+\"qa_flags\": []\
+}\
+],\
+\"metadata\": {\
+\"total_entries\": 8,\
+\"category_distribution\": {\
+\"ONTOLOGY\": 1,\
+\"METHODOLOGY\": 2,\
+\"SOCIOLOGY\": 4,\
+\"GOVERNANCE\": 1\
+},\
+\"average_confidence\": 0.95,\
+\"qa_flag_summary\": {\
+\"NOVEL_TERM\": 1,\
+\"REQUIRES_CONTEXT\": 1\
+},\
+\"extraction_timestamp\": \"2026-02-01T00:00:00Z\",\
+\"source_word_count_estimate\": 8600\
+}\
+}
+
+================================================================================
+END OF EXTRACTION
+================================================================================

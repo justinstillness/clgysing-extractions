@@ -1,0 +1,76 @@
+================================================================================
+EXTRACTION: 2026-02-11_232823_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Section 14 current structure 14.1 Common Pitfalls categories context failures communication failures process failures output failures 14.2 recovery strategies 14.3 cognitive divergence exact format entries
+Timestamp:       2026-02-11T23:28:23.000261+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: ea868e32-f8ad-4b17-b97d-eaf258bfca27
+Chat Configure:  default
+Response Chars:  4094
+Duration:        173999ms
+================================================================================
+
+Based on the revision findings and draft sections for GOV-AIPM v1.0.8, the session initiation sequence for continuing a project involves specific user actions, pre-session preparation using a \"New Chat Notepad,\" and a formal bootstrap loading protocol.\
+\
+### Pre-Session Preparation: The New Chat Notepad\
+\
+Field testing identified a critical user behavior called the **New Chat Notepad System**. This is an external scratchpad (e.g., Google Keep or a text file) used to prepare the session prompt before interacting with the AI [1].\
+\
+**Purpose:** It acts as a pre-prepared prompt to ensure efficient session initiation and prevent \"tabula rasa\" forgetfulness by the AI [2].\
+\
+**Preparation Steps (User Actions):**\
+1.  **Update the Notepad:** Before starting, the user updates their external notepad with:\
+    *   **Chat Name:** The correct naming convention for the upcoming session (e.g., `034 GOV-AIPM (Drafting Section 4.3)`) [1, 3].\
+    *   **Standard Opening Line:** A consistent prompt such as \"Please review and let me know if you have any questions\" [1].\
+    *   **Notebook References:** IDs and descriptions of relevant NotebookLM notebooks the AI needs to access [2, 3].\
+    *   **Behavioral Reminders:** Specific instructions for behaviors the AI tends to forget (e.g., \"Narrate all tool calls\") [2].\
+    *   **Context Updates:** Any notes or context that arose between sessions [2].\
+2.  **Copy Content:** The user copies the entire content of this notepad to their clipboard [3].\
+\
+### Session Initiation Sequence (Continuation)\
+\
+The formal initiation sequence for a continuation session (Session N+1) follows a strict protocol to establish context and alignment.\
+\
+**1. Bootstrap Loading (User Action)**\
+*   **Start New Chat:** The user creates a new chat in the project (ensuring the **Phase Protocol** is available in Project Knowledge) [3].\
+*   **Paste & Attach:**\
+    *   Paste the content from the **New Chat Notepad** into the message box [3].\
+    *   Attach the **Bootstrap** file (generated at the end of the previous session) [3, 4].\
+    *   Attach the **Session Log** (from the previous session) and any other required files [3].\
+*   **Send:** The user sends this packet to initiate the session [3].\
+\
+**2. Mandatory First Action (AI Action)**\
+*   Upon receiving the Bootstrap, the AI executes the **Mandatory First Action** defined in the Bootstrap [4].\
+*   Typically, this action is to **review the Phase Protocol** stored in Project Knowledge to confirm adherence to behavioral governance before proceeding [5, 6].\
+\
+**3. Acknowledgment & Context Confirmation (AI Action)**\
+*   The AI acknowledges the Bootstrap and confirms its understanding of the current state [4].\
+*   It confirms continuity items, such as the **Response Index** (e.g., \"Last response index: [7], starting this session at [8]\") [9].\
+*   If notebook connectivity is used, the AI confirms accessibility of the notebooks referenced in the Bootstrap [10].\
+\
+**4. The Alignment Turn (Mandatory Exchange)**\
+*   **Generate Checklist:** The AI generates an **Alignment Checklist** covering scope, materials, workflow, expected outputs, and any gaps or questions [11, 12].\
+*   **User Verification:** The user reviews this checklist. Work **does not proceed** until the user explicitly verifies alignment [13].\
+    *   If aligned, the user confirms (e.g., \"Aligned\").\
+    *   If misaligned, the user provides corrections, and the AI adjusts the plan [13].\
+\
+**5. Dependency Verification (AI Action)**\
+*   The AI requests and verifies any specific dependencies noted in the Bootstrap (e.g., specific files or notebook queries) before beginning substantive work [14].\
+\
+### Summary of User Actions\
+*   **Update New Chat Notepad** with session specifics [3].\
+*   **Upload** Bootst< 2026/02/11 23:31:17.000232268  length=320 from=10159 to=10478
+rap + Session Log + Notepad content [3].\
+*   **Rename** the chat in the AI interface to match the convention (often pasting from the notepad) [15].\
+*   **Verify** the Alignment Checklist presented by the AI [16].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

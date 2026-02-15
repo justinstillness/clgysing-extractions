@@ -1,0 +1,71 @@
+================================================================================
+EXTRACTION: 2026-02-09_200617_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the current state of extract.py v6, the pipeline architecture, and what documentation exists or needs updating? Include details about the SERAPH routing system, ghost files, push-to-github.sh, and any deferred items from recent sessions.
+Timestamp:       2026-02-09T20:06:17.000593+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: fa96e31e-5957-44ef-8bcc-01bd8f376cf9
+Chat Configure:  default
+Response Chars:  4082
+Duration:        48000ms
+================================================================================
+
+Based on the provided session logs and specifications (specifically Session 019), here is the current state of the AWSNBLM/SeraphRecorder infrastructure.\
+\
+### 1. Current State of `extract.py` (v5 vs. v6)\
+There is **no `extract.py` v6** currently deployed. The latest production version is **v5**, which was deployed and validated in Session 019 [1].\
+\
+**Current Capabilities of `extract.py` v5:**\
+*   **SERAPH Parsing:** Recognizes and parses `[SERAPH: ...]` signal strings from query text [1].\
+*   **3-Tier Routing:** Automatically sorts extractions into project folders (Tier 1), a `_review` folder (Tier 2), or the `_untagged` folder (Tier 3) [2].\
+*   **Artifact Stripping:** Includes a regex fix to strip \"socat artifacts\" (stray chunk headers) from the content body (Decision D-024) [1].\
+*   **Metadata:** Populates full file headers with project, pass type, and session data derived from the signal string.\
+\
+### 2. Pipeline Architecture (SeraphRecorder)\
+The pipeline is fully operational with the following components [3], [4]:\
+*   **Capture Layer:** A `socat` wrapper (v5) listens on port 8000, logs all traffic to `/home/ubuntu/mcp-logs/traffic/`, and forwards requests to Majeston (NotebookLM MCP) on internal port 8100 [5].\
+*   **Automation:** A cron job (`daily-rotate.sh`) runs at **midnight UTC**. It executes `extract.py`, runs `push-to-github.sh`, and restarts the wrapper to rotate the log file [4].\
+*   **Interface:** Claude connects via Caddy (reverse proxy) on port 443, which routes to the socat wrapper.\
+\
+### 3. SERAPH Routing System\
+The system is now active and uses the following logic defined in `SERAPH-Signal-String-Reference.txt` [2]:\
+*   **Tier 1 (Tagged + Known):** If a valid pass type (e.g., `PASS=VX`) is found, files are routed to `{PROJECT}/phase2/{PASS}/`.\
+*   **Tier 2 (Tagged + Unknown):** If the tag exists but the pass code is new/unknown, files go to `extracted/_review/` for manual sorting.\
+*   **Tier 3 (Untagged):** Legacy behavior. Files go to `extracted/_untagged/`.\
+\
+**Signal String Format:** `[SERAPH: PROJECT=..., SP=..., PASS=..., NUM=...]` placed at the end of the query [6].\
+\
+### 4. \"Ghost Files\" (Socat Artifacts)\
+The term \"ghost files\" likely refers to the **Socat Artifacts** identified in Session 018 and addressed in Session 019.\
+*   **The Issue:** Socat captures raw TCP traffic. Occasionally, a chunk boundary (header) would split the response text mid-stream, leaving a stray line like `< 2026/02/08... length=...` inside the extracted text file [7].\
+*   **The Fix:** `extract.py` v5 includes a specific regex pass to identify and strip these lines from the content body before writing the file [1].\
+\
+### 5. `push-to-github.sh` & JSONL\
+*   **Current Status:** The script successfully pushes extracted text files to the `clgysing-extractions` repository.\
+*   **Pending Update:** Decision D-019 mandated pushing the raw JSONL logs to a `/raw/YYYY-MM/` folder on GitHub for archival [8]. This functionality **has not been implemented yet**. The script currently only pushes the extracted text files [9].\
+\
+### 6. Documentation Status\
+*   **Needs Updating:**\
+    *   **Architecture Reference (v3.1):** This document is **outdated**. It does not include the SeraphRecorder architecture, socat wrapper, extract v5 details, or the SERAPH signal string implementation [9]. It needs to be updated to **v3.2**.\
+*   **Current/Valid:**\
+    *   `SERAPH-Signal-String-Reference.txt` (Created Session 019) [10].\
+    *   `v1.1_REF_Chronicler-Quick-Reference.txt` [11].\
+\
+### 7. Deferred Items (From Session 019)\
+The following items were scoped but deferred [9]:\
+1.  **JSONL Push:** Updating `push-to-github.sh` to archive raw logs (D-019).\
+2.  **Multi-query Batch Test:** Testing rapid-fire tagged queries.\
+3.  **Shell MCP Connector:** A proposed tool to< 2026/02/09 20:07:05.000723591  length=274 from=10159 to=10432
+ give Claude secure shell access to the EC2 instance (discussed in Session 014/015).\
+4.  **Historical Reprocessing:** Re-running extraction on old logs using the v5 parser.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

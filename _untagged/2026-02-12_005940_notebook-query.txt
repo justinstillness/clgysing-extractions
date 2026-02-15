@@ -1,0 +1,140 @@
+================================================================================
+EXTRACTION: 2026-02-12_005940_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           For Callout 7 Prompting Discipline, what is the recommended placement - Section 3.5 or Section 3.8? Is there a specific recommendation in the callout document or integration notes about which is preferred?
+Timestamp:       2026-02-12T00:59:40.000094+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: d389a7c4-4bf4-4cfe-ba26-2422771a9a21
+Chat Configure:  default
+Response Chars:  2286
+Duration:        2012000ms
+================================================================================
+
+Here are the first 100 lines of the **Volume 1 Foundations** file, including the document header, the Table of Contents structure, and the formatting conventions used for sections and lists [1-4].
+
+```text
+================================================================================
+
+================================================================================
+
+AI OPERATIONS MANUAL
+
+A Practical System for AI-Assisted Business Operations
+
+================================================================================
+
+================================================================================
+
+Document Code: GOV-AIPM
+
+Version: 1.0.8-DRAFT
+
+Date: February 2026
+
+Status: Phase 6c Integration
+
+Volume: 1 of 6 ... FOUNDATIONS (Sections 1-2)
+
+================================================================================
+
+VOLUME 1 TABLE OF CONTENTS
+
+================================================================================
+
+PART I: FOUNDATIONS
+
+Section 1: Purpose & Scope
+
+1.1 Purpose
+
+1.2 Intended Audience
+
+1.3 Scope
+
+1.3.1 In Scope
+
+1.3.2 Out of Scope
+
+1.4 How to Use This Manual
+
+1.4.1 For New Users
+
+1.4.2 For Practitioners
+
+1.4.3 For Organizations
+
+1.4.4 For Reference
+
+1.4.5 Project Readiness Assessment
+
+1.4.6 User Workflow Overview
+
+1.4.6.1 Starting Your First Project (Rooting)
+
+1.4.6.2 Continuing a Project (Session to Session)
+
+1.4.6.3 Resuming After Extended Absence
+
+1.4.6.4 Transitioning Between Phases
+
+1.4.6.5 Summary Reference
+
+1.5 Document Conventions
+
+1.6 Relationship to Other Documents
+
+Section 2: Core Philosophy
+
+2.1 Foundational Principles
+
+2.1.1 Chats Are Ephemeral; Records Are Not
+
+2.1.2 External Memory Always Wins
+
+2.1.3 Substance Before Presentation
+
+2.1.4 Use the Full System
+
+2.1.5 Ceremony is Continuity
+
+2.2 Operational Stance
+
+2.2.1 AI as Junior Associate, Not Oracle
+
+2.2.2 Trust but Verify
+
+2.2.3 Explicit Over Implicit ... Alignment Over Assumption
+
+2.3 What This System Is Not
+
+2.4 The Compound Effect
+
+2.5 The Three Cycles of AI-Assisted Work
+
+2.5.1 Project Lifecycle (Macro Cycle)
+
+2.5.2 Session Lifecycle (Meso Cycle)
+
+2.5.3 Interaction Cycle (Micro Cycle)
+
+2.5.4 The Parallel Support Track
+
+2.5.5 Navigating the Framework
+
+2.6 The Orientation Principle
+
+2.6.1 Orientation Triggers
+
+2.6.2 The Orientation Templates
+```
+
+================================================================================
+END OF EXTRACTION
+================================================================================

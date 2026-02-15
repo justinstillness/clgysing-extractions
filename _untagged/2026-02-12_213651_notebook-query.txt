@@ -1,0 +1,639 @@
+================================================================================
+EXTRACTION: 2026-02-12_213651_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What did Justin say in voice memos during Session 017 about explicit exclusion lists for gap-filling? Include the theory about why generic exclusion doesn't work well and what the proposed alternative is.
+Timestamp:       2026-02-12T21:36:51.000085+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 2584354c-93c2-4250-aba1-07606eb85b12
+Chat Configure:  default
+Response Chars:  24667
+Duration:        136000ms
+================================================================================
+
+Here are the full texts for the new templates from Session D, updated with the TPL numbers TPL-015, TPL-016, and TPL-017 as requested.\
+\
+### **TPL-015: Branch Startup File**\
+\
+**Source:** Drafted in Session D (Session 036) [1].\
+\
+```text\
+TPL-015: BRANCH STARTUP FILE\
+\
+Template ID: GOV-AIPM-TPL-015\
+Version: 1.0\
+\
+Purpose: Provides the context packet for initializing a new branch\
+         workstream. Functions as a specialized Bootstrap for branch\
+         creation, containing inherited project context, branch scope,\
+         and mini-rooting questions to establish the branch's foundation.\
+\
+When to Use: When creating a new branch from a mainline session or\
+             planning session.\
+\
+Cross-reference: Section 12.3 (Branch Management), Section 12.3.3\
+                 (Branch Creation Process), TPL-002 (Bootstrap Template)\
+\
+--------------------------------------------------------------------------------\
+\
+INSTRUCTIONS\
+\
+--------------------------------------------------------------------------------\
+\
+Generate this Startup File in the mainline session when the decision to\
+branch has been made. The file provides everything the new branch's AI\
+instance needs to orient and begin work.\
+\
+The Startup File is a specialized derivative of the Bootstrap (TPL-002).\
+It shares the Bootstrap's function ... context transfer to a new AI\
+instance ... but is structured for branch initialization rather than\
+session continuation. Key differences:\
+\
+- Includes mini-rooting questions (a Bootstrap assumes rooting is\
+  already complete)\
+- Specifies the relationship to the mainline (a Bootstrap assumes\
+  continuity within a single workstream)\
+- May specify Phase Protocol modifications (a Bootstrap references\
+  the existing Phase Protocol as-is)\
+\
+WRITING PRINCIPLES:\
+\
+Write for an AI that has no memory of the parent project. Be explicit\
+about what the branch inherits, what it does not, and what it needs to\
+establish on its own. Include enough mainline context to orient, but\
+not so much that it overwhelms the branch's specific scope.\
+\
+The user will provide this file to the branch AI along with this manual\
+(if the branch AI needs AIPM framework orientation). The branch AI\
+reviews the Startup File and conducts the mini-rooting cycle before\
+beginning any substantive work.\
+\
+FILE NAMING:\
+[###]_branch-startup_[branch-handle].txt\
+Example: 001_branch-startup_SECRES.txt\
+\
+DIALOG COMPLETION OPTION:\
+The mainline AI generates this file when instructed: \"Generate a\
+branch startup file for [purpose]\" or \"Spin up a branch for [scope].\"\
+\
+--------------------------------------------------------------------------------\
+\
+BRANCH STARTUP FILE TEMPLATE\
+\
+--------------------------------------------------------------------------------\
+\
+================================================================================\
+BRANCH STARTUP FILE ... [Branch Name]\
+================================================================================\
+\
+Branch Handle: [SHORT-HANDLE]\
+Parent Project: [Project Name ... Project Code]\
+Created By: Session [###] (Mainline)\
+Date: [Date]\
+\
+================================================================================\
+BRANCH IDENTIFICATION\
+================================================================================\
+\
+Branch Name: [Descriptive name for the branch]\
+Branch Handle: [Short handle for cross-references, e.g., SECRES]\
+Branch Purpose: [1-2 sentence summary of why this branch exists]\
+\
+Chat Naming: [###] [DEPT]-[PROJ]-BR ([branch purpose])\
+Example: 001 GOV-AIPM-BR (security research)\
+\
+================================================================================\
+MANDATORY FIRST ACTION\
+================================================================================\
+\
+1. Review the Phase Protocol from Project Knowledge. The branch\
+   inherits the parent project's Phase Protocol [with modifications\
+   noted below / as-is].\
+2. Review this Startup File in full.\
+3. Conduct the mini-rooting cycle (Section: MINI-ROOTING below).\
+4. Generate an Alignment Checklist for the branch's first session.\
+\
+================================================================================\
+PARENT PROJECT CONTEXT\
+================================================================================\
+\
+[Provide enough context for the branch AI to understand the parent\
+project's identity, current state, and how this branch fits.]\
+\
+Project Summary:\
+[2-4 sentences describing the parent project ... what it is, what it\
+aims to accomplish, and its current phase.]\
+\
+Current Phase: Phase [N] ... [Phase Name]\
+Overall Progress: [Brief status]\
+\
+Why This Branch:\
+[Why was branching chosen over other approaches? What criteria from\
+Section 12.3.2 does this workstream meet?]\
+\
+================================================================================\
+BRANCH SCOPE\
+================================================================================\
+\
+Objectives:\
+[What this branch aims to accomplish. Be specific and assessable.]\
+- Objective 1: _______________________________________________________________\
+- Objective 2: _______________________________________________________________\
+- Objective 3 (if applicable): _______________________________________________\
+\
+Deliverables:\
+[What the branch should produce.]\
+- [Deliverable 1]\
+- [Deliverable 2]\
+- [Continue as needed]\
+\
+Scope Boundaries:\
+[What is explicitly OUT of scope for this branch.]\
+- NOT in scope: _______________________________________________________________\
+- NOT in scope: _______________________________________________________________\
+\
+Integration Expectations:\
+[How branch outputs will rejoin the mainline.]\
+- Integration method: [Mainline session review / Dedicated integration\
+  session / Direct deliverable handoff]\
+- Expected integration timing: [After branch completion / At specific\
+  milestone / Periodically]\
+- Mainline contact point: [Which mainline session or phase will\
+  integrate branch outputs]\
+\
+================================================================================\
+INHERITED CONTEXT\
+================================================================================\
+\
+Phase Protocol:\
+[Reference to the inherited Phase Protocol. Note any modifications\
+needed for the branch.]\
+- Phase Protocol location: Project Knowledge\
+- Modifications for branch: [None ... use as-is / Specific modifications\
+  listed below]\
+- [If modifications needed, list them here]\
+\
+Relevant Decisions:\
+[Mainline decisions (D-###) that the branch needs to know about.]\
+\
+| Decision # | Brief Description                    | Relevance to Branch |\
+|------------|--------------------------------------|---------------------|\
+|            |                                      |                     |\
+\
+Key Context:\
+[Any other mainline context the branch needs ... methodology decisions,\
+constraints, dependencies, terminology, conventions.]\
+\
+================================================================================\
+BRANCH STRUCTURE\
+================================================================================\
+\
+Estimated Complexity: [LOW / MEDIUM / HIGH]\
+Estimated Sessions: [Range]\
+Single-Phase or Multi-Phase: [Single / Multi]\
+\
+[If multi-phase, outline the branch's phase structure:]\
+Branch Phase 1: _______< 2026/02/12 21:39:07.000637328  length=8192 from=89688 to=97879
+________________________________________________________\
+Branch Phase 2: _______________________________________________________________\
+\
+================================================================================\
+NOTEBOOK CONNECTIVITY\
+================================================================================\
+\
+Main Project Notebook:\
+- Name: [Notebook name]\
+- ID: [Notebook ID]\
+- Use: [What to query the main notebook for]\
+\
+Branch Adjunct Notebook:\
+- Name: [Notebook name ... or \"To be created\"]\
+- ID: [Notebook ID ... or \"TBD\"]\
+- Use: [Branch transcripts, branch-specific research and artifacts]\
+\
+Upload Plan:\
+- [ ] Upload branch transcripts to branch adjunct notebook\
+- [ ] Upload significant branch artifacts to main project notebook\
+- [ ] Maintain both notebooks per Section 10.3.3 workflow\
+\
+================================================================================\
+MINI-ROOTING QUESTIONS\
+================================================================================\
+\
+[The branch AI should address these questions collaboratively with the\
+user at the start of the first branch session. This is the abbreviated\
+rooting cycle for branches.]\
+\
+1. SCOPE CONFIRMATION: The branch objectives above are [confirmed /\
+   need adjustment]. Any refinements?\
+\
+2. MAINLINE CONNECTION: How tightly coupled is this branch to mainline\
+   progress? Does the mainline depend on branch outputs, or can they\
+   proceed independently?\
+\
+3. PHASE PROTOCOL REVIEW: Having reviewed the inherited Phase Protocol,\
+   do any behaviors need modification for this branch's work? (e.g.,\
+   different methodology, different output standards, different\
+   coordination requirements)\
+\
+4. BRANCH STRUCTURE: Is this a single-phase branch (execute and\
+   integrate) or multi-phase (requiring its own phase transitions)?\
+\
+5. CONVENTIONS CONFIRMATION: Will this branch use the same naming\
+   conventions, file classes, and artifact templates as the mainline?\
+   Any branch-specific conventions needed?\
+\
+================================================================================\
+DYNAMIC STATE\
+================================================================================\
+\
+Decision Log Continuity:\
+- Last mainline decision: D-[###]\
+- Branch decisions: Begin at D-[###]-BR-001 [or continue mainline\
+  sequence ... specify approach]\
+\
+Response Index:\
+- Branch response index: Starts at [2] [or continues mainline\
+  sequence at [####] ... specify approach]\
+\
+Finding Index:\
+- Last project finding: F-[##]\
+- Branch findings: Continue project sequence at F-[##]\
+\
+================================================================================\
+END OF BRANCH STARTUP FILE\
+================================================================================\
+\
+--------------------------------------------------------------------------------\
+END OF TEMPLATE\
+--------------------------------------------------------------------------------\
+```\
+[1], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20], [21]\
+\
+---\
+\
+### **TPL-016: Cross-Branch Awareness Document**\
+\
+**Source:** Drafted in Session D (Session 036) [22].\
+\
+```text\
+TPL-016: CROSS-BRANCH AWARENESS DOCUMENT\
+\
+Template ID: GOV-AIPM-TPL-016\
+Version: 1.0\
+\
+Purpose: Provides a shared reference for projects with multiple active\
+         branches. Ensures every session ... mainline or branch ... has\
+         awareness of parallel workstreams without requiring full\
+         context on each branch.\
+\
+When to Use: When a project has two or more active branches. Create\
+             when the second branch is established; update at natural\
+             checkpoints throughout the project.\
+\
+Where to Store: Project Knowledge (alongside Phase Protocol), so that\
+                every session has access without explicit upload.\
+\
+Cross-reference: Section 12.3.7 (Cross-Branch Awareness Document),\
+                 Section 12.3 (Branch Management)\
+\
+--------------------------------------------------------------------------------\
+\
+INSTRUCTIONS\
+\
+--------------------------------------------------------------------------------\
+\
+This document is a living reference maintained throughout a project's\
+branching lifecycle. It is stored in Project Knowledge so that every\
+AI instance ... mainline or branch ... can access it as part of the\
+mandatory first action.\
+\
+UPDATE TRIGGERS:\
+- A new branch is created\
+- A branch completes, pauses, or is abandoned\
+- Inter-branch dependencies change\
+- An integration session occurs\
+- Significant scope changes in any branch\
+- Periodically during long-running parallel work (weekly recommended)\
+\
+WRITING PRINCIPLES:\
+- Keep entries concise ... this is an awareness tool, not a comprehensive\
+  record. 2-3 sentences per branch objective is sufficient.\
+- Focus on what other sessions need to know, not branch-internal details\
+- Flag coordination needs prominently ... these are the items most likely\
+  to cause problems if missed\
+\
+FILE NAMING:\
+[PROJECT]_cross-branch-awareness.txt\
+Example: GOV-AIPM_cross-branch-awareness.txt\
+\
+This is a single file per project, updated in place (not versioned per\
+session like bootstraps or session logs).\
+\
+--------------------------------------------------------------------------------\
+\
+CROSS-BRANCH AWARENESS DOCUMENT TEMPLATE\
+\
+--------------------------------------------------------------------------------\
+\
+================================================================================\
+CROSS-BRANCH AWARENESS DOCUMENT\
+================================================================================\
+\
+Project: [Project Name ... Project Code]\
+Last Updated: [Date ... Session ###]\
+Active Branches: [Count]\
+\
+================================================================================\
+ACTIVE BRANCHES REGISTER\
+================================================================================\
+\
+| Branch Handle | Full Name                      | Status   | Created    |\
+|---------------|--------------------------------|----------|------------|\
+| [HANDLE]      | [Descriptive branch name]      | Active   | Session ## |\
+| [HANDLE]      | [Descriptive branch name]      | Active   | Session ## |\
+| [HANDLE]      | [Descriptive branch name]      | Paused   | Session ## |\
+\
+Status values: Active / Paused / Integrating / Complete / Abandoned\
+\
+================================================================================\
+BRANCH OBJECTIVES\
+================================================================================\
+\
+[HANDLE]: [Branch Name]\
+--------------------------------------------------\
+Objective: [2-3 sentences: what this branch is working on and what it\
+will produce.]\
+Expected Deliverables: [List of key outputs]\
+Estimated Timeline: [Sessions remaining or target completion]\
+Notebook: [Branch adjunct notebook name and ID]\
+\
+[HANDLE]: [Branch Name]\
+--------------------------------------------------\
+Objective: [...]\
+Expected Deliverables: [...]\
+Estimated Timeline: [...]\
+Notebook: [...]\
+\
+[Repeat for each active branch]\
+\
+================================================================================\
+INTER-BRANCH DEPENDENCIES\
+================================================================================\
+\
+[List any dependencies between branches or between branches and the\
+mainline. If no dependencies exist, state \"No active inter-branch\
+dependencies.\"]\
+\
+| Dependency                       | From          | To            | Status   |\
+|----------------------------------|---------------|---------------|----------|\
+| [What is needed]                 | [Branch/Main] | [Branch/Main] | [Active/ |\
+|                                  |               |               | Resolved |\
+|                                  |               |               | Blocked] |\
+\
+Notes:\
+[Any additional context about dependencies ... timing constraints,\
+workarounds, escalation needs.]\
+\
+================================================================================\
+COORDINATION NEEDS\
+============================================================< 2026/02/12 21:39:07.000645243  length=8192 from=97880 to=106071
+====================\
+\
+[Specific items requiring cross-branch attention. These are action items\
+or awareness items that could cause problems if missed.]\
+\
+- [Coordination item ... e.g., \"SECRES evaluating encryption approach ...\
+  TOOLINT should not commit to TLS implementation until SECRES\
+  concludes.\"]\
+- [Coordination item]\
+- [If none: \"No active coordination needs.\"]\
+\
+================================================================================\
+RECENT UPDATES\
+================================================================================\
+\
+[Brief log of significant branch events since the last update. Most\
+recent first.]\
+\
+[Date ... Session ###]: [Event description ... e.g., \"SECRES branch\
+completed Phase 1. Findings F-14 through F-19 uploaded to main\
+notebook. Integration session planned for Session 042.\"]\
+\
+[Date ... Session ###]: [Event description]\
+\
+[Date ... Session ###]: [Event description]\
+\
+================================================================================\
+COMPLETED / ARCHIVED BRANCHES\
+================================================================================\
+\
+[Branches that have completed their work and been integrated, or that\
+have been abandoned. Maintained for project history.]\
+\
+| Branch Handle | Outcome                        | Integrated In | Date    |\
+|---------------|--------------------------------|---------------|---------|\
+| [HANDLE]      | [Completed / Abandoned]        | Session ###   | [Date]  |\
+\
+================================================================================\
+END OF CROSS-BRANCH AWARENESS DOCUMENT\
+================================================================================\
+\
+--------------------------------------------------------------------------------\
+END OF TEMPLATE\
+--------------------------------------------------------------------------------\
+```\
+[22], [23], [24], [25], [26], [27], [28], [29], [30], [31], [32], [33], [34], [35]\
+\
+---\
+\
+### **TPL-017: Findings Report**\
+\
+**Source:** Drafted in Session D (Session 036) [36].\
+\
+```text\
+TPL-017: FINDINGS REPORT\
+\
+Template ID: GOV-AIPM-TPL-017\
+Version: 1.0\
+\
+Purpose: Structured capture of empirical discoveries organized by topic.\
+         Preserves observations, evidence, and implications in a format\
+         designed for high queryability and evidence-to-decision tracing.\
+\
+When to Use: During or after sessions involving research, exploration,\
+             evaluation, testing, or any work producing empirical\
+             observations that warrant structured capture.\
+\
+Cross-reference: Section 5.6 (Findings Reports), Section 5.3 (Decision\
+                 Logs), Section 10.3 (Notebook Connectivity)\
+\
+--------------------------------------------------------------------------------\
+\
+INSTRUCTIONS\
+\
+--------------------------------------------------------------------------------\
+\
+Complete a Findings Report when a session produces empirical discoveries\
+that go beyond routine execution. The report captures what was observed,\
+what evidence supports it, and what it means for the project.\
+\
+WHEN TO USE:\
+- Research or exploration sessions\
+- Evaluation, testing, or validation sessions\
+- Field testing or beta testing sessions\
+- Any session producing significant empirical observations\
+\
+WHEN NOT NEEDED:\
+- Pure execution sessions (drafting, formatting, assembly)\
+- Administrative sessions (file organization, project setup)\
+- Sessions where no empirical observations emerged\
+\
+The AI may propose Findings Report generation mid-session when it\
+recognizes a pattern of empirical discovery. The user approves, defers\
+to closeout, or declines.\
+\
+INDEXING:\
+Finding IDs (F-##) accumulate across the entire project and never\
+reset. Check the prior Findings Report or Session Log for the last\
+used F-## number. If this is the project's first Findings Report,\
+begin at F-01.\
+\
+FILE NAMING:\
+[###]_findings.txt or [###]_findings_[topic].txt\
+Examples: 012_findings.txt, 032_findings_beta-test-review.txt\
+\
+DIALOG COMPLETION OPTION:\
+The AI generates this template as part of the session workflow. Say:\
+\"Let's capture findings\" or \"Start a Findings Report\" to initiate.\
+The AI may also propose generation proactively.\
+\
+Tips:\
+- Write discoveries as standalone statements ... a reader should\
+  understand each finding without additional context\
+- Be specific in evidence ... reference sessions, response indexes,\
+  or external sources\
+- Separate observation (Discovery) from interpretation (Impact)\
+- Use standard verdicts where they fit; create custom verdicts when\
+  needed\
+\
+--------------------------------------------------------------------------------\
+\
+FINDINGS REPORT TEMPLATE\
+\
+--------------------------------------------------------------------------------\
+\
+================================================================================\
+FINDINGS REPORT ... Session [###]\
+================================================================================\
+\
+File Class: FINDINGS\
+Project: [Project Name (Brief Description)]\
+Session: [### Project-Code (Session Purpose)]\
+Date: [Date]\
+Session Type: [Phase Name ... Activity Type]\
+Finding Range: F-[##] through F-[##]\
+\
+================================================================================\
+REPORT CONTEXT\
+================================================================================\
+\
+[Brief description of the research, exploration, or testing activity\
+that produced these findings. What was being investigated and why?\
+2-4 sentences providing enough context for a reader encountering this\
+report independently.]\
+\
+================================================================================\
+FINDINGS\
+================================================================================\
+\
+------------------------------------------------------------------------\
+F-[##]\
+------------------------------------------------------------------------\
+Discovery:\
+[Concise statement of the observation or insight. Specific enough to\
+stand alone. 1-3 sentences.]\
+\
+Evidence:\
+[Specific data points, test results, source references, or observations\
+that support the discovery. Reference sessions, response indexes, or\
+external sources as appropriate.]\
+\
+Impact / Implication:\
+[How this finding affects the project ... its pipeline, methodology,\
+deliverables, or thesis. What changes or should change because of\
+this discovery?]\
+\
+Status / Verdict:\
+[VALIDATED | GAP IDENTIFIED | REQUIRES FURTHER TESTING | CONTRADICTS |\
+INFORMS DECISION | NOTED | or custom verdict]\
+\
+------------------------------------------------------------------------\
+F-[##]\
+------------------------------------------------------------------------\
+Discovery:\
+[...]\
+\
+Evidence:\
+[...]\
+\
+Impact / Implication:\
+[...]\
+\
+Status / Verdict:\
+[...]\
+\
+------------------------------------------------------------------------\
+[Continue for each finding]\
+------------------------------------------------------------------------\
+\
+================================================================================\
+CUMULATIVE FINDINGS INDEX\
+================================================================================\
+\
+[Running index of ALL findings across the project, not just this\
+report. Update this section with each new Findings Report.]\
+\
+| Finding ID | Discovery (brief)              | Session | Status              |\
+|------------|--------------------------------|---------|---------------------|\
+| F-01       | [One-line summary]             | [###]   | [Verdict]           |\
+| F-02       | [One-line summary]             | [###]   | [Verdict]           |\
+| ...        | ...                            | ...     | ...                 |\
+| F-[##]     | [One-line summary]             | [###]   | [Verdict]           |\
+\
+Total findings to date: [#]\
+\
+================================================================================\
+PROVENANCE\
+================================================================================\
+\
+Research Method: [How discoveries were made ... testing, comparative\
+analysis, field observation, literature review, < 2026/02/12 21:39:07.000653255  length=817 from=106072 to=106888
+etc.]\
+\
+Sources Consulted: [Notebooks queried, documents reviewed, tools tested]\
+\
+Sessions Spanned: [If findings draw from multiple sessions, list them]\
+\
+Related Decisions: [Any D-### decisions that these findings informed\
+or were informed by]\
+\
+================================================================================\
+END OF FINDINGS REPORT\
+================================================================================\
+\
+--------------------------------------------------------------------------------\
+END OF TEMPLATE\
+--------------------------------------------------------------------------------\
+```\
+[36], [37], [38], [39], [40], [41], [42], [43], [44], [45], [46], [47], [48], [49]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

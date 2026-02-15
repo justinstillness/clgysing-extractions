@@ -1,0 +1,79 @@
+================================================================================
+EXTRACTION: 2026-02-09_011314_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           signal string conventions specification format tagging extraction pipeline parse
+Timestamp:       2026-02-09T01:13:14.000009+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: 6d052077-27c6-4b8f-a746-78dac209d75f
+Chat Configure:  default
+Response Chars:  3817
+Duration:        22000ms
+================================================================================
+
+Based on the provided sources, here is the comprehensive specification for the **Signal String** conventions used within the SeraphRecorder pipeline to manage tagging, extraction, and parsing of NotebookLM query results.\
+\
+### 1. Definition & Purpose\
+A **Signal String** is a structured metadata block embedded by Claude into `notebook_query` calls sent to Majeston (NotebookLM). It acts as a \"shipping label\" that travels with the query through the pipeline [1].\
+\
+*   **Purpose:** It allows the extraction script (`extract.py`) to automatically tag, name, and route output files without manual intervention.\
+*   **Visibility:** NotebookLM sees the string but treats it as formatting noise (ignoring it), while the SeraphRecorder pipeline parses it to capture provenance data [2].\
+\
+### 2. Format Specification\
+The signal string follows a strict key-value syntax enclosed in brackets.\
+\
+*   **Syntax:** `[SERAPH: FIELD1=value1, FIELD2=value2, ...]` [3]\
+*   **Placement:** Must appear at the **very end** of the query text [4].\
+*   **Formatting Rules:**\
+    *   Keys are **ALL CAPS** (e.g., `PROJECT`, `PASS`).\
+    *   Values are lowercase or mixed case using hyphens for spaces (e.g., `identity-mechanics`).\
+    *   Entire string must be on a single line [3].\
+\
+**Example:**\
+> \"Identify and extract all significant specialized terms...\
+> [SERAPH: PROJECT=clgysing, SP=03, PASS=VX, NUM=01, THEME=identity-mechanics, SESSION=017]\" [5]\
+\
+### 3. Field Conventions\
+The specification defines required and optional fields to ensure consistent tagging [6, 7]:\
+\
+| Field | Requirement | Description | Example |\
+| :--- | :--- | :--- | :--- |\
+| **PROJECT** | Required | Project identifier | `clgysing`, `a47` |\
+| **SP** | Required | Source Package number (2 digits) | `01`, `03` |\
+| **PASS** | Required | Extraction Pass Type (2-char code) | `PE`, `CE`, `VX` |\
+| **NUM** | Required | Sequential pass number (2 digits) | `01`, `02` |\
+| **THEME** | Optional | Thematic focus of the query | `four-intimacies` |\
+| **SESSION** | Optional | Claude session ID for provenance | `017` |\
+| **NOTES** | Optional | Brief free-text annotation | `refined-query-v2` |\
+\
+### 4. Pass Type Vocabulary (Tagging)\
+To standardize tagging, a preliminary vocabulary of 2-character codes is defined for different extraction types [8, 9]:\
+\
+*   **PE:** Pre-Extraction Evaluation (scan for coherence/themes)\
+*   **TM:** Thematic Mapping (identify conceptual clusters)\
+*   **CE:** Concept Extraction (full fidelity concept mining)\
+*   **VX:** Vocabulary Extraction (terms and definitions)\
+*   **TS:** Thesis String Extraction (arguments and claims)\
+*   **GL:** Glossary Generation\
+*   **QA:** Quality Assurance (spot checks)\
+\
+### 5. Extraction Pipeline & Parsing\
+The signal string drives the automation logic within the SeraphRecorder pipeline:\
+\
+1.  **Capture:** The `socat` wrapper logs the raw query containing the signal string [2, 10].\
+2.  **Parsing:** `extract.py` scans the log, uses regex (`\\\\[SERAPH:\\\\s*(.+?)\\\\]`) to find the block, and parses the key-value pairs [11].\
+3.  **File Generation:** The script uses these values to generate the filename and populate the metadata header of the extracted text file:\
+    *   *Filename:* `2026-02-07..._clgysing_SP03_VX-01_notebook-query.txt` [11].\
+    *   *Header:* Populates fields like \"Pass Type,\" \"Source Package,\" and \"Theme\" which previously defaulted to \"N/A\" [12, 13].\
+4.  **Routing:** The **Chronicler** tool uses this metadata to organize files into the correct directory structure (e.g., moving a file from `_untagged/` to `clgysing/phase2/VX/`) [14].\
+5.  **ID Assignment:** The parsing logic enables the future assignment of sequential **Concept IDs** (e.g., `SP03-VX-001`) by identifying the source package and pass type [15].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

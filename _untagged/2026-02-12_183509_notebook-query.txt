@@ -1,0 +1,31 @@
+================================================================================
+EXTRACTION: 2026-02-12_183509_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the full text of User Behavior Callout 8, the Notebook Maintenance callout? Provide the complete callout content from DRAFT_User-Behavior-Callouts.txt.
+Timestamp:       2026-02-12T18:35:09.000516+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 90af1e50-0319-4b08-8cf1-444243625f6c
+Chat Configure:  default
+Response Chars:  840
+Duration:        1124999ms
+================================================================================
+
+Yes, User Behavior Callout 7 (Prompting Discipline) was applied in Volume 2a.
+
+According to the **Volume 2a assembly** source (`GOV-AIPM_v1_0_8_Volume-2a_Interaction-Framework.txt`), the callout was embedded at the end of **Section 3.8.4** [1].
+
+**Evidence from Volume 2a Assembly:**
+*   **Placement:** The callout appears as a bordered text block titled "USER BEHAVIOR: Prompting Discipline" immediately following the "AI Behavioral Guidance" in Section 3.8 [1].
+*   **Assembly Notes:** The volume's footer notes explicitly confirm: "USER BEHAVIOR callout added: 'Prompting Discipline' (Callout 7) placed at end of Section 3.8.4" [2].
+*   **Planning:** The **Assembly Blueprint** (`GOV-AIPM_v1_0_8_Assembly-Blueprint.txt`) designated Callout 7 for Section 3 (specifically 3.5 or 3.8) and scheduled Volume 2 assembly for Session 040 [3, 4].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,26 @@
+================================================================================
+EXTRACTION: 2026-02-11_063053_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What version of jacob-bd is documented in the architecture reference?
+Timestamp:       2026-02-11T06:30:53.000238+00:00
+Notebook ID:     430df618-e337-4971-abaa-6528e96bb1c4
+Source IDs:      all
+Conversation ID: 08816acf-d252-4afa-a649-653e5ecaf571
+Chat Configure:  default
+Response Chars:  347
+Duration:        9999ms
+================================================================================
+
+The architecture reference documents **v0.2.15** of the `jacob-bd` package.
+
+According to the **HA Suite Architecture Reference v4.0**, the Majeston component runs on the `jacob-bd/notebooklm-mcp-cli` package version **v0.2.15** [1]. This version fixed a critical bug in the previous iteration (v0.2.14) regarding the `nlm chat start` command [2].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

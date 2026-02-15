@@ -1,0 +1,54 @@
+================================================================================
+EXTRACTION: 2026-02-10_010236_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the phase protocol document? How does it differ from bootstraps and project guides? When is it created and how does it evolve across phases? What is its relationship to session bootstraps?
+Timestamp:       2026-02-10T01:02:36.000127+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 6f021d96-29a8-42b4-ad16-67fc7e5ddb6c
+Chat Configure:  default
+Response Chars:  3666
+Duration:        77000ms
+================================================================================
+
+Based on the NLMINTA project logs and planning documents, the NotebookLM integration workflow for session continuity is designed to function as a "Project Memory" system that allows Claude to access deep project history without consuming the active token window.
+
+Here is the detailed workflow regarding uploads, querying, and the relationship with standard bootstraps:
+
+### 1. The Transcript Upload Workflow
+The primary mechanism for maintaining continuity is the **Google Drive Bridge**. Instead of uploading raw text files to every new chat, the workflow utilizes Google Docs as a dynamic synchronization point.
+
+*   **Step 1 (Download):** At the end of a session, the user downloads the full transcript and all artifacts [1].
+*   **Step 2 (Aggregation):** The user adds the transcript as a new tab (or section) in a master "Project Transcripts" Google Doc. A separate "File Inventory" Google Doc is updated with descriptions of new artifacts [2, 3].
+*   **Step 3 (Synchronization):** The user refreshes the specific Google Doc source within the project's NotebookLM notebook (e.g., the "NLMINTA Sessions" notebook) [2].
+*   **Step 4 (Availability):** Once synced, the new session data is immediately available to Claude via the MCP connector for future queries [3].
+
+The goal is to maintain a single repository (like the "NLMINTA Sessions" notebook used in testing) that contains all prior session transcripts and context documents [4].
+
+### 2. How the AI Queries for Context
+The AI utilizes the `notebook_query` tool via the MCP connector (referred to as "Majeston") to access this repository.
+
+*   **Natural Language Retrieval:** Claude can ask specific questions about project history, such as "What findings were generated in Session 008?" or "List every finding... documented across all sessions" [5].
+*   **Targeted Retrieval:** The AI can query specific decisions, status updates, or methodology definitions that reside in past transcripts without needing those transcripts loaded into the current context window [6].
+*   **Validation:** Testing confirmed this works as a "project memory tool." For example, in Session 012, the AI successfully retrieved a comprehensive list of 54 findings spanning Sessions 007...011 by querying the notebook, confirming no hallucinations or gaps [7, 8].
+
+### 3. Relationship with Bootstraps (Replacement vs. Supplement)
+The NotebookLM integration **supplements and enhances** the bootstrap protocol rather than replacing it entirely.
+
+*   **Enhancement:** The system solves the token cost issue of "context loading." Previously, massive amounts of context had to be pasted into a new session. Now, the context resides in NotebookLM, and Claude retrieves only what is specifically needed [9].
+*   **Role Distinction:**
+    *   **The Bootstrap:** Remains the "lightweight orientation" tool. It provides the immediate session objective, current phase, and critical directives [10]. It acts as a pointer, telling the AI *where* to look in NotebookLM if deep context is required [10].
+    *   **NotebookLM:** Serves as the "Deep Context Recovery" engine. It holds the massive archive of transcripts and logs [10].
+*   **Operational Benefit:** This allows for a "near-zero-token context recovery" where the AI has access to the full history (potentially thousands of pages) but only uses tokens for the specific answers it pulls [11].
+
+In practice, the logs show that the AI still begins sessions by reviewing a text-based Bootstrap file for immediate alignment [12], but then queries the NotebookLM notebook to pull detailed histories, previous findings, or specific tool specifications as needed throughout the session [13].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

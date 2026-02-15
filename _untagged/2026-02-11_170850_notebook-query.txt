@@ -1,0 +1,64 @@
+================================================================================
+EXTRACTION: 2026-02-11_170850_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Insight capture mechanism, out-of-phase backlog, backlog item reports. How were out-of-scope ideas captured during sessions without causing scope creep? What was the two-phase workflow for capture and evaluation? Backlog item schema and routing.
+Timestamp:       2026-02-11T17:08:50.000686+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 585c0208-aa81-4740-bf2e-6254467729f1
+Chat Configure:  default
+Response Chars:  2985
+Duration:        28999ms
+================================================================================
+
+**Insight Capture Mechanism and Out-of-Phase Backlog**
+
+The Insight Capture System is a formal mechanism designed to resolve the tension between maintaining focus on current objectives and preserving valuable ideas that arise tangentially. This system operates through an "Out-of-Phase Backlog" that captures valuable ideas arising outside the current phase scope, preventing scope creep while ensuring nothing valuable is lost [1], [2].
+
+**Preventing Scope Creep**
+To manage scope creep during sessions, the AI coordinator is assigned a "Scope Monitoring Duty" [3]. The AI must:
+*   **Detect** when a request extends beyond the defined phase scope [3].
+*   **Pause and Flag** the issue explicitly before proceeding [3].
+*   **Propose Options**: The AI offers to update the scope, adjust the request, or create a backlog item [3]. The AI is forbidden from silently expanding scope [3].
+
+**Two-Phase Workflow**
+The system utilizes a specific two-phase workflow to handle these captures:
+
+*   **Phase 1: Capture (In-Session)**
+    1.  An out-of-scope idea arises, flagged by the AI (via auto-detection) or the user [2].
+    2.  A brief, containable survey (3...5 questions) is conducted to capture the core concept immediately [2].
+    3.  A **Backlog Item Report** is generated with provenance data [2].
+    4.  Work immediately continues on the current scope, minimizing interruption [2].
+
+*   **Phase 2: Evaluation & Routing (Dedicated Session)**
+    1.  Accumulated backlog items are reviewed in a dedicated session [2].
+    2.  Each item is evaluated for merit and feasibility [4].
+    3.  Items are routed to their appropriate destination: a new component/feature, a future task, a specific document update, or discarded if not actionable [4].
+
+**Backlog Item Schema**
+The Backlog Item Report follows a structured schema to ensure consistency and traceability [4]:
+*   **ID:** Backlog-Item-[NNN]
+*   **Description:** Concise statement of the idea.
+*   **Context:** What triggered the idea (provenance data).
+*   **Potential Impact:** Why the idea matters.
+*   **Suggested Routing:** Where it should go.
+*   **Priority Assessment:** Initial weight/importance.
+*   **Status:** Tracks progress from CAPTURED ... EVALUATED ... ROUTED.
+
+**Backlog Register and Routing**
+The **Backlog Register (TPL-023)** serves as the central living document for these items, acting as part of a "Reporting Triad" alongside the Project Roadmap and Project Closure Report [5]. The register distinguishes between:
+*   **Intake Queue:** Raw captures awaiting triage [6].
+*   **Active Backlog:** Confirmed and prioritized items (High/Medium/Low) [7].
+*   **Version Backlog:** Items explicitly designated for future project versions [8].
+
+Items are routed based on their evaluation. They may be transferred to the **Project Roadmap** for future phases, held in the **Parking Lot** for uncertain future value, or documented in the **Project Closure Report** as deferred items for follow-on projects [5], [9].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

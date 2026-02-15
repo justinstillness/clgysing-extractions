@@ -1,0 +1,110 @@
+================================================================================
+EXTRACTION: 2026-02-11_225652_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Drafting plan Session F scope content items done criteria user behaviors three-tier failure modes inter-branch communication categories 7 12 13 14 priority ordering
+Timestamp:       2026-02-11T22:56:52.000898+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 53b34033-d49a-48ef-a875-e0a588ce3820
+Chat Configure:  default
+Response Chars:  5092
+Duration:        31999ms
+================================================================================
+
+Based on the **GOV-AIPM v1.0.8 Drafting Plan**, here is the detailed plan for **Drafting Session F**.\
+\
+### **Session F: User Behaviors, Three-Tier Architecture, Failure Modes, & Inter-Branch Communication**\
+*   **Categories:** 7, 12, 13, 14\
+*   **Estimated Complexity:** MEDIUM-HIGH\
+*   **Dependencies:** Requires content from Sessions A-E to exist so user callouts can be accurately placed.\
+\
+---\
+\
+### **1. Priority Ordering & Scope**\
+The session will proceed in the following order to ensure structural elements (Architecture/Communication) are defined before embedding user behaviors into them.\
+\
+1.  **User Behaviors (Category 7):** Creating embedded callouts throughout the manual (Sections 3, 4, 6, 10).\
+2.  **Three-Tier Documentation Architecture (Category 12):** New pattern definition (Section 12 or 6).\
+3.  **Failure Modes (Category 13):** Enhancements to Section 14 and Appendix F.\
+4.  **Inter-Branch Communication (Category 14):** New section complementing Branch Management (from Session D).\
+5.  **Quality Audits:** Comprehensive review of Section 6 (External Organization) and Appendix F.\
+\
+---\
+\
+### **2. Content Items (Target Sections)**\
+\
+#### **A. User Behaviors (Embedded Callouts)**\
+*   **Action:** Embed clearly marked **USER ACTION** or **USER BEHAVIOR** callout boxes within relevant AI-facing sections.\
+*   **Target Content:**\
+    *   **Project Handle Naming:** Short, consistent tags (3-10 chars) (Section 6).\
+    *   **New Chat Notepad System:** Pre-prepared prompts/reminders (Section 4.3).\
+    *   **Session Naming Convention:** `[session#] [HANDLE] ([descriptor])` (Section 6).\
+    *   **File Organization:** Folder structures for chats, artifacts, guides (Section 6).\
+    *   **Post-Session Housekeeping:** Downloads, verification, notebook uploads (Section 4.3 or 6).\
+    *   **Pre-Session Housekeeping:** Chat naming, bootstrap loading (Section 4.3).\
+    *   **Prompting Discipline:** Using external notepads, inviting disagreement (Section 3 or 10).\
+    *   **NotebookLM Maintenance:** Upload cadence and querying directives (Section 10).\
+\
+#### **B. Three-Tier Documentation Architecture (New Section)**\
+*   **Location:** Section 12 or 6.\
+*   **Concept:** Defined pattern for managing complex project documentation.\
+    1.  **Architecture References (System Level):** High-level blueprints, stable philosophy.\
+    2.  **Per-Tool/Component References (Operational Level):** Granular specs updated with component changes.\
+    3.  **CHANGELOGs (Temporal Level):** Sequential history of evolution.\
+*   **Guidance:** When to apply this pattern and how it connects to file naming.\
+\
+#### **C. Section 14 Failure Modes (Enhancement)**\
+*   **Action:** Extend existing failure mode catalog with field-tested issues.\
+*   **New Modes< 2026/02/11 22:57:24.000207051  length=2340 from=10159 to=12498
+:**\
+    *   **Bootstrap Verification Failures:** Session number increments, handle confusion.\
+    *   **AI Behavioral Forgetfulness:** Root causes and workaround (reminders).\
+    *   **External Knowledge Contamination:** Hallucinated connections not in source.\
+    *   **Synthesis Layer Degradation:** Logic errors during multi-query synthesis.\
+    *   **Context Invisibility:** Transcript gaps from MCP tools (linked to Connector Transparency Protocol).\
+\
+#### **D. Inter-Branch Communication (New Section)**\
+*   **Location:** Section 12 or adjacent to Branch Management.\
+*   **Content:**\
+    *   **Cross-Branch Awareness Document:** Concept and template usage.\
+    *   **Coordination Patterns:** How parallel branches share context.\
+    *   **Notebook Strategy:** Using shared notebooks for cross-branch awareness.\
+\
+#### **E. Quality Audits**\
+*   **Section 6 (External Organization):** Comprehensive review of naming conventions and folder structures against field-tested patterns.\
+*   **Appendix F (Failure Catalog):** Review to determine if new failure modes warrant full catalog entries.\
+\
+---\
+\
+### **3. Templates**\
+*   **Updated Failure Recovery References** (if needed).\
+*   **Cross-Branch Awareness Document Template** (Note: Drafting Plan indicates this might have been drafted in Session D; Session F ensures integration).\
+\
+---\
+\
+### **4. \"Done\" Criteria**\
+To consider Session F complete, the following must be verified:\
+*   [ ] **User behavior callouts** are embedded and clearly marked throughout relevant sections.\
+*   [ ] **Three-Tier Documentation Architecture** section is drafted.\
+*   [ ] **Failure Mode Catalog** is extended with the 5 new field-tested modes.\
+*   [ ] **Inter-Branch Communication** section is drafted.\
+*   [ ] **Section 6 Quality Audit** is complete and enhancements integrated.\
+*   [ ] All user-facing guidance is identifiable and accessible.\
+\
+---\
+\
+### **5. Research Needs**\
+*   **AWSNBLM Notebook:** Query for \"behavioral forgetfulness\" examples.\
+*   **NLMINTA Notebook:** Query for \"three-tier documentation\" examples.\
+*   **All Notebooks:** Query for \"inter-branch communication\" patterns.\
+*   **Current Manual:** Review Section 6 for existing gaps.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

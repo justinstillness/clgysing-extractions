@@ -1,0 +1,62 @@
+================================================================================
+EXTRACTION: 2026-02-12_201530_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What does the Assembly Blueprint specify for Volume 5? What sections does it cover, what is the complexity assessment, what draft files are needed, and which integration points target Volume 5 sections? Also check Volume 6 and 7 scope to confirm the remaining volume plan.
+Timestamp:       2026-02-12T20:15:30.000886+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 32426888-8709-416c-a9a2-167369c8cec8
+Chat Configure:  default
+Response Chars:  2919
+Duration:        52999ms
+================================================================================
+
+Based on the **Master Assembly Blueprint** from Session 039, here is the complete volume breakdown for the **GOV-AIPM v1.0.8-DRAFT** assembly.
+
+The manual is divided into **6 Volumes** for drafting and token management purposes.
+
+### **Volume 1: Foundations**
+*   **Coverage:** **Sections 1...2** (Purpose & Scope, Core Philosophy)
+*   **Templates/Appendices:** None included (references only).
+*   **Status:** Complete (Session 039).
+*   **Key Revisions:** Formalized Rooting as Phase 0, added "Ceremony is Continuity" principle, enhanced Scope Monitoring Duty.
+
+### **Volume 2: Interaction & Session Architecture**
+*   **Coverage:** **Sections 3...4** (The Explicit Alignment Principle, Project Architecture & Session Management)
+*   **Templates/Appendices:** None included.
+*   **Status:** Not Started (Drafting Phase).
+*   **Key Revisions:** New Instruction Chain Interpretation (Section 3.8), major revisions to Session Lifecycle (Alignment Turn, Response Indexing, 5-step Closeout), new Connector Transparency and Conflict Resolution Protocols.
+
+### **Volume 3: Artifacts & External Organization**
+*   **Coverage:** **Sections 5...6** (Canonical Project Artifacts, External Organization System)
+*   **Templates/Appendices:** None included.
+*   **Status:** Not Started (Drafting Phase).
+*   **Key Revisions:** Extensive renumbering of Section 5. New sections for **Phase Protocol** (5.2) and **Findings Reports** (5.6). Enhanced **Bootstrap** (5.5) and **Session Log** (5.4) specifications. New **Notebook Organization** subsection (6.2.4).
+
+### **Volume 4: Governance, Tools & Formats**
+*   **Coverage:** **Sections 7...11** (Governance Integration, AI Role Separation, Adjunct Tools, File Types)
+*   **Templates/Appendices:** None included.
+*   **Status:** Not Started (Drafting Phase).
+*   **Key Revisions:** Major revision to **Section 10.3** (Retrieval and Query Tools) to formally integrate NotebookLM connectivity and workflows.
+
+### **Volume 5: Advanced Patterns**
+*   **Coverage:** **Sections 12...14** (Extended Context, Specialized Use Cases, Failure Modes)
+*   **Templates/Appendices:** None included.
+*   **Status:** Not Started (Drafting Phase).
+*   **Key Revisions:** New **Branch Management** (12.3) and **Three-Tier Documentation Architecture** (12.4). Enhanced **Failure Modes** (14.1) to include new categories like "Bootstrap Verification Failure" and "Context Invisibility."
+
+### **Volume 6: Reference & Appendices**
+*   **Coverage:** **Sections 15...17** plus **Appendices A...H**
+*   **Templates/Appendices:** **YES.** This volume contains **Appendix A (Template Reference)** which houses all templates (TPL-001 through TPL-023), along with the Prompt Library (Appendix B) and Quick Start Guide (Appendix H).
+*   **Status:** Not Started (Drafting Phase).
+*   **Key Revisions:** Template number assignments, Glossary updates, Index generation, and final cross-reference verification [1], [2].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

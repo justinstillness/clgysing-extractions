@@ -1,0 +1,65 @@
+================================================================================
+EXTRACTION: 2026-02-11_233344_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Section 12 multi-session continuity current structure 12.1 12.2 12.3 existing subsections table of contents
+Timestamp:       2026-02-11T23:33:44.000206+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 3357130d-edf3-457c-853a-dbafb3bd1497
+Chat Configure:  default
+Response Chars:  5122
+Duration:        133000ms
+================================================================================
+
+Based on the draft text for **Section 12.3 Branch Management** and related templates, here is the detailed breakdown of cross-branch context sharing, awareness documentation, and coordination mechanisms.\
+\
+### **Section 12.3 Branch Management Overview**\
+Branch management is the formal mechanism for managing parallel workstreams under a single project umbrella. It allows workstreams to operate with \"managed autonomy\"...maintaining enough isolation to prevent context window dilution while ensuring they remain connected to the mainline project [1, 2].\
+\
+### **12.3.6 Cross-Branch Context Sharing**\
+This section addresses the coordination challenge of preventing branches from becoming \"context silos\" where valuable discoveries or decisions are lost to the rest of the project [3, 4].\
+\
+**Mechanisms for Sharing:**\
+*   **Shared Main Notebook:** All branches maintain access to the main project notebook. This ensures that any session...whether mainline or branch...can query the main notebook for cross-project context [4].\
+*   **Selective Artifact Upload:** Not every branch artifact is shared. Branch-specific exploration stays in the branch adjunct notebook. Only \"cross-relevant\" artifacts are uploaded to the main notebook, such as finalized deliverables, findings that inform mainline decisions, and specifications other branches need to reference [5].\
+*   **Bootstrap Cross-References:** Mainline session bootstraps note active branches and their status to maintain awareness without loading full branch context [5].\
+*   **Integration Sessions:** Periodic sessions where branches rejoin the mainline to consolidate outputs, reconcile divergences, and update the Cross-Branch Awareness Document [6].\
+\
+### **12.3.7 Cross-Branch Awareness Document**\
+This is a \"living reference\" stored in Project Knowledge alongside the Phase Protocol, making it accessible to every session without explicit upload [7].\
+\
+**Purpose:** To ensure every session knows what other branches are doing without requiring full context on each branch, preventing incompatible approaches [8].\
+\
+**Content Structure:**\
+*   **Active Branches Register:** A table listing Branch Handles (e.g., SECRES, TOOLINT), full names, objectives, and status (Active/Paused/Complete) [8, 9].\
+*   **Branch Objectives:** A 2-3 sentence summary of what each branch is building and its estimated timeline [9].\
+*   **Inter-Branch Dependencies:** Explicit notes on where one branch needs another's output (e.g., \"Branch A needs the API spec from Branch B before proceeding\") [9].\
+*   **Coordination Needs:** Specific flags for items requiring attention, such as incompatible technical approaches being explored simultaneously [7].\
+*   **Recent Updates:** A brief log of significant events < 2026/02/11 23:35:57.000248114  length=2387 from=10159 to=12545
+(completions, major findings) since the last update [7].\
+\
+### **Coordination Mechanisms & Dependency Mapping**\
+*   **Mini-Rooting (Dependency Mapping):** When a branch is created (Step 4 of creation process), it conducts a \"mini-rooting\" cycle. One of the specific questions addressed is: *\"How does it connect to the mainline project?\"* This explicitly maps dependencies before execution begins [10].\
+*   **Branch Handles:** Short, consistent tags (e.g., SECRES, DEPDEV) used in decision logs and session logs to reference specific branch work, improving readability and cross-referencing [3, 11].\
+*   **Integration Expectations:** Defined in the **Branch Startup File**, this mechanism establishes upfront how and when the branch will rejoin the mainline (e.g., direct deliverable handoff vs. dedicated integration session) [12].\
+\
+### **Notebook Strategy (12.3.4 & 10.3.4)**\
+The framework employs a \"One Main, Adjuncts as Needed\" strategy to balance context access with isolation [13, 14].\
+*   **Main Project Notebook:** Contains the cumulative project corpus (transcripts, artifacts, specifications) and is accessible to **all** branches [13].\
+*   **Branch Adjunct Notebooks:** Used for specific branches to avoid diluting the main notebook with branch-specific exploration. Contains branch transcripts and draft artifacts [14].\
+*   **Connectivity:** The Bootstrap specifies which notebooks to consult. Branch sessions typically load both the Main Notebook (for project context) and their Branch Adjunct (for local context) [14].\
+\
+### **Artifact Injection**\
+While the manual does not use the specific term \"artifact injection,\" it describes the operational equivalent through two primary flows:\
+1.  **Branch Startup File (Injection into Branch):** The mainline generates a \"Startup File\" (TPL-0XX) containing relevant mainline decisions, scope boundaries, and context. This file is \"injected\" into the new branch's first session to establish its foundation [12, 15].\
+2.  **Selective Upload (Injection into Mainline):** When a branch produces a significant finding or deliverable, it is uploaded to the Main Project Notebook. This effectively \"injects\" the branch's output into the global context available to the mainline and other branches [4, 5].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

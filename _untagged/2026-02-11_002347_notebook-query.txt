@@ -1,0 +1,72 @@
+================================================================================
+EXTRACTION: 2026-02-11_002347_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           List every unique vendor or merchant name with the total sum of all transactions for that vendor across the entire year. Group by vendor, show the total dollar amount per vendor, and sort from highest to lowest total. Include the number of transactions per vendor.
+Timestamp:       2026-02-11T00:23:47.000854+00:00
+Notebook ID:     7d0ab9af-aeab-4983-80a5-d25b94964498
+Source IDs:      all
+Conversation ID: ffd6ac40-00e1-44fd-ae88-35570c75a1b4
+Chat Configure:  default
+Response Chars:  2553
+Duration:        52999ms
+================================================================================
+
+Based on the transaction data provided in the sources, covering the period from roughly September 2025 to February 2026, here is the list of unique vendors and merchants grouped by total spend, sorted from highest to lowest.
+
+**Note:** Payments to financial institutions (e.g., Capital One, Citi Card, Justin DCU) and income deposits have been excluded to focus on vendor spending.
+
+| Vendor / Merchant | Total Amount | Transaction Count |
+| :--- | :--- | :--- |
+| **Avalon (Asheville/Sweete)** | **$5,130.00** | 3 |
+| **Amazon** | **$727.21** | 4 |
+| **AT&T** | **$549.48** | 6 |
+| **Corporate Filings LLC** | **$293.00** | 2 |
+| **Apple** | **$157.99** | 4 |
+| **Otter.ai** | **$119.94** | 2 |
+| **Mermaid Chart Inc** | **$108.00** | 1 |
+| **GoDaddy** | **$94.57** | 3 |
+| **Midjourney** | **$60.00** | 4 |
+| **Flexibits** | **$56.99** | 1 |
+| **Google** | **$48.80** | 6 |
+| **iPostal1** | **$44.97** | 3 |
+| **OpenAI** | **$40.00** | 2 |
+| **Canva** | **$30.00** | 2 |
+| **Notarize / Proof.com** | **$25.00** | 1 |
+| **Vector Magic** | **$19.90** | 2 |
+| **X Corp** | **$16.00** | 2 |
+| **Zoho** | **$12.00** | 1 |
+| **Namecheap** | **$4.98** | 1 |
+| **Claudexporter** | **$2.98** | 1 |
+
+### **Transaction Details by Vendor**
+
+*   **Avalon:** Rent payments of $1,710.00 occurring in Oct (x2) and Dec [1-3].
+*   **Amazon:** Purchases ranging from $23.10 to $397.10 across Relay and Capital One cards [2, 4, 5].
+*   **AT&T:** Monthly bills ranging from ~$73 to ~$108 [1, 4-8].
+*   **Corporate Filings LLC:** Two filings on Oct 15 ($150.00 and $143.00) [8].
+*   **Apple:** Includes multiple charges and one refund (+$7.14) [1, 5, 9].
+*   **Otter.ai:** Subscriptions/Services in Nov ($16.99) and Dec ($102.95) [1, 9].
+*   **Mermaid Chart Inc:** Single transaction of $108.00 in Oct [2].
+*   **GoDaddy:** Transactions in Nov, Dec, and Jan [1, 6, 9].
+*   **Midjourney:** Regular payments of $10.00 or $30.00 [5, 7, 8, 10].
+*   **Flexibits:** Single charge of $56.99 in Nov [9].
+*   **Google:** Various small charges for G-Suite/Workspace and YouTube Premium ($5 - $9 range) [1, 4-6, 9].
+*   **iPostal1:** Recurring $14.99 charges [5, 7, 8].
+*   **OpenAI:** $20.00 subscription charges in Nov and Dec [5, 9].
+*   **Canva:** $15.00 monthly charges [1, 4].
+*   **Notarize / Proof.com:** $25.00 charge in Oct [2].
+*   **Vector Magic:** $9.95 charges in Oct and Nov [4, 10].
+*   **X Corp:** $8.00 charges in Nov and Dec [5, 7].
+*   **Zoho:** $12.00 charge in Oct [3].
+*   **Namecheap:** $4.98 charge in Oct [10].
+*   **Claudexporter:** $2.98 charge in Dec [5].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

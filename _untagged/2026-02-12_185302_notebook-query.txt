@@ -1,0 +1,48 @@
+================================================================================
+EXTRACTION: 2026-02-12_185302_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           List all User Behavior Callouts from DRAFT_User-Behavior-Callouts.txt with their numbers, titles, and target section placements. Include all callouts 1 through the final one.
+Timestamp:       2026-02-12T18:53:02.000317+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: eb0eaa64-d817-48b5-aaa4-0deef1361155
+Chat Configure:  default
+Response Chars:  2114
+Duration:        140000ms
+================================================================================
+
+Based on the provided sources, it is not possible to compare the "Assembly Blueprint's pre-assembled Volume 4" against the draft text because **Volume 4 is not included in the source material**. The provided sources contain the **Master Assembly Blueprint** (instructions), **Volume 1**, **Volume 2a**, **Volume 2b**, **Volume 3a**, and **Volume 3b** [1-6].
+
+However, I can compare the **Assembly Blueprint's instructions** (Source 1947) against the **Section 10.3 Draft** (Source 217) to determine if the draft file alone is structurally complete or if the Blueprint adds necessary elements.
+
+### 1. Structural Completeness (Subsections)
+The `DRAFT_Section_10-3_Notebook-Connectivity.txt` is structurally complete regarding the narrative text. It contains all **8 subsections** required by the revision plan [7-42]:
+
+*   **10.3.1:** Notebook Connectivity [11]
+*   **10.3.2:** Exhaustive Querying Technique [17]
+*   **10.3.3:** Upload Workflow [22]
+*   **10.3.4:** Notebook Organization Strategy [27]
+*   **10.3.5:** Source Efficiency for Limited Plans [31]
+*   **10.3.6:** Notebook Index / Directory [33]
+*   **10.3.7:** Search and Indexing Tools [37]
+*   **10.3.8:** Reference Managers [38]
+
+### 2. Presence of Callout 8
+**Difference/Addition:** The `DRAFT_Section_10-3_Notebook-Connectivity.txt` **does not** include the text for "Callout 8".
+
+*   **The Draft:** The text describes the upload workflow and maintenance but does not contain the specific "USER BEHAVIOR" box [22-27].
+*   **The Callout Source:** "Callout 8: NotebookLM Maintenance" exists in a separate file, `DRAFT_User-Behavior-Callouts.txt` [43].
+*   **The Blueprint:** The Assembly Blueprint explicitly **adds** this callout during the assembly process. The instructions state: "User Behavior Callouts: - Callout 8 (NotebookLM Maintenance) ... Section 10.3" [44].
+
+### Conclusion
+The Draft file alone is **structurally incomplete** regarding the final desired output because it lacks the **Callout 8** box. The Assembly Blueprint addresses this omission by merging the Draft text [7] with the Callout text [43] to create the final Section 10.3.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

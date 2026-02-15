@@ -1,0 +1,79 @@
+================================================================================
+EXTRACTION: 2026-02-06_212542_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What does the socat -v log format look like? Show the actual raw format with the > and < markers, timestamps, and HTTP content structure. What is the current port layout after Session 013 changes?
+Timestamp:       2026-02-06T21:25:42.000650+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: aedba9ce-997d-4620-8800-0e7b5acda421
+Chat Configure:  default
+Response Chars:  2840
+Duration:        26999ms
+================================================================================
+
+The `socat -v` log format captures raw traffic bidirectionally with timestamps, direction markers, and full HTTP payloads. This format was established in Session 013 when `socat` was implemented to resolve concurrency issues with the MCP Streamable HTTP protocol [1, 2].\
+\
+### 1. `socat -v` Log Format\
+The logs are stored in `/home/ubuntu/mcp-logs/traffic/` and use a raw text format where `>` indicates traffic from Client to Server (Request) and `<` indicates traffic from Server to Client (Response).\
+\
+**Actual Raw Format:**\
+```text\
+2026/02/06 20:39:10.000145209  length=959 from=0 to=958\
+> POST /mcp HTTP/1.1\\\\
+> Host: mcp.justinstillness.com\\\\
+> User-Agent: Claude-User\\\\
+> Content-Length: 254\\\\
+> Accept: application/json, text/event-stream\\\\
+> ... [Headers] ...\
+> Content-Type: application/json\\\\
+> \\\\
+> {\"method\":\"initialize\",\"params\":{...},\"jsonrpc\":\"2.0\",\"id\":0}\
+\
+< 2026/02/06 20:39:10.000149344  length=270 from=0 to=269\
+< HTTP/1.1 200 OK\\\\
+< date: Fri, 06 Feb 2026 20:39:09 GMT\\\\
+< server: uvicorn\\\\
+< content-type: text/event-stream\\\\
+< mcp-session-id: 61c29811028b45e5bc6b419d02166418\\\\
+< Transfer-Encoding: chunked\\\\
+< \\\\
+< 4a0\\\\
+< event: message\\\\
+< data: {\"jsonrpc\":\"2.0\",\"id\":0,\"result\":{...}}\\\\
+```\
+\
+**Key Structural Elements:**\
+*   **Timestamp:** `YYYY/MM/DD HH:MM:SS.nanoseconds` (e.g., `2026/02/06 20:39:10...`) [3].\
+*   **Direction Markers:**\
+    *   `>`: Request (Client ... Majeston) [1].\
+    *   `<`: Response (Majeston ... Client) [1].\
+*   **Byte Tracking:** Indicates the length of the data chunk (e.g., `length=959`) [3].\
+*   **HTTP Structure:** Captures raw headers (including `\\\` newlines), the `mcp-session-id`, and `Transfer-Encoding: chunked`, which are critical for the MCP protocol [3, 4].\
+\
+### 2. Current Port Layout (Post-Session 013)\
+The architecture changed in Session 013 to insert the traffic logger wrapper. The new layout uses **socat** as a transparent proxy on the original Majeston port [5, 6].\
+\
+*   **Port 443 (Public):** **Caddy** (Reverse Proxy). Receives external traffic via HTTPS.\
+    *   Routes `/mcp` traffic to **Port 8000** [7].\
+    *   Routes `/tools` traffic to **Port 8001** [7].\
+*   **Port 8000 (Internal):** **Wrapper/socat**.\
+    *   Previously occupied directly by Majeston.\
+    *   Now occupied by `socat` (launched by `mcp-wrapper.py`) [6].\
+    *   Intercepts traffic for logging, then forwards to **Port 8100**.\
+*   **Port 8100 (Internal):** **Majeston** (NotebookLM MCP).\
+    *   The actual MCP server process now listens here instead of 8000 [6, 8].\
+*   **Port 8001 (Internal):** **Caliper** (Document Analysis MCP).\
+    *   Remains unchanged from Session 011 deployment [9].\
+\
+**Summary Flow:**\
+`Claude` ... `Caddy (443)` ... `socat (8000)` ... `[LOGGING]` ... `Majeston (8100)`
+
+================================================================================
+END OF EXTRACTION
+================================================================================

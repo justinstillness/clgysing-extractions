@@ -1,0 +1,59 @@
+================================================================================
+EXTRACTION: 2026-02-11_200105_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Give me a complete chapter by chapter synopsis of the entire book, listing every chapter title and summarizing the key arguments and topics covered in each chapter
+Timestamp:       2026-02-11T20:01:05.000781+00:00
+Notebook ID:     80facc90-8b7d-4246-9338-580924f875eb
+Source IDs:      all
+Conversation ID: a0adfc31-70a5-443c-aa35-91d9e8a49a7a
+Chat Configure:  default
+Response Chars:  3651
+Duration:        5722999ms
+================================================================================
+
+Field-tested patterns define phase transitions as the \"zero-crossings\" in the \"sine wave model\" of project rhythm, distinguishing them from the \"peaks\" of active execution work [1], [2]. These transitions are strategic pauses designed for consolidation, planning, and protocol refinement rather than content production [3].\
+\
+The following patterns and processes have emerged from field testing:\
+\
+### The 8-Step Phase Transition Process\
+To ensure a clean handoff between project phases, field testing established a specific execution protocol:\
+\
+1.  **Assess:** Review current position and readiness for transition (e.g., are exit criteria met?) [4], [5].\
+2.  **Consolidate:** Gather all session logs, Session Fidelity Reports (SFRs), and decision logs from the completed phase [4], [6].\
+3.  **Synthesize:** Extract insights and outcomes using \"husk vs. coconut\" filtering [4], [6].\
+4.  **Review Deferred Items:** Assess items in the backlog or those intentionally deferred to determine if they belong in the next phase [4], [6].\
+5.  **Define Scope:** Establish boundaries, success criteria, and required materials for the upcoming phase [2], [6].\
+6.  **Update Phase Protocol:** Redraft the governance document if behaviors or methodologies need to change [2], [7].\
+7.  **Update Rolling Records:** Consolidate decisions, terminology guides, and cross-reference maps [2], [7].\
+8.  **Generate Artifacts:** Produce the next phase bootstrap, transition summary, and updated Project Guide if necessary [2], [7].\
+\
+### Husk vs. Coconut Filtering\
+This principle guides the synthesis step (Step 3) to prevent context bloat. The goal is to carry forward only what is required to continue work, rather than the full history of how the work was achieved [8].\
+\
+*   **Husk (Remove):** Conversational filler, rejected hypotheses, exploratory tangents, unanswered questions, and superseded options [2], [8].\
+*   **Coconut (Keep):** Finalized decisions, crystallized conclusions, validated methodologies, and confirmed scope boundaries [2], [8].\
+\
+### Phase Protocol Redrafting Triggers\
+The Phase Protocol...a phase-stable governance document...must be explicitly evaluated at every transition [9]. While it remains static *within* a phase to ensure consistency, specific triggers necessitate a redraft during transitions:\
+\
+*   **Mandatory Evaluation:** A transition always triggers an evaluation, even if the result is to carry the existing protocol forward [10].\
+*   **Methodology Shifts:** A redraft is required if the methodology (Layer 2) or project-specific parameters (Layer 3) shift (e.g., moving from a research phase to a drafting phase) [11], [10].\
+*   **Accumulated Addenda:** If more than three addenda were created during the previous phase, a clean redraft is recommended to consolidate instructions [12].\
+*   **Behavioral Gaps:** Feedback indicating the current protocol is misaligned or inadequate triggers an update [12].\
+\
+### Transition Session Expectations\
+Transition sessions are distinct from standard execution sessions. Field testing indicates they are \"planning-heavy and execution-light\" [3]. Users and AI coordinators should expect:\
+\
+*   **Token Allocation:** The token budget is primarily consumed by planning, scoping, and administrative work rather than content execution [13].\
+*   **Strategic Return:** These sessions function as a \"return to central brain\" moment, stepping back from tactical execution to verify strategic alignment [14].\
+*   **Context Absorption:** A significant portion of the session involves absorbing context from the prior phase to generate the new Phase Protocol [15].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

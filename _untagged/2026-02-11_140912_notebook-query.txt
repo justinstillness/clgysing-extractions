@@ -1,0 +1,74 @@
+================================================================================
+EXTRACTION: 2026-02-11_140912_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What are the specifications and test plans for Test 5 (Chronicler Post-Processing Loop), Test 6 (Caliper-Driven Segmentation Strategy), and Test 8 (chat_configure Stress Test)? Include the purpose, methodology, key questions, and expected outcomes for each test.
+Timestamp:       2026-02-11T14:09:12.000932+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 364212e6-cada-458d-84da-2ccde9a48b75
+Chat Configure:  default
+Response Chars:  5796
+Duration:        50999ms
+================================================================================
+
+Based on the planning and deferral notes from **Session 015** [1, 2] and the architectural definitions established in **Sessions 012-014** [3, 4], here are the specifications and test plans for the three remaining infrastructure tests (Test 5, 6, and 8).\
+\
+These tests are designed to validate the tooling infrastructure that supports the extraction methodology validated in earlier sessions.\
+\
+### **Test 5: Chronicler Post-Processing Loop**\
+**Context:** Designed to validate the full \"capture-to-storage\" pipeline established by Decision D-030 (Signal String Architecture). This closes the loop between ephemeral Majeston queries and permanent file storage.\
+\
+*   **Purpose:** Verify that the **Majeston ... SeraphRecorder ... extract.py ... Chronicler** pipeline correctly captures, parses, tags, and routes extraction data without data loss or corruption (specifically checking for the \"socat buffer artifacts\" identified in Session 013).\
+*   **Methodology:**\
+    1.  **Execute Tagged Query:** Run a `notebook_query` via Majeston containing a valid SERAPH Signal String (e.g., `[SERAPH: PROJECT=nlminta, PASS=TX, NUM=99]`) [5].\
+    2.  **Verify Capture:** Use `Chronicler:list_files` to confirm the query landed in the `_untagged/` directory on the EC2 server [6].\
+    3.  **Verify Parsing:** Use `Chronicler:read_file` to inspect the captured file. Confirm that `extract.py` correctly parsed the Signal String fields (Project, Pass, Num) into the file header and stripped the raw socat logs [7].\
+    4.  **Execute Routing:** Use Chronicler to move the file from `_untagged/` to its final destination (e.g., `testing/Session_015/`) based on the metadata, simulating the \"Indexer\" organizational protocol [8].\
+*   **Key Questions:**\
+    *   Did the D-024 fix (regex stripping) successfully remove all socat buffer artifacts from the response body? [9]\
+    *   Does the `extract.py` script correctly parse Signal Strings placed at the *beginning* of the query (the standardized placement from Session 013)? [10]\
+    *   Can Chronicler successfully rename and move the file to< 2026/02/11 14:10:03.000461059  length=3742 from=8693 to=12434
+ a permanent directory, completing the persistence loop?\
+*   **Expected Outcomes:** A \"clean\" text file exists in a permanent project directory containing the full NLM response, fully tagged with provenance metadata, requiring zero manual copy-pasting from the user.\
+\
+***\
+\
+### **Test 6: Caliper-Driven Segmentation Strategy**\
+**Context:** Session 007 identified that NotebookLM's internal word counts are unreliable estimates (F08, F09) [11]. This test operationalizes the **Caliper** tool to determine when and how to split large source packages.\
+\
+*   **Purpose:** Establish a data-driven protocol for segmenting \"Massive\" source packages (60k+ words) to ensure optimal extraction quality, using Caliper's precise metrics rather than NLM's estimates.\
+*   **Methodology:**\
+    1.  **Analyze Corpus:** Run `Caliper:analyze_github_folder` on the repository containing the `Para vs Symb Data` raw files (which are known to be massive, ~6,000 pages) [12].\
+    2.  **Identify Breakpoints:** Review Caliper's \"segmentation recommendations\" output (which identifies natural semantic breaks or file size limits).\
+    3.  **Simulate Split:** Propose a segmentation plan (e.g., \"Split Source A into Part 1 and Part 2 at line 5,000\") based *only* on Caliper data.\
+    4.  **Validation:** Compare Caliper's precise word counts against NLM's `source_describe` estimates for the same files to quantify the variance.\
+*   **Key Questions:**\
+    *   Does Caliper provide accurate enough line/character counts to automate the splitting of files >100MB or >500k words?\
+    *   What is the specific \"Safety Threshold\" for segmentation? (Currently hypothesized at ~60k-80k words based on Session 012 scale testing).\
+*   **Expected Outcomes:** A **Segmentation Protocol** document defining the exact file size/word count threshold that triggers a mandatory split, and the standard naming convention for split segments (e.g., `_Part01`, `_Part02`).\
+\
+***\
+\
+### **Test 8: chat_configure Stress Test**\
+**Context:** Deferred from Session 009. While we know `custom_prompt` influences output format (F34) [13], we have not tested the hard technical limits of the configuration injection.\
+\
+*   **Purpose:** Determine the absolute boundaries of the `chat_configure` tool to prevent silent failures in production. Specifically, verify the 10,000 vs. 5,000 character limit discrepancy and test persistence limits.\
+*   **Methodology:**\
+    1.  **Character Limit Stress:** Attempt to set a `custom_prompt` of 6,000 characters (exceeding the UI's 5k limit but within the API's 10k theoretical limit) [14].\
+    2.  **Verify Injection:** Run a query to see if instructions at the very end of that 6,000-character prompt are obeyed (proving the full prompt was ingested).\
+    3.  **Persistence Check:** Set a configuration, perform other operations (like `studio_create`), then return to `notebook_query` to see if the custom instructions (e.g., \"Always respond in JSON\") still hold without re-issuing the config [15].\
+    4.  **Instruction Complexity:** Test highly restrictive constraints (e.g., \"Never use the word 'the'\", \"Format every response as a table\") to see if NLM breaks character or ignores the system prompt under pressure.\
+*   **Key Questions:**\
+    *   Is the effective character limit via MCP 5,000 or 10,000? [16]\
+    *   Does `chat_configure` persist across different `conversation_id` threads, or must it be re-sent for every new thread?\
+*   **Expected Outcomes:** A **Configuration Constraints Reference** defining the maximum safe prompt length and the required refresh frequency for system instructions.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

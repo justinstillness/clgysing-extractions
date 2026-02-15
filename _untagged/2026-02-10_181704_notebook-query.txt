@@ -1,0 +1,62 @@
+================================================================================
+EXTRACTION: 2026-02-10_181704_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the three-tier documentation architecture? What are Architecture References, Per-Tool References, and CHANGELOGs? How does this relate to keeping documentation manageable across complex projects?
+Timestamp:       2026-02-10T18:17:04.000680+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: abb5bad9-4b54-48f1-b6da-dec544a8f432
+Chat Configure:  default
+Response Chars:  5259
+Duration:        60000ms
+================================================================================
+
+Based on the provided sources, the **three-tier documentation architecture** is a structural framework used to manage the complexity of the LibForge and NLMINTA projects. It organizes documentation into distinct levels of abstraction...System/Architecture, Component/Tool, and Temporal/Status...to ensure scalability, context continuity, and operational clarity across multiple AI sessions and development phases.\
+\
+### 1. Architecture References (Tier 1: System Level)\
+Architecture references act as the high-level blueprints and \"Single Source of Truth\" for the entire system. They define the core design philosophy, structural layers, and component interrelations without getting bogged down in transient implementation details.\
+\
+*   **Definition:** These documents define the \"grand vision,\" system layers (e.g., Concept, Relationship, Card, ArgBlock), and the rules governing their interaction [1, 2].\
+*   **Examples:**\
+    *   `JFD_Lib_System_Architecture_Specification_v1.1` is frequently cited as the primary reference for system architecture, defining the four-layer model and indexing protocols [3-5].\
+    *   `v1.3_SUMMATION_GRAND-VISION` synthesizes the overarching vision, impetus, and key interrelations between components like the Bottom-Up and Top-Down layers [6, 7].\
+*   **Role:** They ensure \"system-wide coherence\" and serve as the anchor for all downstream development, allowing distinct components to evolve while remaining aligned with the core design [8, 9].\
+\
+### 2. Per-Tool References (Tier 2: Operational Level)\
+Per-Tool references are granular specifications that document the capabilities, parameters, and use cases of specific tools or components. They bridge the gap between high-level architecture and actual execution.\
+\
+*   **Definition:** These documents provide a \"comprehensive reference\" for specific toolkits (e.g., NotebookLM MCP), mapping abstract requirements to executable functions [10].\
+*   **Examples:**\
+    *   `v0.1_SPEC_NLMINTA-Toolkit-Reference` inventories 29 available tools, mapping API capabilities to UI features and identifying gaps [10, 11].\
+    *   `v0.1_SPEC_Tool-Capability-x-LibForge-Matrix` maps specific tools to project use cases (e.g., using `notebook_query` for Structural Surveys) and rates their relevance [12, 13].\
+    *   `SERAPH-Signal-String-Reference` defines the specific syntax and routing logic for the SeraphRecorder tool [14].\
+*   **Role:** They serve as \"operational manuals\" for AI agents, providing the specific instructions and constraints needed to < 2026/02/10 18:18:04.000986440  length=2743 from=8642 to=11384
+execute tasks (e.g., extraction, querying) with high fidelity [15, 16].\
+\
+### 3. CHANGELOGs (Tier 3: Temporal/Status Level)\
+CHANGELOGs (and associated status tracking artifacts) manage the *evolution* of the project over time. They track version history, decisions made, and the progression of files through refinement stages.\
+\
+*   **Definition:** These mechanisms track \"pre/post-alpha deltas,\" decisions (e.g., D-001), and file provenance to ensure that the project state is preserved across sessions [17, 18].\
+*   **Examples:**\
+    *   **Document History sections:** Found at the end of specifications (e.g., `v1.1_SPEC-3_Concept-Repository`) to track revisions like \"v1.0 to v1.1\" [19, 20].\
+    *   **Master Plans:** Files like `v1.2_PLAN_..._STATE-OF-THE-ART` contain explicit \"CHANGE LOG\" sections to track updates post-session (e.g., \"Session 029 closeout\") [18].\
+    *   **Manifests:** The `_docs/CHANGELOG.txt` and `query-manifest.json` are explicitly included in the file organization system to track queries and file evolution [21, 22].\
+*   **Role:** They provide \"context continuity,\" ensuring that future sessions understand *why* changes were made and preventing the \"hallucination\" of project state or re-litigation of settled decisions [23, 24].\
+\
+### Relation to Managing Complex Projects\
+This three-tier structure addresses the specific challenges of managing a \"complex, multi-session\" project with an \"omniscopic corpus\" (7,000+ pages) [25, 26]:\
+\
+1.  **Context Continuity:** By separating stable architecture from fluid status (CHANGELOGs), the system allows AI agents to \"recover project context\" quickly without needing to re-read gigabytes of history. A single query to a reference notebook can retrieve the necessary context [23, 27].\
+2.  **Scalability via Modularity:** The architecture allows components to be developed in parallel (e.g., \"Branch 026\") without breaking the whole. A \"Per-Tool Reference\" can be updated (e.g., updating the `extract.py` script) without needing to rewrite the \"Architecture Reference\" [28, 29].\
+3.  **Separation of Concerns:** It prevents information overload. An AI agent executing a specific task (e.g., Concept Extraction) only needs the specific **Per-Tool Reference** (e.g., extraction prompt) and the current **CHANGELOG** status, rather than the entire system history [30, 31].\
+4.  **Provenance and Fidelity:** The explicit tracking of versions and changes ensures that data isn't lost or corrupted as it moves through the pipeline (e.g., from \"Draft\" to \"Master\" degrees), maintaining the \"100% fidelity\" requirement [32, 33].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

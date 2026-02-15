@@ -1,0 +1,69 @@
+================================================================================
+EXTRACTION: 2026-02-09_212250_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What are the specific details about the Majeston NotebookLM MCP deployment? Include: how the jacob-bd package works, the exact uv install command and binary paths, the auth token refresh process step by step, the symlink structure, known quirks or issues with the package, and any workarounds discovered during Sessions 001-011.
+Timestamp:       2026-02-09T21:22:50.000174+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: adee0a8a-e9c1-4885-9dac-10d403c936d0
+Chat Configure:  default
+Response Chars:  4226
+Duration:        37000ms
+================================================================================
+
+Based on the \"MCP Workshop Suite ... As-Built Architecture Reference\" (v3.1) and session logs 005...011, here are the specific details regarding the Majeston (NotebookLM MCP) deployment:\
+\
+### 1. **How the jacob-bd Package Works**\
+*   **Package Name:** `jacob-bd/notebooklm-mcp-cli` (v0.2.15 as of Session 009).\
+*   **Framework:** Built on **FastMCP** (Python) using the **Streamable HTTP** transport protocol (port 8000).\
+*   **Authentication:** It does not use API keys. Instead, it uses **browser cookies** to authenticate with Google NotebookLM. These cookies are generated on a local machine (Mac) and transferred to the headless EC2 server [1].\
+*   **Operation:** It runs as a systemd service (`notebooklm-mcp`) on the EC2 instance. Requests are routed via Caddy (HTTPS/443) to a local socket proxy (socat) on port 8000, which forwards to the Majeston backend [2], [3].\
+\
+### 2. **Installation Command & Binary Paths**\
+*   **Installation Command:**\
+    *   `uv tool install notebooklm-mcp-cli` [4], [5].\
+    *   For updates: `uv tool install --force notebooklm-mcp-cli` (recommended to ensure clean pull) [6].\
+*   **Binary Path (Actual):**\
+    *   `/home/ubuntu/.local/share/uv/tools/notebooklm-mcp-cli/bin/notebooklm-mcp` [5].\
+*   **Symlink:**\
+    *   `/home/ubuntu/.local/bin/notebooklm-mcp` [5].\
+*   **Systemd ExecStart:**\
+    *   `/home/ubuntu/.local/bin/notebooklm-mcp --transport http --port 8000` (Note: In the final architecture, this is wrapped by `mcp-wrapper.py` for logging) [7], [8].\
+\
+### 3. **Auth Token Refresh Process (Step-by-Step)**\
+Since the EC2 instance is headless, authentication must be performed on a local Mac and transferred. This process is required approximately every 10...14 days [1].\
+\
+1.  **On Mac Terminal:** Run `nlm login`. This launches Chrome to perform Google OAuth [1].\
+2.  **Verify Local Tokens:** Tokens are saved to `~/.notebooklm-mcp-cli/` on the Mac [9].\
+3.  **Transfer to EC2:** Run the maintenance script `./refresh-tokens.sh` (located in your Maintenance ORG Folder). This script performs the following actions:\
+    *   SCPs the tokens to the EC2 directory: `~/.notebooklm-mcp-cli/profiles/default` [1], [10].\
+    *   Restarts the service: `sudo systemctl restart notebooklm-mcp`.\
+4.  **Verification:** Test a query in Claude to confirm connectivity [1].\
+\
+### 4. **Quirks, Issues, and Workarounds**\
+*   **Filesystem Limitation (`source_add` & `download_artifact`):**\
+    *   *Issue:* The `source_add` (file) and `download_artifact` tools operate on the **EC2 filesystem**, not the user's local machine. You cannot directly upload a PDF from your Mac or download an audio file to your Mac using these tools [11].\
+    *   *Workaround:* Use `source_add` with URLs or text (which works directly). For downloads, use `export_artifact` to send reports to Google Docs/Sheets (Drive Bridge), or rely on the `extract.py` pipeline to push text content to GitHub [12], [13].\
+*   **Visual Tool Discovery Bug:**\
+    *   *Issue:* Claude's UI sometimes fails to display the tools in the menu (showing \"No tools\") even though the connection is valid [14], [15].\
+    *   *Workaround:* Tools can still be invoked if you know their exact names. A \"Chronicler Quick Reference\" was created to list exact calls (e.g., `Chronicler:list_files`) so you can prompt Claude to use them despite the UI bug [14], [16].\
+*   **Socat Artifacts:**\
+    *   *Issue:* The logging wrapper (socat) occasionally leaves chunk headers (e.g., `< 2026/02/08... length=...`) embedded in the response text [17].\
+    *   *Workaround:* A cleaning logic (D-024) was specified for the `extract.py` script to strip these regex patterns before saving extracti< 2026/02/09 21:23:27.000485688  length=569 from=8693 to=9261
+on files [18].\
+*   **FastMCP Compatibility:**\
+    *   *Issue:* FastMCP v2.14.5 removed the `description=` parameter from the constructor, causing crashes if used [19], [20].\
+    *   *Workaround:* The Python scripts were modified to remove the `description=` argument [21].\
+*   **CLI Chat Bug:**\
+    *   *Issue:* The `nlm chat start` command was broken in v0.2.14 due to a TypeError [22].\
+    *   *Workaround:* Upgraded to v0.2.15 where this was patched [6].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

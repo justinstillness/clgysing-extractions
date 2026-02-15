@@ -1,0 +1,147 @@
+================================================================================
+EXTRACTION: 2026-02-13_002204_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Extract all specialized terms, coined vocabulary, and jargon from the source material.
+Timestamp:       2026-02-13T00:22:04.000125+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: 39113dcb-c06c-44f3-ac75-984813ff3240
+Chat Configure:  default
+Response Chars:  10986
+Duration:        46999ms
+================================================================================
+
+```json\
+{\
+  \"pass_type\": \"VX\",\
+  \"source_notebook\": \"Package 03 Extraction Products\",\
+  \"entries\": [\
+    {\
+      \"term\": \"Omniology\",\
+      \"definition\": \"A foundational philosophical framework and personal pursuit attempting to understand the self, the nature of reality, and the purpose of life. It posits that understanding truth in all its forms can improve all levels of existence, from family life to business to the organization of civilization itself.\",\
+      \"usage_context\": \"\\\\\"At the core of everything I do is what I call Omniology...an attempt to understand myself, the nature of reality, the purpose of life, and how the understanding of truth in all its forms can improve everything from living with your family to running a business to organizing civilization itself.\\\\\" [1]\",\
+      \"related_terms\": [\"Omniological Approach\", \"Cultology\", \"Truth\"],\
+      \"term_type\": \"coined_term\"\
+    },\
+    {\
+      \"term\": \"Omniological Approach\",\
+      \"definition\": \"A research methodology that requires understanding a subject from multiple angles, modeling it within personal conceptual frameworks to build 'intrinsic knowledge,' and integrating it with other domains to enable intrinsic reasoning rather than reliance on authoritative statements.\",\
+      \"usage_context\": \"\\\\\"The method I use...what I call an omniological approach...requires understanding a subject from as many angles as possible, modeling it within my own conceptual frameworks (building intrinsic knowledge), and then integrating it with other domains...\\\\\" [2]\",\
+      \"related_terms\": [\"Intrinsic Knowledge\", \"Omniology\", \"Conceptual Frameworks\"],\
+      \"term_type\": \"coined_term\"\
+    },\
+    {\
+      \"term\": \"Cultology\",\
+      \"definition\": \"A unified field theory for analyzing the mechanics of relationships, power, and belief systems across all scales of human activity. It serves as the 'pathology of Omniology,' investigating how parasitic systems hijack relationships and obstruct the flow of truth.\",\
+      \"usage_context\": \"\\\\\"Cultology is the name I gave the project that serves as a unified field theory for analyzing the mechanics of relationships, power, and belief systems across all scales of human activity. It is the pathology of Omniology...\\\\\" [3]\",\
+      \"related_terms\": [\"Omniology\", \"Parasitic Modality\", \"Macro-cult\"],\
+      \"term_type\": \"coined_term\"\
+    },\
+    {\
+      \"term\": \"Parasitic Modality\",\
+      \"definition\": \"A social or systemic state defined by reliance on extrinsic knowledge, rigid beliefs enforced by social pressure, and epistemic closure. It suppresses human inquiry to extract benefits and energy, functioning as a 'counterfeit transcendence mechanism' that prevents authentic connection to truth or God.\",\
+      \"usage_context\": \"\\\\\"The Parasitic Modality ... A cult is defined not by size or ritual, but by its reliance on extrinsic knowledge: rigid beliefs enforced by social pressure and fear of exclusion... Every parasitic social order is essentially a counterfeit transcendence mechanism.\\\\\" [4]\",\
+      \"related_terms\": [\"Symbiotic Modality\", \"Epistemic Closure\", \"Counterfeit Transcendence Mechanism\"],\
+      \"term_type\": \"framework_label\"\
+    },\
+    {\
+      \"term\": \"Symbiotic Modality\",\
+      \"definition\": \"The structural opposite of a cult; a truth-centered system that cultivates the 'intrinsic path' of continual inquiry and openness. It is characterized by the full flourishing of human relationships marked by freedom, honesty, creativity, and mutual benefit.\",\
+      \"usage_context\": \"\\\\\"The Symbiotic Modality ... The opposite of a cult is a symbiotic system. These systems are truth-centered and cultivate what I call the intrinsic path, which demands continual inquiry and openness to all information...\\\\\" [5]\",\
+      \"related_terms\": [\"Parasitic Modality\", \"Intrinsic Path\", \"Honorable Contracts\"],\
+      \"term_type\": \"framework_label\"\
+    },\
+    {\
+      \"term\": \"Intrinsic Knowledge\",\
+      \"definition\": \"Deep understanding constructed by modeling subjects within one's own conceptual frameworks and integrating them with other domains< 2026/02/13 00:22:51.000023475  length=6693 from=16705 to=23397
+, allowing for independent reasoning as opposed to reliance on external authority.\",\
+      \"usage_context\": \"\\\\\"...modeling it within my own conceptual frameworks (building intrinsic knowledge), and then integrating it with other domains until I can reason about it intrinsically rather than relying on authoritative statements or surface-level explanations.\\\\\" [2]\",\
+      \"related_terms\": [\"Extrinsic Knowledge\", \"Omniological Approach\"],\
+      \"term_type\": \"technical_term\"\
+    },\
+    {\
+      \"term\": \"Macro-cult\",\
+      \"definition\": \"An advanced parasitic system operating at the scale of modern civilization. It functions as a distributed architecture of control across families, businesses, governments, and global institutions.\",\
+      \"usage_context\": \"\\\\\"The series argues that modern civilization is itself a macro-cult (an advanced parasitic system), functioning as a distributed cultic architecture that operates across families, businesses, governments, and global institutions.\\\\\" [6]\",\
+      \"related_terms\": [\"Cultology\", \"Distributed Cultic Architecture\"],\
+      \"term_type\": \"coined_term\"\
+    },\
+    {\
+      \"term\": \"Pedagogical Spiral Staircase\",\
+      \"definition\": \"A communication and teaching method that introduces concepts accessibly and then deepens them recursively, layer after layer, allowing audiences of varying familiarity to find value simultaneously.\",\
+      \"usage_context\": \"\\\\\"The pedagogical spiral staircase approach I use allows me to introduce concepts accessibly and then deepen them recursively (layer after layer), so that readers at different levels of familiarity can all find value.\\\\\" [7]\",\
+      \"related_terms\": [\"Recursive Deepening\"],\
+      \"term_type\": \"metaphor\"\
+    },\
+    {\
+      \"term\": \"The Four Intimacies\",\
+      \"definition\": \"A model defining the total field of human interaction and value exchange across four dimensions: Physical, Emotional, Intellectual, and Spiritual. In this model, Intellectual intimacy acts as the 'keystone' and immune system.\",\
+      \"usage_context\": \"\\\\\"The Four Intimacies define the total field of human interaction and value exchange: Physical, Emotional, Intellectual, and Spiritual. Intellectual intimacy is the keystone and immune system for the others.\\\\\" [8]\",\
+      \"related_terms\": [\"Intellectual Intimacy\", \"Value Exchange\"],\
+      \"term_type\": \"framework_label\"\
+    },\
+    {\
+      \"term\": \"Corruption Cascade\",\
+      \"definition\": \"A specific process executed by cults to hijack the 'core personality spark' of an individual and invert their entire value system.\",\
+      \"usage_context\": \"\\\\\"Cults execute what I call a corruption cascade, hijacking the core personality spark and inverting the entire value system.\\\\\" [9]\",\
+      \"related_terms\": [\"Ontology of Being\", \"Parasitic Modality\"],\
+      \"term_type\": \"coined_term\"\
+    },\
+    {\
+      \"term\": \"Technocratic Plantation\",\
+      \"definition\": \"A metaphor for globalist development projects and modern societal structures that entice humanity with conveniences (a 'Trojan horse') to create dependency on control mechanisms and conceal a freedom-destroying agenda.\",\
+      \"usage_context\": \"\\\\\"...globalist development projects that were crafted to entice humanity onto a technocratic plantation. This plantation adorns itself in modern conveniences... while simultaneously causing participants to become dependent on the system...s control mechanisms.\\\\\" [10]\",\
+      \"related_terms\": [\"Free-range Plantation\", \"Trojan Horse\", \"Globalist Development Projects\"],\
+      \"term_type\": \"metaphor\"\
+    },\
+    {\
+      \"term\": \"Contractual Formalism\",\
+      \"definition\": \"A framework that views all relationships as energetic, epistemic, and moral contracts. It distinguishes between 'honorable contracts' (symbiotic, mutual, transparent) and 'counterfeit contracts' (cultic, hollowing out consent).\",\
+      \"usage_context\": \"\\\\\"Contractual Formalism recognizes that all relationships are energetic, epistemic, and moral contracts. Symbiotic systems rely on honorable contracts... while cults use counterfeit contracts...\\\\\" [11]\",\
+      \"related_terms\": [\"Honorable Contracts\", \"Counterfeit Contracts\"],\
+      \"term_type\": \"framework_label\"\
+    },\
+    {\
+      \"term\": \"Semantic Rehabilitation\",\
+      \"definition\": \"A linguistic strategy to retain a recognizable term (like 'cult') but immediately redefine it as a precise investigative lens for social pathology, rather than a pejorative label.\",\
+      \"usage_context\": \"\\\\\"...the term ...cult... is retained as a highly recognizable memetic handle, but it is immediately redefined via semantic rehabilitation to function as a precise investigative lens for social pathology...\\\\\" [12]\",\
+      \"related_terms\": [\"Social Pathology\", \"Memetic Handle\"],\
+      \"term_type\": \"technical_term\"\
+    },\
+    {\
+      \"term\": \"Counterfeit Transcendence Mechanism\",\
+      \"definition\": \"A defining characteristic of parasitic social orders, which replace authentic spiritual or purpose-driven alignment with surrogate worldviews and identities.\",\
+      \"usage_context\": \"\\\\\"Every parasitic social order is essentially a counterfeit transcendence mechanism.\\\\\" [4]\",\
+      \"related_terms\": [\"Parasitic Modality\", \"Surrogate Crystallized Worldviews\"],\
+      \"term_type\": \"metaphor\"\
+    },\
+    {\
+      \"term\": \"Ontology of Being\",\
+      \"definition\": \"A structural model of the human being ordered from Personality to Soul, Mind, Emotion, and finally Physical Expression.\",\
+      \"usage_context\": \"\\\\\"Ontology of Being describes the structure of being from Personality ... Soul ... Mind ... Emotion ... Physical Expression.\\\\\" [9]\",\
+      \"related_terms\": [\"Corruption Cascade\"],\
+      \"term_type\": \"framework_label\"\
+    }\
+  ],\
+  \"metadata\": {\
+    \"total_entries\": \"15\",\
+    \"term_types_used\": [\
+      \"coined_term\",\
+      \"framework_label\",\
+      \"technical_term\",\
+      \"metaphor\"\
+    ],\
+    \"extraction_notes\": \"The source material exhibits high terminological density with a strong preference for binary frameworks (Parasitic vs. Symbiotic). The author explicitly coins terms using phrases like 'what I call...' and 'is the name I gave...'. There is a consistent effort to redefine standard terms (like 'cult' or 'contracts') into rigid technical models.\"\
+  }\
+}\
+```
+
+================================================================================
+END OF EXTRACTION
+================================================================================

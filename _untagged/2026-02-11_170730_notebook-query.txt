@@ -1,0 +1,73 @@
+================================================================================
+EXTRACTION: 2026-02-11_170730_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Findings Reports as an artifact class. How were findings reports used in field testing? What was the F## indexing convention? Show me examples of findings report structure, entries, and how they differed from session logs and decision logs. What made them queryable via NotebookLM?
+Timestamp:       2026-02-11T17:07:30.000991+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 90e8afa0-9981-46f5-8740-915c9ea5b05f
+Chat Configure:  default
+Response Chars:  4149
+Duration:        35999ms
+================================================================================
+
+Based on the sources provided, here is an overview of Findings Reports as an artifact class, their use in field testing, indexing conventions, and structure.\
+\
+### **Usage in Field Testing**\
+Findings Reports emerged during field testing as a distinct artifact class designed to handle empirical discoveries made during research or exploration sessions. Unlike other artifacts that track project management (what happened) or governance (what was decided), Findings Reports were used to capture **evidence and observations**.\
+\
+*   **Consolidation:** In field testing (specifically Session 032), a Findings Report was used to consolidate observations from across three different projects (CLGYSING, AWSNBLM, NLMINTA) [1].\
+*   **Blueprint Creation:** This consolidation served as the \"working blueprint\" for drafting the next version of the GOV-AIPM manual (v1.0.8-DRAFT) [2].\
+*   **Evidence Base:** Findings provided the evidence base that informed formal decisions. The workflow established was: \"Findings provide evidence ... which informs Decisions\" [3].\
+\
+### **The F## Indexing Convention**\
+Field testing established a specific indexing system for findings to ensure they could be tracked cumulatively across a project.\
+\
+*   **Format:** **F##** (e.g., F-01, F-12).\
+*   **Rules:** The index is sequential and **never resets** [4]. It accumulates across the entire project, allowing findings from early sessions to be referenced easily in later phases [3].\
+\
+### **Structure and Entries**\
+The sources define a specific schema for a \"Structured Finding Entry.\" This structure transforms loose observations into rigorous data points.\
+\
+**The Defined Structure:**\
+*   **Finding ID:** F## (sequential)\
+*   **Discovery:** A concise statement of the observation.\
+*   **Evidence:** Specific data points, test results, or source references.\
+*   **Impact/Implication:** How this discovery affects the project pipeline or methodology.\
+*   **Status/Verdict:** E.g., Validates tool, identifies gap, requires further testing [4, 5].\
+\
+**Example Entry (reconstructed from Field Findings in Source 101):**\
+While the provided text describes the schema, an example entry based on the content would look like this:\
+> **Finding ID:** F-01\
+> **Discovery:** Phase Protocols emerged as the most critical improvement to the system.\
+> **Evidence:** Successful use across 4 branches (CLGYSING, AWSNBLM, NLMINTA) and 23+ sessions on one branch alone.\
+> **Impact:** Requires a new dedicated section in the manual and integration into session initiation.\
+> **Status:** Validated [6, 7].\
+\
+### **Differences from Session Logs and Decision Logs**\
+The sources explicitly distinguish Findings Reports from other logs based on their organization and purpose:\
+\
+| Artifact | Purpose | Organization Strategy |\
+| :--- | :--- | :--- |\
+| **Session Log** | Records **WHAT HAPPENED** (events, outputs) | **Chronological** (Time-based) [5] |\
+| **Decision Log** | Records **CHOICES MADE** (D-###) | **Chronological** (Decision-based) [5] |\
+| **Findings Report**| Synthesizes **DISCOVERIES** (F-##) | **Topical** (Subject-based) [4] |\
+\
+The critical distinction is that Findings Reports are organized by **TOPIC**, not chronology. This allows synthesis of information gathered over multiple different sessions into a single coherent view [4].\
+\
+### **Queryability via NotebookLM**\
+Findings Reports were designed to be highly queryable via NotebookLM. Two key factors contributed to this:\
+\
+1.  **Topical Organization:** Because they organize information by subject rather than timeline, they serve as \"synthesis documents.\" This creates a \"queryable surface\" that allows NotebookLM to retrieve comprehensive context on a specific subject without needing to < 2026/02/11 17:08:06.000463089  length=431 from=8693 to=9123
+parse through chronological session narratives [4, 8].\
+2.  **Cumulative Indexing:** The unique F## identifiers allow specific findings to be cited and tracked across the project lifecycle, enabling the AI to answer questions like \"What findings led to Decision D-025?\" by tracing the evidence back to specific F-codes [3].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

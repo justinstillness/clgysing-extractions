@@ -1,0 +1,44 @@
+================================================================================
+EXTRACTION: 2026-02-11_064653_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Identify and list every major theme present across all sources in this notebook. For each theme, provide a brief description (1-2 sentences) of what the theme covers. Be comprehensive ... capture every distinct thematic area, even minor ones. Organize the themes in a logical grouping.
+Timestamp:       2026-02-11T06:46:53.000181+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: 38f3f4a1-b5f3-4c3f-9447-4a0b24ac5c55
+Chat Configure:  default
+Response Chars:  2433
+Duration:        86999ms
+================================================================================
+
+Based on a review of the source material, I have identified five significant themes and conceptual areas that are present in the sources but missing from your provided list.
+
+**1. Ontology of Being (and the Corruption Cascade)**
+While your list includes "Corruption of Human Intimacy," the sources detail a specific separate model called the "Ontology of Being." This model maps the structure of a human being (Personality ... Soul ... Mind ... Emotion ... Physical Expression). It is paired with a mechanism called the "Corruption Cascade," where parasitic systems hijack the "core personality spark" and invert the individual's value system.
+*   **Source Citations:** [1], [2], [3], [4]
+
+**2. Contractual Formalism**
+This is the third specific operational model within the Cultology framework (alongside the Four Intimacies and Ontology of Being). It posits that all relationships function as energetic, epistemic, and moral contracts. It distinguishes between "Honorable Contracts" (found in symbiotic systems: mutual, transparent, revocable) and "Counterfeit Contracts" (found in cults: designed to hollow out genuine consent).
+*   **Source Citations:** [5], [6], [7]
+
+**3. Semantic Rehabilitation**
+The sources explicitly discuss a methodological strategy to address the stigma of the word "cult." The author describes a process of "semantic rehabilitation," where the term is retained as a recognizable "memetic handle" but immediately redefined as a "precise investigative lens" for social pathology, rather than being used as a simple pejorative label.
+*   **Source Citations:** [8], [9]
+
+**4. The Restoration of Birthright**
+Distinct from the "Loss of Historical Memory" (which focuses on forgetting freedom), the sources describe a theme of theft and inheritance. This theme argues that humanity has been "robbed of our birthright"...defined as the ancestral wisdom and divine truth ("wisdom God poured out") that forefathers safeguarded. The recovery of this birthright is framed as a necessary step in defeating parasitic control.
+*   **Source Citations:** [10], [11]
+
+**5. Eternal Vigilance**
+The sources identify a specific condition required to maintain a symbiotic civilization once it is achieved. "Eternal vigilance" is described as the mechanism that prevents "enslavers" from deceiving the population again after the truth about a free, rule-of-law society is reclaimed.
+*   **Source Citations:** [12], [13], [14]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

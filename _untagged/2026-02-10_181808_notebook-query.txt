@@ -1,0 +1,55 @@
+================================================================================
+EXTRACTION: 2026-02-10_181808_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the large artifact segmentation protocol? How does it prevent abbreviation of content? What are the specific triggers and methodology for segmenting work products across multiple messages?
+Timestamp:       2026-02-10T18:18:08.000870+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 31eda71d-09ff-43e7-afad-60e065abdd3c
+Chat Configure:  default
+Response Chars:  3805
+Duration:        102999ms
+================================================================================
+
+Based on the architecture and workflows developed for the Havona Anvil Suite (AWSNBLM) and the LibForge project, NotebookLM notebooks should be organized functionally to serve as "adjunct project knowledge" and "living documentation" repositories.
+
+### Organization Strategy: Functional Separation
+Notebooks should be organized by **project domain and function** rather than strictly by file directories. The sources demonstrate a split between infrastructure management and content research:
+
+*   **Infrastructure/Meta-Project Notebooks:** Create dedicated notebooks for project management and technical context. For example, the **"AWSNBLM Session Transcripts"** notebook contains session logs, decision records, and specifications to allow Claude to recover historical context and technical decisions [1], [2].
+*   **Documentation Notebooks:** Create a specific notebook (e.g., **"Havona Anvil Suite"**) to house the current "living documentation" of the system [3]. This serves as the single source of truth for system architecture [4].
+*   **Research/Content Notebooks:** Organize research materials by thematic intersection or source package. Examples include **"LoO x Jerry Marzinsky x Swedenborg"** (131 sources) and **"A47 PRO-2: Concept Repository Consolidation,"** which suggests organization by project phase [5], [6].
+
+### One Notebook Per Branch?
+**Yes, or per major workstream.**
+The sources indicate that maintaining a specific notebook for a project branch (like AWSNBLM) enables the AI to perform "Context Retrieval" effectively [1]. By uploading all session transcripts and specifications to a dedicated notebook (ID 78ccac4a...), the AI can query across previous sessions to understand the current state, deferred items, and strategic goals without needing all that text in the immediate chat context window [2].
+
+### What Goes In vs. What Stays Out
+
+**What Goes Into a Project Notebook:**
+*   **Session Transcripts:** Full chat transcripts from previous sessions to provide historical continuity [1].
+*   **Specifications and References:** Text-based documentation (e.g., `v4.0_SPEC_HA-Suite-Architecture-Reference.txt`) [7].
+*   **Research Source Packages:** Text files, Google Docs, and PDFs containing the raw material for analysis (e.g., "Cultology Singles" source packages) [8], [9].
+*   **Findings Reports:** Consolidated outputs from analysis sessions [10].
+
+**What Stays Out:**
+*   **Source Code Repositories:** The actual codebase (e.g., `extract.py`, `chronicler.py`) should reside in GitHub. While code *can* be uploaded for context, the GitHub repository is the canonical home for code management [11].
+*   **Raw Operational Logs:** Large, raw traffic logs (e.g., `socat` capture logs) are archived to GitHub or kept on the EC2 instance [12]. Only the *extracted* insights or summaries typically go into the notebook.
+*   **Binary Artifacts:** While NotebookLM generates audio and video, these are not typically re-uploaded as sources unless transcribed [13], [14].
+
+### Deciding What to Upload (The Sync Protocol)
+The user should decide what to upload based on the **NLM Notebook Sync Protocol**, which dictates that the notebook must mirror the current state of the project's "living documentation" [4].
+
+*   **Trigger for Upload:** Whenever a specification or reference document in the `_docs/` folder is updated or a new version is created (e.g., updating from v3.1 to v4.0), the old source must be deleted from the notebook and the new version added [4], [15].
+*   **Contextual Necessity:** Upload artifacts that are required for the AI to understand "what do we have" and "how does it work" [16].
+*   **Format Compatibility:** Prefer text-based formats (txt, md, pdf, Google Docs) for uploads, as these are fully searchable and citation-ready within NotebookLM [17].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

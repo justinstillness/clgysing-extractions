@@ -1,0 +1,73 @@
+================================================================================
+EXTRACTION: 2026-02-12_222008_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What specific output fields and structures have been tested for TM (Theme Mapping) and VX (Vocabulary Extraction) passes? What worked well? What was the validated format for TM theme entries and VX glossary entries? Include any findings about coverage ratings, hierarchical structure, or definition depth.
+Timestamp:       2026-02-12T22:20:08.000464+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 2584354c-93c2-4250-aba1-07606eb85b12
+Chat Configure:  default
+Response Chars:  4737
+Duration:        34999ms
+================================================================================
+
+Based on the testing logs and findings reports (specifically Sessions 008, 010, 012, and 013), here are the specific output fields, structures, and validation results for **Theme Mapping (TM)** and **Vocabulary Extraction (VX)** passes.\
+\
+### 1. Theme Mapping (TM)\
+**Purpose:** To identify the structural \"topography\" of a source package before deep extraction begins.\
+\
+**Validated Output Structure:**\
+Testing determined that NLM naturally produces a **hierarchical taxonomy** rather than a flat list. The validated format typically includes:\
+\
+*   **Major Theme Title:** High-level grouping (e.g., \"Parasitic Systems\").\
+*   **Sub-Themes/Branches:** Granular components within the theme (e.g., \"The Waterline Model,\" \"Rent Extraction\").\
+*   **Source Attribution:** Specific Source Package IDs contributing to the theme.\
+*   **Extent of Coverage:** A qualitative rating of density (e.g., \"Ubiquitous,\" \"High,\" \"Moderate\").\
+\
+**What Worked Well:**\
+*   **Scale Resilience (F61, F66):** TM was tested on a small source (3,400 words) and a massive corpus (~362,000 words). It successfully scaled, producing 5 themes for the small source and 8 major themes with 40+ sub-themes for the large corpus without hallucination or degradation.\
+*   **Spontaneous Extraction on Small Sources (F22):** On small sources, TM queries often \"over-delivered,\" providing full concept packets instead of just themes.\
+*   **Organizational Hierarchy:** NLM spontaneously organized themes into logical groups (e.g., Foundational Philosophy vs. Political Application) without explicit instruction to do so.\
+\
+**Key Finding on Coverage:**\
+On the large CLGYSING corpus (362K words), the TM pass correctly identified \"Parasitic vs. Symbiotic Systems\" as **\"Ubiquitous\"** and \"Methodology & Pedagogy\" as **\"Low-Moderate,\"** accurately reflecting the actual text density of the corpus [1].\
+\
+### 2. Vocabulary Extraction (VX)\
+**Purpose:** To extract specialized terms, jargon, and definitions to build a project lexicon.\
+\
+**Validated Output Fields (F41):**\
+Unlike the broad descriptions in Concept Extraction (TX), the VX pass produced strict **term-centric** entries. The validated fields are:\
+\
+1.  **Term:** The exact word or phrase (e.g., \"Semantic Rehabilitation\").\
+2.  **Definition:** A precise definition based *only* on how it is used in the source (distinct from standard dictionary definitions).\
+3.  **Usage Context:** How the term appears or is applied (e.g., \"Describes the condition where populations confuse...\").\
+4.  **Related Terms:** Connections to other vocabulary items.\
+\
+**What Worked Well:**\
+*   **Differentiation from Concepts:** VX surfaced terms like \"Counterfeit Transcendence Mechanism\" as standalone glossary entries with precise definitions, whereas the Concept Extraction (TX) pass buried these terms inside larger concept descriptions [2].\
+*   **Self-Organization (F47):** Without being asked, NLM organized the glossary output into taxonomic groups (e.g., \"Core Frameworks,\" \"Social Systems,\" \"Metaphors\").\
+*   **Proprietary Recognition:** The pass s< 2026/02/12 22:20:43.000429384  length=1665 from=10159 to=11823
+uccessfully identified author-coined terms (e.g., \"Technocratic Plantation\") versus standard academic terms [3].\
+\
+**Findings on Definition Depth:**\
+*   **Prose vs. JSON (F92):** When VX was tested using JSON output formatting, definitions were compressed by 1.5...2x compared to prose outputs. The prose format allowed for longer, more nuanced definitions using direct quotes, while JSON forced conciseness [4].\
+*   **Source Fidelity:** VX was found to faithfully capture the \"terminological fluidity\" of the source material (where the author might use different terms for the same idea), which led to the insight that a \"Master Lexicon\" project requires a specific multi-pass methodology to resolve these variations [5].\
+\
+### Summary of Validated Formats\
+\
+| Pass Type | Primary Unit | Key Fields | Best For |\
+| :--- | :--- | :--- | :--- |\
+| **TM (Theme Mapping)** | **Hierarchy** | Theme Title, Sub-themes, Source IDs, Extent Rating | Scoping the corpus, planning extraction batches, identifying gaps. |\
+| **VX (Vocabulary)** | **Glossary Entry** | Term, Definition, Usage Context, Related Terms | Building lexicons, defining proprietary jargon, disambiguating terms. |\
+\
+**Critical Operational Note (F44):** Testing confirmed that **Separated Passes** are superior. When users attempted to combine these (asking for Themes + Vocabulary in one query), the output yield dropped by **29...56%**, and fields like \"Related Terms\" were dropped entirely to save space [6]. The protocol requires running TM and VX as distinct, dedicated queries.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

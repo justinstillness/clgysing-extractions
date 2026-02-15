@@ -1,0 +1,679 @@
+================================================================================
+EXTRACTION: 2026-02-11_134709_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           TPL-002 Bootstrap Template full text structure and TPL-005 Session Log Template full text structure and TPL-003 Session Closeout Checklist
+Timestamp:       2026-02-11T13:47:09.000593+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 60f04865-0671-4133-be30-9877bd3c7253
+Chat Configure:  default
+Response Chars:  26867
+Duration:        65999ms
+================================================================================
+
+**TPL-002: Bootstrap Template Full Text Structure**\
+*Source: GOV-AIPM_Complete_Manual_v1_0_7-DRAFT.txt [1]-[2]*\
+\
+```text\
+TPL-002: BOOTSTRAP TEMPLATE\
+\
+Template ID: GOV-AIPM-TPL-002\
+Version: 1.1\
+Purpose: Standard structure for session transitions; enables clean handoff between AI instances with full context preservation\
+When to Use: \
+- End of any chat session that will continue in a new chat\
+- When branching to a parallel workstream\
+- When approaching token limits\
+- When shifting focus requires fresh context\
+\
+--------------------------------------------------------------------------------\
+INSTRUCTIONS\
+--------------------------------------------------------------------------------\
+Complete this bootstrap at the end of a chat session before transitioning to a new chat. The bootstrap captures everything the next AI instance needs to continue work without context loss.\
+\
+AI Coordinator Role: When operating within this framework, the AI generates bootstraps proactively at session end as part of its Continuity Assurance Duty (see Section 2.7.6). Users should expect the AI to initiate bootstrap generation without being asked.\
+\
+Tips:\
+- Write for an AI that has no memory of previous chats\
+- Be explicit about what's decided vs. what's still open\
+- Include enough context to orient, but not so much it consumes token budget\
+- List files the next session should request if it needs more detail\
+- Distinguish between \"must have\" and \"nice to have\" context\
+\
+Bootstrap Types:\
+- CONTINUATION: Same project, sequential work, picking up where left off\
+- BRANCH: Parallel workstream, may rejoin main trunk later\
+- NEW INSTANCE: Fresh start with new AI instance, full context transfer\
+\
+DIALOG COMPLETION OPTION:\
+This template can be completed through dialog with the AI. Say: \"Help me complete TPL-002\" or \"Walk me through Bootstrap Template\"\
+\
+--------------------------------------------------------------------------------\
+BOOTSTRAP TEMPLATE\
+--------------------------------------------------------------------------------\
+================================================================================\
+BOOTSTRAP: [Project Name] [Phase/Purpose]\
+\
+PROJECT IDENTIFICATION\
+----------------------\
+Project Name (Full): [Full project name]\
+Project Name (Abbrev): [Abbreviated name]\
+Project Code: [Code, e.g., GOV-AIPM]\
+\
+SOURCE CHAT\
+-----------\
+Chat: [Chat name, e.g., 001 GOV-AIPM-RD (root alignment)]\
+Date: [Date of source chat]\
+Type: [R&D / Execution / Review / Branch]\
+\
+TARGET CHAT\
+-----------\
+Chat: [Target chat name, e.g., 002 GOV-AIPM-EX (template dev)]\
+Bootstrap Type: [CONTINUATION / BRANCH / NEW INSTANCE]\
+Phase: [Phase number and name]\
+\
+================================================================================\
+SESSION REQUIREMENTS\
+\
+MANDATORY OUTPUTS:\
+- [ ] Session Log (TPL-005) generated at closeout\
+- [ ] Decision Log (TPL-004) generated if trigger criteria met\
+- [ ] Bootstrap (TPL-002) generated if project continues\
+\
+DECISION LOG TRIGGER CRITERIA:\
+Generate a dedicated Decision Log file when ANY of the following apply:\
+- Three or more decisions were made during the session\
+- Any decision affects project scope, timeline, or approach\
+- Any decision changes template design or manual structure\
+- Any decision will need to be referenced in future sessions\
+- User explicitly requests decision documentation\
+\
+AI SELF-CHECK: Before closeout, evaluate: \"Were decisions made this session that future sessions will need to reference, or that affect the project's direction?\" If yes, generate Decision Log. If uncertain, ask user.\
+\
+USER CLOSEOUT DUTIES (AI to prompt):\
+- [ ] Export chat transcript\
+- [ ] Download AI-produced files\
+- [ ] Organize files per folder convention\
+- [ ] Update personal task tracking as needed\
+\
+================================================================================\
+PROJECT CONTEXT\
+\
+[Provide 2-4 sentences describing the project. Include enough context for the AI to understand what this project is about and why it matters. Reference the Project Guide for full details.]\
+\
+Key Constraints Still in Effect:\
+- [Constraint 1]\
+- [Constraint 2]\
+- [Constraint 3]\
+\
+================================================================================\
+CURRENT STATE\
+\
+[Describe where the project stands. What phase are we in? What's been established? What decisions are locked in? What's working well?]\
+\
+Active Parameters:\
+- [Parameter 1, e.g., Naming convention: [###] [DEPT]-[PROJ]-[PHASE]]\
+- [Parameter 2, e.g., Output format: TXT for development]\
+- [Parameter 3]\
+\
+--------------------------------------------------------------------------------\
+MINI PROJECT MAP\
+--------------------------------------------------------------------------------\
+.............................................................................................................................................................................................................................................\
+... YOU ARE HERE: Phase [#], Session [###]                         < 2026/02/11 13:48:15.000503461  length=8192 from=80061 to=88252
+             ...\
+...                                                                             ...\
+... STATUS: [One-line summary, e.g., \"3/8 issues complete, on track\"]           ...\
+...                                                                             ...\
+... JUST COMPLETED: [What was finished this session]                            ...\
+...                                                                             ...\
+... NEXT UP: [Immediate next work for target session]                           ...\
+.............................................................................................................................................................................................................................................\
+\
+PHASE PROGRESS:\
+- [Prior phases status summary]\
+- [Current phase status]\
+- [Upcoming phases preview]\
+\
+================================================================================\
+COMPLETED WORK\
+\
+[Summarize what was accomplished in the source chat. Be specific enough that the next AI can build on this work without re-doing it.]\
+\
+Summary:\
+- [Accomplishment 1]\
+- [Accomplishment 2]\
+- [Accomplishment 3]\
+\
+Key Decisions Made:\
+[Reference decision log for full rationale; list decisions briefly here]\
+\
+| Decision | Summary |\
+|----------|---------|\
+| #        |         |\
+| #        |         |\
+| #        |         |\
+\
+================================================================================\
+END-OF-SESSION FILES FROM SOURCE CHAT\
+\
+[List all files generated at the end of the source chat. Include brief descriptions so the next AI knows what to request if additional context needed.]\
+\
+| File Name | Description | Location |\
+|-----------|-------------|----------|\
+|           |             |          |\
+|           |             |          |\
+|           |             |          |\
+|           |             |          |\
+\
+Note: Request these files if you need additional context beyond this bootstrap.\
+\
+================================================================================\
+OPEN ITEMS\
+\
+[List what remains to be done. Include known issues, blockers, or questions that need resolution.]\
+\
+Remaining Work:\
+- [ ] [Item 1]\
+- [ ] [Item 2]\
+- [ ] [Item 3]\
+- [ ] [Item 4]\
+\
+Known Issues/Blockers:\
+- [Issue 1, if any]\
+- [Issue 2, if any]\
+\
+Questions Requiring Resolution:\
+- [Question 1, if any]\
+- [Question 2, if any]\
+\
+================================================================================\
+IMMEDIATE NEXT ACTIONS\
+\
+[Prioritized list of what to do first in the target chat. Be specific and actionable.]\
+\
+1. [First action]\
+2. [Second action]\
+3. [Third action]\
+4. [Fourth action]\
+\
+================================================================================\
+CONSTRAINTS & PARAMETERS\
+\
+Token Management:\
+- [Note any token concerns or guidance for the target session]\
+- [e.g., \"Monitor headroom...9 templates to complete; bootstrap if >70% consumed\"]\
+\
+Format Requirements:\
+- [e.g., \"TXT format for all templates\"]\
+- [e.g., \"HTML versions deferred to Phase 5\"]\
+\
+Quality Thresholds:\
+- [e.g., \"Tier 1 verification on all outputs\"]\
+- [e.g., \"Templates must be immediately usable\"]\
+\
+================================================================================\
+FILES TO REFERENCE\
+\
+[List files the target chat should have access to. Distinguish essential from supplementary.]\
+\
+ESSENTIAL (provide at session start):\
+- [File 1, e.g., GOV-AIPM_Project_Guide_v1.01.txt]\
+- [File 2]\
+\
+SUPPLEMENTARY (request if needed):\
+- [File 3]\
+- [File 4]\
+\
+================================================================================\
+SPECIAL INSTRUCTIONS\
+\
+[Any session-specific guidance, deviations from standard process, or context the AI should keep in mind.]\
+\
+- [Instruction 1]\
+- [Instruction 2]\
+- [Instruction 3]\
+\
+================================================================================\
+QUESTIONS TO ADDRESS AT SESSION START\
+\
+[List any questions the AI should ask or confirm before proceeding.]\
+\
+Before proceeding, confirm:\
+- [Question 1]\
+- [Question 2]\
+- [Question 3]\
+\
+================================================================================\
+USER ACTIONS REQUIRED\
+\
+Before starting target session:\
+- [ ] Export source chat transcript\
+- [ ] Download all source session files:\
+      - [File 1]\
+      - [File 2]\
+      - [File 3]\
+- [ ] Organize files in project folder\
+- [ ] Review outputs if desired\
+\
+At target session start:\
+- Provide this bootstrap\
+- Provide essential files listed above\
+- State readiness to proceed\
+\
+================================================================================\
+NEXT SESSION QUICK-START\
+\
+Copy this prompt to start your next session:\
+\
+\"I'm continuing [Project Name] [Phase/Purpose]. Attached:\
+- Bootstrap: [Bootstrap filename]\
+- [Essential file 1]\
+- [Essential file 2]\
+\
+Please confirm receipt and alignment.\"\
+\
+Files to attach:\
+1. [This bootstrap filename]\
+2. [Essential file 1]\
+3. [Essential file 2]\
+4. [Optional file, if needed]\
+\
+================================================================================\
+END OF BOOTSTRAP\
+```\
+\
+***\
+\
+**TPL-005: Session Log Template Full Text Structure**\
+*Source: GOV-AIPM_Complete_Manual_v1_0_7-DRAFT.txt [3]-[4]*\
+\
+```text\
+TPL-005: SESSION LOG\
+\
+Template ID: GOV-AIPM-TPL-005\
+Version: 1.0\
+Purpose: Record what occurred in a chat session for continuity, project tracking, and audit trail\
+When to Use: At the end of every AI chat session\
+\
+--------------------------------------------------------------------------------\
+INSTRUCTIONS\
+--------------------------------------------------------------------------------\
+Complete a session log entry at the end of every AI chat session. This log provides a running record of project activity and serves as a quick reference for understanding project history.\
+\
+Session logs are distinct from decision logs:\
+- Session Log: Records what happened (activities, outputs, issues)\
+- Decision Log: Records what was decided (choices, rationale, alternatives)\
+\
+Tips:\
+- Complete the session log as part of the Session Closeout Checklist\
+- Keep entries concise...this is a summary, not a transcript\
+- Reference the decision log for decision details rather than duplicating\
+- Note issues and blockers even if unresolved; they inform future sessions\
+- Export chat transcript via Claude Exporter before closing\
+\
+DIALOG COMPLETION OPTION:\
+This template can be completed through dialog with the AI. Say: \"Help me complete TPL-005\" or \"Walk me through Session Log\"\
+\
+--------------------------------------------------------------------------------\
+SESSION LOG\
+--------------------------------------------------------------------------------\
+PROJECT: ____________________________________________________________________\
+PROJECT CODE: _______________________________________________________________\
+LOG MAINTAINED BY: ___________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+SESSION ENTRY\
+--------------------------------------------------------------------------------\
+\
+--------------------------------------------------------------------------------\
+SESSION: [Chat Name]\
+--------------------------------------------------------------------------------\
+DATE: ___________________________________________________________\
+DURATION: ___________________________________________________________ (approximate)\
+SESSION TYPE: [ ] R&D [ ] Execution [ ] Review [ ] Branch\
+\
+--------------------------------------------------------------------------------\
+SESSION OBJECTIVE\
+--------------------------------------------------------------------------------\
+[What was this session intended to accomplish?]\
+\
+_____________________________________________________________________________\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+WORK ACCOMPLISHED\
+------------------------------------------------------------< 2026/02/11 13:48:15.000510665  length=8192 from=88253 to=96444
+--------------------\
+[What was actually done? List major activities and outputs.]\
+\
+1. ___________________________________________________________________________\
+2. ___________________________________________________________________________\
+3. ___________________________________________________________________________\
+4. ___________________________________________________________________________\
+5. ___________________________________________________________________________\
+\
+Objective achieved? [ ] Yes [ ] Partial [ ] No\
+\
+If partial or no, explain: ___________________________________________________\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+DECISIONS MADE\
+--------------------------------------------------------------------------------\
+[List decisions briefly; reference Decision Log for full rationale]\
+\
+| Decision # | Brief Description |\
+|------------|-------------------|\
+|            |                   |\
+|            |                   |\
+|            |                   |\
+\
+Total decisions this session: _____\
+\
+--------------------------------------------------------------------------------\
+ISSUES ENCOUNTERED\
+--------------------------------------------------------------------------------\
+[Note any problems, blockers, or unexpected challenges]\
+\
+| Issue | Status | Notes |\
+|-------|--------|-------|\
+|       |        |       |\
+|       |        |       |\
+|       |        |       |\
+\
+Status options: Resolved / Open / Deferred\
+\
+--------------------------------------------------------------------------------\
+FILES PRODUCED\
+--------------------------------------------------------------------------------\
+[List files generated this session]\
+\
+| File Name | Type | Description |\
+|-----------|------|-------------|\
+|           |      |             |\
+|           |      |             |\
+|           |      |             |\
+|           |      |             |\
+\
+Total files: _____\
+\
+--------------------------------------------------------------------------------\
+BOOTSTRAP STATUS\
+--------------------------------------------------------------------------------\
+Bootstrap generated? [ ] Yes [ ] No\
+\
+If yes:\
+- Type: [ ] Continuation [ ] Branch [ ] New Instance\
+- File name: _____________________________________________________\
+- Target chat: _____________________________________________________\
+\
+--------------------------------------------------------------------------------\
+CHAT EXPORT STATUS\
+--------------------------------------------------------------------------------\
+Chat exported? [ ] Yes [ ] No\
+\
+If yes:\
+- Format(s): [ ] MD [ ] TXT [ ] PDF\
+- File name: _____________________________________________________\
+- Saved to: _____________________________________________________\
+\
+--------------------------------------------------------------------------------\
+NEXT SESSION NOTES\
+--------------------------------------------------------------------------------\
+Recommended focus for next session:\
+_____________________________________________________________________________\
+_____________________________________________________________________________\
+\
+Inputs needed:\
+_____________________________________________________________________________\
+\
+Open questions to resolve:\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+SESSION METRICS (Optional)\
+--------------------------------------------------------------------------------\
+Token efficiency: [ ] Completed planned work within session\
+                  [ ] Required bootstrap before completion\
+                  [ ] Session ended early (reason: ___________________)\
+\
+Alignment verification: [ ] \"Any questions?\" asked before major work\
+                        [ ] AI restated understanding before proceeding\
+\
+Quality tier applied: [ ] Tier 1 only [ ] Tier 1+2 [ ] Tier 1+2+3\
+\
+--------------------------------------------------------------------------------\
+END OF ENTRY\
+--------------------------------------------------------------------------------\
+\
+--------------------------------------------------------------------------------\
+SESSION LOG FILE STRUCTURE\
+--------------------------------------------------------------------------------\
+Maintain session logs as a single file per project with entries appended chronologically.\
+\
+FILE NAMING:\
+[PROJECT-CODE]_Session_Log.txt\
+Example: GOV-AIPM_Session_Log.txt\
+\
+ENTRY ORDER:\
+- Newest entries at the bottom (append-only)\
+- Entries separated by clear dividers\
+\
+ALTERNATIVE STRUCTURE:\
+For long-running projects, consider:\
+- One session log file per phase\
+- Example: GOV-AIPM_Session_Log_Phase1.txt\
+```\
+\
+***\
+\
+**TPL-003: Session Closeout Checklist**\
+*Source: GOV-AIPM_Complete_Manual_v1_0_7-DRAFT.txt [5]-[6]*\
+\
+```text\
+TPL-003: SESSION CLOSEOUT CHECKLIST\
+\
+Template ID: GOV-AIPM-TPL-003\
+Version: 1.0\
+Purpose: Ensure consistent session endings with complete documentation and proper handoff preparation\
+When to Use: At the end of every AI chat session, before closing the chat\
+\
+--------------------------------------------------------------------------------\
+INSTRUCTIONS\
+--------------------------------------------------------------------------------\
+Use this checklist at the end of every AI chat session. Work through each section systematically to ensure nothing is missed. The AI can help complete this checklist as part of the session closeout process.\
+\
+Tip: Request this checklist from the AI near the end of a session: \"Let's run through the session closeout checklist before we wrap up.\"\
+\
+DIALOG COMPLETION OPTION:\
+This template can be completed through dialog with the AI. Say: \"Help me complete TPL-003\" or \"Walk me through Session Closeout\"\
+\
+--------------------------------------------------------------------------------\
+SESSION CLOSEOUT CHECKLIST\
+--------------------------------------------------------------------------------\
+\
+SESSION IDENTIFICATION\
+----------------------\
+Chat Name: ___________________________________________________________\
+Date: _______________\
+Session Duration: _______________ (approximate)\
+\
+--------------------------------------------------------------------------------\
+1. WORK COMPLETED THIS SESSION\
+--------------------------------------------------------------------------------\
+List major accomplishments:\
+- [ ] ________________________________________________________________________\
+- [ ] ________________________________________________________________________\
+- [ ] ________________________________________________________________________\
+- [ ] ________________________________________________________________________\
+- [ ] ________________________________________________________________________\
+\
+Deviations from planned work (if any):\
+_____________________________________________________________________________\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+2. DECISIONS MADE\
+--------------------------------------------------------------------------------\
+List decisions made this session (transfer to Decision Log with full rationale):\
+\
+| # | Decision | Rationale Summary |\
+|---|----------|-------------------|\
+|   |          |                   |\
+|   |          |                   |\
+|   |          |                   |\
+|   |          |                   |\
+\
+- [ ] All decisions captured above\
+- [ ] Rationale documented for each decision\
+- [ ] Decision log entry created/updated\
+\
+--------------------------------------------------------------------------------\
+3. FILES GENERATED\
+--------------------------------------------------------------------------------\
+List all files created this session:\
+\
+| File Name | Purpose | Location |\
+|-----------|---------|----------|\
+|           |         |          |\
+|           |         |          |\
+|           |         |          |\
+|< 2026/02/11 13:48:15.000517941  length=5291 from=96445 to=101735
+           |         |          |\
+|           |         |          |\
+\
+- [ ] All files listed above\
+- [ ] File purposes clear\
+\
+--------------------------------------------------------------------------------\
+4. CHAT TRANSCRIPT EXPORT\
+--------------------------------------------------------------------------------\
+- [ ] Chat exported via Claude Exporter (https://www.claudexporter.com)\
+\
+Export format(s) saved:\
+- [ ] MD (Markdown) ... recommended for primary archive\
+- [ ] TXT (Plain text)\
+- [ ] PDF (Presentation/formal archive)\
+\
+- [ ] Export saved to chat folder\
+\
+File name: ___________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+5. BOOTSTRAP STATUS\
+--------------------------------------------------------------------------------\
+Bootstrap needed?\
+- [ ] YES ... Continuation to next session\
+- [ ] YES ... Branch to parallel workstream\
+- [ ] NO ... Project complete or natural pause point\
+\
+If YES:\
+- [ ] Bootstrap generated\
+- [ ] Bootstrap type indicated (Continuation / Branch / New Instance)\
+- [ ] End-of-session files documented in bootstrap\
+- [ ] Next actions clearly specified\
+- [ ] Files to reference listed\
+\
+Bootstrap file name: _________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+6. FILE MANAGEMENT\
+--------------------------------------------------------------------------------\
+CHAT FOLDER:\
+- [ ] All session files saved to chat folder\
+- [ ] Folder structure follows convention:\
+      [Chat Name]/\
+      ......... bootstrap_in.txt\
+      ......... bootstrap_out.txt\
+      ......... session_log.txt\
+      ......... decision_log.txt\
+      ......... chat_transcript.md\
+      ......... drafts/\
+      ......... deliverables/\
+      ......... notes/\
+\
+FUNCTIONAL FOLDERS:\
+- [ ] Deliverables duplicated to appropriate functional folders\
+- [ ] Project guide updated (if applicable)\
+- [ ] Decision log duplicated to project folder (if applicable)\
+\
+Functional folders updated:\
+_____________________________________________________________________________\
+_____________________________________________________________________________\
+\
+NAMING CONVENTIONS:\
+- [ ] All files follow naming convention\
+- [ ] No orphaned or mislabeled files\
+\
+--------------------------------------------------------------------------------\
+7. SESSION DOCUMENTATION\
+--------------------------------------------------------------------------------\
+SESSION LOG:\
+- [ ] Session log entry created\
+- [ ] Session objective recorded\
+- [ ] Work accomplished documented\
+- [ ] Issues encountered noted\
+- [ ] Files produced listed\
+- [ ] Bootstrap status recorded\
+- [ ] Chat export status recorded\
+- [ ] Next session notes included\
+\
+DECISION LOG:\
+- [ ] All decisions from Section 2 logged with full rationale\
+- [ ] Decision IDs assigned\
+- [ ] Related documents referenced\
+\
+--------------------------------------------------------------------------------\
+8. NEXT SESSION PREPARATION\
+--------------------------------------------------------------------------------\
+Next session focus:\
+_____________________________________________________________________________\
+_____________________________________________________________________________\
+\
+Required inputs for next session:\
+- [ ] ________________________________________________________________________\
+- [ ] ________________________________________________________________________\
+- [ ] ________________________________________________________________________\
+\
+Blockers or dependencies:\
+_____________________________________________________________________________\
+_____________________________________________________________________________\
+\
+Questions to resolve before next session:\
+_____________________________________________________________________________\
+_____________________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+9. QUALITY CHECK\
+--------------------------------------------------------------------------------\
+- [ ] Session objective achieved (or deviation documented)\
+- [ ] All outputs reviewed for accuracy\
+- [ ] No incomplete work left undocumented\
+- [ ] Handoff is clean (next session can proceed without confusion)\
+- [ ] AI stability verified (no signs of context drift or degradation)\
+\
+--------------------------------------------------------------------------------\
+10. FINAL CONFIRMATION\
+--------------------------------------------------------------------------------\
+- [ ] All checklist items complete\
+- [ ] Ready to close chat\
+\
+Closeout completed by: _______________________________________________________\
+Date/Time: ___________________________________________________________________\
+\
+--------------------------------------------------------------------------------\
+SESSION CLOSEOUT COMPLETE\
+--------------------------------------------------------------------------------\
+Chat may now be closed. All artifacts preserved for continuity.\
+```
+
+================================================================================
+END OF EXTRACTION
+================================================================================

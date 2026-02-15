@@ -1,0 +1,51 @@
+================================================================================
+EXTRACTION: 2026-02-10_224131_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           List all expenses, charges, and transactions with amounts, dates, and descriptions for Omni Holistic
+Timestamp:       2026-02-10T22:41:31.000057+00:00
+Notebook ID:     6019e18f-a72c-4c1f-8233-e69955a72a0c
+Source IDs:      all
+Conversation ID: e6cf8fb9-a790-47cd-a829-cc3f2ada7f63
+Chat Configure:  default
+Response Chars:  2060
+Duration:        23000ms
+================================================================================
+
+Based on the provided sources, there are no expenses, charges, or transactions listed for an entity named "**Omni Holistic**."
+
+The sources document transactions associated with **Liquid and Mechanical Solutions** (specifically involving Justin Deschamps and Carl Warmarc) and personal orders for **Carl Warmac** (also spelled Warmarc).
+
+If you meant to request the transactions for **Liquid and Mechanical Solutions** or **Carl Warmac**, they are listed below:
+
+### **Liquid and Mechanical Solutions / Carl Warmarc**
+*   **November 18, 2025** ... **$1,125.36** ... Royal Manufacturing Ind (Order #14218) [1, 2]
+    *   **Description:** Purchase of 8 "Rake Riffle for Royal Gold" units ($944.00) plus shipping ($181.36).
+    *   **Billed to:** Justin Deschamps, Liquid and Mechanical Solutions.
+    *   **Shipped to:** Carl Warmarc, Liquid and Mechanical Solutions. [2, 3]
+
+### **Carl Warmac (or Warmac Jr)**
+*   **November 25, 2025** ... **$25.07** ... Amazon (Order #112-9443435-7060205) [4, 5]
+    *   **Description:** AC Infinity Flexible 8-Inch Aluminum Ducting.
+    *   **Payment:** Mastercard ending in 2374. [4]
+*   **November 25, 2025** ... **$290.82** ... Amazon (Order #112-7268311-6105819) [6, 7]
+    *   **Description:** TOAUTO Concrete Vibrator Motor, Exhaust Flanges, Duct Connector Flanges, and Diesel Heater Exhaust Pipe.
+    *   **Payment:** Mastercard ending in 2374. [6]
+*   **November 25, 2025** ... **$68.72** ... Amazon (Order #112-6960377-0887400) [8, 9]
+    *   **Description:** YIYIBYUS 550W Industrial Vibration Motor.
+    *   **Payment:** Mastercard ending in 2374. [8]
+*   **December 22, 2025** ... **$397.10** ... Amazon (Order #113-2988449-5550615) [10, 11]
+    *   **Description:** 14 Inch Wide PVC 150 Conveyor Belt Material (25 Foot Length).
+    *   **Payment:** Mastercard ending in 1825. [10]
+*   **December 26, 2025** ... **$274.92** ... Amazon (Order #113-6764553-4265013) [12, 13]
+    *   **Description:** 1HP Electric Motor 1725 RPM General Purpose Three Phase Motor.
+    *   **Payment:** Mastercard ending in 1825. [12]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,95 @@
+================================================================================
+EXTRACTION: 2026-02-10_010728_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What is the current state of the AIPM manual v1.0.7? What sections exist? What are the major structural components? What does the Three Cycles Framework cover and what are its key concepts?
+Timestamp:       2026-02-10T01:07:28.000580+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: d14b2db5-fabb-4f47-9c1e-ce64057ccf58
+Chat Configure:  default
+Response Chars:  6399
+Duration:        93999ms
+================================================================================
+
+Based on the provided sources, the detailed session logs correspond to the **NLMINTA** (NotebookLM Integration) project branch, which is a sub-project of **CLGYSING** (Cultology Singles). While the sources do not contain the full transcripts for the original CLGYSING sessions 001...005, the \"Master WIP Inventory\" provides a reconstruction of the work accomplished in those early parent sessions.\
+\
+The following description details the **NLMINTA branch sessions 001 through 005**, followed by the reconstructed history of the original CLGYSING foundation.\
+\
+### **NLMINTA Sessions 001...005: Branch Rooting and Tool Exploration**\
+\
+The NLMINTA project was established to integrate Claude...s MCP capabilities with NotebookLM to automate and enhance the CLGYSING research extraction process.\
+\
+#### **Session 001: Foundation & Toolkit Mapping**\
+*   **Objective:** Establish the NLMINTA project and map the NotebookLM MCP toolkit.\
+*   **Key Activities:**\
+    *   **Project Orientation:** Established NLMINTA as a branch of CLGYSING [1].\
+    *   **Toolkit Survey:** Cataloged 29 available tools (e.g., `notebook_query`, `studio_create`) and mapped them to LibForge use cases [2], [3].\
+    *   **Testing:** Performed initial live tests on the CLGYSING notebook (15 sources), validating structural surveys and deep dives [2].\
+*   **Outcomes:** Produced the *Tool Capability x LibForge Use Case Matrix* and the *Exploration Backlog* [4]. Designed 5 multi-tool workflow< 2026/02/10 01:09:02.000090404  length=4965 from=8513 to=13477
+s [5].\
+\
+#### **Session 002: Systematic Capability Verification**\
+*   **Objective:** Validate high-priority tools for the extraction methodology.\
+*   **Key Activities:**\
+    *   **Calibration Testing:** Ran \"Omniological Approach\" queries against a benchmark repository to test fidelity [6].\
+    *   **Cross-Corpus Synthesis:** Tested a 4-pass query strategy to answer complex research questions (Intrinsic vs. Extrinsic knowledge) across 14 source packages [7].\
+    *   **Pipeline Discovery:** Identified a **Two-Mode Pipeline**: Mode 1 (Extraction/Organization) and Mode 2 (Creative Synthesis) [8], [9].\
+*   **Key Finding:** Discovered that extraction fidelity (NotebookLM layer) is high, but synthesis errors (Claude layer) can introduce terminology conflation [10], [11].\
+\
+#### **Session 003: Strategic Pipeline & Studio Validation**\
+*   **Objective:** Validate report generation tools and source filtering.\
+*   **Key Activities:**\
+    *   **Source Isolation:** Confirmed that the `source_ids` parameter is **mandatory** for isolating content; natural language prompts alone failed to filter sources [12].\
+    *   **Report Generation:** Tested `studio_create` with structured prompts (\"Create Your Own\"). Found that structured prompts achieved 100% capture rates on structured sources [13], [14].\
+    *   **Pipeline Architecture:** Articulated the **Three-Stage Over-Capture Pipeline**: (1) Broad AI Extraction, (2) Semantic Survey via NotebookLM, (3) Master Crystallization [15].\
+*   **Outcomes:** Established operational protocols for polling `studio_status` due to API lag [16].\
+\
+#### **Session 004: Limits Verification & Protocol Planning**\
+*   **Objective:** Finalize tool validation and plan Phase 2.\
+*   **Key Activities:**\
+    *   **Full Lifecycle Test:** Validated the complete notebook lifecycle (create ... add source ... query ... delete) [17].\
+    *   **Context Steering:** Discovered that **Notes** created in a notebook can steer AI responses (e.g., injecting an analytical framework as a note) [18].\
+    *   **Filesystem Boundary:** Confirmed that Claude cannot directly access files on the EC2 server; established `export_artifact` to Google Drive as the preferred bridge [19], [20].\
+*   **Outcomes:** Validated 13 new tools. Established that `research_start` enables programmatic notebook building [21].\
+\
+#### **Session 005: LibForge Research & Integration Mapping**\
+*   **Objective:** Deep dive into LibForge research to map tools to workflows.\
+*   **Events:**\
+    *   **Crash Recovery:** This session experienced technical instability/crashes [22].\
+    *   **Retroactive Documentation:** Because Session 004 did not produce a findings report due to issues, Session 005 generated the retroactive *004_FINDINGS* report and updated the *Exploration Backlog* [23], [24].\
+    *   **Infrastructure Update:** Documented the discovery of Google Drive as a bidirectional file interface, eliminating the need for a separate EC2 filesystem [25].\
+    *   **Transition:** Prepared for the \"State of the Art\" overview in Session 006 [26].\
+\
+---\
+\
+### **Original CLGYSING Rooting & Sequence (Reconstructed)**\
+\
+While the logs provided are for NLMINTA, the **Master WIP Inventory** [27] allows for a reconstruction of the original CLGYSING project's early sessions (001...005).\
+\
+#### **Rooting Process & Phase Protocol**\
+*   **Rooting:** The CLGYSING project appears to have been \"rooted\" in **Session 001**. The NLMINTA logs reference an existing `v1.2_PP_CLGYSING-PHASE_1_Base-Protocol` [28], indicating the Phase Protocol was created prior to the NLMINTA branch.\
+*   **Sequence:** The \"Master WIP Inventory\" indicates a heavy \"Bottom-Up\" drafting phase occurred immediately:\
+    *   **Sessions 001...002:** These sessions were dedicated to drafting the core Work-In-Progress (WIP) files for the system's foundation.\
+    *   **Items Created:**\
+        *   *WIP 01:* Pre-Extraction Coherence Scan [27].\
+        *   *WIP 02:* Extraction Process (Three-pass protocol) [29].\
+        *   *WIP 03:* Relationship Registry [29].\
+        *   *WIP 04:* Card Entry Process [29].\
+        *   *WIP 05:* Indexing & Maintenance [29].\
+        *   *WIP 06:* Storyboarding Guide [30].\
+        *   *WIP 07:* Provenance Files [30].\
+        *   *WIP 08:* ArgBlock Composition [30].\
+        *   *WIP 09:* ICR (Interim Concept Repository) [30].\
+\
+#### **Preparing for Phase 1**\
+Phase 1 of CLGYSING (\"Material Inventory & Methodology Development\") was prepared by establishing these 9 core WIPs in Sessions 001...002. This laid the \"Bottom-Up\" foundation (Extraction/Repository) [31], which was necessary before moving to the \"Bridge\" layer (ArgBlocks/Terminology) in later sessions (007...008) [32], [33]. The NLMINTA branch was then launched to explore automating these very processes using NotebookLM.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

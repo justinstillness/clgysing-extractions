@@ -1,0 +1,78 @@
+================================================================================
+EXTRACTION: 2026-02-10_223415_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What does the SeraphRecorder JSONL log format look like? What fields are captured in each log entry? What data is available in the raw traffic logs for each Majeston query?
+Timestamp:       2026-02-10T22:34:15.000386+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: 537b67cf-1d80-467e-860f-e0d95a9811f5
+Chat Configure:  default
+Response Chars:  3267
+Duration:        27000ms
+================================================================================
+
+Based on the **SeraphRecorder Tool Reference** and session logs where the pipeline was built and validated, here are the details regarding the JSONL log format and raw traffic data.
+
+### 1. SeraphRecorder JSONL Log Format
+The structured logs are stored in **Stream 1** of the pipeline at `/home/ubuntu/mcp-logs/raw/YYYY-MM-DD.jsonl`.
+
+The format consists of **one JSON object per line**, representing a fully correlated request/response pair for a single tool call.
+
+**Example Entry Structure:**
+```json
+{
+  "timestamp": "2026-02-09T08:43:59.000274+00:00",
+  "tool": "notebook_query",
+  "request": {
+    "notebook_id": "78ccac4a-4c28-4902-b721-0f77e25e1d59",
+    "query": "[SERAPH: PROJECT=clgysing...] Query text here..."
+  },
+  "response": {
+    "status": "success",
+    "answer": "Full text of NotebookLM response...",
+    "conversation_id": "fefbb7a1-d599-4d5b-ad75-547f7c5dbe30",
+    "sources_used": []
+  },
+  "duration_ms": 190000,
+  "request_size_chars": 347,
+  "response_size_chars": 948,
+  "seraph_signal": { ... } 
+}
+```
+
+### 2. Fields Captured in Each Log Entry
+The extraction parser (`extract.py`) captures the following fields for every tool call (not just queries, but also `notebook_get`, `server_info`, etc.):
+
+*   **`timestamp`**: ISO 8601 timestamp of when the request was captured.
+*   **`tool`**: The name of the tool called (e.g., `notebook_query`, `notebook_get`).
+*   **`request`**: A nested object containing the full JSON payload sent to Majeston.
+    *   For queries, this includes the **full query text** (preserving SERAPH tags) and **notebook ID**.
+*   **`response`**: A nested object containing the parsed JSON result from NotebookLM.
+    *   Includes the **full answer text**, citations (`sources_used`), and threading info (`conversation_id`).
+*   **`duration_ms`**: The time in milliseconds between the request and the final response packet.
+*   **`request_size_chars`** & **`response_size_chars`**: The payload size in bytes/characters.
+*   **`seraph_signal`** *(Added in v5)*: If a SERAPH tag was detected, this field contains the parsed metadata (Project, Pass Type, SP, etc.) [1], [2].
+
+### 3. Data Available in Raw Traffic Logs
+The raw traffic logs are captured by **socat** acting as a transparent proxy and stored at `/home/ubuntu/mcp-logs/traffic/YYYY-MM-DD.log`. These logs capture the byte-level HTTP/TCP traffic before any parsing occurs.
+
+**Data captured includes:**
+*   **Directional Indicators:** `>` for Request (Client ... Server) and `<` for Response (Server ... Client).
+*   **Timestamps:** High-precision timestamps for every packet chunk.
+*   **HTTP Headers:** Full headers including `User-Agent` (e.g., `Claude-User`), `Accept` headers, and `mcp-session-id` used for protocol threading [3].
+*   **Full Payloads:**
+    *   **JSON-RPC:** The raw JSON-RPC 2.0 messages used by the MCP protocol.
+    *   **SSE (Server-Sent Events):** The raw event stream data (`event: message`, `data: ...`) used for Streamable HTTP responses.
+*   **Protocol Artifacts:** Chunked transfer encoding sizes (hex values like `4a0`) and keep-alive signals (`: ping`).
+
+This raw log serves as the "phone tap" archive, ensuring that even if the JSONL parser fails or filters something out, the original raw data is permanently preserved , .
+
+================================================================================
+END OF EXTRACTION
+================================================================================

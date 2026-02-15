@@ -1,0 +1,191 @@
+================================================================================
+EXTRACTION: 2026-02-13_001752_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           TPL-016 Cross-Branch Awareness Document template complete full text all sections fields
+Timestamp:       2026-02-13T00:17:52.000751+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 37fab438-4039-4526-a308-3d3c70f67577
+Chat Configure:  default
+Response Chars:  8516
+Duration:        27999ms
+================================================================================
+
+Based on the drafting sources, here is the complete full text for the **Cross-Branch Awareness Document** template (referred to as TPL-016 in your query context, though labeled TPL-0XX in the draft files).\
+\
+This template is designed to reside in **Project Knowledge** so it is accessible to all sessions (mainline and branch) without requiring explicit upload every time.\
+\
+***\
+\
+### **TPL-016: CROSS-BRANCH AWARENESS DOCUMENT**\
+\
+**Template ID:** GOV-AIPM-TPL-016\
+**Version:** 1.0\
+**Purpose:** Provides a shared reference for projects with multiple active branches. Ensures every session ... mainline or branch ... has awareness of parallel workstreams without requiring full context on each branch.\
+**When to Use:** When a project has two or more active branches. Create when the second branch is established; update at natural checkpoints throughout the project.\
+**Where to Store:** Project Knowledge (alongside Phase Protocol), so that every session has access without explicit upload.\
+**Cross-reference:** Section 12.3.7 (Cross-Branch Awareness Document), Section 12.3 (Branch Management)\
+\
+---\
+\
+### **INSTRUCTIONS**\
+\
+This document is a living reference maintained throughout a project's branching lifecycle. It is stored in Project Knowledge so that every AI instance ... mainline or branch ... can access it as part of the mandatory first action.\
+\
+**UPDATE TRIGGERS:**\
+- A new branch is created\
+- A branch completes, pauses, or is abandoned\
+- Inter-branch dependencies change\
+- An integration session occurs\
+- Significant scope changes in any branch\
+- Periodically during long-running parallel work (weekly recommended)\
+\
+**WRITING PRINCIPLES:**\
+- Keep entries concise ... this is an awareness tool, not a comprehensive record. 2-3 sentences per branch objective is sufficient.\
+- Focus on what other sessions need to know, not branch-internal details.\
+- Flag coordination needs prominently ... these are the items most likely to cause problems if missed.\
+\
+**FILE NAMING:**\
+`[PROJECT]_cross-branch-awareness.txt`\
+*Example: GOV-AIPM_cross-branch-awareness.txt*\
+\
+This is a single file per project, updated in place (not versioned per session like bootstraps or session logs).\
+\
+---\
+\
+### **CROSS-BRANCH AWARENESS DOCUMENT TEMPLATE**\
+\
+```text\
+================================================================================\
+CROSS-BRANCH AWARENESS DOCUMENT\
+================================================================================\
+\
+Project: [Project Name ... Project Code]\
+Last Updated: [Date ... Session ###]\
+Active Branches: [Count]\
+\
+================================================================================\
+ACTIVE BRANCHES REGISTER\
+================================================================================\
+\
+| Branch Handle | Full Name                 | Status   | Created    |\
+|---------------|---------------------------|----------|------------|\
+| [HANDLE]      | [Descriptive branch name] | Active   | Session ## |\
+| [HANDLE]      | [Descriptive branch name] | Active   | Session ## |\
+| [HANDLE]      | [Descriptive branch name] | Paused   | Session ## |\
+\
+Status values: Active / Paused / Integrating / Complete / Abandoned\
+\
+================================================================================\
+BRANCH OBJECTIVES\
+================================================================================\
+\
+[HANDLE]: [Branch Name]\
+--------------------------------------------------\
+Objective: [2-3 sentences: what this branch is working on and what it\
+will produce.]\
+Expected Deliverables: [List of key outputs]\
+Estimated Timeline: [Sessions remaining or target completion]\
+Notebook: [Branch adjunct notebook name and ID]\
+\
+[HANDLE]: [Branch Name]\
+--------------------------------------------------\
+Objective: [...]\
+Expected Deliverables: [...]\
+Estimated Timeline: [...]\
+Notebook: [...]\
+\
+[Repeat for each active branch]\
+\
+================================================================================\
+INTER-BRANCH DEPENDENCIES\
+================================================================================\
+\
+[List any dependencies between branches or between branches and the\
+mainline. If no dependencies exist, state \"No active inter-branch\
+dependencies.\"]\
+\
+| Dependency       | From          | To            | Status   |\
+|------------------|---------------|---------------|----------|\
+| [What is needed] | [Branch/Main] | [Branch/Main] | [Active/ |\
+|                  |               |               | Resolved |\
+|                  |               |               | Blocked] |\
+\
+Notes:\
+[Any additional context about dependencies ... timing constraints,\
+workarounds, escalation needs.]\
+\
+================================================================================\
+COORDINATION NEEDS\
+================================================================================\
+\
+[Specific items requiring cross-branch attention. These are action items\
+or awareness items that could cause problems if missed.]\
+\
+- [Coordination item ... e.g., \"SECRES evaluating encryption approach ...\
+  TOOLINT should not commit to TLS implementation until SECRES\
+  concludes.\"]\
+- [Coordination item]\
+- [If none: \"No active coordination needs.\"]\
+\
+================================================================================\
+RECENT UPDATES\
+================================================================================\
+\
+[Brief log of significant branch events since the last update. Most\
+recent first.]\
+\
+[Date ... Session ###]: [Event description ... e.g., \"SECRES branch\
+completed Phase 1. Findings F-14 through F-19 uploaded to main\
+notebook. Integration session planned for Session 042.\"]\
+\
+[Date ... Session ###]: [Event description]\
+\
+[Date ... Session ###]: [Event description]\
+\
+================================================================================\
+COMPLETED / ARCHIVED BRANCHES\
+================================================================================\
+\
+[Branches that have completed their work and been integrated, or that\
+have been abandoned. Maintained for project history.]\
+\
+| Branch Handle | Outcome                 | Integrated In | Date   |\
+|---------------|-------------------------|---------------|--------|\
+| [HANDLE]      | [Completed / Abandoned] | Session ###   | [Date] |\
+\
+================================================================================\
+END OF CROSS-BRANCH AWARENESS DOCUMENT\
+================================================================================\
+```\
+\
+---\
+\
+### **TEMPLATE NOTES**\
+\
+**DESIGN RATIONALE:**\
+This template prioritizes scanability. A session AI should be able to read the document in under 30 seconds and understand: how many branches are active, what each is doing, and whether any coordination needs affect its own work.\
+\
+The document is deliberately lightweight. It does not duplicate branch session logs, bootstraps, or findings ... it provides awareness-level context with pointers to detailed records. The branch adjunct notebook IDs in each branch entry enable direct querying when deeper context is needed.\
+\
+**STORAGE IN PROJECT KNOWLEDGE:**\
+Storing this document in Project Knowledge (rather than requiring explicit upload each session) means every session automatically has access. The Phase Protocol's mandatory first action review naturally pairs with awareness document review for projects with active branches. The Bootstrap< 2026/02/13 00:18:20.000051337  length=1081 from=16885 to=17965
+ may include a reminder to check the awareness document, particularly for branch sessions that have been paused and are resuming.\
+\
+**SINGLE FILE, UPDATED IN PLACE:**\
+Unlike session-specific artifacts (logs, bootstraps), the Cross-Branch Awareness Document is a single file updated in place. This ensures there is always exactly one current version. Old versions are not preserved separately ... the \"Recent Updates\" log provides a change history within the document itself.\
+\
+**RELATIONSHIP TO OTHER TEMPLATES:**\
+- **Branch Startup File:** When a Startup File is generated, the awareness document should be updated to register the new branch.\
+- **Bootstrap (TPL-002):** Mainline bootstraps should note active branches and reference the awareness document.\
+- **Session Log (TPL-005):** Integration sessions should log awareness document updates in the files produced section [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

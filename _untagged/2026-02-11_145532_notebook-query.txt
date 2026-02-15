@@ -1,0 +1,98 @@
+================================================================================
+EXTRACTION: 2026-02-11_145532_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Section 6 External Organization System. What does Section 6 currently cover? Show me the full structure and content, especially any folder structure guidance, file organization, or storage system guidance.
+Timestamp:       2026-02-11T14:55:32.000201+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 22980338-568b-4f78-be2a-659de54146d2
+Chat Configure:  default
+Response Chars:  4593
+Duration:        41000ms
+================================================================================
+
+Based on the provided `GOV-AIPM_Complete_Manual_v1_0_7-DRAFT.txt` source, **Section 6: External Organization System** establishes the infrastructure for \"external memory\"...ensuring that files, folders, and storage enable durable work that survives the ephemeral nature of AI chat sessions.\
+\
+Here is the full structure and content of Section 6 as currently documented:\
+\
+### **6.1 Naming Conventions**\
+Consistency in naming is treated as infrastructure, enabling retrieval and automation [1].\
+\
+*   **6.1.1 Chat Naming:**\
+    *   **Format:** `[###] [DEPT]-[PROJ]-[TYPE] ([notes])`\
+    *   **Components:**\
+        *   `[###]`: Sequence number (e.g., 001, 002).\
+        *   `[DEPT]`: Department code.\
+        *   `[PROJ]`: Project code.\
+        *   `[TYPE]`: Indicator (RD=Research, EX=Execution, RV=Review, BR=Branch).\
+        *   `([notes])`: Brief description.\
+    *   **Example:** `002 GOV-AIPM-EX (template dev)` [1].\
+\
+*   **6.1.2 File Naming:**\
+    *   **Format:** `[PROJ]_[Artifact]_[Identifier].[ext]`\
+    *   **Examples:** `GOV-AIPM_Bootstrap_Phase2.txt`, `GOV-AIPM_Session_Log_002.txt`.\
+    *   **Template Files:** `[PROJ]-TPL-[###]_[Name].[ext]` [2].\
+\
+*   **6.1.3 Version Indicators:**\
+    *   **Rules:** Never overwrite without version increment; archive superseded versions.\
+    *   **Formats:** `v1.0` (formal), `Draft_v1` (iterative), `_001` (sequential artifacts) [3].\
+\
+### **6.2 Folder Structure**\
+The system mandates two parallel organizational approaches: **Chat-Based** (for context reconstruction) and **Functional** (for quick access) [4].\
+\
+*   **6.2.1 Chat-Based Organization:**\
+    *   **Purpose:** Complete record of each session, audit trail, and source context.\
+    *   **Structure:**\
+        *   `/Projects/[PROJECT_CODE]/Chats/`\
+        *   `/001 [Chat Name]/`\
+            *   Includes all files produced in that session.\
+            *   Includes bootstrap created in that session.\
+            *   Includes session log entry.\
+            *   Includes chat transcript export (recommended as `.md`) [4-6].\
+\
+*   **6.2.2 Functional Organization:**\
+    *   **Purpose:** Quick access to specific artifact types and working views.\
+    *   **Structure:**\
+        *   `/Projects/[PROJECT_CODE]/`\
+        *   `/Guides` (Project Guide, etc.)\
+        *   `/Logs` (Decision Logs, Session Logs)\
+        *   `/Drafts`\
+        *   `/Deliverables`\
+        *   `/Templates` [7].\
+    *   **Rules:** Files are duplicated here from chat folders. Chat folders are the source of truth [8].\
+\
+*   **6.2.3 Archive Structure:**\
+    *   **Structure:** `/Archive/[YEAR]/[PROJECT_CODE]/` containing Final Deliverables, Project Record, and Reference.\
+    *   **Rules:** Archive selectively; dispose of transient working files unless retention is required [9].\
+\
+### **6.3 Duplication Discipline**\
+*   **6.3.1 Why Duplicate:** Chat folders preserve source context (answering \"what happened in session X?\"), while functional folders enable access (answering \"where is the current project guide?\") [10].\
+*   **6.3.2 Managing Duplication:**\
+    *   **Source of Truth:** Chat folders.\
+    *   **Derived Copies:** Functional folders.\
+    *   **Active Projects:** Maintain duplication actively; sync updates immediately to prevent version divergence [1< 2026/02/11 14:56:13.000502139  length=1332 from=8693 to=10024
+1].\
+\
+### **6.4 Cloud Storage Integration**\
+*   **6.4.1 Structure Alignment:** Cloud structure should mirror local structure to ensure seamless sync [12].\
+*   **6.4.2 Sync Considerations:** Use bidirectional sync but avoid simultaneous editing. For large projects, use selective sync to archive older materials [13].\
+*   **6.4.3 Backup Strategy:** Cloud storage is not backup. Follow the **3-2-1 rule**: three copies, two media types, one offsite [14].\
+\
+### **6.5 Retrieval Patterns**\
+*   **6.5.1 Common Retrieval Needs:** Maps specific questions to folders (e.g., \"Why did we decide Y?\" ... Decision Log in Functional Folder) [15].\
+*   **6.5.2 Optimizing for Retrieval:** Use descriptive names for searchability; maintain consistent structure across projects to reduce cognitive load [16].\
+\
+### **6.6 Organization Hygiene**\
+*   **6.6.1 Session-Level:** Ensure all files are saved to the chat folder and copied to functional folders at session end (built into TPL-003) [17].\
+*   **6.6.2 Weekly:** Verify folder synchronization and clear temporary files during the Weekly Review (TPL-006) [18].\
+*   **6.6.3 Project Transition:** Execute archive process and verify final deliverables upon project completion [18].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

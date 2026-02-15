@@ -1,0 +1,50 @@
+================================================================================
+EXTRACTION: 2026-02-11_183457_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Findings Reports F## indexing structured entry schema fields distinction from session logs decision logs topical organization queryability design artifact class
+Timestamp:       2026-02-11T18:34:57.000112+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: fc55d1b9-42de-4a9d-bafb-5ee5775f492a
+Chat Configure:  default
+Response Chars:  2691
+Duration:        30000ms
+================================================================================
+
+**Findings Reports** represent a new artifact class designed to capture empirical discoveries during research or exploration sessions. Unlike other project records that track activities or choices, Findings Reports are synthesis documents organized by **topic** to maximize queryability.
+
+Based on the provided sources, here are the detailed specifications for this artifact:
+
+### **Artifact Class and Indexing**
+*   **Artifact Class**: Formalized as a distinct class **FINDINGS** [1].
+*   **Indexing Convention (F##)**: Findings use a sequential indexing system formatted as **F##** (e.g., F-01, F-02). Crucially, this index **accumulates across the entire project** and does not reset between sessions, ensuring a unique identifier for every discovery [2], [3].
+
+### **Structured Entry Schema**
+Each finding follows a strict schema designed to separate observation from interpretation. The required fields are:
+*   **Finding ID**: The unique F## identifier [2].
+*   **Discovery**: A concise statement of the observation or insight [4].
+*   **Evidence**: Specific data points, test results, or source references that support the discovery [4].
+*   **Impact/Implication**: Analysis of how this finding affects the project pipeline, methodology, or thesis [4].
+*   **Status/Verdict**: The conclusion regarding the finding (e.g., Validates tool, Identifies gap, Requires further testing) [4].
+
+### **Distinction from Other Logs**
+The sources explicitly distinguish Findings Reports from other canonical artifacts based on their function:
+*   **Session Logs (LOG)**: These are **chronological** records of *what happened* (activities, outputs, events) during a specific work session [4].
+*   **Decision Logs (DECISION)**: These are records of **choices made** (D-###), documenting the rationale and alternatives considered [4].
+*   **Findings Reports (FINDINGS)**: These are syntheses of **discoveries made** (F-##).
+
+**Relationship**: There is a directional flow of information where **Findings provide the evidence** that subsequently **informs Decisions** [4].
+
+### **Topical Organization and Queryability**
+*   **Topical vs. Chronological**: While Session Logs allow you to find information based on *when* it happened, Findings Reports are organized by **topic** [2]. This structure prevents critical insights from being buried inside long chronological transcripts.
+*   **Queryability**: The artifact is explicitly designed to be **highly queryable via NotebookLM** [2]. By isolating discoveries into structured, uniquely indexed entries, the AI can retrieve specific empirical evidence (e.g., "Show me all findings related to token exhaustion") without parsing unrelated session chatter.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,80 @@
+================================================================================
+EXTRACTION: 2026-02-11_225540_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Revision findings Category 7 user behaviors project handle naming new chat notepad session naming file organization post-session housekeeping pre-session housekeeping prompting discipline NotebookLM maintenance
+Timestamp:       2026-02-11T22:55:40.000683+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 52512ef1-9c58-49bf-a0a3-ea7ad41f63f5
+Chat Configure:  default
+Response Chars:  4464
+Duration:        34999ms
+================================================================================
+
+Based on the **Revision Findings & Plan** document (Session 032), **Category 7: User Behaviors & User Guide** addresses the \"missing 10%\" of the AIPM system...the critical user-side actions required for the system to function effectively [1].\
+\
+Here are the specific findings for each behavior you requested:\
+\
+### 1. Project Handle Naming\
+*   **Definition:** A short, consistent tag (3...10 characters) used to identify the project across all contexts [2].\
+*   **Usage:** It must be used in all naming conventions for files, sessions, and folders [2].\
+*   **Examples:** `GOV-AIPM`, `CLGYSING`, `AWSNBLM` [2].\
+\
+### 2. New Chat Notepad System\
+*   **Mechanism:** Maintain an external notepad (e.g., Google Keep) to prepare session start prompts before opening the AI interface [2].\
+*   **Contents:**\
+    *   **Chat Name Field:** Pre-formatted and ready to copy-paste [2].\
+    *   **Standard Opening Line:** E.g., \"Please review and let me know if you have any questions\" [2].\
+    *   **Context References:** NotebookLM IDs and descriptions [3].\
+    *   **Behavioral Reminders:** Explicit instructions for things the AI tends to forget (e.g., specific formatting or narration protocols) [3].\
+    *   **Between-Session Notes:** Any context updates or ideas that occurred since the last session [3].\
+\
+### 3. Session Naming\
+*   **Convention:** `[session#] [PROJECT-HANDLE] ([semantic descriptor])` [3].\
+*   **Examples:** `001 CLGYSING (Rooting and Project Architecture)` or `023 AWSNBLM (File Fix and Index Alpha)` [3].\
+*   **Critical User Action:** The user **must** manually rename the chat in the Claude UI to match this convention, replacing the default AI-generated name [3].\
+\
+### 4. File Organization\
+The findings propose a standardized project folder structure [4]:\
+*   `/[Project Name]/`\
+    *   `/Chats/` (Each session gets its own folder containing the bootstrap, session log, transcript, and artifacts)\
+    *   `/Decision Logs/`\
+    *   `/Artifacts/` (Organized by phase, type, or function)\
+    *   `/Guides/` (Project guides and reference docs)\
+    *   `/Phase Protocols/` (Current protocol at top level; `/Old/` subfolder for superseded versions) [4].\
+\
+### 5. Post-Session Housekeeping\
+A mandatory sequence to perform immediately after a session ends [5]:\
+1.  **Download Artifacts:** Use the \"show all artifacts\" button and place them in the session folder [5].\
+2.  **Verify Bootstrap:** Check that the session number incremented correctly (sometimes jumps by 2) and the branch handle is correct [5].\
+3.  **Update Notepad:** Copy the *next* session's name from the bootstrap into your New Chat Notepad [5].\
+4.  **Download Transcript:** Export via tool (e.g., Claude Exporter) and save to the session folder [5].\
+5.  **Upload to NotebookLM:** Upload the transcript and any non-ephemeral artifacts (specs, reports) to the project notebook [6].\
+\
+### 6. Pre-Session Housekeeping\
+The preparation workflow before initiating a new chat [6]:\
+1.  **Update Notepad:** Ensure the New Chat Notepad has the correct chat name, notebook references, and behavioral reminders [6].\
+2.  **Start Chat:** Open a new chat with the **Phase Protocol** loaded in Project Knowledge [6].\
+3.  **Paste & Attach:** Paste the notepad content and attach the Bootstrap + Session Log from the previous session [7].\
+4.  **Rename:** Once the response loads, paste the chat name from your clipboard to rename the sessi< 2026/02/11 22:56:15.000529152  length=1070 from=8693 to=9762
+on UI [7].\
+\
+### 7. Prompting Discipline\
+*   **Composition:** Compose complex responses in an external notepad first to prevent accidental sends [7].\
+*   **Input Formula:** When providing direction on decisions, use the formula: `[State your thinking] + [Provide direction] + \"Let me know if you think there's a better way or if my thinking is incorrect\"` [7].\
+    *   *Rationale:* You must explicitly invite the AI to disagree; otherwise, it defaults to compliance [8].\
+\
+### 8. NotebookLM Maintenance\
+*   **Routine:** Upload transcripts and non-ephemeral artifacts between sessions to maintain the \"deep context recovery layer\" [8].\
+*   **Direction:** When the AI needs context not in the loaded files, explicitly direct it: \"The information you're looking for is likely in the NotebookLM notebook. Please begin targeted queries...\" [8].\
+*   **Process:** Encourage \"exhaustive querying\" (query ... summarize ... ask gap questions ... repeat) [9].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

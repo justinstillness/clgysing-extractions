@@ -1,0 +1,74 @@
+================================================================================
+EXTRACTION: 2026-02-11_011229_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           List EVERY single transaction from the DCU 2 account. For each transaction show the date, exact amount, and full merchant/vendor description exactly as it appears. Do not summarize, do not group, do not skip any transactions. List them all individually in chronological order. Include deposits, withdrawals, fees, everything.
+Timestamp:       2026-02-11T01:12:29.000135+00:00
+Notebook ID:     e71c3c3d-ec8f-4a75-a5cc-2d8b33c08150
+Source IDs:      c82c6100-887b-4078-a18b-b8cb00cf169e, cbc62ecb-01b0-4c54-9a19-1c4499da5c48
+Conversation ID: d3b9b42f-22de-4a84-9b97-02e3ba8ac494
+Chat Configure:  default
+Response Chars:  4760
+Duration:        4878000ms
+================================================================================
+
+Based on the architecture specifications, session logs, and planning documents provided, here are the wishlist items, W-numbers, and development backlog items for the Havona Anvil Suite (HA Suite).\
+\
+### **1. Formal Wishlist Items (W-Numbers)**\
+The project maintains a formal \"SeraphRecorder Wishlist\" (v1.0), and several W-numbered items are referenced throughout the logs and specifications:\
+\
+*   **W-001: GitHub File Routing Tool**\
+    *   **Description:** Logic to organize files within the repository. Once Chronicler can move files, this logic (likely a protocol or script) will read extractions from `_untagged/` and route them into `project/phase/pass-type/` structures [1], [2].\
+*   **W-002: GitHub Repo Interaction Tool (Chronicler)**\
+    *   **Status:** **Completed** (Deployed in Session 017). This became the \"Chronicler\" MCP tool [1], [2].\
+*   **W-003: Notebook Source Addition from GitHub**\
+    *   **Description:** Closing the loop between Chronicler and Majeston. The ability to read organized files from the GitHub repository and programmatically add them as sources to NotebookLM notebooks [3], [2], [4].\
+*   **W-004: Extraction Tagging System**\
+    *   **Description:** A system for Claude to read extraction file headers, update metadata fields (like Source Package or Pass Type), and rename files accordingly. This depends on W-002 [3], [2].\
+*   **W-005: Auto-Extraction Automation**\
+    *   **Description:** Replacing the manual extraction trigger with a cron job or file watcher that runs `extract.py` and `push-to-github.sh` automatically after traffic stops [5], [4].\
+*   **W-006: AIPM Repo Integration**\
+    *   **Description:** Evaluating the use of Chronicler to write session artifacts (logs, bootstraps, decision logs) directly to a GitHub repository to reduce manual file management [6], [4].\
+*   **W-007 ... W-009: Automation Integration**\
+    *   **Description:** Future layers involving n8n integration and broader automation workflows [3].\
+*   **W-013: Extract.py Date Fallback**\
+    *   **Description:** Enhancing the extraction script to handle date fallback logic more robustly [7].\
+\
+### **2. Development Backlog & Deferred Items**\
+These are specific technical tasks identified during build sessions but deferred to keep the main pipeline moving.\
+\
+**Infrastructure & Maintenance**\
+*   **Shell MCP Connector:** A proposed 5th tool that would expose EC2 shell access as an MCP connector, allowing Claude to run commands and manage the filesystem without SSH/Termius [8], [4].\
+*   **File Browser Web App Fix:** A lightweight web interface (`justinstillness.com/files/`) was deployed in Session 022 to allow batch downloading of files, but it currently has an authentication loop issue that needs debugging [9], [10].\
+*   **GitHub PAT Rotation:** The Personal Access Token used by Caliper and Chronicler needs rotation (deferred since Session 011) [4].\
+*   **Concept Counter Reset:** The `concept-counter.json` file currently holds test data (e.g., \"SP03-VX\": 8) and needs to be reset to 0 before production use [4].\
+\
+**SeraphRecorder Pipeline**\
+*   **JSONL Archival (D-019):** Modifyi< 2026/02/11 02:33:47.000242563  length=1644 from=10159 to=11802
+ng `push-to-github.sh` to push raw JSONL logs to a `/raw/YYYY-MM/` directory on GitHub for permanent auditing [11], [4].\
+*   **Socat Artifact Stripping (D-024):** A fix for `extract.py` to regex-strip stray socat chunk headers (e.g., `< 2026... length=...`) that occasionally appear in extracted text [12], [13].\
+*   **Historical Reprocessing:** Validating that the pipeline can reprocess historical logs cleanly [4].\
+\
+**Chronicler Enhancements**\
+*   **Batch Operations:** A `batch_move` or `batch_organize` tool to execute multiple file operations in a single commit [14].\
+*   **Search Functionality:** A `search_files` tool utilizing GitHub's code search API to find specific concepts across the repository [15].\
+*   **Metadata Index:** A tool to build an index file (`metadata-index.json`) for quick lookups without reading every file [15].\
+\
+### **3. Future Tool Concepts (LibForge Ecosystem)**\
+The project documentation outlines conceptual tools named according to the \"Craft/Urantia\" convention that may be built in the future:\
+\
+*   **Flux:** A data cleaning/preprocessing tool to strip \"fluff\" from raw materials [16].\
+*   **Anvil:** A prose generation and drafting engine [17].\
+*   **Crucible:** A synthesis tool for melting down raw materials into unified outputs [18].\
+*   **Drawplate:** A compression tool for progressive refinement of content [19].\
+*   **Universe Censors:** A fact-checking and validation tool [20].\
+*   **Bellows:** A performance booster or parallelization tool for batch operations [21].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

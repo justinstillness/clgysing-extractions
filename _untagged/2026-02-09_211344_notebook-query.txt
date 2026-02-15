@@ -1,0 +1,117 @@
+================================================================================
+EXTRACTION: 2026-02-09_211344_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Describe the socat wrapper in detail: how mcp-wrapper.py works, the systemd service configuration for notebooklm-mcp that includes socat, the exact command used, how traffic logging works, how daily-rotate.sh operates, and what push-to-github.sh does. Include file paths, service configurations, and the cron setup.
+Timestamp:       2026-02-09T21:13:44.000962+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: fbe24202-8395-45aa-857c-e82ebb0bddb5
+Chat Configure:  default
+Response Chars:  5466
+Duration:        39999ms
+================================================================================
+
+Based on the build logs from Sessions 013 and 014, and the resulting specification documents, here is the detailed description of the socat wrapper system (part of the \"SeraphRecorder\" pipeline).\
+\
+### 1. The Wrapper Script (`mcp-wrapper.py`)\
+\
+This script serves as a process manager. It does not process HTTP traffic itself; instead, it launches two subprocesses to create a transparent proxy pipeline.\
+\
+*   **File Path:** `/home/ubuntu/mcp-logger/mcp-wrapper.py`\
+*   **How it works:**\
+    1.  **Starts Majeston (NotebookLM MCP):** It launches the actual MCP server on internal port **8100** (moved from the standard 8000).\
+    2.  **Starts socat:** It launches `socat` on port **8000** to listen for incoming traffic from Caddy.\
+    3.  **Captures Logs:** It captures the `stderr` output from socat (where the `-v` flag sends traffic data) and writes it to a daily log file.\
+    4.  **Signal Handling:** If the wrapper receives a stop signal (SIGTERM/SIGINT), it terminates both the socat and Majeston subprocesses.\
+\
+### 2. The Traffic Capture (`socat`)\
+\
+The core of the capture system is `socat`, a command-line utility that establishes two bidirectional byte streams. It resolves the issues previous Python proxy attempts faced with concurrent connections and the \"Streamable HTTP\" protocol (SSE) used by MCP.\
+\
+*   **The Exact Command:** The wrapper executes the following (via Python `subprocess.Popen`):\
+    ```bash\
+    socat -v TCP-LISTEN:8000,fork,reuseaddr TCP:127.0.0.1:8100\
+    ```\
+*   **Breakdown:**\
+    *   `-v`: Verbose mode. Prints the transferred data to `stderr` using `>` for incoming (client to server) and `<` for outgoing (server to client) traffic.\
+    *   `TCP-LISTEN:8000`: Listens on port 8000 (where Caddy sends traffic).\
+    *   `fork`: Handles multiple concurrent connections (crucial for MCP's SSE streams).\
+    *   `reuseaddr`: Allows immediate restart of the listener without waiting for socket timeouts.\
+    *   `TCP:127.0.0.1:8100`: Forwards all traffic to the actual Majeston server running on port 8100.\
+*   **Traffic Logging:** The wrapper writes the `-v` output to `/home/ubuntu/mcp-logs/traffic/YYYY-MM-DD.log`. This raw log contains headers, JSON bodies, and SSE event streams [Session 013].\
+\
+### 3. Systemd Service Configuration\
+\
+To implement this, the existing systemd service was modified to launch the wrapper instead of the MCP binary di< 2026/02/09 21:14:24.000376946  length=3093 from=8693 to=11785
+rectly.\
+\
+*   **File Path:** `/etc/systemd/system/notebooklm-mcp.service`\
+*   **Configuration:**\
+    ```ini\
+    [Unit]\
+    Description=NotebookLM MCP Server (jacob-bd) with Traffic Logger\
+    After=network.target\
+\
+    [Service]\
+    Type=simple\
+    User=ubuntu\
+    Environment=HOME=/home/ubuntu\
+    # ORIGINAL ExecStart commented out for rollback\
+    # ExecStart=/home/ubuntu/.local/bin/notebooklm-mcp --transport http --port 8000\
+    \
+    # New ExecStart points to the Python wrapper\
+    ExecStart=/usr/bin/python3 /home/ubuntu/mcp-logger/mcp-wrapper.py\
+    \
+    Restart=always\
+    RestartSec=10\
+    StandardOutput=journal\
+    StandardError=journal\
+    MemoryMax=512M\
+    CPUQuota=80%\
+\
+    [Install]\
+    WantedBy=multi-user.target\
+    ```\
+*   **Recovery:** The service is set to `Restart=always`. This ensures that if the wrapper crashes or the instance reboots, the entire pipeline (wrapper + socat + Majeston) automatically recovers [Session 013].\
+\
+### 4. Daily Rotation (`daily-rotate.sh`)\
+\
+Because `socat` holds the log file handle open indefinitely, the filename (based on the start date) does not update automatically at midnight. This script forces rotation and processes the data.\
+\
+*   **File Path:** `/home/ubuntu/mcp-logger/daily-rotate.sh`\
+*   **Operation Sequence:**\
+    1.  **Extract:** Runs `python3 extract.py` (which processes the current log file). This parses the raw socat logs into structured JSONL (Stream 1) and clean text files (Stream 2) in the `_untagged/` directory.\
+    2.  **Push:** Runs `bash push-to-github.sh` to sync the extracted text files to the GitHub repository.\
+    3.  **Restart:** Executes `sudo systemctl restart notebooklm-mcp`. **This is critical:** restarting the service kills the `socat` process and starts a new one, which forces the creation of a *new* log file with the current date [Session 014].\
+\
+### 5. GitHub Push Script (`push-to-github.sh`)\
+\
+This component handles the synchronization of extracted files to the private repository (`clgysing-extractions`).\
+\
+*   **File Path:** `/home/ubuntu/mcp-logger/push-to-github.sh`\
+*   **Operation Sequence:**\
+    1.  Checks if the repository exists locally.\
+    2.  Uses `rsync` to copy extracted text files from `/home/ubuntu/mcp-logs/extracted/` to the local git repo folder.\
+    3.  Performs a `git pull --rebase` to ensure any changes made by the \"Chronicler\" tool (running in parallel) do not cause merge conflicts.\
+    4.  Commits the new files and pushes them to `origin main` [Session 014].\
+\
+### 6. The Cron Setup\
+\
+The automation is driven by a standard cron job that executes the rotation script.\
+\
+*   **Command:** `crontab -l`\
+*   **Schedule:**\
+    ```bash\
+    0 0 * * * /home/ubuntu/mcp-logger/daily-rotate.sh >> /home/ubuntu/mcp-logs/rotate.log 2>&1\
+    ```\
+*   **Timing:** Runs every day at midnight UTC. This ensures that logs are rotated daily and data is pushed to GitHub every 24 hours automatically [Session 014].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,329 @@
+================================================================================
+EXTRACTION: 2026-02-12_212148_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Assembly Blueprint Volume 6 Sections 15 16 17 Appendices templates scope complexity draft files integration points
+Timestamp:       2026-02-12T21:21:48.000753+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: 511c319c-04ee-4ff6-bc35-12a2d44073bd
+Chat Configure:  default
+Response Chars:  13314
+Duration:        59999ms
+================================================================================
+
+Based on the **Assembly Blueprint** and provided source drafts, here is **Volume 6** of **GOV-AIPM v1.0.8-DRAFT**.\
+\
+This volume contains **Part VI (Mail & External Communications)**, **Section 17 (Reference)**, and the complete **Appendices**, including the full suite of revised and new templates established in the Drafting Plan.\
+\
+***\
+\
+# GOV-AIPM v1.0.8-DRAFT\
+## Volume 6: Communications, Reference, & Appendices (Sections 15-17 + Apps)\
+\
+**Assembled:** Session 043\
+**Date:** February 12, 2026\
+**Status:** Phase 6c ... Integration\
+\
+---\
+\
+### VOLUME 6 TABLE OF CONTENTS\
+\
+**PART VI: MAIL & EXTERNAL COMMUNICATIONS**\
+*   **Section 15: Email Integration**\
+    *   15.1 Email-to-AI Workflow\
+    *   15.2 AI-to-Email Workflow\
+*   **Section 16: External Communications**\
+    *   16.1 Client Communications\
+    *   16.2 Stakeholder Communications\
+\
+**SECTION 17: REFERENCE**\
+*   **17.1 Quick Reference Guide** [UPDATED]\
+*   **17.2 Glossary** [UPDATED]\
+*   **17.3 Index** [Pending Final Pagination]\
+\
+**APPENDICES**\
+*   **Appendix A: Template Reference** [UPDATED]\
+    *   *Core Templates (Revised):* TPL-001, TPL-002, TPL-003, TPL-005\
+    *   *New Templates:* TPL-012 to TPL-017\
+    *   *Existing Templates:* TPL-004, 006-011, 022-023\
+*   **Appendix B: Prompt Reference**\
+*   **Appendix C: Tool Configuration Guide**\
+*   **Appendix D: Troubleshooting Guide**\
+*   **Appendix E: Version History** [UPDATED]\
+*   **Appendix F: Dialog Intake Failure Mode Catalog**\
+*   **Appendix G: Artifact Taxonomy Reference** [UPDATED]\
+*   **Appendix H: Quick Start Guide** [UPDATED]\
+\
+---\
+\
+### PART VI: MAIL & EXTERNAL COMMUNICATIONS\
+\
+*(No changes from v1.0.7 baseline)*\
+\
+#### SECTION 15: EMAIL INTEGRATION\
+\
+**15.1 Email-to-AI Workflow**\
+Email content frequently requires AI processing: summarization, response drafting, information extraction, or action item identification. This subsection addresses patterns for bringing email content into AI workflows [1, 2].\
+\
+*   **Ingestion:** Use direct paste for individual emails or batch processing for threads. Strip headers unless relevant [3].\
+*   **Privacy:** Redact personal or confidential business data before processing [4].\
+*   **Tasks:** Summarization, response drafting, and information extraction are primary use cases [5].\
+\
+**15.2 AI-to-Email Workflow**\
+AI-generated email content requires careful handling before sending.\
+*   **Context:** Provide relationship context (e.g., \"new client,\" \"long-term partner\") to shape tone [6].\
+*   **Verification:** All AI-generated email content requires review for a< 2026/02/12 21:22:48.000244810  length=8192 from=16885 to=25076
+ccuracy, tone calibration, and commitment review [7].\
+*   **Failure Modes:** Watch for register mismatch (too formal/casual) and hollow politeness [8].\
+\
+#### SECTION 16: EXTERNAL COMMUNICATIONS\
+\
+**16.1 Client Communications**\
+Client communications include formal deliverables, progress reports, and meeting materials.\
+*   **Quality:** Consider Tier 2 verification (cross-AI validation) for significant deliverables [9].\
+*   **Approval:** AI should generate content; humans must approve and send. This gate is non-negotiable [10].\
+\
+**16.2 Stakeholder Communications**\
+Stakeholder communications address partners, investors, regulators, and the public.\
+*   **Risk:** Assume public record potential. Be precise about promises vs. aspirations [11].\
+*   **Consistency:** Messaging should align with public statements and prior positions [12].\
+\
+---\
+\
+### SECTION 17: REFERENCE\
+\
+#### 17.1 Quick Reference Guide\
+\
+*(Updated to reflect v1.0.8 protocols)*\
+\
+**SESSION START CHECKLIST**\
+*   [ ] **Root/Re-Orient:** Review Phase Protocol (mandatory first action) [13, 14].\
+*   [ ] **Context:** Acknowledge Bootstrap [13].\
+*   [ ] **Alignment Turn:** Generate and confirm Alignment Checklist [15, 16].\
+*   [ ] **Headroom:** Verify token capacity [17].\
+\
+**SESSION CLOSEOUT CHECKLIST**\
+*   [ ] **Trigger:** Wait for user \"Close out\" command [18].\
+*   [ ] **Assess:** Check loose ends (decisions, scope, artifacts) [18, 19].\
+*   [ ] **Generate:** Session Log (w/ SFR) + Bootstrap [18, 20].\
+*   [ ] **Cleanup:** Export transcript, upload to notebook [21].\
+\
+**VERIFICATION TIERS**\
+*   **Tier 1:** Self-check (accuracy, format) [22].\
+*   **Tier 2:** Cross-AI validation (for deliverables) [23].\
+*   **Tier 3:** Human expert review (critical/external) [24].\
+\
+#### 17.2 Glossary\
+\
+*(Expanded with v1.0.8 terminology)*\
+\
+**ALIGNMENT TURN**\
+The mandatory exchange at the start of a continuation session where the AI generates a checklist of scope, materials, and workflow for user verification before substantive work begins [25, 26].\
+\
+**BOOTSTRAP**\
+A handoff document generated at the end of each session capturing state, decisions, and next actions. It tells the next AI instance *where* the project left off [27, 28].\
+\
+**BRANCH STARTUP FILE**\
+A specialized context packet used to initialize a new branch workstream. It functions as a bootstrap for branch creation, containing inherited project context and mini-rooting questions [29, 30].\
+\
+**CEREMONY IS CONTINUITY**\
+The philosophy that formal artifact creation (logs, bootstraps, protocols) is not bureaucratic overhead but the essential mechanism that enables memory and continuity in AI-assisted work [31, 32].\
+\
+**CONNECTOR TRANSPARENCY PROTOCOL (CTP)**\
+The requirement that AI narrate all external tool interactions (notebook queries, file reads) in the chat transcript to ensure auditability and context recovery [33, 34].\
+\
+**FINDINGS REPORT**\
+A synthesis document that captures empirical discoveries organized by topic (F-##), distinct from chronological session logs or decision logs [35, 36].\
+\
+**HEADROOM OPPORTUNISM**\
+The strategic practice of utilizing remaining token capacity after primary objectives are met to complete secondary tasks without compromising closeout quality [37, 38].\
+\
+**HUSK VS. COCONUT**\
+The filtering principle used during phase transitions: *Husk* (ephemeral conversation, rejected options) is discarded; *Coconut* (decisions, validated findings, final outputs) is carried forward [39, 40].\
+\
+**INSIGHT CAPTURE PROTOCOL**\
+A mechanism for documenting out-of-scope ideas that arise during execution without disrupting the current session, feeding the Backlog Register [41, 42].\
+\
+**NOTEBOOK CONNECTIVITY**\
+The use of external retrieval tools (like NotebookLM) to provide deep context recovery by querying the accumulated project corpus [43, 44].\
+\
+**PHASE PROTOCOL**\
+A phase-stable governance document defining *how* the AI should behave during a specific project phase. It sits between the Project Guide and Bootstrap [45, 46].\
+\
+**RESPONSE INDEXING**\
+The practice of prefixing substantive AI responses with a sequential ID (e.g., `[47]`) to enable precise retrieval and referencing across session transcripts [48, 49].\
+\
+**ROOTING (PHASE 0)**\
+The formal initiation phase of a project dedicated to establishing the Project Guide and Base Phase Protocol before execution begins [50, 51].\
+\
+**SESSION FIDELITY REPORT (SFR)**\
+A structured assessment embedded in the Session Log that evaluates objective achievement, phase progress, and handoff readiness [52, 53].\
+\
+#### 17.3 Index\
+*(Pending final pagination)*\
+\
+---\
+\
+### APPENDIX A: TEMPLATE REFERENCE\
+\
+**Note:** TPL-001 through TPL-005 have been revised for v1.0.8. TPL-012 through TPL-017 are new.\
+\
+#### HIGH PRIORITY (Core Operations)\
+\
+**TPL-001: PROJECT INITIATION FORM (Revised v2.0)**\
+*Structures the Rooting (Phase 0) process.*\
+[See DRAFT_TPL-001_Revision.txt for full text] [54]\
+\
+**TPL-002: BOOTSTRAP TEMPLATE (Revised v2.0)**\
+*Standard structure for session transitions, including mandatory Phase Protocol review.*\
+[See DRAFT_TPL-002_Bootstrap-Template-Revised.txt for full text] [55]\
+\
+**TPL-003: SESSION CLOSEOUT CHECKLIST (Revised v2.0)**\
+*5-step protocol for ensuring clean session endings and artifact generation.*\
+[See DRAFT_TPL-003_Closeout-Checklist-Revised.txt for full text] [56]\
+\
+#### MEDIUM PRIORITY (Ongoing Management)\
+\
+**TPL-004: DECISION LOG ENTRY**\
+*(Unchanged from v1.0.7)* [57]\
+\
+**TPL-005: SESSION LOG (Revised v2.0)**\
+*Now includes Embedded Session Fidelity Report (SFR) and Response Index Register.*\
+[See DRAFT_TPL-005_Session-Log-Revised.txt for full text] [58]\
+\
+**TPL-006: WEEKLY REVIEW AGENDA**\
+*(Unchanged from v1.0.7)* [59]\
+\
+**TPL-010: PROJECT ROADMAP**\
+*(Unchanged from v1.0.7)* [60]\
+\
+**TPL-022: PROJECT CLOSURE REPORT**\
+*(Unchanged from v1.0.7)* [61]\
+\
+**TPL-023: BACKLOG REGISTER**\
+*(Unchanged from v1.0.7 ... see Section 5.9 for integration with Insight Capture)* [62]\
+\
+#### NEW TEMPLATES (v1.0.8 Additions)\
+\
+**TPL-012: PHASE PROTOCOL TEMPLATE**\
+*Structural framework for creating Phase Protocols during Rooting.*\
+[See DRAFT_Templates_Phase-Protocol.txt for full text] [63]\
+\
+**TPL-013: PHASE PROTOCOL ADDENDUM TEMPLATE**\
+*Format for creating targeted behavioral updates mid-phase.*\
+[See DRAFT_Templates_Phase-Protocol.txt for full text] [64]\
+\
+**TPL-014: ALIGNMENT CHECKLIST**\
+*Lightweight structure for the mandatory Session Initiation alignment turn.*\
+[See DRAFT_TPL-0XX_Alignment-Checklist.txt for full text] [16]\
+\
+**TPL-015: FINDINGS REPORT**\
+*Structured capture of empirical discoveries (F-##) organized by topic.*\
+[See DRAFT_TPL-0XX_Findings-Report.txt for full text] [65]\
+\
+**TPL-016: BRANCH STARTUP FILE**\
+*Context packet for initializing new branch workstreams with mini-rooting.*\
+[See DRAFT_TPL-0XX_Branch-Startup-File.txt for full text] [66]\
+\
+**TPL-017: CROSS-BRANCH AWARENESS DOCUMENT**\
+*Shared reference for projects with multiple active branches.*\
+[See DRAFT_TPL-0XX_Cross-Branch-Awareness.txt for full text] [67]\
+\
+#### LOWER PRIORITY & REFERENCE\
+\
+**TPL-007: RE-ENTRY CHECKLIST**\
+*(Unchanged from v1.0.7)* [68]\
+\
+**TPL-008: CROSS-AI VALIDATION PROTOCOL**\
+*(Unchanged from v1.0.7)* [69]\
+\
+**TPL-009: FAILURE RECOVERY WORKSHEET**\
+*(Unchanged from v1.0.7)* [70]\
+\
+**TPL-011: DIALOG INTAKE QUICK REFERENCE**\
+*(Unchanged from v1.0.7)* [71]\
+\
+---\
+\
+### APPENDIX E: VERSION HISTORY\
+\
+**VERSION: 1.0.8-DRAFT**\
+**DATE:** February 10, 2026\
+**TYPE:** Major Revision (Beta Test Integration)\
+\
+**SUMMARY:**\
+Comprehensive update integrating findings from field testing across CLGYSING, AWSNBLM, and NLMINTA projects. Formalizes the \"Phase Protocol\" governance layer, \"Rooting\" (Phase 0), and \"Notebook Connectivity\" for deep context recovery.\
+\
+**KEY CHANGES:**\
+*   **New Canonical Artifact:** Phase Protocol (Section 5.2) added as phase-stable governance document [72].\
+*   **Lifecycle Update:** Rooting formalization as Phase 0 [50].\
+*   **Session Architecture:** Added Alignment Turn [73], Response Indexing [48], and 5-step Closeout [18].\
+*   **Tool Integration:** Added < 2026/02/12 21:22:48.000252368  length=2500 from=25077 to=27576
+Connector Transparency Protocol (Section 4.4) for MCP tools [74].\
+*   **New Sections:** Findings Reports (5.6) [75], Branch Management (12.3) [29], Three-Tier Documentation (12.4) [76].\
+*   **Template Suite:** Major revision to TPL-002 (Bootstrap) and TPL-005 (Session Log); 6 new templates added.\
+\
+---\
+\
+### APPENDIX G: ARTIFACT TAXONOMY REFERENCE\
+\
+*(Updated to include v1.0.8 artifacts)*\
+\
+**G.2 THE TWELVE UNIVERSAL PROJECT FUNCTIONS**\
+*   **Function 1 (Definition):** Now supported by *Phase Protocol* (Behavioral definition) in addition to Project Guide [45].\
+*   **Function 2 (Context):** Now supported by *Notebook Connectivity* and *Response Indexing* [43, 48].\
+*   **Function 9 (Accumulation):** Supported by *Findings Reports* (Knowledge accumulation) and *Insight Capture* (Idea accumulation) [35, 41].\
+\
+**G.3 ARTIFACT-TO-FUNCTION MAPPING (UPDATED)**\
+\
+| Artifact | Function |\
+| :--- | :--- |\
+| **Phase Protocol (TPL-012)** | Governance, Context, Session Orchestration [45] |\
+| **Findings Report (TPL-015)** | Knowledge Accumulation, Decision Support [35] |\
+| **Branch Startup (TPL-016)** | Knowledge Transfer, Context Management [29] |\
+| **Cross-Branch Doc (TPL-017)** | Coordination, Context Management [77] |\
+\
+---\
+\
+### APPENDIX H: QUICK START GUIDE\
+\
+*(Updated for Rooting/Phase 0 Alignment)*\
+\
+**STARTING YOUR FIRST PROJECT (Updated Workflow)**\
+\
+**STEP 1: GATHER YOUR FILES**\
+You need the Manual and **TPL-001 Project Initiation Form**.\
+\
+**STEP 2: INITIATE ROOTING (PHASE 0)**\
+Start a new chat. Upload files. Say:\
+*\"I am starting a new project. Per Section 2.5.1, let's begin the Rooting process. Help me define the Project Guide and establish the Base Phase Protocol before we start execution.\"* [50]\
+\
+**STEP 3: COLLABORATIVE DESIGN**\
+Engage in dialog. The AI will help you define:\
+*   Objectives and Deliverables\
+*   Phase Structure (The Sine Wave Model) [78]\
+*   Behavioral requirements (for the Phase Protocol) [27]\
+\
+**STEP 4: OUTPUT GENERATION**\
+The AI will generate:\
+1.  **Project Guide** (What we are building)\
+2.  **Base Phase Protocol** (How we will work)\
+3.  **Bootstrap** (For the first execution session) [79]\
+\
+**STEP 5: EXECUTION**\
+Start a *new* chat for Session 001. Upload the Bootstrap.\
+*   The AI will review the Phase Protocol as its first action.\
+*   You are now in execution mode.\
+\
+---\
+**END OF VOLUME 6**
+
+================================================================================
+END OF EXTRACTION
+================================================================================

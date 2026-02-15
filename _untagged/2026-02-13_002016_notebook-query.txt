@@ -1,0 +1,333 @@
+================================================================================
+EXTRACTION: 2026-02-13_002016_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           TPL-009 Failure Recovery Worksheet template complete full text all fields sections instructions recovery steps
+Timestamp:       2026-02-13T00:20:16.000191+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: fb58f32b-af5c-4ae3-b6d0-fe476eb7f162
+Chat Configure:  default
+Response Chars:  17810
+Duration:        41000ms
+================================================================================
+
+The **TPL-009 Failure Recovery Worksheet** is designed to structure the response when operational failures (like decision churn, token collapse, or cognitive divergence) are identified.\
+\
+Based on the sources, here is the complete full text of the template.\
+\
+***\
+\
+# TPL-009: FAILURE RECOVERY WORKSHEET\
+\
+**Template ID:** GOV-AIPM-TPL-009\
+**Version:** 1.0\
+**Purpose:** Structured response when a failure case is identified; guides recovery and captures lessons learned\
+**When to Use:** When recognizing signs of a failure case from the AI Operations Manual Appendix A (or similar operational failure)\
+\
+---\
+\
+### INSTRUCTIONS\
+\
+Use this worksheet when you recognize that you've entered a failure case. The worksheet guides you through stopping, assessing, recovering, and learning from the failure.\
+\
+**Failure cases covered:**\
+1. No Logs ... Decision Churn\
+2. SOP Drift\
+3. Unchecked AI Assumptions\
+4. No Branching ... Token Collapse\
+5. Cognitive Fatigue\
+6. No Re-Entry Protocol ... Regression\
+7. Cognitive Divergence (AI not tracking user intent)\
+\
+**General Recovery Principle:**\
+STOP ... DOCUMENT current state ... STEP BACK to last known-good position ... PROCEED with explicit acknowledgment of what was lost or uncertain\
+\
+**Tips:**\
+- Don't continue working while completing this worksheet\
+- Be honest about severity...underestimating delays recovery\
+- The lessons learned section is not optional; failures should improve process\
+- Some context loss may be unrecoverable; acknowledge and move forward\
+\
+**DIALOG COMPLETION OPTION:**\
+This template can be completed through dialog with the AI. Say:\
+*\"Help me complete TPL-009\"* or *\"Walk me through Failure Recovery\"*\
+\
+---\
+\
+### FAILURE RECOVERY WORKSHEET\
+\
+**DATE/TIME IDENTIFIED:** \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+**PROJECT:** \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+**SESSION:** \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+**IDENTIFIED BY:** \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+---\
+\
+#### 1. FAILURE CASE IDENTIFICATION\
+\
+**FAILURE TYPE:**\
+\
+*   **[ ] NO LOGS ... DECISION CHURN**\
+    Re-debating settled issues; contradictory directions; no record of why decisions were made\
+*   **[ ] SOP DRIFT**\
+    Actual practice has diverged from documented procedures; doing things differently than specified\
+*   **[ ] UNCHECKED AI ASSUMPTIONS**\
+    AI output seems confident but feels \"off\"; contradicts known facts; accepted without verification\
+*   **[ ] NO BRANCHING ... TOKEN COLLAPSE**\
+    Context window exhausted; AI forgetting instructions; degradation of quality\
+*   **[ ] COGNITIVE FATIGUE**\
+    User making poor decisions due to tiredness; missing details; \"just get it done\" mentality\
+*   **[ ] NO RE-ENTRY PROTOCOL ... REGRESSION**\
+    Returning after absence without reading in; contradicting prior work; reinventing wheels\
+*   **[ ] COGNITIVE DIVERGENCE**\
+    AI and User operating on different logic paths; fundamental misunderstanding of intent\
+*   **[ ] OTHER:** \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+**RECOGNITION SIGNS OBSERVED**\
+\
+What signs indicated this failure case?\
+\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+When did signs first appear (in retrospect)?\
+\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+What triggered recognition of the failure?\
+\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+---\
+\
+#### 2. CURRENT STATE ASSESSMENT\
+\
+**WHAT'S AFFECTED:**\
+[ ] Current session only\
+[ ] Current project\
+[ ] Multiple projects\
+[ ] Established processes/procedures\
+[ ] Deliverables already produced\
+[ ] Decisions already made\
+\
+Specific impacts:\
+\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+**SEVERITY ASSESSMENT**\
+\
+*   **[ ] MINOR**\
+    Limited scope; Easy to correct; No downstream effects; Recovery time: < 1 hour\
+*   **[ ] MODERATE**\
+    Broader scope; Requires deliberate correction; Some downstream effects; Recovery time: 1-4 hours\
+*   **[ ] SEVERE**\
+    Extensive scope; Significant correction needed; Major downstream effects; Recovery time: 4+ hours or multiple sessions\
+\
+**URGENCY ASSESSMENT**\
+\
+*   **[ ] IMMEDIATE**\
+    Stop all work now; Cannot proceed without recovery; Active harm if continued\
+*   **[ ] SOON**\
+    Complete current atomic task; Address before next major work; Risk increases with delay\
+*   **[ ] SCHEDULED**\
+    Can be addressed in planned time; Document and schedule recovery; Monitor for escalation\
+\
+---\
+\
+#### 3. LAST KNOWN-GOOD POSITION\
+\
+What was the last point before this failure occurred?\
+\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\< 2026/02/13 00:20:57.000756746  length=8192 from=25077 to=33268
+\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+What artifacts exist from that point?\
+\
+| Artifact | Location | Status |\
+| :--- | :--- | :--- |\
+| | | |\
+| | | |\
+\
+*Status: Available / Partial / Missing*\
+\
+Can we roll back to the last known-good position?\
+[ ] Yes ... fully recoverable\
+[ ] Partially ... some work will be lost\
+[ ] No ... must reconstruct from available information\
+\
+What will be lost if we roll back?\
+\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+---\
+\
+#### 4. FAILURE-SPECIFIC RECOVERY PROTOCOL\
+\
+*Select the protocol matching your failure type:*\
+\
+**PROTOCOL A: NO LOGS ... DECISION CHURN**\
+*   [ ] **STOP** making new decisions\
+*   [ ] **Reconstruct decision history:** Review transcripts, check partial logs, interview memory. Document with [RECONSTRUCTED] tag.\
+*   [ ] **Create decision log going forward:** Use TPL-004.\
+*   [ ] **Accept unrecoverable history:** Document unknowns, make fresh decisions where needed.\
+\
+**PROTOCOL B: SOP DRIFT**\
+*   [ ] **STOP** current work\
+*   [ ] **Conduct SOP audit:** Compare documented procedure to actual practice.\
+*   [ ] **Decide resolution path:** Update SOP (practice is better), Retrain (procedure is better), or Hybrid.\
+*   [ ] **Document the decision:** Log rationale, update documents, communicate changes.\
+\
+**PROTOCOL C: UNCHECKED AI ASSUMPTIONS**\
+*   [ ] **PAUSE** accepting AI outputs\
+*   [ ] **Explicitly surface assumptions:** Ask AI \"What assumptions are you making?\". List verified vs. assumed.\
+*   [ ] **Cross-validate:** Use second AI source (Tier 2), check primary sources, query NotebookLM.\
+*   [ ] **Re-evaluate affected outputs:** Identify outputs based on unchecked assumptions and revise.\
+\
+**PROTOCOL D: NO BRANCHING ... TOKEN COLLAPSE**\
+*   [ ] **STOP** new drafting immediately\
+*   [ ] **Generate emergency bootstrap:** Capture current state NOW. Use TPL-002.\
+*   [ ] **Save all files immediately:** Download/export everything.\
+*   [ ] **Accept some context loss:** Document memories vs. uncertainties.\
+*   [ ] **Resume in fresh chat:** Tighter scope, provide bootstrap.\
+\
+**PROTOCOL E: COGNITIVE FATIGUE**\
+*   [ ] **STOP** decision-making immediately\
+*   [ ] **Take mandatory break:** Minimum 30 minutes, away from screen.\
+*   [ ] **Assess state after break:** Recovered? Capacity for rest of day?\
+*   [ ] **Review recent decisions:** Flag questionable decisions made while fatigued.\
+*   [ ] **Resume with fresh review:** Start next session with current state review.\
+\
+**PROTOCOL F: NO RE-ENTRY PROTOCOL ... REGRESSION**\
+*   [ ] **STOP** new work immediately\
+*   [ ] **Execute full re-entry protocol:** Use TPL-007. Do not skip steps.\
+*   [ ] **Audit work done since return:** Check for contradictions with earlier work.\
+*   [ ] **Reconcile contradictions:** Identify and resolve conflicts.\
+*   [ ] **Do not proceed until oriented:** Complete checklist, verify reorientation.\
+\
+**PROTOCOL G: COGNITIVE DIVERGENCE**\
+*   [ ] **STOP** current task immediately\
+*   [ ] **Document the divergence:** State intended logic vs. AI execution. Identify divergence point.\
+*   [ ] **Use QA-001 prompt (Cognitive Divergence Audit):** Request analysis of branch point.\
+*   [ ] **If QA-001 fails:** Fresh chat, different AI tool, or escalation.\
+*   [ ] **Prevent recurrence:** Add checkpoints, clarify instructions.\
+\
+---\
+\
+#### 5. RECOVERY STEPS TAKEN\
+\
+Document specific actions taken to recover:\
+\
+| Step | Action Taken | Outcome |\
+| :--- | :--- | :--- |\
+| 1 | | |\
+| 2 | | |\
+| 3 | | |\
+\
+**Overall recovery outcome:**\
+[ ] Fully recovered ... back to known-good state\
+[ ] Partially recovered ... some losses accepted\
+[ ] Stabilized ... bleeding stopped, full recovery ongoing\
+[ ] Ongoing ... recovery in progress\
+\
+What was unrecoverable?\
+\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+---\
+\
+#### 6. VERIFICATION\
+\
+How do you know recovery succeeded?\
+\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+**Verification checks performed:**\
+- [ ] Current state matches last known-good (where applicable)\
+- [ ] No ongoing symptoms of failure case\
+- [ ] Affected work has been addressed\
+- [ ] Documentation is current\
+- [ ] Process gaps have been closed\
+\
+---\
+\
+#### 7. LESSONS LEARNED\
+\
+**ROOT CAUSE:**\
+What caused this failure case to occur?\
+\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+Could it have been prevented? How?\
+\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+**PREVENTION MEASURES:**\
+What will prevent this failure case in the future?\
+\
+| Measure | Implementation | Owner | Timeline |\
+| :--- | :--- | :--- | :--- |\
+| | | | |\
+| | | | |\
+\
+**EARLY WARNING SIGNS:**\
+What signs should trigger earlier intervention next time?\
+1. \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+2. \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+---\
+\
+#### 8. UPDATES NEEDED\
+\
+Based on this failure and recovery:\
+\
+**PROCESS UPDATES:**\
+- [ ] Update to AI Operations Manual needed (Section/Change: \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_)\
+- [ ] Update to SOP needed (Section/Change: \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_)\
+- [ ] Update to Project Guide needed\
+\
+**TEMPLATE UPDATES:**\
+- [ ] Template update needed (Template/Change: \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_)\
+\
+**TRAINING/AWARENESS:**\
+- [ ] Training update needed\
+- [ ] Awareness communication needed\
+\
+---\
+\
+#### 9. RECOVERY COMPLETE\
+\
+- [ ] Recovery protocol executed\
+- [ ] Verification performed\
+- [ ] Lessons documented\
+- [ ] Prevention measures identified\
+- [ ] Updates scheduled\
+\
+**RECOVERY DURATION:** \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+**READY TO RESUME:** [ ] Yes [ ] No ... additional work needed\
+\
+**NEXT ACTIONS:**\
+1. \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+2. \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+\
+**WORKSHEET COMPLETED:** \\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\\\\_\
+*(Date/Time)*\
+\
+---\
+\
+### QUICK REFERENCE: FAILURE CASE RECOVERY\
+\
+| Failure Case | First Action | Key Recovery Step |\
+| :--- | :--- | :--- |\
+| **No Logs ... Decision Churn** | STOP deciding | Reconstruct history |\
+| **SOP Drift** | STOP work | Audit SOP vs. practice |\
+| **Unchecked AI Assumptions** | PAUSE accepting | Surface and validate |\
+| **Token Collapse** | STOP drafting | Emergency bootstrap |\
+| **Cognitive Fatigue** | STOP decisions | Mandatory 30min break |\
+| **No Re-Entry ... Regression** | STOP new work | Full re-entry protocol |\
+| **C< 2026/02/13 00:20:57.000785206  length=246 from=33269 to=33514
+ognitive Divergence** | STOP task | QA-001 audit prompt |\
+\
+**UNIVERSAL PRINCIPLE:**\
+STOP ... DOCUMENT ... STEP BACK ... PROCEED\
+\
+[1-13]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

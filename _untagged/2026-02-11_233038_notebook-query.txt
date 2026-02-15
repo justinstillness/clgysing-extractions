@@ -1,0 +1,57 @@
+================================================================================
+EXTRACTION: 2026-02-11_233038_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           Section 4.3.1 session initiation continuation sequence user actions bootstrap loading pre-session preparation new chat notepad
+Timestamp:       2026-02-11T23:30:38.000209+00:00
+Notebook ID:     c871b8f3-1006-489c-9222-5d0727e98077
+Source IDs:      all
+Conversation ID: b97e1b91-f82a-4585-9987-f9793740fa36
+Chat Configure:  default
+Response Chars:  3202
+Duration:        180999ms
+================================================================================
+
+Based on the session logs and decision records from Session 021, here are the implementation details for the three-tier documentation architecture and the Havona Anvil Suite.
+
+### **Overview: Session 021 Pivot and D-027**
+In **Session 021**, the project focus shifted from planned pipeline testing to infrastructure documentation and architecture [1, 2]. This session formalized the tool suite's identity and established a scalable documentation framework to solve the problem of scattered specifications [3].
+
+### **Decision D-027: Three-Tier Documentation Architecture**
+This decision implemented a standardized, hierarchical approach to documentation to prevent monolithic files and ensure clear update triggers [3].
+
+*   **Tier 1: Architecture Reference (System Level)**
+    *   **Scope:** High-level blueprints, system topology, design philosophy, and component interrelations.
+    *   **Update Trigger:** Only updated when the system topology or high-level design changes.
+    *   **Implementation:** The team created `v4.0_SPEC_HA-Suite-Architecture-Reference.txt` (approx. 22.5K chars), restructuring the outdated v3.1 spec to cover all four components and infrastructure [4].
+
+*   **Tier 2: Per-Tool References (Operational Level)**
+    *   **Scope:** Granular specifications for specific tools, components, and processes.
+    *   **Update Trigger:** Updated whenever a specific component changes.
+    *   **Implementation:** Distinct reference files were created for the core tools in the suite:
+        *   **SeraphRecorder:** `v1.0_REF_SeraphRecorder-Tool-Reference.txt` (Pipeline documentation and troubleshooting) [4].
+        *   **Caliper:** `v1.0_REF_Caliper-Tool-Reference.txt` (Document analysis tool reference) [4].
+        *   **Majeston:** `v1.0_REF_Majeston-Tool-Reference.txt` (NotebookLM MCP reference with tool inventory) [4].
+
+*   **Tier 3: CHANGELOG (Temporal Level)**
+    *   **Scope:** A running reverse-chronological log of changes, decisions, and progression.
+    *   **Update Trigger:** Updated every session to track evolution.
+    *   **Implementation:** `CHANGELOG.txt` was created and backfilled with data from Sessions 001 through 020 [4, 5].
+
+### **Decision D-026: Havona Anvil Suite (HA Suite)**
+The suite was formally named **Havona Anvil Suite** (HA Suite), replacing previous working names like "MCP Workshop Suite" or "NLMINTA" [6, 7].
+*   **Rationale:** The name bridges two domains...**Havona** (representing a central coordination hub/Urantia reference) and **Anvil** (representing a craft/forge workbench). This reflects the suite's dual nature as both an information coordination hub and a production workbench [8].
+
+### **Implementation Details**
+*   **Repository Structure:** A new `_docs/` directory was created in the GitHub repository to serve as the single source of truth for all documentation [4, 9, 10].
+*   **Volume:** The session produced approximately 83,000 characters of documentation across five files, all committed to the repo via the Chronicler tool [11].
+*   **Context:** The existing v3.1 Architecture Reference was identified as significantly outdated (missing SeraphRecorder and Chronicler), necessitating the v4.0 restructure [9].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

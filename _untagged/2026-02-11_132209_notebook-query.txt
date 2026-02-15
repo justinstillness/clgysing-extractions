@@ -1,0 +1,100 @@
+================================================================================
+EXTRACTION: 2026-02-11_132209_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           For each major concept in the sources, identify its PRIMARY domain and all SECONDARY domains it touches. Use these domain categories: Epistemology, Psychology, Social Systems, Theology/Spirituality, Ethics, Methodology, Politics, Economics, History, Pedagogy.\n\nFor each concept, provide:\n1. Concept name\n2. Primary domain (the single most fitting category)\n3. Secondary domains (all other domains this concept meaningfully touches)\n4. For each secondary domain, a brief explanation of WHY the concept crosses into that domain\n\nFocus on concepts where the cross-domain connections are substantive, not superficial. A concept that merely mentions history isn't cross-domain with History ... it needs to make a historical argument or use historical mechanics.
+Timestamp:       2026-02-11T13:22:09.000612+00:00
+Notebook ID:     1e03c6b6-247d-4ddd-801d-8e435ac291b9
+Source IDs:      all
+Conversation ID: 0cd46c09-7ef5-49ea-8da5-e6d1f1215592
+Chat Configure:  default
+Response Chars:  6655
+Duration:        36999ms
+================================================================================
+
+Based on the provided sources, here is the domain analysis for the major concepts.\
+\
+### 1. Omniology\
+*   **Primary Domain:** Epistemology\
+*   **Secondary Domains:** Theology/Spirituality, Social Systems, Methodology\
+*   **Why it touches Secondary Domains:**\
+    *   **Theology/Spirituality:** The concept is explicitly defined as an attempt to understand \"the nature of reality\" and \"the purpose of life,\" and frames the \"pursuit of truth\" as a spiritual imperative to find \"God (or the true nature thereof)\" [1-3].\
+    *   **Social Systems:** It is not merely abstract; it is applied directly to \"organizing civilization itself,\" running businesses, and managing family structures [1, 4].\
+    *   **Methodology:** It serves as the \"primary meta-framework\" and \"research organization\" system for the author's work, dictating how information is modeled and integrated [4, 5].\
+\
+### 2. The Parasitic Modality (Parasitic Systems)\
+*   **Primary Domain:** Social Systems\
+*   **Secondary Domains:** Epistemology, Economics, Theology/Spiritu< 2026/02/11 13:22:46.000350404  length=5638 from=8693 to=14330
+ality, Psychology\
+*   **Why it touches Secondary Domains:**\
+    *   **Epistemology:** The system is defined by \"epistemic closure\" and a reliance on \"extrinsic knowledge\" (rigid beliefs) rather than independent reasoning [2, 6].\
+    *   **Economics:** It functions as an extraction mechanism, turning human beings into \"engines of labor, innovation... and technology extraction\" to drain energy [2, 7].\
+    *   **Theology/Spirituality:** It is described as a \"counterfeit transcendence mechanism\" designed to prevent people from finding God or authentic purpose [2, 8].\
+    *   **Psychology:** It operates by hijacking the \"individual psyche\" and exploiting \"fear of exclusion\" to suppress the human drive for inquiry [2, 9].\
+\
+### 3. The Symbiotic Modality (Symbiotic Systems)\
+*   **Primary Domain:** Social Systems\
+*   **Secondary Domains:** Epistemology, Ethics, Psychology\
+*   **Why it touches Secondary Domains:**\
+    *   **Epistemology:** These systems are fundamentally \"truth-centered\" and require the \"intrinsic path\" of continual inquiry and openness to all information [10, 11].\
+    *   **Ethics:** The modality is defined by moral descriptors including \"honesty,\" \"freedom,\" and \"mutual benefit,\" relying on \"honorable contracts\" [10, 12].\
+    *   **Psychology:** It focuses on the \"full flourishing of human relationships\" and \"empowering individuals\" rather than controlling them through psychological pressure [10, 11].\
+\
+### 4. Cultology\
+*   **Primary Domain:** Social Systems\
+*   **Secondary Domains:** Politics, Psychology, History\
+*   **Why it touches Secondary Domains:**\
+    *   **Politics:** It analyzes \"power\" and \"global institutions,\" framing modern civilization as a \"macro-cult\" governing biological and political life [13, 14].\
+    *   **Psychology:** It serves as a \"unified field theory\" for analyzing \"relationships\" and \"belief systems,\" specifically looking at how the \"flow of truth\" is obstructed within the human mind [13, 15].\
+    *   **History:** It argues that the current state of civilization is the result of long-term \"globalist development projects\" that have reversed previous states of freedom (e.g., the West Virginia coal miners example) [16, 17].\
+\
+### 5. The Technocratic Plantation (Globalist Development Projects)\
+*   **Primary Domain:** History\
+*   **Secondary Domains:** Economics, Psychology, Politics\
+*   **Why it touches Secondary Domains:**\
+    *   **Economics:** The concept describes a \"modern industrial dependency\" where populations are enticed by \"modern conveniences\" and \"quality of life improvements\" in exchange for autonomy [16, 18].\
+    *   **Psychology:** It argues for a generational amnesia where descendants \"forget what freedom actually looked like\" and confuse dependency with progress [18, 19].\
+    *   **Politics:** It characterizes these projects as a \"control architecture\" designed by \"globalist\" elites to entrap humanity [16, 20].\
+\
+### 6. The Omniological Approach\
+*   **Primary Domain:** Methodology\
+*   **Secondary Domains:** Epistemology, Pedagogy\
+*   **Why it touches Secondary Domains:**\
+    *   **Epistemology:** It distinguishes between \"intrinsic knowledge\" (built by modeling) and \"extrinsic knowledge\" (authoritative statements), prioritizing the former as the only valid way to reason [21, 22].\
+    *   **Pedagogy:** It utilizes a \"spiral staircase\" approach to introduce concepts accessibly and deepen them recursively, ensuring the transmission of complex models to various learner levels [23, 24].\
+\
+### 7. Contractual Formalism\
+*   **Primary Domain:** Ethics\
+*   **Secondary Domains:** Social Systems, Epistemology\
+*   **Why it touches Secondary Domains:**\
+    *   **Social Systems:** It posits that *all* relationships (family, business, government) are fundamentally \"contracts\" that determine the health of the social order [12, 25].\
+    *   **Epistemology:** Contracts are described as \"epistemic,\" meaning they govern how truth and reality are shared or withheld between parties [12, 25].\
+\
+### 8. Ontology of Being\
+*   **Primary Domain:** Theology/Spirituality\
+*   **Secondary Domains:** Psychology\
+*   **Why it touches Secondary Domains:**\
+    *   **Psychology:** While the structure is metaphysical (Soul), it maps directly to psychological functions including \"Personality,\" \"Mind,\" and \"Emotion,\" describing how \"corruption cascades\" hijack the personality spark [26, 27].\
+\
+### 9. Agenda 47 Explained (Hypothesis)\
+*   **Primary Domain:** Politics\
+*   **Secondary Domains:** History, Social Systems\
+*   **Why it touches Secondary Domains:**\
+    *   **History:** It contextualizes a specific political presidency as a potential reversal of \"decades, if not centuries\" of historical trajectory [16, 28].\
+    *   **Social Systems:** It tests the hypothesis that a specific elite group is attempting a \"civilizational transformation\" from a parasitic system to a symbiotic one [29, 30].\
+\
+### 10. The Four Intimacies\
+*   **Primary Domain:** Psychology\
+*   **Secondary Domains:** Theology/Spirituality, Social Systems\
+*   **Why it touches Secondary Domains:**\
+    *   **Theology/Spirituality:** One of the four defined fields of interaction is explicitly \"Spiritual,\" alongside Physical, Emotional, and Intellectual [31, 32].\
+    *   **Social Systems:** It is used as a model to explain how cults corrupt value exchange, turning \"authentic connection\" into \"extrinsic dependency\" [31, 32].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

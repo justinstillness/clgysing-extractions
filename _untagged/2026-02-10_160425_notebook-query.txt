@@ -1,0 +1,36 @@
+================================================================================
+EXTRACTION: 2026-02-10_160425_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What are the NLMINTA S014 observations about the Indexer spec that should be incorporated into v0.2? What was recommended about the purpose field and combined pass guidance?
+Timestamp:       2026-02-10T16:04:25.000766+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: fa86f865-33c0-4171-96aa-ea0dc2838b7c
+Chat Configure:  default
+Response Chars:  1350
+Duration:        25999ms
+================================================================================
+
+Based on the briefing provided in Session 022 regarding observations from NLMINTA (specifically related to the Indexer specification), the following recommendations were made for the v0.2 update:
+
+**Purpose Field Recommendations (Observation 2)**
+It was recommended to add a **`purpose` field** to the manifest schema [1].
+*   **Rationale:** This addressed a "real gap" in distinguishing the intent behind specific queries and extractions [1].
+*   **Suggested Values:** The recommended values for this field include `testing`, `production`, `infrastructure`, or `exploratory` [1].
+
+**Combined Pass Guidance (Observation 5)**
+The briefing addressed how to classify extraction passes that combine multiple objectives (e.g., a query performing both concept and vocabulary extraction) [1].
+*   **Recommendation:** Do **not** create a dedicated "COMBINED" pass code, as this would "muddy the type-centric folder organization" [1].
+*   **Guidance:** The Indexer v0.2 spec should instruct users to classify these files by their **PRIMARY intent**, while noting the secondary intent in the manifest's `quality_notes` field [1].
+
+These items were formally noted as "Open Items Carrying Forward" at the close of Session 022, specifically listed as "Indexer v0.2 update ... incorporate NLMINTA briefing observations (purpose field, combined pass guidance)" [2].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

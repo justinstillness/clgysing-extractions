@@ -1,0 +1,94 @@
+================================================================================
+EXTRACTION: 2026-02-12_221920_notebook-query
+================================================================================
+Branch:          N/A
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     Untagged
+Routing:         Tier 3 (Untagged)
+Query:           What specific output fields and structures have been tested or proposed for each pass type? For TX concept packets, what fields were validated? For TS thesis strings, what fields? For RX relationship entries, what structure? For CE-CARD atomic argument cards, what fields and word count targets? Include any findings about what worked and what didn't.
+Timestamp:       2026-02-12T22:19:20.000024+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 2584354c-93c2-4250-aba1-07606eb85b12
+Chat Configure:  default
+Response Chars:  5627
+Duration:        42000ms
+================================================================================
+
+Based on the testing logs and specification documents, here are the specific output fields, structures, and findings for the four primary pass types.\
+\
+### 1. TX: Concept Packets (Thematic Extraction)\
+The **TX** pass (also referred to as **CE** in some contexts) focuses on extracting atomic concepts. The validated structure evolved significantly to prevent \"compression drift\" (the AI hallucinating details into definitions).\
+\
+**Validated Output Fields (v1.1 Hybrid Template):**\
+The most successful structure, validated in Session 011, uses three primary content fields to ensure fidelity:\
+*   **Concept Title:** A descriptive title (e.g., \"Parasitic Modality\") [1, 2].\
+*   **Original Quote (Source Trace):** A 100% verbatim quote from the source material. This serves as the \"provenance anchor\" [3, 4].\
+*   **Compressed Notation:** A concise definition derived *strictly* from the Original Quote [4, 5].\
+*   **Context Synthesis:** A field specifically added to capture connections, inferences, and broader context that exists outside the specific quote. *Finding:* Creating this field solved the \"compression drift\" issue where AIs were previously smuggling external context into the definition [6, 7].\
+*   **Related Concepts:** Cross-references to other extracted items [1].\
+*   **Category/Domain:** Domain tags (e.g., Epistemic Framework, Social Systems) [1, 8].\
+\
+**Findings (Worked vs. Didn't Work):**\
+*   **Worked:** The \"Pass Separation Principle.\" Running distinct TX passes for specific themes (e.g., \"Extract concepts regarding Epistemology\") yielded higher quality than generic extraction [9].\
+*   **Worked:** **JSON Output.** Using `chat_configure` to force JSON output produced 100% schema compliance and better structural separation, though it reduced the descriptive depth of definitions by approx. 40...50% compared to prose [10, 11].\
+*   **Did Not Work:** **Combined Passes.** Asking for Concepts, Vocabulary, and Thesis Strings in a single query reduced the yield per category by 29...56% and resulted in shallower definitions [12, 13].\
+\
+### 2. TS: Thesis Strings\
+The **TS** pass extracts argumentative architecture rather than descriptive topics.\
+\
+**Val< 2026/02/12 22:20:02.000770410  length=3462 from=10159 to=13620
+idated Output Fields:**\
+Testing in Session 010 established the following four fields as effective for NLM extraction [14, 15]:\
+*   **Thesis Statement:** A clear, declarative claim (not a topic description).\
+*   **Evidence/Reasoning:** The specific support cited in the text for that claim.\
+*   **Logical Relationships:** How this claim connects to others (e.g., \"Depends on Thesis 1,\" \"Contradicts standard narrative\").\
+*   **Strength Assessment:** An AI evaluation of the claim's support (e.g., \"Hypothesis with stated uncertainty,\" \"Well-supported\") [16].\
+\
+**Findings:**\
+*   **Worked:** NLM successfully distinguishes between a \"concept\" (descriptive) and a \"thesis\" (argumentative). The \"Strength\" field proved particularly useful for identifying where the source material relies on assertion rather than evidence [16].\
+*   **Findings:** Thesis extraction works best as a **Degree-One** pass (raw extraction), which then feeds into a \"Degree-Two\" harmonization process to build a thesis tree [17, 18].\
+\
+### 3. RX: Relationship Registry\
+The **RX** pass extracts typed connections between concepts to build a \"grammar\" of the system.\
+\
+**Proposed Structure (Atomic String):**\
+The specification defines a flat, atomic string format for machine parsability [19]:\
+`[REL-####] | [SOURCE-ID] | [TYPE] | [TARGET-ID]`\
+\
+**Vocabulary (8 Mandatory Types):**\
+The system uses a controlled vocabulary for the `[TYPE]` field [20]:\
+1.  ENABLES\
+2.  REQUIRES\
+3.  COMPOSES\
+4.  CONTRADICTS\
+5.  EXTENDS\
+6.  PARALLELS\
+7.  CAUSES\
+8.  PREVENTS\
+\
+**Findings (Worked vs. Didn't Work):**\
+*   **Worked:** NLM successfully extracted structured relationships using this syntax during Session 013 [21].\
+*   **Emergent Behavior:** When performing \"Gap Detection\" on relationships, NLM spontaneously expanded the vocabulary, suggesting types like **HIJACKS**, **INVERTS**, **TRANSFORMS**, and **OPERATES_VIA** [22]. This indicates the 8-type list may be too constrained for the specific source material (Cultology) [23].\
+\
+### 4. CE-CARD: Atomic Argument Cards\
+The **CE-CARD** pass extracts \"rhetorical moves\" (claims, refutations, evidence) meant for reconfiguration into argument blocks.\
+\
+**Specific Fields:**\
+*   **Card ID:** `[DDS-CoA: DOMAIN-####]` [24].\
+*   **Claim:** The discrete rhetorical move.\
+*   **Invoked Concepts:** List of concept IDs used in the card [25].\
+*   **Invoked Relationships:** List of REL IDs used.\
+*   **Counter-Concept Flag:** `[YES/NO]` (Flags intentional divergence from mainstream views) [25].\
+*   **Treatment Depth:** `[FULL / STANDARD / GIVEN]` (Determines how much explanation is needed) [25].\
+\
+**Word Count Targets & Findings:**\
+*   **Target:** The specification calls for **25...75 words** (target 40...60) to ensure \"atomic\" reusability [26].\
+*   **Did Not Work (Strict Adherence):** In testing (Session 013), NLM struggled to hit this target. Initial queries produced cards of **60...90 words**. Even with tighter prompting (\"write as it would appear in an essay\"), outputs averaged **40...70 words** [27].\
+*   **Finding:** NLM treats word counts as \"soft guidance.\" To achieve the strict 25...75 word target, a post-processing trim step (human or script) is likely required [28]. However, the \"rhetorical types\" (CLAIM, REFRAME, CHALLENGE) were classified accurately [28].
+
+================================================================================
+END OF EXTRACTION
+================================================================================
