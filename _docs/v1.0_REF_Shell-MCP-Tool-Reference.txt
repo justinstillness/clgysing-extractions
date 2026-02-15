@@ -1,0 +1,218 @@
+================================================================================
+SHELL MCP — TOOL REFERENCE
+================================================================================
+Project:        AWSNBLM (Havona Anvil Suite)
+Version:        v1.0
+Created:        2026-02-14
+File Class:     REF
+
+PURPOSE:
+Shell MCP is a custom MCP tool that gives Claude direct shell access to
+the EC2 instance. It enables infrastructure management, service monitoring,
+file operations, and script execution without requiring external SSH tools
+like Termius.
+
+Connector URL:  https://mcp.justinstillness.com/shell/mcp
+Connector Name: Shell-MCP (as registered in Claude.ai)
+
+ARCHITECTURE:
+Framework:      FastMCP 2.14.5, streamable-http transport
+Location:       /home/ubuntu/shell-mcp/
+Main script:    shell_mcp.py
+Service:        shell-mcp.service (systemd, enabled, auto-start)
+Port:           8004 (localhost only)
+Caddy route:    /shell/* → localhost:8004
+
+SAFETY:
+Timeout:        60 seconds per command
+Output cap:     100,000 characters maximum
+Audit log:      /home/ubuntu/shell-mcp/audit.log
+Restrictions:   None (single-user system, human-in-the-loop oversight)
+                See D-050 for safety rationale.
+
+================================================================================
+TOOL INVENTORY — EXACT CALL NAMES (7 tools)
+================================================================================
+
+1. Shell-MCP:shell_status
+   Return server health and configuration info.
+   Parameters: none
+   Returns: version, hostname, platform, python version, timeout,
+            max output chars, audit log path, system uptime
+
+2. Shell-MCP:shell_exec
+   Execute a bash command on the EC2 instance.
+   Parameters:
+     command (str, required) — bash command to execute
+     working_dir (str, default "/home/ubuntu") — working directory
+     description (str, optional) — audit log annotation
+   Returns: stdout, stderr, return_code, command, working_dir
+
+3. Shell-MCP:shell_read
+   Read the contents of a file.
+   Parameters:
+     path (str, required) — absolute or relative file path
+   Returns: content, path, size
+
+4. Shell-MCP:shell_write
+   Write content to a file. Creates parent directories if needed.
+   Parameters:
+     path (str, required) — absolute or relative file path
+     content (str, required) — file content
+     mode (str, default "overwrite") — "overwrite" or "append"
+   Returns: path, size, mode
+
+5. Shell-MCP:shell_list
+   List directory contents.
+   Parameters:
+     path (str, default "/home/ubuntu") — directory path
+     recursive (bool, default false) — list recursively
+     max_depth (int, default 2) — max recursion depth
+   Returns: path, count, items (name, path, type, size)
+
+6. Shell-MCP:shell_move
+   Move or rename a file or directory.
+   Parameters:
+     source (str, required) — source path
+     destination (str, required) — destination path
+   Returns: source, destination
+
+7. Shell-MCP:shell_delete
+   Delete a file. Requires confirm=true.
+   Parameters:
+     path (str, required) — file path to delete
+     confirm (bool, required) — must be true to proceed
+   Returns: deleted path
+
+================================================================================
+SYSTEMD SERVICE NAMES — ALL HA SUITE TOOLS
+================================================================================
+
+This mapping was confirmed during Session 032 testing. Service names do
+not always match tool names:
+
+| Tool             | systemd Service Name             | Port |
+|------------------|----------------------------------|------|
+| Majeston         | notebooklm-mcp.service           | 8001 |
+| Chronicler       | chronicler.service               | 8002 |
+| Caliper          | document-analysis-mcp.service    | 8003 |
+| Shell MCP        | shell-mcp.service                | 8004 |
+| SeraphRecorder   | (integrated into notebooklm-mcp) | —    |
+
+Quick health check command:
+  systemctl status notebooklm-mcp chronicler document-analysis-mcp shell-mcp
+
+================================================================================
+COMMON WORKFLOWS
+================================================================================
+
+HEALTH CHECK (all services):
+  Shell-MCP:shell_exec(
+    command="systemctl status notebooklm-mcp chronicler document-analysis-mcp shell-mcp --no-pager | grep -E '(●|Active:)'"
+  )
+
+RUN A SCRIPT:
+  Shell-MCP:shell_exec(command="bash /home/ubuntu/flush.sh")
+
+CHECK DISK USAGE:
+  Shell-MCP:shell_exec(command="df -h / && du -sh /home/ubuntu/*")
+
+VIEW LOGS:
+  Shell-MCP:shell_exec(command="tail -50 /home/ubuntu/shell-mcp/audit.log")
+  Shell-MCP:shell_exec(command="journalctl -u shell-mcp --no-pager -n 20")
+
+EDIT A CONFIG FILE:
+  1. Shell-MCP:shell_read(path="/etc/caddy/Caddyfile")
+  2. [Review content]
+  3. Shell-MCP:shell_write(path="/path/to/file", content="...")
+  4. Shell-MCP:shell_exec(command="sudo systemctl reload caddy")
+
+CREATE AND RUN A SCRIPT:
+  1. Shell-MCP:shell_write(path="/home/ubuntu/my-script.sh", content="#!/bin/bash\n...")
+  2. Shell-MCP:shell_exec(command="chmod +x /home/ubuntu/my-script.sh")
+  3. Shell-MCP:shell_exec(command="bash /home/ubuntu/my-script.sh")
+
+RESTART A SERVICE:
+  Shell-MCP:shell_exec(command="sudo systemctl restart shell-mcp")
+  Shell-MCP:shell_exec(command="sudo systemctl status shell-mcp --no-pager")
+
+================================================================================
+AUDIT LOG FORMAT
+================================================================================
+
+Location: /home/ubuntu/shell-mcp/audit.log
+
+Each tool call generates a log entry:
+
+  2026-02-14T23:56:46 | INFO | ACTION=shell_exec | RESULT=OK | cmd='...' cwd=/home/ubuntu desc='...'
+  2026-02-14T23:56:46 | INFO | ACTION=shell_exec | RESULT=success | rc=0 cmd='...'
+
+Fields: timestamp, level, action (tool name), result, command/parameters.
+Two entries per shell_exec call (pre-execution and post-execution).
+One entry for file operations (shell_read, shell_write, etc.).
+
+================================================================================
+RELATIONSHIP TO OTHER HA SUITE TOOLS
+================================================================================
+
+Shell MCP complements the existing tool suite:
+
+| Task                          | Tool           |
+|-------------------------------|----------------|
+| Query NotebookLM notebooks    | Majeston       |
+| Read/write GitHub repo files  | Chronicler     |
+| Analyze document metrics      | Caliper        |
+| Capture NLM query traffic     | SeraphRecorder |
+| Direct EC2 shell access       | Shell MCP      |
+
+KEY DISTINCTIONS:
+- Chronicler operates on GitHub repo files via GitHub API
+- Shell MCP operates on the EC2 filesystem directly
+- Both can read/write files, but to different targets
+- Use Chronicler for repo operations, Shell MCP for system operations
+- Shell MCP can run Chronicler's flush pipeline: bash /home/ubuntu/flush.sh
+
+================================================================================
+KNOWN LIMITATIONS
+================================================================================
+
+- 60-second timeout: Long-running commands will be killed
+- 100K character output cap: Large outputs will be truncated
+- No interactive commands: Cannot run tools requiring user input (vim, less)
+- No persistent sessions: Each shell_exec is a fresh shell invocation
+- Mid-session connector add: Adding Shell MCP mid-conversation requires
+  starting a new chat for tool discovery (Claude.ai platform limitation)
+
+================================================================================
+DEPLOYMENT REFERENCE
+================================================================================
+
+Files on EC2:
+  /home/ubuntu/shell-mcp/shell_mcp.py     — Server script
+  /home/ubuntu/shell-mcp/.env             — Environment config
+  /home/ubuntu/shell-mcp/audit.log        — Audit trail
+  /home/ubuntu/shell-mcp/deploy.sh        — Deployment automation
+
+Systemd:
+  /etc/systemd/system/shell-mcp.service
+
+Caddy (in /etc/caddy/Caddyfile):
+  handle_path /shell/* {
+      reverse_proxy localhost:8004
+  }
+
+Tested and verified: Session 032, 2026-02-14 (all 7 tools confirmed).
+
+================================================================================
+DOCUMENT HISTORY
+================================================================================
+
+Version  Date        Description
+-------  ----------  -----------------------------------------------------------
+v1.0     2026-02-14  Initial version. Created after successful testing of all
+                     7 tools in Session 032. Includes service name mapping,
+                     common workflows, and audit log documentation.
+
+================================================================================
+END OF TOOL REFERENCE
+================================================================================
