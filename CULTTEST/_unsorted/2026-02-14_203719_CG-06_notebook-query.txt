@@ -1,0 +1,90 @@
+================================================================================
+EXTRACTION: 2026-02-14_203719_CG-06_notebook-query
+================================================================================
+Branch:          CULTTEST
+Source Package:  N/A
+Pass Type:       CG (CG)
+Pass Number:     06
+Theme/Focus:     N/A
+Project:         N/A
+Session:         002
+Routing:         Tier 1b (CULTTEST/_unsorted)
+Query:           What are the specific query templates or prompt patterns used for TD-1 thesis genesis and TD-2 epistemic regress? What exact language and structure produced the best results? Also, how should the epistemic regress interview process be structured ... what questions drive each degree of depth, and how should the AI handle branching versus linear regress?
+Timestamp:       2026-02-14T20:37:19.000167+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 5ee1c9fa-8d7d-4e7a-99a0-3453669eeca8
+Chat Configure:  default
+Thread:          N/A
+Notes:           query-templates-and-regress-design
+Response Chars:  5543
+Duration:        37000ms
+================================================================================
+
+Based on the `Thesis Methods.txt` and `v1.0_REF_LibForge-Workflow-Map` sources, here are the specific query templates, prompt patterns, and structural details for TD-1 (Thesis Genesis) and TD-2 (Epistemic Regress).\
+\
+### **TD-1: Thesis Genesis Templates & Patterns**\
+\
+The best results for generating master theses from the corpus came from a **Structured Thesis Genesis Prompt**. The key to success was explicitly forcing the AI to produce *declarative claims* rather than topic lists.\
+\
+*   **Core Prompt Pattern:** Request four specific output components for each candidate:\
+    1.  **Thesis Statement:** Must be a declarative argument (e.g., \"X causes Y because Z\"), not a description.\
+    2.  **Typing:** Classify the thesis (e.g., Mechanistic, Prescriptive, Diagnostic, Comparative).\
+    3.  **Evidence Base:** Cite specific corpus content supporting the claim.\
+    4.  **Self-Assessment:** Rate as \"Thesis-Worthy\" (novel, bridges domains) or \"Observational\" (summary of text).\
+\
+*   **Effective Language:**\
+    *   **\"Declarative claims, not topic lists\"** [1].\
+    *   **\"Identify unexplored intersections and thematic gaps\"** [2].\
+    *   **\"Distinguish between thesis-worthy and trivial observations\"** [3].\
+\
+*   **Best Structural Results:**\
+    *   **Mechanistic Theses:** Focused on causal chains (e.g., \"Intellectual intimacy acts as an epistemic immune system\").\
+    *   **Prescriptive Theses:** Focused on design requirements (e.g., \"Triadic Oversight requires topological alignment\").\
+    *   **Gap Flags:** Explicitly identifying *why* a thesis cannot be fully argued yet (e.g., \"We know how the machine breaks, but not the engineering of how the fixed machine runs\") [4].\
+\
+### **TD-2: Epistemic Regress Templates & Interview Structure**\
+\
+The epistemic regress process uses a recursive questioning logic: **\"For this thesis to hold, what must be true?\"** The AI functions as an \"automated interviewee\" answering from the corpus.\
+\
+#### **Prompt Patterns by Degree**\
+*   **Degree 0 $\\\ightarrow$ 1 (Master to Core Components):**\
+    *   **Prompt:** \"For the master thesis '[Thesis Statement]' to hold, what supporting claims must be proven true? Identify critical path dependencies versus s< 2026/02/14 20:37:56.000904632  length=3332 from=8693 to=12024
+upporting arguments.\"\
+    *   **Result:** Produces ~7 thesis strings decomposed into \"Critical Path\" (essential) and \"Supporting\" (strengthening) [5], [6].\
+\
+*   **Degree 1 $\\\ightarrow$ 2 (Core to Detailed Unpacking):**\
+    *   **Prompt:** Select a specific critical-path sub-thesis and ask: \"For the sub-thesis '[String X]' to be valid, what underlying mechanisms or axioms must be true?\"\
+    *   **Result:** Decomposition into causal mechanisms or design constraints. Honest evidence strength ratings (e.g., \"Moderate - link is implicit\") are crucial here [7].\
+\
+*   **Degree 2 $\\\ightarrow$ 3 (Detailed to Bedrock/Convergence):**\
+    *   **Prompt Logic:** Use **Conversation Threading** (passing `conversation_id`). Ask the AI to build upon its prior regression.\
+    *   **Result:** NLM identifies \"High Novelty\" insights (physics of truth) or flags \"Bedrock/Axioms\" (foundational assumptions that cannot be regressed further, like \"Fourth Density influence\") [8], [9].\
+\
+#### **Epistemic Regress Interview Structure**\
+\
+The process follows a **Hybrid Automation Model** where the AI handles early degrees and the human takes over when convergence sets in.\
+\
+| Degree | Driver | Primary Question / Driver | Outcome |\
+| :--- | :--- | :--- | :--- |\
+| **Deg 0** | Human/AI | **Genesis:** \"What is the core claim?\" | Master Thesis |\
+| **Deg 1** | AI (Auto) | **Decomposition:** \"What assertions underpin this claim?\" | Critical Path Strings |\
+| **Deg 2** | AI (Auto) | **Mechanics:** \"How does this specific assertion function?\" | Causal Chains / Constraints |\
+| **Deg 3** | Hybrid | **Depth/Bedrock:** \"What metaphysical axioms are required?\" | Bedrock Detection / Convergence |\
+| **Deg 4+** | Human | **Extension:** \"What lies beyond the corpus?\" | Philosophical Extension |\
+\
+*   **Handling Branching vs. Linear Regress:**\
+    *   **Branching (Width):** The AI naturally handles branching at Degree 1 by generating multiple supporting strings (e.g., 7 distinct sub-theses) [5].\
+    *   **Linear (Depth):** To achieve depth, the user (or \"Conductor\" script) must **select a single critical path node** from Degree 1 and target the Degree 2 query specifically at that node. Trying to regress *all* nodes simultaneously degrades quality/depth due to output limits.\
+    *   **Thesis Types:**\
+        *   **Mechanistic** theses produce deep, narrow causal chains (Definition $\\\ightarrow$ Cause $\\\ightarrow$ Mechanism).\
+        *   **Prescriptive** theses produce wide, structural networks (Goal $\\\ightarrow$ Constraint $\\\ightarrow$ Requirement) [10], [11].\
+\
+### **Critical Findings for Implementation**\
+*   **Bedrock Detection:** The AI is capable of identifying \"Axiomatic Foundations\" where the regress stops because the corpus treats a concept as a given (e.g., \"Entrainment mechanism of truth\") [9].\
+*   **Convergence Signal:** At Degree 3, the AI typically begins to \"converge\" (restating Degree 1 concepts with slightly more detail). This is the signal for the human editor to intervene [12].\
+*   **Threading is Essential:** Degree 2 $\\\ightarrow$ 3 requires conversation threading to maintain context; without it, the AI loses the logical chain [13].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

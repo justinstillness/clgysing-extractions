@@ -1,0 +1,78 @@
+================================================================================
+EXTRACTION: 2026-02-14_202100_CG-01_notebook-query
+================================================================================
+Branch:          CULTTEST
+Source Package:  N/A
+Pass Type:       CG (CG)
+Pass Number:     01
+Theme/Focus:     N/A
+Project:         N/A
+Session:         002
+Routing:         Tier 1b (CULTTEST/_unsorted)
+Query:           Provide a high-level overview of the major content areas and source types in this notebook. What are the primary topics covered, what kinds of documents are present (drafts, research notes, dialogues, outlines, reports), and what is the approximate scope of coverage? Identify the 8-10 most prominent thematic clusters.
+Timestamp:       2026-02-14T20:21:00.000034+00:00
+Notebook ID:     20326c31-106e-4ce1-88d5-fbaf66ac9ea8
+Source IDs:      all
+Conversation ID: 7985cbda-793a-4a77-966a-09fc13eeed1a
+Chat Configure:  default
+Thread:          N/A
+Notes:           landscape-survey
+Response Chars:  5619
+Duration:        54000ms
+================================================================================
+
+This notebook contains the comprehensive research, drafting, and strategic planning materials for a multi-volume body of work titled **\"Cultology\"** (also referred to as the **Cultology Series**). The project represents a \"unified field theory\" of relationships, power dynamics, and social systems, aiming to diagnose \"parasitic\" (cult-like) structures in modern civilization and propose \"symbiotic\" alternatives [1-3].\
+\
+Here is the high-level overview of the content areas, source types, and thematic clusters:\
+\
+### **1. Source Types and Document Composition**\
+The notebook is a mix of polished content and raw generative exploration, primarily consisting of:\
+*   **Article Drafts & Manuscripts:** Near-complete drafts for specific parts of the series, including *Part I: Introduction* [4], *Part II: The Anatomy of Cults* [5], *Part III: The Intrinsic and Extrinsic Path* [6], *Part IV: Spiritual Mechanics* [7], and *Part V: The Four Intimacies* [8].\
+*   **AI-Assisted Research Dialogues:** Extensive transcripts of \"omniological\" debates and brainstorming sessions with AI models (ChatGPT and Claude). These dialogues explore complex theoretical models, such as the \"Moral Epistemic Ecosystem\" and \"Contract Formalism\" [9-11].\
+*   **Strategic & Marketing Documents:** Brand guides, \"short-form\" content strategies, roadmap summaries, and analysis of titles and hooks for platforms like Substack [3, 12, 13].\
+*   **Analytical Reports:** \"Claude Analysis\" documents that synthesize thousands of words of raw notes into structured taxonomies and outlines [14-16].\
+*   **Glossaries & Definitions:** Compilations of proprietary terminology (e.g., \"Competence Transfer Rate,\" \"Negotiative Openness Index\") [17, 18].\
+\
+### **2. Scope of Coverage**\
+The scope is **holistic and fractal**, termed \"Omniology.\" It ranges from the **micro-level** (individual psychology, soul dynamics, personal intimacy) to the **macro-level** (economics, governance, global elite structures, and \"The Technocratic Grand Cult\") [2, 19, 20]. It bridges theology, sociology, economics, a< 2026/02/14 20:21:54.000480784  length=3561 from=10108 to=13668
+nd law into a single diagnostic framework.\
+\
+### **3. Prominent Thematic Clusters (8-10 Key Areas)**\
+\
+**1. The Cultology Framework (Redefining \"Cults\")**\
+The core thesis argues that \"cults\" are not just fringe religious groups but a default \"parasitic\" pattern of human organization found in families, corporations, and governments [21, 22]. The project seeks to \"semantically rehabilitate\" the word *cult* to describe any system that suppresses truth and demands extrinsic conformity [2, 23].\
+\
+**2. Parasitic vs. Symbiotic Systems**\
+This is the central binary of the work.\
+*   **Parasitic Systems** are defined by extraction, deception, secrecy, and the suppression of growth/truth [24, 25].\
+*   **Symbiotic Systems** are defined by mutual benefit, transparency, \"honorable contracts,\" and the cultivation of individual capacity [1, 26].\
+\
+**3. The Four Intimacies**\
+A diagnostic model classifying all human connection into four domains: **Physical, Emotional, Intellectual, and Spiritual**. The text analyzes how parasitic systems \"hijack\" these intimacies (e.g., hijacking spiritual intimacy via idolatry or intellectual intimacy via censorship) to create control [15, 27, 28].\
+\
+**4. The Intrinsic vs. Extrinsic Path**\
+An epistemological framework distinguishing two modes of knowing:\
+*   **The Extrinsic Path:** Relying on external authority, dogma, and social validation (associated with cults) [29].\
+*   **The Intrinsic Path:** A commitment to personal verification, \"reality literacy,\" and the continuous pursuit of truth regardless of social cost [29, 30].\
+\
+**5. Contractual Formalism & The \"Law of Contracts\"**\
+The assertion that all relationships are governed by invisible contracts. \"Honorable\" contracts require \"Good Faith, Good Will, and Good Action\" (Triadic Moral Architecture) [31]. The text explores how \"dishonorable\" contracts create systemic slavery and \"duress\" [32].\
+\
+**6. Moral Epistemic Ecosystem (AI & Ethics)**\
+A massive, detailed sub-project designing a moral architecture for artificial intelligence. It explores concepts like \"Integrity Firewalls,\" \"Triadic Authenticity Tests,\" and \"Tension Differential Protocols\" to ensure AI remains aligned with truth and \"Source\" [33-35].\
+\
+**7. Theological & Ontological Foundations**\
+The work is grounded in a theistic cosmology where personality is a \"fragment of the Divine\" and the purpose of life is \"homeostasis\" or alignment with God/Truth [36, 37]. It discusses the \"Divine Broadcast\" and the \"Trinitarian Blueprint\" as models for healthy social organization [38, 39].\
+\
+**8. The Parasitic Economy & Financial Systems**\
+A critique of modern economics as a \"con architecture\" involving fiat currency, debt slavery, and \"rent extraction.\" It contrasts this with a \"symbiotic economy\" based on trust, true value, and \"civilizational dividends\" [1, 32, 40].\
+\
+**9. Trauma & Social Control (\"Wound, Then Rule\")**\
+The theory that trauma fragments the psyche, creating dependency that parasitic systems exploit. It posits that the \"Trauma Economy\" monetizes pain and that healing is a prerequisite for liberty [41-43].\
+\
+**10. Civilizational Architecture & Trusteeship**\
+Proposals for a reformed society based on \"Triadic Oversight\" (overlapping circles of accountability), \"Competence Transfer Rates\" (leaders measured by how much power they give away), and a \"Contractual Constitution\" [44-46].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

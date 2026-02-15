@@ -1,0 +1,71 @@
+================================================================================
+EXTRACTION: 2026-02-14_234054_CG-02_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       CG (CG)
+Pass Number:     02
+Theme/Focus:     N/A
+Project:         N/A
+Session:         032
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What is the current state of the clgysing-extractions repository structure? What directories exist, what's in _untagged, and what backlog items (W-series) are currently open? Also confirm the current concept-counter.json state and any recent pipeline changes.
+Timestamp:       2026-02-14T23:40:54.000762+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: ec2c67ef-a153-4453-b164-0317cb9e4c47
+Chat Configure:  default
+Thread:          N/A
+Notes:           context-gather
+Response Chars:  3630
+Duration:        39999ms
+================================================================================
+
+Based on the sources, particularly the logs from Sessions 030 and 031, here is the current state of the `clgysing-extractions` repository and pipeline.
+
+### **1. Repository Structure**
+The repository (`clgysing-extractions`) is currently organized into the following structure:
+
+*   **`_docs/`**: Documentation home. Contains `CHANGELOG.txt`, `NLM-MANIFEST.json`, `v4.1_SPEC_HA-Suite-Architecture-Reference.txt`, and various tool reference files.
+*   **`_pipeline/`**: Source code for the pipeline. Contains `extract.py` (v7), `SERAPH-Signal-String-Reference.txt` (v1.2).
+*   **`_tools/`**: Helper scripts. Contains `flush.sh` and fix logs.
+*   **`raw/`**: JSONL archival directory (intended for daily logs like `2026-02/`).
+*   **`concept-counter.json`**: Sequential ID tracking file.
+*   **`query-manifest.json`**: Master query index (initialized empty in S022).
+*   **Branch Directories** (Created via v7 routing and S031 cleanup):
+    *   **`AWSNBLM/`**: Contains `_unsorted/` and project folders.
+    *   **`GOV-AIPM/`**: Contains `_unsorted/`.
+    *   **`NLMINTA/`**: Contains `_unsorted/` and specific extraction paths.
+    *   **`clgysing/`**: Project folder with `phase2/` subdirectories (e.g., `VX`, `TM`, `PE`).
+*   **`_untagged/`**: **Empty or Non-Existent.**
+    *   In Session 031, the `_untagged/` directory was cleared. All 33 "keeper" files were routed to `NLMINTA/clgysing/phase2/_pre-branch/`. The directory itself was removed by the `git mv` operation but will be auto-created by the pipeline if a new untagged file arrives [1].
+
+### **2. Current `concept-counter.json` State**
+*   **State:** **Dirty / Test Data**
+*   **Content:** `{"SP03-VX": 8}`
+*   **Status:** The counter was reset in Session 022, but subsequent testing in Session 031 (testing the `increment_counter` tool) left it with test data. Resetting this to 0 is a **deferred maintenance item** carried into Session 032 [2].
+
+### **3. Open Backlog Items (W-Series)**
+The following W-series items are currently open/deferred:
+
+*   **W-003**: Notebook Integration (read from GitHub ... add to NLM) [3].
+*   **W-006**: AIPM Repo Integration (session logs to GitHub) [3].
+*   **W-046**: Mobile Transcript Capture (Bookmarklet/Service) [4].
+*   **W-047**: Transcript Auto-Archive Pipeline [4].
+*   **W-048**: EC2 Configuration Backup (Snapshot script) [4].
+*   **W-049**: Caliper Subdirectory Recursion [4].
+*   **W-061**: NLM-to-Repo Ingestion Tool [4].
+*   **W-064**: Chronicler Git History Access (Gap identified S028) [5].
+*   **W-065**: Gemini-NLM Integration Research [5].
+*   **W-066**: Report-Based Extraction Pipeline (or Caliper Metadata Mode ... *Note: S028 assigned this to Report Pipeline, S030 proposed it for Caliper Metadata. Numbering conflict to resolve*) [5], [6].
+*   **W-067**: Comprehensive EC2 Backup Protocol [2].
+
+### **4. Recent Pipeline Changes (Sessions 030-031)**
+*   **`extract.py` v7 (Branch Routing):** The extraction script was upgraded to parse the `BRANCH` field from SERAPH signal strings. It now implements a **5-tier routing logic** (Tier 1a/1b/1c/4/5) to sort files into branch-specific folders (e.g., `AWSNBLM/_unsorted`) automatically [7].
+*   **`flush.sh`:** A convenience alias was added to EC2 (`/home/ubuntu/flush.sh`) to trigger the manual extraction pipeline without typing the full command chain [8].
+*   **Shell MCP Server:** A new MCP tool ("Shell MCP") was built and deployed in Session 031 to provide direct EC2 shell access capabilities. It is pending live verification in Session 032 [9].
+*   **Security Hardening:** SSH access was restricted to Tailscale IPs only (Port 22 closed to public) [10].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

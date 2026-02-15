@@ -1,0 +1,55 @@
+================================================================================
+EXTRACTION: 2026-02-14_213156_CG-01_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       CG (CG)
+Pass Number:     01
+Theme/Focus:     N/A
+Project:         N/A
+Session:         031
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What is the current state of the _untagged/ keeper files? What were the 33 remaining files, and what was the planned routing destination for the SP03 and CLGYSING Source Pkg files?
+Timestamp:       2026-02-14T21:31:56.000745+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: 3c1d49d9-f830-4dce-949a-bbd24af280fc
+Chat Configure:  default
+Thread:          N/A
+Notes:           context-gather
+Response Chars:  2443
+Duration:        64000ms
+================================================================================
+
+Based on the provided sources, here is the status of the `_untagged/` files and the routing architecture as of Session 029:
+
+### **1. State of `_untagged/` Keeper Files**
+As of the most recent infrastructure reporting (Session 026), the `_untagged/` directory had accumulated **222 files** [1].
+*   **Status:** These files were identified as a mix of operational queries and early testing data.
+*   **Plan:** The decision was made to **archive** these pre-branch-tagging files to a directory like `_archive/pre-branch-tagging/` rather than manually sorting them, allowing the system to start clean with the new branching logic [2], [3].
+*   **Previous State:** In Session 023, a smaller batch of **18 files** (referred to as "keepers" in Session 022) had been successfully moved from `_untagged/` to `testing/S010` through `testing/S013` folders [4].
+
+### **2. The "33 Remaining Files"**
+The specific count of "33 remaining files" does not appear in the provided session logs (Session 001...029). The documented file counts closest to this figure are:
+*   **26 files:** The number of "Tier 3" (untagged) queries processed on February 13, as noted in the Session 026 pipeline summary [5].
+*   **18 files:** The count of files sitting in `_untagged/` during the Session 022 maintenance pass [6].
+*   **17 files:** The number of successful extractions from the Feb 6 and Feb 9 logs analyzed in Session 020 [7].
+
+*If "33" refers to a specific subset identified in Session 030 (which is not in my sources), it likely relates to the specific batch of untagged queries remaining after a partial cleanup or the specific Tier 3 output from a recent day's traffic.*
+
+### **3. Routing Destination: SP03 and CLGYSING Source Pkg**
+The routing destination for **SP03** (Source Package 03) and **CLGYSING** files is determined by the **SERAPH Signal String** included in the query.
+
+*   **Structure:** `extracted/{BRANCH}/clgysing/phase2/{PASS}/` [8], [9].
+    *   **{BRANCH}:** The project branch where the query originated (e.g., `AWSNBLM` or `NLMINTA`) [8].
+    *   **clgysing:** The project identifier (hardcoded from the `PROJECT=clgysing` tag).
+    *   **phase2:** The standard phase directory.
+    *   **{PASS}:** The pass type code (e.g., `VX`, `TX`, `PE`) [8].
+
+*   **Examples:**
+    *   If queried from NLMINTA branch: `extracted/NLMINTA/clgysing/phase2/VX/` [9].
+    *   If queried from AWSNBLM branch: `extracted/AWSNBLM/clgysing/phase2/TX/` [9].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

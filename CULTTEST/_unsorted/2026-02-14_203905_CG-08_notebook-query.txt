@@ -1,0 +1,68 @@
+================================================================================
+EXTRACTION: 2026-02-14_203905_CG-08_notebook-query
+================================================================================
+Branch:          CULTTEST
+Source Package:  N/A
+Pass Type:       CG (CG)
+Pass Number:     08
+Theme/Focus:     N/A
+Project:         N/A
+Session:         002
+Routing:         Tier 1b (CULTTEST/_unsorted)
+Query:           What is the Six-Component Argument Framework? Describe its components, how it integrates with thesis strings and ArgBlocks, and how it should be applied during content development. What are the thresholds for when to apply it versus taking concepts as given?
+Timestamp:       2026-02-14T20:39:05.000357+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 5705437f-c8f2-421c-a560-f0da7de61d10
+Chat Configure:  default
+Thread:          N/A
+Notes:           six-component-framework
+Response Chars:  4833
+Duration:        33000ms
+================================================================================
+
+The **Six-Component Argument Framework** is a rigorous, fractal methodology derived from the Toulmin model and enhanced for \"Omniological\" analysis. It is designed to construct complete, intellectually honest arguments at any scale...from a single **ArgBlock** to an entire series...by ensuring claims are grounded in evidence, reasoning is explicit, and counter-arguments are mandatory for novel concepts [1].\
+\
+### **The Six Components**\
+The framework decomposes an argument into six distinct elements that ensure epistemic depth and pedagogical scaffolding [2, 3]:\
+\
+1.  **Claim**: The primary assertion or thesis being made. This often draws from the **Canonical Register** (standardized definition) of a concept [2].\
+2.  **Grounds**: The foundational data or evidence supporting the claim. This prefers verbatim **Source-Traces** (direct quotes) to maintain fidelity [3].\
+3.  **Warrant**: The reasoning bridge connecting the Grounds to the Claim. It explains *why* the evidence supports the assertion, often using a synthesized canonical explanation [3].\
+4.  **Backing**: Additional support for the Warrant, such as authority, deeper theory, or further source traces [3].\
+5.  **Qualifiers**: The scope or limits of the claim (e.g., using modal language like \"often\" or \"in parasitic contexts\" rather than universals) [3].\
+6.  **Counters**: Rebuttals, counter-evidence, or \"devil's advocate\" points. This component is **mandatory** for controversial or novel claims to ensure epistemic humility and resistance to confirmation bias [3, 4].\
+\
+### **Integration with Thesis Strings and ArgBlocks**\
+The framework serves as the structural logic within the **Bridge Layer** of LibForge, facilitating the \"Semantic Handshake\" between top-down thesis architecture and bottom-up repository assets [1, 5].\
+\
+*   **ArgBlocks**: The framework is the \"core treatment structure\" for ArgBlocks (ephemeral composites of 3...10 atomic cards). When an ArgBlock is composed, its metadata includes specific fields for mapping repository assets to these six components (e.g., mapping a specific **Minor Card** to the \"Grounds\" slot) [6, 7]. This ensures that ArgBlocks are not just piles of cards but structured arguments.\
+*   **Thesis Strings**: Thesis strings (from the **Fractal Tree**) act as the query triggers that fetch the assets used to populate the framework [5, 8]. A thesis string typically occupies the **Claim** slot or provides the high-level logic for the **Warrant**, while the framework organizes the supporting extraction products around it [9].\
+*   **Fractal Nesting**: The framework is fractal, meaning a component within an argument (like a Warrant) can itself be expanded into a full Six-Component sub-argument if complex [4, 10].\
+\
+### **Application During Content Development**\
+The framework is applied primarily during **Storyboarding (Item 8)** and **ArgBlock Composition (Item 10)** [11].\
+1.  **Trigger**: During storyboarding, the user (or AI) identifies the **Treatment Category** of a specific topic based on the **Editorial < 2026/02/14 20:39:38.000752037  length=1806 from=8693 to=10498
+Guide** [12].\
+2.  **Populate**: The system maps repository assets to the components...using **Source-Traces** for Grounds/Backing and **Canonical** definitions for Claims/Warrants [11].\
+3.  **Qualify & Counter**: The system explicitly checks for counter-narratives (often flagged during the **Pre-Extraction Coherence Scan**) and ensures they are addressed in the Counter component rather than dismissed [10, 13].\
+\
+### **Thresholds for Application**\
+The decision to apply the full framework versus taking a concept as \"given\" is determined by the **Treatment Depth** or **Editorial Category**, which scales with the concept's novelty and source density [10, 14, 15]:\
+\
+*   **Category A (FULL)**: **Mandatory Six-Component Application.**\
+    *   **Trigger**: Author-coined terms (e.g., \"Contractual Illiteracy\"), high-novelty concepts, or controversial claims [15, 16].\
+    *   **Requirement**: Must include all six components, including explicit Counters and Qualifiers [10].\
+*   **Category B (MEDIUM)**: **Modified Six-Component.**\
+    *   **Trigger**: Novel synthesis of existing ideas (e.g., \"Parasitic Rent Extraction\").\
+    *   **Requirement**: Partial nesting is allowed; rigorous but less exhaustive than Category A [15].\
+*   **Category C (LIGHT)**: **Optional/Light Treatment.**\
+    *   **Trigger**: Common domain terms or standard concepts (e.g., \"Legal Ignorance\").\
+    *   **Requirement**: A simple Canonical definition plus a brief Warrant is sufficient [15].\
+*   **Category D (GIVEN)**: **No Treatment.**\
+    *   **Trigger**: Established/peripheral concepts.\
+    *   **Requirement**: Reference to the glossary entry only; no argument structure required [14, 15].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

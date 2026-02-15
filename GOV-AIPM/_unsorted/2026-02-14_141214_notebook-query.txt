@@ -1,0 +1,74 @@
+================================================================================
+EXTRACTION: 2026-02-14_141214_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         051
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Describe the project startup process from Sections 4 and 5. What steps does a user take to start a new project? Include Phase 0 Rooting, chat architecture decisions, creating the Project Guide, Phase Protocol, and initial artifacts. What is the sequence from deciding to start a project through having a working project ready for active sessions?
+Timestamp:       2026-02-14T14:12:14.000824+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 1e4f0c18-3482-46d8-86d9-698f4480cc6e
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  4762
+Duration:        39999ms
+================================================================================
+
+Based on the GOV-AIPM v1.0.8 draft sources, the project startup process constitutes **Phase 0: Rooting**. This phase establishes the \"nervous system\" of the project before any execution begins.\
+\
+Here is the step-by-step sequence for starting a new project, incorporating Chat Architecture, the Project Guide, the Phase Protocol, and initial artifacts.\
+\
+### 1. The Decision and Architecture (Section 4.1)\
+The process begins with the decision to initiate a project. The user must first select the appropriate **Chat Architecture** to house the planning work.\
+\
+*   **Root Chat:** The user initiates a **Root Chat** (e.g., `001 GOV-AIPM-RD`). Root chats are distinct from Execution chats; their purpose is strategy, architecture, and high-level planning [1].\
+*   **Scope & Focus:** In this chat, the focus is on alignment and structure, not production. This is where the project scope is defined and the initial artifacts are generated [1].\
+\
+### 2. Phase 0: The Rooting Process (Section 2.5.1 & 1.4.6)\
+Once the Root Chat is open, the user engages in **Rooting**, defined as the deliberate process of establishing the project's foundation. This process is collaborative and typically involves 10...20 substantive exchanges to probe assumptions [2], [3].\
+\
+**The 8-Step Rooting Sequence:**\
+1.  **Establish Context:** The user uploads the AIPM manual and any relevant raw materials (research, notes). The user provides a completed or partial **Project Initiation Form (TPL-001)** [4], [5].\
+2.  **Define the Destination:** The user and AI clarify the final deliverables and what \"success\" looks like. If the end format is unknown, it is noted as an open item [4].\
+3.  **Determine Scope and Approach:** Working backward from the destination, they determine the necessary objectives, constraints, and methodological approach [6].\
+4.  **Structure the Phases:** Objectives are grouped into discrete phases (e.g., Phase 1, Phase 2) with defined exit criteria and dependencies [6].\
+5.  **Identify Templates and Tools:** The team identifies which templates (e.g., Session Logs) and tools (e.g., NotebookLM connectivity) are required [7].\
+6.  **Produce the Project Guide:** The AI drafts the **Project Guide** incorporating all decisions. The user reviews and approves it [7].\
+7.  **Produce the Base Phase Protocol:** The AI drafts the **Phase Protocol** for Phase 1. This includes Layer 1 (AIPM behaviors), Layer 2 (Methodology), and Layer 3 (Project specifics) [8].\
+8.  **Prepare for Execution:** The session generates a **Bootstrap** for the first execution session [9].\
+\
+### 3. Creating the Canonical Artifacts (Section 5)\
+Rooting produces two foundational documents that serve distinct functions in the project's hierarchy.\
+\
+#### **The Project Guide (Section 5.1)**\
+*   **Function:** Defines **WHAT** the project is. It is the authoritative, living document defining the project's identity, scope, and current state [10].\
+*   **Key Contents:** Project identification, objective statement, scope (in/out), deliverables, document structure, execution plan (phases), and success cri< 2026/02/14 14:12:54.000656264  length=1705 from=8642 to=10346
+teria [11], [12].\
+*   **Stability:** It is \"Project-Stable,\" meaning it changes rarely...only when material scope or direction changes [13].\
+\
+#### **The Phase Protocol (Section 5.2)**\
+*   **Function:** Defines **HOW** work should be conducted. It is the \"behavioral constitution\" for a phase [14].\
+*   **Key Contents:**\
+    *   **Layer 1 (AIPM Behaviors):** Universal behaviors like session initiation, response indexing, and token management [15].\
+    *   **Layer 2 (Methodology):** Domain-specific workflows (e.g., research methods, coding standards) [16].\
+    *   **Layer 3 (Project Context):** Project-specific terminology, thesis, and constraints [17].\
+*   **Stability:** It is \"Phase-Stable,\" remaining static within a phase to ensure consistency across sessions [18]. It is stored in **Project Knowledge** and reviewed at the start of every session [19].\
+\
+### 4. Initial Artifacts and Handoff\
+By the end of Phase 0, the following artifacts must exist to consider the project ready for active sessions [9]:\
+1.  **Project Guide (v1.0):** Approved and saved.\
+2.  **Base Phase Protocol (v0.1/v1.0):** Approved and stored in Project Knowledge.\
+3.  **Bootstrap (TPL-002):** Generated for Session 001 (or the first execution session). This bootstrap **must** include a mandatory first action to review the Phase Protocol [9], [20].\
+\
+**Exit Criteria:** The user must be able to answer \"What am I trying to accomplish?\" and \"What does done look like?\" If these are clear, and the artifacts above are generated, the project moves from Rooting to **Phase 1 (Execution)** [21].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

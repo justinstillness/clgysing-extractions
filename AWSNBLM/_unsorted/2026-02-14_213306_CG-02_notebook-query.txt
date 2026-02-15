@@ -1,0 +1,59 @@
+================================================================================
+EXTRACTION: 2026-02-14_213306_CG-02_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       CG (CG)
+Pass Number:     02
+Theme/Focus:     N/A
+Project:         N/A
+Session:         031
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What is the current directory structure of the clgysing-extractions repository? What branch directories exist and what pass type subdirectories have been created?
+Timestamp:       2026-02-14T21:33:06.000481+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: 3c1d49d9-f830-4dce-949a-bbd24af280fc
+Chat Configure:  default
+Thread:          N/A
+Notes:           context-gather
+Response Chars:  3873
+Duration:        24999ms
+================================================================================
+
+Based on the current system state verified in Session 026 and documented in the Architecture Reference v4.0, the `clgysing-extractions` repository structure is organized as follows:\
+\
+### **Repository Root Structure**\
+The repository contains documentation, pipeline code, and extraction output directories:\
+*   **`_docs/`**: Documentation home (contains `CHANGELOG.txt`, `HA-Suite-Architecture-Reference`, tool references) [1], [2].\
+*   **`_pipeline/`**: Pipeline source code (`extract.py` v7, backups, `SERAPH-Signal-String-Reference.txt`) [2].\
+*   **`_tools/`**: Helper scripts (e.g., `flush.sh`, `chronicler-fix-log.md`) [3].\
+*   **`concept-counter.json`**: Sequential ID tracking file [4].\
+*   **`query-manifest.json`**: Master query index [5].\
+\
+### **Extraction Directories (Dynamic)**\
+The extraction output is routed into the following di< 2026/02/14 21:33:31.000327782  length=1466 from=0 to=1465
+rHeTcTtPo/r1i.e1s  2b0a0s eOdK o
+nd aStEeR:A PSHa tt,a g1s4: \\Fne\\bn *2*012.6  B2r1a:n3c3h: 0D6i rGeMcTto
+rsieersv*e*r :( Curveiactoerdn d
+ycnaacmhiec-aclolnyt rvoila:  Tnioe-rc a1cah/e1,b  nroo-uttrianngs)f o[r6m],
+ c[o7n]n:e\\cnt*i o n :* *k`eAeWpS-NaBlLiMv/e`*
+*c:o nCtoenntta-itnysp e`:_ utnesxotr/teevde/n`t -(sftorre abmra
+nmcchp--osnelsys iqoune-riide:s )d fabndde ap7r6o2j2e6cft4 ds0pae9c4i0f2i3ce 6s0u9bef8o7l0d8e1r2s 
+(xe-.agc.c,e l`-cblugfyfseirnign/g`:) .n\\on*
+ T r a*n*s`fGeOrV--EAnIcPoMd/i`n*g*::  cChounntkaeidns
+ `
+_4uan0so
+retveedn/t`:. \\mne*s s a g*e*`
+NdLaMtIaN:T A{/"`j*s*o:n rCpocn"t:a"i2n.s0 "`,_"uinds"o:r1t,e"dr/e`s ualntd" :p{r"opjreoctto csopleVceirfsiico ns"u:b"f2o0l2d5e-r1s1 -(2e5."g,.",c a`pcalbgiylsiitnige/s`"):.{\"ne\\xnp*e*r2i.m eLnetgaalc"y:/{P}r,o"jpercotm pDtisr"e:c{t"olriisetsC*h*a n(gTeide"r: t1rcu er}o,u"triensgo)u r[c8e]s," :[{5"]s:u\\bns*c r i b*e*"`:cflaglyssei,n"gl/i`s*t*C:h aTnhgee dp"r:itmraurey} ,p"rtoojoelcst" :f{o"lldiesrt Cchoanntgaeidn"i:ntgr uteh}e, "btualskk so"f: {e"xltirsatc"t:i{o}n, "ocuatnpcuetls".:\\{n}\\,n"*r*e3q.u eSsttasg"i:n{g" t&o oFlasi"l:u{r"ec aDlilr"e:c{t}o}r,i"epsr*o*m p[t9s]"::\\{n"*g e t "*:*{`}_}u,n"traegsgoeudr/c`e*s*":: {L"arnedaidn"g: {z}o}n}e} }f,o"rs eqruveerriIens fwoi"t:h{o"unta mSeE"R:A"PnHo tteabgoso k(lTmi"e,r" v3e)r.s\\ino*n " : "*2*.`1_4r.e5v"i}e,w"/i`n*s*t:r uHcotlidoinnsg" :a"rNeoat efbooro kqLuMe rMiCePs  -w iAtchc eusnsk nNoowtne bpoaosksL Mt y(pneost e(bToioekrl m2.)g.o\\ong*l e . c*o*m`)_.f\\ani\\lne*d*/A`u*t*h:: *C*o nItfa iynosu  ggheots ta uftihleenst ifcoart ifoani leerdr oerxst,r arcutni o`nnsl m( el.ogg.i,n `t ivmieao uytosu,r  eBmapsthy/ treersmpionnasle st)o o[l1.0 ]T.h\\ins\\ ni#s# #t h*e* Paaustso mTaytpeed  Sauubtdhiernetcitcoartiieosn* *m\\entWhiotdh itnh atth eh apnrdoljeesc te vfeorlydtehri npga.t hO n(lsyp eucsief iscaavlel_ya u`tchl_gtyoskienngs/ pahsa sae 2f/a`l)l,b atchke  iffo ltlhoew iCnLgI  pfaasisl st.y\\pne* *sCuobndfiirremcattoiroine:s* *h aTvoeo lbse ewni tehs tcaobnlfiisrhme dp a[r1a1m] :r\\enq*u i r e* *u`sPeEr/ `a*p*p r(oPvrael- Ebxetfroarcet isoent tEivnagl ucaotnifoinr)m\\=nT*r u e .*\\*n`*C*ES/t`u*d*i o(:C*o*n cAefptte rE xctrreaacttiinogn )a\\und*i o / v*i*d`eVoX//i`n*f*o g(rVaopchaibcu/lsalriyd eEsx,t rpaocltli osnt)u\\dni*o _ s t*a*t`uTsS /f`o*r*  c(oTmhpelseitsi oSnt.r\\inn\\gnsC)o\
+ns*o l i d*a*t`eTdM /t`o*o*l s(:T\\hne-m astoiucr cMea_papdidn(gt)y\\pne*= u r l*|*t`eTxXt/|`d*r*i v(eT|hfeimlaet)i:c  AEdxdt raancyt isoonusr)c\\en *t y p e*\\*n`-G Ls/t`u*d*i o(_Gclroesastaer(yt)y\\pne*= a u d*i*o`|EvVi/d`e*o*| .(.E.v)a:l uCarteiaotnes )a\
+ny*  a r t*i*f`aGcDt/ `t*y*p e(\\Gna-p  dDoewtnelcotaido_na)r\\tni*f a c t*(*t`yGpXe/=`a*u*d i(oG|avpi dEexot|r.a.c.t)i:o nD)o\\wnn*l o a d* *a`nCyL /a`r*t*i f(aCclta stsyipfei\\cna-t inoont)e\\_nc*r e a t*e*/`nCoRt/e`_*l*i s(tC/rnoostse-_Ruepfdearteen/cneo)t"e,_"dceolnevteer:s aMtainoang_ei dn"o:t"e3sc 1idn4 9ndo9t-efb8o3o0ks"}}
+
+
+0-
+4d
+ce-949a-bbd24af280fc
+
+================================================================================
+END OF EXTRACTION
+================================================================================

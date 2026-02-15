@@ -1,0 +1,51 @@
+================================================================================
+EXTRACTION: 2026-02-14_131344_notebook-query
+================================================================================
+Branch:          NLMINTA
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         022
+Routing:         Tier 1b (NLMINTA/_unsorted)
+Query:           What prior testing or discussion has occurred regarding thesis genesis from library survey? What was F53 and what did it show about NLM's ability to generate thesis candidates? What query design considerations were discussed for TD-1 testing?
+Timestamp:       2026-02-14T13:13:44.000208+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 1496b093-7ce6-4c26-93f5-a4f76227218f
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  2765
+Duration:        34000ms
+================================================================================
+
+**Thesis Genesis from Library Survey (Stage TD-1)**
+
+**Prior Discussion and Status**
+"Thesis Genesis" (Stage TD-1) is defined as the process where the AI surveys the library or corpus to propose thesis directions, thematic gaps, or unexplored intersections [1]. It is distinct from the user providing a thesis idea. As of the Phase 3 transition (Session 021), this stage was classified as **"NOT TESTED"** requiring dedicated testing [2].
+
+The discussion established that NotebookLM (NLM) could potentially query a notebook loaded with a **D1 Library** (first-degree extraction products) or a **raw corpus** to identify promising thesis directions [3]. This capability serves as "Entry Point B" for the Top-Down Workflow, automating the brainstorming phase [1].
+
+**Finding F53: Thesis Generation Quality**
+While TD-1 was not formally validated as a standalone workflow, **Finding F53** (documented in Session 011) provided the preliminary proof of concept.
+
+*   **What it was:** F53 ("NLM Thesis Generation Quality Is High at Degree-One Depth") resulted from a preparatory step for Test 2c (Thesis-Lens Extraction). NLM was queried to generate a master thesis and sub-theses from the **SP03 Repositories** notebook (containing 99 extracted concepts) [4].
+*   **What it showed:** NLM successfully produced a **coherent master thesis** (a single declarative claim linking parasitic/symbiotic systems, knowledge paths, and intimacies) and **7 logically structured sub-theses** [4].
+*   **Implications:**
+    *   The output demonstrated clear **hierarchical dependency** (sub-theses supporting the master) and accurate representation of the source's argumentative architecture [4].
+    *   It proved NLM can synthesize a coherent argumentative framework from extraction products (Degree 1 data) without human intervention [5].
+    *   This validated the viability of Phase 3 (Thesis Architecture), suggesting that iterative, threaded queries could build deeper thesis trees [6].
+
+**Query Design Considerations for TD-1 Testing**
+The "LibForge Workflow Map" outlines specific query design variables and questions to be addressed during future TD-1 testing [2]:
+
+1.  **Source Material Type:** Testing must distinguish between generating theses from a **raw corpus** versus a **D1 Library** (organized extraction output) to determine which yields higher quality candidates [2].
+2.  **Candidate Quality:** Queries must test NLM's ability to distinguish between **thesis-worthy** insights and **trivial observations** [2].
+3.  **Coherence:** Can NLM identify "coherent thesis candidates" rather than just topic lists? [2].
+4.  **Gap Identification:** The design includes using NLM to identify **thematic gaps** or unexplored intersections as triggers for thesis genesis [2].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

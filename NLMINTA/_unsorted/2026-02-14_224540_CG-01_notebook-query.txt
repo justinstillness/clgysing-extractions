@@ -1,0 +1,85 @@
+================================================================================
+EXTRACTION: 2026-02-14_224540_CG-01_notebook-query
+================================================================================
+Branch:          NLMINTA
+Source Package:  N/A
+Pass Type:       CG (CG)
+Pass Number:     01
+Theme/Focus:     N/A
+Project:         N/A
+Session:         023
+Routing:         Tier 1b (NLMINTA/_unsorted)
+Query:           What are the test designs for TL-B (current event analysis) and TL-C (corpus expansion)? What notebook setup is required for each? What are the specific test procedures and success criteria?
+Timestamp:       2026-02-14T22:45:40.000896+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: fb1bb23e-08d3-4857-b81f-75f2bb3c3b7d
+Chat Configure:  default
+Thread:          N/A
+Notes:           context-gather
+Response Chars:  4246
+Duration:        33999ms
+================================================================================
+
+Based on the sources, particularly the **TL-A Methodology Spec** and **LibForge Workflow Map**, here are the test designs, notebook setups, procedures, and success criteria for **TL-B** and **TL-C**.\
+\
+### **Test Designs & Notebook Setup**\
+\
+Both applications use the **Thesis-Lens Extraction (TL)** methodology, where an analytical model is applied as an interpretive lens to source data. The distinction lies in the relationship between the lens and the data.\
+\
+#### **TL-B: Current Event Analysis**\
+*   **Objective:** Validate the pipeline's ability to generate interpretive analysis of fresh data (news, events) using an established framework [1].\
+*   **Notebook Setup:**\
+    *   **Data Sources:** Load current news articles, event reports, or datasets regarding a specific topic (e.g., recent geopolitical events) [2].\
+    *   **Lens Source:** An established framework (e.g., the Agenda 47 thesis or Cultology model). This can be supplied in the **query text** (as validated in TL-A) or uploaded as a **separate source document** (model-as-source) [3], [1].\
+*   **Target Output:** Interpretive analysis, such as an \"Agenda 47 Explains\" article derived from the news data [2].\
+\
+#### **TL-C: Corpus Expansion**\
+*   **Objective:** Validate the pipeline's ability to use a mature framework to process new research, identifying gaps or extensions to \"auto-expand\" the corpus [2].\
+*   **Notebook Setup:**\
+    *   **Data Sources:** Load new research, supplementary material, or external studies that are *not* currently in the corpus [2].\
+    *   **Lens Source:** A mature, comprehensive framework document (e.g., the full Cultology thesis) [2].\
+*   **Target Output:** Gap identification, framework extensions, and new thesis strings that challenge or add to the existing model [2].\
+\
+---\
+\
+### **Specific Test Procedures**\
+\
+Both tests utilize the **TL Query Template** validated in Session 021, adapted for the specific \"Task\" instruction [4], [5].\
+\
+**1. Lens Preparation:**\
+*   Ensure the lens is clearly articulated (100...300 words if in query, or a distinct document if model-as-source) including key concepts, relationships, and mechanisms [3].\
+\
+**2. Query Execution:**\
+*   **Step 1:** Load the target data (News for TL-B, New Research for TL-C) into the notebook [6].\
+*   **Step 2:** Execute a **notebook_query** using the TL template structure:\
+    *   **Signal String:** `[SERAPH: ... PASS=TL]` [4].\
+    *   **The Lens:** Define the model (e.g., \"The Agenda 47 Thesis\" or \"Cultology Framework\") [7].\
+    *   **The Task (TL-B):** \"Analyze [EVENT/DATA] through the [MODEL] lens. Identify specific mechanisms described in the model that appear in these events. Interpret the event's significance using the model's logic\" [7], [1].\
+    *   **The Task (TL-C):** \"Analyze [NEW RESEARCH] through the [MODEL] lens. Identify findings that **confirm**, **contradict**, or **extend** the model. List specific gaps in the model revealed by this new data\" [2].\
+\
+---\
+\
+### **Success Criteria**\
+\
+The evaluation criteria for TL-B and TL-C share the core quality metrics established for TL-A, with specific additions for their unique goals [8], [1].\
+\
+**Core Criteria (All TL Tests):**\
+*   **Source Grounding:** Does every entry cite specific source findings? [8]\
+*   **Lens Coherence:** Is the model applied consistently across all entries? [8]\
+*   **No Forced Mapping:** Is the model applied naturally without shoehorning unrelated data? [8]\
+*   **No Hallucination:** Is the source material accurately represented? [8]\
+\
+**TL-B Specific Criteria:**\
+*   **Interpretive Value:** Does the output explain *why< 2026/02/14 22:46:14.000667707  length=637 from=8693 to=9329
+* the event matters according to the framework? [2]\
+*   **Narrative Arc:** Do the entries build a coherent analytical narrative (e.g., a draftable article)? [1]\
+\
+**TL-C Specific Criteria:**\
+*   **Gap Identification:** Does the output explicitly flag where the model fails to account for new data? [2]\
+*   **Extension Generation:** Does it propose valid new thesis strings or concepts to bridge those gaps? [2]\
+*   **Bidirectional Value:** Does the analysis enrich the model itself, not just the understanding of the data? [1]
+
+================================================================================
+END OF EXTRACTION
+================================================================================

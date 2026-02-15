@@ -1,0 +1,67 @@
+================================================================================
+EXTRACTION: 2026-02-14_141041_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         051
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Describe the detailed session lifecycle from Section 4.3. What are all the phases or steps within a single AI session from start to finish? Include the alignment turn, work execution, closeout activities, and any other stages.
+Timestamp:       2026-02-14T14:10:41.000199+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: 8e552108-b4b2-4d16-8ba9-d461fe125627
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  4417
+Duration:        40000ms
+================================================================================
+
+Based on Section 4.3 of the GOV-AIPM v1.0.8 draft, the session lifecycle is divided into three primary phases: **Initiation**, **Active Work**, and **Closeout**. Each phase has specific protocols designed to ensure continuity, prevent work loss, and maintain behavioral consistency.\
+\
+### 1. Session Initiation (Section 4.3.1)\
+Proper initiation establishes the trajectory for the session. It involves a mandatory sequence to verify context and behavioral parameters before substantive work begins.\
+\
+*   **Mandatory Protocol Review:** For continuation sessions, the AI's first action is to review the **Phase Protocol** from Project Knowledge and explicitly confirm adherence to its behavioral requirements [1, 2].\
+*   **Bootstrap Acknowledgment:** The AI acknowledges the **Bootstrap** file provided by the user, confirming its understanding of the current project state and the **Response Index** continuity (where the previous session ended and this one begins) [1, 3].\
+*   **The Alignment Turn (Section 4.3.1.1):** This is a mandatory exchange to prevent \"evaporation\" (working without shared understanding). The AI generates an **Alignment Checklist** covering [4, 5]:\
+    *   **Scope:** Specific objectives for the session.\
+    *   **Materials:** Confirmation of loaded files and notebook access.\
+    *   **Workflow:** The proposed sequence of work.\
+    *   **Expected Outputs:** Deliverables to be produced.\
+    *   **Gaps/Questions:** Any ambiguities requiring clarification.\
+    *   **User Verification:** Work proceeds *only* after the user explicitly confirms or adjusts this checklist [6].\
+\
+### 2. Active Session Management (Section 4.3.2)\
+During the productive core of the session, the AI operates as a system coordinator, managing focus, tokens, and progress.\
+\
+*   **Response Indexing (Section 4.3.1.2):** Every substantive AI response receives a sequential 4-digit index (e.g., `[7] | Semantic Title`) that continues across the entire project lifecycle, enabling precise retrieval and reference [8, 9].\
+*   **Work Execution:** The AI executes the agreed-upon workflow, maintaining focus on the confirmed scope and documenting significant decisions as they occur [10, 11].\
+*   **Headroom Opportunism (Section 4.3.2.1):** If primary objectives are completed with sufficient **token headroom** remaining, the AI assesses the capacity and proposes secondary objectives (from the backlog or bootstrap) to optimize the loaded context. The user decides whether to proceed [12, 13].\
+*   **Segmentation (Section 4.3.2.2):** If an artifact is expected to exceed token limits (e.g., source >5,000 words or output >10,000 characters), the AI proactively plans a segmentation strategy to produce it in logical parts rather than truncating or compressing quality [14, 15].\
+\
+### 3. Session Closeout (Section 4.3.3)\
+Closeout is a formal protocol to preserve work and enable clean resumption. It is **user-initiated only**; the AI never auto-initiates closeout [16].\
+\
+The closeout follows a **5-Step Sequence** [17-19]:\
+1.  **Loose Ends Assessment:** The AI pauses to check six categories: Decisions, Scope Items, Questions, Artifacts, Handoff Context, and User Action Items.\
+2.  **Present Loose Ends:** The AI presents this assessment to the user for verification.\
+3.  **Resolve Loose Ends:** Any outstanding items are addressed per user direction (e.g., logging a decision, saving a draft).\
+4.  **Confirm Readiness:** The AI lists the artifacts to be generated and waits for user confir< 2026/02/14 14:11:21.000226660  length=945 from=8693 to=9637
+mation.\
+5.  **Generate Artifacts:** Only after confirmation does the AI produce the mandatory closeout files:\
+    *   **Session Log:** Includes the **Session Fidelity Report (SFR)** and Response Index Register [20].\
+    *   **Bootstrap:** The handoff file for the next session [20].\
+    *   **Decision Log:** Generated if significant decisions were made [21].\
+\
+### Special Session Types\
+*   **Phase Transitions (Section 4.3.5):** These are not ordinary sessions. They involve an **8-step process** to assess readiness, consolidate scope (filtering \"husks\" from \"coconuts\"), review deferred items, and generate a new Phase Protocol if necessary [22, 23].\
+*   **Emergency Exit (Section 4.3.4):** An abbreviated protocol used when token limits approach unexpectedly, focusing on immediate preservation of a minimal bootstrap [24].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

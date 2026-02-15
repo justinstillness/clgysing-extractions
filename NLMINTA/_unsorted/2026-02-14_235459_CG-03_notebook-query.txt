@@ -1,0 +1,77 @@
+================================================================================
+EXTRACTION: 2026-02-14_235459_CG-03_notebook-query
+================================================================================
+Branch:          NLMINTA
+Source Package:  N/A
+Pass Type:       CG (CG)
+Pass Number:     03
+Theme/Focus:     N/A
+Project:         N/A
+Session:         023
+Routing:         Tier 1b (NLMINTA/_unsorted)
+Query:           What specific thesis strings were generated during TD-1 and TD-2 testing in Session 022? List the actual thesis candidates and regress sub-claims, especially any related to the ontological singularity, Four Intimacies, or identity mechanics.
+Timestamp:       2026-02-14T23:54:59.000706+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: fcb4c599-35d2-4868-b7ee-3fe5f3233abc
+Chat Configure:  default
+Thread:          N/A
+Notes:           context-gather
+Response Chars:  4698
+Duration:        30000ms
+================================================================================
+
+Based on the session logs from **NLMINTA Session 022**, here are the specific thesis strings and candidates generated during TD-1 (Thesis Genesis) and TD-2 (Epistemic Regress) testing, with a focus on the ontological singularity, Four Intimacies, and identity mechanics.\
+\
+### **1. TD-1 Thesis Genesis Candidates (Session 022)**\
+*Testing generated declarative thesis candidates from both the D1 Library (SP03) and the Raw Corpus (CLGYSING Source Packages).*\
+\
+**From Test A (D1 Library - SP03):**\
+*   **Thesis 6 (Counterfeit Transcendence):** \"Parasitic social orders persist by functioning as **counterfeit transcendence mechanisms**, systematically hijacking the innate human drive for spiritual connection and redirecting it toward state, corporate, or ideological surrogates.\" [1]\
+    *   *Self-Assessment:* Rated THESIS-WORTHY; bridges theology and sociology.\
+*   **Thesis 7 (Methodological):** \"The **translation bottleneck** between deep philosophical insight and accessible mass communication can be solved via a 'third-generation' system...\" [2]\
+    *   *Self-Assessment:* Rated OBSERVATIONAL (methodological solution rather than ontological truth).\
+\
+**From Test B (Raw Corpus - CLGYSING Source Pkgs):**\
+*   **Thesis 4 (Identity/Epistemic Sovereignty):** \"The acceptance of demonstrably false narratives within a social group functions not as an error of reasoning, but as a **volitional sacrifice of epistemic sovereignty** ... a structural initiation rite that filters for individuals willing to subordinate intrinsic knowing to extrinsic authority in exchange for belonging.\" [3]\
+    *   *Context:* Directly addresses **identity mechanics** by framing belief as a transaction of agency.\
+*   **Thesis 1 (Epistemic Immune System):** Identified **Intellectual Intimacy** as the keystone and epistemic immune system for the Four Intimacies framework. (This thesis was selected as the target for the TD-2 mechanistic regress) [4].\
+*   **Thesis 5 (Trauma):** \"Trauma as Engine.\" Flagged as OBSERVATIONAL. [5]\
+*   **Thesis 8 (Governance):** \"Triadic Oversight.\" (Selected for the TD-2 prescriptive regress test) [6].\
+\
+---\
+\
+### **2. TD-2 Epistemic Regress Sub-Claims (Session 022)**\
+*Testing performed recursive decomposition (Degrees 0...3) on selected theses found in TD-1.*\
+\
+#### **A. Mechanistic Regress (Target: Intellectual Intimacy as Epistemic Immune System)**\
+*Focus: Four Intimacies, Identity, Parasitic Systems*\
+\
+**Degree 1 (Immediate Dependencies):**\
+*   Generated 7 thesis strings (4 critical path, 3 supporting) [7].\
+*   **Critical Path:** Established the **Four Intimacies** as an integrated system where intellectual intimacy protects the others [8].\
+*   **Supporting:** Defined truth as an order-making force (flagged as metaphysical strengthening rather than logically necessary) [8].\
+\
+**Degree 2 (Targeting Critical Sub-Thesis: \"Parasitic systems structurally require corruption of intellectual intimacy\"):**\
+*   Generated 6 thesis strings (3 critical path, 3 supporting) [7].\
+*   **Thesis 6:** Identified trauma as an \"epistemic disrupter\" (Rated MODERATE strength due to implicit vs. explicit links in source) [9].\
+*   **Gap < 2026/02/14 23:55:29.000981746  length=1543 from=10159 to=11701
+Identification:** Flagged a missing link regarding the specific \"Intellectual ... Physical corruption vector\" [9].\
+\
+**Degree 3 (Threaded Extension):**\
+*   **D3-B1 (Ontological/Truth Physics):** \"Truth is not merely a set of facts but a coherent, divinely unified meta-reality. Encountering new truth is inherently destabilizing because it forces a factorial reorganization of existing mental models (like a machine vibrating at a new frequency).\" [10]\
+    *   *Assessment:* High novelty; explains why dogmas are brittle.\
+*   **D3-B2 (Ontological Singularity):** Explicitly referenced the **ontological singularity as a gravity well** [11].\
+*   **D3-A1 (Identity/Immunity):** Moves from general intellectual intimacy to the specific mechanism of \"causal literacy as the antibody against parasitism\" [10], [11].\
+*   **Bedrock Finding:** Identified the \"**Entrainment Mechanism of Truth**\" as a theoretical bedrock assumption and metaphysical axiom that cannot be regressed further within the current corpus [12].\
+\
+#### **B. Prescriptive Regress (Target: Triadic Oversight)**\
+*Focus: Structural/Design Requirements*\
+\
+**Degree 1:**\
+*   Generated 7 thesis strings (4 critical path, 3 supporting) [6].\
+*   **Qualitative Difference:** Unlike the mechanistic regress (which focused on definitions and causes), these strings focused on **design constraints**, **topological solutions**, and **developmental gradients** [13].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

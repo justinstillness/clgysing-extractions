@@ -1,0 +1,73 @@
+================================================================================
+EXTRACTION: 2026-02-14_234022_CG-01_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       CG (CG)
+Pass Number:     01
+Theme/Focus:     N/A
+Project:         N/A
+Session:         032
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           Summarize the Shell MCP server build from Session 031 ... what was built, how it was deployed, what tools it exposes, and what testing remains. Also summarize the current state of the HA Suite Docs notebook and any standing responsibilities established.
+Timestamp:       2026-02-14T23:40:22.000816+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: ec2c67ef-a153-4453-b164-0317cb9e4c47
+Chat Configure:  default
+Thread:          N/A
+Notes:           context-gather
+Response Chars:  2898
+Duration:        27000ms
+================================================================================
+
+Here is the summary of the Shell MCP server build from Session 031 and the status of the HA Suite Docs notebook.
+
+### **Shell MCP Server Build (Session 031)**
+
+**What Was Built:**
+A custom MCP server designed to give Claude direct shell access to the EC2 instance, enabling infrastructure management without external SSH tools like Termius.
+*   **Architecture:** Python-based FastMCP server running natively on the EC2 instance.
+*   **Location:** `/home/ubuntu/shell-mcp/`
+*   **Port:** **8004** (internal).
+*   **Routing:** Caddy reverse proxy routes `https://mcp.justinstillness.com/shell/mcp` to localhost:8004.
+*   **Service Name:** `shell-mcp.service` (systemd).
+*   **Safety:** Configured with timeout protection and logging to `/home/ubuntu/mcp-logs/`.
+
+**How It Was Deployed:**
+The deployment followed the established HA Suite pattern:
+1.  **Files Created:** `shell_mcp.py` (logic), `shell-mcp.service` (systemd config), `.env` (config), and `deploy.sh`.
+2.  **Upload:** Files were uploaded to EC2 via Termius.
+3.  **Execution:** The `deploy.sh` script installed the service and updated the Caddyfile.
+4.  **Registration:** The connector was added to Claude.ai settings under the name "Shell MCP".
+
+**Tools Exposed:**
+The server exposes 6 tools for filesystem and command operations:
+1.  `shell_exec`: Execute bash commands (stdout/stderr returned).
+2.  `shell_read_file`: Read file contents.
+3.  `shell_write_file`: Write content to files.
+4.  `shell_list_dir`: List directory contents.
+5.  `shell_move_file`: Move or rename files.
+6.  `shell_status`: Health check.
+
+**Testing Remaining:**
+*   **Status:** The service is **active and running** on EC2; Caddy reloaded successfully.
+*   **Pending:** A **live test** of the tools (`shell_status`, `shell_exec`) is required in this session (032).
+    *   *Reason:* When the connector was added in Session 031, the tools did not appear immediately due to Claude...s session-level manifest caching. A fresh conversation (this one) is required to load the new tool definitions.
+
+***
+
+### **HA Suite Docs Notebook State**
+
+**Current State:**
+*   **Notebook ID:** `430df618-e337-4971-abaa-6528e96bb1c4`
+*   **Sources:** Currently contains **9 sources** (Architecture Reference v4.1, CHANGELOG, Wishlist v1.3, and reference docs for Majeston, SeraphRecorder, Caliper, Chronicler, File Browser, and Indexer).
+*   **Pending Item:** The **Shell MCP Tool Reference** has *not* yet been created or added. This was deferred to Session 032 to allow for validation of the tool first.
+
+**Standing Responsibilities:**
+*   **Sync Protocol:** Whenever a documentation file in the GitHub repo (`_docs/`) is updated, the corresponding source in this notebook must be **deleted** and **re-added** to ensure the NotebookLM context remains current.
+*   **Bootstrap Encoding:** This maintenance duty must be explicitly included in the bootstrap for every new session.
+
+================================================================================
+END OF EXTRACTION
+================================================================================

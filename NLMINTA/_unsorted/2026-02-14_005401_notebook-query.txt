@@ -1,0 +1,76 @@
+================================================================================
+EXTRACTION: 2026-02-14_005401_notebook-query
+================================================================================
+Branch:          NLMINTA
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         022
+Routing:         Tier 1b (NLMINTA/_unsorted)
+Query:           What are TL-B current event analysis and TL-C corpus expansion thesis-lens extraction types? How do they differ from TL-A? What is the model-as-source concept for thesis-lens work? What notebook setup would be needed for TL-B and TL-C testing?
+Timestamp:       2026-02-14T00:54:01.000651+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 58bc36ec-1def-4abc-9e91-315485675f8c
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  4696
+Duration:        29000ms
+================================================================================
+
+Based on the NLMINTA Phase 2 and 3 findings and specifications, here are the details on the Thesis-Lens (TL) extraction types, the model-as-source concept, and the requirements for testing them.\
+\
+### TL-B and TL-C: Definitions and Differences\
+\
+**TL-B (Current Event Analysis)** and **TL-C (Corpus Expansion)** are advanced applications of the Thesis-Lens methodology theorized during Phase 3 but not yet formally validated. They share the same query structure as TL-A but differ fundamentally in the relationship between the **Lens** (the framework) and the **Data** (the target).\
+\
+*   **TL-B: Current Event Analysis**\
+    *   **Purpose:** To generate interpretive analysis of real-world events through a specific framework.\
+    *   **The Lens:** An established framework or thesis (e.g., the Agenda 47 master thesis).\
+    *   **The Data:** Current news articles, event reports, or live phenomena.\
+    *   **The Output:** Interpretive content explaining *how* the event manifests the framework's mechanics (e.g., \"How does this news event demonstrate the 'Villain as Feature' dynamic?\").\
+    *   **Use Case:** Generating \"Agenda 47 Explains\" articles where the model interprets the news [1].\
+\
+*   **TL-C: Corpus Expansion**\
+    *   **Purpose:** To expand the Cultology corpus itself by testing the framework against new information to find gaps or extensions.\
+    *   **The Lens:** A mature, comprehensive framework.\
+    *   **The Data:** New research, supplementary academic material, or external models.\
+    *   **The Output:** Gap identification, framework extensions, and new thesis strings.\
+    *   **Use Case:** Running the established model against a new book (e.g., by Lifton or Zimbardo) to identify what the new source *adds* to or *challenges* in the existing framework [2].\
+\
+**Difference from TL-A (Analytical Extraction):**\
+*   **TL-A** (Validated in Session 021) focuses on **extraction**. It takes *existing* library data and re-extracts it through a lens to find evidence that supports a specific thesis [3].\
+*   **TL-B** focuses on **interpretation**. It applies the lens to *external events* to generate new analytical content.\
+*   **TL-C** focuses on **growth**. It applies the lens to *new research* to expand the framework itself [4].\
+\
+### The Model-as-Source Concept\
+\
+The **Model-as-Source** concept (Variation B in the TL-A Spec) is a method for providing the \"Lens\" to NotebookLM. Instead of pasting a 300-word summary of the model into the query text (as done in TL-A validation), you upload the **full analytical model or treatise as a dedicated text source** in the notebook [5].\
+\
+*   **Semantic Resonance:** This relates to the \"Semantic Resonance Model\" [6]. A proprietary framework (like Cultology) operates on a \"frequency\" that standard LLM training (Layer 2 knowledge) may not recognize. By uploading the full model as a source, you create a \"Modulating Container\" that explicitly bridges the proprietary concepts to the target data [7].\
+*   **Benefit:** It allows NLM to reference the model much more deeply than a prompt allows, accessing specific definitions, nuances, and mechanisms defined in the source document.\
+*   **R< 2026/02/14 00:54:30.000797228  length=1536 from=8513 to=10048
+isk:** NLM might blend the model and the data in its output rather than keeping them distinct (e.g., attributing a model concept to the data source) [5].\
+\
+### Notebook Setup for Testing\
+\
+Testing these applications requires specific notebook configurations to distinguish the \"Lens\" from the \"Data.\"\
+\
+**For TL-B Testing (Current Events):**\
+1.  **Lens Source:** Upload a document containing the **Agenda 47 Thesis** or **Cultology Framework** (either as a Note or a Source file).\
+2.  **Data Sources:** Upload PDF/Text versions of **current news articles** or event summaries (e.g., 3...5 articles on a specific topic).\
+3.  **Query:** Instruct NLM to \"Analyze [News Source] through the lens of [Thesis Source]...\" [1].\
+\
+**For TL-C Testing (Corpus Expansion):**\
+1.  **Lens Source:** Upload the most mature **Cultology Framework** document available.\
+2.  **Data Sources:** Upload a **new research text** or supplementary material that is *not* currently part of the core corpus (e.g., a book not yet integrated).\
+3.  **Query:** Instruct NLM to \"Identify gaps, extensions, or challenges to the [Framework Source] based on the evidence in [New Research Source]...\" [2].\
+\
+**Note:** Unlike TL-A, which was validated using a query-based lens on existing data, TL-B and TL-C likely require the **Model-as-Source** approach to handle the complexity of bridging the framework to completely external or new material [5].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

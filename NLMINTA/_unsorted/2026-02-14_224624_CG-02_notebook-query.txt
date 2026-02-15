@@ -1,0 +1,47 @@
+================================================================================
+EXTRACTION: 2026-02-14_224624_CG-02_notebook-query
+================================================================================
+Branch:          NLMINTA
+Source Package:  N/A
+Pass Type:       CG (CG)
+Pass Number:     02
+Theme/Focus:     N/A
+Project:         N/A
+Session:         023
+Routing:         Tier 1b (NLMINTA/_unsorted)
+Query:           What is the test design for HS-1 (concept-to-thesis mapping)? What is its purpose, procedure, required notebooks, and success criteria? How does it relate to ArgBlock creation in the LibForge pipeline?
+Timestamp:       2026-02-14T22:46:24.000742+00:00
+Notebook ID:     b8fd3d1c-db62-40e6-bddf-6d8474a3733d
+Source IDs:      all
+Conversation ID: 1f282b88-b05a-44f3-b2ca-e812cba7c42a
+Chat Configure:  default
+Thread:          N/A
+Notes:           context-gather
+Response Chars:  2330
+Duration:        35000ms
+================================================================================
+
+Based on the sources, here is the test design for **HS-1 (Argument Block Creation)**, also referred to as **Concept-to-Thesis Mapping**:
+
+**Test Design: HS-1 (Argument Block Creation)**
+
+*   **Purpose:** To validate whether NotebookLM can function as a "handshake" engine that bridges the **Top-Down** workflow (Thesis Architecture) and **Bottom-Up** workflow (Extraction). Specifically, the test determines if NLM can accurately identify which concepts, terms, and relationship data from a **D1 Library** best support a specific **Thesis String** [1, 2].
+*   **Procedure:**
+    1.  **Input:** Select a specific **Thesis String** (generated during Stage TD-2/Epistemic Regress) [1, 3].
+    2.  **Query:** Query a notebook containing a **D1 Library** (extracted concepts) using the thesis string as a probe [2].
+    3.  **Task:** Instruct NLM to identify concepts that support the thesis, generate relationship mappings between the concepts and the thesis, and identify the strongest evidence [2, 3].
+    4.  **Comparison:** Compare NLM's automated mapping against a manual mapping performed by Claude to assess fidelity and relevance [4, 5].
+*   **Required Notebooks:**
+    *   A notebook containing a **D1 (First Degree) Library**, such as the **SP03 Repositories** or **SP07 D1 output** (which contain extracted concepts, terms, and relationships) [4, 6].
+*   **Success Criteria:**
+    *   NLM must successfully identify concepts from the D1 library that best support the given thesis string [4].
+    *   NLM must generate valid relationship mappings (e.g., *supports*, *evidences*, *nuances*) between the concepts and the thesis string [4].
+    *   The output must be usable as a semantic blueprint (ArgBlock) for drafting [2].
+*   **Relation to ArgBlock Creation in LibForge:**
+    *   HS-1 **is** the ArgBlock creation stage. An **ArgBlock** (Argument Block) is the composite unit used for drafting, consisting of a thesis string, linked concept packets, cross-references, and treatment notes [2, 7].
+    *   This test validates the "Handshake" mechanism where the **Top-Down** architecture (Blueprint) and **Bottom-Up** extraction (Ore) converge to build the "House" (Prose) [8, 9].
+    *   It operationalizes the **Semantic Handshake** (Master List Item #16) by using thesis strings to query the repository for assets [10].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

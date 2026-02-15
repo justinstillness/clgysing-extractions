@@ -1,0 +1,64 @@
+================================================================================
+EXTRACTION: 2026-02-14_150518_notebook-query
+================================================================================
+Branch:          GOV-AIPM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         051
+Routing:         Tier 1b (GOV-AIPM/_unsorted)
+Query:           Describe the bootstrap continuity chain from Sections 4.3 and 5.5. How does the bootstrap file enable session-to-session continuity? What is the sequence from session closeout through bootstrap creation, handoff, and next session initiation? Include the relationship between session log, SFR, and bootstrap generation.
+Timestamp:       2026-02-14T15:05:18.000018+00:00
+Notebook ID:     a0a96d92-1e44-4907-85a7-09e286058fdf
+Source IDs:      all
+Conversation ID: N/A
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  4035
+Duration:        34000ms
+================================================================================
+
+Based on the provided sources, particularly the drafts for GOV-AIPM v1.0.8 (Sections 4.3 and 5.5), here is the description of the bootstrap continuity chain.\
+\
+### The Bootstrap Continuity Chain\
+\
+The **bootstrap continuity chain** is the operational mechanism that allows AI-assisted projects to survive the \"amnesia event\" that occurs at the end of every chat session [1]. Because AI sessions are ephemeral and retain no memory of prior interactions, this chain relies on \"ceremony\"...the formal production of artifacts...to create an external memory system that bridges sessions [2, 3].\
+\
+#### Role of the Bootstrap File (Section 5.5)\
+The bootstrap file (TPL-002) functions as the primary vehicle for this continuity. It serves two distinct functions for the receiving AI instance:\
+1.  **Context Transfer:** It captures the tactical state of the project, including what was just accomplished, what was deferred, and the current status of the project phase [4]. It defines *where* the project left off [5].\
+2.  **Prompt List:** It acts as a set of explicit instructions for the next session. Crucially, it contains a \"Mandatory First Action\" that instructs the AI to review the Phase Protocol from Project Knowledge, ensuring behavioral governance is re-established immediately [6, 7].\
+\
+#### The Sequence: Closeout to Initiation\
+The continuity chain follows a strict sequence defined in the Session Lifecycle (Section 4.3). This sequence transforms the raw activity of one session into structured context for the next.\
+\
+**1. Session Closeout (Sending Session)**\
+*   **Trigger:** The user explicitly initiates closeout (e.g., \"Close out\"). The AI never auto-initiates this step [8, 9].\
+*   **Loose Ends Assessment:** The AI pauses to inventory decisions, open questions, and incomplete artifacts to ensure nothing is lost [10].\
+*   **Artifact Generation:** Once readiness is confirmed, the AI generates the mandatory closeout artifacts: the Session Log and the Bootstrap [11].\
+\
+**2. Handoff (User Action)**\
+*   The user saves the generated Bootstrap and Session Log.\
+*   If using notebook connectivity, the user uploads the session transcript and non-ephemeral artifacts to the project notebook, creating a deep context archive to back up the bootstrap's tactical context [12, 13].\
+\
+**3. Session Initiation (Receiving Session)**\
+*   **Upload:** The user provides the Bootstrap file to the new AI instance [14].\
+*   **Mandatory Review:** The AI executes the Bootstrap's first instruction: reviewing the Phase Protocol to establish behavioral alignment [14].\
+*   **Alignment Turn:** The AI acknowledges the Bootstrap and generates an **Alignment Checklist**, verifying scope, materials, and workflow with the user before substantive work begins [15]. This prevents \"evaporation\"...starting work without shared understanding [15].\
+\
+#### Relationship: Session Log, SFR, and Bootstrap\
+These artifacts form a hierarchy of context preservation:\
+\
+1.  **Session Log (Section 5.4):** This records *what* happened. It acts as the structured summary of the session, including the Response Index Register for locating specific content in the transcript [16, 17].\
+2.  **Session Fidelity Report (SFR):** Embedded within the Session Log, the SFR evaluates *how well* the session went. It provides the diagnostic assessment...identifying gaps, risks, and specific \"Handoff Status\" items [18].\
+3.  **Bootstrap Generation:** The Bootstrap is derived directly from the SFR and the Session Log. It extracts the \"Handoff Status\" and \"Next Session Projection\" from the SFR to populate its \"Prior Session Summary\" and \"Session Focus\" sections [19, 20].\
+\
+In essence, the **Session Log** records the history, the **SFR** assesses the quality and identifies what must persist, and the **Bootstrap** packages that essential context into an actionable prompt for the next AI instance [19, 21].","conversat< 2026/02/14 15:05:52.000276859  length=94 from=8693 to=8786
+ion_id":"76549b1b-dc2c-4946-b9b5-214f9b346612
+
+================================================================================
+END OF EXTRACTION
+================================================================================

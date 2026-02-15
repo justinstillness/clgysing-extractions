@@ -1,0 +1,75 @@
+================================================================================
+EXTRACTION: 2026-02-14_224319_CG-03_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       CG (CG)
+Pass Number:     03
+Theme/Focus:     N/A
+Project:         N/A
+Session:         031
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           How is Chronicler implemented? What framework does it use, what's the file structure, how is it registered with Caddy, and how does its systemd service work? Include details about the Python MCP SDK usage if applicable.
+Timestamp:       2026-02-14T22:43:19.000923+00:00
+Notebook ID:     78ccac4a-4c28-4902-b721-0f77e25e1d59
+Source IDs:      all
+Conversation ID: ae3d5af4-e776-48a3-a208-481b3c3ff96f
+Chat Configure:  default
+Thread:          N/A
+Notes:           context-gather
+Response Chars:  3382
+Duration:        26999ms
+================================================================================
+
+Based on the system specifications and session logs, here is the detailed implementation breakdown for **Chronicler**, the GitHub repository interaction tool within the Havona Anvil Suite.
+
+### 1. Framework & Language
+Chronicler is built using **Python** and the **FastMCP** framework (specifically version 2.14.5 or compatible versions pinned `< 3.0`). It utilizes **Streamable HTTP** as its transport layer to communicate with Claude's MCP client [1], [2].
+
+It relies on the `httpx` library for asynchronous HTTP requests to the GitHub API [3].
+
+### 2. File Structure
+The tool is deployed on the EC2 instance in the following directory structure [4], [5]:
+
+*   **Directory:** `/home/ubuntu/chronicler/`
+*   **Main Script:** `chronicler.py` (The FastMCP server logic)
+*   **Environment Config:** `.env` (Stores the `GITHUB_TOKEN` Personal Access Token)
+
+### 3. Python MCP SDK Usage (FastMCP)
+Chronicler uses the `fastmcp` library to expose Python functions as MCP tools.
+
+*   **Initialization:** The server is initialized with `mcp = FastMCP("Chronicler")`. Notably, the `description=` parameter was removed from the constructor during the build phase (Session 010) to resolve a `TypeError` compatibility issue with the specific FastMCP version used [6], [7].
+*   **Tool Registration:** Functions are exposed using the `@mcp.tool()` decorator.
+*   **Tools Implemented:** It registers 10 tools including `list_files`, `read_file`, `write_file`, `move_file`, `delete_file`, `create_directory`, `get_counter`, `increment_counter`, `server_status`, and `flush_pipeline` [8].
+*   **Entry Point & Registration Order:** A critical implementation detail discovered in Session 026 involves the order of code execution. `mcp.run()` blocks execution, so all tool definitions (including imports like `asyncio` used by specific tools) must be defined **before** the `if __name__ == "__main__":` block where `mcp.run()` is called. If tools like `flush_pipeline` are defined after the entry point, they will not be discoverable by the client [9], [10].
+
+### 4. Systemd Service Configuration
+Chronicler runs as a systemd service named `chronicler.service`.
+
+*   **File:** `/etc/systemd/system/chronicler.service`
+*   **Execution:** It uses `uv` to manage dependencies at runtime.
+    *   Command: `ExecStart=/home/ubuntu/.local/bin/uv run --with fastmcp --with httpx /home/ubuntu/chronicler/chronicler.py --transport http --port 8002` [11].
+*   **Configuration:**
+    *   **Port:** 8002 (Localhost only)
+    *   **Restart Policy:** `Restart=always` with a 10-second delay.
+    *   **Resource Limits:** `MemoryMax=256M` and `CPUQuota=50%` [11].
+    *   **Environment:** Loads the GitHub token via `EnvironmentFile=/home/ubuntu/chronicler/.env`.
+
+### 5. Caddy Registration
+Caddy acts as the reverse proxy, handling SSL and routing external requests to the internal port.
+
+*   **Routing Logic:** It uses `handle_path` (instead of `handle`) to strip the URL prefix before forwarding the request to the backend. This ensures Chronicler receives requests at `/mcp` rather than `/repo/mcp` [12].
+*   **Config Block:**
+    ```caddy
+    handle_path /repo/* {
+        reverse_proxy localhost:8002
+    }
+    handle_path /repo {
+        reverse_proxy localhost:8002
+    }
+    ```
+*   **Connector URL:** This configuration makes the tool accessible to Claude at `https://mcp.justinstillness.com/repo/mcp` [13].
+
+================================================================================
+END OF EXTRACTION
+================================================================================

@@ -1,0 +1,55 @@
+================================================================================
+EXTRACTION: 2026-02-14_005512_notebook-query
+================================================================================
+Branch:          AWSNBLM
+Source Package:  N/A
+Pass Type:       N/A (N/A)
+Pass Number:     N/A
+Theme/Focus:     N/A
+Project:         N/A
+Session:         030
+Routing:         Tier 1b (AWSNBLM/_unsorted)
+Query:           What documents are currently loaded in this notebook? List all sources and their topics.
+Timestamp:       2026-02-14T00:55:12.000211+00:00
+Notebook ID:     430df618-e337-4971-abaa-6528e96bb1c4
+Source IDs:      all
+Conversation ID: 924b6d88-4bc8-42a0-a43d-4d2174c105c1
+Chat Configure:  default
+Thread:          N/A
+Notes:           N/A
+Response Chars:  2938
+Duration:        22999ms
+================================================================================
+
+Based on the sources loaded in this notebook, here are the currently available documents and their topics, which collectively define the **Havona Anvil Suite (HA Suite)** infrastructure:
+
+*   **v4.1_SPEC_HA-Suite-Architecture-Reference.txt**
+    *   **Topic:** The canonical system-level reference for the suite. It outlines the integration of 4 MCP tools (Majeston, SeraphRecorder, Chronicler, Caliper) on a single EC2 instance, detailing the request flow, port maps, component summaries, and authentication models [1-3].
+
+*   **v1.0_REF_Majeston-Tool-Reference.txt**
+    *   **Topic:** Comprehensive documentation for **Majeston**, the NotebookLM MCP. It details the 29 tools available for querying notebooks and managing sources, explains the cookie-based Google OAuth authentication, and covers installation and deployment on port 8100 [4-6].
+
+*   **v1.0_REF_SeraphRecorder-Tool-Reference.txt**
+    *   **Topic:** A guide to the **SeraphRecorder** traffic capture pipeline. It explains how the system transparently captures Majeston traffic using `socat`, extracts content via `extract.py`, and routes files to GitHub based on SERAPH signal strings and a 3-tier routing logic [7-9].
+
+*   **v1.1_REF_Chronicler-Tool-Reference.txt**
+    *   **Topic:** Reference for **Chronicler**, the tool that gives Claude direct read/write access to the GitHub repository. It lists the 10 available tools (such as `read_file`, `write_file`, and `flush_pipeline`) and common workflows for organizing extractions [10-12].
+
+*   **v1.0_REF_Caliper-Tool-Reference.txt**
+    *   **Topic:** Documentation for **Caliper**, a document analysis tool designed to solve "blind metrics." It provides batch inventory, word counts, and token estimates for files in GitHub folders to assist with segmentation planning [13, 14].
+
+*   **v0.2_SPEC_Indexer-File-Organization-System.txt**
+    *   **Topic:** The organizational protocol for the extraction pipeline. It defines naming conventions, folder structures, and the "pass type" codebook (e.g., VX, TX, PE) used to classify and route extracted information [15].
+
+*   **v1.3_REF_Development-Wishlist.txt**
+    *   **Topic:** A snapshot of the active development roadmap. It lists prioritized features and enhancements across the suite's components, noting the recent transition to a hybrid maintenance model where active items are tracked in a dedicated NotebookLM notebook [16, 17].
+
+*   **v1.0_REF_HA-Suite-CHANGELOG.txt**
+    *   **Topic:** A running record of significant changes to the suite. It tracks updates by session, identifying affected components (like the recent Wishlist architecture changes in Session 028) and cross-component implications [18, 19].
+
+*   **v1.0_REF_File-Browser-Tool-Reference.txt**
+    *   **Topic:** Reference for the user-facing web application that allows browser-based access to the repository. It covers features like file preview, download, and the authentication setup [20].
+
+================================================================================
+END OF EXTRACTION
+================================================================================
